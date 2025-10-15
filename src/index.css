@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Aeonik";
+  src: url("./assets/fonts/Aeonik/fonnts.com-Aeonik-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aeonik";
+  src: url("./assets/fonts/Aeonik/fonnts.com-Aeonik-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("./assets/fonts/IbmPlexMono/IBMPlexMono-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("./assets/fonts/IbmPlexMono/IBMPlexMono-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #efefef;
+  --color-teal: #00858f;
+  --color-dark-green: #186167;
+  --color-light-blue: #D4FCFF;
+  --color-light-gray: #93939E;
+  --font-ibm: "IBM";
+  --font-aeonik: "Aeonik";
+}
+
+* {
+  font-family: "Aeonik", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+.side-padding {
+  @apply px-10;
+}
+
+.bg-dark-green-blue-gradient {
+  @apply bg-[linear-gradient(90deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
+}
+
+.bg-linear-white-transparent {
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+.bg-button {
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  position: relative;
+}
+
+.bg-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/noisy-bg.jpg");
+  background-size: cover;
+  opacity: 0.2; /* 20% */
+  z-index: 0;
+}
