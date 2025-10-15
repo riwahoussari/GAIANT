@@ -10,7 +10,9 @@ export function SectionTitle({
   return (
     <h2
       className={
-        (big ? "text-[69px] leading-[76px]" : "text-[40px] leading-[47px]") +
+        (big
+          ? "text-[69px] leading-[76px]"
+          : "text-[32px] leading-[39px] xs:text-[40px] xs:leading-[47px]") +
         " " +
         className
       }
@@ -26,5 +28,9 @@ export function SectionSubTitle({
   children: string;
   className?: string;
 }) {
-  return <p className={"font-ibm! text-[12px]" + " " + className}>{children}</p>;
+  return (
+    <p className={"font-ibm! text-[11px] xs:text-[12px]" + " " + className}>
+      {children}
+    </p>
+  );
 }
