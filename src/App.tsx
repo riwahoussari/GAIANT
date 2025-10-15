@@ -19,12 +19,11 @@ const router = createBrowserRouter(
         </>
       }
     >
-      
       <Route path="/" element={<LandingPage />} />
-      
+
       <Route path="*" element={<NotFoundPage />} />
     </Route>
-  )
+  ),
 );
 
 function App() {

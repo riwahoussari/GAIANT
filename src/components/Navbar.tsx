@@ -7,7 +7,7 @@ export default function Navbar() {
       <header className="fixed z-100 top-0 left-0 right-0 text-white flex justify-between items-center side-padding py-3">
         {/* logo */}
         <div className="w-32 translate-y-1">
-          <img src="./gaiant-logo.svg" alt="Gaiant Logo" />
+          <img src="/gaiant-logo.svg" alt="Gaiant Logo" />
         </div>
 
         {/* links */}

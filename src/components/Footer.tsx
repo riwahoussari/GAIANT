@@ -84,7 +84,7 @@ export default function Footer() {
 
       {/* logo */}
       <div className="absolute bottom-9 left-0 side-padding">
-        <img className="w-[460px]" src="/gaiant-logo-gradient.svg" />
+        <img className="w-[460px]" src={`${import.meta.env.BASE_URL}gaiant-logo-gradient.svg`} />
       </div>
     </footer>
   );
