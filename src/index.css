@@ -37,13 +37,17 @@
 @import "tailwindcss";
 
 @theme {
+  /* breakpoints */
+  --breakpoint-xs: 480px;
+  /* fonts */
+  --font-ibm: "IBM";
+  --font-aeonik: "Aeonik";
+  /* colors */
   --color-background: #efefef;
   --color-teal: #00858f;
   --color-dark-green: #186167;
-  --color-light-blue: #D4FCFF;
-  --color-light-gray: #93939E;
-  --font-ibm: "IBM";
-  --font-aeonik: "Aeonik";
+  --color-light-blue: #d4fcff;
+  --color-light-gray: #93939e;
 }
 
 * {
@@ -54,10 +58,16 @@ body {
   background-color: var(--color-background);
 }
 
-.side-padding {
-  @apply px-10;
+/* spacing */
+.my-container {
+  @apply w-full xl:mx-auto xl:max-w-[1280px] 2xl:max-w-[1526px];
 }
 
+.side-padding {
+  @apply px-3 xs:px-5 md:px-10;
+}
+
+/* backgrounds and gradients */
 .bg-dark-green-blue-gradient {
   @apply bg-[linear-gradient(90deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
 }

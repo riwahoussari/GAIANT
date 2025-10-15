@@ -5,8 +5,8 @@ import { cn } from "../../lib/utils";
 const gradientCircleVariants = cva("aspect-square rounded-full overflow-clip", {
   variants: {
     blur: {
-      md: " blur-[16px]",
-      lg: "blur-[200px]",
+      md: " blur-[max(1vw,10px)]",
+      lg: "blur-[12vw]",
     },
   },
   defaultVariants: {

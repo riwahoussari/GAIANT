@@ -10,16 +10,16 @@ const buttonVariants = cva(
         primary: " text-white bg-button backdrop-blur-3xl",
         secondary: "bg-white/50 text-teal backdrop-blur-3xl",
         black: "bg-black text-white",
-        ghost: "bg-transparent "
+        ghost: "bg-transparent ",
       },
       size: {
-        md: "px-5 py-3 text-sm",
-        lg: "px-7 py-4 text-[19px]",
+        md: "px-3.5 py-1.5 text-[13px] xs:px-5 xs:py-3 xs:text-sm",
+        lg: "px-5 py-2 text-[17px] xs:px-7 xs:py-4 xs:text-[19px]",
       },
       arrow: {
         none: "",
         normal: "gap-[8px]",
-        spaced: "gap-[40px]",
+        spaced: "gap-[25px] xs:gap-[40px]",
       },
     },
     defaultVariants: {
