@@ -13,7 +13,7 @@ export function SectionTitle({
     <h2
       className={
         (big
-          ? "text-[69px] leading-[76px]"
+          ? "text-[46px] leading-[53px] xs:text-[69px] xs:leading-[76px]"
           : "text-[32px] leading-[39px] xs:text-[40px] xs:leading-[47px]") +
         " " +
         className
