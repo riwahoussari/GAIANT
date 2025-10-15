@@ -99,3 +99,12 @@ body {
   opacity: 0.2; /* 20% */
   z-index: 0;
 }
+
+/* text */
+.text-16 {
+  @apply text-[15px] xs:text-[16px] leading-[18px] xs:leading-[21px] 
+}
+
+.text-25 {
+  @apply text-[23px] xs:text-[25px] leading-[27px] xs:leading-[31px]
+}

@@ -86,9 +86,7 @@ function Card({
     <div className="max-w-[466px] bg-white/50 p-3 xs:p-6">
       {/* title & circle */}
       <div className="relative flex items-end justify-end gap-2">
-        <p className="absolute bottom-0 left-0 z-1 text-[23px] xs:text-[25px]">
-          {title}
-        </p>
+        <p className="text-25 absolute bottom-0 left-0 z-1">{title}</p>
         <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red" />
       </div>
       {/* text */}

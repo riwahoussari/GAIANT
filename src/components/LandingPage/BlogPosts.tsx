@@ -1,24 +1,21 @@
 import Button from "../shared/Button";
 import ArrowSvg from "../shared/ArrowSvg";
-import { SectionSubTitle, SectionTitle } from "../shared/Titles";
+import { TitleBlock } from "../shared/Titles";
 
 export default function BlogPosts() {
   return (
-    <section className="side-padding overflow-x-hidden mt-[140px]">
+    <section className="my-container side-padding mt-[140px] max-xl:overflow-x-hidden">
       {/* title */}
-      <div className="flex justify-between items-start">
-        <div>
-          <SectionSubTitle>INSIGHTS AND IDEAS</SectionSubTitle>
-          <SectionTitle>Our latest thinking</SectionTitle>
-        </div>
-        <Button arrow={"normal"} variant={"secondary"}>
-          SEE ALL
-        </Button>
-      </div>
+
+      <TitleBlock
+        title="Our latest thinking"
+        subtitle="INSIGHTS AND IDEAS"
+        button="SEE ALL"
+      />
 
       {/* cards */}
-      <div className=" mt-[40px]">
-        <div className="flex items-start gap-5 w-max">
+      <div className="mt-[40px] xl:overflow-x-hidden">
+        <div className="flex w-max items-start gap-5">
           <Card
             title="How AI is Reshaping Decision-Making Across Industries"
             subtitle="GAIANT TEAM - SEP 19, 2025"
@@ -55,20 +52,20 @@ function Card({
   subtitle: string;
 }) {
   return (
-    <div className="group relative text-white w-[415px] h-[390px] cursor-pointer overflow-clip">
+    <div className="group aspcet-415/390! relative w-[300px] overflow-clip text-white xs:w-[360px] lg:w-[410px]">
       <div
-        className="bg-black/25 h-full"
+        className="h-full bg-black/25"
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%)",
         }}
       >
-        <img className=" w-full object-cover" src={imgSrc} />
+        <img className="w-full object-cover" src={imgSrc} />
       </div>
 
       {/* content */}
-      <div className="absolute top-0 left-0 right-0 py-4 p-6 backdrop-blur-[1000px] bg-linear-white-transparent">
-        <p className="text-[12px] leading-[31px] font-ibm!">{subtitle}</p>
-        <p className="text-[25px] leading-[31px]">{title}</p>
+      <div className="bg-linear-white-transparent absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
+        <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
+        <p className="text-25">{title}</p>
       </div>
 
       {/* button */}
@@ -77,7 +74,7 @@ function Card({
       </Button>
       {/* arrow */}
       <ArrowSvg
-        className="absolute bottom-1 z-1 right-0 w-8 stroke-[1px]"
+        className="absolute right-0 bottom-1 z-1 w-6 stroke-[1px] xs:w-8"
         color="black"
       />
     </div>
