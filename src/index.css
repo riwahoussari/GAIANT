@@ -67,6 +67,9 @@ body {
 .side-padding {
   @apply px-3 xs:px-5 md:px-10;
 }
+.side-margin {
+  @apply mx-3 xs:mx-5 md:mx-10;
+}
 
 /* backgrounds and gradients */
 .bg-dark-green-blue-gradient {

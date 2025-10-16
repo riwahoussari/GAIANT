@@ -1,6 +1,6 @@
-import Button from "../shared/Button";
-import ArrowSvg from "../shared/ArrowSvg";
-import { TitleBlock } from "../shared/Titles";
+import Button from "../../ui/Button";
+import ArrowSvg from "../../ui/ArrowSvg";
+import { TitleBlock } from "../../ui/Titles";
 
 export default function BlogPosts() {
   return (

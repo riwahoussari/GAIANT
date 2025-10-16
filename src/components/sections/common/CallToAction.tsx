@@ -1,5 +1,5 @@
-import Button from "../shared/Button";
-import { SectionSubTitle, SectionTitle } from "../shared/Titles";
+import Button from "../../ui/Button";
+import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
 export default function CallToAction() {
   return (
@@ -11,7 +11,7 @@ export default function CallToAction() {
       </div>
 
       {/* circle */}
-      <div className="border-2 border-red-500 w-[90%]  max-w-[310px] aspect-square rounded-full my-12 mx-auto" />
+      <div className="mx-auto my-12 aspect-square w-[90%] max-w-[310px] rounded-full border-2 border-red-500" />
 
       {/* button */}
       <div className="flex justify-center">

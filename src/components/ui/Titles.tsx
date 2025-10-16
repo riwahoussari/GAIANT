@@ -1,11 +1,13 @@
+import { Fragment } from "react/jsx-runtime";
 import Button from "./Button";
+import type { ReactNode } from "react";
 
 export function SectionTitle({
   children,
   className,
   big = false,
 }: {
-  children: string;
+  children: ReactNode;
   className?: string;
   big?: boolean;
 }) {
@@ -43,14 +45,21 @@ export function TitleBlock({
   button,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   button?: string;
 }) {
   return (
     <div className="items-start justify-between sm:flex">
-      <div className="max-sm:mb-6">
-        <SectionSubTitle>{subtitle}</SectionSubTitle>
-        <SectionTitle>{title}</SectionTitle>
+      <div className="space-y-2 max-sm:mb-6">
+        {subtitle && <SectionSubTitle>{subtitle}</SectionSubTitle>}
+        <SectionTitle>
+          {title.split("\\n").map((string, i) => (
+            <Fragment key={i}>
+              {string}
+              {i + 1 != title.split("\\n").length && <br />}
+            </Fragment>
+          ))}
+        </SectionTitle>
       </div>
       {button && (
         <Button size={"sm"} arrow={"normal"} variant={"secondary"}>

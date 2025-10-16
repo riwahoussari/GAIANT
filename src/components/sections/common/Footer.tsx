@@ -1,5 +1,5 @@
-import ArrowSvg from "./shared/ArrowSvg";
-import GradientCircle from "./shared/GradientCircle";
+import ArrowSvg from "../../ui/ArrowSvg";
+import GradientCircle from "../../ui/GradientCircle";
 
 export default function Footer() {
   return (

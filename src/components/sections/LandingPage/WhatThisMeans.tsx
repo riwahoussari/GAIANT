@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
-import { Arrow2Svg } from "../shared/ArrowSvg";
-import GradientCircle from "../shared/GradientCircle";
-import { SectionSubTitle, SectionTitle, TitleBlock } from "../shared/Titles";
+import { Arrow2Svg } from "../../ui/ArrowSvg";
+import GradientCircle from "../../ui/GradientCircle";
+import { SectionSubTitle, SectionTitle, TitleBlock } from "../../ui/Titles";
 
 export default function WhatThisMeans() {
   return (

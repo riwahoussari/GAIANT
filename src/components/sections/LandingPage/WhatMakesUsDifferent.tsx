@@ -1,5 +1,5 @@
-import GradientCircle from "../shared/GradientCircle";
-import { SectionSubTitle, SectionTitle } from "../shared/Titles";
+import GradientCircle from "../../ui/GradientCircle";
+import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
 export default function WhatMakesUsDifferent() {
   return (

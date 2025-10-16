@@ -1,17 +1,11 @@
-import Button from "../shared/Button";
+import { BlurredLandscapeBg } from "../../ui/Backgrounds";
+import Button from "../../ui/Button";
 
 export default function Feature() {
   return (
     <section className="relative mt-[300px]">
       {/* bg */}
-      <div className="absolute top-0 right-0 bottom-0 left-0 z-0 overflow-x-clip">
-        <div className="relative h-full w-[120vw]! -translate-x-[10vw] blur-[max(2vw,25px)]">
-          <img
-            src="/landing-page-banner.jpg"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
+      <BlurredLandscapeBg />
 
       {/* content */}
       <div className="my-container side-padding relative items-stretch justify-between gap-5 py-16 text-white lg:flex xl:gap-16">

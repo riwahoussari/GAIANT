@@ -1,9 +1,9 @@
-import GradientCircle from "../shared/GradientCircle";
-import { SectionSubTitle, SectionTitle } from "../shared/Titles";
+import GradientCircle from "../../ui/GradientCircle";
+import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
 export default function Tools() {
   return (
-    <section className="side-padding overflow-x-clip relative mt-[120px] flex flex-col items-center">
+    <section className="side-padding relative mt-[120px] flex flex-col items-center overflow-x-clip">
       {/* bg blur */}
       <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
         <GradientCircle blur={"lg"} />
@@ -18,8 +18,8 @@ export default function Tools() {
       </SectionTitle>
 
       {/* icons */}
-      <div className="relative mt-16 w-full ">
-        <div className="absolute right-1/2 flex w-max translate-x-1/2 flex-col items-center justify-between gap-[min(18px,2.5vw)] lg:flex-row ">
+      <div className="relative mt-16 w-full">
+        <div className="absolute right-1/2 flex w-max translate-x-1/2 flex-col items-center justify-between gap-[min(18px,2.5vw)] lg:flex-row">
           <div className="flex items-center justify-between gap-[min(18px,2.5vw)]">
             <Icon
               className="opacity-60 lg:opacity-20"
@@ -55,10 +55,16 @@ export default function Tools() {
               className="max-lg:-translate-y-15/100 max-lg:opacity-80"
               src="/tools/Rectangle%20103.png"
             />
-            <Icon className="max-lg:-translate-y-3/10" src="/tools/Rectangle%20107.png" />
-            <Icon className="max-lg:-translate-y-3/10 lg:opacity-60" src="/tools/Rectangle%20102.png" />
             <Icon
-              className="max-lg:-translate-y-15/100 opacity-80 lg:opacity-40"
+              className="max-lg:-translate-y-3/10"
+              src="/tools/Rectangle%20107.png"
+            />
+            <Icon
+              className="max-lg:-translate-y-3/10 lg:opacity-60"
+              src="/tools/Rectangle%20102.png"
+            />
+            <Icon
+              className="opacity-80 max-lg:-translate-y-15/100 lg:opacity-40"
               src="/tools/Rectangle%20105.png"
             />
             <Icon
@@ -77,7 +83,7 @@ function Icon({ src, className = "" }: { src: string; className?: string }) {
     <img
       src={src}
       className={
-        "aspect-square w-[16vw] sm:w-[7.5vw] max-w-[120px] rounded-lg xs:rounded-xl  sm:min-w-[90px] " +
+        "aspect-square w-[16vw] max-w-[120px] rounded-lg xs:rounded-xl sm:w-[7.5vw] sm:min-w-[90px] " +
         className
       }
     />

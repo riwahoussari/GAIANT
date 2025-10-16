@@ -5,9 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage";
-import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
-import Footer from "./components/Footer";
+import Navbar from "./components/sections/common/Navbar";
+import Footer from "./components/sections/common/Footer";
+import ArchePage from "./pages/ArchePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       }
     >
       <Route path="/" element={<LandingPage />} />
+      <Route path="/arche" element={<ArchePage />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Route>
