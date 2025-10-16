@@ -69,3 +69,18 @@ export function TitleBlock({
     </div>
   );
 }
+
+export function TitleBlock2({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <div className="text-center">
+      <SectionTitle>{title}</SectionTitle>
+      {subtitle && <p className="text-16">{subtitle}</p>}
+    </div>
+  );
+}

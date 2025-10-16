@@ -5,7 +5,7 @@ import { TitleBlock } from "../../ui/Titles";
 export default function TheArcheModel() {
   return (
     <section className="relative mt-[120px] overflow-x-clip">
-      <div className="absolute top-0 right-0 z-0 translate-x-1/2">
+      <div className="absolute top-0 right-0 z-0 translate-x-1/2 opacity-80">
         <GradientCircle colorr={"beige"} blur={"lg"} />
       </div>
 

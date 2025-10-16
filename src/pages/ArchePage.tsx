@@ -9,7 +9,7 @@ import Button from "../components/ui/Button";
 export default function ArchePage() {
   return (
     <main>
-      {/* <Hero
+      <Hero
         spacing="max"
         subtitle="ARCHĒ"
         title="AI for business that turns complexity into clarity"
@@ -21,14 +21,14 @@ export default function ArchePage() {
           <img
             src="/AiChatDemo3.svg"
             alt=""
-            className="bg-linear-white-transparent mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
+            className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
           />
         </div>
       </Hero>
 
       <TheArcheModel />
       <DiscoverArche />
-      <ArcheFeatures /> */}
+      <ArcheFeatures />
       <ArcheCallToAction />
     </main>
   );

@@ -63,7 +63,7 @@ function Card({
       </div>
 
       {/* content */}
-      <div className="bg-linear-white-transparent absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
+      <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
         <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
         <p className="text-25">{title}</p>
       </div>

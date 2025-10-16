@@ -17,7 +17,7 @@ export default function DiscoverArche() {
           </p>
         </div>
         {/* card */}
-        <div className="bg-linear-white-transparent mt-12 sm:mt-16 flex items-center justify-between gap-x-5 gap-y-10 rounded-xl px-4 py-10 backdrop-blur-[100px] max-lg:flex-col sm:gap-y-14 sm:px-10 sm:py-16 xl:p-20">
+        <div className="bg-linear-white-transparent-70 mt-12 sm:mt-16 flex items-center justify-between gap-x-5 gap-y-10 rounded-xl px-4 py-10 backdrop-blur-[100px] max-lg:flex-col sm:gap-y-14 sm:px-10 sm:py-16 xl:p-20">
           {/* text */}
           <div className="max-w-[380px] text-white max-lg:text-center">
             <p className="font-ibm! text-[11px] xs:text-[12px]">

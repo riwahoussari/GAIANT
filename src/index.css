@@ -76,11 +76,19 @@ body {
   @apply bg-[linear-gradient(90deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
 }
 
-.bg-linear-white-transparent {
+.bg-linear-white-transparent-50 {
   background-image: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+.bg-linear-white-transparent-70 {
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.7) 100%
   );
 }
 
@@ -105,9 +113,9 @@ body {
 
 /* text */
 .text-16 {
-  @apply text-[15px] xs:text-[16px] leading-[18px] xs:leading-[21px] 
+  @apply text-[15px] leading-[18px] xs:text-[16px] xs:leading-[21px];
 }
 
 .text-25 {
-  @apply text-[23px] xs:text-[25px] leading-[27px] xs:leading-[31px]
+  @apply text-[23px] leading-[27px] xs:text-[25px] xs:leading-[31px];
 }

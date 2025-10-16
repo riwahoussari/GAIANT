@@ -6,12 +6,12 @@ export default function ArcheCallToAction() {
   return (
     <section className="relative mt-[120px] overflow-x-clip">
       {/* gradient circle */}
-      <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2">
+      <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-80">
         <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
       </div>
 
       {/* titles */}
-      <div className="my-container side-padding relative sm:top-5 xl:top-10 z-1 mx-auto space-y-5 text-center">
+      <div className="my-container side-padding relative z-1 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
         <SectionSubTitle>LET’S ARCHĒ</SectionSubTitle>
         <SectionTitle big>Ready to put AI to work?</SectionTitle>
       </div>
@@ -31,9 +31,8 @@ export default function ArcheCallToAction() {
         </div>
       </div>
 
-
       {/* button */}
-      <div className="relative mt-12 sm:mt-16 flex justify-center">
+      <div className="relative mt-12 flex justify-center sm:mt-16">
         <Button variant={"black"}>REQUEST A DEMO</Button>
       </div>
     </section>

@@ -16,7 +16,7 @@ export default function WhatThisMeans() {
 
       {/* content */}
       <div className="relative mt-[40px] flex justify-between gap-16 max-lg:flex-col">
-        <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2">
+        <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
           <GradientCircle blur={"lg"} />
         </div>
         {/* image */}

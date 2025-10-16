@@ -1,6 +1,7 @@
-import Button from "../../ui/Button";
+import { INDUSTRIES } from "../../../lib/constants";
 import ArrowSvg from "../../ui/ArrowSvg";
 import { TitleBlock } from "../../ui/Titles";
+import { IndustryCard } from "../common/Cards";
 
 export default function IndustriesWeEmpower() {
   return (
@@ -15,21 +16,16 @@ export default function IndustriesWeEmpower() {
       {/* cards */}
       <div className="mt-[40px] xl:overflow-x-hidden">
         <div className="flex w-max items-start gap-5">
-          <Card
-            title="Healthcare & Life Sciences"
-            text="Advancing patient care and biological research"
-            button
-            imgSrc="/industries/Industries-1.jpg"
-          />
-          <Card
-            title="Retail & Consumer Goods"
-            imgSrc="/industries/Industries-2.jpg"
-          />
-          <Card
-            title="Banking & Financial Services"
-            imgSrc="/industries/Industries-3.jpg"
-          />
-          <Card title="Education" imgSrc="/industries/Industries-4.jpg" />
+          {INDUSTRIES.slice(0, 4).map((industry, i) => (
+            <IndustryCard
+              key={i}
+              className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
+              title={industry.name}
+              text={industry.description}
+              button={!!industry.description}
+              imgSrc={industry.img}
+            />
+          ))}
         </div>
       </div>
 
@@ -49,42 +45,5 @@ export default function IndustriesWeEmpower() {
         />
       </div>
     </section>
-  );
-}
-
-function Card({
-  imgSrc,
-  title,
-  text,
-  button = false,
-}: {
-  imgSrc: string;
-  title: string;
-  text?: string;
-  button?: boolean;
-}) {
-  return (
-    <div className="group relative aspect-41/39! w-[300px] overflow-clip text-white xs:w-[360px] lg:w-[410px]">
-      <div
-        className="h-full bg-black/25"
-        style={{
-          clipPath: "polygon(0 0, 82% 0, 100% 18%, 100% 100%, 0 100%)",
-        }}
-      >
-        <img className="w-full object-cover" src={imgSrc} />
-      </div>
-
-      {/* content */}
-      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-tr from-black/0 to-black/15 p-3 py-4 backdrop-blur-md xs:p-6">
-        <p className="text-25 mb-2 xs:mb-4">{title}</p>
-
-        {text && <p className="text-16 mb-2 max-w-[180px]">{text}</p>}
-        {button && (
-          <div className="flex justify-end">
-            <Button>READ MORE</Button>
-          </div>
-        )}
-      </div>
-    </div>
   );
 }
