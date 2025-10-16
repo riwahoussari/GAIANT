@@ -9,18 +9,15 @@ import Button from "../components/ui/Button";
 export default function ArchePage() {
   return (
     <main>
-      <Hero
+      {/* <Hero
         spacing="max"
         subtitle="ARCHĒ"
         title="AI for business that turns complexity into clarity"
         text="Archē sets the standard for business performance by helping teams automate work and accelerate decisions that drive results — all in one scalable, secure workspace."
         button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
-        background={
-          <LandscapeBg />
-        }
+        background={<LandscapeBg />}
       >
         <div className="side-padding my-container relative">
-          {/* img 1 */}
           <img
             src="/AiChatDemo3.svg"
             alt=""
@@ -31,7 +28,7 @@ export default function ArchePage() {
 
       <TheArcheModel />
       <DiscoverArche />
-      <ArcheFeatures />
+      <ArcheFeatures /> */}
       <ArcheCallToAction />
     </main>
   );

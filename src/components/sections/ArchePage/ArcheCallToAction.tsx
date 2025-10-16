@@ -4,38 +4,36 @@ import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
 export default function ArcheCallToAction() {
   return (
-    <section className="my-container side-padding relative mt-[120px]">
+    <section className="relative mt-[120px] overflow-x-clip">
       {/* gradient circle */}
       <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2">
         <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
       </div>
 
       {/* titles */}
-      <div className="relative z-1 mx-auto mb-5 text-center">
+      <div className="my-container side-padding relative sm:top-5 xl:top-10 z-1 mx-auto space-y-5 text-center">
         <SectionSubTitle>LET’S ARCHĒ</SectionSubTitle>
+        <SectionTitle big>Ready to put AI to work?</SectionTitle>
       </div>
-      <div className="relative z-1 mx-auto text-center">
-        {/* arche logo */}
-        <div className="absolute top-4 -right-[2vw] -left-[2vw] z-0 block opacity-100">
-          <img
-            src="/arche-logo-teal.svg"
-            className="absolute top-0 w-full min-w-[1000px] opacity-30"
-          />
+
+      {/* arche logo */}
+      <div className="relative max-sm:mt-5">
+        <div className="absolute top-0 right-1/2 w-[100vw] min-w-[350px] translate-x-1/2 xl:max-w-[1280px] 2xl:max-w-[1536px]">
+          <img src="/arche-logo-teal.svg" className="w-full opacity-30" />
           <img
             src="/arche-logo-beige.svg"
-            className="absolute top-0 w-full min-w-[1000px] opacity-30"
+            className="absolute top-0 w-full opacity-30"
           />
         </div>
-        <div className="relative z-1">
-          <SectionTitle big>Ready to put AI to work?</SectionTitle>
+        {/* placeholder to maintain height */}
+        <div className="w-[100vw] min-w-[350px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
+          <img src="/arche-logo-teal.svg" className="w-full opacity-0" />
         </div>
       </div>
 
-      {/* spacing */}
-      <div className="my-12 aspect-square w-[90%] max-w-[310px] 2xl:max-w-[350px]" />
 
       {/* button */}
-      <div className="relative z-1 flex justify-center">
+      <div className="relative mt-12 sm:mt-16 flex justify-center">
         <Button variant={"black"}>REQUEST A DEMO</Button>
       </div>
     </section>
