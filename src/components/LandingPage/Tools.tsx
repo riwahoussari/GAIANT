@@ -3,73 +3,83 @@ import { SectionSubTitle, SectionTitle } from "../shared/Titles";
 
 export default function Tools() {
   return (
-    <section className="mt-[120px] flex flex-col items-center relative">
+    <section className="side-padding overflow-x-clip relative mt-[120px] flex flex-col items-center">
       {/* bg blur */}
-      <div className="absolute -z-1 left-0 top-1/2 -translate-1/2 w-[40vw] opacity-70">
+      <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
         <GradientCircle blur={"lg"} />
       </div>
 
       {/* titles */}
-      <SectionSubTitle className="text-center mb-5">
+      <SectionSubTitle className="mb-5 text-center">
         PART OF YOUR WORKFLOW
       </SectionSubTitle>
-      <SectionTitle big className="text-center max-w-[766px]">
+      <SectionTitle big className="max-w-[766px] text-center">
         Works seamlessly with the tools you already use
       </SectionTitle>
 
       {/* icons */}
-      <div className="relative overflow-x-cli w-full overflow-x-clip mt-16">
-        <div className="flex justify-between items-center gap-4 absolute w-max right-1/2 translate-x-1/2">
-          <img
-            src="/tools/Rectangle%20100.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-20"
-          />
-          <img
-            src="/tools/Rectangle%20101.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-40"
-          />
-          <img
-            src="/tools/Rectangle%2099.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-60"
-          />
-          <img
-            src="/tools/Rectangle%2098.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20104.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20108.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20106.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20103.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20107.png"
-            className="w-[7.5vw] aspect-square rounded-xl"
-          />
-          <img
-            src="/tools/Rectangle%20102.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-60"
-          />
-          <img
-            src="/tools/Rectangle%20105.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-40"
-          />
-          <img
-            src="/tools/Rectangle%20109.png"
-            className="w-[7.5vw] aspect-square rounded-xl opacity-20"
-          />
+      <div className="relative mt-16 w-full ">
+        <div className="absolute right-1/2 flex w-max translate-x-1/2 flex-col items-center justify-between gap-[min(18px,2.5vw)] lg:flex-row ">
+          <div className="flex items-center justify-between gap-[min(18px,2.5vw)]">
+            <Icon
+              className="opacity-60 lg:opacity-20"
+              src="/tools/Rectangle%20100.png"
+            />
+            <Icon
+              className="opacity-80 max-lg:-translate-y-15/100 lg:opacity-40"
+              src="/tools/Rectangle%20101.png"
+            />
+            <Icon
+              className="max-lg:-translate-y-3/10 lg:opacity-60"
+              src="/tools/Rectangle%2099.png"
+            />
+            <Icon
+              className="max-lg:-translate-y-3/10"
+              src="/tools/Rectangle%2098.png"
+            />
+            <Icon
+              className="max-lg:-translate-y-15/100 max-lg:opacity-80"
+              src="/tools/Rectangle%20104.png"
+            />
+            <Icon
+              className="max-lg:opacity-60"
+              src="/tools/Rectangle%20108.png"
+            />
+          </div>
+          <div className="flex items-center justify-between gap-[min(18px,2.5vw)]">
+            <Icon
+              className="max-lg:opacity-60"
+              src="/tools/Rectangle%20106.png"
+            />
+            <Icon
+              className="max-lg:-translate-y-15/100 max-lg:opacity-80"
+              src="/tools/Rectangle%20103.png"
+            />
+            <Icon className="max-lg:-translate-y-3/10" src="/tools/Rectangle%20107.png" />
+            <Icon className="max-lg:-translate-y-3/10 lg:opacity-60" src="/tools/Rectangle%20102.png" />
+            <Icon
+              className="max-lg:-translate-y-15/100 opacity-80 lg:opacity-40"
+              src="/tools/Rectangle%20105.png"
+            />
+            <Icon
+              className="opacity-60 lg:opacity-20"
+              src="/tools/Rectangle%20109.png"
+            />
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function Icon({ src, className = "" }: { src: string; className?: string }) {
+  return (
+    <img
+      src={src}
+      className={
+        "aspect-square w-[16vw] sm:w-[7.5vw] max-w-[120px] rounded-lg xs:rounded-xl  sm:min-w-[90px] " +
+        className
+      }
+    />
   );
 }

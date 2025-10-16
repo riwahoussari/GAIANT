@@ -1,26 +1,30 @@
 import type { HTMLAttributes } from "react";
 import { Arrow2Svg } from "../shared/ArrowSvg";
 import GradientCircle from "../shared/GradientCircle";
-import { SectionSubTitle, SectionTitle } from "../shared/Titles";
+import { SectionSubTitle, SectionTitle, TitleBlock } from "../shared/Titles";
 
 export default function WhatThisMeans() {
   return (
-    <section className="side-padding mt-[150px]">
+    <section className="side-padding my-container mt-[150px]">
       {/* titles */}
       <div>
-        <SectionSubTitle>REDEFINING YOUR WORK DAY</SectionSubTitle>
-        <SectionTitle>What this means for you</SectionTitle>
+        <TitleBlock
+          title="What this means for you"
+          subtitle="REDEFINING YOUR WORK DAY"
+        />
       </div>
 
       {/* content */}
-      <div className="mt-[40px] flex justify-between gap-16 relative">
-        <div className="absolute right-1/2 bottom-1/2 translate-1/2 z-0">
+      <div className="relative mt-[40px] flex justify-between gap-16 max-lg:flex-col">
+        <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2">
           <GradientCircle blur={"lg"} />
         </div>
-        <div className="w-1/2 relative">
+        {/* image */}
+        <div className="relative w-full max-w-[700px] lg:w-1/2">
           <img src="/AiChatDemo2.svg" />
         </div>
-        <div className="relative flex flex-col w-[40%]">
+        {/* Accordion */}
+        <div className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]">
           <AccordionItem
             title="For your work"
             subtitle="WHERE WE MAKE A DIFFERENCE"
@@ -57,24 +61,24 @@ function AccordionItem({
       {/* border top */}
       <div
         className={
-          "absolute top-0 left-0 right-0 h-[2px] rounded-full" +
+          "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
           (active ? " bg-dark-green-blue-gradient" : " bg-black/25")
         }
       />
 
       {/* content */}
-      <p className="text-[25px] my-4">{title}</p>
+      <p className="text-25 my-4">{title}</p>
       {subtitle && (
-        <p className="my-5 text-teal text-[12px] font-ibm! font-semibold">
+        <p className="my-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
       )}
       {list && (
-        <div className="space-y-[21px] mb-8">
+        <div className="mb-8 space-y-[21px]">
           {list.map((string, i) => (
-            <div key={i} className="flex items-center gap-7">
-              <Arrow2Svg className="w-4" />
-              <p className="text-[16px] leading-[21px]">{string}</p>
+            <div key={i} className="flex items-center gap-5 xs:gap-7">
+              <Arrow2Svg className="w-3 xs:w-4" />
+              <p className="text-16">{string}</p>
             </div>
           ))}
         </div>

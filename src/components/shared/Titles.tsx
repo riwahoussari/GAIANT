@@ -13,7 +13,7 @@ export function SectionTitle({
     <h2
       className={
         (big
-          ? "text-[46px] leading-[53px] xs:text-[69px] xs:leading-[76px]"
+          ? "text-[42px] leading-[44px] xs:text-[69px] xs:leading-[76px]"
           : "text-[32px] leading-[39px] xs:text-[40px] xs:leading-[47px]") +
         " " +
         className
@@ -53,7 +53,7 @@ export function TitleBlock({
         <SectionTitle>{title}</SectionTitle>
       </div>
       {button && (
-        <Button arrow={"normal"} variant={"secondary"}>
+        <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
           {button}
         </Button>
       )}
