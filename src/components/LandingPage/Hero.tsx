@@ -4,7 +4,7 @@ import GradientCircle from "../shared/GradientCircle";
 
 export default function Hero() {
   return (
-    <section className="side-padding my-container relative">
+    <section className=" relative">
       {/* gradients bg */}
       <div className="absolute top-0 right-0 bottom-0 left-0 z-0 overflow-x-clip">
         <div className="relative h-full">
@@ -22,7 +22,7 @@ export default function Hero() {
       </div>
 
       {/* text content */}
-      <div className="relative flex flex-col pt-[200px] text-white lg:flex-row lg:gap-[40px] xl:gap-[56px] xl:pt-[280px]">
+      <div className="side-padding my-container relative flex flex-col pt-[200px] text-white lg:flex-row lg:gap-[40px] xl:gap-[56px] xl:pt-[280px]">
         <h1 className="max-w-[547px] text-[min(12vw,50px)] leading-[calc(min(12vw,50px)+7px)] xs:text-[58px] xs:leading-[65px] xl:max-w-[651px] xl:text-[69px] xl:leading-[76px]">
           One AI work platform for any kind of work
         </h1>
@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
 
       {/* images */}
-      <div className="relative mt-[140px] grid lg:grid-cols-7">
+      <div className="side-padding my-container relative mt-[140px] grid lg:grid-cols-7">
         {/* img 1 */}
         <div className="relative col-span-5 flex items-center justify-center rounded-xl bg-white/50 p-2 py-4 xs:p-6 lg:me-5 lg:aspect-5/3! lg:px-0 lg:py-12">
           <img
