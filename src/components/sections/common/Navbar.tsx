@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import Button from "../../ui/Button";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type MouseEventHandler,
+  type ReactNode,
+} from "react";
 import {
   AnimatePresence,
   motion as m,
   useMotionValueEvent,
   useScroll,
+  type Variants,
 } from "motion/react";
 import GaiantLogoSvg from "../../ui/GaiantLogoSvg";
 import { INDUSTRIES } from "../../../lib/constants";
 import ArrowSvg from "../../ui/ArrowSvg";
+import { ChevronDown } from "lucide-react";
 
 export default function Navbar({
   transparentBg = false,
@@ -84,11 +92,11 @@ export default function Navbar({
       <div className="my-container side-padding relative z-100 flex items-center justify-between">
         {/* logo */}
         <Link to="/">
-          <div className="w-24 lg:min-w-[160px] translate-y-1 xs:w-32">
+          <div className="w-24 translate-y-1 xs:w-32 lg:min-w-[160px]">
             <GaiantLogoSvg
               color={
-                textColor == "black"
-                  ? textColor
+                textColor == "black" || mobileMenuOpen
+                  ? "black"
                   : transparentBg
                     ? "white"
                     : "black"
@@ -127,11 +135,11 @@ export default function Navbar({
           </FlyoutLink>
         </div>
 
-        {/* button */}
-        <div className="lg:w-[160px]">
+        {/* button and burger menu */}
+        <div className="relative z-1 flex items-center justify-end gap-5 lg:min-w-[160px]">
           <Button
             variant={
-              textColor == "black"
+              textColor == "black" || mobileMenuOpen
                 ? "black"
                 : transparentBg
                   ? "primary"
@@ -140,8 +148,31 @@ export default function Navbar({
           >
             REQUEST A DEMO
           </Button>
+          <div
+            ref={burgerBtnRef}
+            className="w-7 sm:hidden"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            <BurgerMenuSvg
+              color={
+                textColor == "black" || mobileMenuOpen
+                  ? "black"
+                  : transparentBg
+                    ? "white"
+                    : "black"
+              }
+              isOpen={mobileMenuOpen}
+            />
+          </div>
         </div>
       </div>
+      {/* Mobile Navigation Menu */}
+      <MobileNavMenu
+        ref={mobileMenuRef}
+        isOpen={mobileMenuOpen}
+        setIsOpen={setMobileMenuOpen}
+      />
+
       {/* overlay */}
       <AnimatePresence>
         {hovering && (
@@ -301,5 +332,221 @@ function CompanyFlyoutContent() {
         </Link>
       </div>
     </div>
+  );
+}
+
+type TLinkRecord = { name: string; link: string; sublinks?: TLinkRecord[] };
+const LINKS: TLinkRecord[] = [
+  {
+    name: "Products",
+    link: "/arche",
+    sublinks: [{ name: "Archē", link: "/arche" }],
+  },
+  {
+    name: "Solutions",
+    link: "/industries",
+    sublinks: INDUSTRIES.map((industry, i) => {
+      return { link: `/industries/${i}`, name: industry.name };
+    }),
+  },
+  {
+    name: "Company",
+    link: "/about",
+    sublinks: [
+      { name: "About", link: "/about" },
+      { name: "News", link: "/news" },
+      { name: "Careers", link: "/careers" },
+    ],
+  },
+];
+
+// MOBILE NAVBAR
+function MobileNavMenu({
+  isOpen,
+  setIsOpen,
+  ref,
+}: {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  ref: React.RefObject<HTMLDivElement | null>;
+}) {
+  const [selectedAccordion, setSelectedAccordion] = useState<number>(0);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Save scroll position so it doesn’t jump when unlocked
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      // Restore scroll position
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence mode="wait">
+      {isOpen && (
+        <m.div
+          ref={ref} // Attach the ref to track clicks outside
+          variants={menuSlide as Variants}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          className="absolute top-0 right-0 left-0 z-0 max-h-dvh overflow-scroll bg-white pt-20 pb-6 text-black shadow-lg sm:hidden"
+        >
+          <nav>
+            {LINKS.map((link, i) => (
+              <MobileNavLink
+                key={i} // Use unique key for better React reconciliation
+                index={i}
+                {...link}
+                selected={i + 1 == selectedAccordion}
+                closeMenu={() => setIsOpen(false)}
+                onClick={() => {
+                  // close/open accordion on click
+                  setSelectedAccordion((prev) => (prev === i + 1 ? 0 : i + 1));
+                }}
+              />
+            ))}
+          </nav>
+        </m.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// Motion animation variants for the menu slide-in effect
+const menuSlide = {
+  initial: { y: "-100%" }, // Start off-screen above
+  enter: { y: "0%", transition: { duration: 0.5, ease: "easeInOut" } },
+  exit: { y: "-100%", transition: { duration: 0.5, ease: "easeInOut" } },
+};
+
+// Component for individual navigation links
+function MobileNavLink({
+  index,
+  onClick,
+  closeMenu,
+  link,
+  name,
+  sublinks,
+  selected,
+}: {
+  selected: boolean;
+  index: number;
+  onClick: MouseEventHandler<HTMLDivElement>;
+  closeMenu: () => void;
+} & TLinkRecord) {
+  const sublinksRef = useRef<HTMLDivElement>(null);
+  return (
+    <m.div
+      custom={LINKS.length - index} // Pass custom value for staggered animation
+      variants={linkSlide as Variants}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      onClick={onClick}
+      className={`px-4 py-8`}
+    >
+      <div className="flex justify-between">
+        <Link onClick={closeMenu} to={link} className="relative text-3xl">
+          {name}
+          <div className="absolute right-0 -bottom-0 left-0 h-[2px] rounded-full bg-black" />
+        </Link>
+        {sublinks && (
+          <ChevronDown
+            style={{ rotate: selected ? "180deg" : "0deg" }}
+            className="h-8 w-8 duration-300 ease-in-out"
+          />
+        )}
+      </div>
+
+      {sublinks && (
+        <div
+          style={{
+            height: selected ? sublinksRef.current?.offsetHeight || 0 : 0,
+          }}
+          className={
+            "overflow-y-hidden px-6 text-xl transition-all duration-300 ease-in-out"
+          }
+        >
+          <div className="flex flex-col gap-2 pt-6" ref={sublinksRef}>
+            {sublinks.map((sublink, i) => (
+              <Link
+                onClick={closeMenu}
+                key={i}
+                className="py-3"
+                to={sublink.link}
+              >
+                {sublink.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </m.div>
+  );
+}
+
+// Motion animation variants for individual link animations
+const linkSlide = {
+  initial: { y: "-200%" }, // Start off-screen above
+  enter: (i: number) => ({
+    y: "0%", // Animate to normal position
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+      delay: 0.1 * i, // Staggered effect for each link
+    },
+  }),
+};
+
+function BurgerMenuSvg({
+  isOpen,
+  color = "white",
+}: {
+  isOpen: boolean;
+  color?: "black" | "white";
+}) {
+  return (
+    <svg viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="burger-menu-icon">
+        {/* Top line - rotates down when isOpen is true */}
+        <path
+          className={
+            "origin-top-left duration-300 ease-in-out " +
+            (isOpen ? "translate-x-2 rotate-45" : " translate-y-1")
+          }
+          id="top-line"
+          opacity={1}
+          d="M27 2H1"
+          stroke={color}
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        {/* Bottom line - rotates up when isOpen is true */}
+        <path
+          className={
+            "origin-bottom-left duration-300 ease-in-out " +
+            (isOpen ? " translate-x-2 -rotate-45" : " -translate-y-1")
+          }
+          id="bottom-line"
+          opacity={1}
+          d="M27 21H1"
+          stroke={color}
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
   );
 }
