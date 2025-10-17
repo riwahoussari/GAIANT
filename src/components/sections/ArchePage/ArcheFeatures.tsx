@@ -1,10 +1,10 @@
-import { TitleBlock2 } from "../../ui/Titles";
+import { CenteredTitleBlock } from "../../ui/Titles";
 
 export default function ArcheFeatures() {
   return (
     <section className="side-padding my-container flex flex-col items-center gap-y-8 overflow-x-clip sm:gap-y-14">
       {/* title */}
-      <TitleBlock2
+      <CenteredTitleBlock
         title="Make AI work for you"
         subtitle="No matter the role or industry, Archē handles the repetitive work so
           your people can focus on the big picture"

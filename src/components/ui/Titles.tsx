@@ -46,7 +46,7 @@ export function TitleBlock({
 }: {
   title: string;
   subtitle?: string;
-  button?: string;
+  button?: ReactNode;
 }) {
   return (
     <div className="items-start justify-between sm:flex">
@@ -61,16 +61,12 @@ export function TitleBlock({
           ))}
         </SectionTitle>
       </div>
-      {button && (
-        <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
-          {button}
-        </Button>
-      )}
+      {button}
     </div>
   );
 }
 
-export function TitleBlock2({
+export function CenteredTitleBlock({
   title,
   subtitle,
 }: {

@@ -1,6 +1,8 @@
 import { INDUSTRIES } from "../../../lib/constants";
 import { TitleBlock } from "../../ui/Titles";
 import { CardsSlider, IndustryCard } from "../../ui/Cards";
+import Button from "../../ui/Button";
+import { Link } from "react-router-dom";
 
 export default function IndustriesWeEmpower() {
   return (
@@ -9,7 +11,13 @@ export default function IndustriesWeEmpower() {
       <TitleBlock
         subtitle="TAILORED TO EVERY SECTOR"
         title="Industries We Empower"
-        button="SEE ALL"
+        button={
+          <Link to="/industries">
+            <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
+              SEE ALL
+            </Button>
+          </Link>
+        }
       />
 
       <CardsSlider>
@@ -27,5 +35,3 @@ export default function IndustriesWeEmpower() {
     </section>
   );
 }
-
-

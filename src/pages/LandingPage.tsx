@@ -1,4 +1,3 @@
-import BlogPosts from "../components/sections/LandingPage/BlogPosts";
 import CallToAction from "../components/sections/common/CallToAction";
 import Feature from "../components/sections/LandingPage/Feature";
 import Hero from "../components/sections/common/Hero";
@@ -12,6 +11,9 @@ import AccordionSection from "../components/sections/common/AccordionSection";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
+import NewsArticlesCarousel from "../components/sections/common/NewsArticlesCarousel";
+import { TitleBlock } from "../components/ui/Titles";
+import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -87,7 +89,21 @@ export default function LandingPage() {
             },
           ]}
         />
-        <BlogPosts />
+        <NewsArticlesCarousel
+          titleBlock={
+            <TitleBlock
+              title="Our latest thinking"
+              subtitle="INSIGHTS AND IDEAS"
+              button={
+                <Link to="/news">
+                  <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
+                    SEE ALL
+                  </Button>
+                </Link>
+              }
+            />
+          }
+        />
         <CallToAction />
       </main>
     </>

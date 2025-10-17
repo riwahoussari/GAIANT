@@ -1,6 +1,10 @@
 import Button from "../components/ui/Button";
 import ShareIcon from "../assets/share-icon.svg";
 import Navbar from "../components/sections/common/navbar/Navbar";
+import CallToAction from "../components/sections/common/CallToAction";
+import NewsArticlesCarousel from "../components/sections/common/NewsArticlesCarousel";
+import { TitleBlock } from "../components/ui/Titles";
+import { Link } from "react-router-dom";
 
 export default function NewsArticlePage() {
   return (
@@ -8,6 +12,21 @@ export default function NewsArticlePage() {
       <Navbar transparentBg={false} />
       <main>
         <Article />
+        <NewsArticlesCarousel
+          titleBlock={
+            <TitleBlock
+              title="Read Next"
+              button={
+                <Link to="/news">
+                  <Button variant={"black"} arrow={"normal"}>
+                    SEE ALL
+                  </Button>
+                </Link>
+              }
+            />
+          }
+        />
+        <CallToAction />
       </main>
     </>
   );

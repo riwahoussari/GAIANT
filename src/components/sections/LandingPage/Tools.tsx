@@ -1,12 +1,45 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
 import GradientCircle from "../../ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
 export default function Tools() {
+  const [translateYs, setTranslateYs] = useState<number[]>(Array(12).fill(0));
+
+  const updateTranslateYValues = (i: number) => {
+    setTranslateYs(() => {
+      const next = Array(12).fill(0);
+      next[i] = 30;
+      if (i - 1 >= 0) next[i - 1] = 15;
+      if (i - 2 >= 0) next[i - 2] = 3;
+      if (i + 1 < next.length) next[i + 1] = 15;
+      if (i + 2 < next.length) next[i + 2] = 3;
+      return next;
+    });
+  };
+
+  const vanishTranslateYValues = () => setTranslateYs(Array(12).fill(0));
+
+  const icons = [
+    "/tools/Rectangle%20100.png",
+    "/tools/Rectangle%20101.png",
+    "/tools/Rectangle%2099.png",
+    "/tools/Rectangle%2098.png",
+    "/tools/Rectangle%20104.png",
+    "/tools/Rectangle%20108.png",
+    "/tools/Rectangle%20106.png",
+    "/tools/Rectangle%20103.png",
+    "/tools/Rectangle%20107.png",
+    "/tools/Rectangle%20102.png",
+    "/tools/Rectangle%20105.png",
+    "/tools/Rectangle%20109.png",
+  ];
+  
   return (
     <section className="side-padding relative mt-[120px] flex flex-col items-center overflow-x-clip">
-      {/* bg blur */}
+      {/* background blur */}
       <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
-        <GradientCircle blur={"lg"} />
+        <GradientCircle blur="lg" />
       </div>
 
       {/* titles */}
@@ -19,59 +52,38 @@ export default function Tools() {
 
       {/* icons */}
       <div className="relative mt-16 w-full">
-        <div className="absolute right-1/2 flex w-max translate-x-1/2 flex-col items-center justify-between gap-[min(18px,2.5vw)] lg:flex-row">
-          <div className="flex items-center justify-between gap-[min(18px,2.5vw)]">
-            <Icon
-              className="opacity-60 lg:opacity-20"
-              src="/tools/Rectangle%20100.png"
-            />
-            <Icon
-              className="opacity-80 max-lg:-translate-y-15/100 lg:opacity-40"
-              src="/tools/Rectangle%20101.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-3/10 lg:opacity-60"
-              src="/tools/Rectangle%2099.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-3/10"
-              src="/tools/Rectangle%2098.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-15/100 max-lg:opacity-80"
-              src="/tools/Rectangle%20104.png"
-            />
-            <Icon
-              className="max-lg:opacity-60"
-              src="/tools/Rectangle%20108.png"
-            />
-          </div>
-          <div className="flex items-center justify-between gap-[min(18px,2.5vw)]">
-            <Icon
-              className="max-lg:opacity-60"
-              src="/tools/Rectangle%20106.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-15/100 max-lg:opacity-80"
-              src="/tools/Rectangle%20103.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-3/10"
-              src="/tools/Rectangle%20107.png"
-            />
-            <Icon
-              className="max-lg:-translate-y-3/10 lg:opacity-60"
-              src="/tools/Rectangle%20102.png"
-            />
-            <Icon
-              className="opacity-80 max-lg:-translate-y-15/100 lg:opacity-40"
-              src="/tools/Rectangle%20105.png"
-            />
-            <Icon
-              className="opacity-60 lg:opacity-20"
-              src="/tools/Rectangle%20109.png"
-            />
-          </div>
+        <div
+          onMouseLeave={vanishTranslateYValues}
+          className="absolute right-1/2 flex w-max translate-x-1/2 flex-col items-center justify-between gap-[min(18px,2.5vw)] lg:flex-row"
+        >
+          {/* Split into two rows */}
+          {[0, 1].map((row) => (
+            <div
+              key={row}
+              className={
+                "flex items-center justify-between gap-[min(18px,2.5vw)] " +
+                (row === 1 ? " max-lg:flex-row-reverse" : "")
+              }
+            >
+              {icons.slice(row * 6, row * 6 + 6).map((src, i) => {
+                const index = row * 6 + i;
+                return (
+                  <motion.div
+                    key={src}
+                    animate={{ y: -translateYs[index] + "%" }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.25,
+                    }}
+                    className="max-lg:pointer-events-none"
+                    onMouseEnter={() => updateTranslateYValues(index)}
+                  >
+                    <Icon src={src} />
+                  </motion.div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -86,6 +98,7 @@ function Icon({ src, className = "" }: { src: string; className?: string }) {
         "aspect-square w-[16vw] max-w-[120px] rounded-lg xs:rounded-xl sm:w-[7.5vw] sm:min-w-[90px] " +
         className
       }
+      alt=""
     />
   );
 }

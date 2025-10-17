@@ -4,7 +4,7 @@ import Hero from "../components/sections/common/Hero";
 import ArrowSvg from "../components/ui/ArrowSvg";
 import Button from "../components/ui/Button";
 import GradientCircle from "../components/ui/GradientCircle";
-import { TitleBlock2 } from "../components/ui/Titles";
+import { CenteredTitleBlock } from "../components/ui/Titles";
 import { INDUSTRIES } from "../lib/constants";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { useMotionValueEvent, useScroll } from "motion/react";
@@ -78,7 +78,7 @@ function TestimonialSection() {
       </div>
 
       <div className="relative mb-8">
-        <TitleBlock2
+        <CenteredTitleBlock
           title="Hear from our customers"
           subtitle="Industry leaders trust Gaiant to deliver better customer experiences"
         />

@@ -1,17 +1,16 @@
-import { TitleBlock } from "../../ui/Titles";
 import { ArticleCard, CardsSlider } from "../../ui/Cards";
 import { ARTICLES } from "../../../lib/constants";
+import type { ReactNode } from "react";
 
-export default function BlogPosts() {
+export default function NewsArticlesCarousel({
+  titleBlock,
+}: {
+  titleBlock: ReactNode;
+}) {
   return (
     <section className="my-container side-padding mt-[140px] max-xl:overflow-x-hidden">
       {/* title */}
-
-      <TitleBlock
-        title="Our latest thinking"
-        subtitle="INSIGHTS AND IDEAS"
-        button="SEE ALL"
-      />
+      {titleBlock}
 
       {/* cards */}
       <CardsSlider displaySlider={false}>

@@ -3,46 +3,57 @@ export const INDUSTRIES: TIndustryRecord[] = [
   {
     name: "Banking & Financial Services",
     img: "/industries/Industries-banking.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Insurance",
     img: "/industries/Industries-insurance.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Healthcare & Life Sciences",
     img: "/industries/Industries-healthcare.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Technology, Media & Telecommunications (TMT)",
     img: "/industries/Industries-tech.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Public Sector & Government",
     img: "/industries/Industries-government.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Energy & Utilities",
     img: "/industries/Industries-energy.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Legal Services",
     img: "/industries/Industries-legal.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Real Estate & Construction",
     img: "/industries/Industries-real-estate.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Retail & Consumer Goods",
     img: "/industries/Industries-retail.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Hopitality & Leisure",
     img: "/industries/Industries-hospitality.jpg",
+    description: "Advancing patient care and biological research",
   },
   {
     name: "Education",
     img: "/industries/Industries-education.jpg",
+    description: "Advancing patient care and biological research",
   },
 ];
 
@@ -133,7 +144,11 @@ export const OPEN_ROLES: IRoleRecord[] = [
   },
 ];
 
-export type TLinkRecord = { name: string; link: string; sublinks?: TLinkRecord[] };
+export type TLinkRecord = {
+  name: string;
+  link: string;
+  sublinks?: TLinkRecord[];
+};
 export const LINKS: TLinkRecord[] = [
   {
     name: "Products",

@@ -5,6 +5,7 @@ import GradientCircle from "./GradientCircle";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { motion as m } from "motion/react";
+import { Link } from "react-router-dom";
 
 export function IndustryCard({
   imgSrc,
@@ -19,8 +20,12 @@ export function IndustryCard({
   button?: boolean;
   className?: string;
 }) {
+  const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
+  const [hovering, setHovering] = useState(false);
   return (
     <div
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
       className={"group relative overflow-clip text-white " + (className || "")}
     >
       <div
@@ -36,10 +41,25 @@ export function IndustryCard({
       <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-tr from-black/0 to-black/15 p-3 py-4 backdrop-blur-md xs:p-6">
         <p className="text-25">{title}</p>
 
-        {text && <p className="text-16 my-2 max-w-[180px] xs:mt-4">{text}</p>}
-        {button && (
-          <div className="flex justify-end">
-            <Button>READ MORE</Button>
+        {(text || button) && (
+          <div
+            style={{
+              height: hovering ? (contentRef.current?.clientHeight  || 0) * 1.1 : 0,
+            }}
+            className={
+              "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
+            }
+          >
+            <div ref={contentRef}>
+              {text && <p className="text-16 mt-2 max-w-[180px]">{text}</p>}
+              {button && (
+                <div className="flex justify-end">
+                  <Link to={`/industries/${title}`}>
+                    <Button>READ MORE</Button>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </div>
@@ -112,7 +132,6 @@ const gradientCircleVariants = cva("absolute z-0 w-75/100 ", {
     position: "tr",
   },
 });
-
 interface GradientProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof gradientCircleVariants> {}
