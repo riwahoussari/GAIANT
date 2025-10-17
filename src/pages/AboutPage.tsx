@@ -3,7 +3,7 @@ import Hero from "../components/sections/common/Hero";
 import { TrustedBy } from "../components/sections/common/TrustedBy";
 import Button from "../components/ui/Button";
 import { GlassCard } from "../components/ui/Cards";
-import GradientCircle from "../components/ui/GradientCircle";
+import GradientCircle, { BigEllipseGradient } from "../components/ui/GradientCircle";
 import ImagesLayout from "../components/ui/ImagesLayout";
 import { SectionSubTitle, TitleBlock } from "../components/ui/Titles";
 
@@ -93,12 +93,7 @@ function OurStory() {
 function OurMission() {
   return (
     <section className="side-padding my-container relative mt-[120px]">
-      <div className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/3 opacity-60 md:opacity-40">
-        <GradientCircle
-          className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-y-300 md:scale-y-200 md:-rotate-90 lg:blur-[max(5vw,50px)]! xl:blur-[max(3.5vw,35px)]!"
-          colorr={"teal"}
-        />
-      </div>
+      <BigEllipseGradient />
 
       <TitleBlock title="We're on a mission" subtitle="WHO IS GAIANT" />
 

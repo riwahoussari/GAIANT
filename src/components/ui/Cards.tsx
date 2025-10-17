@@ -68,11 +68,33 @@ export function GlassCard({
       </div>
       {/* text */}
       <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
-        <p className="font-ibm! text-[11px] leading-[21px] font-semibold text-teal xs:text-[12px]">
+        <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
         <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
       </div>
+    </div>
+  );
+}
+
+export function SimpleCard({
+  title,
+  text,
+  className,
+}: {
+  title: string;
+  text: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={
+        "flex flex-col justify-between gap-8 bg-white/50 px-3 py-5 text-black xs:px-5 xs:py-8 " +
+        (className || "")
+      }
+    >
+      <p className="text-25">{title}</p>
+      <p className="text-[16px] leading-[21px] xs:text-[17px]">{text}</p>
     </div>
   );
 }

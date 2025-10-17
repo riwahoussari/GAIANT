@@ -89,3 +89,46 @@ export const ARTICLES: IArticleRecord[] = [
     imgSrc: "/blogs/blog-4.jpg",
   },
 ];
+
+type IRoleRecord = {
+  title: string;
+  text: string;
+};
+export const OPEN_ROLES: IRoleRecord[] = [
+  {
+    title: "Enterprise Solutions Associate",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "Quality Manager",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "SVP of Sales, Enterprise, Technology - Banking",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "Director of Quality",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "SVP of Sales, Enterprise, Technology - Healthcare",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "Senior Front-End Engineer",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "Procurement Analyst",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "AI Data Trainer, Arabic",
+    text: "(Beirut - Remote)",
+  },
+  {
+    title: "Research Internship",
+    text: "(Beirut - Remote)",
+  },
+];

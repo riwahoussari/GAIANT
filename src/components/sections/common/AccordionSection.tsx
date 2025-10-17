@@ -17,6 +17,8 @@ export default function AccordionSection({
   img,
   accordionContent,
   className,
+  button,
+  withGradient = true
 }: {
   title: string;
   subtitle: string;
@@ -24,6 +26,8 @@ export default function AccordionSection({
   img: ReactNode;
   accordionContent: TAccordionContent[];
   className?: string;
+  button?: ReactNode;
+  withGradient?: boolean
 }) {
   return (
     <section
@@ -39,13 +43,20 @@ export default function AccordionSection({
             <p className="text-16">{text}</p>
           </div>
         )}
+        {button && (
+          <div className="flex w-full max-w-[550px] lg:justify-end pb-2 lg:w-1/2 xl:w-[40%]">
+            {button}
+          </div>
+        )}
       </div>
 
       {/* content */}
       <div className="relative mt-[40px] flex justify-between gap-16 max-lg:flex-col">
-        <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
-          <GradientCircle blur={"lg"} />
-        </div>
+        {withGradient && (
+          <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
+            <GradientCircle blur={"lg"} />
+          </div>
+        )}
         {/* image */}
         <div className="relative w-full max-w-[700px] lg:w-1/2">{img}</div>
         {/* Accordion */}
