@@ -14,7 +14,7 @@ function Article() {
     <section className="my-container side-padding">
       <div className="relative mt-[100px]">
         {/* back button */}
-        <div className="xl:absolute mb-5 top-0 left-0">
+        <div className="top-0 left-0 mb-5 xl:absolute">
           <Button
             arrow={"back"}
             className="bg-transparent! px-0!"
@@ -28,19 +28,21 @@ function Article() {
         <div className="mx-auto max-w-[680px]">
           {/* title */}
           <div className="space-y-2.5">
-            <p className="xs:text-[40px] xs:leading-[44px] text-[32px] leading-[36px]">
+            <p className="text-[32px] leading-[36px] xs:text-[40px] xs:leading-[44px]">
               Why Language is the Next Frontier of Business Intelligence
             </p>
-            <p className="xs:text-[22px] xs:leading-[27px] text-[18px] leading-[22px]">
+            <p className="text-[18px] leading-[22px] xs:text-[22px] xs:leading-[27px]">
               Data alone is no longer enough—understanding and harnessing
               language is becoming the decisive edge for modern businesses.
             </p>
 
             <div className="my-8 flex items-center justify-between text-teal">
-              <p className="font-ibm xs:text-[15px] text-[14px]">GAIANT TEAM - SEP 19, 2025</p>
+              <p className="font-ibm text-[14px] xs:text-[15px]">
+                GAIANT TEAM - SEP 19, 2025
+              </p>
 
               <div className="flex gap-1 xs:gap-2">
-                <p className="font-bold xs:text-[14px] text-[13px]">SHARE</p>
+                <p className="text-[13px] font-bold xs:text-[14px]">SHARE</p>
                 <img className="w-3.5 xs:w-4" src={ShareIcon} />
               </div>
             </div>
@@ -69,11 +71,11 @@ function Article() {
             more data, but about smarter language.
             <br />
             <br />
-            <span className="relative font-bold">
+            <span className="relative inline-block font-bold max-md:ps-5">
               “Language is the fabric of decision-making,” says Dr. Lina Aoun, a
               computational linguist. “It’s how people express intent, doubt,
               and nuance. Things spreadsheets can’t capture.”
-              <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 -left-5 w-1" />
+              <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
             </span>
             <br />
             <br />
@@ -91,11 +93,11 @@ function Article() {
             dialogue into measurable business outcomes.
             <br />
             <br />
-            <span className="relative font-bold">
+            <span className="relative inline-block font-bold max-md:ps-5">
               “Numbers tell you what happened. Language tells you why,” explains
               Samir Khoury, Head of Data at a global retail firm. “That
               distinction is what moves companies from reactive to predictive.”
-              <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 -left-5 w-1" />
+              <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
             </span>
             <br />
             <br />
