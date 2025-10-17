@@ -1,9 +1,10 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import ArrowSvg from "./ArrowSvg";
 import Button from "./Button";
 import GradientCircle from "./GradientCircle";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
+import { motion as m } from "motion/react";
 
 export function IndustryCard({
   imgSrc,
@@ -193,6 +194,12 @@ export function ArticleCard({
   );
 }
 
+type TSliderValues = {
+  visibleCards: number;
+  totalCards: number;
+  slideDifference: number;
+  slidableDistance: number;
+};
 export function CardsSlider({
   displaySlider = true,
   children,
@@ -200,28 +207,104 @@ export function CardsSlider({
   displaySlider?: boolean;
   children: ReactNode;
 }) {
+  const cardsRef = useRef<HTMLDivElement>(null); // has width of all cards combined
+  const cardsContainerRef = useRef<HTMLDivElement>(null); // has width of visible container
+  const [slidePercent, setSlidePercent] = useState(0);
+  const [values, setValues] = useState<TSliderValues>();
+  const {
+    visibleCards = 0,
+    totalCards = 0,
+    slideDifference = 0,
+    slidableDistance = 0,
+  } = values || {};
+
+  const calculateValues = (): TSliderValues => {
+    if (!cardsContainerRef.current || !cardsRef.current)
+      return {
+        visibleCards: 0,
+        totalCards: 0,
+        slideDifference: 0,
+        slidableDistance: 0,
+      };
+    const cards = cardsRef.current;
+    const container = cardsContainerRef.current;
+
+    const totalCards = cards.childElementCount;
+    const cardWidth = cards.clientWidth / totalCards;
+    const visibleCards = Math.min(container.clientWidth / cardWidth);
+    const hiddenCards = totalCards - visibleCards;
+    const slideDifference = Math.round(2000 / hiddenCards) / 1000;
+
+    const slidableDistance = hiddenCards * cardWidth;
+
+    return { visibleCards, totalCards, slideDifference, slidableDistance };
+  };
+
+  const slideValue = Math.max(0, Math.min(slidePercent, 1)) * slidableDistance;
+  const slidedCards =
+    (Math.max(0, Math.min(slidePercent, 1)) / slideDifference) * 2;
+  const progressBarWidth = ((visibleCards + slidedCards) / totalCards) * 100;
+
+  const handleLeft = () => {
+    setSlidePercent((prev) =>
+      prev - slideDifference < 0 ? 0 : prev - slideDifference
+    );
+  };
+
+  const handleRight = () => {
+    setSlidePercent((prev) => (prev < 1 ? prev + slideDifference : prev));
+  };
+
+  useEffect(
+    () => setValues(calculateValues()),
+    [cardsRef, cardsContainerRef, cardsRef.current, cardsContainerRef.current]
+  );
+
   return (
     <>
-      {" "}
       {/* cards */}
-      <div className="mt-[40px] xl:overflow-x-hidden">
-        <div className="flex w-max items-start gap-5">{children}</div>
+      <div ref={cardsContainerRef} className="mt-[40px] xl:overflow-x-hidden">
+        <m.div
+          animate={{
+            x: `-${slideValue}px`,
+          }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+          className="flex w-max items-start gap-5"
+          ref={cardsRef}
+        >
+          {children}
+        </m.div>
       </div>
       {/* slider */}
       {displaySlider && (
         <div className="mx-auto mt-10 flex w-9/10 max-w-[580px] items-center justify-center gap-3 sm:gap-5 lg:w-1/2 lg:min-w-[580px]">
-          <ArrowSvg
-            color="var(--color-teal)"
-            className="w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px]"
-          />
-          <div className="flex w-full items-center justify-center gap-1.5 sm:gap-3">
-            <div className="bg-dark-green-blue-gradient h-1 w-[20%] rounded-full" />
-            <div className="h-1 w-[80%] rounded-full bg-black/25" />
+          {/* left arrow */}
+          <div onClick={handleLeft}>
+            <ArrowSvg
+              color="var(--color-teal)"
+              className="w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px]"
+            />
           </div>
-          <ArrowSvg
-            color="var(--color-teal)"
-            className="w-6 cursor-pointer 2xl:-translate-y-[1px]"
-          />
+
+          {/* progress bar */}
+          <div className="flex w-full items-center justify-center gap-1.5 sm:gap-3">
+            <m.div
+              animate={{ width: `${progressBarWidth}%` }}
+              className="bg-dark-green-blue-gradient h-1 rounded-full"
+            />
+            <m.div
+              animate={{ width: `${100 - progressBarWidth}%` }}
+              className="h-1 w-[80%] rounded-full bg-black/25"
+            />
+          </div>
+
+          {/* right arrow */}
+          <div onClick={handleRight}>
+            <ArrowSvg
+              color="var(--color-teal)"
+              className="w-6 cursor-pointer 2xl:-translate-y-[1px]"
+            />
+          </div>
         </div>
       )}
     </>

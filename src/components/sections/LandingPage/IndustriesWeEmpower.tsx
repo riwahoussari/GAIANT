@@ -13,7 +13,7 @@ export default function IndustriesWeEmpower() {
       />
 
       <CardsSlider>
-        {INDUSTRIES.slice(0, 4).map((industry, i) => (
+        {INDUSTRIES.map((industry, i) => (
           <IndustryCard
             key={i}
             className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
