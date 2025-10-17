@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <Outlet />
-      <footer className="relative pt-[220px] pb-[20px] text-white">
+      <footer className="relative -z-1 pt-[220px] pb-[20px] text-white">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip">
