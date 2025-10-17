@@ -48,3 +48,22 @@ export function BlurredTealGradientBg({
     </div>
   );
 }
+
+export function BlurredTealGradientBg2({
+  withBall = true,
+}: {
+  withBall?: boolean;
+}) {
+  return (
+    <div className="relative h-full">
+      <div className="h-full w-[120vw]! -translate-x-[10vw] blur-[6vw]">
+        <img src={GreenBlueGradient} className="h-full w-full object-cover" />
+      </div>
+      {withBall && (
+        <div className="absolute top-1/2 left-1/2 w-[450px] -translate-1/2 lg:w-[35vw] lg:min-w-[500px]">
+          <GradientCircle />
+        </div>
+      )}
+    </div>
+  );
+}

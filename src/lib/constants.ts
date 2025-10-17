@@ -65,3 +65,27 @@ export const TRUSTED_BY: ITrutedByRecord[] = [
     logoSrc: "/industries/logo-4.svg",
   },
 ];
+
+type IArticleRecord = { title: string; subtitle: string; imgSrc: string };
+export const ARTICLES: IArticleRecord[] = [
+  {
+    title: "How AI is Reshaping Decision-Making Across Industries",
+    subtitle: "GAIANT TEAM - SEP 19, 2025",
+    imgSrc: "/blogs/blog-1.jpg",
+  },
+  {
+    title: "From Hype to Help: Making AI Practical for Everyday Work",
+    subtitle: "GAIANT TEAM - SEP 19, 2025",
+    imgSrc: "/blogs/blog-2.jpg",
+  },
+  {
+    title: "The Future of Efficiency: Why AI Is Your Next Teammate",
+    subtitle: "GAIANT TEAM - SEP 19, 2025",
+    imgSrc: "/blogs/blog-3.jpg",
+  },
+  {
+    title: "How AI is Reshaping Decision-Making Across Industries",
+    subtitle: "GAIANT TEAM - SEP 19, 2025",
+    imgSrc: "/blogs/blog-4.jpg",
+  },
+];

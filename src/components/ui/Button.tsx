@@ -20,6 +20,7 @@ const buttonVariants = cva(
       arrow: {
         none: "",
         normal: "gap-[8px]",
+        back: "gap-4",
         spaced: "gap-[25px] xs:gap-[40px]",
       },
     },
@@ -47,12 +48,21 @@ export default function Button({
       className={cn(buttonVariants({ variant, size, arrow }), className)}
       {...props}
     >
-      <span>{props.children}</span>
-      {arrow && arrow !== "none" && (
+      {arrow && arrow == "back" && (
         <ArrowSvg
           color={variant == "secondary" ? "var(--color-teal)" : "white"}
           className={
-            size == "lg" ? "stroke-[1.5px] w-[20px] " : "stroke-[2px] w-[14px]"
+            "rotate-180 " +
+            (size == "lg" ? "w-[20px] stroke-[1.5px]" : "w-[14px] stroke-[2px]")
+          }
+        />
+      )}
+      <span>{props.children}</span>
+      {arrow && arrow !== "none" && arrow !== "back" && (
+        <ArrowSvg
+          color={variant == "secondary" ? "var(--color-teal)" : "white"}
+          className={
+            size == "lg" ? "w-[20px] stroke-[1.5px]" : "w-[14px] stroke-[2px]"
           }
         />
       )}

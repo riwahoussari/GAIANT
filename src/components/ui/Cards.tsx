@@ -128,7 +128,56 @@ export function TestimonialCard({
   );
 }
 
-export function CardsSlider({ children }: { children: ReactNode }) {
+export function ArticleCard({
+  imgSrc,
+  title,
+  subtitle,
+  className,
+}: {
+  imgSrc: string;
+  title: string;
+  subtitle: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={"group relative overflow-clip text-white " + (className || "")}
+    >
+      <div
+        className="h-full bg-black/25"
+        style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%)",
+        }}
+      >
+        <img className="w-full object-cover" src={imgSrc} />
+      </div>
+
+      {/* content */}
+      <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
+        <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
+        <p className="text-25">{title}</p>
+      </div>
+
+      {/* button */}
+      <Button className="absolute bottom-1 left-2" variant={"ghost"}>
+        READ MORE
+      </Button>
+      {/* arrow */}
+      <ArrowSvg
+        className="absolute right-0 bottom-1 z-1 w-6 stroke-[1px] xs:w-8"
+        color="black"
+      />
+    </div>
+  );
+}
+
+export function CardsSlider({
+  displaySlider = true,
+  children,
+}: {
+  displaySlider?: boolean;
+  children: ReactNode;
+}) {
   return (
     <>
       {" "}
@@ -137,20 +186,22 @@ export function CardsSlider({ children }: { children: ReactNode }) {
         <div className="flex w-max items-start gap-5">{children}</div>
       </div>
       {/* slider */}
-      <div className="mx-auto mt-10 flex w-9/10 max-w-[580px] items-center justify-center gap-3 sm:gap-5 lg:w-1/2 lg:min-w-[580px]">
-        <ArrowSvg
-          color="var(--color-teal)"
-          className="w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px]"
-        />
-        <div className="flex w-full items-center justify-center gap-1.5 sm:gap-3">
-          <div className="bg-dark-green-blue-gradient h-1 w-[20%] rounded-full" />
-          <div className="h-1 w-[80%] rounded-full bg-black/25" />
+      {displaySlider && (
+        <div className="mx-auto mt-10 flex w-9/10 max-w-[580px] items-center justify-center gap-3 sm:gap-5 lg:w-1/2 lg:min-w-[580px]">
+          <ArrowSvg
+            color="var(--color-teal)"
+            className="w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px]"
+          />
+          <div className="flex w-full items-center justify-center gap-1.5 sm:gap-3">
+            <div className="bg-dark-green-blue-gradient h-1 w-[20%] rounded-full" />
+            <div className="h-1 w-[80%] rounded-full bg-black/25" />
+          </div>
+          <ArrowSvg
+            color="var(--color-teal)"
+            className="w-6 cursor-pointer 2xl:-translate-y-[1px]"
+          />
         </div>
-        <ArrowSvg
-          color="var(--color-teal)"
-          className="w-6 cursor-pointer 2xl:-translate-y-[1px]"
-        />
-      </div>
+      )}
     </>
   );
 }
