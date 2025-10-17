@@ -5,10 +5,10 @@ import Hero from "../components/sections/common/Hero";
 import IndustriesWeEmpower from "../components/sections/LandingPage/IndustriesWeEmpower";
 import Tools from "../components/sections/LandingPage/Tools";
 import WhatMakesUsDifferent from "../components/sections/LandingPage/WhatMakesUsDifferent";
-import WhatThisMeans from "../components/sections/LandingPage/WhatThisMeans";
 import Button from "../components/ui/Button";
 import { BlurredTealGradientBg } from "../components/ui/Backgrounds";
 import ImagesLayout from "../components/ui/ImagesLayout";
+import AccordionSection from "../components/sections/common/AccordionSection";
 
 export default function LandingPage() {
   return (
@@ -45,7 +45,32 @@ export default function LandingPage() {
       <IndustriesWeEmpower />
       <Tools />
       <Feature />
-      <WhatThisMeans />
+      {/* What this Means Section */}
+      <AccordionSection
+        className="mt-[150px]!"
+        title="What this means for you"
+        subtitle="REDEFINING YOUR WORK DAY"
+        img={<img src="/AiChatDemo2.svg" />}
+        accordionContent={[
+          {
+            title: "For your work",
+            subtitle: "WHERE WE MAKE A DIFFERENCE",
+            list: [
+              "Turns complex data into clear, actionable insights",
+              "Adapts to the tools and systems you already use",
+              "Supports collaboration across teams and departments",
+              "Scales with your projects as they grow",
+            ],
+            active: true,
+          },
+          {
+            title: "For your time",
+          },
+          {
+            title: "For your results",
+          },
+        ]}
+      />
       <BlogPosts />
       <CallToAction />
     </main>

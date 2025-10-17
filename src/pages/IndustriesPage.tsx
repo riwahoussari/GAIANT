@@ -1,5 +1,5 @@
 import CallToAction from "../components/sections/common/CallToAction";
-import { IndustryCard } from "../components/sections/common/Cards";
+import { IndustryCard } from "../components/ui/Cards";
 import Hero from "../components/sections/common/Hero";
 import ArrowSvg from "../components/ui/ArrowSvg";
 import Button from "../components/ui/Button";

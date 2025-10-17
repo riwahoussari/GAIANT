@@ -1,3 +1,4 @@
+import { GlassCard } from "../../ui/Cards";
 import GradientCircle from "../../ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
 
@@ -31,7 +32,7 @@ export default function WhatMakesUsDifferent() {
 
         {/* cards */}
         <div className="relative col-span-2 grid gap-5 max-lg:mt-[30px] max-sm:mt-[0] sm:grid-cols-2">
-          <div className="-translate-x- absolute bottom-1/2 -z-1 w-[500px] translate-y-1/2 opacity-70 max-sm:left-0 sm:right-0 sm:translate-x-1/2 lg:w-[40vw] lg:min-w-[550px]">
+          <div className="-translate-x- absolute bottom-1/2 -z-1 w-[500px] translate-y-1/2 opacity-70 max-sm:left-0 max-sm:scale-y-200 sm:right-0 sm:translate-x-1/2 lg:w-[40vw] lg:min-w-[550px]">
             <GradientCircle blur={"lg"} />
           </div>
 
@@ -47,22 +48,22 @@ export default function WhatMakesUsDifferent() {
             </span>
           </p>
 
-          <Card
+          <GlassCard
             title="Transparency"
             subtitle="WE BUILD AI YOU CAN TRUST."
             text="Clear processes, explainable outcomes, and full visibility at every stage"
           />
-          <Card
+          <GlassCard
             title="Transparency"
             subtitle="WE BUILD AI YOU CAN TRUST."
             text="Clear processes, explainable outcomes, and full visibility at every stage"
           />
-          <Card
+          <GlassCard
             title="Transparency"
             subtitle="WE BUILD AI YOU CAN TRUST."
             text="Clear processes, explainable outcomes, and full visibility at every stage"
           />
-          <Card
+          <GlassCard
             title="Transparency"
             subtitle="WE BUILD AI YOU CAN TRUST."
             text="Clear processes, explainable outcomes, and full visibility at every stage"
@@ -70,32 +71,5 @@ export default function WhatMakesUsDifferent() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Card({
-  title,
-  subtitle,
-  text,
-}: {
-  title: string;
-  subtitle: string;
-  text: string;
-}) {
-  return (
-    <div className="max-w-[466px] bg-white/50 p-3 xs:p-6">
-      {/* title & circle */}
-      <div className="relative flex items-end justify-end gap-2">
-        <p className="text-25 absolute bottom-0 left-0 z-1">{title}</p>
-        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red" />
-      </div>
-      {/* text */}
-      <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
-        <p className="font-ibm! text-[11px] leading-[21px] font-semibold text-teal xs:text-[12px]">
-          {subtitle}
-        </p>
-        <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
-      </div>
-    </div>
   );
 }

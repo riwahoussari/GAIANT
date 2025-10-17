@@ -1,17 +1,44 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import { Arrow2Svg } from "../../ui/ArrowSvg";
 import GradientCircle from "../../ui/GradientCircle";
-import { SectionSubTitle, SectionTitle, TitleBlock } from "../../ui/Titles";
+import { TitleBlock } from "../../ui/Titles";
 
-export default function WhatThisMeans() {
+type TAccordionContent = {
+  title: string;
+  subtitle?: string;
+  list?: string[];
+  active?: boolean;
+};
+
+export default function AccordionSection({
+  title,
+  subtitle,
+  text,
+  img,
+  accordionContent,
+  className,
+}: {
+  title: string;
+  subtitle: string;
+  text?: string;
+  img: ReactNode;
+  accordionContent: TAccordionContent[];
+  className?: string;
+}) {
   return (
-    <section className="side-padding my-container mt-[150px]">
+    <section
+      className={"side-padding my-container mt-[100px] " + (className || "")}
+    >
       {/* titles */}
-      <div>
-        <TitleBlock
-          title="What this means for you"
-          subtitle="REDEFINING YOUR WORK DAY"
-        />
+      <div className="flex gap-4 max-lg:flex-col lg:items-end lg:justify-between lg:gap-16">
+        <div className="w-full max-w-[700px] lg:w-1/2">
+          <TitleBlock title={title} subtitle={subtitle} />
+        </div>
+        {text && (
+          <div className="w-full max-w-[550px] pb-2 lg:w-1/2 xl:w-[40%]">
+            <p className="text-16">{text}</p>
+          </div>
+        )}
       </div>
 
       {/* content */}
@@ -20,24 +47,12 @@ export default function WhatThisMeans() {
           <GradientCircle blur={"lg"} />
         </div>
         {/* image */}
-        <div className="relative w-full max-w-[700px] lg:w-1/2">
-          <img src="/AiChatDemo2.svg" />
-        </div>
+        <div className="relative w-full max-w-[700px] lg:w-1/2">{img}</div>
         {/* Accordion */}
         <div className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]">
-          <AccordionItem
-            title="For your work"
-            subtitle="WHERE WE MAKE A DIFFERENCE"
-            list={[
-              "Turns complex data into clear, actionable insights",
-              "Adapts to the tools and systems you already use",
-              "Supports collaboration across teams and departments",
-              "Scales with your projects as they grow",
-            ]}
-            active
-          />
-          <AccordionItem title="For your time" />
-          <AccordionItem title="For your results" />
+          {accordionContent.map((item, i) => (
+            <AccordionItem key={i} {...item} />
+          ))}
         </div>
       </div>
     </section>
