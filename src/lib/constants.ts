@@ -1,5 +1,3 @@
-
-
 type TIndustryRecord = { name: string; description?: string; img: string };
 export const INDUSTRIES: TIndustryRecord[] = [
   {
@@ -132,5 +130,30 @@ export const OPEN_ROLES: IRoleRecord[] = [
   {
     title: "Research Internship",
     text: "(Beirut - Remote)",
+  },
+];
+
+export type TLinkRecord = { name: string; link: string; sublinks?: TLinkRecord[] };
+export const LINKS: TLinkRecord[] = [
+  {
+    name: "Products",
+    link: "/arche",
+    sublinks: [{ name: "Archē", link: "/arche" }],
+  },
+  {
+    name: "Solutions",
+    link: "/industries",
+    sublinks: INDUSTRIES.map((industry, i) => {
+      return { link: `/industries/${i}`, name: industry.name };
+    }),
+  },
+  {
+    name: "Company",
+    link: "/about",
+    sublinks: [
+      { name: "About", link: "/about" },
+      { name: "News", link: "/news" },
+      { name: "Careers", link: "/careers" },
+    ],
   },
 ];

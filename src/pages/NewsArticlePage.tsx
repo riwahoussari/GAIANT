@@ -1,6 +1,6 @@
 import Button from "../components/ui/Button";
 import ShareIcon from "../assets/share-icon.svg";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 
 export default function NewsArticlePage() {
   return (

@@ -13,7 +13,7 @@ import {
   TitleBlock,
 } from "../components/ui/Titles";
 import { OPEN_ROLES } from "../lib/constants";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 
 export default function CareersPage() {
   return (

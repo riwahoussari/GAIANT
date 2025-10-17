@@ -1,7 +1,7 @@
 import { useMotionValueEvent, useScroll } from "motion/react";
 import CallToAction from "../components/sections/common/CallToAction";
 import Hero from "../components/sections/common/Hero";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 import { BlurredTealGradientBg2 } from "../components/ui/Backgrounds";
 import Button from "../components/ui/Button";
 import { ArticleCard } from "../components/ui/Cards";

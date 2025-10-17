@@ -6,7 +6,7 @@ import { GlassCard } from "../components/ui/Cards";
 import GradientCircle from "../components/ui/GradientCircle";
 import CallToAction from "../components/sections/common/CallToAction";
 import { TrustedBy } from "../components/sections/common/TrustedBy";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 
 export default function () {
   return (

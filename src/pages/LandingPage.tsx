@@ -9,7 +9,7 @@ import Button from "../components/ui/Button";
 import { BlurredTealGradientBg } from "../components/ui/Backgrounds";
 import ImagesLayout from "../components/ui/ImagesLayout";
 import AccordionSection from "../components/sections/common/AccordionSection";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 

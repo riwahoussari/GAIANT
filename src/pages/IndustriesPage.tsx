@@ -6,7 +6,7 @@ import Button from "../components/ui/Button";
 import GradientCircle from "../components/ui/GradientCircle";
 import { TitleBlock2 } from "../components/ui/Titles";
 import { INDUSTRIES } from "../lib/constants";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
 

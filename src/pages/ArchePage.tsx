@@ -4,7 +4,7 @@ import ArcheFeatures from "../components/sections/ArchePage/ArcheFeatures";
 import DiscoverArche from "../components/sections/ArchePage/DiscoverArche";
 import TheArcheModel from "../components/sections/ArchePage/TheArcheModel";
 import Hero from "../components/sections/common/Hero";
-import Navbar from "../components/sections/common/Navbar";
+import Navbar from "../components/sections/common/navbar/Navbar";
 import { LandscapeBg } from "../components/ui/Backgrounds";
 import Button from "../components/ui/Button";
 import { useMotionValueEvent, useScroll } from "motion/react";
