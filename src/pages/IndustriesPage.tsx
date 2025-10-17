@@ -6,45 +6,64 @@ import Button from "../components/ui/Button";
 import GradientCircle from "../components/ui/GradientCircle";
 import { TitleBlock2 } from "../components/ui/Titles";
 import { INDUSTRIES } from "../lib/constants";
+import Navbar from "../components/sections/common/Navbar";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useRef, useState } from "react";
 
 export default function IndustriesPage() {
+  const [transparentNavbar, setTransparentNavbar] = useState(true);
+  const navbarBgTrigger = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: navbarBgTrigger,
+    offset: ["start end", "start start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (val) =>
+    setTransparentNavbar(val >= 1 ? false : true)
+  );
   return (
-    <main>
-      <Hero
-        className="text-black!"
-        spacing="max"
-        subtitle="INDUSTRIES"
-        title="Solutions designed for any industry need"
-        text="Every organization faces unique challenges. Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work."
-        button={
-          <Button variant={"black"} arrow={"spaced"}>
-            REQUEST A DEMO
-          </Button>
-        }
-        background={
-          <div className="absolute top-[240px] left-0 w-[500px] -translate-x-1/4 opacity-70 lg:w-[40vw] lg:min-w-[550px]">
-            <GradientCircle blur={"lg"} />
-          </div>
-        }
-      />
+    <>
+      <Navbar textColor={"black"} transparentBg={transparentNavbar} />
+      <main>
+        <Hero
+          className="text-black!"
+          spacing="max"
+          subtitle="INDUSTRIES"
+          title="Solutions designed for any industry need"
+          text="Every organization faces unique challenges. Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work."
+          button={
+            <Button variant={"black"} arrow={"spaced"}>
+              REQUEST A DEMO
+            </Button>
+          }
+          background={
+            <div className="absolute top-[240px] left-0 w-[500px] -translate-x-1/4 opacity-70 lg:w-[40vw] lg:min-w-[550px]">
+              <GradientCircle blur={"lg"} />
+            </div>
+          }
+        />
 
-      {/* Cards */}
-      <section className="side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {INDUSTRIES.map((industry, i) => (
-          <IndustryCard
-            key={i}
-            className="aspect-11/9!"
-            title={industry.name}
-            text={industry.description}
-            button={!!industry.description}
-            imgSrc={industry.img}
-          />
-        ))}
-      </section>
+        {/* Cards */}
+        <section
+          ref={navbarBgTrigger}
+          className="side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
+        >
+          {INDUSTRIES.map((industry, i) => (
+            <IndustryCard
+              key={i}
+              className="aspect-11/9!"
+              title={industry.name}
+              text={industry.description}
+              button={!!industry.description}
+              imgSrc={industry.img}
+            />
+          ))}
+        </section>
 
-      <TestimonialSection />
-      <CallToAction />
-    </main>
+        <TestimonialSection />
+        <CallToAction />
+      </main>
+    </>
   );
 }
 

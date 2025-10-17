@@ -21,7 +21,6 @@ const router = createBrowserRouter(
     <Route
       element={
         <>
-          <Navbar />
           <Footer />
         </>
       }

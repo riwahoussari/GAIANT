@@ -1,3 +1,5 @@
+
+
 type TIndustryRecord = { name: string; description?: string; img: string };
 export const INDUSTRIES: TIndustryRecord[] = [
   {

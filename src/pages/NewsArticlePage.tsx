@@ -1,18 +1,22 @@
 import Button from "../components/ui/Button";
 import ShareIcon from "../assets/share-icon.svg";
+import Navbar from "../components/sections/common/Navbar";
 
 export default function NewsArticlePage() {
   return (
-    <main>
-      <Article />
-    </main>
+    <>
+      <Navbar transparentBg={false} />
+      <main>
+        <Article />
+      </main>
+    </>
   );
 }
 
 function Article() {
   return (
     <section className="my-container side-padding">
-      <div className="relative mt-[100px]">
+      <div className="relative mt-[140px]">
         {/* back button */}
         <div className="top-0 left-0 mb-5 xl:absolute">
           <Button

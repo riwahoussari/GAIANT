@@ -1,55 +1,73 @@
+import { useRef, useState } from "react";
 import CallToAction from "../components/sections/common/CallToAction";
 import Hero from "../components/sections/common/Hero";
+import Navbar from "../components/sections/common/Navbar";
 import { TrustedBy } from "../components/sections/common/TrustedBy";
 import Button from "../components/ui/Button";
 import { GlassCard } from "../components/ui/Cards";
-import GradientCircle, { BigEllipseGradient } from "../components/ui/GradientCircle";
+import GradientCircle, {
+  BigEllipseGradient,
+} from "../components/ui/GradientCircle";
 import ImagesLayout from "../components/ui/ImagesLayout";
 import { SectionSubTitle, TitleBlock } from "../components/ui/Titles";
+import { useMotionValueEvent, useScroll } from "motion/react";
 
 export default function AboutPage() {
-  return (
-    <main>
-      <Hero
-        className="text-black!"
-        spacing="max"
-        subtitle="WHO ARE GAIANT"
-        title="We’re building the future of language AI"
-        text="Gaiant empowers every developer and enterprise to build amazing products and capture true business value with language AI."
-        button={
-          <Button variant={"black"} arrow={"spaced"}>
-            REQUEST A DEMO
-          </Button>
-        }
-        background={
-          <div className="absolute top-[240px] left-1/2 w-[500px] lg:w-[40vw] lg:min-w-[550px]">
-            <GradientCircle blur={"lg"} />
-          </div>
-        }
-      >
-        <div className="my-container side-padding">
-          <ImagesLayout
-            bg2={false}
-            img1={
-              <img
-                src="/people-on-laptop.jpg"
-                className="h-full w-full object-cover"
-              />
-            }
-            img2={
-              <div className="flex h-full w-full items-center justify-center bg-black/20 p-5 lg:p-8">
-                <img src="/AboutAttributes.svg" />
-              </div>
-            }
-          />
-        </div>
-      </Hero>
+  const [transparentNavbar, setTransparentNavbar] = useState(true);
+  const navbarBgTrigger = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: navbarBgTrigger,
+    offset: ["end end", "start start"],
+  });
 
-      <OurStory />
-      <OurMission />
-      <TrustedBy />
-      <CallToAction />
-    </main>
+  useMotionValueEvent(scrollYProgress, "change", (val) =>
+    setTransparentNavbar(val >= 1 ? false : true)
+  );
+  return (
+    <>
+      <Navbar textColor={"black"} transparentBg={transparentNavbar} />
+      <main>
+        <Hero
+          className="text-black!"
+          spacing="max"
+          subtitle="WHO ARE GAIANT"
+          title="We’re building the future of language AI"
+          text="Gaiant empowers every developer and enterprise to build amazing products and capture true business value with language AI."
+          button={
+            <Button variant={"black"} arrow={"spaced"}>
+              REQUEST A DEMO
+            </Button>
+          }
+          background={
+            <div className="absolute top-[240px] left-1/2 w-[500px] lg:w-[40vw] lg:min-w-[550px]">
+              <GradientCircle blur={"lg"} />
+            </div>
+          }
+        >
+          <div ref={navbarBgTrigger} className="my-container side-padding">
+            <ImagesLayout
+              bg2={false}
+              img1={
+                <img
+                  src="/people-on-laptop.jpg"
+                  className="h-full w-full object-cover"
+                />
+              }
+              img2={
+                <div className="flex h-full w-full items-center justify-center bg-black/20 p-5 lg:p-8">
+                  <img src="/AboutAttributes.svg" />
+                </div>
+              }
+            />
+          </div>
+        </Hero>
+
+        <OurStory />
+        <OurMission />
+        <TrustedBy />
+        <CallToAction />
+      </main>
+    </>
   );
 }
 

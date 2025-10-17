@@ -6,69 +6,73 @@ import { GlassCard } from "../components/ui/Cards";
 import GradientCircle from "../components/ui/GradientCircle";
 import CallToAction from "../components/sections/common/CallToAction";
 import { TrustedBy } from "../components/sections/common/TrustedBy";
+import Navbar from "../components/sections/common/Navbar";
 
 export default function () {
   return (
-    <main>
-      <Hero
-        spacing="max"
-        title="AI for faster decisions and lower risk"
-        subtitle="BANKING & FINANCIAL SERVICES"
-        text="Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights."
-        button={
-          <Button arrow={"spaced"} className="xl:mb-20">
-            REQUEST A DEMO
-          </Button>
-        }
-        background={
-          <div className="relative h-full">
-            <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(1vw,10px)]">
+    <>
+      <Navbar transparentBg={false} />
+      <main>
+        <Hero
+          spacing="max"
+          title="AI for faster decisions and lower risk"
+          subtitle="BANKING & FINANCIAL SERVICES"
+          text="Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights."
+          button={
+            <Button arrow={"spaced"} className="xl:mb-20">
+              REQUEST A DEMO
+            </Button>
+          }
+          background={
+            <div className="relative h-full">
+              <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(1vw,10px)]">
+                <img
+                  src="/industries/Industries-banking.jpg"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          }
+        />
+        <AccordionSection
+          title="Smarter moves with fewer resources"
+          subtitle="TRUSTED BY FINANCIAL LEADERS"
+          text="AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead."
+          img={
+            <div>
+              <img src="/industries/man-on-laptop.jpg" />
               <img
-                src="/industries/Industries-banking.jpg"
-                className="h-full w-full object-cover"
+                className="absolute top-0 left-0 z-1"
+                src="/industries/AIPrompt.svg"
               />
             </div>
-          </div>
-        }
-      />
-      <AccordionSection
-        title="Smarter moves with fewer resources"
-        subtitle="TRUSTED BY FINANCIAL LEADERS"
-        text="AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead."
-        img={
-          <div>
-            <img src="/industries/man-on-laptop.jpg" />
-            <img
-              className="absolute top-0 left-0 z-1"
-              src="/industries/AIPrompt.svg"
-            />
-          </div>
-        }
-        accordionContent={[
-          {
-            title: "Improve knowledge management",
-            subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
-            list: [
-              "Detect fraud and protect sensitive data",
-              "Automate reporting with precision and speed",
-              "Ensure compliance across every transaction",
-              "Deliver clear insights for smarter decisions",
-            ],
-            active: true,
-          },
-          {
-            title: "Reduce busywork",
-          },
-          {
-            title: "Automate common support tickets",
-          },
-        ]}
-      />
-      <UseCases />
-      <OurApproach />
-      <TrustedBy />
-      <CallToAction />
-    </main>
+          }
+          accordionContent={[
+            {
+              title: "Improve knowledge management",
+              subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
+              list: [
+                "Detect fraud and protect sensitive data",
+                "Automate reporting with precision and speed",
+                "Ensure compliance across every transaction",
+                "Deliver clear insights for smarter decisions",
+              ],
+              active: true,
+            },
+            {
+              title: "Reduce busywork",
+            },
+            {
+              title: "Automate common support tickets",
+            },
+          ]}
+        />
+        <UseCases />
+        <OurApproach />
+        <TrustedBy />
+        <CallToAction />
+      </main>
+    </>
   );
 }
 

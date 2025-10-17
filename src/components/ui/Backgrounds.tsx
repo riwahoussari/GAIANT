@@ -1,9 +1,13 @@
 import GreenBlueGradient from "../../assets/green-blue-gradient.jpg";
 import GradientCircle from "./GradientCircle";
 
-export function LandscapeBg() {
+export function LandscapeBg({
+  ref,
+}: {
+  ref?: React.RefObject<HTMLDivElement | null>;
+}) {
   return (
-    <div className="h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10">
+    <div ref={ref} className="h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10">
       <img
         src="/landing-page-banner.jpg"
         className="h-full w-full object-cover"

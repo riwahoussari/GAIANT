@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import AccordionSection from "../components/sections/common/AccordionSection";
 import CallToAction from "../components/sections/common/CallToAction";
 import Hero from "../components/sections/common/Hero";
@@ -12,38 +13,42 @@ import {
   TitleBlock,
 } from "../components/ui/Titles";
 import { OPEN_ROLES } from "../lib/constants";
+import Navbar from "../components/sections/common/Navbar";
 
 export default function CareersPage() {
   return (
-    <main>
-      <Hero
-        spacing="max"
-        title="Work with us, change business forever"
-        subtitle="WORKING AT GAIANT"
-        text="Join a team of thinkers and doers pushing the boundaries to reshape what's possible."
-        button={
-          <Button arrow={"spaced"} className="xl:mb-20">
-            SEE OPEN ROLES
-          </Button>
-        }
-        background={
-          <div className="relative h-full">
-            <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(0.5vw,5px)]">
-              <img
-                src="/people-working.jpg"
-                className="h-full w-full object-cover object-bottom"
-              />
+    <>
+      <Navbar transparentBg={false} />
+      <main>
+        <Hero
+          spacing="max"
+          title="Work with us, change business forever"
+          subtitle="WORKING AT GAIANT"
+          text="Join a team of thinkers and doers pushing the boundaries to reshape what's possible."
+          button={
+            <Button arrow={"spaced"} className="xl:mb-20">
+              SEE OPEN ROLES
+            </Button>
+          }
+          background={
+            <div className="relative h-full">
+              <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(0.5vw,5px)]">
+                <img
+                  src="/people-working.jpg"
+                  className="h-full w-full object-cover object-bottom"
+                />
+              </div>
             </div>
-          </div>
-        }
-      />
+          }
+        />
 
-      <LifeAtGaiant />
-      <DoYouFit />
-      <WhatsInItForYou />
-      <OpenRoles />
-      <CallToAction />
-    </main>
+        <LifeAtGaiant />
+        <DoYouFit />
+        <WhatsInItForYou />
+        <OpenRoles />
+        <CallToAction />
+      </main>
+    </>
   );
 }
 
@@ -150,16 +155,13 @@ function OpenRoles() {
     <section className="relative mt-[120px] overflow-x-clip">
       <div className="absolute top-10 left-0 z-0 -translate-x-1/3 opacity-50">
         <GradientCircle
-          className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-300 origin-top"
+          className="origin-top blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-300"
           colorr={"teal"}
         />
       </div>
 
-      <div className="absolute  right-0 bottom-0 z-0 translate-x-8/10 translate-y-1/4 opacity-50 ">
-        <GradientCircle
-          className="blur-[max(6vw,60px)]! "
-          colorr={"teal"}
-        />
+      <div className="absolute right-0 bottom-0 z-0 translate-x-8/10 translate-y-1/4 opacity-50">
+        <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"teal"} />
       </div>
 
       <div className="my-container side-padding">
@@ -172,7 +174,7 @@ function OpenRoles() {
             <SimpleCard
               {...role}
               key={i}
-              className="min-h-[180px] xs:min-h-[250px] max-md:max-w-[424px]"
+              className="min-h-[180px] max-md:max-w-[424px] xs:min-h-[250px]"
             />
           ))}
         </div>

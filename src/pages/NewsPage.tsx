@@ -1,40 +1,63 @@
+import { useMotionValueEvent, useScroll } from "motion/react";
 import CallToAction from "../components/sections/common/CallToAction";
 import Hero from "../components/sections/common/Hero";
+import Navbar from "../components/sections/common/Navbar";
 import { BlurredTealGradientBg2 } from "../components/ui/Backgrounds";
 import Button from "../components/ui/Button";
 import { ArticleCard } from "../components/ui/Cards";
 import GradientCircle from "../components/ui/GradientCircle";
 import { ARTICLES } from "../lib/constants";
+import { useRef, useState } from "react";
 
 export default function NewsPage() {
+  const [transparentNavbar, setTransparentNavbar] = useState(true);
+  const navbarBgTrigger = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: navbarBgTrigger,
+    offset: ["end end", "start start"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (val) =>
+    setTransparentNavbar(val >= 1 ? false : true)
+  );
   return (
-    <main>
-      <ArticlesSection className="mt-[200px]!" withBall />
+    <>
+      <Navbar textColor={"black"} transparentBg={transparentNavbar} />
+      <main>
+        <ArticlesSection
+          ref={navbarBgTrigger}
+          className="mt-[200px]!"
+          withBall
+        />
 
-      <Hero
-        className="mt-[140px]"
-        title="Ready to redefine the way you work?"
-        text="Request a demo and see how Gaiant's secure and private AI platform can unlock productivity for your business."
-        button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
-        background={<BlurredTealGradientBg2 withBall />}
-      />
+        <Hero
+          className="mt-[140px]"
+          title="Ready to redefine the way you work?"
+          text="Request a demo and see how Gaiant's secure and private AI platform can unlock productivity for your business."
+          button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
+          background={<BlurredTealGradientBg2 withBall />}
+        />
 
-      <ArticlesSection className="mt-[140px]" />
+        <ArticlesSection className="mt-[140px]" />
 
-      <CallToAction />
-    </main>
+        <CallToAction />
+      </main>
+    </>
   );
 }
 
 function ArticlesSection({
   withBall = false,
   className,
+  ref,
 }: {
   withBall?: boolean;
   className?: string;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
     <section
+      ref={ref}
       className={
         "side-padding my-container relative mt-[120px] overflow-x-clip " +
         (className || "")
