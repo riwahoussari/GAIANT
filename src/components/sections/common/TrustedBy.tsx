@@ -1,10 +1,16 @@
+import { useRef } from "react";
 import { TRUSTED_BY } from "../../../lib/constants";
+import { SlideUpAnim } from "../../ui/Anims";
 import { CardsSlider, TestimonialCard } from "../../ui/Cards";
 import { TitleBlock } from "../../ui/Titles";
+import { useInView } from "motion/react";
 
 export function TrustedBy({ className }: { className?: string }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
     <section
+      ref={sectionRef}
       className={
         "side-padding my-container mt-[100px] max-xl:overflow-x-hidden " +
         (className || "")
@@ -15,13 +21,19 @@ export function TrustedBy({ className }: { className?: string }) {
 
       <CardsSlider>
         {TRUSTED_BY.slice(0, 4).map((trustee, i) => (
-          <TestimonialCard
+          <SlideUpAnim
+            isInView={isInView}
+            transition={{ delay: 0.2 + 0.1 * i }}
             key={i}
-            className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
-            logo={<img src={trustee.logoSrc} />}
-            text={trustee.text}
-            position={["tr", "br", "tl"][i % 2] as "tr" | "tl" | "br"}
-          />
+          >
+            <TestimonialCard
+              key={i}
+              className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
+              logo={<img src={trustee.logoSrc} />}
+              text={trustee.text}
+              position={["tr", "br", "tl"][i % 2] as "tr" | "tl" | "br"}
+            />
+          </SlideUpAnim>
         ))}
       </CardsSlider>
     </section>

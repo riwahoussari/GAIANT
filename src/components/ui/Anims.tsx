@@ -1,6 +1,6 @@
 import type { TargetAndTransition, Transition, VariantLabels } from "motion";
-import { motion as m } from "motion/react";
-import { useState, type ReactNode } from "react";
+import { motion as m, useInView } from "motion/react";
+import { useRef, useState, type ReactNode } from "react";
 
 export function AnimatedText({
   isInView,
@@ -66,10 +66,25 @@ export function SlideUpAnim({
     <m.div
       className={className}
       initial={{ y: "30px", opacity: 0, ...initial }}
-      animate={isInView ? { y: "-0%", opacity: 1 } : { y: "30px", opacity: 0, ...initial }}
+      animate={
+        isInView
+          ? { y: "-0%", opacity: 1 }
+          : { y: "30px", opacity: 0, ...initial }
+      }
       transition={{ duration: 0.5, ease: "easeInOut", ...transition }}
     >
       {children}
     </m.div>
+  );
+}
+
+export function SlideUpSelf({ children }: { children: ReactNode }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, { once: true, margin: "-5%" });
+
+  return (
+    <div ref={cardRef}>
+      <SlideUpAnim isInView={isInView}>{children}</SlideUpAnim>;
+    </div>
   );
 }

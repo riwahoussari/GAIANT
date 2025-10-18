@@ -7,6 +7,9 @@ import GradientCircle from "../components/ui/GradientCircle";
 import CallToAction from "../components/sections/common/CallToAction";
 import { TrustedBy } from "../components/sections/common/TrustedBy";
 import Navbar from "../components/sections/common/navbar/Navbar";
+import { SlideUpAnim, SlideUpSelf } from "../components/ui/Anims";
+import { useInView } from "motion/react";
+import { useRef } from "react";
 
 export default function () {
   return (
@@ -89,9 +92,46 @@ export default function () {
   );
 }
 
+const USE_CASES_CONTENT: { title: string; subtitle: string; text: string }[] = [
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+  {
+    title: "Transparency",
+    subtitle: "WE BUILD AI YOU CAN TRUST.",
+    text: "Clear processes, explainable outcomes, and full visibility at every stage",
+  },
+];
 function UseCases() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section className="side-padding my-container relative mt-[120px]">
+    <section
+      ref={sectionRef}
+      className="side-padding my-container relative mt-[120px]"
+    >
       <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <GradientCircle
           className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-y-400"
@@ -102,78 +142,61 @@ function UseCases() {
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <TitleBlock title="Use Cases" subtitle="BANKING & FINANCIAL SERVICES" />
-        <p className="text-16 max-w-[292px]">
-          See how leading firms are streamlining operations and scaling insight.
-        </p>
-        <Button
-          className="place-self-start max-sm:mt-3 xl:place-self-end"
-          variant={"black"}
-        >
-          REQUEST A DEMO
-        </Button>
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
+          <p className="text-16 max-w-[292px]">
+            See how leading firms are streamlining operations and scaling
+            insight.
+          </p>
+        </SlideUpAnim>
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.3 }}>
+          <Button
+            className="place-self-start max-sm:mt-3 xl:place-self-end"
+            variant={"black"}
+          >
+            REQUEST A DEMO
+          </Button>
+        </SlideUpAnim>
       </div>
 
       {/* cards */}
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="Transparency"
-          subtitle="WE BUILD AI YOU CAN TRUST."
-          text="Clear processes, explainable outcomes, and full visibility at every stage"
-        />
+        {USE_CASES_CONTENT.map((useCase, i) => (
+          <SlideUpSelf key={i}>
+            <GlassCard className="max-w-none!" {...useCase} />
+          </SlideUpSelf>
+        ))}
       </div>
     </section>
   );
 }
 
 function OurApproach() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section className="side-padding my-container mt-[120px]">
+    <section ref={sectionRef} className="side-padding my-container mt-[120px]">
       <div className="grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <TitleBlock
           title="Our Approach"
           subtitle="SYSTEMS THAT FIT, NOT FORCE"
         />
-        <p className="text-16 max-w-[292px]">
-          We embed with your team, observe how work flows, and build systems
-          that align with what’s already in motion.
-        </p>
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
+          <p className="text-16 max-w-[292px]">
+            We embed with your team, observe how work flows, and build systems
+            that align with what’s already in motion.
+          </p>
+        </SlideUpAnim>
       </div>
 
       <div className="mt-16 grid max-md:max-w-[520px] xl:grid-cols-3">
-        <div className="col-span-2 xl:col-start-2">
+        <SlideUpAnim
+          initial={{ y: "50px" }}
+          className="col-span-2 xl:col-start-2"
+          isInView={isInView}
+          transition={{ delay: 0.3 }}
+        >
           <img src="/industries/video-screenshot.jpg" className="w-full" />
-        </div>
+        </SlideUpAnim>
       </div>
     </section>
   );

@@ -12,8 +12,10 @@ import {
   AnimatePresence,
   useMotionValueEvent,
   useScroll,
+  useInView,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SlideUpAnim, SlideUpSelf } from "../components/ui/Anims";
 
 export default function IndustriesPage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -26,6 +28,8 @@ export default function IndustriesPage() {
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? false : true)
   );
+
+  // cards slide up animation
   return (
     <>
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
@@ -54,14 +58,15 @@ export default function IndustriesPage() {
           className="side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
         >
           {INDUSTRIES.map((industry, i) => (
-            <IndustryCard
-              key={i}
-              className="aspect-11/9!"
-              title={industry.name}
-              text={industry.description}
-              button={!!industry.description}
-              imgSrc={industry.img}
-            />
+            <SlideUpSelf key={i}>
+              <IndustryCard
+                className="aspect-11/9!"
+                title={industry.name}
+                text={industry.description}
+                button={!!industry.description}
+                imgSrc={industry.img}
+              />
+            </SlideUpSelf>
           ))}
         </section>
 
@@ -108,8 +113,14 @@ function TestimonialSection() {
   const prev = () =>
     setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
   return (
-    <section className="my-container side-padding relative mt-[130px]">
+    <section
+      ref={sectionRef}
+      className="my-container side-padding relative mt-[130px]"
+    >
       {/* background gradient */}
       <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-40">
         <GradientCircle
@@ -127,7 +138,11 @@ function TestimonialSection() {
       </div>
 
       {/* testimonials container */}
-      <div className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-sm:bg-none! sm:p-12">
+      <SlideUpAnim
+        transition={{ delay: 0.3 }}
+        isInView={isInView}
+        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-sm:bg-none! sm:p-12"
+      >
         {/* animated testimonial */}
         <div className="bg-linear-white-transparent-70 relative flex min-h-[250px] w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8">
           <AnimatePresence mode="wait">
@@ -190,7 +205,7 @@ function TestimonialSection() {
             </button>
           </div>
         </div>
-      </div>
+      </SlideUpAnim>
     </section>
   );
 }

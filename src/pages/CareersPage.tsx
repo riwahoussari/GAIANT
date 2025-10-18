@@ -14,6 +14,9 @@ import {
 } from "../components/ui/Titles";
 import { OPEN_ROLES } from "../lib/constants";
 import Navbar from "../components/sections/common/navbar/Navbar";
+import { AnimatedText, SlideUpSelf } from "../components/ui/Anims";
+import TextSection from "../components/sections/common/TextSection";
+import { useInView } from "motion/react";
 
 export default function CareersPage() {
   return (
@@ -52,6 +55,23 @@ export default function CareersPage() {
   );
 }
 
+const LIFE_AT_GAIANT: { title: string; subtitle: string; text: string }[] = [
+  {
+    title: "A mission with meaning",
+    subtitle: "SHAPE THE FUTURE OF LANGUAGE INTELLIGENCE",
+    text: "Every project contributes to redefining how businesses understand people.",
+  },
+  {
+    title: "A team that listens",
+    subtitle: "COLLABORATION ROOTED IN TRUST AND RESPECT",
+    text: "Your ideas guide decisions in a culture of open dialogue.",
+  },
+  {
+    title: "A place to grow",
+    subtitle: "CONTINUOUS LEARNING, MENTORSHIP & CAREER EVOLUTION",
+    text: "We invest in your growth with guidance, opportunities, and freedom.",
+  },
+];
 function LifeAtGaiant() {
   return (
     <section className="side-padding my-container relative mt-[40px]">
@@ -60,24 +80,11 @@ function LifeAtGaiant() {
       <TitleBlock title="Life At Gaiant" subtitle="WHAT SHOULD YOU EXPECT?" />
 
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
-        <GlassCard
-          className="max-w-none!"
-          title="A mission with meaning"
-          subtitle="SHAPE THE FUTURE OF LANGUAGE INTELLIGENCE"
-          text="Every project contributes to redefining how businesses understand people."
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="A team that listens"
-          subtitle="COLLABORATION ROOTED IN TRUST AND RESPECT"
-          text="Your ideas guide decisions in a culture of open dialogue."
-        />
-        <GlassCard
-          className="max-w-none!"
-          title="A place to grow"
-          subtitle="CONTINUOUS LEARNING, MENTORSHIP & CAREER EVOLUTION"
-          text="We invest in your growth with guidance, opportunities, and freedom."
-        />
+        {LIFE_AT_GAIANT.map((card, i) => (
+          <SlideUpSelf key={i}>
+            <GlassCard className="max-w-none!" {...card} />
+          </SlideUpSelf>
+        ))}
       </div>
     </section>
   );
@@ -85,32 +92,26 @@ function LifeAtGaiant() {
 
 function DoYouFit() {
   return (
-    <section className="my-container side-padding mt-[140px]">
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
-        <div>
-          <SectionSubTitle>DO YOU FIT</SectionSubTitle>
-        </div>
-        <div className="col-span-2 max-w-[892px] space-y-5 md:space-y-8">
-          <p className="text-[26px] leading-[34px] xs:text-[30px] xs:leading-[38px]">
-            We want Gaiant to be the place where everyone does the best work of
-            their career.
-          </p>
-          <p className="text-[15px] leading-[19px] xs:text-[16px] xs:leading-[21px]">
-            So we make thoughtful decisions about how we work, the perks we
-            provide, and how we create a diverse and inclusive work environment.
-            We also foster technical creativity and innovation through internal
-            hackathons, demos, tech talks, and achievement recognition programs
-            that form a cornerstone of our culture at Gaiant.
-            <br />
-            <br />
-            Join us and work alongside some of the world’s best talent from the
-            likes of Apple, Meta AI, Amazon and Google Brain, as well as
-            full-time staff adjunct professors from Stanford, Oxford, University
-            of Toronto, and UCL London.
-          </p>
-        </div>
-      </div>
-    </section>
+    <TextSection
+      subtitle="DO YOU FIT"
+      title="We want Gaiant to be the place where everyone does the best work of
+            their career."
+      content={
+        <>
+          So we make thoughtful decisions about how we work, the perks we
+          provide, and how we create a diverse and inclusive work environment.
+          We also foster technical creativity and innovation through internal
+          hackathons, demos, tech talks, and achievement recognition programs
+          that form a cornerstone of our culture at Gaiant.
+          <br />
+          <br />
+          Join us and work alongside some of the world’s best talent from the
+          likes of Apple, Meta AI, Amazon and Google Brain, as well as full-time
+          staff adjunct professors from Stanford, Oxford, University of Toronto,
+          and UCL London.
+        </>
+      }
+    />
   );
 }
 
@@ -162,8 +163,10 @@ function WhatsInItForYou() {
 }
 
 function OpenRoles() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section className="relative mt-[120px] overflow-x-clip">
+    <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
       <div className="absolute top-10 left-0 z-0 -translate-x-1/3 opacity-50">
         <GradientCircle
           className="origin-top blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-300"
@@ -177,16 +180,22 @@ function OpenRoles() {
 
       <div className="my-container side-padding">
         <div className="relative mb-5 xs:mb-8">
-          <SectionTitle>Open roles at Gaiant</SectionTitle>
+          <SectionTitle>
+            <AnimatedText isInView={isInView}>
+              Open roles at Gaiant
+            </AnimatedText>
+          </SectionTitle>
         </div>
 
         <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
           {OPEN_ROLES.map((role, i) => (
-            <SimpleCard
-              {...role}
-              key={i}
-              className="min-h-[180px] max-md:max-w-[424px] xs:min-h-[250px]"
-            />
+            <SlideUpSelf>
+              <SimpleCard
+                {...role}
+                key={i}
+                className="min-h-[180px] max-md:max-w-[424px] xs:min-h-[250px]"
+              />
+            </SlideUpSelf>
           ))}
         </div>
       </div>

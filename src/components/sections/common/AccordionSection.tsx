@@ -50,14 +50,22 @@ export default function AccordionSection({
           <TitleBlock title={title} subtitle={subtitle} />
         </div>
         {text && (
-          <div className="w-full max-w-[550px] pb-2 lg:w-1/2 xl:w-[40%]">
+          <SlideUpAnim
+            isInView={isInView}
+            transition={{ delay: 0.1 }}
+            className="w-full max-w-[550px] pb-2 lg:w-1/2 xl:w-[40%]"
+          >
             <p className="text-16">{text}</p>
-          </div>
+          </SlideUpAnim>
         )}
         {button && (
-          <div className="flex w-full max-w-[550px] pb-2 lg:w-1/2 lg:justify-end xl:w-[40%]">
+          <SlideUpAnim
+            isInView={isInView}
+            transition={{ delay: 0.1 }}
+            className="flex w-full max-w-[550px] pb-2 lg:w-1/2 lg:justify-end xl:w-[40%]"
+          >
             {button}
-          </div>
+          </SlideUpAnim>
         )}
       </div>
 
