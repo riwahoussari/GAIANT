@@ -78,7 +78,7 @@ function LifeAtGaiant() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {LIFE_AT_GAIANT.map((card, i) => (
           <SlideUpSelf key={i}>
-            <GlassCard className="max-w-none!" {...card} />
+            <GlassCard className="max-w-none! w-full" {...card} />
           </SlideUpSelf>
         ))}
       </div>

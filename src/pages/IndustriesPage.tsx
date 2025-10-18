@@ -60,7 +60,7 @@ export default function IndustriesPage() {
           {INDUSTRIES.map((industry, i) => (
             <SlideUpSelf key={i}>
               <IndustryCard
-                className="aspect-11/9!"
+                className="aspect-11/9! w-full"
                 title={industry.name}
                 text={industry.description}
                 button={!!industry.description}
