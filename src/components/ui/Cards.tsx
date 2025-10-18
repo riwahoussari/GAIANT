@@ -4,7 +4,7 @@ import Button from "./Button";
 import GradientCircle from "./GradientCircle";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import { motion as m } from "motion/react";
+import { motion as m, useMotionValue, useTransform } from "motion/react";
 import { Link } from "react-router-dom";
 
 export function IndustryCard({
@@ -67,6 +67,38 @@ export function IndustryCard({
   );
 }
 
+// export function GlassCard({
+//   title,
+//   subtitle,
+//   text,
+//   className,
+// }: {
+//   title: string;
+//   subtitle: string;
+//   text: string;
+//   className?: string;
+// }) {
+//   return (
+//     <div
+//       className={"max-w-[466px] bg-white/50 p-3 xs:p-6 " + (className || "")}
+//     >
+//       {/* title & circle */}
+//       <div className="relative flex items-end justify-end gap-2">
+//         <p className="text-25 absolute bottom-0 left-0 z-1">{title}</p>
+//         {/* placeholder */}
+//         <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red/0" />
+//         <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red absolute" />
+//       </div>
+//       {/* text */}
+//       <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
+//         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
+//           {subtitle}
+//         </p>
+//         <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
+//       </div>
+//     </div>
+//   );
+// }
 export function GlassCard({
   title,
   subtitle,
@@ -78,15 +110,46 @@ export function GlassCard({
   text: string;
   className?: string;
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const translateX = useMotionValue(0);
+  const translateY = useMotionValue(0);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    console.log(e.clientX, rect);
+    const x = e.clientX - rect.left - rect.width * 0.8; // center-based offset
+    const y = e.clientY - rect.top - rect.height * 0.25;
+
+    // Move circle across the full card area
+    translateX.set(x); // adjust multiplier to control sensitivity
+    translateY.set(y);
+  }
+
   return (
     <div
-      className={"max-w-[466px] bg-white/50 p-3 xs:p-6 " + (className || "")}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className={
+        "relative max-w-[466px] overflow-hidden bg-white/50 p-3 xs:p-6 " +
+        (className || "")
+      }
     >
       {/* title & circle */}
       <div className="relative flex items-end justify-end gap-2">
-        <p className="text-25 absolute bottom-0 left-0 z-1">{title}</p>
-        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red" />
+        <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
+
+        {/* placeholder */}
+        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-transparent" />
+
+        {/* animated circle */}
+        <m.div
+          className="absolute aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red"
+          style={{ translateX, translateY }}
+        />
       </div>
+
       {/* text */}
       <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
