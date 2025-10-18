@@ -38,13 +38,15 @@ function Article() {
       <div className="relative mt-[140px]">
         {/* back button */}
         <div className="top-0 left-0 mb-5 xl:absolute">
-          <Button
-            arrow={"back"}
-            className="bg-transparent! px-0!"
-            variant={"secondary"}
-          >
-            BACK TO BLOG
-          </Button>
+          <Link to="/news">
+            <Button
+              arrow={"back"}
+              className="bg-transparent! px-0!"
+              variant={"secondary"}
+            >
+              BACK TO BLOG
+            </Button>
+          </Link>
         </div>
 
         {/* content */}

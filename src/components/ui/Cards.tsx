@@ -182,34 +182,37 @@ export function ArticleCard({
   className?: string;
 }) {
   return (
-    <div
-      className={"group relative overflow-clip text-white " + (className || "")}
-    >
-      <div
-        className="h-full bg-black/25"
-        style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%)",
-        }}
-      >
-        <img className="w-full object-cover" src={imgSrc} />
-      </div>
+    <Link to={`/news/${title}`} className="group cursor-pointer">
+      <div className={"relative overflow-clip text-white " + (className || "")}>
+        <div
+          className="h-full bg-black/25"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%)",
+          }}
+        >
+          <img
+            className="w-full object-cover duration-200 ease-in-out group-hover:scale-110"
+            src={imgSrc}
+          />
+        </div>
 
-      {/* content */}
-      <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
-        <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
-        <p className="text-25">{title}</p>
-      </div>
+        {/* content */}
+        <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
+          <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
+          <p className="text-25">{title}</p>
+        </div>
 
-      {/* button */}
-      <Button className="absolute bottom-1 left-2" variant={"ghost"}>
-        READ MORE
-      </Button>
-      {/* arrow */}
-      <ArrowSvg
-        className="absolute right-0 bottom-1 z-1 w-6 stroke-[1px] xs:w-8"
-        color="black"
-      />
-    </div>
+        {/* button */}
+        <Button className="absolute bottom-1 left-2" variant={"ghost"}>
+          READ MORE
+        </Button>
+        {/* arrow */}
+        <ArrowSvg
+          className="absolute right-0 bottom-1 z-1 w-6 -translate-x-1 stroke-[1px] duration-200 ease-in-out group-hover:translate-x-0 xs:w-8"
+          color="black"
+        />
+      </div>
+    </Link>
   );
 }
 
