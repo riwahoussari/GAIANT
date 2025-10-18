@@ -144,7 +144,7 @@ function TestimonialSection() {
         className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-sm:bg-none! sm:p-12"
       >
         {/* animated testimonial */}
-        <div className="bg-linear-white-transparent-70 relative flex min-h-[250px] w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8">
+        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8">
           <AnimatePresence mode="wait">
             <m.div
               key={index}
@@ -152,7 +152,7 @@ function TestimonialSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="absolute inset-0 flex flex-col justify-between gap-8 p-8"
+              className="flex flex-col justify-between gap-8 sm:p-8"
             >
               <p className="text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px]">
                 {testimonials[index].text}
@@ -163,9 +163,11 @@ function TestimonialSection() {
                   src={testimonials[index].image}
                   className="aspect-square w-11 rounded-sm object-cover"
                 />
-                <div className="leading-[19px]">
-                  <p className="text-16">{testimonials[index].name}</p>
-                  <p className="text-[13px] text-[#838383] xs:text-[14px]">
+                <div>
+                  <p className="text-16 leading-[19px]">
+                    {testimonials[index].name}
+                  </p>
+                  <p className="text-[13px] leading-[15px] text-[#838383] xs:text-[14px]">
                     {testimonials[index].title}
                   </p>
                 </div>

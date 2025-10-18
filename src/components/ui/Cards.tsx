@@ -68,38 +68,6 @@ export function IndustryCard({
   );
 }
 
-// export function GlassCard({
-//   title,
-//   subtitle,
-//   text,
-//   className,
-// }: {
-//   title: string;
-//   subtitle: string;
-//   text: string;
-//   className?: string;
-// }) {
-//   return (
-//     <div
-//       className={"max-w-[466px] bg-white/50 p-3 xs:p-6 " + (className || "")}
-//     >
-//       {/* title & circle */}
-//       <div className="relative flex items-end justify-end gap-2">
-//         <p className="text-25 absolute bottom-0 left-0 z-1">{title}</p>
-//         {/* placeholder */}
-//         <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red/0" />
-//         <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red absolute" />
-//       </div>
-//       {/* text */}
-//       <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
-//         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
-//           {subtitle}
-//         </p>
-//         <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
-//       </div>
-//     </div>
-//   );
-// }
 export function GlassCard({
   title,
   subtitle,
