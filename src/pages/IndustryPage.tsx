@@ -57,13 +57,26 @@ export default function () {
                 "Ensure compliance across every transaction",
                 "Deliver clear insights for smarter decisions",
               ],
-              active: true,
             },
             {
               title: "Reduce busywork",
+              subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
+              list: [
+                "Detect fraud and protect sensitive data",
+                "Automate reporting with precision and speed",
+                "Ensure compliance across every transaction",
+                "Deliver clear insights for smarter decisions",
+              ],
             },
             {
               title: "Automate common support tickets",
+              subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
+              list: [
+                "Detect fraud and protect sensitive data",
+                "Automate reporting with precision and speed",
+                "Ensure compliance across every transaction",
+                "Deliver clear insights for smarter decisions",
+              ],
             },
           ]}
         />

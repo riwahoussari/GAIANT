@@ -1,5 +1,5 @@
 import CallToAction from "../components/sections/common/CallToAction";
-import Feature from "../components/sections/LandingPage/Feature";
+import ArcheSection from "../components/sections/LandingPage/ArcheSection";
 import Hero from "../components/sections/common/Hero";
 import IndustriesWeEmpower from "../components/sections/LandingPage/IndustriesWeEmpower";
 import Tools from "../components/sections/LandingPage/Tools";
@@ -62,7 +62,7 @@ export default function LandingPage() {
         <WhatMakesUsDifferent />
         <IndustriesWeEmpower />
         <Tools />
-        <Feature />
+        <ArcheSection />
         {/* What this Means Section */}
         <AccordionSection
           className="mt-[150px]!"
@@ -79,13 +79,23 @@ export default function LandingPage() {
                 "Supports collaboration across teams and departments",
                 "Scales with your projects as they grow",
               ],
-              active: true,
             },
             {
               title: "For your time",
+              subtitle: "WHERE WE MAKE A DIFFERENCE",
+              list: [
+                "Turns complex data into clear, actionable insights",
+                "Adapts to the tools and systems you already use",
+              ],
             },
             {
               title: "For your results",
+              subtitle: "WHERE WE MAKE A DIFFERENCE",
+              list: [
+                "Turns complex data into clear, actionable insights",
+                "Adapts to the tools and systems you already use",
+                "Scales with your projects as they grow",
+              ],
             },
           ]}
         />

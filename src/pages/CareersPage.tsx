@@ -137,13 +137,24 @@ function WhatsInItForYou() {
             "We respect that life gets busy – no penalties or apologies ",
             "Quality work matters most, whether it’s from a desk or the Bahamas",
           ],
-          active: true,
         },
         {
           title: "Bonuses and Equity",
+          subtitle: "ON YOUR OWN TERMS",
+          list: [
+            "We proudly support a remote work culture worldwide",
+            "We respect that life gets busy – no penalties or apologies ",
+            "Quality work matters most, whether it’s from a desk or the Bahamas",
+          ],
         },
         {
           title: "Health Coverage",
+          subtitle: "ON YOUR OWN TERMS",
+          list: [
+            "We proudly support a remote work culture worldwide",
+            "We offer centralized hubs to give teams a place to meet and innovate",
+            "We respect that life gets busy – no penalties or apologies ",
+          ],
         },
       ]}
     />

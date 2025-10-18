@@ -1,4 +1,10 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type HTMLAttributes,
+  type ReactNode,
+} from "react";
 import { Arrow2Svg } from "../../ui/ArrowSvg";
 import GradientCircle from "../../ui/GradientCircle";
 import { TitleBlock } from "../../ui/Titles";
@@ -7,7 +13,6 @@ type TAccordionContent = {
   title: string;
   subtitle?: string;
   list?: string[];
-  active?: boolean;
 };
 
 export default function AccordionSection({
@@ -18,7 +23,7 @@ export default function AccordionSection({
   accordionContent,
   className,
   button,
-  withGradient = true
+  withGradient = true,
 }: {
   title: string;
   subtitle: string;
@@ -27,8 +32,9 @@ export default function AccordionSection({
   accordionContent: TAccordionContent[];
   className?: string;
   button?: ReactNode;
-  withGradient?: boolean
+  withGradient?: boolean;
 }) {
+  const [selected, setSelected] = useState<number | undefined>(0);
   return (
     <section
       className={"side-padding my-container mt-[100px] " + (className || "")}
@@ -44,7 +50,7 @@ export default function AccordionSection({
           </div>
         )}
         {button && (
-          <div className="flex w-full max-w-[550px] lg:justify-end pb-2 lg:w-1/2 xl:w-[40%]">
+          <div className="flex w-full max-w-[550px] pb-2 lg:w-1/2 lg:justify-end xl:w-[40%]">
             {button}
           </div>
         )}
@@ -62,7 +68,12 @@ export default function AccordionSection({
         {/* Accordion */}
         <div className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]">
           {accordionContent.map((item, i) => (
-            <AccordionItem key={i} {...item} />
+            <AccordionItem
+              selected={selected === i}
+              onClick={() => setSelected(i)}
+              key={i}
+              {...item}
+            />
           ))}
         </div>
       </div>
@@ -74,39 +85,64 @@ function AccordionItem({
   title,
   subtitle,
   list,
-  active = false,
+  selected = false,
+  onClick,
   ...props
 }: {
   title: string;
   subtitle?: string;
   list?: string[];
-  active?: boolean;
+  selected?: boolean;
+  onClick: () => void;
 } & HTMLAttributes<HTMLDivElement>) {
+  const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
+  const [contentHeight, setContentHeight] = useState(
+    contentRef.current?.clientHeight
+  );
+  useEffect(() => {
+    setContentHeight(contentRef.current?.clientHeight);
+  }, [contentRef.current, contentRef]);
   return (
     <div className="relative" {...props}>
       {/* border top */}
       <div
         className={
           "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
-          (active ? " bg-dark-green-blue-gradient" : " bg-black/25")
+          (selected ? " bg-dark-green-blue-gradient" : " bg-black/25")
         }
       />
 
       {/* content */}
-      <p className="text-25 my-4">{title}</p>
-      {subtitle && (
-        <p className="my-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
-          {subtitle}
-        </p>
-      )}
-      {list && (
-        <div className="mb-8 space-y-[21px]">
-          {list.map((string, i) => (
-            <div key={i} className="flex items-center gap-5 xs:gap-7">
-              <Arrow2Svg className="w-3 xs:w-4" />
-              <p className="text-16">{string}</p>
-            </div>
-          ))}
+      <p className="text-25 cursor-pointer py-4" onClick={onClick}>
+        {title}
+      </p>
+
+      {(subtitle || list) && (
+        <div
+          style={{
+            height: selected ? contentHeight || 0 : 0,
+          }}
+          className={
+            "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
+          }
+        >
+          <div ref={contentRef}>
+            {subtitle && (
+              <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
+                {subtitle}
+              </p>
+            )}
+            {list && (
+              <div className="space-y-[21px] pb-8">
+                {list.map((string, i) => (
+                  <div key={i} className="flex items-center gap-5 xs:gap-7">
+                    <Arrow2Svg className="w-3 xs:w-4" />
+                    <p className="text-16">{string}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

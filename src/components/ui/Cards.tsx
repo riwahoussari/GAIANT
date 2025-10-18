@@ -44,14 +44,14 @@ export function IndustryCard({
         {(text || button) && (
           <div
             style={{
-              height: hovering ? (contentRef.current?.clientHeight  || 0) * 1.1 : 0,
+              height: hovering ? contentRef.current?.clientHeight || 0 : 0,
             }}
             className={
               "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
             }
           >
             <div ref={contentRef}>
-              {text && <p className="text-16 mt-2 max-w-[180px]">{text}</p>}
+              {text && <p className="text-16 max-w-[180px] py-2">{text}</p>}
               {button && (
                 <div className="flex justify-end">
                   <Link to={`/industries/${title}`}>

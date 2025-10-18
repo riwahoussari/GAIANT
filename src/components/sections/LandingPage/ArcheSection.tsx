@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { BlurredLandscapeBg } from "../../ui/Backgrounds";
 import Button from "../../ui/Button";
 
-export default function Feature() {
+export default function ArcheSection() {
   return (
     <section className="relative mt-[300px]">
       {/* bg */}
@@ -26,13 +27,15 @@ export default function Feature() {
               From messy systems to one smart flow — Archē unifies it all so
               progress feels effortless.
             </p>
-            <Button
-              className="mt-[30px] xs:mt-[40px] xl:mt-[50px]"
-              arrow={"spaced"}
-              size={"lg"}
-            >
-              LEARN MORE
-            </Button>
+            <Link to="/arche">
+              <Button
+                className="mt-[30px] xs:mt-[40px] xl:mt-[50px]"
+                arrow={"spaced"}
+                size={"lg"}
+              >
+                LEARN MORE
+              </Button>
+            </Link>
           </div>
         </div>
 
