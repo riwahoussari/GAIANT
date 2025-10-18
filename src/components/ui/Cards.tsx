@@ -118,7 +118,6 @@ export function GlassCard({
     const rect = cardRef.current?.getBoundingClientRect();
     if (!rect) return;
 
-    console.log(e.clientX, rect);
     const x = e.clientX - rect.left - rect.width * 0.8; // center-based offset
     const y = e.clientY - rect.top - rect.height * 0.25;
 
@@ -141,11 +140,11 @@ export function GlassCard({
         <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
 
         {/* placeholder */}
-        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-transparent" />
+        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red lg:border-red/0" />
 
         {/* animated circle */}
         <m.div
-          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red"
+          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 max-lg:hidden border-red"
           style={{ translateX, translateY }}
         />
       </div>
