@@ -1,6 +1,9 @@
+import { useState, type ReactNode } from "react";
 import { CenteredTitleBlock } from "../../ui/Titles";
 
+const TABS = ["Vault", "Legal", "Sales", "Finance", "Operations", "HR"];
 export default function ArcheFeatures() {
+  const [selectedTab, setSelectedTab] = useState(0);
   return (
     <section className="side-padding my-container flex flex-col items-center gap-y-8 overflow-x-clip sm:gap-y-14">
       {/* title */}
@@ -12,24 +15,15 @@ export default function ArcheFeatures() {
 
       {/* tabs */}
       <div className="grid grid-cols-2 items-center justify-items-stretch gap-2 rounded-full px-3 py-2.5 text-center max-sm:flex-wrap xs:grid-cols-3 sm:flex sm:justify-between sm:border-1 lg:gap-8">
-        <p className="rounded-full bg-black px-5 py-2 text-[16px] text-white xs:text-[17px]">
-          Vault
-        </p>
-        <p className="rounded-full px-5 py-2 text-[16px] text-black max-sm:border-1 xs:text-[17px]">
-          Legal
-        </p>
-        <p className="rounded-full px-5 py-2 text-[16px] text-black max-sm:border-1 xs:text-[17px]">
-          Sales
-        </p>
-        <p className="rounded-full px-5 py-2 text-[16px] text-black max-sm:border-1 xs:text-[17px]">
-          Finance
-        </p>
-        <p className="rounded-full px-5 py-2 text-[16px] text-black max-sm:border-1 xs:text-[17px]">
-          Operations
-        </p>
-        <p className="rounded-full px-5 py-2 text-[16px] text-black max-sm:border-1 xs:text-[17px]">
-          HR
-        </p>
+        {TABS.map((tab, i) => (
+          <Tab
+            key={i}
+            active={selectedTab === i}
+            onClick={() => setSelectedTab(i)}
+          >
+            {tab}
+          </Tab>
+        ))}
       </div>
       {/* image */}
       <div className="relative">
@@ -42,5 +36,27 @@ export default function ArcheFeatures() {
         <img src="/AIWorkingMobile.svg" className="relative w-full md:hidden" />
       </div>
     </section>
+  );
+}
+
+function Tab({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <p
+      onClick={onClick}
+      className={
+        "rounded-full cursor-pointer px-5 py-2 text-[16px] max-sm:border-1 xs:text-[17px] duration-200 ease-in-out " +
+        (active ? " bg-black text-white" : " bg-transparent text-black")
+      }
+    >
+      {children}
+    </p>
   );
 }

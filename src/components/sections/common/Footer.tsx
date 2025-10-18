@@ -1,12 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import ArrowSvg from "../../ui/ArrowSvg";
 import GradientCircle from "../../ui/GradientCircle";
+import { LINKS } from "../../../lib/constants";
 
 export default function Footer() {
   return (
     <>
-      <Outlet />
-      <footer className="relative -z-1 pt-[220px] pb-[20px] text-white">
+      <div className="relative z-1">
+        <Outlet />
+      </div>
+      <footer className="relative z-0 pt-[220px] pb-[20px] text-white">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip">
@@ -48,15 +51,33 @@ export default function Footer() {
                 PRODUCTS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
-                <p>Archē</p>
+                {LINKS.find((l) => l.name == "Products")?.sublinks?.map(
+                  (link, i) => (
+                    <Link
+                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      key={i}
+                      to={link.link}
+                    >
+                      <p>{link.name}</p>
+                    </Link>
+                  )
+                )}
               </div>
               <p className="mt-20 mb-6 font-ibm text-[13px] text-light-blue lg:hidden">
                 COMPANY
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px] lg:hidden">
-                <p>About</p>
-                <p>News</p>
-                <p>Careers</p>
+                {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
+                  (link, i) => (
+                    <Link
+                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      key={i}
+                      to={link.link}
+                    >
+                      <p>{link.name}</p>
+                    </Link>
+                  )
+                )}
               </div>
             </div>
             {/* col 2 */}
@@ -65,17 +86,23 @@ export default function Footer() {
                 SOLUTIONS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
-                <p>Banking & Financial Services</p>
-                <p>Insurance</p>
-                <p>Healthcare & Life Sciences</p>
-                <p>Technology, Media & Telecommunications (TMT)</p>
-                <p>Public Sector & Government</p>
-                <p>Energy & Utilities</p>
-                <p>Legal Services</p>
-                <p>Real Estate & Construction</p>
-                <p>Retail & Consumer Goods</p>
-                <p>Hospitality & Leisure</p>
-                <p>Education</p>
+                {LINKS.find((l) => l.name == "Solutions")?.sublinks?.map(
+                  (link, i) => (
+                    <Link
+                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      key={i}
+                      to={link.link}
+                    >
+                      <p>{link.name}</p>
+                    </Link>
+                  )
+                )}
+                <Link
+                  className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                  to="/industries"
+                >
+                  <p>View All</p>
+                </Link>
               </div>
             </div>
             {/* col 3 */}
@@ -84,9 +111,17 @@ export default function Footer() {
                 COMPANY
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
-                <p>About</p>
-                <p>News</p>
-                <p>Careers</p>
+                {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
+                  (link, i) => (
+                    <Link
+                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      key={i}
+                      to={link.link}
+                    >
+                      <p>{link.name}</p>
+                    </Link>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -100,7 +135,14 @@ export default function Footer() {
             src={`${import.meta.env.BASE_URL}gaiant-logo-gradient.svg`}
           />
           <p className="text-center text-[11px] leading-[31px] whitespace-pre md:text-end">
-            {"Gaiant © 2025       |       Powered by Elites®"}
+            {"Gaiant © 2025       |       Powered by ®"}
+            <a
+              href="https://weareelites.com/"
+              className="not-hover:underline"
+              target="_blank"
+            >
+              Elites
+            </a>
           </p>
         </div>
       </footer>

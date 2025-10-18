@@ -159,7 +159,7 @@ export const LINKS: TLinkRecord[] = [
     name: "Solutions",
     link: "/industries",
     sublinks: INDUSTRIES.map((industry, i) => {
-      return { link: `/industries/${i}`, name: industry.name };
+      return { link: `/industries/${industry.name}`, name: industry.name };
     }),
   },
   {
