@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import AccordionSection from "../components/sections/common/AccordionSection";
 import CallToAction from "../components/sections/common/CallToAction";
 import Hero from "../components/sections/common/Hero";
@@ -7,11 +7,7 @@ import { GlassCard, SimpleCard } from "../components/ui/Cards";
 import GradientCircle, {
   BigEllipseGradient,
 } from "../components/ui/GradientCircle";
-import {
-  SectionSubTitle,
-  SectionTitle,
-  TitleBlock,
-} from "../components/ui/Titles";
+import { SectionTitle, TitleBlock } from "../components/ui/Titles";
 import { OPEN_ROLES } from "../lib/constants";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { AnimatedText, SlideUpSelf } from "../components/ui/Anims";

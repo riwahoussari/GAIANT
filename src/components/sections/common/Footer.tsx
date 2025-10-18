@@ -36,11 +36,19 @@ export default function Footer() {
               <span className="underline">privacy policy</span> for details or
               to contact us. You can unsubscribe at any time.
             </p>
-            <div className="relative mt-[25px] flex items-center justify-between pb-3">
-              <p className="text-[18px] text-light-gray">Email Address</p>
-              <ArrowSvg color="white" className="w-[18px]" />
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Email Received!");
+              }}
+              className="relative mt-[25px] flex items-center justify-between pb-3"
+            >
+              <input placeholder="Email Address" className="text-[18px] outline-none w-full" />
+              <button className="cursor-pointer hover:opacity-60" type="submit">
+                <ArrowSvg color="white" className="w-[18px]" />
+              </button>
               <div className="bg-dark-green-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
-            </div>
+            </form>
           </div>
 
           {/* links */}
