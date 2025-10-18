@@ -172,7 +172,7 @@ export function SimpleCard({
   return (
     <div
       className={
-        "flex flex-col justify-between gap-8 bg-white/50 px-3 py-5 text-black xs:px-5 xs:py-8 " +
+        "flex flex-col w-full justify-between gap-8 bg-white/50 px-3 py-5 text-black xs:px-5 xs:py-8 " +
         (className || "")
       }
     >
