@@ -95,6 +95,10 @@ body {
   );
 }
 
+.bg-gold-gradient {
+  @apply bg-[linear-gradient(350deg,#36381C_0%,#96A893_30%,#2D2A23_100%)];
+}
+
 .bg-button {
   background-image: linear-gradient(
     120deg,

@@ -78,10 +78,17 @@ export default function Navbar({
         duration: hasMounted ? 0.3 : 0.7,
         delay: hasMounted ? 0 : 0.3,
       }}
-      className="fixed top-0 right-0 left-0 z-100 py-3 duration-500 ease-in-out"
+      className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
+      <div className="bg-gold-gradient w-full p-1 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
+        Introducing <span className="font-bold">archē</span>: The blah blah blah{" "}
+        {"   "}
+        <Link to="/arche" className="not-hover:underline">
+          Get Started
+        </Link>
+      </div>
       {/* Navbar Content */}
-      <div className="my-container side-padding relative z-100 flex items-center justify-between">
+      <div className="my-container side-padding relative z-100 flex items-center justify-between py-3">
         {/* logo */}
         <Link to="/">
           <div className="w-24 translate-y-1 xs:w-32 lg:min-w-[160px]">
