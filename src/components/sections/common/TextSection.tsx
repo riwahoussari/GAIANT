@@ -3,8 +3,16 @@ import { SectionSubTitle } from "../../ui/Titles";
 import { AnimatedText, SlideUpAnim } from "../../ui/Anims";
 import { useInView } from "motion/react";
 
-export default function TextSection({title, subtitle, content}: {title: string; subtitle: string; content: ReactNode}){
-    const sectionRef = useRef<HTMLDivElement>(null);
+export default function TextSection({
+  title,
+  subtitle,
+  content,
+}: {
+  title: string;
+  subtitle: string;
+  content: ReactNode;
+}) {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
     <section ref={sectionRef} className="my-container side-padding mt-[120px]">

@@ -28,7 +28,7 @@ export default function ImagesLayout({
       >
         <div
           className={
-            "h-full w-full overflow-clip flex items-center justify-center rounded-md lg:rounded-xl " +
+            "flex h-full w-full items-center justify-center overflow-clip rounded-md lg:rounded-xl " +
             (bg1 ? "bg-white/50" : "")
           }
         >
@@ -45,7 +45,7 @@ export default function ImagesLayout({
       >
         <div
           className={
-            "h-full w-full overflow-clip rounded-md flex items-center justify-center lg:rounded-xl " +
+            "flex h-full w-full items-center justify-center overflow-clip rounded-md lg:rounded-xl " +
             (bg2 ? "bg-white/50" : "")
           }
         >

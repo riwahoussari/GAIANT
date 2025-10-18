@@ -84,7 +84,7 @@ export default function WhatMakesUsDifferent() {
               world.
             </span>
           </p>
-          
+
           {CARDS_CONTENT.map((card, i) => (
             <SlideUpAnim
               key={i}

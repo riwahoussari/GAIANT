@@ -1,5 +1,5 @@
-import { motion as m, useInView, type Transition } from "motion/react";
-import { useRef, useState, type ReactNode } from "react";
+import { useInView } from "motion/react";
+import { useRef } from "react";
 import { AnimatedText, SlideUpAnim } from "../../ui/Anims";
 
 interface HeroProps {

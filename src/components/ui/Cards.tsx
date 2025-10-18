@@ -364,11 +364,14 @@ export function CardsSlider({
 
   const swipeHandlers = useSwipe(handleRight, handleLeft);
 
-
   return (
     <>
       {/* cards */}
-      <div {...swipeHandlers} ref={cardsContainerRef} className="mt-[40px] xl:overflow-x-hidden">
+      <div
+        {...swipeHandlers}
+        ref={cardsContainerRef}
+        className="mt-[40px] xl:overflow-x-hidden"
+      >
         <m.div
           animate={{
             x: `-${slideValue}px`,

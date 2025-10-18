@@ -23,7 +23,12 @@ export default function TheArcheModel() {
               subtitle="THE ARCHĒ MODEL"
             />
           </div>
-          <SlideUpAnim transition={{delay: 0.3}} initial={{y: "50px"}} isInView={isInView} className="col-span-2 lg:ms-2">
+          <SlideUpAnim
+            transition={{ delay: 0.3 }}
+            initial={{ y: "50px" }}
+            isInView={isInView}
+            className="col-span-2 lg:ms-2"
+          >
             <p className="text-16 max-w-[400px]">
               No matter the industry, Archē handles the repetitive work so your
               people can focus on the big picture.

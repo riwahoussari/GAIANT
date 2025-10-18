@@ -9,9 +9,9 @@ import GradientCircle, {
   BigEllipseGradient,
 } from "../components/ui/GradientCircle";
 import ImagesLayout from "../components/ui/ImagesLayout";
-import { SectionSubTitle, TitleBlock } from "../components/ui/Titles";
-import { useInView, useMotionValueEvent, useScroll } from "motion/react";
-import { AnimatedText, SlideUpAnim, SlideUpSelf } from "../components/ui/Anims";
+import { TitleBlock } from "../components/ui/Titles";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { SlideUpSelf } from "../components/ui/Anims";
 import TextSection from "../components/sections/common/TextSection";
 
 export default function AboutPage() {
@@ -133,7 +133,7 @@ function OurMission() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {OUR_MISSION_CONTENT.map((card, i) => (
           <SlideUpSelf key={i}>
-            <GlassCard className="max-w-none! w-full" {...card} />
+            <GlassCard className="w-full max-w-none!" {...card} />
           </SlideUpSelf>
         ))}
       </div>

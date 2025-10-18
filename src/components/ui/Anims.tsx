@@ -1,4 +1,4 @@
-import type { TargetAndTransition, Transition, VariantLabels } from "motion";
+import type { TargetAndTransition, Transition } from "motion";
 import { motion as m, useInView } from "motion/react";
 import { useRef, useState, type ReactNode } from "react";
 
@@ -78,13 +78,21 @@ export function SlideUpAnim({
   );
 }
 
-export function SlideUpSelf({ children, className }: { children: ReactNode, className?: string }) {
+export function SlideUpSelf({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-5%" });
 
   return (
     <div className={"h-full " + (className || "")} ref={cardRef}>
-      <SlideUpAnim className="h-full flex items-stretch" isInView={isInView}>{children}</SlideUpAnim>
+      <SlideUpAnim className="flex h-full items-stretch" isInView={isInView}>
+        {children}
+      </SlideUpAnim>
     </div>
   );
 }

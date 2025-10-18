@@ -26,7 +26,11 @@ export default function ArcheSection() {
             />
           </SlideUpAnim>
           {/* text */}
-          <SlideUpAnim isInView={isInView} transition={{delay: 0.35}} className="max-xs:max-w-[357px]! max-lg:max-w-[450px]">
+          <SlideUpAnim
+            isInView={isInView}
+            transition={{ delay: 0.35 }}
+            className="max-xs:max-w-[357px]! max-lg:max-w-[450px]"
+          >
             <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] xl:text-[46px] xl:leading-[47px]">
               Your complete AI solution for seamless workflows
             </p>
@@ -50,9 +54,12 @@ export default function ArcheSection() {
         <SlideUpAnim
           className="mt-14 w-full xs:mt-20 lg:mt-0 lg:w-[60%] xl:w-[55%]"
           isInView={isInView}
-          transition={{delay: 0.2}}
+          transition={{ delay: 0.2 }}
         >
-          <img src="/demos/ai-chat-demo.svg" className="h-full w-full object-contain" />
+          <img
+            src="/demos/ai-chat-demo.svg"
+            className="h-full w-full object-contain"
+          />
         </SlideUpAnim>
       </div>
     </section>

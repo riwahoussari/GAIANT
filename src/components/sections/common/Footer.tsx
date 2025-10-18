@@ -43,7 +43,10 @@ export default function Footer() {
               }}
               className="relative mt-[25px] flex items-center justify-between pb-3"
             >
-              <input placeholder="Email Address" className="text-[18px] outline-none w-full" />
+              <input
+                placeholder="Email Address"
+                className="w-full text-[18px] outline-none"
+              />
               <button className="cursor-pointer hover:opacity-60" type="submit">
                 <ArrowSvg color="white" className="w-[18px]" />
               </button>

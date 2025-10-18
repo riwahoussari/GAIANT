@@ -22,7 +22,10 @@ export default function NewsArticlesCarousel({
       {/* cards */}
       <CardsSlider displaySlider={false}>
         {ARTICLES.map((article, i) => (
-          <SlideUpAnim isInView={isInView} transition={{delay: 0.2 + 0.1 * i}}>
+          <SlideUpAnim
+            isInView={isInView}
+            transition={{ delay: 0.2 + 0.1 * i }}
+          >
             <ArticleCard
               key={i}
               className="aspcet-415/390! w-[300px] xs:w-[360px] lg:w-[410px]"
