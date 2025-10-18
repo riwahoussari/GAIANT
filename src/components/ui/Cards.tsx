@@ -145,13 +145,13 @@ export function GlassCard({
 
         {/* animated circle */}
         <m.div
-          className="absolute aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red"
+          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red"
           style={{ translateX, translateY }}
         />
       </div>
 
       {/* text */}
-      <div className="mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
+      <div className="mt-8 relative space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
