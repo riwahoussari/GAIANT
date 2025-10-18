@@ -33,8 +33,7 @@ export default function LandingPage() {
       <main>
         <Hero
           title="One AI work platform for any kind of work"
-          text="Gaiant is where powerful AI meets practical business solutions, so
-        you can work smarter."
+          text="Gaiant is where powerful AI meets practical business solutions, so you can work smarter."
           button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
           background={<BlurredTealGradientBg withBall />}
         >

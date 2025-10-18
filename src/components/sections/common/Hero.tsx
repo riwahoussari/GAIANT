@@ -1,3 +1,7 @@
+import { motion as m, useInView, type Transition } from "motion/react";
+import { useRef, useState, type ReactNode } from "react";
+import { AnimatedText, SlideUpAnim } from "../../ui/Anims";
+
 interface HeroProps {
   title: string;
   subtitle?: string;
@@ -19,8 +23,14 @@ export default function Hero({
   className,
   children,
 }: HeroProps) {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(heroRef, { once: true });
+
   return (
-    <section className={"relative text-white " + (className || "")}>
+    <section
+      ref={heroRef}
+      className={"relative text-white " + (className || "")}
+    >
       {/* gradients bg */}
       <div className="absolute top-0 right-0 bottom-0 left-0 z-0 overflow-x-clip">
         {background}
@@ -28,7 +38,13 @@ export default function Hero({
 
       {/* text content */}
       <div className="side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px]">
-        <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">{subtitle}</p>
+        {subtitle && (
+          <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">
+            <AnimatedText transition={{ delay: 0.3 }} isInView={isInView}>
+              {subtitle}
+            </AnimatedText>
+          </p>
+        )}
         <div
           className={
             "flex flex-col lg:flex-row " +
@@ -45,20 +61,29 @@ export default function Hero({
                 : " max-w-[660px] xl:max-w-[800px]")
             }
           >
-            {title}
+            <AnimatedText transition={{ duration: 0.4 }} isInView={isInView}>
+              {title}
+            </AnimatedText>
           </h1>
           <div>
-            <p
-              className={
-                "mt-[18px] text-[min(4.3vw,18px)] leading-[calc(min(4.3vw,18px)+6px)] xs:text-[20px] xs:leading-[28px] xl:text-[23px] xl:leading-[31px] " +
-                (spacing === "min"
-                  ? " max-w-[324px] xl:max-w-[360px]"
-                  : " max-w-[440px] xl:max-w-[500px]")
-              }
+            <SlideUpAnim
+              transition={{ duration: 0.5, delay: 0.7 }}
+              isInView={isInView}
             >
-              {text}
-            </p>
-            <div className="mt-[80px] xl:mt-[110px]">{button}</div>
+              <p
+                className={
+                  "mt-[18px] text-[min(4.3vw,18px)] leading-[calc(min(4.3vw,18px)+6px)] xs:text-[20px] xs:leading-[28px] xl:text-[23px] xl:leading-[31px] " +
+                  (spacing === "min"
+                    ? " max-w-[324px] xl:max-w-[360px]"
+                    : " max-w-[440px] xl:max-w-[500px]")
+                }
+              >
+                {text}
+              </p>
+            </SlideUpAnim>
+            <SlideUpAnim isInView={isInView} transition={{ delay: 1 }}>
+              <div className="mt-[80px] xl:mt-[110px]">{button}</div>
+            </SlideUpAnim>
           </div>
         </div>
       </div>
