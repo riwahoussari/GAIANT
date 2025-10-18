@@ -4,8 +4,9 @@ import Button from "./Button";
 import GradientCircle from "./GradientCircle";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import { motion as m, useMotionValue, useTransform } from "motion/react";
+import { motion as m, useMotionValue } from "motion/react";
 import { Link } from "react-router-dom";
+import { useSwipe } from "../../lib/useSwipe";
 
 export function IndustryCard({
   imgSrc,
@@ -172,7 +173,7 @@ export function SimpleCard({
   return (
     <div
       className={
-        "flex flex-col w-full justify-between gap-8 bg-white/50 px-3 py-5 text-black xs:px-5 xs:py-8 " +
+        "flex w-full flex-col justify-between gap-8 bg-white/50 px-3 py-5 text-black xs:px-5 xs:py-8 " +
         (className || "")
       }
     >
@@ -361,10 +362,13 @@ export function CardsSlider({
     [cardsRef, cardsContainerRef, cardsRef.current, cardsContainerRef.current]
   );
 
+  const swipeHandlers = useSwipe(handleRight, handleLeft);
+
+
   return (
     <>
       {/* cards */}
-      <div ref={cardsContainerRef} className="mt-[40px] xl:overflow-x-hidden">
+      <div {...swipeHandlers} ref={cardsContainerRef} className="mt-[40px] xl:overflow-x-hidden">
         <m.div
           animate={{
             x: `-${slideValue}px`,
