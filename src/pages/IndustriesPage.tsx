@@ -122,7 +122,7 @@ function TestimonialSection() {
       <div className="relative mb-8">
         <CenteredTitleBlock
           title="Hear from our customers"
-          subtitle="Industry leaders trust Gaiant to deliver better customer experiences"
+          text="Industry leaders trust Gaiant to deliver better customer experiences"
         />
       </div>
 

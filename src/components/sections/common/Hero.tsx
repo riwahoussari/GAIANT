@@ -40,7 +40,7 @@ export default function Hero({
       <div className="side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px]">
         {subtitle && (
           <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">
-            <AnimatedText transition={{ delay: 0.3 }} isInView={isInView}>
+            <AnimatedText transition={{ delay: 0.8 }} isInView={isInView}>
               {subtitle}
             </AnimatedText>
           </p>

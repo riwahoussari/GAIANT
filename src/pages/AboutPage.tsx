@@ -46,6 +46,7 @@ export default function AboutPage() {
         >
           <div ref={navbarBgTrigger} className="my-container side-padding">
             <ImagesLayout
+              animationDelay={0.5}
               bg2={false}
               img1={
                 <img

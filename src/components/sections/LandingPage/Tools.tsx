@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import GradientCircle from "../../ui/GradientCircle";
-import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
+import {
+  CenteredTitleBlock,
+  SectionSubTitle,
+  SectionTitle,
+} from "../../ui/Titles";
 
 export default function Tools() {
   const [translateYs, setTranslateYs] = useState<number[]>(Array(12).fill(0));
@@ -34,7 +38,7 @@ export default function Tools() {
     "/tools/Rectangle%20105.png",
     "/tools/Rectangle%20109.png",
   ];
-  
+
   return (
     <section className="side-padding relative mt-[120px] flex flex-col items-center overflow-x-clip">
       {/* background blur */}
@@ -43,12 +47,12 @@ export default function Tools() {
       </div>
 
       {/* titles */}
-      <SectionSubTitle className="mb-5 text-center">
-        PART OF YOUR WORKFLOW
-      </SectionSubTitle>
-      <SectionTitle big className="max-w-[766px] text-center">
-        Works seamlessly with the tools you already use
-      </SectionTitle>
+      <CenteredTitleBlock
+        className="max-w-[766px]"
+        big={true}
+        title="Works seamlessly with the tools you already use"
+        subtitle="PART OF YOUR WORKFLOW"
+      />
 
       {/* icons */}
       <div className="relative mt-16 w-full">

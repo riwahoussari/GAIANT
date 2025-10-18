@@ -9,7 +9,7 @@ export default function ArcheFeatures() {
       {/* title */}
       <CenteredTitleBlock
         title="Make AI work for you"
-        subtitle="No matter the role or industry, Archē handles the repetitive work so
+        text="No matter the role or industry, Archē handles the repetitive work so
           your people can focus on the big picture"
       />
 

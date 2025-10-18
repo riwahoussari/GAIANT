@@ -10,7 +10,7 @@ export default function DiscoverArche() {
       <div className="side-padding my-container py-[10px]">
         {/* title */}
         <div className="relative max-w-[520px] space-y-3 sm:space-y-5">
-          <TitleBlock title="Accelerate impact \nand outcomes" />
+          <TitleBlock title="Accelerate impact \n and outcomes" />
           <p className="text-16">
             Enable seamless human-agent collaboration, automate routine tasks,
             and transform fragmented data into actionable insights.

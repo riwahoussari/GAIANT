@@ -1,4 +1,4 @@
-import type { Transition } from "motion";
+import type { TargetAndTransition, Transition, VariantLabels } from "motion";
 import { motion as m } from "motion/react";
 import { useState, type ReactNode } from "react";
 
@@ -11,9 +11,9 @@ export function AnimatedText({
   children: string;
   transition?: Transition<any> | undefined;
 }) {
-  const [ended, setEnded] = useState(false);
+  const [ended, setEnded] = useState(0);
   const end = () => {
-    setTimeout(() => setEnded(true), 100);
+    setTimeout(() => setEnded((prev) => prev + 1), 100);
   };
   const words = children.split(" ");
   return (
@@ -25,7 +25,7 @@ export function AnimatedText({
         return (
           <span
             key={i}
-            className={"inline-block " + (ended ? "" : " overflow-y-clip")}
+            className={"inline-block " + (ended == 2 ? "" : " overflow-y-clip")}
           >
             <m.span
               initial={{ y: "100%" }}
@@ -33,12 +33,9 @@ export function AnimatedText({
               transition={{
                 duration: transition?.duration || 0.3,
                 ease: "easeInOut",
-                delay: 0.5 + 0.075 * i + (transition?.delay || 0),
+                delay: 0.075 * i + (transition?.delay || 0),
               }}
               className="inline-block whitespace-pre"
-              onAnimationEnd={() => {
-                if (i == words.length - 1) end();
-              }}
               onAnimationComplete={() => {
                 if (i == words.length - 1) end();
               }}
@@ -56,14 +53,19 @@ export function SlideUpAnim({
   children,
   isInView,
   transition,
+  initial,
+  className,
 }: {
   children: ReactNode;
   isInView: boolean;
   transition?: Transition<any> | undefined;
+  initial?: TargetAndTransition | undefined;
+  className?: string;
 }) {
   return (
     <m.div
-      initial={{ y: "30px", opacity: 0 }}
+      className={className}
+      initial={{ y: "30px", opacity: 0, ...initial }}
       animate={isInView ? { y: "-0%", opacity: 1 } : { y: "30px", opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut", ...transition }}
     >

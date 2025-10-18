@@ -1,3 +1,4 @@
+import { SlideUpAnim } from "../../ui/Anims";
 import GradientCircle from "../../ui/GradientCircle";
 import ImagesLayout from "../../ui/ImagesLayout";
 import { TitleBlock } from "../../ui/Titles";
@@ -14,7 +15,7 @@ export default function TheArcheModel() {
         <div className="mb-10 grid items-end sm:gap-y-5 lg:grid-cols-7">
           <div className="col-span-5">
             <TitleBlock
-              title="More mindspace, \nless mayhem"
+              title="More mindspace, \n less mayhem"
               subtitle="THE ARCHĒ MODEL"
             />
           </div>

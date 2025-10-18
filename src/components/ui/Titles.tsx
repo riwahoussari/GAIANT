@@ -1,6 +1,6 @@
-import { Fragment } from "react/jsx-runtime";
-import Button from "./Button";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
+import { useInView } from "motion/react";
+import { AnimatedText, SlideUpAnim } from "./Anims";
 
 export function SectionTitle({
   children,
@@ -29,7 +29,7 @@ export function SectionSubTitle({
   children,
   className,
 }: {
-  children: string;
+  children: ReactNode;
   className?: string;
 }) {
   return (
@@ -48,35 +48,57 @@ export function TitleBlock({
   subtitle?: string;
   button?: ReactNode;
 }) {
+  const titleBlockRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(titleBlockRef, { once: true, margin: "-5%" });
   return (
-    <div className="items-start justify-between sm:flex">
+    <div ref={titleBlockRef} className="items-start justify-between sm:flex">
       <div className="space-y-2 max-sm:mb-6">
-        {subtitle && <SectionSubTitle>{subtitle}</SectionSubTitle>}
+        {subtitle && (
+          <SectionSubTitle>
+            <AnimatedText isInView={isInView}>{subtitle}</AnimatedText>
+          </SectionSubTitle>
+        )}
         <SectionTitle>
-          {title.split("\\n").map((string, i) => (
-            <Fragment key={i}>
-              {string}
-              {i + 1 != title.split("\\n").length && <br />}
-            </Fragment>
-          ))}
+          <AnimatedText isInView={isInView}>{title}</AnimatedText>
         </SectionTitle>
       </div>
-      {button}
+      <SlideUpAnim transition={{ delay: 0.4 }} isInView={isInView}>
+        {button}
+      </SlideUpAnim>
     </div>
   );
 }
 
 export function CenteredTitleBlock({
   title,
+  text,
+  big = false,
   subtitle,
+  className,
 }: {
   title: string;
   subtitle?: string;
+  text?: string;
+  big?: boolean;
+  className?: string;
 }) {
+  const titleBlockRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(titleBlockRef, { once: true, margin: "-10%" });
   return (
-    <div className="text-center">
-      <SectionTitle>{title}</SectionTitle>
-      {subtitle && <p className="text-16">{subtitle}</p>}
+    <div ref={titleBlockRef} className={"text-center " + (className || "")}>
+      {subtitle && (
+        <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+          <SectionSubTitle className="mb-5">{subtitle}</SectionSubTitle>
+        </SlideUpAnim>
+      )}
+      <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+        <SectionTitle big={big}>{title}</SectionTitle>
+      </SlideUpAnim>
+      {text && (
+        <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+          <p className="text-16 mt-3">{text}</p>
+        </SlideUpAnim>
+      )}
     </div>
   );
 }
