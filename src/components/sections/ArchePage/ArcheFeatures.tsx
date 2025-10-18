@@ -45,7 +45,7 @@ export default function ArcheFeatures() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <img
-            src="/doctorTyping.jpg"
+            src="/images/doctor-typing.jpg"
             className="h-full w-full object-contain"
             alt=""
           />
@@ -57,11 +57,11 @@ export default function ArcheFeatures() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <img
-            src="/AIWorking.svg"
+            src="/demos/ai-working.svg"
             className="h-full w-full object-contain max-md:hidden"
           />
           <img
-            src="/AIWorkingMobile.svg"
+            src="/demos/ai-working-mobile.svg"
             className="h-full w-full object-contain md:hidden"
           />
         </SlideUpAnim>

@@ -88,7 +88,7 @@ function ArticlesSection({
               transition={{ delay: 0.2 }}
             >
               <img
-                src="/people-walking.jpg"
+                src="/images/people-walking.jpg"
                 className="h-full w-full object-cover"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",

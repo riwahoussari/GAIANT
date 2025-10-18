@@ -20,7 +20,7 @@ export default function ArcheSection() {
           {/* arche */}
           <SlideUpAnim isInView={isInView}>
             <img
-              src="/arche-logo.svg"
+              src="/logos/arche-logo.svg"
               className="w-[120px] md:w-[154px]"
               alt=""
             />
@@ -52,7 +52,7 @@ export default function ArcheSection() {
           isInView={isInView}
           transition={{delay: 0.2}}
         >
-          <img src="/AiChatDemo.svg" className="h-full w-full object-contain" />
+          <img src="/demos/ai-chat-demo.svg" className="h-full w-full object-contain" />
         </SlideUpAnim>
       </div>
     </section>

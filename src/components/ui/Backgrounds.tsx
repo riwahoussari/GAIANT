@@ -9,7 +9,7 @@ export function LandscapeBg({
   return (
     <div ref={ref} className="h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10">
       <img
-        src="/landing-page-banner.jpg"
+        src="/images/mountains-landscape.jpg"
         className="h-full w-full object-cover"
       />
     </div>
@@ -26,7 +26,7 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
         }
       >
         <img
-          src="/landing-page-banner.jpg"
+          src="/images/mountains-landscape.jpg"
           className="h-full w-full object-cover"
         />
       </div>

@@ -52,13 +52,13 @@ export default function AboutPage() {
               bg2={false}
               img1={
                 <img
-                  src="/people-on-laptop.jpg"
+                  src="/images/team-working.jpg"
                   className="h-full w-full object-cover"
                 />
               }
               img2={
                 <div className="flex h-full w-full items-center justify-center bg-black/20 p-5 lg:p-8">
-                  <img src="/AboutAttributes.svg" />
+                  <img src="/demos/about-attributes.svg" />
                 </div>
               }
             />

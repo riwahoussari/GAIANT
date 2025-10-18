@@ -43,7 +43,7 @@ export default function LandingPage() {
               img1={
                 <div className="flex items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
                   <img
-                    src="/patient-history-dashboard.svg"
+                    src="/demos/patient-history-dashboard.svg"
                     alt=""
                     className="h-full object-contain"
                   />
@@ -51,7 +51,7 @@ export default function LandingPage() {
               }
               img2={
                 <img
-                  src="/hero-img-1.jpg"
+                  src="/images/team-smiling.jpg"
                   alt=""
                   className="h-full w-full object-cover"
                 />
@@ -68,7 +68,7 @@ export default function LandingPage() {
           className="mt-[150px]!"
           title="What this means for you"
           subtitle="REDEFINING YOUR WORK DAY"
-          img={<img src="/AiChatDemo2.svg" />}
+          img={<img src="/demos/ai-chat-demo-2.svg" />}
           accordionContent={[
             {
               title: "For your work",

@@ -43,10 +43,10 @@ export default function () {
           text="AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead."
           img={
             <div>
-              <img src="/industries/man-on-laptop.jpg" />
+              <img src="/images/man-on-laptop.jpg" />
               <img
                 className="absolute top-0 left-0 z-1"
-                src="/industries/AIPrompt.svg"
+                src="/demos/ai-prompt.svg"
               />
             </div>
           }
@@ -195,7 +195,7 @@ function OurApproach() {
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <img src="/industries/video-screenshot.jpg" className="w-full" />
+          <img src="/images/video-screenshot.jpg" className="w-full" />
         </SlideUpAnim>
       </div>
     </section>

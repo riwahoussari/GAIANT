@@ -71,11 +71,11 @@ export function ProductsFlyoutContent() {
       <Link to="/arche" className="cursor-pointer">
         <div className="group/img relative flex aspect-square w-[300px] flex-col justify-end overflow-hidden rounded-lg bg-teal text-white">
           <img
-            src="/landing-page-banner.jpg"
+            src="/images/mountains-landscape.jpg"
             className="absolute h-full w-full origin-bottom scale-200 object-cover object-[70%_100%] duration-150 ease-in-out group-hover/img:scale-220"
           />
           <div className="space-y-5 p-4">
-            <img src="/arche-logo.svg" className="relative" alt="" />
+            <img src="/logos/arche-logo.svg" className="relative" alt="" />
             <p className="relative text-[15px]">
               An enterprise-ready AI platform that powers modern workplace
               productivity

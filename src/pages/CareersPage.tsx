@@ -33,7 +33,7 @@ export default function CareersPage() {
             <div className="relative h-full">
               <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(0.5vw,5px)]">
                 <img
-                  src="/people-working.jpg"
+                  src="/images/team-discussing.jpg"
                   className="h-full w-full object-cover object-bottom"
                 />
               </div>
@@ -123,7 +123,7 @@ function WhatsInItForYou() {
           SEE OPEN ROLES
         </Button>
       }
-      img={<img src="/man-working.jpg" />}
+      img={<img src="/images/man-in-online-meeting.jpg" />}
       accordionContent={[
         {
           title: "Work Flexibility",

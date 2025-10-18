@@ -61,19 +61,19 @@ type ITrutedByRecord = { text: string; logoSrc: string };
 export const TRUSTED_BY: ITrutedByRecord[] = [
   {
     text: "“Gaiant's team stepped in to review partially completed conversations between different models. We analyzed the search results, reference material, and model responses”.",
-    logoSrc: "/industries/logo-1.svg",
+    logoSrc: "/partners/partner-1.svg",
   },
   {
     text: "“Gaiant automated processes like invoice reconciliation, W9 processing, claim approval letters, and compliance support, resulting in significant cost and time savings”.",
-    logoSrc: "/industries/logo-2.svg",
+    logoSrc: "/partners/partner-2.svg",
   },
   {
     text: "“Gaiant’s team worked within the client's platform to review model conversations from the research team and assess the level of accuracy of the model responses”.",
-    logoSrc: "/industries/logo-3.svg",
+    logoSrc: "/partners/partner-3.svg",
   },
   {
     text: "“Gaiant's team stepped in to review partially completed conversations between different models. We analyzed the search results, reference material, and model responses”.",
-    logoSrc: "/industries/logo-4.svg",
+    logoSrc: "/partners/partner-4.svg",
   },
 ];
 

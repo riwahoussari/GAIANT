@@ -35,14 +35,14 @@ export default function TheArcheModel() {
         <ImagesLayout
           img1={
             <img
-              src="/woman-on-laptop.jpg"
+              src="/images/woman-on-laptop.jpg"
               alt=""
               className="h-full w-full object-cover"
             />
           }
           img2={
             <img
-              src="/watered-leaf.jpg"
+              src="/images/watered-leaf.jpg"
               alt=""
               className="h-full w-full object-cover"
             />

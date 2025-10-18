@@ -44,7 +44,7 @@ export default function ArchePage() {
               className="side-padding my-container relative"
             >
               <img
-                src="/AiChatDemo3.svg"
+                src="/demos/ai-chat-demo-3.svg"
                 alt=""
                 className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
               />

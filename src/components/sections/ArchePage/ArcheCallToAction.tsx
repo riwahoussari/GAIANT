@@ -31,15 +31,15 @@ export default function ArcheCallToAction() {
           transition={{ delay: 0.2 }}
           className="absolute top-0 right-1/2 w-[100vw] min-w-[350px] translate-x-1/2 xl:max-w-[1280px] 2xl:max-w-[1536px]"
         >
-          <img src="/arche-logo-teal.svg" className="w-full opacity-30" />
+          <img src="/logos/arche-logo-teal.svg" className="w-full opacity-30" />
           <img
-            src="/arche-logo-beige.svg"
+            src="/logos/arche-logo-beige.svg"
             className="absolute top-0 w-full opacity-30"
           />
         </SlideUpAnim>
         {/* placeholder to maintain height */}
         <div className="w-[100vw] min-w-[350px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
-          <img src="/arche-logo-teal.svg" className="w-full opacity-0" />
+          <img src="/logos/arche-logo-teal.svg" className="w-full opacity-0" />
         </div>
       </div>
 

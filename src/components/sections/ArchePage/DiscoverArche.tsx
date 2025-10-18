@@ -52,7 +52,7 @@ export default function DiscoverArche() {
             transition={{ delay: 0.4 }}
           >
             <img
-              src="/patient-history-dashboard-beige.svg"
+              src="/demos/patient-history-dashboard-beige.svg"
               className="h-full w-full object-contain"
             />
           </SlideUpAnim>
