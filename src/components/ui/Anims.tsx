@@ -83,8 +83,8 @@ export function SlideUpSelf({ children }: { children: ReactNode }) {
   const isInView = useInView(cardRef, { once: true, margin: "-5%" });
 
   return (
-    <div ref={cardRef}>
-      <SlideUpAnim isInView={isInView}>{children}</SlideUpAnim>;
+    <div className="h-full" ref={cardRef}>
+      <SlideUpAnim className="h-full flex items-stretch" isInView={isInView}>{children}</SlideUpAnim>
     </div>
   );
 }
