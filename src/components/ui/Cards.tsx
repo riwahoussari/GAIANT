@@ -144,13 +144,13 @@ export function GlassCard({
 
         {/* animated circle */}
         <m.div
-          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 max-lg:hidden border-red"
+          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red max-lg:hidden"
           style={{ translateX, translateY }}
         />
       </div>
 
       {/* text */}
-      <div className="mt-8 relative space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
+      <div className="relative mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
@@ -283,6 +283,7 @@ type TSliderValues = {
   totalCards: number;
   slideDifference: number;
   slidableDistance: number;
+  cardsToSlide: number;
 };
 export function CardsSlider({
   displaySlider = true,
@@ -300,6 +301,7 @@ export function CardsSlider({
     totalCards = 0,
     slideDifference = 0,
     slidableDistance = 0,
+    cardsToSlide = 0,
   } = values || {};
 
   const calculateValues = (): TSliderValues => {
@@ -309,24 +311,33 @@ export function CardsSlider({
         totalCards: 0,
         slideDifference: 0,
         slidableDistance: 0,
+        cardsToSlide: 0,
       };
     const cards = cardsRef.current;
     const container = cardsContainerRef.current;
 
     const totalCards = cards.childElementCount;
     const cardWidth = cards.clientWidth / totalCards;
-    const visibleCards = Math.min(container.clientWidth / cardWidth);
+    const visibleCards = Math.floor(container.clientWidth / cardWidth);
     const hiddenCards = totalCards - visibleCards;
-    const slideDifference = Math.round(2000 / hiddenCards) / 1000;
+    const cardsToSlide = visibleCards;
+    const slideDifference =
+      Math.round((cardsToSlide * 1000) / hiddenCards) / 1000;
 
     const slidableDistance = hiddenCards * cardWidth;
 
-    return { visibleCards, totalCards, slideDifference, slidableDistance };
+    return {
+      visibleCards,
+      totalCards,
+      slideDifference,
+      slidableDistance,
+      cardsToSlide,
+    };
   };
 
   const slideValue = Math.max(0, Math.min(slidePercent, 1)) * slidableDistance;
   const slidedCards =
-    (Math.max(0, Math.min(slidePercent, 1)) / slideDifference) * 2;
+    (Math.max(0, Math.min(slidePercent, 1)) / slideDifference) * cardsToSlide;
   const progressBarWidth = ((visibleCards + slidedCards) / totalCards) * 100;
 
   const handleLeft = () => {
@@ -339,11 +350,18 @@ export function CardsSlider({
     setSlidePercent((prev) => (prev < 1 ? prev + slideDifference : prev));
   };
 
+  useEffect(() => {
+    const handleResize = () => setValues(calculateValues);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(
     () => setValues(calculateValues()),
     [cardsRef, cardsContainerRef, cardsRef.current, cardsContainerRef.current]
   );
 
+  console.log(progressBarWidth);
   return (
     <>
       {/* cards */}
@@ -366,7 +384,12 @@ export function CardsSlider({
           <div onClick={handleLeft}>
             <ArrowSvg
               color="var(--color-teal)"
-              className="w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px]"
+              className={
+                "w-6 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px] " +
+                (slidePercent - slideDifference < 0
+                  ? " cursor-not-allowed! opacity-50!"
+                  : "")
+              }
             />
           </div>
 
@@ -386,7 +409,10 @@ export function CardsSlider({
           <div onClick={handleRight}>
             <ArrowSvg
               color="var(--color-teal)"
-              className="w-6 cursor-pointer 2xl:-translate-y-[1px]"
+              className={
+                "w-6 cursor-pointer 2xl:-translate-y-[1px]" +
+                (slidePercent >= 1 ? " cursor-not-allowed! opacity-50!" : "")
+              }
             />
           </div>
         </div>
