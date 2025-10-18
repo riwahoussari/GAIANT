@@ -7,7 +7,8 @@ import Hero from "../components/sections/common/Hero";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { LandscapeBg } from "../components/ui/Backgrounds";
 import Button from "../components/ui/Button";
-import { useMotionValueEvent, useScroll } from "motion/react";
+import { useInView, useMotionValueEvent, useScroll } from "motion/react";
+import { SlideUpAnim } from "../components/ui/Anims";
 
 export default function ArchePage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -16,6 +17,9 @@ export default function ArchePage() {
     target: navbarBgTrigger,
     offset: ["end end", "end start"],
   });
+
+  const heroRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(heroRef, { once: true });
 
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? false : true)
@@ -32,12 +36,19 @@ export default function ArchePage() {
           button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
           background={<LandscapeBg ref={navbarBgTrigger} />}
         >
-          <div className="side-padding my-container relative">
-            <img
-              src="/AiChatDemo3.svg"
-              alt=""
-              className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
-            />
+          <div ref={heroRef}>
+            <SlideUpAnim
+              transition={{ delay: 0.5, duration: 0.6 }}
+              initial={{ y: "100px" }}
+              isInView={isInView}
+              className="side-padding my-container relative"
+            >
+              <img
+                src="/AiChatDemo3.svg"
+                alt=""
+                className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
+              />
+            </SlideUpAnim>
           </div>
         </Hero>
 

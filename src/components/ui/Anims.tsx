@@ -66,7 +66,7 @@ export function SlideUpAnim({
     <m.div
       className={className}
       initial={{ y: "30px", opacity: 0, ...initial }}
-      animate={isInView ? { y: "-0%", opacity: 1 } : { y: "30px", opacity: 0 }}
+      animate={isInView ? { y: "-0%", opacity: 1 } : { y: "30px", opacity: 0, ...initial }}
       transition={{ duration: 0.5, ease: "easeInOut", ...transition }}
     >
       {children}

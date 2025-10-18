@@ -1,10 +1,15 @@
+import { useRef } from "react";
+import { SlideUpAnim } from "../../ui/Anims";
 import Button from "../../ui/Button";
 import GradientCircle from "../../ui/GradientCircle";
-import { SectionSubTitle, SectionTitle } from "../../ui/Titles";
+import { CenteredTitleBlock } from "../../ui/Titles";
+import { useInView } from "motion/react";
 
 export default function ArcheCallToAction() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section className="relative mt-[120px] overflow-x-clip">
+    <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
       {/* gradient circle */}
       <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-80">
         <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
@@ -12,19 +17,26 @@ export default function ArcheCallToAction() {
 
       {/* titles */}
       <div className="my-container side-padding relative z-1 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
-        <SectionSubTitle>LET’S ARCHĒ</SectionSubTitle>
-        <SectionTitle big>Ready to put AI to work?</SectionTitle>
+        <CenteredTitleBlock
+          big
+          title="Ready to put AI to work?"
+          subtitle="LET’S ARCHĒ"
+        />
       </div>
 
       {/* arche logo */}
       <div className="relative max-sm:mt-5">
-        <div className="absolute top-0 right-1/2 w-[100vw] min-w-[350px] translate-x-1/2 xl:max-w-[1280px] 2xl:max-w-[1536px]">
+        <SlideUpAnim
+          isInView={isInView}
+          transition={{ delay: 0.2 }}
+          className="absolute top-0 right-1/2 w-[100vw] min-w-[350px] translate-x-1/2 xl:max-w-[1280px] 2xl:max-w-[1536px]"
+        >
           <img src="/arche-logo-teal.svg" className="w-full opacity-30" />
           <img
             src="/arche-logo-beige.svg"
             className="absolute top-0 w-full opacity-30"
           />
-        </div>
+        </SlideUpAnim>
         {/* placeholder to maintain height */}
         <div className="w-[100vw] min-w-[350px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
           <img src="/arche-logo-teal.svg" className="w-full opacity-0" />
@@ -32,9 +44,13 @@ export default function ArcheCallToAction() {
       </div>
 
       {/* button */}
-      <div className="relative mt-12 flex justify-center sm:mt-16">
+      <SlideUpAnim
+        transition={{ delay: 0.3 }}
+        isInView={isInView}
+        className="relative mt-12 flex justify-center sm:mt-16"
+      >
         <Button variant={"black"}>REQUEST A DEMO</Button>
-      </div>
+      </SlideUpAnim>
     </section>
   );
 }
