@@ -7,8 +7,13 @@ import GradientCircle from "../components/ui/GradientCircle";
 import { CenteredTitleBlock } from "../components/ui/Titles";
 import { INDUSTRIES } from "../lib/constants";
 import Navbar from "../components/sections/common/navbar/Navbar";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import { useRef, useState } from "react";
+import {
+  motion as m,
+  AnimatePresence,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 export default function IndustriesPage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -67,16 +72,53 @@ export default function IndustriesPage() {
   );
 }
 
+const testimonials = [
+  {
+    text: "“Gaiant transformed how we work — reports that used to take days now take minutes. Accuracy is solid, integrations were painless, and our team actually trusts the insights. ROI within two months.”",
+    name: "Maya Hage",
+    title: "Head of Operations, NovaHealth",
+    image: "/industries/woman-profile.jpg",
+  },
+  {
+    text: "“Since implementing Gaiant, our support response time dropped by 50%. The automation and AI suggestions are game-changers. Our customers notice the difference.”",
+    name: "Jordan Lee",
+    title: "Customer Experience Manager, BrightCom",
+    image: "/industries/woman-profile.jpg",
+  },
+  {
+    text: "“We tried multiple tools before, but none were as seamless and insightful as Gaiant. It adapts to our workflow and delivers exactly what we need — effortlessly.”",
+    name: "Ava Patel",
+    title: "Operations Director, FinSight",
+    image: "/industries/woman-profile.jpg",
+  },
+];
+
 function TestimonialSection() {
+  const [index, setIndex] = useState(0);
+
+  // Auto-rotate every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
+  const prev = () =>
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
   return (
     <section className="my-container side-padding relative mt-[130px]">
+      {/* background gradient */}
       <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-40">
         <GradientCircle
           className="scale-y-200 -rotate-90 blur-[max(3vw,30px)]! max-sm:scale-x-200"
-          colorr={"teal"}
+          colorr="teal"
         />
       </div>
 
+      {/* section title */}
       <div className="relative mb-8">
         <CenteredTitleBlock
           title="Hear from our customers"
@@ -84,38 +126,68 @@ function TestimonialSection() {
         />
       </div>
 
+      {/* testimonials container */}
       <div className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-sm:bg-none! sm:p-12">
-        {/* text */}
-        <div className="bg-linear-white-transparent-70 flex min-h-[250px] max-w-[800px] flex-col justify-between gap-8 rounded-[20px] p-8">
-          <p className="text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px]">
-            “Gaiant transformed how we work — reports that used to take days now
-            take minutes. Accuracy is solid, integrations were painless, and our
-            team actually trusts the insights. ROI within two months”.
-          </p>
-
-          <div className="flex items-center gap-3">
-            <img
-              src="/industries/woman-profile.jpg"
-              className="aspect-square w-11 rounded-sm"
-            />
-            <div className="leading-[19px]">
-              <p className="text-16">Maya Hage</p>
-              <p className="text-[13px] text-[#838383] xs:text-[14px]">
-                Head of Operations, NovaHealth
+        {/* animated testimonial */}
+        <div className="bg-linear-white-transparent-70 relative flex min-h-[250px] w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8">
+          <AnimatePresence mode="wait">
+            <m.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute inset-0 flex flex-col justify-between gap-8 p-8"
+            >
+              <p className="text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px]">
+                {testimonials[index].text}
               </p>
-            </div>
-          </div>
+
+              <div className="flex items-center gap-3">
+                <img
+                  src={testimonials[index].image}
+                  className="aspect-square w-11 rounded-sm object-cover"
+                />
+                <div className="leading-[19px]">
+                  <p className="text-16">{testimonials[index].name}</p>
+                  <p className="text-[13px] text-[#838383] xs:text-[14px]">
+                    {testimonials[index].title}
+                  </p>
+                </div>
+              </div>
+            </m.div>
+          </AnimatePresence>
         </div>
-        {/* pagination */}
+
+        {/* pagination + arrows */}
         <div className="flex w-full max-w-[800px] items-center justify-between max-sm:px-8">
+          {/* dots */}
           <div className="flex gap-6 sm:gap-8">
-            <div className="aspect-square w-2.5 rounded-full bg-black" />
-            <div className="aspect-square w-2.5 rounded-full bg-black/30" />
-            <div className="aspect-square w-2.5 rounded-full bg-black/30" />
+            {testimonials.map((_, i) => (
+              <div
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`aspect-square w-2.5 cursor-pointer rounded-full transition-all duration-300 ${
+                  i === index ? "bg-black" : "bg-black/30 hover:bg-black/50"
+                }`}
+              />
+            ))}
           </div>
+
+          {/* arrows */}
           <div className="flex items-center gap-8">
-            <ArrowSvg className="w-6 rotate-180" color="black" />
-            <ArrowSvg className="w-6" color="black" />
+            <button onClick={prev}>
+              <ArrowSvg
+                className="w-6 rotate-180 cursor-pointer duration-200 ease-in-out hover:-translate-x-1"
+                color="black"
+              />
+            </button>
+            <button onClick={next}>
+              <ArrowSvg
+                className="w-6 cursor-pointer duration-200 ease-in-out hover:translate-x-1"
+                color="black"
+              />
+            </button>
           </div>
         </div>
       </div>
