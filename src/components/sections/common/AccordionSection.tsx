@@ -8,6 +8,8 @@ import {
 import { Arrow2Svg } from "../../ui/ArrowSvg";
 import GradientCircle from "../../ui/GradientCircle";
 import { TitleBlock } from "../../ui/Titles";
+import { useInView } from "motion/react";
+import { SlideUpAnim } from "../../ui/Anims";
 
 type TAccordionContent = {
   title: string;
@@ -35,8 +37,11 @@ export default function AccordionSection({
   withGradient?: boolean;
 }) {
   const [selected, setSelected] = useState<number | undefined>(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
     <section
+      ref={sectionRef}
       className={"side-padding my-container mt-[100px] " + (className || "")}
     >
       {/* titles */}
@@ -64,9 +69,18 @@ export default function AccordionSection({
           </div>
         )}
         {/* image */}
-        <div className="relative w-full max-w-[700px] lg:w-1/2">{img}</div>
+        <SlideUpAnim
+          isInView={isInView}
+          className="relative w-full max-w-[700px] lg:w-1/2"
+        >
+          {img}
+        </SlideUpAnim>
         {/* Accordion */}
-        <div className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]">
+        <SlideUpAnim
+          isInView={isInView}
+          transition={{ delay: 0.2 }}
+          className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]"
+        >
           {accordionContent.map((item, i) => (
             <AccordionItem
               selected={selected === i}
@@ -75,7 +89,7 @@ export default function AccordionSection({
               {...item}
             />
           ))}
-        </div>
+        </SlideUpAnim>
       </div>
     </section>
   );

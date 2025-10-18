@@ -361,7 +361,6 @@ export function CardsSlider({
     [cardsRef, cardsContainerRef, cardsRef.current, cardsContainerRef.current]
   );
 
-  console.log(progressBarWidth);
   return (
     <>
       {/* cards */}
@@ -371,7 +370,7 @@ export function CardsSlider({
             x: `-${slideValue}px`,
           }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="flex w-max items-start gap-5"
+          className="flex w-max items-start gap-5 overflow-y-clip"
           ref={cardsRef}
         >
           {children}

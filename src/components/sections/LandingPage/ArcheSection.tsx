@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import { BlurredLandscapeBg } from "../../ui/Backgrounds";
 import Button from "../../ui/Button";
+import { useRef } from "react";
+import { useInView } from "motion/react";
+import { SlideUpAnim } from "../../ui/Anims";
 
 export default function ArcheSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-20%" });
   return (
-    <section className="relative mt-[300px]">
+    <section ref={sectionRef} className="relative mt-[300px]">
       {/* bg */}
       <BlurredLandscapeBg />
 
@@ -13,13 +18,15 @@ export default function ArcheSection() {
         {/* text */}
         <div className="flex w-full flex-col items-start justify-between gap-10 xs:gap-20 md:flex-row lg:w-[40%] lg:flex-col">
           {/* arche */}
-          <img
-            src="/arche-logo.svg"
-            className="w-[120px] md:w-[154px]"
-            alt=""
-          />
+          <SlideUpAnim isInView={isInView}>
+            <img
+              src="/arche-logo.svg"
+              className="w-[120px] md:w-[154px]"
+              alt=""
+            />
+          </SlideUpAnim>
           {/* text */}
-          <div className="max-xs:max-w-[357px]! max-lg:max-w-[450px]">
+          <SlideUpAnim isInView={isInView} transition={{delay: 0.35}} className="max-xs:max-w-[357px]! max-lg:max-w-[450px]">
             <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] xl:text-[46px] xl:leading-[47px]">
               Your complete AI solution for seamless workflows
             </p>
@@ -36,14 +43,17 @@ export default function ArcheSection() {
                 LEARN MORE
               </Button>
             </Link>
-          </div>
+          </SlideUpAnim>
         </div>
 
         {/* dashboard */}
-        <img
-          src="/AiChatDemo.svg"
+        <SlideUpAnim
           className="mt-14 w-full xs:mt-20 lg:mt-0 lg:w-[60%] xl:w-[55%]"
-        />
+          isInView={isInView}
+          transition={{delay: 0.2}}
+        >
+          <img src="/AiChatDemo.svg" className="h-full w-full object-contain" />
+        </SlideUpAnim>
       </div>
     </section>
   );

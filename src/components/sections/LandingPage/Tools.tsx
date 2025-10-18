@@ -1,11 +1,38 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import GradientCircle from "../../ui/GradientCircle";
-import {
-  CenteredTitleBlock,
-  SectionSubTitle,
-  SectionTitle,
-} from "../../ui/Titles";
+import { CenteredTitleBlock } from "../../ui/Titles";
+import { SlideUpAnim } from "../../ui/Anims";
+
+const ICONS = [
+  "/tools/Rectangle%20100.png",
+  "/tools/Rectangle%20101.png",
+  "/tools/Rectangle%2099.png",
+  "/tools/Rectangle%2098.png",
+  "/tools/Rectangle%20104.png",
+  "/tools/Rectangle%20108.png",
+  "/tools/Rectangle%20106.png",
+  "/tools/Rectangle%20103.png",
+  "/tools/Rectangle%20107.png",
+  "/tools/Rectangle%20102.png",
+  "/tools/Rectangle%20105.png",
+  "/tools/Rectangle%20109.png",
+];
+
+const OPACITIES = [
+  " max-lg:opacity-50 lg:opacity-25",
+  " max-lg:opacity-75 lg:opacity-50",
+  " lg:opacity-75",
+  " ",
+  " max-lg:opacity-75",
+  " max-lg:opacity-50",
+  " max-lg:opacity-50",
+  " max-lg:opacity-75",
+  " ",
+  " lg:opacity-75",
+  " max-lg:opacity-75 lg:opacity-50",
+  " max-lg:opacity-50 lg:opacity-25",
+];
 
 export default function Tools() {
   const [translateYs, setTranslateYs] = useState<number[]>(Array(12).fill(0));
@@ -24,23 +51,14 @@ export default function Tools() {
 
   const vanishTranslateYValues = () => setTranslateYs(Array(12).fill(0));
 
-  const icons = [
-    "/tools/Rectangle%20100.png",
-    "/tools/Rectangle%20101.png",
-    "/tools/Rectangle%2099.png",
-    "/tools/Rectangle%2098.png",
-    "/tools/Rectangle%20104.png",
-    "/tools/Rectangle%20108.png",
-    "/tools/Rectangle%20106.png",
-    "/tools/Rectangle%20103.png",
-    "/tools/Rectangle%20107.png",
-    "/tools/Rectangle%20102.png",
-    "/tools/Rectangle%20105.png",
-    "/tools/Rectangle%20109.png",
-  ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section className="side-padding relative mt-[120px] flex flex-col items-center overflow-x-clip">
+    <section
+      ref={sectionRef}
+      className="side-padding relative mt-[120px] flex flex-col items-center overflow-x-clip"
+    >
       {/* background blur */}
       <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
         <GradientCircle blur="lg" />
@@ -54,7 +72,7 @@ export default function Tools() {
         subtitle="PART OF YOUR WORKFLOW"
       />
 
-      {/* icons */}
+      {/* ICONS */}
       <div className="relative mt-16 w-full">
         <div
           onMouseLeave={vanishTranslateYValues}
@@ -69,21 +87,28 @@ export default function Tools() {
                 (row === 1 ? " max-lg:flex-row-reverse" : "")
               }
             >
-              {icons.slice(row * 6, row * 6 + 6).map((src, i) => {
+              {ICONS.slice(row * 6, row * 6 + 6).map((src, i) => {
                 const index = row * 6 + i;
                 return (
-                  <motion.div
-                    key={src}
-                    animate={{ y: -translateYs[index] + "%" }}
+                  <SlideUpAnim
+                    key={index}
+                    isInView={isInView}
                     transition={{
-                      ease: "easeOut",
-                      duration: 0.25,
+                      delay: 0.3 + 0.1 * Math.abs(ICONS.length / 2 - index),
                     }}
-                    className="max-lg:pointer-events-none"
-                    onMouseEnter={() => updateTranslateYValues(index)}
                   >
-                    <Icon src={src} />
-                  </motion.div>
+                    <motion.div
+                      animate={{ y: -translateYs[index] + "%" }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                      }}
+                      className="max-lg:pointer-events-none"
+                      onMouseEnter={() => updateTranslateYValues(index)}
+                    >
+                      <Icon className={OPACITIES[index]} src={src} />
+                    </motion.div>
+                  </SlideUpAnim>
                 );
               })}
             </div>
