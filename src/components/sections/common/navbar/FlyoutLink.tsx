@@ -71,7 +71,7 @@ export function ProductsFlyoutContent() {
       <Link to="/arche" className="cursor-pointer">
         <div className="group/img relative flex aspect-square w-[300px] flex-col justify-end overflow-hidden rounded-lg bg-teal text-white">
           <img
-            src="/images/mountains-landscape.jpg"
+            src="/images/mountains-landscape.webp"
             className="absolute h-full w-full origin-bottom scale-200 object-cover object-[70%_100%] duration-150 ease-in-out group-hover/img:scale-220"
           />
           <div className="space-y-5 p-4">

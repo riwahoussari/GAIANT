@@ -51,7 +51,7 @@ export default function LandingPage() {
               }
               img2={
                 <img
-                  src="/images/team-smiling.jpg"
+                  src="/images/team-smiling.webp"
                   alt=""
                   className="h-full w-full object-cover"
                 />

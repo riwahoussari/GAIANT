@@ -2,57 +2,57 @@ type TIndustryRecord = { name: string; description?: string; img: string };
 export const INDUSTRIES: TIndustryRecord[] = [
   {
     name: "Banking & Financial Services",
-    img: "/industries/Industries-banking.jpg",
+    img: "/industries/Industries-banking.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Insurance",
-    img: "/industries/Industries-insurance.jpg",
+    img: "/industries/Industries-insurance.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Healthcare & Life Sciences",
-    img: "/industries/Industries-healthcare.jpg",
+    img: "/industries/Industries-healthcare.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Technology, Media & Telecommunications (TMT)",
-    img: "/industries/Industries-tech.jpg",
+    img: "/industries/Industries-tech.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Public Sector & Government",
-    img: "/industries/Industries-government.jpg",
+    img: "/industries/Industries-government.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Energy & Utilities",
-    img: "/industries/Industries-energy.jpg",
+    img: "/industries/Industries-energy.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Legal Services",
-    img: "/industries/Industries-legal.jpg",
+    img: "/industries/Industries-legal.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Real Estate & Construction",
-    img: "/industries/Industries-real-estate.jpg",
+    img: "/industries/Industries-real-estate.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Retail & Consumer Goods",
-    img: "/industries/Industries-retail.jpg",
+    img: "/industries/Industries-retail.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Hopitality & Leisure",
-    img: "/industries/Industries-hospitality.jpg",
+    img: "/industries/Industries-hospitality.webp",
     description: "Advancing patient care and biological research",
   },
   {
     name: "Education",
-    img: "/industries/Industries-education.jpg",
+    img: "/industries/Industries-education.webp",
     description: "Advancing patient care and biological research",
   },
 ];
@@ -82,22 +82,22 @@ export const ARTICLES: IArticleRecord[] = [
   {
     title: "How AI is Reshaping Decision-Making Across Industries",
     subtitle: "GAIANT TEAM - SEP 19, 2025",
-    imgSrc: "/blogs/blog-1.jpg",
+    imgSrc: "/blogs/blog-1.webp",
   },
   {
     title: "From Hype to Help: Making AI Practical for Everyday Work",
     subtitle: "GAIANT TEAM - SEP 19, 2025",
-    imgSrc: "/blogs/blog-2.jpg",
+    imgSrc: "/blogs/blog-2.webp",
   },
   {
     title: "The Future of Efficiency: Why AI Is Your Next Teammate",
     subtitle: "GAIANT TEAM - SEP 19, 2025",
-    imgSrc: "/blogs/blog-3.jpg",
+    imgSrc: "/blogs/blog-3.webp",
   },
   {
     title: "How AI is Reshaping Decision-Making Across Industries",
     subtitle: "GAIANT TEAM - SEP 19, 2025",
-    imgSrc: "/blogs/blog-4.jpg",
+    imgSrc: "/blogs/blog-4.webp",
   },
 ];
 

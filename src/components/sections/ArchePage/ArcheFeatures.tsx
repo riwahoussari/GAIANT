@@ -45,7 +45,7 @@ export default function ArcheFeatures() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <img
-            src="/images/doctor-typing.jpg"
+            src="/images/doctor-typing.webp"
             className="h-full w-full object-contain"
             alt=""
           />

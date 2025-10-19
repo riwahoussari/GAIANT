@@ -9,7 +9,8 @@ import { TrustedBy } from "../components/sections/common/TrustedBy";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { SlideUpAnim, SlideUpSelf } from "../components/ui/Anims";
 import { useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { HeroImgBackground } from "../components/ui/Backgrounds";
 
 export default function () {
   return (
@@ -27,14 +28,7 @@ export default function () {
             </Button>
           }
           background={
-            <div className="relative h-full">
-              <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(1vw,10px)]">
-                <img
-                  src="/industries/Industries-banking.jpg"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
+            <HeroImgBackground src="/industries/Industries-banking.webp" />
           }
         />
         <AccordionSection
@@ -43,7 +37,7 @@ export default function () {
           text="AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead."
           img={
             <div>
-              <img src="/images/man-on-laptop.jpg" />
+              <img src="/images/man-on-laptop.webp" />
               <img
                 className="absolute top-0 left-0 z-1"
                 src="/demos/ai-prompt.svg"
@@ -195,7 +189,7 @@ function OurApproach() {
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <img src="/images/video-screenshot.jpg" className="w-full" />
+          <img src="/images/video-screenshot.webp" className="w-full" />
         </SlideUpAnim>
       </div>
     </section>

@@ -13,6 +13,7 @@ import Navbar from "../components/sections/common/navbar/Navbar";
 import { AnimatedText, SlideUpSelf } from "../components/ui/Anims";
 import TextSection from "../components/sections/common/TextSection";
 import { useInView } from "motion/react";
+import { HeroImgBackground } from "../components/ui/Backgrounds";
 
 export default function CareersPage() {
   return (
@@ -30,14 +31,11 @@ export default function CareersPage() {
             </Button>
           }
           background={
-            <div className="relative h-full">
-              <div className="h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[max(0.5vw,5px)]">
-                <img
-                  src="/images/team-discussing.jpg"
-                  className="h-full w-full object-cover object-bottom"
-                />
-              </div>
-            </div>
+            <HeroImgBackground
+              blur=" blur-[max(0.5vw,5px)] "
+              src="/images/team-discussing.webp"
+              className="object-bottom"
+            />
           }
         />
 
@@ -123,7 +121,7 @@ function WhatsInItForYou() {
           SEE OPEN ROLES
         </Button>
       }
-      img={<img src="/images/man-in-online-meeting.jpg" />}
+      img={<img src="/images/man-in-online-meeting.webp" />}
       accordionContent={[
         {
           title: "Work Flexibility",

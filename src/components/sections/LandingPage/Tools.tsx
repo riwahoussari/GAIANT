@@ -5,18 +5,18 @@ import { CenteredTitleBlock } from "../../ui/Titles";
 import { SlideUpAnim } from "../../ui/Anims";
 
 const ICONS = [
-  "/tools/Rectangle%20100.png",
-  "/tools/Rectangle%20101.png",
-  "/tools/Rectangle%2099.png",
-  "/tools/Rectangle%2098.png",
-  "/tools/Rectangle%20104.png",
-  "/tools/Rectangle%20108.png",
-  "/tools/Rectangle%20106.png",
-  "/tools/Rectangle%20103.png",
-  "/tools/Rectangle%20107.png",
-  "/tools/Rectangle%20102.png",
-  "/tools/Rectangle%20105.png",
-  "/tools/Rectangle%20109.png",
+  "/tools/Rectangle%20100.webp",
+  "/tools/Rectangle%20101.webp",
+  "/tools/Rectangle%2099.webp",
+  "/tools/Rectangle%2098.webp",
+  "/tools/Rectangle%20104.webp",
+  "/tools/Rectangle%20108.webp",
+  "/tools/Rectangle%20106.webp",
+  "/tools/Rectangle%20103.webp",
+  "/tools/Rectangle%20107.webp",
+  "/tools/Rectangle%20102.webp",
+  "/tools/Rectangle%20105.webp",
+  "/tools/Rectangle%20109.webp",
 ];
 
 const OPACITIES = [

@@ -82,19 +82,19 @@ const testimonials = [
     text: "“Gaiant transformed how we work — reports that used to take days now take minutes. Accuracy is solid, integrations were painless, and our team actually trusts the insights. ROI within two months.”",
     name: "Maya Hage",
     title: "Head of Operations, NovaHealth",
-    image: "/images/woman-profile.jpg",
+    image: "/images/woman-profile.webp",
   },
   {
     text: "“Since implementing Gaiant, our support response time dropped by 50%. The automation and AI suggestions are game-changers. Our customers notice the difference.”",
     name: "Jordan Lee",
     title: "Customer Experience Manager, BrightCom",
-    image: "/images/woman-profile.jpg",
+    image: "/images/woman-profile.webp",
   },
   {
     text: "“We tried multiple tools before, but none were as seamless and insightful as Gaiant. It adapts to our workflow and delivers exactly what we need — effortlessly.”",
     name: "Ava Patel",
     title: "Operations Director, FinSight",
-    image: "/images/woman-profile.jpg",
+    image: "/images/woman-profile.webp",
   },
 ];
 

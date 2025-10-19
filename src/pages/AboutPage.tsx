@@ -52,7 +52,7 @@ export default function AboutPage() {
               bg2={false}
               img1={
                 <img
-                  src="/images/team-working.jpg"
+                  src="/images/team-working.webp"
                   className="h-full w-full object-cover"
                 />
               }

@@ -99,7 +99,7 @@ function Article() {
               style={{
                 clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
               }}
-              src="/images/people-walking.jpg"
+              src="/images/people-walking.webp"
               className="h-full w-full object-contain"
             />
           </SlideUpAnim>

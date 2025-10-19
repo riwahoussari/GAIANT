@@ -19,7 +19,7 @@ export default function ArchePage() {
   });
 
   const heroRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(heroRef, { once: true });
+  const isInView = useInView(heroRef, { once: true, margin: "-5%" });
 
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? false : true)
@@ -38,7 +38,7 @@ export default function ArchePage() {
         >
           <div ref={heroRef}>
             <SlideUpAnim
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ duration: 0.6 }}
               initial={{ y: "100px" }}
               isInView={isInView}
               className="side-padding my-container relative"
