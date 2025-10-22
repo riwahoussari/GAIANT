@@ -64,7 +64,7 @@ export default function Navbar({
     <m.header
       initial={{ y: "-100%" }}
       animate={{
-        y: hideNavOnScroll && !mobileMenuOpen ? "-100%" : "0%",
+        y: hideNavOnScroll && !mobileMenuOpen && !hovering ? "-100%" : "0%",
       }}
       style={{
         backgroundColor: transparentBg
@@ -80,7 +80,8 @@ export default function Navbar({
       }}
       className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
-      <div className="bg-gold-gradient w-full p-1 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
+      {/* Announcement Bar */}
+      <div className="bg-gold-gradient w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
         Introducing <span className="font-bold">archē</span>: The blah blah blah{" "}
         {"   "}
         <Link to="/arche" className="not-hover:underline">
