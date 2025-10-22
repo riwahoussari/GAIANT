@@ -79,26 +79,8 @@ export function GlassCard({
   text: string;
   className?: string;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const translateX = useMotionValue(0);
-  const translateY = useMotionValue(0);
-
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    const rect = cardRef.current?.getBoundingClientRect();
-    if (!rect) return;
-
-    const x = e.clientX - rect.left - rect.width * 0.8; // center-based offset
-    const y = e.clientY - rect.top - rect.height * 0.25;
-
-    // Move circle across the full card area
-    translateX.set(x); // adjust multiplier to control sensitivity
-    translateY.set(y);
-  }
-
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
       className={
         "relative max-w-[466px] overflow-hidden bg-white/50 p-3 xs:p-6 " +
         (className || "")
@@ -107,15 +89,7 @@ export function GlassCard({
       {/* title & circle */}
       <div className="relative flex items-end justify-end gap-2">
         <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
-
-        {/* placeholder */}
-        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red lg:border-red/0" />
-
-        {/* animated circle */}
-        <m.div
-          className="absolute z-0 aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red max-lg:hidden"
-          style={{ translateX, translateY }}
-        />
+        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red" />
       </div>
 
       {/* text */}

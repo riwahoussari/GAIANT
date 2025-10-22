@@ -1,0 +1,9 @@
+
+2- The image edge here should be full and have this cropped edge when hover only
+3- The logos are great, but they need to be a marquee moving from right to left
+4- The button font, should be consistent on all buttons, should be like the second image attached, the request a demo
+5- Make the announcement bar hight a bit bigger, like the second image attached
+6- Menu dropdown font color should be like the reference in figma
+7- when hovering the image color is changing, as if the background is becoming transparent, we can disregard this for now, because instead of using this image we’ll have a video, embeded similar to the video section in this https://cohere.com/north, We’ll need the same animation where the video size will scale and becomes sticky and autoplays.
+8- Archē page, the cards section should have this stacking card animation similar to this section in this website: https://cohere.com/north. You can check the video for reference as well
+9- One more thing, I noticed that the margins and spacing in pink are not equal to the figma file
