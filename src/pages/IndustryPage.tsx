@@ -9,7 +9,7 @@ import { TrustedBy } from "../components/sections/common/TrustedBy";
 import Navbar from "../components/sections/common/navbar/Navbar";
 import { SlideUpAnim, SlideUpSelf } from "../components/ui/Anims";
 import { useInView } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { HeroImgBackground } from "../components/ui/Backgrounds";
 
 export default function () {

@@ -1,18 +1,18 @@
 import { useRef, useState } from "react";
-import CallToAction from "../components/sections/common/CallToAction";
-import Hero from "../components/sections/common/Hero";
-import Navbar from "../components/sections/common/navbar/Navbar";
-import { TrustedBy } from "../components/sections/common/TrustedBy";
-import Button from "../components/ui/Button";
-import { GlassCard } from "../components/ui/Cards";
+import CallToAction from "../../components/sections/common/CallToAction";
+import Hero from "../../components/sections/common/Hero";
+import Navbar from "../../components/sections/common/navbar/Navbar";
+import { TrustedBy } from "../../components/sections/common/TrustedBy";
+import Button from "../../components/ui/Button";
+import { GlassCard } from "../../components/ui/Cards";
 import GradientCircle, {
   BigEllipseGradient,
-} from "../components/ui/GradientCircle";
-import ImagesLayout from "../components/ui/ImagesLayout";
-import { TitleBlock } from "../components/ui/Titles";
+} from "../../components/ui/GradientCircle";
+import ImagesLayout from "../../components/ui/ImagesLayout";
+import { TitleBlock } from "../../components/ui/Titles";
 import { useMotionValueEvent, useScroll } from "motion/react";
-import { SlideUpSelf } from "../components/ui/Anims";
-import TextSection from "../components/sections/common/TextSection";
+import { SlideUpSelf } from "../../components/ui/Anims";
+import TextSection from "../../components/sections/common/TextSection";
 
 export default function AboutPage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
