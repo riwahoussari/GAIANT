@@ -42,7 +42,7 @@ export default function ArcheSection() {
               <Button
                 className="mt-[30px] xs:mt-[40px] xl:mt-[50px]"
                 arrow={"spaced"}
-                size={"lg"}
+                size={"md"}
               >
                 LEARN MORE
               </Button>
