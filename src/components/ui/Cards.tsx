@@ -4,7 +4,7 @@ import Button from "./Button";
 import GradientCircle from "./GradientCircle";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import { motion as m, useMotionValue } from "motion/react";
+import { motion as m } from "motion/react";
 import { Link } from "react-router-dom";
 import { useSwipe } from "../../lib/useSwipe";
 
@@ -30,9 +30,11 @@ export function IndustryCard({
       className={"group relative overflow-clip text-white " + (className || "")}
     >
       <div
-        className="h-full bg-black/25"
+        className="h-full bg-black/25 transition-all duration-300 ease-in-out"
         style={{
-          clipPath: "polygon(0 0, 82% 0, 100% 20%, 100% 100%, 0 100%)",
+          clipPath: hovering
+            ? "polygon(0 0, 82% 0, 100% 20%, 100% 100%, 0 100%)"
+            : "polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%)",
         }}
       >
         <img className="w-full object-cover" src={imgSrc} />

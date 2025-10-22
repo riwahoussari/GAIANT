@@ -1,5 +1,3 @@
-
-2- The image edge here should be full and have this cropped edge when hover only
 3- The logos are great, but they need to be a marquee moving from right to left
 4- The button font, should be consistent on all buttons, should be like the second image attached, the request a demo
 5- Make the announcement bar hight a bit bigger, like the second image attached
