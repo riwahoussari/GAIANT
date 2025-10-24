@@ -20,7 +20,7 @@ export default function () {
         <Hero
           spacing="max"
           title="AI for faster decisions <sm:br> and lower risk"
-          titleWidths={{lg: "580px", xl: "700px"}}
+          titleWidths={{ lg: "580px", xl: "700px" }}
           subtitle="BANKING & FINANCIAL SERVICES"
           text="Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights."
           button={
@@ -157,7 +157,7 @@ function UseCases() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {USE_CASES_CONTENT.map((useCase, i) => (
           <SlideUpSelf key={i}>
-            <GlassCard className="max-w-none!" {...useCase} />
+            <GlassCard className="w-full" {...useCase} />
           </SlideUpSelf>
         ))}
       </div>

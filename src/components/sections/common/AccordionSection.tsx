@@ -45,15 +45,15 @@ export default function AccordionSection({
       className={"side-padding my-container mt-[100px] " + (className || "")}
     >
       {/* titles */}
-      <div className="flex gap-4 max-lg:flex-col lg:items-end lg:justify-between lg:gap-16">
-        <div className="w-full max-w-[700px] lg:w-1/2">
+      <div className="flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-44 lg:[&>div]:w-1/2">
+        <div>
           <TitleBlock title={title} subtitle={subtitle} />
         </div>
         {text && (
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.1 }}
-            className="w-full max-w-[550px] pb-2 lg:w-1/2 xl:w-[40%]"
+            className="max-w-[555px] pb-2"
           >
             <p className="text-16">{text}</p>
           </SlideUpAnim>
@@ -62,7 +62,7 @@ export default function AccordionSection({
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.1 }}
-            className="flex w-full max-w-[550px] pb-2 lg:w-1/2 lg:justify-end xl:w-[40%]"
+            className="flex max-w-[555px] pb-2 lg:justify-end"
           >
             {button}
           </SlideUpAnim>
