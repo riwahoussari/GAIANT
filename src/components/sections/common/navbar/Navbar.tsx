@@ -81,7 +81,7 @@ export default function Navbar({
       className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
       {/* Announcement Bar */}
-      <div className="bg-gold-gradient w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
+      <div className="bg-gold-gradient relative z-100 w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
         Introducing <span className="font-bold">archē</span>: The blah blah blah{" "}
         {"   "}
         <Link to="/arche" className="not-hover:underline">

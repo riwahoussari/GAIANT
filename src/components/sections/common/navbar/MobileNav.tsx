@@ -43,7 +43,7 @@ export default function MobileNavMenu({
           initial="initial"
           animate="enter"
           exit="exit"
-          className="absolute top-0 right-0 left-0 z-99 max-h-dvh overflow-scroll bg-white pt-20 pb-6 text-black shadow-lg lg:hidden"
+          className="absolute top-0 right-0 left-0 z-99 max-h-dvh overflow-y-scroll bg-white pt-30 pb-6 text-black shadow-lg lg:hidden"
         >
           <nav>
             {LINKS.map((link, i) => (
@@ -119,7 +119,7 @@ function MobileNavLink({
       {sublinks && (
         <div
           style={{
-            height: selected ? sublinksRef.current?.offsetHeight || 0 : 0,
+            height: selected ? sublinksRef.current?.clientHeight || 0 : 0,
           }}
           className={
             "overflow-y-hidden px-6 text-xl transition-all duration-300 ease-in-out"
