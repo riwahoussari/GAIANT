@@ -19,7 +19,7 @@ export default function () {
       <main>
         <Hero
           spacing="max"
-          title="AI for faster decisions \n and lower risk"
+          title="AI for faster decisions <sm:br> and lower risk"
           titleWidths={{lg: "580px", xl: "700px"}}
           subtitle="BANKING & FINANCIAL SERVICES"
           text="Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights."

@@ -19,8 +19,10 @@ export function AnimatedText({
   return (
     <>
       {words.map((word, i) => {
-        if (word === "\\n") {
+        if (word === "<br>") {
           return <br key={i} />;
+        } else if (word == "<sm:br>") {
+          return <br key={i} className="max-sm:hidden" />
         }
         return (
           <span

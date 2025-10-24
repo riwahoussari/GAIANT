@@ -19,7 +19,7 @@ export default function TheArcheModel() {
         <div className="mb-10 grid items-end sm:gap-y-5 lg:grid-cols-7">
           <div className="col-span-5">
             <TitleBlock
-              title="More mindspace, \n less mayhem"
+              title="More mindspace, <br> less mayhem"
               subtitle="THE ARCHĒ MODEL"
             />
           </div>

@@ -18,7 +18,7 @@ export default function DiscoverArche() {
       <div className="side-padding my-container py-[10px]">
         {/* title */}
         <div className="relative max-w-[520px] space-y-3 sm:space-y-5">
-          <TitleBlock title="Accelerate impact \n and outcomes" />
+          <TitleBlock title="Accelerate impact <br> and outcomes" />
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
             <p className="text-16">
               Enable seamless human-agent collaboration, automate routine tasks,

@@ -37,9 +37,9 @@ export default function IndustriesPage() {
         <Hero
           className="text-black!"
           spacing="max"
-          titleWidths={{lg: "570px", xl: "700px"}}
+          titleWidths={{ lg: "570px", xl: "700px" }}
           subtitle="INDUSTRIES"
-          title="Solutions designed \n for any industry need"
+          title="Solutions designed <sm:br> for any industry need"
           text="Every organization faces unique challenges. Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work."
           button={
             <Button variant={"black"} arrow={"spaced"}>
