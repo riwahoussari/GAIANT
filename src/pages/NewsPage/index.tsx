@@ -1,13 +1,11 @@
+import { useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
+import NewsCtaSection from "./components/NewsCtaSection";
+import ArticlesSection from "./components/ArticlesSection";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
-import { TrustedBy } from "../../components/sections/TrustedBy";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import OurStory from "./components/OurStory";
-import OurMission from "./components/OurMission";
-import AboutHero from "./components/AboutHero";
 
-export default function AboutPage() {
+export default function NewsPage() {
   // change navbar transparency on scroll
   const [transparentNavbar, setTransparentNavbar] = useState(true);
   const navbarBgTrigger = useRef<HTMLDivElement>(null);
@@ -23,10 +21,13 @@ export default function AboutPage() {
     <>
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
       <main>
-        <AboutHero navbarTriggerRef={navbarBgTrigger} />
-        <OurStory />
-        <OurMission />
-        <TrustedBy />
+        <ArticlesSection
+          navbarTriggerRef={navbarBgTrigger}
+          className="mt-[200px]!"
+          withBall
+        />
+        <NewsCtaSection />
+        <ArticlesSection className="mt-[140px]" />
         <CallToAction />
       </main>
     </>

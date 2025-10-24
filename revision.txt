@@ -4,4 +4,3 @@
 
 8- Archē page, the cards section should have this stacking card animation similar to this section in this website: https://cohere.com/north. You can check the video for reference as well
 
-9- One more thing, I noticed that the margins and spacing in pink are not equal to the figma file

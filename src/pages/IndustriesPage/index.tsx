@@ -1,19 +1,18 @@
-import { useRef, useState } from "react";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
-import { TrustedBy } from "../../components/sections/TrustedBy";
 import { useMotionValueEvent, useScroll } from "motion/react";
-import OurStory from "./components/OurStory";
-import OurMission from "./components/OurMission";
-import AboutHero from "./components/AboutHero";
+import { useRef, useState } from "react";
+import IndustriesHero from "./components/IndustriesHero";
+import IndustriesCards from "./components/IndustriesCards";
+import TestimonialSection from "./components/TestimonialsSection";
 
-export default function AboutPage() {
+export default function IndustriesPage() {
   // change navbar transparency on scroll
   const [transparentNavbar, setTransparentNavbar] = useState(true);
   const navbarBgTrigger = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: navbarBgTrigger,
-    offset: ["end end", "start start"],
+    offset: ["start end", "start start"],
   });
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? false : true)
@@ -23,10 +22,9 @@ export default function AboutPage() {
     <>
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
       <main>
-        <AboutHero navbarTriggerRef={navbarBgTrigger} />
-        <OurStory />
-        <OurMission />
-        <TrustedBy />
+        <IndustriesHero />
+        <IndustriesCards navbarTriggerRef={navbarBgTrigger} />
+        <TestimonialSection />
         <CallToAction />
       </main>
     </>

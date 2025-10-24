@@ -1,4 +1,4 @@
-import Navbar from "../components/sections/common/navbar/Navbar";
+import Navbar from "../components/sections/navbar/Navbar";
 
 export default function NotFoundPage() {
   return (

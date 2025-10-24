@@ -13,6 +13,7 @@ export function LandscapeBg({
       className="bg-dark-green-blue-gradient-oblique h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10"
     >
       <img
+        alt="Landscape filled with mountains and a girl standing on a rock"
         src="/images/mountains-landscape.webp"
         className="h-full w-full object-cover"
       />
@@ -38,6 +39,7 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
         }
       >
         <img
+          alt="Landscape filled with mountains and a girl standing on a rock"
           src="/images/mountains-landscape.webp"
           className="h-full w-full object-cover"
           onLoad={() => setIsLoaded(true)}
@@ -69,6 +71,7 @@ export function BlurredTealGradientBg({
           onError={() => setHasError(true)}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
+          alt=""
         />
       </div>
       {withBall && (
@@ -100,6 +103,7 @@ export function BlurredTealGradientBg2({
           onError={() => setHasError(true)}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
+          alt=""
         />
       </div>
       {withBall && (
@@ -114,11 +118,13 @@ export function BlurredTealGradientBg2({
 export function HeroImgBackground({
   blur,
   src,
+  alt,
   className,
 }: {
   className?: string;
   blur?: string;
   src: string;
+  alt: string;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -137,6 +143,7 @@ export function HeroImgBackground({
           onError={() => setHasError(true)}
           src={src}
           className={"h-full w-full object-cover " + (className || "")}
+          alt={alt}
         />
       </div>
     </div>
