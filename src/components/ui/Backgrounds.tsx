@@ -60,7 +60,7 @@ export function BlurredTealGradientBg({
     <div className="relative h-full">
       <div
         className={
-          "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[6vw] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px] " +
+          "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[min(6vw,120px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px] " +
           (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
         }
       >
@@ -72,7 +72,7 @@ export function BlurredTealGradientBg({
         />
       </div>
       {withBall && (
-        <div className="absolute top-[140px] left-1/2 w-[500px] -translate-x-1/2 lg:w-[40vw] lg:min-w-[550px]">
+        <div className="absolute top-[140px] left-1/2 w-[500px] max-w-[670px] -translate-x-1/2 lg:w-[40vw] lg:min-w-[550px]">
           <GradientCircle />
         </div>
       )}
@@ -91,7 +91,7 @@ export function BlurredTealGradientBg2({
     <div className="relative h-full">
       <div
         className={
-          "h-full w-[120vw]! -translate-x-[10vw] blur-[6vw]" +
+          "h-full w-[120vw]! -translate-x-[10vw] blur-[min(6vw,120px)]" +
           (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
         }
       >
@@ -103,7 +103,7 @@ export function BlurredTealGradientBg2({
         />
       </div>
       {withBall && (
-        <div className="absolute top-1/2 left-1/2 w-[450px] -translate-1/2 lg:w-[35vw] lg:min-w-[500px]">
+        <div className="absolute top-1/2 left-1/2 w-[450px] max-w-[600px] -translate-1/2 lg:w-[30vw] lg:min-w-[500px]">
           <GradientCircle />
         </div>
       )}

@@ -30,6 +30,7 @@ export default function ArchePage() {
       <main>
         <Hero
           spacing="max"
+          titleWidths={{ lg: "660px", xl: "800px" }}
           subtitle="ARCHĒ"
           title="AI for business that turns complexity into clarity"
           text="Archē sets the standard for business performance by helping teams automate work and accelerate decisions that drive results — all in one scalable, secure workspace."

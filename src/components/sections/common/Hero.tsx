@@ -7,6 +7,7 @@ interface HeroProps {
   subtitle?: string;
   text: string;
   spacing?: "min" | "max";
+  titleWidths?: { lg: string; xl: string };
   button: React.ReactNode;
   background?: React.ReactNode;
   children?: React.ReactNode;
@@ -18,6 +19,7 @@ export default function Hero({
   subtitle,
   text,
   spacing = "min",
+  titleWidths,
   button,
   background,
   className,
@@ -50,15 +52,15 @@ export default function Hero({
             "flex flex-col lg:flex-row " +
             (spacing === "min"
               ? " lg:gap-[40px] xl:gap-[56px]"
-              : " lg:gap-[60px] xl:gap-[80px]")
+              : " lg:gap-[20px] xl:gap-[70px]")
           }
         >
           <h1
             className={
-              "text-[min(12vw,50px)] leading-[calc(min(12vw,50px)+7px)] xs:text-[58px] xs:leading-[65px] lg:w-6/10 xl:text-[69px] xl:leading-[76px] " +
+              "text-[min(12vw,50px)] leading-[calc(min(12vw,50px)+7px)] xs:text-[58px] xs:leading-[65px] xl:text-[69px] xl:leading-[76px] " +
               (spacing === "min"
-                ? " max-w-[547px] xl:max-w-[660px]"
-                : " max-w-[660px] xl:max-w-[800px]")
+                ? " max-w-[580px] lg:w-6/10 xl:max-w-[680px]"
+                : ` xl:min-w-[${titleWidths?.xl || "800px"}] xl:max-w-[${titleWidths?.xl || "800px"}] lg:min-w-[${titleWidths?.lg || "600px"}] lg:max-w-[${titleWidths?.lg || "600px"}] `)
             }
           >
             <AnimatedText transition={{ duration: 0.4 }} isInView={isInView}>
@@ -74,7 +76,7 @@ export default function Hero({
                 className={
                   "mt-[18px] text-[min(4.3vw,18px)] leading-[calc(min(4.3vw,18px)+6px)] xs:text-[20px] xs:leading-[28px] xl:text-[23px] xl:leading-[31px] " +
                   (spacing === "min"
-                    ? " max-w-[324px] xl:max-w-[360px]"
+                    ? " max-w-[324px] xl:max-w-[370px]"
                     : " max-w-[440px] xl:max-w-[500px]")
                 }
               >

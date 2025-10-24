@@ -22,7 +22,7 @@ export default function CareersPage() {
       <main>
         <Hero
           spacing="max"
-          title="Work with us, change business forever"
+          title="Work with us, change \n business forever"
           subtitle="WORKING AT GAIANT"
           text="Join a team of thinkers and doers pushing the boundaries to reshape what's possible."
           button={

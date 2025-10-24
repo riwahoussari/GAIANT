@@ -32,8 +32,9 @@ export default function AboutPage() {
         <Hero
           className="text-black!"
           spacing="max"
+          titleWidths={{ lg: "570px", xl: "700px" }}
           subtitle="WHO ARE GAIANT"
-          title="We’re building the future of language AI"
+          title="We’re building the \n future of language AI"
           text="Gaiant empowers every developer and enterprise to build amazing products and capture true business value with language AI."
           button={
             <Button variant={"black"} arrow={"spaced"}>
