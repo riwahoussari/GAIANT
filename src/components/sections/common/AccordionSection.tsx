@@ -70,24 +70,21 @@ export default function AccordionSection({
       </div>
 
       {/* content */}
-      <div className="relative mt-[40px] flex justify-between gap-16 max-lg:flex-col">
+      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-44 lg:[&>div]:w-1/2">
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />
           </div>
         )}
         {/* image */}
-        <SlideUpAnim
-          isInView={isInView}
-          className="relative w-full max-w-[700px] lg:w-1/2"
-        >
+        <SlideUpAnim isInView={isInView} className="relative">
           {img}
         </SlideUpAnim>
         {/* Accordion */}
         <SlideUpAnim
           isInView={isInView}
           transition={{ delay: 0.2 }}
-          className="relative flex w-full max-w-[550px] flex-col lg:w-1/2 xl:w-[40%]"
+          className="relative flex flex-col md:max-w-[555px]"
         >
           {accordionContent.map((item, i) => (
             <AccordionItem

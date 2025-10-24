@@ -61,7 +61,7 @@ body {
 
 /* spacing */
 .my-container {
-  @apply w-full xl:mx-auto xl:max-w-[1280px] 2xl:max-w-[1526px];
+  @apply w-full max-w-[1950px] mx-auto;
 }
 
 .side-padding {

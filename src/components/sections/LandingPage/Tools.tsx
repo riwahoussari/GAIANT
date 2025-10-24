@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion as m, useInView } from "motion/react";
 import GradientCircle from "../../ui/GradientCircle";
 import { CenteredTitleBlock } from "../../ui/Titles";
 import { SlideUpAnim } from "../../ui/Anims";
@@ -97,7 +97,7 @@ export default function Tools() {
                       delay: 0.3 + 0.1 * Math.abs(ICONS.length / 2 - index),
                     }}
                   >
-                    <motion.div
+                    <m.div
                       animate={{ y: -translateYs[index] + "%" }}
                       transition={{
                         ease: "easeOut",
@@ -107,7 +107,7 @@ export default function Tools() {
                       onMouseEnter={() => updateTranslateYValues(index)}
                     >
                       <Icon className={OPACITIES[index]} src={src} />
-                    </motion.div>
+                    </m.div>
                   </SlideUpAnim>
                 );
               })}

@@ -84,8 +84,7 @@ export function GlassCard({
   return (
     <div
       className={
-        "relative max-w-[466px] overflow-hidden bg-white/50 p-3 xs:p-6 " +
-        (className || "")
+        "relative overflow-hidden bg-white/50 p-3 xs:p-6 " + (className || "")
       }
     >
       {/* title & circle */}
