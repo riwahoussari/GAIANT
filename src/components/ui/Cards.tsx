@@ -65,7 +65,7 @@ export function IndustryCard({
               {button && (
                 <div className="flex justify-end">
                   <Link
-                    aria-description={`Read more about ${title} industry`}
+                    aria-label={`Read more about ${title} industry`}
                     to={`/industries/${title}`}
                   >
                     <Button>READ MORE</Button>
@@ -203,7 +203,7 @@ export function ArticleCard({
     <Link
       to={`/news/${title}`}
       className="group cursor-pointer"
-      aria-description={`Read more about ${title}`}
+      aria-label={`Read more about ${title}`}
     >
       <div className={"relative overflow-clip text-white " + (className || "")}>
         <div
