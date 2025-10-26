@@ -48,6 +48,7 @@ export default function Footer() {
                 className="w-full text-[18px] outline-none"
               />
               <button className="cursor-pointer hover:opacity-60" type="submit">
+                <span className="hidden">Submit</span>
                 <ArrowSvg color="white" className="w-[18px]" />
               </button>
               <div className="bg-dark-green-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />

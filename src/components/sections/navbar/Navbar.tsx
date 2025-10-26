@@ -91,7 +91,8 @@ export default function Navbar({
       {/* Navbar Content */}
       <div className="my-container side-padding relative z-100 flex items-center justify-between py-3">
         {/* logo */}
-        <Link to="/">
+        <Link to="/" aria-label="homepage">
+          <span className="hidden">Homepage</span>
           <div className="w-24 translate-y-1 xs:w-32 lg:min-w-[160px]">
             <GaiantLogoSvg
               color={
