@@ -15,7 +15,7 @@ export default function LandingHero({
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
       button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
-      background={<BlurredTealGradientBg withBall />}
+      background={<BlurredTealGradientBg fetchPriority="high" withBall />}
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">
         <ImagesLayout

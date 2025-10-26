@@ -55,8 +55,10 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
 
 export function BlurredTealGradientBg({
   withBall = true,
+  fetchPriority,
 }: {
   withBall?: boolean;
+  fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -70,6 +72,7 @@ export function BlurredTealGradientBg({
         }
       >
         <img
+          fetchPriority={fetchPriority}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
           src={GreenBlueGradient}

@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Aeonik";
-  src: url("./assets/fonts/Aeonik/fonnts.com-Aeonik-Regular.ttf")
-    format("truetype");
+  src: url("/assets/fonts/Aeonik/Aeonik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,27 +8,8 @@
 
 @font-face {
   font-family: "Aeonik";
-  src: url("./assets/fonts/Aeonik/fonnts.com-Aeonik-Bold.ttf")
-    format("truetype");
+  src: url("/assets/fonts/Aeonik/Aeonik-Bold.woff2") format("woff2");
   font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBM";
-  src: url("./assets/fonts/IbmPlexMono/IBMPlexMono-Regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBM";
-  src: url("./assets/fonts/IbmPlexMono/IBMPlexMono-SemiBold.ttf")
-    format("truetype");
-  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -40,7 +20,7 @@
   /* breakpoints */
   --breakpoint-xs: 480px;
   /* fonts */
-  --font-ibm: "IBM";
+  --font-ibm: "IBM Plex Mono";
   --font-aeonik: "Aeonik";
   /* colors */
   --color-background: #efefef;
@@ -61,7 +41,7 @@ body {
 
 /* spacing */
 .my-container {
-  @apply w-full max-w-[1950px] mx-auto;
+  @apply mx-auto w-full max-w-[1950px];
 }
 
 .side-padding {
