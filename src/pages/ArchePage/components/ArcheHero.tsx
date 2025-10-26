@@ -1,9 +1,7 @@
-import { useInView } from "motion/react";
 import { useRef, type RefObject } from "react";
 import Hero from "../../../components/sections/Hero";
 import Button from "../../../components/ui/Button";
 import { LandscapeBg } from "../../../components/ui/Backgrounds";
-import { SlideUpAnim } from "../../../components/ui/Anims";
 import { ARCHE_PAGE_DATA } from "../../../lib/data";
 
 export default function ArcheHero({
@@ -12,7 +10,6 @@ export default function ArcheHero({
   navbarTriggerRef: RefObject<HTMLDivElement | null>;
 }) {
   const heroRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(heroRef, { once: true, margin: "-5%" });
 
   return (
     <Hero
@@ -22,21 +19,7 @@ export default function ArcheHero({
       button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
       background={<LandscapeBg fetchPriority="high" ref={navbarTriggerRef} />}
     >
-      <div ref={heroRef}>
-        <SlideUpAnim
-          transition={{ duration: 0.6 }}
-          initial={{ y: "100px" }}
-          isInView={isInView}
-          className="side-padding my-container relative"
-        >
-          <img
-            fetchPriority="high"
-            src="/demos/ai-chat-demo-3.svg"
-            alt="AI chatbot dashboard"
-            className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"
-          />
-        </SlideUpAnim>
-      </div>
+      <div ref={heroRef} className="mt-10 h-1 opacity-0 lg:mt-48"></div>
     </Hero>
   );
 }

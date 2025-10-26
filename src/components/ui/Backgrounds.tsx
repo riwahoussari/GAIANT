@@ -12,7 +12,7 @@ export function LandscapeBg({
   return (
     <div
       ref={ref}
-      className="bg-dark-green-blue-gradient-oblique h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10"
+      className="bg-dark-green-blue-gradient-oblique h-full w-[100vw]!"
     >
       <img
         fetchPriority={fetchPriority}

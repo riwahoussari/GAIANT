@@ -7,6 +7,7 @@ import Navbar from "../../components/sections/navbar/Navbar";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import ArcheHero from "./components/ArcheHero";
 import { PageMeta } from "../../components/ui/PageMeta";
+import StickeVideo from "./components/StickyVideo";
 
 export default function ArchePage() {
   // change navbar transparency on scroll
@@ -29,6 +30,7 @@ export default function ArchePage() {
       <Navbar transparentBg={transparentNavbar} />
       <main>
         <ArcheHero navbarTriggerRef={navbarBgTrigger} />
+        <StickeVideo />
         <TheArcheModel />
         <AccelerateImpact />
         <ArcheIndustries />

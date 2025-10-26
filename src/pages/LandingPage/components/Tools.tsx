@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useAnimationFrame, useInView } from "motion/react";
+import { useAnimationFrame } from "motion/react";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
@@ -20,14 +20,8 @@ const ICONS = [
 ];
 
 export default function Tools() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative mt-[120px] flex flex-col items-center overflow-x-clip"
-    >
+    <section className="relative mt-[120px] flex flex-col items-center overflow-x-clip">
       {/* background blur */}
       <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
         <GradientCircle blur="lg" />
