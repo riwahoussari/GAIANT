@@ -15,7 +15,7 @@ export default function ArrowSvg({
       <path
         d="M6.69568 2L11 6.02862M11 6.02862L6.75696 10M11 6.02862L1 6.02862"
         stroke={color || "white"}
-        stroke-linecap="square"
+        strokeLinecap="square"
       />
     </svg>
   );
