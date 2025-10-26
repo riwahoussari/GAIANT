@@ -23,6 +23,7 @@ export default function LandingHero({
           img1={
             <div className="flex items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
               <img
+                fetchPriority="high"
                 {...LANDING_PAGE_DATA.HERO.img1}
                 className="h-full object-contain"
               />
@@ -30,6 +31,7 @@ export default function LandingHero({
           }
           img2={
             <img
+              fetchPriority="high"
               {...LANDING_PAGE_DATA.HERO.img2}
               className="h-full w-full object-cover"
             />
