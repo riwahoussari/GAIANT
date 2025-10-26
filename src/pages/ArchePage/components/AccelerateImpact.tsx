@@ -24,7 +24,7 @@ export default function AccelerateImpact() {
     offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (val) => console.log(val))
+  useMotionValueEvent(scrollYProgress, "change", (val) => console.log(val));
   return (
     <section
       ref={sectionRef}
@@ -47,9 +47,15 @@ export default function AccelerateImpact() {
 
         {/* card */}
         <div ref={cardsContainerRef}>
-          {CARDS.map((_, i) => (
-            <Card progress={scrollYProgress} index={i} isInView={isInView} />
+          {ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards.map((content, i) => (
+            <Card
+              content={content}
+              progress={scrollYProgress}
+              index={i}
+              isInView={isInView}
+            />
           ))}
+          <div className="h-[500px] w-2 bg-purple-600" />
         </div>
       </div>
     </section>
@@ -60,10 +66,20 @@ function Card({
   isInView,
   index,
   progress,
+  content,
 }: {
   isInView: boolean;
   progress: MotionValue<number>;
   index: number;
+  content: {
+    subtitle: string;
+    title: string;
+    text: string;
+    img: {
+      src: string;
+      alt: string;
+    };
+  };
 }) {
   const scaleRange = [index * (1 / CARDS.length), 1];
   const targetScale = 1 - (CARDS.length - index) * 0.01;
@@ -71,43 +87,38 @@ function Card({
 
   return (
     <div
-      className="sticky top-20"
+      className="sticky top-20 bg-red/0"
       style={{ marginTop: `-${index == 0 ? 0 : 66}px` }}
     >
       <m.div
         style={{ scale, top: `${index * 50}px` }}
         className={
-          "bg-linear-white-transparent-70 relative flex items-center justify-between gap-x-5 gap-y-10 rounded-xl px-4 py-10 pb-14 backdrop-blur-[100px] max-lg:flex-col sm:gap-y-14 sm:px-10 sm:py-16 sm:pb-20 xl:p-20 xl:pb-24"
+          "bg-linear-white-transparent-70 relative flex origin-top items-center justify-between gap-x-5 gap-y-10 rounded-xl px-4 py-10 pb-14 backdrop-blur-[100px] max-lg:flex-col sm:gap-y-14 sm:px-10 sm:py-16 sm:pb-20 xl:p-20 xl:pb-24"
         }
       >
         {/* text */}
         <div className="max-w-[380px] text-white max-lg:text-center">
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.3 }}>
             <p className="font-ibm! text-[11px] xs:text-[12px]">
-              {ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards[0].subtitle}
+              {content.subtitle}
             </p>
           </SlideUpAnim>
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.4 }}>
-            <p className="text-[50px] xs:text-[60px]">
-              {" "}
-              {ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards[0].title}
-            </p>
+            <p className="text-[50px] xs:text-[60px]"> {content.title}</p>
           </SlideUpAnim>
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.5 }}>
-            <p className="text-16">
-              {ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards[0].text}
-            </p>
+            <p className="text-16">{content.text}</p>
           </SlideUpAnim>
         </div>
         {/* image */}
         <SlideUpAnim
-          className="w-full max-w-[700px] min-w-[320px] lg:w-6/10"
+          className="w-full max-w-[700px] aspect-7/4! min-w-[320px] lg:w-6/10"
           isInView={isInView}
           transition={{ delay: 0.4 }}
         >
           <img
-            src={ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards[0].img.src}
-            alt={ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards[0].img.alt}
+            src={content.img.src}
+            alt={content.img.alt}
             className="h-full w-full object-contain"
           />
         </SlideUpAnim>

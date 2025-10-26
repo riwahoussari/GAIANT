@@ -231,6 +231,24 @@ export const ARCHE_PAGE_DATA = {
           alt: "Image of the Patient History Dashboard",
         },
       },
+      {
+        subtitle: "GENERATIVE AI",
+        title: "Create",
+        text: "Co-create documents, generate summaries, and produce tables and charts instantly.",
+        img: {
+          src: "/demos/ai-chat-demo-3.svg",
+          alt: "Image of the Patient History Dashboard",
+        },
+      },
+      {
+        subtitle: "WORKFLOW AUTOMATION",
+        title: "Discover",
+        text: "Deploy AI agents across teams to eliminate tedious tasks and accelerate complex workflows.",
+        img: {
+          src: "/demos/ai-chat-demo-2.svg",
+          alt: "Image of the Patient History Dashboard",
+        },
+      },
     ],
   },
 
