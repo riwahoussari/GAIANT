@@ -4,6 +4,7 @@ import NewsCtaSection from "./components/NewsCtaSection";
 import ArticlesSection from "./components/ArticlesSection";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
+import { PageMeta } from "../../components/ui/PageMeta";
 
 export default function NewsPage() {
   // change navbar transparency on scroll
@@ -19,6 +20,10 @@ export default function NewsPage() {
 
   return (
     <>
+      <PageMeta
+        title="Gaiant Insights | News & AI Perspectives"
+        description="Stay up to date with the latest from Gaiant. Explore articles and insights on AI innovation, automation, and how intelligent systems are transforming modern industries."
+      />
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
       <main>
         <ArticlesSection

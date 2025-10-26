@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import IndustriesHero from "./components/IndustriesHero";
 import IndustriesCards from "./components/IndustriesCards";
 import TestimonialSection from "./components/TestimonialsSection";
+import { PageMeta } from "../../components/ui/PageMeta";
 
 export default function IndustriesPage() {
   // change navbar transparency on scroll
@@ -20,6 +21,10 @@ export default function IndustriesPage() {
 
   return (
     <>
+      <PageMeta
+        title="AI Solutions for Every Industry | Gaiant"
+        description="From finance and healthcare to government and education, Gaiant delivers industry-specific AI solutions that adapt, scale, and transform the way organizations work and make decisions."
+      />
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
       <main>
         <IndustriesHero />

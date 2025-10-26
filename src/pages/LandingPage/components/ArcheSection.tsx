@@ -23,7 +23,7 @@ export default function ArcheSection() {
             <img
               src="/logos/arche-logo.svg"
               className="w-[120px] md:w-[154px]"
-              alt=""
+              alt="Arche Logo"
             />
           </SlideUpAnim>
           {/* text */}

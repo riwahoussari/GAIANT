@@ -9,6 +9,7 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import LandingHero from "./components/LandingHero";
 import WhatThisMeans from "./components/WhatThisMeans";
 import OurLatestThinking from "./components/OurLatestThinking";
+import { PageMeta } from "../../components/ui/PageMeta";
 
 export default function LandingPage() {
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -24,6 +25,10 @@ export default function LandingPage() {
 
   return (
     <>
+      <PageMeta
+        title="Gaiant | One AI Work Platform for Any Kind of Work"
+        description="Gaiant combines powerful AI with practical business solutions — helping teams work smarter, automate faster, and make better decisions through secure, scalable AI systems."
+      />
       <Navbar transparentBg={transparentNavbar} />
       <main>
         <LandingHero navbarTriggerRef={navbarBgTrigger} />

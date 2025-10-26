@@ -37,7 +37,7 @@ export function IndustryCard({
             : "polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%)",
         }}
       >
-        <img className="w-full object-cover" src={imgSrc} />
+        <img className="w-full object-cover" src={imgSrc} alt={`Image representing ${title} industry`} />
       </div>
 
       {/* content */}
@@ -199,6 +199,7 @@ export function ArticleCard({
           <img
             className="w-full object-cover duration-200 ease-in-out group-hover:scale-110"
             src={imgSrc}
+            alt={`Image representing ${title}`}
           />
         </div>
 

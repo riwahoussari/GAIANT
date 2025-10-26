@@ -128,7 +128,7 @@ function Icon({ src, className = "" }: { src: string; className?: string }) {
         "aspect-square w-[16vw] max-w-[120px] rounded-lg xs:rounded-xl sm:w-[7.5vw] sm:min-w-[90px] " +
         className
       }
-      alt=""
+      alt="Icon for a tool"
     />
   );
 }

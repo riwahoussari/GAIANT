@@ -55,7 +55,7 @@ export default function ArticleSection() {
 
               <div className="flex gap-1 xs:gap-2">
                 <p className="text-[13px] font-bold xs:text-[14px]">SHARE</p>
-                <img className="w-3.5 xs:w-4" src={ShareIcon} />
+                <img className="w-3.5 xs:w-4" src={ShareIcon} alt="share icon"/>
               </div>
             </SlideUpAnim>
           </div>
@@ -71,6 +71,7 @@ export default function ArticleSection() {
                 clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
               }}
               src="/images/people-walking.webp"
+              alt="two people walking together in a hallway"
               className="h-full w-full object-contain"
             />
           </SlideUpAnim>

@@ -6,6 +6,7 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import OurStory from "./components/OurStory";
 import OurMission from "./components/OurMission";
 import AboutHero from "./components/AboutHero";
+import { PageMeta } from "../../components/ui/PageMeta";
 
 export default function AboutPage() {
   // change navbar transparency on scroll
@@ -21,6 +22,11 @@ export default function AboutPage() {
 
   return (
     <>
+      <PageMeta
+        title="About Gaiant | Building the Future of Language AI"
+        description="Learn how Gaiant empowers enterprises to deploy secure, private AI agents at scale. Discover our mission to transform business through intelligent automation and cutting-edge language technology."
+      />
+
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
       <main>
         <AboutHero navbarTriggerRef={navbarBgTrigger} />

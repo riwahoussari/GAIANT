@@ -144,6 +144,7 @@ export default function Footer() {
           <img
             className="w-full max-w-[450px]"
             src="/logos/gaiant-logo-gradient.svg"
+            alt="Gaiant Logo"
           />
           <p className="text-center text-[11px] leading-[31px] whitespace-pre md:text-end">
             {"Gaiant © 2025       |       Powered by ®"}

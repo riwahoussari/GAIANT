@@ -71,7 +71,7 @@ export function BlurredTealGradientBg({
           onError={() => setHasError(true)}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
-          alt=""
+          alt="Gradient background"
         />
       </div>
       {withBall && (
@@ -103,7 +103,7 @@ export function BlurredTealGradientBg2({
           onError={() => setHasError(true)}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
-          alt=""
+          alt="Gradient Background"
         />
       </div>
       {withBall && (

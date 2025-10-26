@@ -35,7 +35,7 @@ export default function GradientCircle({
       <img
         src={colorr == "beige" ? BeigeDiamondGradient : TealDiamondGradient}
         className="h-full w-full object-contain"
-        alt=""
+        alt="Faded gradient ball"
       />
     </div>
   );

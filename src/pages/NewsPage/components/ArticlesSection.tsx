@@ -52,6 +52,7 @@ export default function ArticlesSection({
             >
               <img
                 src="/images/people-walking.webp"
+                alt="two people walking together in a hallway"
                 className="h-full w-full object-cover"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",

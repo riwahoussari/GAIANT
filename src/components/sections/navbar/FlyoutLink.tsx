@@ -73,9 +73,10 @@ export function ProductsFlyoutContent() {
           <img
             src="/images/mountains-landscape.webp"
             className="absolute h-full w-full origin-bottom scale-200 object-cover object-[70%_100%] duration-150 ease-in-out group-hover/img:scale-220"
+            alt="Landscape filled with mountains and a girl standing on a rock"
           />
           <div className="space-y-5 p-4">
-            <img src="/logos/arche-logo.svg" className="relative" alt="" />
+            <img src="/logos/arche-logo.svg" className="relative" alt="Arche Logo" />
             <p className="relative text-[15px]">
               An enterprise-ready AI platform that powers modern workplace
               productivity

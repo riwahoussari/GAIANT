@@ -6,6 +6,7 @@ import TheArcheModel from "./components/TheArcheModel";
 import Navbar from "../../components/sections/navbar/Navbar";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import ArcheHero from "./components/ArcheHero";
+import { PageMeta } from "../../components/ui/PageMeta";
 
 export default function ArchePage() {
   // change navbar transparency on scroll
@@ -21,6 +22,10 @@ export default function ArchePage() {
 
   return (
     <>
+      <PageMeta
+        title="Archē by Gaiant | AI for Business That Turns Complexity into Clarity"
+        description="Archē is Gaiant’s complete AI platform that unifies data, automates work, and accelerates decisions. Transform fragmented systems into one intelligent, scalable workspace built for impact."
+      />
       <Navbar transparentBg={transparentNavbar} />
       <main>
         <ArcheHero navbarTriggerRef={navbarBgTrigger} />

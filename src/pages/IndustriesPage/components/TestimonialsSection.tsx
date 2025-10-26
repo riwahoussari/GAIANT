@@ -72,6 +72,7 @@ export default function TestimonialSection() {
                 <img
                   src={testimonials[index].image}
                   className="aspect-square w-11 rounded-sm object-cover"
+                  alt={`portrait of ${testimonials[index].name}`}
                 />
                 <div>
                   <p className="text-16 leading-[19px]">
