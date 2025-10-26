@@ -38,7 +38,7 @@ export default function ArcheSection() {
             <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 xs:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px]">
               {LANDING_PAGE_DATA.ARCHE_SECTION.text}
             </p>
-            <Link to="/arche">
+            <Link to="/arche" aria-description="Lean more about Arche platform">
               <Button
                 className="mt-[30px] xs:mt-[40px] xl:mt-[50px]"
                 arrow={"spaced"}

@@ -37,7 +37,11 @@ export function IndustryCard({
             : "polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%)",
         }}
       >
-        <img className="w-full object-cover" src={imgSrc} alt={`Image representing ${title} industry`} />
+        <img
+          className="w-full object-cover"
+          src={imgSrc}
+          alt={`Image representing ${title} industry`}
+        />
       </div>
 
       {/* content */}
@@ -57,7 +61,10 @@ export function IndustryCard({
               {text && <p className="text-16 max-w-[180px] py-2">{text}</p>}
               {button && (
                 <div className="flex justify-end">
-                  <Link to={`/industries/${title}`}>
+                  <Link
+                    aria-description={`Read more about ${title} industry`}
+                    to={`/industries/${title}`}
+                  >
                     <Button>READ MORE</Button>
                   </Link>
                 </div>
@@ -188,7 +195,11 @@ export function ArticleCard({
   className?: string;
 }) {
   return (
-    <Link to={`/news/${title}`} className="group cursor-pointer">
+    <Link
+      to={`/news/${title}`}
+      className="group cursor-pointer"
+      aria-description={`Read more about ${title}`}
+    >
       <div className={"relative overflow-clip text-white " + (className || "")}>
         <div
           className="h-full bg-black/25"
