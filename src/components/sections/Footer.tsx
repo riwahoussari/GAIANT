@@ -47,7 +47,7 @@ export default function Footer() {
                 placeholder="Email Address"
                 className="w-full text-[18px] outline-none"
               />
-              <button className="cursor-pointer hover:opacity-60" type="submit">
+              <button aria-label="Submit" className="cursor-pointer hover:opacity-60" type="submit">
                 <span className="hidden">Submit</span>
                 <ArrowSvg color="white" className="w-[18px]" />
               </button>

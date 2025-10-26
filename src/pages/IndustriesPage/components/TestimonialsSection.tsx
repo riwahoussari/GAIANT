@@ -104,14 +104,14 @@ export default function TestimonialSection() {
 
           {/* arrows */}
           <div className="flex items-center gap-8">
-            <button onClick={prev}>
+            <button aria-label="left arrow" onClick={prev}>
               <span className="hidden">Left Arrow</span>
               <ArrowSvg
                 className="w-6 rotate-180 cursor-pointer duration-200 ease-in-out hover:-translate-x-1"
                 color="black"
               />
             </button>
-            <button onClick={next}>
+            <button aria-label="right arrow" onClick={next}>
               <span className="hidden">Right Arrow</span>
               <ArrowSvg
                 className="w-6 cursor-pointer duration-200 ease-in-out hover:translate-x-1"
