@@ -14,12 +14,14 @@ export function IndustryCard({
   text,
   button = false,
   className,
+  fetchPriority,
 }: {
   imgSrc: string;
   title: string;
   text?: string;
   button?: boolean;
   className?: string;
+  fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
   const [hovering, setHovering] = useState(false);
@@ -38,6 +40,7 @@ export function IndustryCard({
         }}
       >
         <img
+          fetchPriority={fetchPriority}
           className="w-full object-cover"
           src={imgSrc}
           alt={`Image representing ${title} industry`}
@@ -188,11 +191,13 @@ export function ArticleCard({
   title,
   subtitle,
   className,
+  fetchPriority,
 }: {
   imgSrc: string;
   title: string;
   subtitle: string;
   className?: string;
+  fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
   return (
     <Link
@@ -208,6 +213,7 @@ export function ArticleCard({
           }}
         >
           <img
+            fetchPriority={fetchPriority}
             className="w-full object-cover duration-200 ease-in-out group-hover:scale-110"
             src={imgSrc}
             alt={`Image representing ${title}`}

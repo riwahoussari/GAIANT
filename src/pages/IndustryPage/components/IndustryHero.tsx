@@ -17,6 +17,7 @@ export default function IndustryHero() {
         <HeroImgBackground
           alt="A man putting his wallet in his pocket"
           src="/industries/Industries-banking.webp"
+          fetchPriority="high"
         />
       }
     />

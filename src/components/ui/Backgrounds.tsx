@@ -4,7 +4,9 @@ import GradientCircle from "./GradientCircle";
 
 export function LandscapeBg({
   ref,
+  fetchPriority,
 }: {
+  fetchPriority?: "high" | "low" | "auto" | undefined;
   ref?: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
@@ -13,6 +15,7 @@ export function LandscapeBg({
       className="bg-dark-green-blue-gradient-oblique h-9/10 w-[100vw]! xs:h-85/100 md:h-8/10"
     >
       <img
+        fetchPriority={fetchPriority}
         alt="Landscape filled with mountains and a girl standing on a rock"
         src="/images/mountains-landscape.webp"
         className="h-full w-full object-cover"
@@ -120,11 +123,13 @@ export function HeroImgBackground({
   src,
   alt,
   className,
+  fetchPriority,
 }: {
   className?: string;
   blur?: string;
   src: string;
   alt: string;
+  fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -139,6 +144,7 @@ export function HeroImgBackground({
         }
       >
         <img
+          fetchPriority={fetchPriority}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
           src={src}

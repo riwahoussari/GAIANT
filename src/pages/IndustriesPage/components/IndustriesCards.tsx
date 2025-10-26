@@ -16,6 +16,7 @@ export default function IndustriesCards({
       {GENERAL_DATA.INDUSTRIES.map((industry, i) => (
         <SlideUpSelf key={i}>
           <IndustryCard
+            fetchPriority={i < 3 ? "high" : undefined}
             className="aspect-11/9! w-full"
             title={industry.name}
             text={industry.description}

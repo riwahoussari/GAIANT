@@ -14,10 +14,12 @@ export default function ArticlesSection({
   withBall = false,
   className,
   navbarTriggerRef,
+  fetchPriority,
 }: {
   withBall?: boolean;
   className?: string;
   navbarTriggerRef?: React.RefObject<HTMLDivElement | null>;
+  fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
@@ -51,6 +53,7 @@ export default function ArticlesSection({
               transition={{ delay: 0.2 }}
             >
               <img
+              fetchPriority={fetchPriority}
                 src="/images/people-walking.webp"
                 alt="two people walking together in a hallway"
                 className="h-full w-full object-cover"
@@ -108,6 +111,7 @@ export default function ArticlesSection({
           <div className="grid-span-1">
             <SlideUpSelf className="aspect-11/9! w-full max-w-[550px] lg:max-w-none">
               <ArticleCard
+                fetchPriority={fetchPriority}
                 key={i}
                 className="aspect-11/9! h-full w-full max-w-[550px] lg:max-w-none"
                 {...article}

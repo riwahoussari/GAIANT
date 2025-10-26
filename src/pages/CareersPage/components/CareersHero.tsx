@@ -19,6 +19,7 @@ export default function CareersHero() {
           alt="A team working and talking together"
           src="/images/team-discussing.webp"
           className="object-bottom"
+          fetchPriority="high"
         />
       }
     />

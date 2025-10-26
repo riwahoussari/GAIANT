@@ -20,7 +20,7 @@ export default function ArcheHero({
       titleWidths={{ lg: "660px", xl: "800px" }}
       {...ARCHE_PAGE_DATA.HERO}
       button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
-      background={<LandscapeBg ref={navbarTriggerRef} />}
+      background={<LandscapeBg fetchPriority="high" ref={navbarTriggerRef} />}
     >
       <div ref={heroRef}>
         <SlideUpAnim
@@ -30,6 +30,7 @@ export default function ArcheHero({
           className="side-padding my-container relative"
         >
           <img
+            fetchPriority="high"
             src="/demos/ai-chat-demo-3.svg"
             alt="AI chatbot dashboard"
             className="bg-linear-white-transparent-70 mx-auto w-full max-w-[920px] rounded-xl object-contain backdrop-blur-[1000px] sm:w-9/10 lg:w-8/10"

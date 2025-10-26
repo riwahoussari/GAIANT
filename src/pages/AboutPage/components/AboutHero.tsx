@@ -36,6 +36,7 @@ export default function AboutHero({
               src="/images/team-working.webp"
               className="h-full w-full object-cover"
               alt="A team of developers working together on their laptops"
+              fetchPriority="high"
             />
           }
           img2={
@@ -43,6 +44,7 @@ export default function AboutHero({
               <img
                 src="/demos/about-attributes.svg"
                 alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
+                fetchPriority="high"
               />
             </div>
           }

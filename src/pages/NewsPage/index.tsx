@@ -30,6 +30,7 @@ export default function NewsPage() {
           navbarTriggerRef={navbarBgTrigger}
           className="mt-[200px]!"
           withBall
+          fetchPriority="high"
         />
         <NewsCtaSection />
         <ArticlesSection className="mt-[140px]" />
