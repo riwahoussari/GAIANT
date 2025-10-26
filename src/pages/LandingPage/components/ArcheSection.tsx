@@ -44,7 +44,7 @@ export default function ArcheSection() {
                 arrow={"spaced"}
                 size={"md"}
               >
-                LEARN MORE
+                LEARN MORE<span className="hidden"> about Arche platform</span>
               </Button>
             </Link>
           </SlideUpAnim>

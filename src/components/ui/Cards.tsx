@@ -68,7 +68,7 @@ export function IndustryCard({
                     aria-label={`Read more about ${title} industry`}
                     to={`/industries/${title}`}
                   >
-                    <Button>READ MORE</Button>
+                    <Button>READ MORE<span className="hidden"> about {title} industry</span></Button>
                   </Link>
                 </div>
               )}
