@@ -47,7 +47,11 @@ export default function Footer() {
                 placeholder="Email Address"
                 className="w-full text-[18px] outline-none"
               />
-              <button aria-label="Submit" className="cursor-pointer hover:opacity-60" type="submit">
+              <button
+                aria-label="Submit"
+                className="cursor-pointer hover:opacity-60"
+                type="submit"
+              >
                 <span className="hidden">Submit</span>
                 <ArrowSvg color="white" className="w-[18px]" />
               </button>
@@ -66,7 +70,7 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Products")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
                       key={i}
                       to={link.link}
                     >
@@ -82,7 +86,7 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
                       key={i}
                       to={link.link}
                     >
@@ -101,7 +105,7 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Solutions")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
                       key={i}
                       to={link.link}
                     >
@@ -126,7 +130,7 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
                       key={i}
                       to={link.link}
                     >

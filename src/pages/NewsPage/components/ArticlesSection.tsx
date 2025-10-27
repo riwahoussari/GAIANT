@@ -53,7 +53,7 @@ export default function ArticlesSection({
               transition={{ delay: 0.2 }}
             >
               <img
-              fetchPriority={fetchPriority}
+                fetchPriority={fetchPriority}
                 src="/images/people-walking.webp"
                 alt="two people walking together in a hallway"
                 className="h-full w-full object-cover"
@@ -106,14 +106,14 @@ export default function ArticlesSection({
       </div>
 
       {/* other articles */}
-      <div className="mt-10 grid grid-cols-1 gap-5 xs:gap-8 sm:gap-5 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-5 gap-y-10! xs:gap-8 sm:gap-5 lg:grid-cols-2 xl:grid-cols-3">
         {GENERAL_DATA.ARTICLES.slice(0, 3).map((article, i) => (
-          <div className="grid-span-1">
-            <SlideUpSelf className="aspect-11/9! w-full max-w-[550px] lg:max-w-none">
+          <div>
+            <SlideUpSelf className="w-full max-w-[550px] lg:max-w-none">
               <ArticleCard
+                className="w-full"
                 fetchPriority={fetchPriority}
                 key={i}
-                className="aspect-11/9! h-full w-full max-w-[550px] lg:max-w-none"
                 {...article}
               />
             </SlideUpSelf>

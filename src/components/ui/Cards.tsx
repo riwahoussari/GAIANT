@@ -68,7 +68,10 @@ export function IndustryCard({
                     aria-label={`Read more about ${title} industry`}
                     to={`/industries/${title}`}
                   >
-                    <Button>READ MORE<span className="hidden"> about {title} industry</span></Button>
+                    <Button>
+                      READ MORE
+                      <span className="hidden"> about {title} industry</span>
+                    </Button>
                   </Link>
                 </div>
               )}
@@ -202,7 +205,7 @@ export function ArticleCard({
   return (
     <Link
       to={`/news/${title}`}
-      className="group cursor-pointer"
+      className="group w-full cursor-pointer"
       aria-label={`Read more about ${title}`}
     >
       <div className={"relative overflow-clip text-white " + (className || "")}>
