@@ -300,7 +300,8 @@ export function CardsSlider({
     };
   };
 
-  const slideValue = Math.max(0, Math.min(slidePercent, 1)) * slidableDistance;
+  let slideValue = Math.max(0, Math.min(slidePercent, 1)) * slidableDistance;
+  slideValue = Math.floor(slideValue * 1000) / 1000;
   const slidedCards =
     (Math.max(0, Math.min(slidePercent, 1)) / slideDifference) * cardsToSlide;
   const progressBarWidth = ((visibleCards + slidedCards) / totalCards) * 100;
@@ -327,15 +328,11 @@ export function CardsSlider({
   );
 
   const swipeHandlers = useSwipe(handleRight, handleLeft);
-
+  console.log(slideValue);
   return (
     <>
       {/* cards */}
-      <div
-        {...swipeHandlers}
-        ref={cardsContainerRef}
-        className="mt-[40px] xl:overflow-x-hidden"
-      >
+      <div {...swipeHandlers} ref={cardsContainerRef} className="mt-[40px]">
         <m.div
           animate={{
             x: `-${slideValue}px`,

@@ -14,7 +14,7 @@ export default function NewsArticlesCarousel({
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding mt-[140px] max-xl:overflow-x-hidden"
+      className="my-container side-padding mt-[140px] overflow-x-hidden"
     >
       {/* title */}
       {titleBlock}

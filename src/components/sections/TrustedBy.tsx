@@ -12,7 +12,7 @@ export function TrustedBy({ className }: { className?: string }) {
     <section
       ref={sectionRef}
       className={
-        "side-padding my-container mt-[100px] max-xl:overflow-x-hidden " +
+        "side-padding my-container mt-[100px] overflow-x-hidden " +
         (className || "")
       }
     >
