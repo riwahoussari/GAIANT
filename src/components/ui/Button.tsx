@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 import ArrowSvg from "./ArrowSvg";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip",
+  "group inline-flex items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip",
   {
     variants: {
       variant: {
@@ -57,7 +57,7 @@ export default function Button({
       {arrow && arrow !== "none" && arrow !== "back" && (
         <ArrowSvg
           color={variant == "secondary" ? "var(--color-teal)" : "white"}
-          className={"w-[14px] stroke-[2px]"}
+          className={"w-[14px] stroke-[2px] group-hover:translate-x-1 ease-in-out duration-200"}
         />
       )}
     </button>

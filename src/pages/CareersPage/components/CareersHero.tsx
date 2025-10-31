@@ -9,10 +9,7 @@ export default function CareersHero() {
       spacing="max"
       {...CAREERS_PAGE_DATA.HERO}
       button={
-        <Button
-          className="hover:translate-x-1 xl:mb-20"
-          arrow={"spaced"}
-        >
+        <Button className="xl:mb-20" arrow={"spaced"}>
           SEE OPEN ROLES
         </Button>
       }

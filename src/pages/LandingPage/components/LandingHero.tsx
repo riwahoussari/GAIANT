@@ -14,11 +14,7 @@ export default function LandingHero({
     <Hero
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
-      button={
-        <Button className="hover:translate-x-1" arrow={"spaced"}>
-          REQUEST A DEMO
-        </Button>
-      }
+      button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
       background={<BlurredTealGradientBg fetchPriority="high" withBall />}
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">

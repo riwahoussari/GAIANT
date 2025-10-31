@@ -18,7 +18,6 @@ export default function AboutHero({
       {...ABOUT_PAGE_DATA.HERO}
       button={
         <Button
-          className="hover:translate-x-1"
           variant={"black"}
           arrow={"spaced"}
         >
