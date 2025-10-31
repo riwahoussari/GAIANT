@@ -33,9 +33,9 @@ export default function UseCases() {
             {INDUSTRY_PAGE_DATA.USE_CASES.text}
           </p>
         </SlideUpAnim>
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.3 }}>
+        <SlideUpAnim className="flex xl:justify-end md:col-start-2 xl:col-start-3" isInView={isInView} transition={{ delay: 0.3 }}>
           <Button
-            className="place-self-start max-sm:mt-3 xl:place-self-end"
+            className="max-sm:mt-3"
             variant={"black"}
           >
             REQUEST A DEMO
