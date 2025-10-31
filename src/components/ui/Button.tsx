@@ -8,7 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: " text-white bg-button backdrop-blur-3xl",
-        secondary: "bg-white/50 text-teal backdrop-blur-3xl",
+        secondary: "bg-white/50 text-dark-green backdrop-blur-3xl",
         black: "bg-black text-white",
         ghost: "bg-transparent ",
       },
@@ -49,14 +49,14 @@ export default function Button({
     >
       {arrow && arrow == "back" && (
         <ArrowSvg
-          color={variant == "secondary" ? "var(--color-teal)" : "white"}
+          color={variant == "secondary" ? "var(--color-dark-green)" : "white"}
           className={"w-[14px] rotate-180 stroke-[2px]"}
         />
       )}
       <span>{props.children}</span>
       {arrow && arrow !== "none" && arrow !== "back" && (
         <ArrowSvg
-          color={variant == "secondary" ? "var(--color-teal)" : "white"}
+          color={variant == "secondary" ? "var(--color-dark-green)" : "white"}
           className={"w-[14px] stroke-[2px] group-hover:translate-x-1 ease-in-out duration-200"}
         />
       )}

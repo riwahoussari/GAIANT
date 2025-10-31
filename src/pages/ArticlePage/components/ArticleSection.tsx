@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { useRef } from "react";
-import { useInView } from "motion/react";
+import { useRef, useState } from "react";
+import { motion as m, AnimatePresence, useInView } from "motion/react";
 import ShareIcon from "../../../assets/share-icon.svg";
+import MainIcon from "../../../assets/mail-icon.svg";
+import FacebookIcon from "../../../assets/facebook-icon.svg";
+import XIcon from "../../../assets/x-icon.svg";
+import LinkedinIcon from "../../../assets/linkedin-icon.svg";
 
 export default function ArticleSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section ref={sectionRef} className="my-container side-padding">
+    <section
+      ref={sectionRef}
+      className="my-container side-padding overflow-x-clip"
+    >
       <div className="relative mt-[140px]">
         {/* back button */}
         <SlideUpAnim
@@ -47,21 +54,13 @@ export default function ArticleSection() {
             <SlideUpAnim
               isInView={isInView}
               transition={{ delay: 0.3 }}
-              className="my-8 flex items-center justify-between text-teal"
+              className="my-8 flex items-center justify-between text-dark-green"
             >
               <p className="font-ibm! text-[14px] xs:text-[15px]">
                 GAIANT TEAM - SEP 19, 2025
               </p>
 
-              <div className="flex gap-1 xs:gap-2">
-                <p className="text-[13px] font-bold xs:text-[14px]">SHARE</p>
-                <img
-                  fetchPriority="high"
-                  className="w-3.5 xs:w-4"
-                  src={ShareIcon}
-                  alt="share icon"
-                />
-              </div>
+              <ShareButton />
             </SlideUpAnim>
           </div>
 
@@ -147,5 +146,73 @@ export default function ArticleSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ShareButton() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      {/* share button */}
+      <button className="relative z-1 flex cursor-pointer gap-1 xs:gap-2">
+        <p className="text-[13px] font-bold text-dark-green xs:text-[14px]">
+          SHARE
+        </p>
+        <img
+          fetchPriority="high"
+          className="w-3.5 xs:w-4"
+          src={ShareIcon}
+          alt="share icon"
+        />
+      </button>
+
+      {/* social icon popup */}
+      <AnimatePresence>
+        {open && (
+          <m.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            className="absolute bottom-full z-1 bg-black [clip-path:polygon(0_0,100%_0,100%_60px,73%_60px,86%_100%,86%_60px,0_60px)] max-lg:right-0 lg:left-0 lg:[clip-path:polygon(0_0,100%_0,100%_60px,27%_60px,14%_100%,14%_60px,0_60px)] xl:left-full"
+          >
+            <div className="relative pb-5">
+              {/* gradient */}
+              <div className="bg-dark-green-blue-gradient absolute top-0 right-0 bottom-0 left-0 blur-xl" />
+
+              {/* content */}
+              <div className="relative flex items-center gap-1 px-2 py-2">
+                {[LinkedinIcon, XIcon, FacebookIcon, MainIcon].map(
+                  (icon, i) => (
+                    <div
+                      key={i}
+                      className="cursor-pointer rounded-md p-3 duration-150 ease-in-out hover:bg-teal"
+                    >
+                      <div className="w-6">
+                        <img
+                          className="w-full object-contain"
+                          src={icon}
+                          alt="Linkedin logo"
+                        />
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          </m.div>
+        )}
+      </AnimatePresence>
+
+      {/* bridge */}
+      {open && (
+        <div className="absolute bottom-0 left-0 z-0 h-[100px] w-[200px]" />
+      )}
+    </div>
   );
 }
