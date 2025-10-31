@@ -63,7 +63,7 @@ export default function Footer() {
           <div className="flex gap-20 max-md:flex-wrap lg:mx-auto xl:gap-32">
             {/* col 1 */}
             <div className="w-[72px]">
-              <p className="mb-6 font-ibm text-[13px] text-light-blue">
+              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
                 PRODUCTS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
@@ -79,7 +79,7 @@ export default function Footer() {
                   )
                 )}
               </div>
-              <p className="mt-20 mb-6 font-ibm text-[13px] text-light-blue lg:hidden">
+              <p className="mt-20 mb-6 font-ibm! text-[13px] text-light-blue lg:hidden">
                 COMPANY
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px] lg:hidden">
@@ -98,7 +98,7 @@ export default function Footer() {
             </div>
             {/* col 2 */}
             <div className="w-[182px]">
-              <p className="mb-6 font-ibm text-[13px] text-light-blue">
+              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
                 SOLUTIONS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
@@ -123,7 +123,7 @@ export default function Footer() {
             </div>
             {/* col 3 */}
             <div className="w-[72px] max-lg:hidden">
-              <p className="mb-6 font-ibm text-[13px] text-light-blue">
+              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
                 COMPANY
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">

@@ -49,7 +49,7 @@ export default function ArticleSection() {
               transition={{ delay: 0.3 }}
               className="my-8 flex items-center justify-between text-teal"
             >
-              <p className="font-ibm text-[14px] xs:text-[15px]">
+              <p className="font-ibm! text-[14px] xs:text-[15px]">
                 GAIANT TEAM - SEP 19, 2025
               </p>
 

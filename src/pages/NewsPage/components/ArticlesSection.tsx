@@ -82,7 +82,7 @@ export default function ArticlesSection({
             isInView={isInView}
             transition={{ delay: 0.4 }}
           >
-            <p className="font-ibm text-[14px] leading-[30px] xs:text-[15px] xs:leading-[34px]">
+            <p className="font-ibm! text-[14px] leading-[30px] xs:text-[15px] xs:leading-[34px]">
               GAIANT TEAM - SEP 19, 2025
             </p>
             <p
