@@ -328,7 +328,6 @@ export function CardsSlider({
   );
 
   const swipeHandlers = useSwipe(handleRight, handleLeft);
-  console.log(slideValue);
   return (
     <>
       {/* cards */}

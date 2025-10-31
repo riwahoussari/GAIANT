@@ -24,7 +24,6 @@ export default function AccelerateImpact() {
     offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (val) => console.log(val));
   return (
     <section
       ref={sectionRef}
