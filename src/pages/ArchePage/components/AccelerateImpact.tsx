@@ -6,7 +6,6 @@ import {
   motion as m,
   MotionValue,
   useInView,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "motion/react";
