@@ -17,7 +17,11 @@ export default function AboutHero({
       titleWidths={{ lg: "570px", xl: "700px" }}
       {...ABOUT_PAGE_DATA.HERO}
       button={
-        <Button variant={"black"} arrow={"spaced"}>
+        <Button
+          className="hover:translate-x-1"
+          variant={"black"}
+          arrow={"spaced"}
+        >
           REQUEST A DEMO
         </Button>
       }

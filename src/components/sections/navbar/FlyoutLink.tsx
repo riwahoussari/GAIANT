@@ -76,7 +76,11 @@ export function ProductsFlyoutContent() {
             alt="Landscape filled with mountains and a girl standing on a rock"
           />
           <div className="space-y-5 p-4">
-            <img src="/logos/arche-logo.svg" className="relative" alt="Arche Logo" />
+            <img
+              src="/logos/arche-logo.svg"
+              className="relative"
+              alt="Arche Logo"
+            />
             <p className="relative text-[15px]">
               An enterprise-ready AI platform that powers modern workplace
               productivity
@@ -139,17 +143,17 @@ export function CompanyFlyoutContent() {
       </p>
       <div className="flex flex-col gap-y-6 text-[18px] leading-[20px]">
         <Link className="cursor-point group/link" to="/about">
-          <p className="max-w-[280px] rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
             About
           </p>
         </Link>
         <Link className="cursor-point group/link" to="/news">
-          <p className="max-w-[280px] rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
             News
           </p>
         </Link>
         <Link className="cursor-point group/link" to="/careers">
-          <p className="max-w-[280px] rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
             Careers
           </p>
         </Link>

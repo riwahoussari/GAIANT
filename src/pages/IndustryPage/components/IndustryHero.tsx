@@ -9,7 +9,10 @@ export default function IndustryHero() {
       spacing="max"
       {...INDUSTRY_PAGE_DATA.HERO}
       button={
-        <Button arrow={"spaced"} className="xl:mb-20">
+        <Button
+          className="hover:translate-x-1 xl:mb-20"
+          arrow={"spaced"}
+        >
           REQUEST A DEMO
         </Button>
       }

@@ -40,7 +40,7 @@ export default function ArcheSection() {
             </p>
             <Link to="/arche" aria-label="Lean more about Arche platform">
               <Button
-                className="mt-[30px] xs:mt-[40px] xl:mt-[50px]"
+                className="mt-[30px] hover:translate-x-1 xs:mt-[40px] xl:mt-[50px]"
                 arrow={"spaced"}
                 size={"md"}
               >
