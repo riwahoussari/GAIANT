@@ -7,6 +7,8 @@ export default function IndustryHero() {
   return (
     <Hero
       spacing="max"
+      titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[700px]"
+
       {...INDUSTRY_PAGE_DATA.HERO}
       button={
         <Button className="xl:mb-20" arrow={"spaced"}>

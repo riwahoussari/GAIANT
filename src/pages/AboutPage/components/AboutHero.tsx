@@ -14,13 +14,11 @@ export default function AboutHero({
     <Hero
       className="text-black!"
       spacing="max"
-      titleWidths={{ lg: "570px", xl: "700px" }}
+      titleWidth="lg:min-w-[560px] lg:max-w-[560px] xl:min-w-[660px] xl:max-w-[660px]"
+      textWidth="max-w-[440px] xl:max-w-[550px]"
       {...ABOUT_PAGE_DATA.HERO}
       button={
-        <Button
-          variant={"black"}
-          arrow={"spaced"}
-        >
+        <Button variant={"black"} arrow={"spaced"}>
           REQUEST A DEMO
         </Button>
       }

@@ -15,7 +15,7 @@ export default function NewsPage() {
     offset: ["end end", "start start"],
   });
   useMotionValueEvent(scrollYProgress, "change", (val) =>
-    setTransparentNavbar(val >= 1 ? false : true)
+    setTransparentNavbar(val >= 1 ? true : false)
   );
 
   return (

@@ -8,7 +8,7 @@ export default function IndustriesHero() {
     <Hero
       className="text-black!"
       spacing="max"
-      titleWidths={{ lg: "570px", xl: "700px" }}
+      titleWidth="lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[670px] xl:max-w-[670px]"
       {...INDUSTRIES_PAGE_DATA.HERO}
       button={
         <Button variant={"black"} arrow={"spaced"}>

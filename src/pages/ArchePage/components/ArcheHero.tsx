@@ -14,7 +14,6 @@ export default function ArcheHero({
   return (
     <Hero
       spacing="max"
-      titleWidths={{ lg: "660px", xl: "800px" }}
       {...ARCHE_PAGE_DATA.HERO}
       button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
       background={<LandscapeBg fetchPriority="high" ref={navbarTriggerRef} />}

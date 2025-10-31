@@ -266,7 +266,7 @@ export const INDUSTRIES_PAGE_DATA = {
   HERO: {
     subtitle: "INDUSTRIES",
     title: "Solutions designed <sm:br> for any industry need",
-    text: "Every organization faces unique challenges. Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work.",
+    text: "Every organization faces unique challenges. <br> Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work.",
   },
 
   TESTIMONIALS_SECTION: {
@@ -433,7 +433,7 @@ export const ABOUT_PAGE_DATA = {
 
 export const CAREERS_PAGE_DATA = {
   HERO: {
-    title: "Work with us, change <sm:br> business forever",
+    title: "Work with us, change business forever",
     subtitle: "WORKING AT GAIANT",
     text: "Join a team of thinkers and doers pushing the boundaries to reshape what's possible.",
   },
