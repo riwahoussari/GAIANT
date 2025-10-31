@@ -1,3 +1,4 @@
+import type { SyntheticEvent } from "react";
 import Hero from "../../../components/sections/Hero";
 import { HeroImgBackground } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
@@ -9,9 +10,18 @@ export default function CareersHero() {
       spacing="max"
       {...CAREERS_PAGE_DATA.HERO}
       button={
-        <Button className="xl:mb-20" arrow={"spaced"}>
-          SEE OPEN ROLES
-        </Button>
+        <a
+          href="#open_roles"
+          onClick={(e: SyntheticEvent) => {
+            e.preventDefault();
+            const openRolesSection = document.getElementById("open_roles");
+            openRolesSection?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <Button className="xl:mb-20" arrow={"spaced"}>
+            SEE OPEN ROLES
+          </Button>
+        </a>
       }
       background={
         <HeroImgBackground
