@@ -1,6 +1,6 @@
 import type { TargetAndTransition, Transition } from "motion";
 import { motion as m, useInView } from "motion/react";
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function AnimatedText({
   isInView,
@@ -11,23 +11,27 @@ export function AnimatedText({
   children: string;
   transition?: Transition<any> | undefined;
 }) {
-  const [ended, setEnded] = useState(0);
+  const [ended, setEnded] = useState(false);
   const end = () => {
-    setTimeout(() => setEnded((prev) => prev + 1), 100);
+    setTimeout(() => {
+      setEnded(true);
+    }, 100);
   };
   const words = children.split(" ");
+  console.log(children, ended);
+
   return (
     <>
       {words.map((word, i) => {
         if (word === "<br>") {
           return <br key={i} />;
         } else if (word == "<sm:br>") {
-          return <br key={i} className="max-sm:hidden" />
+          return <br key={i} className="max-sm:hidden" />;
         }
         return (
           <span
             key={i}
-            className={"inline-block " + (ended == 2 ? "" : " overflow-y-clip")}
+            className={"inline-block " + (ended ? "" : " overflow-y-clip")}
           >
             <m.span
               initial={{ y: "100%" }}
@@ -39,7 +43,7 @@ export function AnimatedText({
               }}
               className="inline-block whitespace-pre"
               onAnimationComplete={() => {
-                if (i == words.length - 1) end();
+                if (i == words.length - 1 && isInView) end();
               }}
             >
               {word}{" "}
