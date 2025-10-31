@@ -1,5 +1,4 @@
 import {
-  useEffect,
   useRef,
   useState,
   type HTMLAttributes,
@@ -70,7 +69,7 @@ export default function AccordionSection({
       </div>
 
       {/* content */}
-      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-44 lg:[&>div]:w-1/2">
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />
@@ -115,12 +114,8 @@ function AccordionItem({
   onClick: () => void;
 } & HTMLAttributes<HTMLDivElement>) {
   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
-  const [contentHeight, setContentHeight] = useState(
-    contentRef.current?.clientHeight
-  );
-  useEffect(() => {
-    setContentHeight(contentRef.current?.clientHeight);
-  }, [contentRef.current, contentRef]);
+  const CONTENT_HEIGHT = "240px";
+
   return (
     <div className="relative" {...props}>
       {/* border top */}
@@ -139,13 +134,13 @@ function AccordionItem({
       {(subtitle || list) && (
         <div
           style={{
-            height: selected ? contentHeight || 0 : 0,
+            height: selected ? CONTENT_HEIGHT || 0 : 0,
           }}
           className={
             "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
           }
         >
-          <div ref={contentRef}>
+          <div ref={contentRef} style={{ height: CONTENT_HEIGHT + "px" }}>
             {subtitle && (
               <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
                 {subtitle}

@@ -181,6 +181,8 @@ export const LANDING_PAGE_DATA = {
         list: [
           "Turns complex data into clear, actionable insights",
           "Adapts to the tools and systems you already use",
+          "Supports collaboration across teams and departments",
+          "Scales with your projects as they grow",
         ],
       },
       {
@@ -189,6 +191,7 @@ export const LANDING_PAGE_DATA = {
         list: [
           "Turns complex data into clear, actionable insights",
           "Adapts to the tools and systems you already use",
+          "Supports collaboration across teams and departments",
           "Scales with your projects as they grow",
         ],
       },
@@ -487,6 +490,7 @@ export const CAREERS_PAGE_DATA = {
         subtitle: "ON YOUR OWN TERMS",
         list: [
           "We proudly support a remote work culture worldwide",
+          "We offer centralized hubs to give teams a place to meet and innovate",
           "We respect that life gets busy – no penalties or apologies ",
           "Quality work matters most, whether it’s from a desk or the Bahamas",
         ],
@@ -498,6 +502,7 @@ export const CAREERS_PAGE_DATA = {
           "We proudly support a remote work culture worldwide",
           "We offer centralized hubs to give teams a place to meet and innovate",
           "We respect that life gets busy – no penalties or apologies ",
+          "Quality work matters most, whether it’s from a desk or the Bahamas",
         ],
       },
     ],
