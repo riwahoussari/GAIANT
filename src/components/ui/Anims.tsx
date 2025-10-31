@@ -1,7 +1,4 @@
-import type {
-  TargetAndTransition,
-  Transition,
-} from "motion";
+import type { TargetAndTransition, Transition } from "motion";
 import { motion as m, useInView } from "motion/react";
 import { useRef, type ReactNode } from "react";
 
