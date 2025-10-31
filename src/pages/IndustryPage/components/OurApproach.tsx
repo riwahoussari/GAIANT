@@ -14,8 +14,8 @@ export default function OurApproach() {
           title={INDUSTRY_PAGE_DATA.OUR_APPROACH.title}
           subtitle={INDUSTRY_PAGE_DATA.OUR_APPROACH.subtitle}
         />
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
-          <p className="text-16 max-w-[292px]">
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }} className="xl:col-span-2">
+          <p className="text-16 max-w-[432px]">
             {INDUSTRY_PAGE_DATA.OUR_APPROACH.text}
           </p>
         </SlideUpAnim>
