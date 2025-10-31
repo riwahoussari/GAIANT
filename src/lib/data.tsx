@@ -461,15 +461,15 @@ export const CAREERS_PAGE_DATA = {
   },
 
   DO_YOU_FIT: {
-    subtitle: "DO YOU FIT",
+    subtitle: "DO YOU FIT?",
     title:
       "We want Gaiant to be the place where everyone does the best work of their career.",
     text: " So we make thoughtful decisions about how we work, the perks we provide, and how we create a diverse and inclusive work environment. We also foster technical creativity and innovation through internal hackathons, demos, tech talks, and achievement recognition programs that form a cornerstone of our culture at Gaiant. <br> <br> Join us and work alongside some of the world’s best talent from the likes of Apple, Meta AI, Amazon and Google Brain, as well as full-time staff adjunct professors from Stanford, Oxford, University of Toronto, and UCL London.",
   },
 
   WHATS_IN_IT_FOR_YOU: {
-    title: "Smarter moves with fewer resources",
-    subtitle: "TRUSTED BY FINANCIAL LEADERS",
+    title: "What's in it for you?",
+    subtitle: "PERKS AND BENEFITS",
     img: {
       src: "/images/man-in-online-meeting.webp",
       alt: "A man in an online meeting",
