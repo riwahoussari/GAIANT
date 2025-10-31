@@ -95,7 +95,7 @@ export default function ArticlesSection({
             <div className="mt-5 xs:mt-[30px] xl:mt-[44px]">
               <Button
                 arrow={"normal"}
-                className="gap-4! bg-transparent! px-0!"
+                className="gap-4! bg-transparent! pl-0! backdrop-blur-none!"
                 variant={"secondary"}
               >
                 READ FULL ARTICLE
