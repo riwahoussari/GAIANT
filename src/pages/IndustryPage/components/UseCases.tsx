@@ -4,7 +4,7 @@ import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { GlassCard, GlassCardAnimated } from "../../../components/ui/Cards";
+import { GlassCardAnimated } from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
 
 export default function UseCases() {
