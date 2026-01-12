@@ -7,6 +7,9 @@ import { cn } from "../../lib/utils";
 import { motion as m } from "motion/react";
 import { Link } from "react-router-dom";
 import { useSwipe } from "../../lib/useSwipe";
+import Lottie  from "lottie-react";
+import animationData from "../../assets/glass-card-animation-test.json";
+
 
 export function IndustryCard({
   imgSrc,
@@ -116,6 +119,49 @@ export function GlassCard({
     </div>
   );
 }
+
+export function GlassCardAnimated({
+  title,
+  subtitle,
+  text,
+  className,
+}: {
+  title: string;
+  subtitle: string;
+  text: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={
+        "relative overflow-hidden bg-white/50 p-3 xs:p-6 " + (className || "")
+      }
+    >
+      {/* title & animation */}
+      <div className="relative flex items-end justify-end gap-2">
+        <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
+
+        <div className="aspect-square w-[33%] min-w-[80px]">
+          <Lottie
+            animationData={animationData}
+            loop
+            autoplay
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+
+      {/* text */}
+      <div className="relative mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
+        <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
+          {subtitle}
+        </p>
+        <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
+      </div>
+    </div>
+  );
+}
+
 
 export function SimpleCard({
   title,
