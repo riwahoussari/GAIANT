@@ -7,9 +7,10 @@ import { cn } from "../../lib/utils";
 import { motion as m } from "motion/react";
 import { Link } from "react-router-dom";
 import { useSwipe } from "../../lib/useSwipe";
-import Lottie  from "lottie-react";
-import animationData from "../../assets/glass-card-animation-test.json";
-
+import Lottie from "lottie-react";
+import animation1 from "../../assets/glass-card-animation-test.json";
+import animation2 from "../../assets/gradient.json";
+import animation3 from "../../assets/solid.json";
 
 export function IndustryCard({
   imgSrc,
@@ -125,11 +126,13 @@ export function GlassCardAnimated({
   subtitle,
   text,
   className,
+  animation = 0,
 }: {
   title: string;
   subtitle: string;
   text: string;
   className?: string;
+  animation?: number;
 }) {
   return (
     <div
@@ -143,10 +146,16 @@ export function GlassCardAnimated({
 
         <div className="aspect-square w-[33%] min-w-[80px]">
           <Lottie
-            animationData={animationData}
+            animationData={
+              animation === 0
+                ? animation1
+                : animation === 1
+                  ? animation2
+                  : animation3
+            }
             loop
             autoplay
-            className="w-full h-full"
+            className="h-full w-full"
           />
         </div>
       </div>
@@ -161,7 +170,6 @@ export function GlassCardAnimated({
     </div>
   );
 }
-
 
 export function SimpleCard({
   title,
