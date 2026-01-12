@@ -4,7 +4,10 @@ import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { GlassCardAnimated } from "../../../components/ui/Cards";
+import {
+  GlassCardAnimated,
+  GlassCardAnimatedVideo,
+} from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
 
 export default function UseCases() {
@@ -15,12 +18,12 @@ export default function UseCases() {
       ref={sectionRef}
       className="side-padding my-container relative mt-[120px]"
     >
-      <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
+      {/* <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <GradientCircle
           className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-y-400"
           colorr={"teal"}
         />
-      </div>
+      </div> */}
 
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
@@ -33,11 +36,12 @@ export default function UseCases() {
             {INDUSTRY_PAGE_DATA.USE_CASES.text}
           </p>
         </SlideUpAnim>
-        <SlideUpAnim className="flex xl:justify-end md:col-start-2 xl:col-start-3" isInView={isInView} transition={{ delay: 0.3 }}>
-          <Button
-            className="max-sm:mt-3"
-            variant={"black"}
-          >
+        <SlideUpAnim
+          className="flex md:col-start-2 xl:col-start-3 xl:justify-end"
+          isInView={isInView}
+          transition={{ delay: 0.3 }}
+        >
+          <Button className="max-sm:mt-3" variant={"black"}>
             REQUEST A DEMO
           </Button>
         </SlideUpAnim>
@@ -47,9 +51,14 @@ export default function UseCases() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {INDUSTRY_PAGE_DATA.USE_CASES.cards.map((useCase, i) => (
           <SlideUpSelf key={i}>
-            <GlassCardAnimated animation={i % 3} className="w-full" {...useCase} />
+            <GlassCardAnimatedVideo
+              animation={1}
+              className="w-full"
+              {...useCase}
+            />
           </SlideUpSelf>
         ))}
+       
       </div>
     </section>
   );
