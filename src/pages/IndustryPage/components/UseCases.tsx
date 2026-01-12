@@ -1,11 +1,9 @@
 import { useRef } from "react";
-import GradientCircle from "../../../components/ui/GradientCircle";
 import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
 import {
-  GlassCardAnimated,
   GlassCardAnimatedVideo,
 } from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
