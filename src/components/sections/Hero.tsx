@@ -168,7 +168,7 @@ export default function Hero({
         )}
 
         <div
-          className={`flex flex-col lg:flex-row max-lg:max-w-[660px] ${
+          className={`flex flex-col max-lg:max-w-[660px] lg:flex-row ${
             gap || defaultGaps
           }`}
         >
@@ -196,9 +196,14 @@ export default function Hero({
               >
                 {text.split(" ").map((word, i) => {
                   if (word === "<br>") return <br key={i} />;
-                  if (word === "<sm:br>")
+                  else if (word === "<sm:br>")
                     return <br key={i} className="max-sm:hidden" />;
-                  return word + " ";
+                  else {
+                    if (word.split("<bold>").length > 1) {
+                      return <strong>{word.split("<bold>")[1] + " "}</strong>;
+                    }
+                    return word + " ";
+                  }
                 })}
               </p>
             </SlideUpAnim>

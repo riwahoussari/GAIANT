@@ -1,3 +1,8 @@
+import TransparencyAnimation from "../assets/animations/transparency.mp4";
+import AdaptabilityAnimation from "../assets/animations/adaptability.mp4";
+import CustomizationAnimation from "../assets/animations/customization.mp4";
+import DeploymentAnimation from "../assets/animations/deployment.mp4";
+
 export const GENERAL_DATA = {
   PARTNERS: [
     {
@@ -21,58 +26,68 @@ export const GENERAL_DATA = {
   INDUSTRIES: [
     {
       name: "Banking & Financial Services",
-      img: "/industries/Industries-banking.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Insurance",
-      img: "/industries/Industries-insurance.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Healthcare & Life Sciences",
-      img: "/industries/Industries-healthcare.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Technology, Media & Telecommunications (TMT)",
-      img: "/industries/Industries-tech.webp",
-      description: "Advancing patient care and biological research",
+      img: "/industries/banking.webp",
+      description:
+        "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
     },
     {
       name: "Public Sector & Government",
-      img: "/industries/Industries-government.webp",
-      description: "Advancing patient care and biological research",
+      img: "/industries/government.webp",
+      description:
+        "Digitizing citizen services, automating compliance, and enabling data-driven policy",
+    },
+    {
+      name: "Retail & Consumer Goods",
+      img: "/industries/retail.webp",
+      description:
+        "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
+    },
+    {
+      name: "Insurance",
+      img: "/industries/insurance.webp",
+      description:
+        "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
     },
     {
       name: "Energy & Utilities",
-      img: "/industries/Industries-energy.webp",
+      img: "/industries/energy.webp",
+      description:
+        "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
+    },
+    {
+      name: "Hopitality & Leisure",
+      img: "/industries/hospitality.webp",
+      description:
+        "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
+    },
+    {
+      name: "Healthcare & Life Sciences",
+      img: "/industries/healthcare.webp",
       description: "Advancing patient care and biological research",
     },
     {
       name: "Legal Services",
-      img: "/industries/Industries-legal.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Real Estate & Construction",
-      img: "/industries/Industries-real-estate.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Retail & Consumer Goods",
-      img: "/industries/Industries-retail.webp",
-      description: "Advancing patient care and biological research",
-    },
-    {
-      name: "Hopitality & Leisure",
-      img: "/industries/Industries-hospitality.webp",
-      description: "Advancing patient care and biological research",
+      img: "/industries/legal.webp",
+      description:
+        "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     },
     {
       name: "Education",
-      img: "/industries/Industries-education.webp",
-      description: "Advancing patient care and biological research",
+      img: "/industries/education.webp",
+      description:
+        "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
+    },
+    {
+      name: "Technology, Media & Telecommunications (TMT)",
+      img: "/industries/tech.webp",
+      description:
+        "Reducing churn, optimizing network performance, and monetizing content intelligently",
+    },
+    {
+      name: "Real Estate & Construction",
+      img: "/industries/real-estate.webp",
+      description:
+        "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
     },
   ],
 
@@ -102,8 +117,9 @@ export const GENERAL_DATA = {
 
 export const LANDING_PAGE_DATA = {
   HERO: {
-    title: "One AI work platform for any kind of work",
-    text: "Gaiant is where powerful AI meets practical business solutions, so you can work smarter.",
+    title: "Accelerating <br> Enterprise Intelligence ",
+    // <bold> tag should not have any spaces between it and the text it encloses, and should not have a <br> inside it.
+    text: "Gaiant is where AI becomes infrastructure, built around how <bold>your<bold> enterprise actually operates.",
     img1: {
       src: "/demos/patient-history-dashboard.svg",
       alt: "Image of Pateint History Dashboard",
@@ -115,31 +131,39 @@ export const LANDING_PAGE_DATA = {
   },
 
   WHAT_MAKES_US_DIFFERENT: {
-    title: "Turning complex AI into your clear advantage",
+    title: "AI that’s less A and more I",
     subtitle: "WHAT MAKES US DIFFERENT",
-    text: "We bring clarity to complexity, combining secure deployment, tailored solutions, and ongoing support to give your business a lasting advantage.",
-    boldText:
-      "With us, AI isn’t just technology — it’s your edge in a changing world.",
+    text: [
+      "We get right what others overcomplicate.",
+      "Most AI fails not because of the technology but because it's built around the system, not the human. ",
+      "Enterprises deploy tools that demand adaptation, force workarounds, and collapse under real-world pressure.",
+      "Gaiant works differently. We engineer AI that maps to how your business actually operates not how a vendor imagines it should.",
+      "Bespoke systems. Intelligent infrastructure. Built with you, not bolted on.",
+    ],
     cards: [
       {
         title: "Transparency",
         subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
+        text: "Clear processes, explainable outcomes, and full visibility at every stage.",
+        animation: TransparencyAnimation,
       },
       {
         title: "Adaptability",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
+        subtitle: "WE BUILD AI THAT EVOLVES WITH YOU.",
+        text: "Systems designed to learn, shift, and scale as your business does.",
+        animation: AdaptabilityAnimation,
       },
       {
         title: "Cutomization",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
+        subtitle: "WE BUILD AI AROUND YOUR REALITY.",
+        text: "Tailored solutions shaped by how your enterprise actually works.",
+        animation: CustomizationAnimation,
       },
       {
         title: "Deployment",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
+        subtitle: "WE BUILD AI THAT LIVES WHERE YOU NEED IT.",
+        text: "On-premises. Cloud. Hybrid. <br>Wherever your data lives, we deploy.",
+        animation: DeploymentAnimation,
       },
     ],
   },
@@ -155,8 +179,8 @@ export const LANDING_PAGE_DATA = {
   },
 
   ARCHE_SECTION: {
-    title: "Your complete AI solution for seamless workflows",
-    text: "From messy systems to one smart flow — Archē unifies it all so progress feels effortless.",
+    title: "Your enterprise brain. One place to ask, act, and build.",
+    text: "From scattered systems to unified intelligence, <br>Archē unifies it all so progress feels effortless.",
     img: { src: "/demos/ai-chat-demo.svg", alt: "AI chatbot dashboard" },
   },
 
@@ -172,27 +196,27 @@ export const LANDING_PAGE_DATA = {
           "Turns complex data into clear, actionable insights",
           "Adapts to the tools and systems you already use",
           "Supports collaboration across teams and departments",
-          "Scales with your projects as they grow",
+          "One unified workspace for everyone",
         ],
       },
       {
         title: "For your time",
         subtitle: "WHERE WE MAKE A DIFFERENCE",
         list: [
-          "Turns complex data into clear, actionable insights",
-          "Adapts to the tools and systems you already use",
-          "Supports collaboration across teams and departments",
-          "Scales with your projects as they grow",
+          "Eliminates the hunt, answers surface in seconds, not hours",
+          "Automates repetitive workflows so you focus on what matters",
+          "Hours saved daily by eliminating tool fragmentation",
+          "Keeps everything searchable, organized, and at your fingertips",
         ],
       },
       {
         title: "For your results",
         subtitle: "WHERE WE MAKE A DIFFERENCE",
         list: [
-          "Turns complex data into clear, actionable insights",
-          "Adapts to the tools and systems you already use",
-          "Supports collaboration across teams and departments",
-          "Scales with your projects as they grow",
+          "Decisions backed by real-time, company-wide intelligence",
+          "Fewer errors, faster approvals, tighter execution",
+          "One source of truth across every department",
+          "Momentum that compounds. The more you use it, the smarter it gets",
         ],
       },
     ],

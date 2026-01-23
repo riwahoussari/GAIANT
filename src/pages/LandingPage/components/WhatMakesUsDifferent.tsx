@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { GlassCard } from "../../../components/ui/Cards";
+import {  GlassCardAnimated } from "../../../components/ui/Cards";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
@@ -19,7 +19,7 @@ export default function WhatMakesUsDifferent() {
             {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.subtitle}
           </AnimatedText>
         </SectionSubTitle>
-        <SectionTitle className="col-span-2 mb-6 max-w-[470px] sm:mb-9">
+        <SectionTitle className="col-span-2 mb-6 max-w-[480px] sm:mb-9">
           <AnimatedText isInView={isInView}>
             {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.title}
           </AnimatedText>
@@ -33,12 +33,37 @@ export default function WhatMakesUsDifferent() {
           isInView={isInView}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="max-w-[310px] text-[15px] max-lg:hidden xs:text-[17px]">
-            {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text}
-            <br />
-            <br />
-            <span className="font-bold">
-              {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.boldText}
+          <p className="sm:grid grid-cols-2 lg:block gap-x-8 text-[15px] xs:text-[17px] lg:max-w-[336px]">
+            <span>
+              {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text
+                .slice(
+                  0,
+                  Math.ceil(
+                    LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text.length / 2
+                  )
+                )
+                .map((line, i) => (
+                  <span className="max-w-[336px]" key={i}>
+                    {line}
+                    <br />
+                    <br />
+                  </span>
+                ))}
+            </span>
+            <span>
+              {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text
+                .slice(
+                  Math.ceil(
+                    LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text.length / 2
+                  )
+                )
+                .map((line, i) => (
+                  <span className="max-w-[336px]" key={i}>
+                    {line}
+                    <br />
+                    <br />
+                  </span>
+                ))}
             </span>
           </p>
         </SlideUpAnim>
@@ -49,22 +74,13 @@ export default function WhatMakesUsDifferent() {
             <GradientCircle blur={"lg"} />
           </div>
 
-          <p className="pe-6 pt-4 text-[15px] max-lg:mb-[30px] xs:text-[17px] lg:hidden lg:max-w-[310px]">
-            {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text}
-            <br />
-            <br />
-            <span className="font-bold">
-              {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.boldText}
-            </span>
-          </p>
-
           {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.cards.map((card, i) => (
             <SlideUpAnim
               key={i}
               isInView={isInView}
               transition={{ delay: 0.3 + 0.1 * i }}
             >
-              <GlassCard {...card} />
+              <GlassCardAnimated {...card} />
             </SlideUpAnim>
           ))}
         </div>

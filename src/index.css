@@ -26,7 +26,8 @@
   --color-background: #efefef;
   --color-red: #ff0000;
   --color-teal: #00858f;
-  --color-dark-green: #186167;
+  --color-dark-green-700: #186167;
+  --color-dark-green-900: #02414b;
   --color-light-blue: #d4fcff;
   --color-light-gray: #93939e;
 }
@@ -52,13 +53,13 @@ body {
 }
 
 /* backgrounds and gradients */
-.bg-dark-green-blue-gradient {
+.bg-dark-green-700-blue-gradient {
   @apply bg-[linear-gradient(90deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
 }
-.bg-dark-green-blue-gradient-vertical {
+.bg-dark-green-700-blue-gradient-vertical {
   @apply bg-[linear-gradient(180deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
 }
-.bg-dark-green-blue-gradient-oblique {
+.bg-dark-green-700-blue-gradient-oblique {
   @apply bg-[linear-gradient(-45deg,#024045_0%,#6C9ABD_50%,#001959_100%)];
 }
 
@@ -80,6 +81,10 @@ body {
 
 .bg-gold-gradient {
   @apply bg-[linear-gradient(350deg,#36381C_0%,#96A893_30%,#2D2A23_100%)];
+}
+
+.bg-green-gradient {
+  @apply bg-[linear-gradient(90deg,#87AD8E_0%,#416147_30%,#041E09_50%,#416147_70%,#87AD8E_100%)];
 }
 
 .bg-button {

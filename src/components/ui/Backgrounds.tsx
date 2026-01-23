@@ -12,7 +12,7 @@ export function LandscapeBg({
   return (
     <div
       ref={ref}
-      className="bg-dark-green-blue-gradient-oblique h-full w-[100vw]!"
+      className="bg-dark-green-700-blue-gradient-oblique h-full w-[100vw]!"
     >
       <img
         fetchPriority={fetchPriority}
@@ -32,7 +32,9 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
     <div
       className={
         "absolute top-0 right-0 bottom-0 left-0 z-0 overflow-x-clip " +
-        (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
+        (isLoaded && !hasError
+          ? ""
+          : " bg-dark-green-700-blue-gradient-oblique")
       }
     >
       <div
@@ -68,7 +70,9 @@ export function BlurredTealGradientBg({
       <div
         className={
           "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[min(6vw,120px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px] " +
-          (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
+          (isLoaded && !hasError
+            ? ""
+            : " bg-dark-green-700-blue-gradient-oblique")
         }
       >
         <img
@@ -101,7 +105,9 @@ export function BlurredTealGradientBg2({
       <div
         className={
           "h-full w-[120vw]! -translate-x-[10vw] blur-[min(6vw,120px)]" +
-          (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
+          (isLoaded && !hasError
+            ? ""
+            : " bg-dark-green-700-blue-gradient-oblique")
         }
       >
         <img
@@ -143,7 +149,9 @@ export function HeroImgBackground({
         className={
           "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] " +
           (blur || " blur-[max(1vw,10px)] ") +
-          (isLoaded && !hasError ? "" : " bg-dark-green-blue-gradient-oblique")
+          (isLoaded && !hasError
+            ? ""
+            : " bg-dark-green-700-blue-gradient-oblique")
         }
       >
         <img

@@ -13,7 +13,7 @@ export default function OurLatestThinking() {
           button={
             <Link to="/news">
               <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
-                SEE ALL
+                See all
               </Button>
             </Link>
           }

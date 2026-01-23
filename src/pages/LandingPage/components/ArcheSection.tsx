@@ -36,7 +36,12 @@ export default function ArcheSection() {
               {LANDING_PAGE_DATA.ARCHE_SECTION.title}
             </p>
             <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 xs:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px]">
-              {LANDING_PAGE_DATA.ARCHE_SECTION.text}
+              {LANDING_PAGE_DATA.ARCHE_SECTION.text.split("<br>").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </p>
             <Link to="/arche" aria-label="Lean more about Arche platform">
               <Button
@@ -44,7 +49,7 @@ export default function ArcheSection() {
                 arrow={"spaced"}
                 size={"md"}
               >
-                LEARN MORE<span className="hidden"> about Arche platform</span>
+                Learn more<span className="hidden"> about Arche platform</span>
               </Button>
             </Link>
           </SlideUpAnim>

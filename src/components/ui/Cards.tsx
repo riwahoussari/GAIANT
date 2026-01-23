@@ -7,8 +7,6 @@ import { cn } from "../../lib/utils";
 import { motion as m } from "motion/react";
 import { Link } from "react-router-dom";
 import { useSwipe } from "../../lib/useSwipe";
-import Lottie from "lottie-react";
-import animation4 from "../../assets/new-anim.json"
 
 export function IndustryCard({
   imgSrc,
@@ -43,7 +41,7 @@ export function IndustryCard({
       >
         <img
           fetchPriority={fetchPriority}
-          className="w-full object-cover"
+          className="w-full h-full object-cover"
           src={imgSrc}
           alt={`Image representing ${title} industry`}
         />
@@ -124,18 +122,18 @@ export function GlassCardAnimated({
   subtitle,
   text,
   className,
-  //animation = 0,
+  animation,
 }: {
   title: string;
   subtitle: string;
   text: string;
   className?: string;
-  animation?: number;
+  animation: string;
 }) {
   return (
     <div
       className={
-        "relative overflow-hidden bg-white/50 p-3 xs:p-6 " + (className || "")
+        "relative overflow-hidden bg-white p-3 xs:p-6 h-full " + (className || "")
       }
     >
       {/* title & animation */}
@@ -143,11 +141,13 @@ export function GlassCardAnimated({
         <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
 
         <div className="aspect-square w-[33%] min-w-[80px]">
-          <Lottie
-            animationData={ animation4 }
+          <video
+            src={animation}
+            autoPlay
             loop
-            autoplay
-            className="h-full w-full"
+            muted
+            playsInline
+            className="h-full w-full object-contain"
           />
         </div>
       </div>
@@ -157,7 +157,14 @@ export function GlassCardAnimated({
         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
-        <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
+        <p className="text-[15px] leading-[21px] xs:text-[16px] max-w-[290px]">
+          {text.split("<br>").map((line, i) => (
+            <span key={i}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </p>
       </div>
     </div>
   );
@@ -461,7 +468,7 @@ export function CardsSlider({
           <div className="flex w-full items-center justify-center gap-1.5 sm:gap-3">
             <m.div
               animate={{ width: `${progressBarWidth}%` }}
-              className="bg-dark-green-blue-gradient h-1 rounded-full"
+              className="bg-dark-green-700-blue-gradient h-1 rounded-full"
             />
             <m.div
               animate={{ width: `${100 - progressBarWidth}%` }}

@@ -12,10 +12,11 @@ export default function LandingHero({
 }) {
   return (
     <Hero
-      titleWidth="max-w-[580px] lg:w-6/10 xl:max-w-[680px] lg:min-w-[563px]"
+    titleWidth="max-w-full flex-none"
+      spacing="max"
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
-      button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
+      button={<Button arrow={"spaced"}>Request a demo</Button>}
       background={<BlurredTealGradientBg fetchPriority="high" withBall />}
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">

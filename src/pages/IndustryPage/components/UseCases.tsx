@@ -5,9 +5,9 @@ import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
 import {
     GlassCardAnimated,
-  
 } from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
+import glassCardAnimation from "../../../assets/animations/adaptability.mp4";
 
 export default function UseCases() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,7 +51,7 @@ export default function UseCases() {
         {INDUSTRY_PAGE_DATA.USE_CASES.cards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCardAnimated
-                animation={1}
+                animation={glassCardAnimation}
                 className="w-full"
                 {...useCase}
             />

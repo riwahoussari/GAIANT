@@ -1,9 +1,4 @@
-import {
-  useRef,
-  useState,
-  type HTMLAttributes,
-  type ReactNode,
-} from "react";
+import { useRef, useState, type HTMLAttributes, type ReactNode } from "react";
 import { Arrow2Svg } from "../ui/ArrowSvg";
 import GradientCircle from "../ui/GradientCircle";
 import { TitleBlock } from "../ui/Titles";
@@ -122,7 +117,7 @@ function AccordionItem({
       <div
         className={
           "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
-          (selected ? " bg-dark-green-blue-gradient" : " bg-black/25")
+          (selected ? " bg-dark-green-700-blue-gradient" : " bg-black/25")
         }
       />
 

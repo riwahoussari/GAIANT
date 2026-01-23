@@ -81,11 +81,12 @@ export default function Navbar({
       className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
       {/* Announcement Bar */}
-      <div className="bg-gold-gradient relative z-100 w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
-        Introducing <span className="font-bold">archē</span>: The blah blah blah{" "}
-        {"   "}
-        <Link to="/arche" className="not-hover:underline">
-          Get Started
+      <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
+        Introducing <span className="font-bold">archē</span>: The New Operating
+        Layer for Enterprise {"   "}
+        <Link to="/arche" className="relative group">
+          Learn More
+          <span className="absolute right-0 -bottom-px translate-y-px left-0 block h-px origin-bottom scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
         </Link>
       </div>
       {/* Navbar Content */}
@@ -114,21 +115,66 @@ export default function Navbar({
             FlyoutContent={<ProductsFlyoutContent />}
             to="/arche"
           >
-            <p className="min-w-16 text-start text-sm">Products</p>
+            <div className="relative flex min-w-16 justify-start">
+              <p className="relative text-sm">
+                Products
+                <span
+                  style={{
+                    backgroundColor:
+                      textColor === "black"
+                        ? textColor
+                        : transparentBg
+                          ? "white"
+                          : "black",
+                  }}
+                  className="absolute right-0 -bottom-px left-0 block h-px origin-center scale-x-0 duration-300 ease-in-out group-hover:scale-x-100"
+                />
+              </p>
+            </div>
           </FlyoutLink>
           <FlyoutLink
             setHovering={setHovering}
             FlyoutContent={<SolutionsFlyoutContent />}
             to="/industries"
           >
-            <p className="min-w-16 text-center text-sm">Solutions</p>
+            <div className="flex min-w-16 justify-center">
+              <p className="relative text-sm">
+                Solutions
+                <span
+                  style={{
+                    backgroundColor:
+                      textColor === "black"
+                        ? textColor
+                        : transparentBg
+                          ? "white"
+                          : "black",
+                  }}
+                  className="absolute right-0 -bottom-px left-0 block h-px origin-center scale-x-0 duration-300 ease-in-out group-hover:scale-x-100"
+                />
+              </p>
+            </div>
           </FlyoutLink>
           <FlyoutLink
             setHovering={setHovering}
             FlyoutContent={<CompanyFlyoutContent />}
             to="/about"
           >
-            <p className="min-w-16 text-end text-sm">Company</p>
+            <div className="flex min-w-16 justify-end">
+              <p className="relative text-sm">
+                Company
+                <span
+                  style={{
+                    backgroundColor:
+                      textColor === "black"
+                        ? textColor
+                        : transparentBg
+                          ? "white"
+                          : "black",
+                  }}
+                  className="absolute right-0 -bottom-px left-0 block h-px origin-center scale-x-0 duration-300 ease-in-out group-hover:scale-x-100"
+                />
+              </p>
+            </div>
           </FlyoutLink>
         </div>
 

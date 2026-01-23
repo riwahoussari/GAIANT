@@ -55,7 +55,7 @@ export default function Footer() {
                 <span className="hidden">Submit</span>
                 <ArrowSvg color="white" className="w-[18px]" />
               </button>
-              <div className="bg-dark-green-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
+              <div className="bg-dark-green-700-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
             </form>
           </div>
 

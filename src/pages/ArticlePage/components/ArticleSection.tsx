@@ -54,7 +54,7 @@ export default function ArticleSection() {
             <SlideUpAnim
               isInView={isInView}
               transition={{ delay: 0.3 }}
-              className="my-8 flex items-center justify-between text-dark-green"
+              className="text-dark-green-700 my-8 flex items-center justify-between"
             >
               <p className="font-ibm! text-[14px] xs:text-[15px]">
                 GAIANT TEAM - SEP 19, 2025
@@ -96,7 +96,7 @@ export default function ArticleSection() {
                 “Language is the fabric of decision-making,” says Dr. Lina Aoun,
                 a computational linguist. “It’s how people express intent,
                 doubt, and nuance. Things spreadsheets can’t capture.”
-                <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
+                <div className="bg-dark-green-700-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
               </span>
               <br />
               <br />
@@ -119,7 +119,7 @@ export default function ArticleSection() {
                 explains Samir Khoury, Head of Data at a global retail firm.
                 “That distinction is what moves companies from reactive to
                 predictive.”
-                <div className="bg-dark-green-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
+                <div className="bg-dark-green-700-blue-gradient-vertical absolute top-1 bottom-1 left-0 w-1 md:-left-5" />
               </span>
               <br />
               <br />
@@ -160,7 +160,7 @@ function ShareButton() {
     >
       {/* share button */}
       <button className="relative z-1 flex cursor-pointer gap-1 xs:gap-2">
-        <p className="text-[13px] font-bold text-dark-green xs:text-[14px]">
+        <p className="text-dark-green-700 text-[13px] font-bold xs:text-[14px]">
           SHARE
         </p>
         <img
@@ -183,7 +183,7 @@ function ShareButton() {
           >
             <div className="relative pb-5">
               {/* gradient */}
-              <div className="bg-dark-green-blue-gradient absolute top-0 right-0 bottom-0 left-0 blur-xl" />
+              <div className="bg-dark-green-700-blue-gradient absolute top-0 right-0 bottom-0 left-0 blur-xl" />
 
               {/* content */}
               <div className="relative flex items-center gap-1 px-2 py-2">

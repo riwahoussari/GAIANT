@@ -22,7 +22,7 @@ export default function IndustriesWeEmpower() {
         button={
           <Link to="/industries">
             <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
-              SEE ALL
+              See all
             </Button>
           </Link>
         }
