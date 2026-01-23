@@ -8,7 +8,7 @@ import {
 import GradientCircle from "../../../components/ui/GradientCircle";
 import Button from "../../../components/ui/Button";
 import { GENERAL_DATA } from "../../../lib/data";
-import { ArticleCard } from "../../../components/ui/Cards";
+import ArticleCard from "../../../components/ui/cards/ArticleCard";
 
 export default function ArticlesSection({
   withBall = false,

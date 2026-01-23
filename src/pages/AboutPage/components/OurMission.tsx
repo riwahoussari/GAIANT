@@ -1,5 +1,5 @@
 import { SlideUpSelf } from "../../../components/ui/Anims";
-import { GlassCard } from "../../../components/ui/Cards";
+import GlassCard from "../../../components/ui/cards/GlassCard";
 import { BigEllipseGradient } from "../../../components/ui/GradientCircle";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { ABOUT_PAGE_DATA } from "../../../lib/data";

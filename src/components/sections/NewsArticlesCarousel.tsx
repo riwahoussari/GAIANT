@@ -1,8 +1,9 @@
-import { ArticleCard, CardsSlider } from "../ui/Cards";
 import { useRef, type ReactNode } from "react";
 import { useInView } from "motion/react";
 import { SlideUpAnim } from "../ui/Anims";
 import { GENERAL_DATA } from "../../lib/data";
+import { CardsSlider } from "../ui/cards/CardsSlider";
+import ArticleCard from "../ui/cards/ArticleCard";
 
 export default function NewsArticlesCarousel({
   titleBlock,

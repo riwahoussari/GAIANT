@@ -1,11 +1,12 @@
 import { TitleBlock } from "../../../components/ui/Titles";
-import { CardsSlider, IndustryCard } from "../../../components/ui/Cards";
 import Button from "../../../components/ui/Button";
 import { Link } from "react-router-dom";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import { useRef } from "react";
 import { useInView } from "motion/react";
 import { GENERAL_DATA, LANDING_PAGE_DATA } from "../../../lib/data";
+import { CardsSlider } from "../../../components/ui/cards/CardsSlider";
+import IndustryCard from "../../../components/ui/cards/IndustryCard";
 
 export default function IndustriesWeEmpower() {
   const sectionRef = useRef<HTMLDivElement>(null);

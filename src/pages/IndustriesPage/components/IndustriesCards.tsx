@@ -1,7 +1,7 @@
 import type { RefObject } from "react";
 import { SlideUpSelf } from "../../../components/ui/Anims";
-import { IndustryCard } from "../../../components/ui/Cards";
 import { GENERAL_DATA } from "../../../lib/data";
+import IndustryCard from "../../../components/ui/cards/IndustryCard";
 
 export default function IndustriesCards({
   navbarTriggerRef,

@@ -3,8 +3,8 @@ import { useRef } from "react";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { SectionTitle } from "../../../components/ui/Titles";
 import { AnimatedText, SlideUpSelf } from "../../../components/ui/Anims";
-import { SimpleCard } from "../../../components/ui/Cards";
 import { CAREERS_PAGE_DATA } from "../../../lib/data";
+import SimpleCard from "../../../components/ui/cards/SimpleCard";
 
 export default function OpenRoles() {
   const sectionRef = useRef<HTMLDivElement>(null);

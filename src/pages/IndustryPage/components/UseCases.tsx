@@ -3,9 +3,9 @@ import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { GlassCard } from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
 import glassCardAnimation from "../../../assets/animations/adaptability.mp4";
+import GlassCard from "../../../components/ui/cards/GlassCard";
 
 export default function UseCases() {
   const sectionRef = useRef<HTMLDivElement>(null);

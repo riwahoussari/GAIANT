@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import { GlassCard } from "../../../components/ui/Cards";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
 import { AnimatedText, SlideUpAnim } from "../../../components/ui/Anims";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
+import GlassCard from "../../../components/ui/cards/GlassCard";
 
 export default function WhatMakesUsDifferent() {
   const sectionRef = useRef<HTMLDivElement>(null);
