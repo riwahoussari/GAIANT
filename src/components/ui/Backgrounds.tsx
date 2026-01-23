@@ -148,7 +148,7 @@ export function HeroImgBackground({
       <div
         className={
           "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] " +
-          (blur || " blur-[max(1vw,10px)] ") +
+          (blur || " blur-[max(0.5vw,10px)] ") +
           (isLoaded && !hasError
             ? ""
             : " bg-dark-green-700-blue-gradient-oblique")

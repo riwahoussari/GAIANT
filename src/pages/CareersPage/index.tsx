@@ -3,7 +3,6 @@ import Navbar from "../../components/sections/navbar/Navbar";
 import CareersHero from "./components/CareersHero";
 import LifeAtGaiant from "./components/LifeAtGaiant";
 import DoYouFit from "./components/DoYouFit";
-import WhatsInItForYou from "./components/WhatsInItForYou";
 import OpenRoles from "./components/OpenRoles";
 import { PageMeta } from "../../components/ui/PageMeta";
 
@@ -19,9 +18,8 @@ export default function CareersPage() {
         <CareersHero />
         <LifeAtGaiant />
         <DoYouFit />
-        <WhatsInItForYou />
         <OpenRoles />
-        <CallToAction />
+        <CallToAction withGradientCircle={true} />
       </main>
     </>
   );

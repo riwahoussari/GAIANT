@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import { useRef } from "react";
 import { useInView } from "motion/react";
-import { GENERAL_DATA, LANDING_PAGE_DATA } from "../../../lib/data";
+import { INDUSTRIES, LANDING_PAGE_DATA } from "../../../lib/data";
 import { CardsSlider } from "../../../components/ui/cards/CardsSlider";
 import IndustryCard from "../../../components/ui/cards/IndustryCard";
 
@@ -30,7 +30,7 @@ export default function IndustriesWeEmpower() {
       />
 
       <CardsSlider>
-        {GENERAL_DATA.INDUSTRIES.map((industry, i) => (
+        {INDUSTRIES.map((industry, i) => (
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.2 + 0.1 * i }}
@@ -38,6 +38,7 @@ export default function IndustriesWeEmpower() {
           >
             <IndustryCard
               className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
+              id={industry.id}
               title={industry.name}
               text={industry.description}
               button={!!industry.description}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion as m } from "motion/react";
 import ArrowSvg from "../../ui/ArrowSvg";
-import { GENERAL_DATA } from "../../../lib/data";
+import { INDUSTRIES } from "../../../lib/data";
 
 export default function FlyoutLink({
   children,
@@ -103,11 +103,11 @@ export function SolutionsFlyoutContent() {
         INDUSTRIES
       </p>
       <div className="grid grid-cols-3 gap-x-4 gap-y-6 text-[18px] leading-[20px]">
-        {GENERAL_DATA.INDUSTRIES.slice(0, 11).map((industry, i) => (
+        {INDUSTRIES.slice(0, 11).map((industry, i) => (
           <Link
             key={i}
             className="cursor-point group/link"
-            to={`/industries/${i + 1}`}
+            to={`/industries/${industry.id}`}
           >
             <p className="max-w-[280px] rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
               {industry.name}

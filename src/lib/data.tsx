@@ -2,6 +2,7 @@ import TransparencyAnimation from "../assets/animations/transparency.mp4";
 import AdaptabilityAnimation from "../assets/animations/adaptability.mp4";
 import CustomizationAnimation from "../assets/animations/customization.mp4";
 import DeploymentAnimation from "../assets/animations/deployment.mp4";
+import type { TAccordionContent } from "../components/sections/AccordionSection";
 
 export const GENERAL_DATA = {
   PARTNERS: [
@@ -25,65 +26,76 @@ export const GENERAL_DATA = {
 
   INDUSTRIES: [
     {
+      id: "banking-and-financial-services",
       name: "Banking & Financial Services",
       img: "/industries/banking.webp",
       description:
         "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
     },
     {
+      id: "public-sector-and-government",
       name: "Public Sector & Government",
       img: "/industries/government.webp",
       description:
         "Digitizing citizen services, automating compliance, and enabling data-driven policy",
     },
     {
+      id: "retail-and-consumer-goods",
       name: "Retail & Consumer Goods",
       img: "/industries/retail.webp",
       description:
         "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
     },
     {
+      id: "insurance",
       name: "Insurance",
       img: "/industries/insurance.webp",
       description:
         "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
     },
     {
+      id: "energy-and-utilities",
       name: "Energy & Utilities",
       img: "/industries/energy.webp",
       description:
         "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     },
     {
+      id: "hospitality-and-leisure",
       name: "Hopitality & Leisure",
       img: "/industries/hospitality.webp",
       description:
         "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     },
     {
+      id: "healthcare-and-life-sciences",
       name: "Healthcare & Life Sciences",
       img: "/industries/healthcare.webp",
       description: "Advancing patient care and biological research",
     },
     {
+      id: "legal-services",
       name: "Legal Services",
       img: "/industries/legal.webp",
       description:
         "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     },
     {
+      id: "education",
       name: "Education",
       img: "/industries/education.webp",
       description:
         "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
     },
     {
+      id: "technology-media-and-telecommunications-tmt",
       name: "Technology, Media & Telecommunications (TMT)",
       img: "/industries/tech.webp",
       description:
         "Reducing churn, optimizing network performance, and monetizing content intelligently",
     },
     {
+      id: "real-estate-and-construction",
       name: "Real Estate & Construction",
       img: "/industries/real-estate.webp",
       description:
@@ -114,6 +126,634 @@ export const GENERAL_DATA = {
     },
   ],
 };
+
+export type TIndustry = {
+  id: string;
+  name: string;
+  img: string;
+  description: string;
+  hero: {
+    title: string;
+    subtitle: string;
+    text: string;
+    img: string;
+  };
+  features: {
+    title: string;
+    subtitle: string;
+    text?: string;
+    imgFront: { src: string; alt: string };
+    imgBack: { src: string; alt: string };
+    accordionContent: TAccordionContent[];
+  };
+};
+
+export const INDUSTRIES: TIndustry[] = [
+  {
+    id: "banking-and-financial-services",
+    name: "Banking & Financial Services",
+    img: "/industries/banking.webp",
+    description:
+      "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
+    hero: {
+      title: "AI for faster decisions <sm:br> and lower risk",
+      subtitle: "BANKING & FINANCIAL SERVICES",
+      text: "Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights.",
+      img: "/industries/banking.webp",
+    },
+    features: {
+      title: "Smarter moves with fewer resources",
+      subtitle: "TRUSTED BY FINANCIAL LEADERS",
+      text: "AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Improve knowledge management",
+          subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
+          list: [
+            "Detect fraud and protect sensitive data",
+            "Automate reporting with precision and speed",
+            "Ensure compliance across every transaction",
+            "Deliver clear insights for smarter decisions",
+          ],
+        },
+        {
+          title: "Reduce busywork",
+          subtitle: "FREE YOUR TEAMS FOR HIGH-VALUE WORK",
+          list: [
+            "Automate document processing and data entry",
+            "Eliminate repetitive reconciliation tasks",
+            "Accelerate loan and credit processing",
+            "Let people focus on clients, not paperwork",
+          ],
+        },
+        {
+          title: "Automate common support tickets",
+          subtitle: "FASTER RESOLUTION, HAPPIER CUSTOMERS",
+          list: [
+            "Instantly resolve routine account inquiries",
+            "Route complex issues to the right teams",
+            "Reduce wait times across every channel",
+            "Maintain service quality at scale",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "public-sector-and-government",
+    name: "Public Sector & Government",
+    img: "/industries/government.webp",
+    description:
+      "Digitizing citizen services, automating compliance, and enabling data-driven policy",
+    hero: {
+      title: "Modernize public services with AI",
+      subtitle: "PUBLIC SECTOR & GOVERNMENT",
+      text: "Harness institutional data to improve citizen outcomes, streamline operations, and deliver services that meet the urgency of public need.",
+      img: "/industries/government.webp",
+    },
+    features: {
+      title: "Bringing clarity for smarter public policy",
+      subtitle: "TRUSTED BY PUBLIC INSTITUTIONS",
+      text: "Public mandates can’t wait. AI helps governments move at the speed citizens expect without compromising accuracy, security, or accountability.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Speed up policy analysis and drafting",
+          subtitle: "POLICY INTELLIGENCE",
+          list: [
+            "Extract relevant insights from large volumes of legislation and regulation",
+            "Summarize public records to inform policy decisions",
+            "Draft policy language with contextual accuracy",
+            "Track regulatory changes across jurisdictions automatically",
+          ],
+        },
+        {
+          title: "Deploy virtual assistants",
+          subtitle: "CITIZEN ACCESS",
+          list: [
+            "Automate FAQs around taxes, benefits, healthcare, and licensing",
+            "Provide 24/7 multilingual support across channels",
+            "Reduce call center volume while improving response times",
+            "Route complex inquiries to the appropriate department",
+          ],
+        },
+        {
+          title: "Enhance fraud detection capabilities",
+          subtitle: "FISCAL INTEGRITY",
+          list: [
+            "Identify unusual patterns in procurement and expense claims",
+            "Flag benefits distributions that may indicate fraud or abuse",
+            "Monitor transactions across agencies in real time",
+            "Reduce waste while protecting public resources",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "retail-and-consumer-goods",
+    name: "Retail & Consumer Goods",
+    img: "/industries/retail.webp",
+    description:
+      "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
+    hero: {
+      title: "AI that moves at the speed of commerce",
+      subtitle: "RETAIL & CONSUMER GOODS",
+      text: "Forecast demand, optimize inventory, and personalize at scale with intelligence that turns data into decisions before the moment passes.",
+      img: "/industries/retail-darker.webp",
+    },
+    features: {
+      title: "From gut instinct to ground truth",
+      subtitle: "TRUSTED BY RETAIL LEADERS",
+      text: "Consumer businesses sit on gold and act broke. Data everywhere, insight nowhere. Most decisions are still made by instinct and spreadsheets. AI sees what sells, where, and why, turning noise into signal and signal into action.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Sharpen demand forecasting",
+          subtitle: "INVENTORY INTELLIGENCE",
+          list: [
+            "Forecast demand by SKU, location, and channel with precision",
+            "Adjust predictions dynamically based on trends, weather, and events",
+            "Reduce overstock and stockouts simultaneously",
+            "Inform product planning and assortment decisions with data",
+          ],
+        },
+        {
+          title: "Streamline supply chain operations",
+          subtitle: "OPERATIONAL EFFICIENCY",
+          list: [
+            "Automate purchase orders and vendor communication",
+            "Run what-if scenarios across sourcing and logistics",
+            "Gain real-time visibility into fulfillment and distribution",
+            "Identify bottlenecks before they impact availability",
+          ],
+        },
+        {
+          title: "Elevate customer engagement",
+          subtitle: "PERSONALIZATION AT SCALE",
+          list: [
+            "Deliver personalized promotions based on behavior and segment",
+            "Automate post-purchase follow-up and loyalty engagement",
+            "Improve customer service with AI-powered chat and resolution",
+            "Track satisfaction and sentiment to refine experience continuously",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "insurance",
+    name: "Insurance",
+    img: "/industries/insurance.webp",
+    description:
+      "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
+    hero: {
+      title: "Smarter underwriting and faster claims",
+      subtitle: "INSURANCE",
+      text: "Accelerate claims processing, refine risk assessment, and automate compliance with AI built for the complexity of modern insurance.",
+      img: "/industries/insurance.webp",
+    },
+    features: {
+      title: "Precision at the point of risk",
+      subtitle: "TRUSTED BY INSURANCE LEADERS",
+      text: "The insurance industry has always been about managing the unknown. AI makes the unknown smaller, surfacing risk earlier, resolving claims faster, and turning data into decisions that hold.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Improve risk assessment",
+          subtitle: "UNDERWRITING INTELLIGENCE",
+          list: [
+            "Analyze structured and unstructured data for deeper risk profiles",
+            "Flag anomalies and inconsistencies in real time",
+            "Automate application review with decision-ready recommendations",
+            "Continuously refine models with new claims data",
+          ],
+        },
+        {
+          title: "Accelerate claims processing",
+          subtitle: "SPEED WITHOUT COMPROMISE",
+          list: [
+            "Triage claims instantly using multimodal AI",
+            "Predict payouts with severity estimation models",
+            "Reduce manual review for straightforward claims",
+            "Surface fraud signals before settlement",
+          ],
+        },
+        {
+          title: "Strengthen policyholder retention",
+          subtitle: "RETENTION THROUGH RELEVANCE",
+          list: [
+            "Identify at-risk policyholders before they lapse",
+            "Personalize outreach based on behavior and lifecycle",
+            "Automate renewal workflows with precision timing",
+            "Turn service interactions into loyalty drivers",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "energy-and-utilities",
+    name: "Energy & Utilities",
+    img: "/industries/energy.webp",
+    description:
+      "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
+    hero: {
+      title: "Powering smarter energy operations",
+      subtitle: "ENERGY & UTILITIES",
+      text: "Securely integrate disconnected data sources to deliver real-time intelligence for smarter decision-making, from grid to meter.",
+      img: "/industries/energy.webp",
+    },
+    features: {
+      title: "Powering what powers everything else",
+      subtitle: "TRUSTED BY ENERGY LEADERS",
+      text: "Energy companies have data. What they lack is timely access. Ai turns scattered signals into operational clarity – from field, to plant & across the grid.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Surface insights from unstructured data",
+          subtitle: "KNOWLEDGE CONSOLIDATION",
+          list: [
+            "Consolidate dispersed data into a single, searchable knowledge base",
+            "Connect OEM manuals, maintenance logs, and sensor records",
+            "Enable field teams to query institutional knowledge instantly",
+            "Reduce time spent searching for critical information",
+          ],
+        },
+        {
+          title: "Enhance predictive modeling",
+          subtitle: "FORECASTING INTELLIGENCE",
+          list: [
+            "Predict equipment failures before they cause downtime",
+            "Forecast demand with greater accuracy across the grid",
+            "Optimize load balancing in real time",
+            "Reduce maintenance costs with condition-based monitoring",
+          ],
+        },
+        {
+          title: "Protect your personnel and infrastructure",
+          subtitle: "SAFETY AND RESILIENCE",
+          list: [
+            "Monitor assets continuously for early warning signs",
+            "Detect anomalies in performance data across distributed systems",
+            "Automate safety alerts and incident response protocols",
+            "Extend asset lifespan with proactive maintenance",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "hospitality-and-leisure",
+    name: "Hopitality & Leisure",
+    img: "/industries/hospitality.webp",
+    description:
+      "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
+    hero: {
+      title: "Exceptional experiences & operational excellence",
+      subtitle: "HOSPITALITY & LEISURE",
+      text: "Personalize guest journeys, optimize revenue, and streamline operations with intelligence that works behind the scenes so hospitality stays human.",
+      img: "/industries/hospitality.webp",
+    },
+    features: {
+      title: "Service meets system",
+      subtitle: "TRUSTED BY HOSPITALITY LEADERS",
+      text: "Guests remember how you made them feel, not how you made it happen. AI powers the invisible infrastructure, pricing, timing, coordination – so every interaction feels seamless.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Deliver personalized guest journeys",
+          subtitle: "EXPERIENCE INTELLIGENCE",
+          list: [
+            "Tailor offers and recommendations based on guest history and preferences",
+            "Automate pre-arrival communication and upsell opportunities",
+            "Personalize on-property experiences from dining to amenities",
+            "Build loyalty through recognition that scales across properties",
+          ],
+        },
+        {
+          title: "Maximize revenue performance",
+          subtitle: "YIELD OPTIMIZATION",
+          list: [
+            "Implement dynamic pricing based on demand, events, and competitor rates",
+            "Forecast occupancy and revenue with precision across seasons",
+            "Identify optimal rate strategies by segment and channel",
+            "Reduce reliance on OTAs with direct booking intelligence",
+          ],
+        },
+        {
+          title: "Streamline operations across properties",
+          subtitle: "OPERATIONAL EFFICIENCY",
+          list: [
+            "Automate housekeeping schedules based on check-ins and turnovers",
+            "Predict maintenance needs before they impact guest experience",
+            "Optimize staffing levels based on occupancy and demand forecasts",
+            "Centralize visibility across multiple locations in real time",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "healthcare-and-life-sciences",
+    name: "Healthcare & Life Sciences",
+    img: "/industries/healthcare.webp",
+    description: "Advancing patient care and biological research",
+    hero: {
+      title: "Advancing patient care and biological research",
+      subtitle: "HEALTHCARE & LIFE SCIENCES",
+      text: "Turn fragmented records into unified insight, powering faster diagnoses, smarter research, and better care.",
+      img: "/industries/healthcare-darker.webp",
+    },
+    features: {
+      title: "The infrastructure behind modern care",
+      subtitle: "TRUSTED BY HEALTHCARE LEADERS",
+      text: "The bottleneck in healthcare is rarely clinical, it's operational. AI removes the friction between what clinicians know and what systems allow them to do.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Improve patient outcomes",
+          subtitle: "CLINICAL INTELLIGENCE",
+          list: [
+            "Extract real-time, contextually relevant insights from EHR systems",
+            "Surface early warning signals across patient populations",
+            "Enable personalized treatment recommendations at scale",
+            "Reduce diagnostic delays with intelligent triage",
+          ],
+        },
+        {
+          title: "Streamline workflows",
+          subtitle: "OPERATIONAL EFFICIENCY",
+          list: [
+            "Automate clinical documentation and note summarization",
+            "Reduce administrative burden on care teams",
+            "Accelerate prior authorization and claims processing",
+            "Integrate seamlessly with existing EHR and scheduling systems",
+          ],
+        },
+        {
+          title: "Accelerate research and discovery",
+          subtitle: "SCIENTIFIC ADVANCEMENT",
+          list: [
+            "Analyze large-scale datasets for pattern recognition",
+            "Generate and summarize clinical study findings",
+            "Identify promising compounds and treatment pathways faster",
+            "Bridge research insights with real-world clinical application",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "legal-services",
+    name: "Legal Services",
+    img: "/industries/legal.webp",
+    description:
+      "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
+    hero: {
+      title: "AI that practices at your standard",
+      subtitle: "LEGAL SERVICES",
+      text: "Accelerate research, streamline due diligence, and draft with precision with AI built for the complexity and rigor of legal work.",
+      img: "/industries/legal-darker.webp",
+    },
+    features: {
+      title: "Built for the demands of legal practice",
+      subtitle: "TRUSTED BY LEGAL LEADERS",
+      text: "Associates spend countless hours on complex but routine tasks. AI doesn't replace their judgment, it multiplies their capacity. The firms that win will be the ones that redeploy talent from process to strategy.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Elevate legal research",
+          subtitle: "RESEARCH INTELLIGENCE",
+          list: [
+            "Search across case law, statutes, and regulations in natural language",
+            "Surface relevant precedents and jurisdictional variations instantly",
+            "Generate research memos with verified citations",
+            "Reduce hours of manual research to minutes",
+          ],
+        },
+        {
+          title: "Accelerate contract review and analysis",
+          subtitle: "TRANSACTIONAL EFFICIENCY",
+          list: [
+            "Analyze hundreds of contracts simultaneously for key terms and risks",
+            "Flag deviations from standard language and negotiated positions",
+            "Extract structured data from unstructured documents at scale",
+            "Reduce due diligence timelines without sacrificing thoroughness",
+          ],
+        },
+        {
+          title: "Strengthen litigation support",
+          subtitle: "LITIGATION INTELLIGENCE",
+          list: [
+            "Review discovery materials with AI-assisted document classification",
+            "Identify patterns, inconsistencies, and key exhibits faster",
+            "Draft motions, briefs, and filings grounded in case strategy",
+            "Prepare for depositions and oral arguments with synthesized insights",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "education",
+    name: "Education",
+    img: "/industries/education.webp",
+    description:
+      "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
+    hero: {
+      title: "AI for institutions shaping the future",
+      subtitle: "EDUCATION",
+      text: "Personalize learning, streamline administration, and support student success with intelligence designed for the complexity of modern education.",
+      img: "/industries/education.webp",
+    },
+    features: {
+      title: "Serving students, faculty & institutions",
+      subtitle: "TRUSTED BY EDUCATION LEADERS",
+      text: "Education carries a mandate like no other, to prepare people for a future that doesn't yet exist. AI doesn't replace educators. It removes the friction between what they know and what institutions allow them to do.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Enable personalized learning pathways",
+          subtitle: "ADAPTIVE LEARNING",
+          list: [
+            "Tailor curriculum and content to individual student progress and needs",
+            "Recommend resources based on learning style and performance",
+            "Automate formative assessments and feedback loops",
+            "Support diverse learners with accessible, adaptive experiences",
+          ],
+        },
+        {
+          title: "Predict outcomes and drive intervention",
+          subtitle: "STUDENT SUCCESS INTELLIGENCE",
+          list: [
+            "Identify students at risk of falling behind or dropping out early",
+            "Surface engagement patterns and academic warning signs",
+            "Trigger timely interventions from advisors and support services",
+            "Track effectiveness of support programs with data",
+          ],
+        },
+        {
+          title: "Automate institutional administration",
+          subtitle: "OPERATIONAL EFFICIENCY",
+          list: [
+            "Streamline admissions processing and application review",
+            "Automate scheduling, enrollment, and records management",
+            "Simplify compliance reporting and accreditation documentation",
+            "Reduce manual workload across registrar and administrative functions",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "technology-media-and-telecommunications-tmt",
+    name: "Technology, Media & Telecommunications (TMT)",
+    img: "/industries/tech.webp",
+    description:
+      "Reducing churn, optimizing network performance, and monetizing content intelligently",
+    hero: {
+      subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
+      title: "Put your data to work across your business",
+      text: "Build smarter products, streamline operations, and deliver personalized experiences with AI grounded in your enterprise data.",
+      img: "/industries/tech.webp",
+    },
+    features: {
+      title: "Put your data to work ",
+      subtitle: "TRUSTED BY TMT LEADERS",
+      text: "The companies defining the next decade of technology won't just use AI,  they'll embed it into everything they build, ship, and operate.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Enhance product intelligence",
+          subtitle: "BUILD SMARTER",
+          list: [
+            "Embed AI capabilities directly into your product experience",
+            "Personalize features based on user behavior and context",
+            "Automate content recommendations and discovery",
+            "Continuously improve with real-time feedback loops",
+          ],
+        },
+        {
+          title: "Optimize network and infrastructure",
+          subtitle: "OPERATE LEANER",
+          list: [
+            "Predict and prevent network failures before they impact users",
+            "Automate capacity planning and resource allocation",
+            "Monitor performance across distributed systems in real time",
+            "Reduce operational costs while improving reliability",
+          ],
+        },
+        {
+          title: "Transform customer experience",
+          subtitle: "ENGAGE DEEPER",
+          list: [
+            "Reduce churn with predictive retention models",
+            "Personalize support interactions at scale",
+            "Automate common inquiries while routing complexity to the right teams",
+            "Turn customer data into actionable engagement strategies",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "real-estate-and-construction",
+    name: "Real Estate & Construction",
+    img: "/industries/real-estate.webp",
+    description:
+      "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
+    hero: {
+      title: "AI for smarter projects and faster decisions",
+      subtitle: "REAL ESTATE & CONSTRUCTION",
+      text: "Streamline planning, reduce cost overruns, and gain real-time visibility across every phase, from acquisition to handover.",
+      img: "/industries/real-estate.webp",
+    },
+    features: {
+      title: "Build smarter. Deliver faster. Risk less.",
+      subtitle: "TRUSTED BY INDUSTRY LEADERS",
+      text: "Real estate and construction run on timelines, budgets, and coordination across dozens of stakeholders. AI doesn't replace the expertise, it surfaces the right information at the right moment, so decisions happen before delays do.",
+      imgFront: {
+        src: "/images/man-on-laptop.webp",
+        alt: "A man in a suit working on his laptop",
+      },
+      imgBack: { src: "/demos/ai-prompt.svg", alt: "Gen AI prompt demo" },
+      accordionContent: [
+        {
+          title: "Accelerate pre-construction intelligence",
+          subtitle: "FEASIBILITY AND PLANNING",
+          list: [
+            "Analyze comparable sales, market trends, and demographic data instantly",
+            "Automate zoning and permit requirement research",
+            "Generate financial models and scenario analyses at speed",
+            "Reduce due diligence timelines on acquisitions",
+          ],
+        },
+        {
+          title: "Enhance project visibility and coordination",
+          subtitle: "EXECUTION INTELLIGENCE",
+          list: [
+            "Monitor progress across sites with unified dashboards",
+            "Surface schedule conflicts and resource bottlenecks early",
+            "Automate RFI responses and submittal tracking",
+            "Keep contractors, owners, and architects aligned in real time",
+          ],
+        },
+        {
+          title: "Predict and mitigate risk",
+          subtitle: "RISK MANAGEMENT",
+          list: [
+            "Forecast cost overruns based on historical project data",
+            "Identify weather, supply chain, and labor risks proactively",
+            "Flag contract deviations and change order patterns",
+            "Reduce claims exposure with documented decision trails",
+          ],
+        },
+      ],
+    },
+  },
+];
 
 export const LANDING_PAGE_DATA = {
   HERO: {
@@ -290,7 +930,7 @@ export const INDUSTRIES_PAGE_DATA = {
   HERO: {
     subtitle: "INDUSTRIES",
     title: "Solutions designed <sm:br> for any industry need",
-    text: "Every organization faces unique challenges. <br> Our AI adapts, scales, and delivers value across fields — streamlining operations and enabling smarter decisions, all while fitting the way you work.",
+    text: "Every organization faces unique challenges. <br> Our AI adapts, scales, and delivers value across fields, streamlining operations and enabling smarter decisions, all while fitting the way you work.",
   },
 
   TESTIMONIALS_SECTION: {
@@ -488,55 +1128,14 @@ export const CAREERS_PAGE_DATA = {
     subtitle: "DO YOU FIT?",
     title:
       "We want Gaiant to be the place where everyone does the best work of their career.",
-    text: " So we make thoughtful decisions about how we work, the perks we provide, and how we create a diverse and inclusive work environment. We also foster technical creativity and innovation through internal hackathons, demos, tech talks, and achievement recognition programs that form a cornerstone of our culture at Gaiant. <br> <br> Join us and work alongside some of the world’s best talent from the likes of Apple, Meta AI, Amazon and Google Brain, as well as full-time staff adjunct professors from Stanford, Oxford, University of Toronto, and UCL London.",
-  },
-
-  WHATS_IN_IT_FOR_YOU: {
-    title: "What's in it for you?",
-    subtitle: "PERKS AND BENEFITS",
-    img: {
-      src: "/images/man-in-online-meeting.webp",
-      alt: "A man in an online meeting",
-    },
-    accordionContent: [
-      {
-        title: "Work Flexibility",
-        subtitle: "ON YOUR OWN TERMS",
-        list: [
-          "We proudly support a remote work culture worldwide",
-          "We offer centralized hubs to give teams a place to meet and innovate",
-          "We respect that life gets busy – no penalties or apologies ",
-          "Quality work matters most, whether it’s from a desk or the Bahamas",
-        ],
-      },
-      {
-        title: "Bonuses and Equity",
-        subtitle: "ON YOUR OWN TERMS",
-        list: [
-          "We proudly support a remote work culture worldwide",
-          "We offer centralized hubs to give teams a place to meet and innovate",
-          "We respect that life gets busy – no penalties or apologies ",
-          "Quality work matters most, whether it’s from a desk or the Bahamas",
-        ],
-      },
-      {
-        title: "Health Coverage",
-        subtitle: "ON YOUR OWN TERMS",
-        list: [
-          "We proudly support a remote work culture worldwide",
-          "We offer centralized hubs to give teams a place to meet and innovate",
-          "We respect that life gets busy – no penalties or apologies ",
-          "Quality work matters most, whether it’s from a desk or the Bahamas",
-        ],
-      },
-    ],
+    text: "So we make thoughtful decisions about how we work, the perks we provide, and how we create a diverse and inclusive work environment. We also foster technical creativity and innovation through internal hackathons, demos, tech talks, and achievement recognition programs that form a cornerstone of our culture at Gaiant. <br> <br> Join us and become part of a team that's defining what enterprise intelligence looks like in the MENA region and beyond. Here, you'll work alongside researchers, engineers, and strategists who believe the best way to predict the future is to build it.",
   },
 
   OPEN_ROLES: {
     title: "Open roles at Gaiant",
     cards: [
       {
-        title: "Enterprise Solutions Associate",
+        title: "AI Data Trainer, Arabic",
         text: "(Beirut - Remote)",
       },
       {
@@ -564,7 +1163,7 @@ export const CAREERS_PAGE_DATA = {
         text: "(Beirut - Remote)",
       },
       {
-        title: "AI Data Trainer, Arabic",
+        title: "Enterprise Solutions Associate",
         text: "(Beirut - Remote)",
       },
       {
@@ -589,8 +1188,8 @@ export const LINKS: TLinkRecord[] = [
   {
     name: "Solutions",
     link: "/industries",
-    sublinks: GENERAL_DATA.INDUSTRIES.map((industry) => {
-      return { link: `/industries/${industry.name}`, name: industry.name };
+    sublinks: INDUSTRIES.map((industry) => {
+      return { link: `/industries/${industry.id}`, name: industry.name };
     }),
   },
   {

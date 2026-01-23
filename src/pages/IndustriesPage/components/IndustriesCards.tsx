@@ -1,6 +1,6 @@
 import type { RefObject } from "react";
 import { SlideUpSelf } from "../../../components/ui/Anims";
-import { GENERAL_DATA } from "../../../lib/data";
+import { INDUSTRIES } from "../../../lib/data";
 import IndustryCard from "../../../components/ui/cards/IndustryCard";
 
 export default function IndustriesCards({
@@ -13,11 +13,12 @@ export default function IndustriesCards({
       ref={navbarTriggerRef}
       className="side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
     >
-      {GENERAL_DATA.INDUSTRIES.map((industry, i) => (
+      {INDUSTRIES.map((industry, i) => (
         <SlideUpSelf key={i}>
           <IndustryCard
             fetchPriority={i < 3 ? "high" : undefined}
             className="aspect-11/9! w-full"
+            id={industry.id}
             title={industry.name}
             text={industry.description}
             button={!!industry.description}

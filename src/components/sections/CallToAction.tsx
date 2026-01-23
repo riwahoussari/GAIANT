@@ -6,16 +6,42 @@ import { useRef, useState } from "react";
 import gradientCircleAnimation from "../../assets/animations/gradient-circle-squared.mp4";
 import GradientCircle from "../ui/GradientCircle";
 
-export default function CallToAction() {
+export default function CallToAction({
+  withGradientCircle = false,
+}: {
+  withGradientCircle?: boolean;
+}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <section ref={sectionRef} className="my-container side-padding mt-[120px]">
+    <section
+      ref={sectionRef}
+      className="my-container side-padding relative z-1 mt-[120px] overflow-x-clip"
+    >
+      {/* gradient circles */}
+      {withGradientCircle && (
+        <>
+          <div className="absolute bottom-full translate-y-1/2 -rotate-30 left-0 z-2 -translate-x-1/3 opacity-50">
+            <GradientCircle
+              className="origin-top blur-[max(6vw,60px)]! lg:scale-120 "
+              colorr={"teal"}
+            />
+          </div>
+
+          <div className="absolute bottom-1/4 translate-y-1/2 right-0 z-2 translate-x-8/10 opacity-50">
+            <GradientCircle
+              className="origin-bottom blur-[max(6vw,60px)]! "
+              colorr={"teal"}
+            />
+          </div>
+        </>
+      )}
+
       {/* titles */}
       <CenteredTitleBlock
-        className=""
+        className="relative z-4"
         big={true}
         title="Let’s make Ai work for you"
         subtitle="ARE YOU READY?"
@@ -43,7 +69,7 @@ export default function CallToAction() {
       </SlideUpAnim>
 
       {/* button */}
-      <div className="flex justify-center">
+      <div className="flex justify-center relative z-4">
         <SlideUpAnim
           isInView={isInView}
           transition={{ duration: 0.6, delay: 0.6 }}

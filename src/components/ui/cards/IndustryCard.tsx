@@ -4,6 +4,7 @@ import Button from "../Button";
 
 export default function IndustryCard({
   imgSrc,
+  id,
   title,
   text,
   button = false,
@@ -11,6 +12,7 @@ export default function IndustryCard({
   fetchPriority,
 }: {
   imgSrc: string;
+  id: string;
   title: string;
   text?: string;
   button?: boolean;
@@ -60,7 +62,7 @@ export default function IndustryCard({
                 <div className="flex justify-end">
                   <Link
                     aria-label={`Read more about ${title} industry`}
-                    to={`/industries/${title}`}
+                    to={`/industries/${id}`}
                   >
                     <Button>
                       Read more

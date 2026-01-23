@@ -5,7 +5,7 @@ import { TitleBlock } from "../ui/Titles";
 import { useInView } from "motion/react";
 import { SlideUpAnim } from "../ui/Anims";
 
-type TAccordionContent = {
+export type TAccordionContent = {
   title: string;
   subtitle?: string;
   list?: string[];

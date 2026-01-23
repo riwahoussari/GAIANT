@@ -6,23 +6,31 @@ import FeaturesSection from "./components/FeaturesSection";
 import UseCases from "./components/UseCases";
 import OurApproach from "./components/OurApproach";
 import { PageMeta } from "../../components/ui/PageMeta";
+import { INDUSTRIES } from "../../lib/data";
+import { Navigate, useParams } from "react-router-dom";
+import { Fragment } from "react/jsx-runtime";
 
-export default function () {
+export default function IndustryPage() {
+  const { id } = useParams();
+  const INDUSTRY = INDUSTRIES.find((ind) => ind.id === id);
+
+  if (!INDUSTRY) return <Navigate to="/industries" />;
+
   return (
-    <>
+    <Fragment key={INDUSTRY.id}>
       <PageMeta
-        title="AI for Banking & Financial Services | Gaiant"
-        description="Detect fraud, automate compliance, and accelerate decision-making with Gaiant’s trusted AI solutions designed for the financial sector."
+        title={`AI for ${INDUSTRY.name} | Gaiant`}
+        description={INDUSTRY.description}
       />
       <Navbar transparentBg={false} />
       <main>
-        <IndustryHero />
-        <FeaturesSection />
+        <IndustryHero industry={INDUSTRY} />
+        <FeaturesSection content={INDUSTRY.features} />
         <UseCases />
         <OurApproach />
         <TrustedBy />
         <CallToAction />
       </main>
-    </>
+    </Fragment>
   );
 }

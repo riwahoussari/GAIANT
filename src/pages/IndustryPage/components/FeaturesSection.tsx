@@ -1,26 +1,36 @@
-import AccordionSection from "../../../components/sections/AccordionSection";
-import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
+import AccordionSection, { type TAccordionContent } from "../../../components/sections/AccordionSection";
 
-export default function FeaturesSection() {
+ export default function FeaturesSection({
+  content,
+}: {
+  content: {
+    title: string;
+    subtitle: string;
+    text?: string;
+    imgFront: { src: string; alt: string };
+    imgBack: { src: string; alt: string };
+    accordionContent: TAccordionContent[];
+  };
+}) {
   return (
     <AccordionSection
-      title={INDUSTRY_PAGE_DATA.FEATURES_SECTION.title}
-      subtitle={INDUSTRY_PAGE_DATA.FEATURES_SECTION.subtitle}
-      text={INDUSTRY_PAGE_DATA.FEATURES_SECTION.text}
+      title={content.title}
+      subtitle={content.subtitle}
+      text={content.text}
       img={
         <div>
           <img
-            src={INDUSTRY_PAGE_DATA.FEATURES_SECTION.img1.src}
-            alt={INDUSTRY_PAGE_DATA.FEATURES_SECTION.img1.src}
+            src={content.imgFront.src}
+            alt={content.imgFront.alt}
           />
           <img
-            src={INDUSTRY_PAGE_DATA.FEATURES_SECTION.img2.src}
-            alt={INDUSTRY_PAGE_DATA.FEATURES_SECTION.img2.src}
+            src={content.imgBack.src}
+            alt={content.imgBack.alt}
             className="absolute top-0 left-0 z-1"
           />
         </div>
       }
-      accordionContent={INDUSTRY_PAGE_DATA.FEATURES_SECTION.accordionContent}
+      accordionContent={content.accordionContent}
     />
   );
 }

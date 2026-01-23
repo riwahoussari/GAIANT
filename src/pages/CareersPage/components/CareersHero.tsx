@@ -20,7 +20,7 @@ export default function CareersHero() {
           }}
         >
           <Button className="xl:mb-20" arrow={"spaced"}>
-            SEE OPEN ROLES
+            See open roles
           </Button>
         </a>
       }
