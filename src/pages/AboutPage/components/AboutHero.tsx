@@ -19,7 +19,7 @@ export default function AboutHero({
       {...ABOUT_PAGE_DATA.HERO}
       button={
         <Button variant={"black"} arrow={"spaced"}>
-          REQUEST A DEMO
+          Request a demo
         </Button>
       }
       background={

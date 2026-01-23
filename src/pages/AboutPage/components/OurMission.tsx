@@ -17,7 +17,7 @@ export default function OurMission() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {ABOUT_PAGE_DATA.OUR_MISSION.cards.map((card, i) => (
           <SlideUpSelf key={i}>
-            <GlassCard className="w-full max-w-none!" {...card} />
+            <GlassCard textClassName="max-w-[360px]" className="w-full max-w-none!" {...card} />
           </SlideUpSelf>
         ))}
       </div>

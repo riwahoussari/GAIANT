@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {  GlassCardAnimated } from "../../../components/ui/Cards";
+import { GlassCard } from "../../../components/ui/Cards";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
@@ -33,7 +33,7 @@ export default function WhatMakesUsDifferent() {
           isInView={isInView}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="sm:grid grid-cols-2 lg:block gap-x-8 text-[15px] xs:text-[17px] lg:max-w-[336px]">
+          <p className="grid-cols-2 gap-x-8 text-[15px] xs:text-[17px] sm:grid lg:block lg:max-w-[336px]">
             <span>
               {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.text
                 .slice(
@@ -80,7 +80,7 @@ export default function WhatMakesUsDifferent() {
               isInView={isInView}
               transition={{ delay: 0.3 + 0.1 * i }}
             >
-              <GlassCardAnimated {...card} />
+              <GlassCard textClassName="max-w-[290px]" {...card} />
             </SlideUpAnim>
           ))}
         </div>

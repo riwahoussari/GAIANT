@@ -84,9 +84,9 @@ export default function Navbar({
       <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
         Introducing <span className="font-bold">archē</span>: The New Operating
         Layer for Enterprise {"   "}
-        <Link to="/arche" className="relative group">
+        <Link to="/arche" className="group relative">
           Learn More
-          <span className="absolute right-0 -bottom-px translate-y-px left-0 block h-px origin-bottom scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
+          <span className="absolute right-0 -bottom-px left-0 block h-px origin-bottom translate-y-px scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
         </Link>
       </div>
       {/* Navbar Content */}
@@ -189,7 +189,7 @@ export default function Navbar({
                   : "black"
             }
           >
-            REQUEST A DEMO
+            Request a demo
           </Button>
 
           <div

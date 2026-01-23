@@ -420,36 +420,36 @@ export const INDUSTRY_PAGE_DATA = {
 
 export const ABOUT_PAGE_DATA = {
   HERO: {
-    title: "We’re building the <sm:br> future of language AI",
-    subtitle: "WHO ARE GAIANT",
-    text: "Gaiant empowers every developer and enterprise to build amazing products and capture true business value with language AI.",
+    title: "Working for you, <sm:br> not instead of you.",
+    subtitle: "WHO WE ARE",
+    text: "Gaiant is the MENA region's AI powerhouse engineering bespoke systems and proprietary products that become the foundation for how businesses think, operate, and scale.",
   },
 
   OUR_STORY: {
     subtitle: "OUR STORY",
     title:
-      "Gaiant enables enterprises that prioritize data security to deploy AI agents and automations at scale within their own infrastructure.",
-    text: "We believe AI has the potential to eliminate most mundane tasks from daily work. To achieve this, we built Archē, an agentic AI platform that securely accesses all of the data you use in your work, because AI is only as good as the data you give it. By enabling private deployment, we give companies the confidence to put their data into AI, with the efficiency to offer a cost of ownership that makes sense at scale. <br> <br> We are expanding from serving a select group of customers to making Archē widely available, building on our work over the past few months. Leading organizations such as The lebanese Army, USJ, CFL, Beycom, Elites, Mitai and most recently ICGER are seeing the transformative impact of secure AI agents developed in Archē. These agents are being deployed across critical industries that underpin the global economy, including finance, healthcare, manufacturing, telecommunications, energy, and the public sector.",
+      "We exist because powerful technology should feel simple to the people who use it.",
+    text: "We believe AI should eliminate friction, not create it. Most AI fails not because of the technology, but because it's built without the human at the center. Enterprises are handed tools that demand adaptation, force compromise, and fracture under real-world pressure <br> <br> We took a different path. <br> <br> Gaiant engineers bespoke AI systems, designed from the inside out, built around how organizations actually operate, and deployed to create lasting advantage. Not experiments and trends. Infrastructure. <br> <br> We believe AI should disappear into the way work works. Quietly. Precisely. At scale. The enterprises that win won't be the ones talking about AI. They'll be the ones that no longer need to.",
   },
 
   OUR_MISSION: {
-    title: "",
-    subtitle: "",
+    title: "We’re on a mission",
+    subtitle: "OUR ETHOS",
     cards: [
       {
         title: "We’re driven by cutting edge research",
-        subtitle: "SHAPING THE FUTURE OF LANGUAGE",
-        text: "Unifying research and product to create human-level language technology.",
+        subtitle: "SHAPING THE FUTURE",
+        text: "Unifying research and product to pioneer human-level intelligent technology.",
       },
       {
         title: "We’re a collaborative team of experts",
         subtitle: "DRIVEN BY HUMAN INGENUITY",
-        text: "Passionate ML/AI experts advancing language AI for everyone.",
+        text: "Engineers, researchers, and builders united by one goal, engineering intelligence that matters.",
       },
       {
-        title: "We’re pioneering the future of language AI",
-        subtitle: "TRANSFORMING BUSINESS THROUGH INTELLIGENCE",
-        text: "Transformer-powered models delivering practical, scalable NLP solutions.",
+        title: "We're engineering intelligence for MENA",
+        subtitle: "BY THE REGION, FOR THE REGION",
+        text: "AI built with local context, local expertise, and a deep understanding of how business moves here.",
       },
     ],
   },

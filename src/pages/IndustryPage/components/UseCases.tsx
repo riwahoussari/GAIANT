@@ -3,9 +3,7 @@ import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import {
-    GlassCardAnimated,
-} from "../../../components/ui/Cards";
+import { GlassCard } from "../../../components/ui/Cards";
 import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
 import glassCardAnimation from "../../../assets/animations/adaptability.mp4";
 
@@ -50,14 +48,13 @@ export default function UseCases() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {INDUSTRY_PAGE_DATA.USE_CASES.cards.map((useCase, i) => (
           <SlideUpSelf key={i}>
-            <GlassCardAnimated
-                animation={glassCardAnimation}
-                className="w-full"
-                {...useCase}
+            <GlassCard
+              animation={glassCardAnimation}
+              className="w-full"
+              {...useCase}
             />
           </SlideUpSelf>
         ))}
-       
       </div>
     </section>
   );

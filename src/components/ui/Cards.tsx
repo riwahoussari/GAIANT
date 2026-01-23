@@ -41,7 +41,7 @@ export function IndustryCard({
       >
         <img
           fetchPriority={fetchPriority}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           src={imgSrc}
           alt={`Image representing ${title} industry`}
         />
@@ -69,7 +69,7 @@ export function IndustryCard({
                     to={`/industries/${title}`}
                   >
                     <Button>
-                      READ MORE
+                      Read more
                       <span className="hidden"> about {title} industry</span>
                     </Button>
                   </Link>
@@ -88,67 +88,43 @@ export function GlassCard({
   subtitle,
   text,
   className,
-}: {
-  title: string;
-  subtitle: string;
-  text: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={
-        "relative overflow-hidden bg-white/50 p-3 xs:p-6 " + (className || "")
-      }
-    >
-      {/* title & circle */}
-      <div className="relative flex items-end justify-end gap-2">
-        <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
-        <div className="aspect-square w-[33%] min-w-[80px] rounded-full border-2 border-red" />
-      </div>
-
-      {/* text */}
-      <div className="relative mt-8 space-y-2 xs:mt-10 xs:space-y-3 2xl:mt-16 2xl:space-y-4">
-        <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
-          {subtitle}
-        </p>
-        <p className="text-[15px] leading-[21px] xs:text-[16px]">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-export function GlassCardAnimated({
-  title,
-  subtitle,
-  text,
-  className,
+  textClassName,
   animation,
 }: {
   title: string;
   subtitle: string;
   text: string;
   className?: string;
-  animation: string;
+  textClassName?: string;
+  animation?: string;
 }) {
   return (
     <div
       className={
-        "relative overflow-hidden bg-white p-3 xs:p-6 h-full " + (className || "")
+        "relative h-full overflow-hidden bg-white p-3 xs:p-6 " +
+        (className || "")
       }
     >
       {/* title & animation */}
       <div className="relative flex items-end justify-end gap-2">
-        <p className="text-25 absolute bottom-0 left-0 z-[1]">{title}</p>
+        <p className="text-25 absolute bottom-0 left-0 z-[1] max-w-[300px]">{title}</p>
 
-        <div className="aspect-square w-[33%] min-w-[80px]">
-          <video
-            src={animation}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-contain"
-          />
+        <div
+          className={
+            "aspect-square w-[33%] min-w-[80px] " +
+            (!animation && "rounded-full border-2 border-red")
+          }
+        >
+          {animation && (
+            <video
+              src={animation}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-contain"
+            />
+          )}
         </div>
       </div>
 
@@ -157,7 +133,7 @@ export function GlassCardAnimated({
         <p className="font-ibm! text-[11px] leading-[15px] font-semibold text-teal xs:text-[12px]">
           {subtitle}
         </p>
-        <p className="text-[15px] leading-[21px] xs:text-[16px] max-w-[290px]">
+        <p className={" text-[15px] leading-[21px] xs:text-[16px] " + textClassName}>
           {text.split("<br>").map((line, i) => (
             <span key={i}>
               {line}
@@ -170,7 +146,7 @@ export function GlassCardAnimated({
   );
 }
 
-export function GlassCardAnimatedVideo({
+export function GlassCardVideo({
   title,
   subtitle,
   text,
@@ -336,7 +312,7 @@ export function ArticleCard({
 
         {/* button */}
         <Button className="absolute bottom-1 left-2" variant={"ghost"}>
-          READ MORE
+          Read more
         </Button>
         {/* arrow */}
         <ArrowSvg
