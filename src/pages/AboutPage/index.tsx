@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
-import { TrustedBy } from "../../components/sections/TrustedBy";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import OurStory from "./components/OurStory";
 import OurMission from "./components/OurMission";
@@ -32,7 +31,6 @@ export default function AboutPage() {
         <AboutHero navbarTriggerRef={navbarBgTrigger} />
         <OurStory />
         <OurMission />
-        <TrustedBy />
         <CallToAction />
       </main>
     </>

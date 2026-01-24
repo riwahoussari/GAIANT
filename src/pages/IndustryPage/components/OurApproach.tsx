@@ -2,21 +2,33 @@ import { useInView } from "motion/react";
 import { useRef } from "react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim } from "../../../components/ui/Anims";
-import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
 
-export default function OurApproach() {
+export default function OurApproach({
+  content,
+}: {
+  content: {
+    title: string;
+    subtitle: string;
+    text: string;
+    video: string;
+  };
+}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
     <section ref={sectionRef} className="side-padding my-container mt-[120px]">
       <div className="grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <TitleBlock
-          title={INDUSTRY_PAGE_DATA.OUR_APPROACH.title}
-          subtitle={INDUSTRY_PAGE_DATA.OUR_APPROACH.subtitle}
+          title={content.title}
+          subtitle={content.subtitle}
         />
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }} className="xl:col-span-2">
+        <SlideUpAnim
+          isInView={isInView}
+          transition={{ delay: 0.2 }}
+          className="xl:col-span-2"
+        >
           <p className="text-16 max-w-[432px]">
-            {INDUSTRY_PAGE_DATA.OUR_APPROACH.text}
+            {content.text}
           </p>
         </SlideUpAnim>
       </div>
@@ -28,7 +40,7 @@ export default function OurApproach() {
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <img {...INDUSTRY_PAGE_DATA.OUR_APPROACH.img} className="w-full" />
+          <img src={content.video} alt="Image demonstrating our approach" className="w-full" />
         </SlideUpAnim>
       </div>
     </section>

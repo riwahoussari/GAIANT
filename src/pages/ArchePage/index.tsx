@@ -24,8 +24,8 @@ export default function ArchePage() {
   return (
     <>
       <PageMeta
-        title="Archē by Gaiant | AI for Business That Turns Complexity into Clarity"
-        description="Archē is Gaiant’s complete AI platform that unifies data, automates work, and accelerates decisions. Transform fragmented systems into one intelligent, scalable workspace built for impact."
+        title="Archē by Gaiant | AI Intelligent Operating System for EnterpriseS"
+        description="Archē unifies every tool, workflow, and data source into one conversational interface, turning fragmented operations into seamless action."
       />
       <Navbar transparentBg={transparentNavbar} />
       <main>

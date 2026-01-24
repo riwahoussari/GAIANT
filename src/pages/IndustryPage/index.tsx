@@ -1,5 +1,4 @@
 import CallToAction from "../../components/sections/CallToAction";
-import { TrustedBy } from "../../components/sections/TrustedBy";
 import Navbar from "../../components/sections/navbar/Navbar";
 import IndustryHero from "./components/IndustryHero";
 import FeaturesSection from "./components/FeaturesSection";
@@ -26,9 +25,8 @@ export default function IndustryPage() {
       <main>
         <IndustryHero industry={INDUSTRY} />
         <FeaturesSection content={INDUSTRY.features} />
-        <UseCases />
-        <OurApproach />
-        <TrustedBy />
+        <UseCases content={INDUSTRY.useCases} />
+        <OurApproach content={INDUSTRY.ourApproach} />
         <CallToAction />
       </main>
     </Fragment>

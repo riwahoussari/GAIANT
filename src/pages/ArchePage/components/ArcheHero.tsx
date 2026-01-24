@@ -15,7 +15,7 @@ export default function ArcheHero({
     <Hero
       spacing="max"
       {...ARCHE_PAGE_DATA.HERO}
-      button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
+      button={<Button arrow={"spaced"}>Request a demo</Button>}
       background={<LandscapeBg fetchPriority="high" ref={navbarTriggerRef} />}
     >
       <div ref={heroRef} className="mt-10 h-1 opacity-0 lg:mt-48"></div>

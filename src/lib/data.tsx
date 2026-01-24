@@ -3,6 +3,12 @@ import AdaptabilityAnimation from "../assets/animations/adaptability.mp4";
 import CustomizationAnimation from "../assets/animations/customization.mp4";
 import DeploymentAnimation from "../assets/animations/deployment.mp4";
 import type { TAccordionContent } from "../components/sections/AccordionSection";
+import useCaseAnimation1 from "../assets/animations/use-cases/1.mp4";
+import useCaseAnimation2 from "../assets/animations/use-cases/2.mp4";
+import useCaseAnimation3 from "../assets/animations/use-cases/3.mp4";
+import useCaseAnimation4 from "../assets/animations/use-cases/4.mp4";
+import useCaseAnimation5 from "../assets/animations/use-cases/5.mp4";
+import useCaseAnimation6 from "../assets/animations/use-cases/6.mp4";
 
 export const GENERAL_DATA = {
   PARTNERS: [
@@ -146,6 +152,23 @@ export type TIndustry = {
     imgBack: { src: string; alt: string };
     accordionContent: TAccordionContent[];
   };
+  useCases: {
+    title: "Use Cases";
+    subtitle: string;
+    text: string;
+    useCaseCards: {
+      title: string;
+      subtitle: string;
+      text: string;
+      animation: string;
+    }[];
+  };
+  ourApproach: {
+    title: "Our Approach";
+    subtitle: string;
+    text: string;
+    video: string;
+  };
 };
 
 export const INDUSTRIES: TIndustry[] = [
@@ -203,6 +226,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "BANKING & FINANCIAL SERVICES",
+      text: "See how leading firms are streamlining operations and scaling insight.",
+      useCaseCards: [
+        {
+          title: "Customer service bots",
+          subtitle: "OPERATIONAL EFFICIENCY",
+          text: "Perform KYC checks with minimal human involvement.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Regulatory monitoring",
+          subtitle: "CONTINUOUS COMPLIANCE",
+          text: "Summarize new regulatory changes and assesses their operational impacts automatically.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Anomaly detection",
+          subtitle: "FRAUD INTELLIGENCE",
+          text: "ML models detect patterns of fraudulent transactions faster than traditional rules engines.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Predictive asset value forecasting",
+          subtitle: "MARKET FORESIGHT",
+          text: "AI uses real-time data and alternative datasets to anticipate valuation swings.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Dynamic pricing models",
+          subtitle: "REAL-TIME PRECISION",
+          text: "AI models adjust loan or insurance product pricing based on real-time risk and customer profile data.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Explainability reporting",
+          subtitle: "AUDITABLE DECISIONS",
+          text: "Provides transparent, auditable logic paths for AI-driven decisions to satisfy regulatory scrutiny.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "public-sector-and-government",
@@ -257,6 +329,55 @@ export const INDUSTRIES: TIndustry[] = [
           ],
         },
       ],
+    },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "PUBLIC SECTOR & GOVERNMENT",
+      text: "See how leading institutions are modernizing citizen services and accelerating public outcomes.",
+      useCaseCards: [
+        {
+          title: "Chatbots for citizen services",
+          subtitle: "ACCESSIBLE GOVERNMENT",
+          text: "Automate FAQs around taxes, benefits, healthcare, and licensing.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Computer vision for infrastructure management",
+          subtitle: "ASSET INTELLIGENCE",
+          text: "Analyze drone imagery to detect cracks, corrosion, and infrastructure risks without manual surveys.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Fraud and waste prevention",
+          subtitle: "FISCAL PROTECTION",
+          text: "Detect unusual patterns in procurement, expenses, and benefits to flag potential fraud or abuse.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Predictive policing models",
+          subtitle: "PUBLIC SAFETY",
+          text: "Analyze patterns in historical data to optimize patrol routes and resource allocation.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Automated impact assessments",
+          subtitle: "POLICY FORESIGHT",
+          text: "Analyze citizen feedback, research, and regulatory data to simulate the impact of proposed laws.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Document processing",
+          subtitle: "ADMINISTRATIVE EFFICIENCY",
+          text: "Extract and summarize information from complex applications, speeding up approvals.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -313,6 +434,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "RETAIL & CONSUMER GOODS",
+      text: "See how leading retailers are streamlining operations and scaling insight.",
+      useCaseCards: [
+        {
+          title: "ML demand forecasting",
+          subtitle: "PREDICTIVE PLANNING",
+          text: "Forecast inventory, labor, and pricing demand using trend analysis to optimize planning and store design.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Supply chain optimization",
+          subtitle: "NETWORK INTELLIGENCE",
+          text: "Streamline vendor management with real-time communication, automation, & rapid what-if analysis.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Personalized promotions",
+          subtitle: "CONVERSION OPTIMIZATION",
+          text: "AI identifies the optimal offer for each customer segment, increasing conversion and retention.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Operations efficiency",
+          subtitle: "DECISION INTELLIGENCE",
+          text: "Optimize operations with AI-driven site selection, fraud detection, inventory tracking, and vision.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Customer engagement optimization",
+          subtitle: "EXPERIENCE ENHANCEMENT",
+          text: "Improve customer experience with AI-powered chat, CSAT tracking, and post-purchase personalization.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Financial analytics and automation",
+          subtitle: "MARGIN PROTECTION",
+          text: "Automate AP/AR, analyze budget variances, and accelerate month-end close to improve accuracy.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "insurance",
@@ -367,6 +537,55 @@ export const INDUSTRIES: TIndustry[] = [
           ],
         },
       ],
+    },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "INSURANCE",
+      text: "See how leading carriers are transforming underwriting, claims, and customer experience.",
+      useCaseCards: [
+        {
+          title: "Multimodal severity estimation",
+          subtitle: "CLAIMS INTELLIGENCE",
+          text: "GenAI uses images and text to triage claims and predict payouts.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Climate risk analytics",
+          subtitle: "EXPOSURE MAPPING",
+          text: "Map environmental exposure to pricing and reinsurance strategy.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Underwriting copilots",
+          subtitle: "DECISION SUPPORT",
+          text: "Summarize applications, flag anomalies, and suggest decisions in real time.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Dynamic pricing models",
+          subtitle: "ADAPTIVE PRICING",
+          text: "Adjust premiums based on customer behavior and risk exposure.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Churn modeling",
+          subtitle: "RETENTION FORESIGHT",
+          text: "Predict and intervene with at-risk policyholders.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Regulatory summarization",
+          subtitle: "COMPLIANCE CLARITY",
+          text: "Automate monitoring of regulatory changes and summarize implications for legal and product teams.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -423,6 +642,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "ENERGY & UTILITIES",
+      text: "See how leading energy companies are optimizing operations and powering the transition forward.",
+      useCaseCards: [
+        {
+          title: "Predictive asset maintenance",
+          subtitle: "OPERATIONAL CONTINUITY",
+          text: "Forecast equipment failures and schedule maintenance before unplanned downtime occurs.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Grid load optimization",
+          subtitle: "DEMAND INTELLIGENCE",
+          text: "Balance supply and demand in real time to reduce waste and improve reliability.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Field technician copilots",
+          subtitle: "WORKFORCE ENABLEMENT",
+          text: "Equip technicians with instant access to manuals, diagnostics, and guided troubleshooting.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Environmental compliance monitoring",
+          subtitle: "REGULATORY ASSURANCE",
+          text: "Track emissions and environmental metrics continuously to ensure compliance.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Energy trading optimization",
+          subtitle: "MARKET PERFORMANCE",
+          text: "Analyze market conditions and historical data to inform procurement and trading decisions.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Outage prediction and response",
+          subtitle: "GRID RESILIENCE",
+          text: "Detect early warning signals and automate response protocols to minimize service disruption.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "hospitality-and-leisure",
@@ -478,6 +746,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "HOSPITALITY & LEISURE",
+      text: "See how leading hospitality brands are elevating service and scaling efficiency.",
+      useCaseCards: [
+        {
+          title: "Dynamic pricing and revenue management",
+          subtitle: "YIELD INTELLIGENCE",
+          text: "Adjust rates in real time based on demand signals, competitive positioning, and booking patterns.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Guest personalization engine",
+          subtitle: "EXPERIENCE OPTIMIZATION",
+          text: "Deliver tailored recommendations, offers, and service touches based on guest profiles & behavior.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Predictive maintenance",
+          subtitle: "ASSET RELIABILITY",
+          text: "Anticipate equipment failures and schedule maintenance before guest experience is impacted.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Intelligent staffing optimization",
+          subtitle: "WORKFORCE EFFICIENCY",
+          text: "Align staffing levels with occupancy forecasts and demand patterns across shifts and properties.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "AI-powered guest communication",
+          subtitle: "SERVICE AUTOMATION",
+          text: "Automate responses to common inquiries, booking changes, and concierge requests across channels.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Sentiment and review analysis",
+          subtitle: "REPUTATION INTELLIGENCE",
+          text: "Analyze guest feedback across platforms to identify trends, flag issues, and protect brand perception.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "healthcare-and-life-sciences",
@@ -531,6 +848,55 @@ export const INDUSTRIES: TIndustry[] = [
           ],
         },
       ],
+    },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "HEALTHCARE & LIFE SCIENCES",
+      text: "See how leading institutions are transforming care delivery and accelerating discovery.",
+      useCaseCards: [
+        {
+          title: "Clinical documentation AI",
+          subtitle: "ADMINISTRATIVE RELIEF",
+          text: "Automate note-taking, summarization, and coding to free clinicians for patient care.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Diagnostic support systems",
+          subtitle: "CLINICAL PRECISION",
+          text: "Surface differential diagnoses and flag anomalies from imaging and lab data.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Patient risk stratification",
+          subtitle: "PROACTIVE CARE",
+          text: "Identify high-risk patients early and prioritize interventions accordingly.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Appointment and referral optimization",
+          subtitle: "OPERATIONAL FLOW",
+          text: "Automate scheduling, reduce no-shows, and route referrals to the right specialists faster.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Medical knowledge retrieval",
+          subtitle: "INSTANT EXPERTISE",
+          text: "Surface relevant clinical guidelines, drug interactions, and treatment protocols in seconds.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Clinical trial matching",
+          subtitle: "RESEARCH ACCELERATION",
+          text: "Identify eligible patient populations and streamline enrollment for ongoing studies.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -587,6 +953,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "LEGAL SERVICES",
+      text: "See how leading firms are transforming research, transactions, and litigation with AI.",
+      useCaseCards: [
+        {
+          title: "Case law research",
+          subtitle: "RESEARCH PRECISION",
+          text: "Answer complex legal questions with comprehensive, cited analysis across jurisdictions.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Contract analysis and extraction",
+          subtitle: "TRANSACTIONAL SCALE",
+          text: "Convert thousands of documents into structured data for review and comparison.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Due diligence acceleration",
+          subtitle: "DEAL VELOCITY",
+          text: "Surface risks, flag anomalies, and complete reviews in a fraction of the time.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Brief and memo drafting",
+          subtitle: "DRAFTING EFFICIENCY",
+          text: "Generate first drafts grounded in precedent and tailored to your firm's voice.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Discovery document review",
+          subtitle: "LITIGATION SUPPORT",
+          text: "Classify, prioritize, and analyze discovery materials with AI-assisted review.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Regulatory and compliance monitoring",
+          subtitle: "REGULATORY INTELLIGENCE",
+          text: "Track legislative and regulatory changes and assess their impact on client matters.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "education",
@@ -641,6 +1056,55 @@ export const INDUSTRIES: TIndustry[] = [
           ],
         },
       ],
+    },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "EDUCATION",
+      text: "See how leading institutions are transforming learning and administration.",
+      useCaseCards: [
+        {
+          title: "Adaptive learning platforms",
+          subtitle: "PERSONALIZED INSTRUCTION",
+          text: "Deliver content and assessments tailored to each student's pace, level, and learning style.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Early warning and retention systems",
+          subtitle: "STUDENT SUCCESS",
+          text: "Predict at-risk students and trigger interventions before outcomes are determined.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Admissions processing automation",
+          subtitle: "ENROLLMENT EFFICIENCY",
+          text: "Automate application review, document verification, and candidate scoring at scale.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Intelligent tutoring and support",
+          subtitle: "LEARNING ASSISTANCE",
+          text: "Provide 24/7 AI-powered tutoring, writing support, and research assistance for students.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Faculty workload optimization",
+          subtitle: "ADMINISTRATIVE RELIEF",
+          text: "Automate grading, feedback, & course administration to free faculty for teaching and research.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Institutional research and reporting",
+          subtitle: "DATA INTELLIGENCE",
+          text: "Generate insights on enrollment trends, program effectiveness, and compliance metrics automatically.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -697,6 +1161,55 @@ export const INDUSTRIES: TIndustry[] = [
         },
       ],
     },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS",
+      text: "See how leading TMT companies are embedding intelligence across products, networks, and customer experience.",
+      useCaseCards: [
+        {
+          title: "Intelligent content recommendations",
+          subtitle: "MEDIA PERSONALIZATION",
+          text: "Surface relevant content based on user behavior, preferences, and real-time context.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Churn prediction and prevention",
+          subtitle: "RETENTION INTELLIGENCE",
+          text: "Identify at-risk customers early and trigger targeted interventions.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Network anomaly detection",
+          subtitle: "INFRASTRUCTURE RESILIENCE",
+          text: "Detect and resolve network issues before they impact service quality.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "AI-powered code review",
+          subtitle: "DEVELOPER VELOCITY",
+          text: "Automate code analysis for bugs, improvements, and best practices.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "Customer support automation",
+          subtitle: "SERVICE EFFICIENCY",
+          text: "Resolve common inquiries instantly while escalating complexity intelligently.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Dynamic ad targeting",
+          subtitle: "REVENUE OPTIMIZATION",
+          text: "Deliver personalized advertising based on real-time audience signals and behavior.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
+    },
   },
   {
     id: "real-estate-and-construction",
@@ -751,6 +1264,55 @@ export const INDUSTRIES: TIndustry[] = [
           ],
         },
       ],
+    },
+    useCases: {
+      title: "Use Cases",
+      subtitle: "REAL ESTATE & CONSTRUCTION",
+      text: "See how leading developers and contractors are building with intelligence.",
+      useCaseCards: [
+        {
+          title: "Market and site analysis",
+          subtitle: "INVESTMENT INTELLIGENCE",
+          text: "Analyze demographics, comparables, and zoning to evaluate opportunities faster.",
+          animation: useCaseAnimation1,
+        },
+        {
+          title: "Document and contract analysis",
+          subtitle: "TRANSACTIONAL EFFICIENCY",
+          text: "Extract key terms from leases, contracts, and procurement documents at scale.",
+          animation: useCaseAnimation2,
+        },
+        {
+          title: "Project schedule optimization",
+          subtitle: "TIMELINE PRECISION",
+          text: "Predict delays and optimize sequencing based on historical and real-time data.",
+          animation: useCaseAnimation3,
+        },
+        {
+          title: "Cost forecasting and control",
+          subtitle: "BUDGET INTELLIGENCE",
+          text: "Forecast overruns and track expenditures against estimates across every phase.",
+          animation: useCaseAnimation4,
+        },
+        {
+          title: "RFI and submittal automation",
+          subtitle: "COORDINATION EFFICIENCY",
+          text: "Automate responses and route submittals to the right teams without bottlenecks.",
+          animation: useCaseAnimation5,
+        },
+        {
+          title: "Safety and compliance monitoring",
+          subtitle: "SITE OVERSIGHT",
+          text: "Analyze site reports and imagery to flag safety issues and compliance gaps.",
+          animation: useCaseAnimation6,
+        },
+      ],
+    },
+    ourApproach: {
+      title: "Our Approach",
+      subtitle: "SYSTEMS THAT FIT, NOT FORCE",
+      text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
+      video: "/images/video-screenshot.webp",
     },
   },
 ];
@@ -865,15 +1427,15 @@ export const LANDING_PAGE_DATA = {
 
 export const ARCHE_PAGE_DATA = {
   HERO: {
-    title: "AI for business that turns complexity into clarity",
+    title: "The Intelligent Operating System for Enterprise",
     subtitle: "ARCHĒ",
-    text: "Archē sets the standard for business performance by helping teams automate work and accelerate decisions that drive results — all in one scalable, secure workspace.",
+    text: "Archē unifies every tool, workflow, and data source into one conversational interface, turning fragmented operations into seamless action.",
   },
 
   THE_ARCHE_MODEL: {
-    title: "More mindspace, <br> less mayhem",
+    title: "Focus is a competitive advantage",
     subtitle: "THE ARCHĒ MODEL",
-    text: "No matter the industry, Archē handles the repetitive work so your people can focus on the big picture.",
+    text: "No matter the industry, Archē handles the operational weight so your people can focus on the work that actually moves the business.",
     img1: {
       src: "/images/woman-on-laptop.webp",
       alt: "A woman working on her laptop",
@@ -901,16 +1463,16 @@ export const ARCHE_PAGE_DATA = {
       {
         subtitle: "GENERATIVE AI",
         title: "Create",
-        text: "Co-create documents, generate summaries, and produce tables and charts instantly.",
+        text: "Co-create documents, contracts, and emails. Generate summaries, tables, and charts. All instantly.",
         img: {
           src: "/demos/ai-chat-demo-3.svg",
           alt: "Image of the Patient History Dashboard",
         },
       },
       {
-        subtitle: "WORKFLOW AUTOMATION",
-        title: "Discover",
-        text: "Deploy AI agents across teams to eliminate tedious tasks and accelerate complex workflows.",
+        subtitle: "AGENTIC AUTOMATION",
+        title: "Execute",
+        text: "Put your workflows on autopilot, deploy intelligent agents that handle the routine so your teams can focus on what matters.",
         img: {
           src: "/demos/ai-chat-demo-2.svg",
           alt: "Image of the Patient History Dashboard",
@@ -922,7 +1484,32 @@ export const ARCHE_PAGE_DATA = {
   ARCHE_INDUSTRIES: {
     title: "Make AI work for you",
     text: "No matter the role or industry, Archē handles the repetitive work so your people can focus on the big picture",
-    tabs: ["Vault", "Legal", "Sales", "Finance", "Operations", "HR"],
+    tabs: [
+      {
+        title: "Nerone™",
+        text: "Your company's institutional brain. Nerone™ is where your documents, data, and knowledge live, the foundation Archē learns from and builds on.",
+      },
+      {
+        title: "Legal",
+        text: "Draft contracts, review agreements, and surface regulatory insights, all grounded in your company's legal precedents and templates.",
+      },
+      {
+        title: "Sales",
+        text: "Track pipelines, generate proposals, and access deal insights, with an AI that understands your customers, products, and history.",
+      },
+      {
+        title: "Finance",
+        text: "Analyze cash flow, generate reports, and track compliance, with instant access to your financial data, formatted to regional standards.",
+      },
+      {
+        title: "Operations",
+        text: "Coordinate projects, track resources, and automate workflows, with an operating layer that sees across every team and timeline.",
+      },
+      {
+        title: "HR",
+        text: "Streamline onboarding, answer policy questions, and manage requests, with an AI trained on your employee handbook and HR systems.",
+      },
+    ],
   },
 };
 

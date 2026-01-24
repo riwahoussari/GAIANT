@@ -115,6 +115,7 @@ interface HeroProps {
   gap?: string; // e.g. "lg:gap-[40px] xl:gap-[56px]"
   titleWidth?: string; // e.g. "max-w-[580px] lg:w-6/10 xl:max-w-[680px]"
   textWidth?: string; // e.g. "max-w-[324px] xl:max-w-[370px]"
+  padding?: string;
 
   // Default spacing options (for backward compatibility)
   spacing?: "min" | "max";
@@ -132,6 +133,7 @@ export default function Hero({
   gap,
   titleWidth,
   textWidth,
+  padding
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true });
@@ -158,7 +160,7 @@ export default function Hero({
       <div className="absolute inset-0 z-0 overflow-x-clip">{background}</div>
 
       {/* content */}
-      <div className="side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px]">
+      <div className={"side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px] " + (padding || "")}>
         {subtitle && (
           <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">
             <AnimatedText transition={{ delay: 0.8 }} isInView={isInView}>

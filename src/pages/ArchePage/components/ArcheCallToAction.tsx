@@ -59,7 +59,7 @@ export default function ArcheCallToAction() {
         isInView={isInView}
         className="relative mt-12 flex justify-center sm:mt-16"
       >
-        <Button variant={"black"}>REQUEST A DEMO</Button>
+        <Button variant={"black"}>Request a demo</Button>
       </SlideUpAnim>
     </section>
   );

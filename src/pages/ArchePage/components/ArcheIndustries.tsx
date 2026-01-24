@@ -31,10 +31,15 @@ export default function ArcheIndustries() {
             active={selectedTab === i}
             onClick={() => setSelectedTab(i)}
           >
-            {tab}
+            {tab.title}
           </Tab>
         ))}
       </SlideUpAnim>
+
+      <p className="text-16 mb-4 max-w-[375px] md:hidden text-center">
+        {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
+      </p>
+
       {/* image */}
       <div className="relative">
         <SlideUpAnim
@@ -55,6 +60,9 @@ export default function ArcheIndustries() {
           initial={{ y: "60px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
+          <p className="text-16 mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10">
+            {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
+          </p>
           <img
             src="/demos/ai-working.svg"
             className="h-full w-full object-contain max-md:hidden"
@@ -84,7 +92,7 @@ function Tab({
     <p
       onClick={onClick}
       className={
-        "cursor-pointer rounded-full hover:bg-black hover:text-white px-5 py-2 text-[16px] duration-200 ease-in-out max-sm:border-1 xs:text-[17px] " +
+        "cursor-pointer rounded-full px-5 py-2 text-[16px] duration-200 ease-in-out hover:bg-black hover:text-white max-sm:border-1 xs:text-[17px] " +
         (active ? " bg-black text-white" : " bg-transparent text-black")
       }
     >

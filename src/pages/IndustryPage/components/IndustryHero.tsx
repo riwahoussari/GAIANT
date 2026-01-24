@@ -21,6 +21,7 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
           fetchPriority="high"
         />
       }
+      padding="  xl:pb-[64px]! "
     />
   );
 }

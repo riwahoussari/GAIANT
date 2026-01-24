@@ -3,11 +3,24 @@ import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { INDUSTRY_PAGE_DATA } from "../../../lib/data";
-import glassCardAnimation from "../../../assets/animations/adaptability.mp4";
 import GlassCard from "../../../components/ui/cards/GlassCard";
+import GradientCircle from "../../../components/ui/GradientCircle";
 
-export default function UseCases() {
+export default function UseCases({
+  content,
+}: {
+  content: {
+    title: "Use Cases";
+    subtitle: string;
+    text: string;
+    useCaseCards: {
+      title: string;
+      subtitle: string;
+      text: string;
+      animation: string;
+    }[];
+  };
+}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
@@ -15,22 +28,22 @@ export default function UseCases() {
       ref={sectionRef}
       className="side-padding my-container relative mt-[120px]"
     >
-      {/* <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
+      <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <GradientCircle
           className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-y-400"
           colorr={"teal"}
         />
-      </div> */}
+      </div>
 
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <TitleBlock
-          title={INDUSTRY_PAGE_DATA.USE_CASES.title}
-          subtitle={INDUSTRY_PAGE_DATA.USE_CASES.subtitle}
+          title={content.title}
+          subtitle={content.subtitle}
         />
         <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
           <p className="text-16 max-w-[292px]">
-            {INDUSTRY_PAGE_DATA.USE_CASES.text}
+            {content.text}
           </p>
         </SlideUpAnim>
         <SlideUpAnim
@@ -39,17 +52,16 @@ export default function UseCases() {
           transition={{ delay: 0.3 }}
         >
           <Button className="max-sm:mt-3" variant={"black"}>
-            REQUEST A DEMO
+            Request a demo
           </Button>
         </SlideUpAnim>
       </div>
 
       {/* cards */}
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
-        {INDUSTRY_PAGE_DATA.USE_CASES.cards.map((useCase, i) => (
+        {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard
-              animation={glassCardAnimation}
               className="w-full"
               {...useCase}
             />
