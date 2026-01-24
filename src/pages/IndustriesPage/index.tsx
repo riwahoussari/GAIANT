@@ -6,6 +6,7 @@ import IndustriesHero from "./components/IndustriesHero";
 import IndustriesCards from "./components/IndustriesCards";
 import TestimonialSection from "./components/TestimonialsSection";
 import { PageMeta } from "../../components/ui/PageMeta";
+import { useHeroNoImage } from "../../lib/PreloaderContext";
 
 export default function IndustriesPage() {
   // change navbar transparency on scroll
@@ -18,6 +19,9 @@ export default function IndustriesPage() {
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? false : true)
   );
+
+  // Hide preloader immediately since this page has no hero image
+  useHeroNoImage();
 
   return (
     <>

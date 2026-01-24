@@ -4,12 +4,15 @@ import Button from "../../../components/ui/Button";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import ImagesLayout from "../../../components/ui/ImagesLayout";
 import { ABOUT_PAGE_DATA } from "../../../lib/data";
+import { useHeroImageLoad } from "../../../lib/PreloaderContext";
 
 export default function AboutHero({
   navbarTriggerRef,
 }: {
   navbarTriggerRef?: RefObject<HTMLDivElement | null>;
 }) {
+  const { onImageLoad } = useHeroImageLoad();
+
   return (
     <Hero
       className="text-black!"
@@ -34,6 +37,7 @@ export default function AboutHero({
           bg2={false}
           img1={
             <img
+              onLoad={onImageLoad}
               src="/images/team-working.webp"
               className="h-full w-full object-cover"
               alt="A team of developers working together on their laptops"

@@ -4,20 +4,29 @@ import { BlurredTealGradientBg } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
 import ImagesLayout from "../../../components/ui/ImagesLayout";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
+import { useHeroImageLoad } from "../../../lib/PreloaderContext";
 
 export default function LandingHero({
   navbarTriggerRef,
 }: {
   navbarTriggerRef: RefObject<HTMLDivElement | null>;
 }) {
+  const { onImageLoad } = useHeroImageLoad();
   return (
     <Hero
-    titleWidth="max-w-full flex-none"
+      titleWidth="max-w-full flex-none"
       spacing="max"
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
       button={<Button arrow={"spaced"}>Request a demo</Button>}
-      background={<BlurredTealGradientBg fetchPriority="high" withBall />}
+      background={
+        <BlurredTealGradientBg
+          onLoad={onImageLoad}
+          onError={onImageLoad}
+          fetchPriority="high"
+          withBall
+        />
+      }
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">
         <ImagesLayout

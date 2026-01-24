@@ -3,8 +3,11 @@ import Hero from "../../../components/sections/Hero";
 import { HeroImgBackground } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
 import { CAREERS_PAGE_DATA } from "../../../lib/data";
+import { useHeroImageLoad } from "../../../lib/PreloaderContext";
 
 export default function CareersHero() {
+  const { onImageLoad } = useHeroImageLoad();
+
   return (
     <Hero
       spacing="max"
@@ -26,6 +29,8 @@ export default function CareersHero() {
       }
       background={
         <HeroImgBackground
+          onLoad={onImageLoad}
+          onError={onImageLoad}
           blur=" blur-[max(0.4vw,4px)] "
           alt="A team working and talking together"
           src="/images/careers-hero.webp"

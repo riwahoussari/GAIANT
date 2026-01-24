@@ -5,9 +5,13 @@ import GradientCircle from "./GradientCircle";
 export function LandscapeBg({
   ref,
   fetchPriority,
+  onLoad = () => {},
+  onError = () => {},
 }: {
   fetchPriority?: "high" | "low" | "auto" | undefined;
   ref?: React.RefObject<HTMLDivElement | null>;
+  onLoad?: () => void;
+  onError?: () => void;
 }) {
   return (
     <div
@@ -19,6 +23,8 @@ export function LandscapeBg({
         alt="Landscape filled with mountains and a girl standing on a rock"
         src="/images/mountains-landscape.webp"
         className="h-full w-full object-cover"
+        onLoad={onLoad}
+        onError={onError}
       />
     </div>
   );
@@ -58,9 +64,13 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
 export function BlurredTealGradientBg({
   withBall = true,
   fetchPriority,
+  onLoad = () => {},
+  onError = () => {},
 }: {
   withBall?: boolean;
   fetchPriority?: "high" | "low" | "auto" | undefined;
+  onLoad?: () => void;
+  onError?: () => void;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -77,8 +87,8 @@ export function BlurredTealGradientBg({
       >
         <img
           fetchPriority={fetchPriority}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHasError(true)}
+          onLoad={() => {setIsLoaded(true); onLoad();}}
+          onError={() => {setHasError(true); onError();}}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
           alt="Gradient background"
@@ -133,12 +143,16 @@ export function HeroImgBackground({
   alt,
   className,
   fetchPriority,
+  onLoad = () => {},
+  onError = () => {},
 }: {
   className?: string;
   blur?: string;
   src: string;
   alt: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
+  onLoad?: () => void;
+  onError?: () => void;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -147,7 +161,7 @@ export function HeroImgBackground({
     <div className="relative h-full">
       <div
         className={
-          "h-full w-full scale-110 origin-bottom" +
+          "h-full w-full origin-bottom scale-110" +
           (blur || " blur-[max(0.3vw,6px)] ") +
           (isLoaded && !hasError
             ? ""
@@ -156,8 +170,14 @@ export function HeroImgBackground({
       >
         <img
           fetchPriority={fetchPriority}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHasError(true)}
+          onLoad={() => {
+            setIsLoaded(true);
+            onLoad();
+          }}
+          onError={() => {
+            setHasError(true);
+            onError();
+          }}
           src={src}
           className={"h-full w-full object-cover " + (className || "")}
           alt={alt}

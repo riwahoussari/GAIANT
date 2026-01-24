@@ -14,6 +14,8 @@ import ArticlePage from "./pages/ArticlePage";
 import CareersPage from "./pages/CareersPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import IndustryPage from "./pages/IndustryPage";
+import { PreloaderProvider } from "./lib/PreloaderContext";
+import Preloader from "./components/ui/Preloader";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,7 +41,12 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <PreloaderProvider>
+      <Preloader />
+      <RouterProvider router={router} />;
+    </PreloaderProvider>
+  );
 }
 
 export default App;

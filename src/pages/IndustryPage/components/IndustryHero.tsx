@@ -2,8 +2,11 @@ import Hero from "../../../components/sections/Hero";
 import { HeroImgBackground } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
 import { type TIndustry } from "../../../lib/data";
+import { useHeroImageLoad } from "../../../lib/PreloaderContext";
 
 export default function IndustryHero({ industry }: { industry: TIndustry }) {
+  const {onImageLoad} = useHeroImageLoad();
+
   return (
     <Hero
       spacing="max"
@@ -20,6 +23,8 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
           src={industry.hero.img.src}
           fetchPriority="high"
           className={" " + industry.hero.img.position + " "}
+          onLoad={onImageLoad}
+          onError={onImageLoad}
         />
       }
       padding=" pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
