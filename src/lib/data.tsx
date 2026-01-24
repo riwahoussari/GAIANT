@@ -148,7 +148,10 @@ export type TIndustry = {
     title: string;
     subtitle: string;
     text: string;
-    img: string;
+    img: {
+      src: string;
+      position?: string;
+    };
   };
   features: {
     title: string;
@@ -188,7 +191,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "AI for faster decisions <sm:br> and lower risk",
       subtitle: "BANKING & FINANCIAL SERVICES",
       text: "Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights.",
-      img: "/industries/banking.webp",
+      img: { src: "/industries/banking.webp", position: "object-[50%_25%]" },
     },
     features: {
       title: "Smarter moves with fewer resources",
@@ -292,7 +295,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Modernize public services with AI",
       subtitle: "PUBLIC SECTOR & GOVERNMENT",
       text: "Harness institutional data to improve citizen outcomes, streamline operations, and deliver services that meet the urgency of public need.",
-      img: "/industries/government.webp",
+     img: { src: "/industries/government.webp", position: "object-[50%_80%]" },
     },
     features: {
       title: "Bringing clarity for smarter public policy",
@@ -396,7 +399,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "AI that moves at the speed of commerce",
       subtitle: "RETAIL & CONSUMER GOODS",
       text: "Forecast demand, optimize inventory, and personalize at scale with intelligence that turns data into decisions before the moment passes.",
-      img: "/industries/retail-darker.webp",
+      img: { src: "/industries/retail-darker.webp", position: "object-[50%_45%]" },
     },
     features: {
       title: "From gut instinct to ground truth",
@@ -500,7 +503,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Smarter underwriting and faster claims",
       subtitle: "INSURANCE",
       text: "Accelerate claims processing, refine risk assessment, and automate compliance with AI built for the complexity of modern insurance.",
-      img: "/industries/insurance.webp",
+            img: { src: "/industries/insurance.webp", position: "object-[50%_30%]" },
+
     },
     features: {
       title: "Precision at the point of risk",
@@ -604,7 +608,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Powering smarter energy operations",
       subtitle: "ENERGY & UTILITIES",
       text: "Securely integrate disconnected data sources to deliver real-time intelligence for smarter decision-making, from grid to meter.",
-      img: "/industries/energy.webp",
+            img: { src: "/industries/energy.webp", position: "object-[50%_55%]" },
+
     },
     features: {
       title: "Powering what powers everything else",
@@ -708,7 +713,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Exceptional experiences & operational excellence",
       subtitle: "HOSPITALITY & LEISURE",
       text: "Personalize guest journeys, optimize revenue, and streamline operations with intelligence that works behind the scenes so hospitality stays human.",
-      img: "/industries/hospitality.webp",
+            img: { src: "/industries/hospitality.webp", position: "object-[50%_60%]" },
+
     },
     features: {
       title: "Service meets system",
@@ -811,7 +817,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Advancing patient care and biological research",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
       text: "Turn fragmented records into unified insight, powering faster diagnoses, smarter research, and better care.",
-      img: "/industries/healthcare-darker.webp",
+            img: { src: "/industries/healthcare-darker.webp", position: "object-[50%_18%]" },
+
     },
     features: {
       title: "The infrastructure behind modern care",
@@ -912,10 +919,11 @@ export const INDUSTRIES: TIndustry[] = [
     description:
       "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     hero: {
-      title: "AI that practices at your standard",
+      title: "AI that practices <sm:br> at your standard",
       subtitle: "LEGAL SERVICES",
       text: "Accelerate research, streamline due diligence, and draft with precision with AI built for the complexity and rigor of legal work.",
-      img: "/industries/legal-darker.webp",
+      img: { src: "/industries/legal-darker.webp", position: "object-[50%_50%]" },
+      
     },
     features: {
       title: "Built for the demands of legal practice",
@@ -1019,7 +1027,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "AI for institutions shaping the future",
       subtitle: "EDUCATION",
       text: "Personalize learning, streamline administration, and support student success with intelligence designed for the complexity of modern education.",
-      img: "/industries/education.webp",
+            img: { src: "/industries/education.webp", position: "object-[50%_25%]" },
+
     },
     features: {
       title: "Serving students, faculty & institutions",
@@ -1123,7 +1132,8 @@ export const INDUSTRIES: TIndustry[] = [
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
       title: "Put your data to work across your business",
       text: "Build smarter products, streamline operations, and deliver personalized experiences with AI grounded in your enterprise data.",
-      img: "/industries/tech.webp",
+            img: { src: "/industries/tech.webp", position: "object-[50%_55%]  rotate-y-180" },
+
     },
     features: {
       title: "Put your data to work ",
@@ -1227,7 +1237,8 @@ export const INDUSTRIES: TIndustry[] = [
       title: "AI for smarter projects and faster decisions",
       subtitle: "REAL ESTATE & CONSTRUCTION",
       text: "Streamline planning, reduce cost overruns, and gain real-time visibility across every phase, from acquisition to handover.",
-      img: "/industries/real-estate.webp",
+      img: { src: "/industries/real-estate.webp", position: "object-[50%_45%]" },
+
     },
     features: {
       title: "Build smarter. Deliver faster. Risk less.",

@@ -7,7 +7,7 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
   return (
     <Hero
       spacing="max"
-      titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[700px]"
+      titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[780px]"
       {...industry.hero}
       button={
         <Button className="xl:mb-20" arrow={"spaced"}>
@@ -17,11 +17,12 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
       background={
         <HeroImgBackground
           alt={`${industry.name} industry illustration`}
-          src={industry.hero.img}
+          src={industry.hero.img.src}
           fetchPriority="high"
+          className={" " + industry.hero.img.position + " "}
         />
       }
-      padding="  xl:pb-[64px]! "
+      padding=" pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
     />
   );
 }
