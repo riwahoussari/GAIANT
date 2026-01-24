@@ -33,8 +33,6 @@ const router = createBrowserRouter(
       <Route path="/news/:id" element={<ArticlePage />} />
       <Route path="/careers" element={<CareersPage />} />
 
-      <Route path="/script" element={<ScriptPage />} />
-
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
@@ -45,11 +43,3 @@ function App() {
 }
 
 export default App;
-
-
-
-function ScriptPage() {
-  
-
-  return <div>Script Page</div>;
-}
