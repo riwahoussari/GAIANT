@@ -26,10 +26,10 @@ export default function CareersHero() {
       }
       background={
         <HeroImgBackground
-          blur=" blur-[max(0.5vw,5px)] "
+          blur=" blur-[max(0.4vw,4px)] "
           alt="A team working and talking together"
-          src="/images/team-discussing.webp"
-          className="object-bottom"
+          src="/images/careers-hero.webp"
+          className="object-center"
           fetchPriority="high"
         />
       }

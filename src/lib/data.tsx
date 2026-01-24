@@ -9,6 +9,9 @@ import useCaseAnimation3 from "../assets/animations/use-cases/3.mp4";
 import useCaseAnimation4 from "../assets/animations/use-cases/4.mp4";
 import useCaseAnimation5 from "../assets/animations/use-cases/5.mp4";
 import useCaseAnimation6 from "../assets/animations/use-cases/6.mp4";
+import careersAnimation1 from "../assets/animations/careers/1.mp4";
+import careersAnimation2 from "../assets/animations/careers/2.mp4";
+import careersAnimation3 from "../assets/animations/careers/3.mp4";
 
 export const GENERAL_DATA = {
   PARTNERS: [
@@ -1697,16 +1700,19 @@ export const CAREERS_PAGE_DATA = {
         title: "A mission with meaning",
         subtitle: "SHAPE THE FUTURE OF LANGUAGE INTELLIGENCE",
         text: "Every project contributes to redefining how businesses understand people.",
+        animation: careersAnimation1,
       },
       {
         title: "A team that listens",
         subtitle: "COLLABORATION ROOTED IN TRUST AND RESPECT",
         text: "Your ideas guide decisions in a culture of open dialogue.",
+        animation: careersAnimation2,
       },
       {
         title: "A place to grow",
         subtitle: "CONTINUOUS LEARNING, MENTORSHIP & CAREER EVOLUTION",
         text: "We invest in your growth with guidance, opportunities, and freedom.",
+        animation: careersAnimation3,
       },
     ],
   },
