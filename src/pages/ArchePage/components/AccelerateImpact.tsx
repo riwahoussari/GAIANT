@@ -47,6 +47,7 @@ export default function AccelerateImpact() {
         <div ref={cardsContainerRef}>
           {ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards.map((content, i) => (
             <Card
+              key={i}
               content={content}
               progress={scrollYProgress}
               index={i}
@@ -110,7 +111,7 @@ function Card({
         </div>
         {/* image */}
         <SlideUpAnim
-          className="w-full max-w-[700px] aspect-7/4! min-w-[320px] lg:w-6/10"
+          className="aspect-7/4! w-full max-w-[700px] min-w-[320px] lg:w-6/10"
           isInView={isInView}
           transition={{ delay: 0.4 }}
         >

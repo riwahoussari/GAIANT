@@ -202,7 +202,7 @@ export default function Hero({
                     return <br key={i} className="max-sm:hidden" />;
                   else {
                     if (word.split("<bold>").length > 1) {
-                      return <strong>{word.split("<bold>")[1] + " "}</strong>;
+                      return <strong key={i}>{word.split("<bold>")[1] + " "}</strong>;
                     }
                     return word + " ";
                   }

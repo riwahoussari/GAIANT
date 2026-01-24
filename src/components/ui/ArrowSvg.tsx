@@ -40,7 +40,7 @@ export function Arrow2Svg({
       <path
         d="M2.42916 1.3605L12.7594 1.36035M12.7594 1.36035V11.5436M12.7594 1.36035L1.35938 12.7604"
         stroke={color || "black"}
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     </svg>
   );

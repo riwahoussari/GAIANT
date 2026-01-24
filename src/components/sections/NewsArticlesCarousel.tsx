@@ -24,6 +24,7 @@ export default function NewsArticlesCarousel({
       <CardsSlider displaySlider={false}>
         {GENERAL_DATA.ARTICLES.map((article, i) => (
           <SlideUpAnim
+          key={i}
             isInView={isInView}
             transition={{ delay: 0.2 + 0.1 * i }}
           >

@@ -108,7 +108,7 @@ export default function ArticlesSection({
       {/* other articles */}
       <div className="mt-11 grid grid-cols-1 gap-5 gap-y-10! xs:gap-8 sm:gap-5 lg:grid-cols-2 xl:grid-cols-3">
         {GENERAL_DATA.ARTICLES.slice(0, 3).map((article, i) => (
-          <div>
+          <div key={i}>
             <SlideUpSelf className="w-full max-w-[550px] lg:max-w-none">
               <ArticleCard
                 className="w-full"

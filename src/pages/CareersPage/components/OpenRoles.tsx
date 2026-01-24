@@ -26,7 +26,7 @@ export default function OpenRoles() {
 
         <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
           {CAREERS_PAGE_DATA.OPEN_ROLES.cards.map((role, i) => (
-            <SlideUpSelf>
+            <SlideUpSelf key={i}>
               <SimpleCard
                 {...role}
                 key={i}
