@@ -6,7 +6,7 @@ import { ABOUT_PAGE_DATA } from "../../../lib/data";
 
 export default function OurMission() {
   return (
-    <section className="side-padding my-container relative mt-[120px]">
+    <section className="side-padding my-container relative z-2 mt-[120px]">
       <BigEllipseGradient />
 
       <TitleBlock

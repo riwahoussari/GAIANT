@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { useInView } from "motion/react";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
+import Lottie from "lottie-react";
+import archeSectionLottie from "../../../assets/animations/landing-page/arche-section-lottie.json";
 
 export default function ArcheSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -36,12 +38,14 @@ export default function ArcheSection() {
               {LANDING_PAGE_DATA.ARCHE_SECTION.title}
             </p>
             <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 xs:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px]">
-              {LANDING_PAGE_DATA.ARCHE_SECTION.text.split("<br>").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  <br />
-                </span>
-              ))}
+              {LANDING_PAGE_DATA.ARCHE_SECTION.text
+                .split("<br>")
+                .map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
             </p>
             <Link to="/arche" aria-label="Lean more about Arche platform">
               <Button
@@ -57,14 +61,17 @@ export default function ArcheSection() {
 
         {/* dashboard */}
         <SlideUpAnim
-          className="mt-14 w-full xs:mt-20 lg:mt-0 lg:w-[60%] xl:w-[55%]"
+          className="relative mt-14 w-full xs:mt-20 lg:mt-0 lg:w-[60%] xl:w-[55%]"
           isInView={isInView}
           transition={{ delay: 0.2 }}
         >
-          <img
-            {...LANDING_PAGE_DATA.ARCHE_SECTION.img}
-            className="h-full w-full object-contain"
+          <Lottie
+            animationData={archeSectionLottie}
+            loop
+            autoplay
+            className="h-full w-full "
           />
+          <img className="absolute inset-0 w-full h-full object-contain" src="/demos/arche-circle.png" aria-hidden alt="decorative gradient circle" />
         </SlideUpAnim>
       </div>
     </section>
