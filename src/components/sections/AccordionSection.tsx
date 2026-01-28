@@ -39,7 +39,7 @@ export default function AccordionSection({
       className={"side-padding my-container mt-[100px] " + (className || "")}
     >
       {/* titles */}
-      <div className="flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-34 2xl:gap-44 lg:[&>div]:w-1/2">
         <div>
           <TitleBlock title={title} subtitle={subtitle} />
         </div>
@@ -64,7 +64,7 @@ export default function AccordionSection({
       </div>
 
       {/* content */}
-      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-34 2xl:gap-44 lg:[&>div]:w-1/2">
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />
