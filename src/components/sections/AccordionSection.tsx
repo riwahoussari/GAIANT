@@ -1,5 +1,5 @@
 import { useRef, useState, type HTMLAttributes, type ReactNode } from "react";
-import { Arrow2Svg } from "../ui/ArrowSvg";
+import ArrowSvg from "../ui/ArrowSvg";
 import GradientCircle from "../ui/GradientCircle";
 import { TitleBlock } from "../ui/Titles";
 import { useInView } from "motion/react";
@@ -145,7 +145,7 @@ function AccordionItem({
               <div className="space-y-[21px] pb-8">
                 {list.map((string, i) => (
                   <div key={i} className="flex items-center gap-5 xs:gap-7">
-                    <Arrow2Svg className="w-3 xs:w-4" />
+                    <ArrowSvg className="w-3.5 xs:w-4.5 -rotate-45" color="black" />
                     <p className="text-16">{string}</p>
                   </div>
                 ))}

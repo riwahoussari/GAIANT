@@ -20,12 +20,12 @@ import AccordionSection, { type TAccordionContent } from "../../../components/se
       img={
         <div>
           <img
-            src={content.imgFront.src}
-            alt={content.imgFront.alt}
-          />
-          <img
             src={content.imgBack.src}
             alt={content.imgBack.alt}
+          />
+          <img
+            src={content.imgFront.src}
+            alt={content.imgFront.alt}
             className="absolute top-0 left-0 z-1"
           />
         </div>

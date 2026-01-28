@@ -10,6 +10,7 @@ import {
   useTransform,
 } from "motion/react";
 import { ARCHE_PAGE_DATA } from "../../../lib/data";
+import Lottie from "lottie-react";
 
 const CARDS = [{}, {}, {}, {}];
 
@@ -74,10 +75,7 @@ function Card({
     subtitle: string;
     title: string;
     text: string;
-    img: {
-      src: string;
-      alt: string;
-    };
+    animation: unknown;
   };
 }) {
   const scaleRange = [index * (1 / CARDS.length), 1];
@@ -92,7 +90,7 @@ function Card({
       <m.div
         style={{ scale, top: `${index * 50}px` }}
         className={
-          "bg-linear-white-transparent-70 relative flex origin-top items-center justify-between gap-x-5 gap-y-10 rounded-xl px-4 py-10 pb-14 backdrop-blur-[100px] max-lg:flex-col sm:gap-y-14 sm:px-10 sm:py-16 sm:pb-20 xl:p-20 xl:pb-24"
+          "bg-linear-white-transparent-70 relative flex origin-top items-center justify-between gap-x-5 rounded-xl px-4 backdrop-blur-[100px] max-lg:flex-col gap-y-0 sm:px-10 sm:py-16 sm:pb-20 xl:p-20 pt-10 xl:pb-24 pb-0! lg:pt-0!"
         }
       >
         {/* text */}
@@ -109,16 +107,18 @@ function Card({
             <p className="text-16">{content.text}</p>
           </SlideUpAnim>
         </div>
-        {/* image */}
+        {/* animation */}
         <SlideUpAnim
-          className="aspect-7/4! w-full max-w-[700px] min-w-[320px] lg:w-6/10"
+          className="bg- w-full max-w-[700px] min-w-[320px] lg:w-6/10"
           isInView={isInView}
           transition={{ delay: 0.4 }}
         >
-          <img
-            src={content.img.src}
-            alt={content.img.alt}
+          <Lottie
+            animationData={content.animation}
             className="h-full w-full object-contain"
+            autoplay
+            muted
+            loop
           />
         </SlideUpAnim>
       </m.div>

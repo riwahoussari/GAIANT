@@ -13,13 +13,13 @@ export default function WhatMakesUsDifferent() {
   return (
     <section ref={sectionRef} className="mt-[110px] overflow-x-clip">
       {/* Titles */}
-      <div className="my-container side-padding flex grid-cols-3 flex-col gap-5 lg:grid lg:gap-8">
-        <SectionSubTitle className="pt-3 lg:mb-[110px]">
+      <div className="my-container side-padding flex lg:items-end grid-cols-3 flex-col gap-5 lg:grid lg:gap-8 lg:mb-[110px]">
+        <SectionSubTitle className="pt-3 ">
           <AnimatedText isInView={isInView}>
             {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.subtitle}
           </AnimatedText>
         </SectionSubTitle>
-        <SectionTitle className="col-span-2 mb-6 max-w-[480px] sm:mb-9">
+        <SectionTitle className="col-span-2 mb-6 max-w-[480px] sm:mb-9 lg:mb-0">
           <AnimatedText isInView={isInView}>
             {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.title}
           </AnimatedText>
@@ -80,7 +80,7 @@ export default function WhatMakesUsDifferent() {
               isInView={isInView}
               transition={{ delay: 0.3 + 0.1 * i }}
             >
-              <GlassCard textClassName="max-w-[290px]" {...card} />
+              <GlassCard textClassName={card.textMaxWidth} {...card} />
             </SlideUpAnim>
           ))}
         </div>

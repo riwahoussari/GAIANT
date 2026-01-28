@@ -5,6 +5,8 @@ import Button from "../../../components/ui/Button";
 import ImagesLayout from "../../../components/ui/ImagesLayout";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
 import { useHeroImageLoad } from "../../../lib/PreloaderContext";
+import landingHeroAnimation from "../../../assets/animations/landing-page/hero.json";
+import Lottie from "lottie-react";
 
 export default function LandingHero({
   navbarTriggerRef,
@@ -33,9 +35,11 @@ export default function LandingHero({
           animationDelay={0.5}
           img1={
             <div className="flex items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
-              <img
-                fetchPriority="high"
-                {...LANDING_PAGE_DATA.HERO.img1}
+              <Lottie
+                animationData={landingHeroAnimation}
+                autoPlay
+                loop
+                muted
                 className="h-full object-contain"
               />
             </div>
@@ -44,7 +48,7 @@ export default function LandingHero({
             <img
               fetchPriority="high"
               {...LANDING_PAGE_DATA.HERO.img2}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-[15%_0%]"
             />
           }
         />

@@ -12,14 +12,14 @@ export default function ArcheSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-20%" });
   return (
-    <section ref={sectionRef} className="relative mt-[300px]">
+    <section ref={sectionRef} className="relative mt-[200px] overflow-x-clip">
       {/* bg */}
       <BlurredLandscapeBg />
 
       {/* content */}
-      <div className="my-container side-padding relative items-stretch justify-between gap-5 py-16 text-white lg:flex xl:gap-16">
+      <div className="my-container side-padding relative items-stretch justify-between gap-5 pt-16 pb-10 sm:pt-24 sm:pb-16 lg:py-10 text-white lg:flex lg:gap-10 xl:gap-16">
         {/* text */}
-        <div className="flex w-full flex-col items-start justify-between gap-10 xs:gap-20 md:flex-row lg:w-[40%] lg:flex-col">
+        <div className="flex flex-col md:flex-row lg:flex-col items-start justify-between lg:justify-around gap-10 xs:gap-20 2xl:justify-between 2xl:py-20 flex-none w-full lg:w-[440px] xl:w-[558px]">
           {/* arche */}
           <SlideUpAnim isInView={isInView}>
             <img
@@ -28,22 +28,24 @@ export default function ArcheSection() {
               alt="Arche Logo"
             />
           </SlideUpAnim>
+
           {/* text */}
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.35 }}
-            className="max-xs:max-w-[357px]! max-lg:max-w-[450px]"
+            className=" max-lg:max-w-[460px] "
           >
-            <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] xl:text-[46px] xl:leading-[47px]">
+            <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] lg:text-[36px] lg:leading-[38px] xl:text-[46px] xl:leading-[47px]">
               {LANDING_PAGE_DATA.ARCHE_SECTION.title}
             </p>
+
             <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 xs:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px]">
               {LANDING_PAGE_DATA.ARCHE_SECTION.text
                 .split("<br>")
                 .map((line, i) => (
                   <span key={i}>
                     {line}
-                    <br />
+                    <br className="max-[385px]:hidden" />
                   </span>
                 ))}
             </p>
@@ -61,7 +63,7 @@ export default function ArcheSection() {
 
         {/* dashboard */}
         <SlideUpAnim
-          className="relative mt-14 w-full xs:mt-20 lg:mt-0 lg:w-[60%] xl:w-[55%]"
+          className="relative w-full max-w-[884px] mt-12 sm:mt-14 lg:mt-0 scale-113 "
           isInView={isInView}
           transition={{ delay: 0.2 }}
         >

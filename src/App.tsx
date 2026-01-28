@@ -44,7 +44,7 @@ function App() {
   return (
     <PreloaderProvider>
       <Preloader />
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </PreloaderProvider>
   );
 }

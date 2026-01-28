@@ -7,15 +7,14 @@ export default function ArrowSvg({
 }) {
   return (
     <svg
-      viewBox="0 0 13 12"
+      className={className}
+      viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
     >
       <path
-        d="M6.69568 2L11 6.02862M11 6.02862L6.75696 10M11 6.02862L1 6.02862"
+        d="M5.5 0.916992L10.0833 5.50033L5.5 10.0837M0 5.5H9.5"
         stroke={color || "white"}
-        strokeLinecap="square"
       />
     </svg>
   );

@@ -21,7 +21,7 @@ export default function IndustriesCards({
             id={industry.id}
             title={industry.name}
             text={industry.description}
-            button={!!industry.description}
+            button={!!industry.description ? "button" : "none"}
             imgSrc={industry.img}
           />
         </SlideUpSelf>

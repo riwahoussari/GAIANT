@@ -1,21 +1,24 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
+import ArrowSvg from "../ArrowSvg";
 
 export default function IndustryCard({
   imgSrc,
   id,
   title,
   text,
-  button = false,
+  button = "none",
   className,
   fetchPriority,
+  textWidth,
 }: {
   imgSrc: string;
   id: string;
   title: string;
   text?: string;
-  button?: boolean;
+  textWidth?: string;
+  button?: "none" | "button" | "arrow";
   className?: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
@@ -47,7 +50,7 @@ export default function IndustryCard({
       <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-tr from-black/0 to-black/15 p-3 py-4 backdrop-blur-md xs:p-6">
         <p className="text-25">{title}</p>
 
-        {(text || button) && (
+        {(text || button !== "none") && (
           <div
             style={{
               height: hovering ? contentRef.current?.clientHeight || 0 : 0,
@@ -57,8 +60,8 @@ export default function IndustryCard({
             }
           >
             <div ref={contentRef}>
-              {text && <p className="text-16 max-w-[180px] py-2">{text}</p>}
-              {button && (
+              {text && <p className={"text-16 py-2 " + textWidth}>{text}</p>}
+              {button === "button" && (
                 <div className="flex justify-end">
                   <Link
                     aria-label={`Read more about ${title} industry`}
@@ -68,6 +71,16 @@ export default function IndustryCard({
                       Read more
                       <span className="hidden"> about {title} industry</span>
                     </Button>
+                  </Link>
+                </div>
+              )}
+              {button === "arrow" && (
+                <div className="flex justify-end mt-6">
+                  <Link
+                    aria-label={`Read more about ${title} industry`}
+                    to={`/industries/${id}`}
+                  >
+                    <ArrowSvg className={"w-[18px] stroke-[1.75px] aspect-square"} />
                   </Link>
                 </div>
               )}

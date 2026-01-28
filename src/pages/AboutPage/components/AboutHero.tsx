@@ -35,23 +35,23 @@ export default function AboutHero({
         <ImagesLayout
           animationDelay={0.5}
           bg2={false}
+          reverse
           img1={
             <img
               onLoad={onImageLoad}
-              src="/images/team-working.webp"
+              src="/images/about-1.webp"
               className="h-full w-full object-cover"
               alt="A team of developers working together on their laptops"
               fetchPriority="high"
             />
           }
           img2={
-            <div className="flex h-full w-full items-center justify-center bg-black/20 p-5 lg:p-8">
-              <img
-                src="/demos/about-attributes.svg"
-                alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
-                fetchPriority="high"
-              />
-            </div>
+            <img
+              src="/images/about-2.webp"
+              alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
+              fetchPriority="high"
+              className="h-full w-full object-cover object-left"
+            />
           }
         />
       </div>

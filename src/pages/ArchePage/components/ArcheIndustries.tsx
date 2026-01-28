@@ -36,7 +36,7 @@ export default function ArcheIndustries() {
         ))}
       </SlideUpAnim>
 
-      <p className="text-16 mb-4 max-w-[375px] md:hidden text-center">
+      <p className="text-16 mb-4 max-w-[375px] md:hidden text-center ">
         {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
       </p>
 
@@ -49,8 +49,8 @@ export default function ArcheIndustries() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <img
-            src="/images/doctor-typing.webp"
-            className="h-full w-full object-contain"
+            src="/images/mountains-landscape-2.webp"
+            className="h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0"
             alt="A doctor working on his ipad"
           />
         </SlideUpAnim>
@@ -60,16 +60,16 @@ export default function ArcheIndustries() {
           initial={{ y: "60px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-16 mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10">
+          <p className="text-16 mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10 absolute">
             {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
           </p>
           <img
-            src="/demos/ai-working.svg"
-            className="h-full w-full object-contain max-md:hidden"
+            src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].svg.desktop}
+            className="h-full w-full object-contain max-md:hidden max-lg:translate-y-[30px]"
             alt="Demo of the ai workflow"
           />
           <img
-            src="/demos/ai-working-mobile.svg"
+            src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].svg.mobile}
             className="h-full w-full object-contain md:hidden"
             alt="Demo of the ai workflow"
           />

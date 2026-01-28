@@ -12,6 +12,8 @@ export default function CareersHero() {
     <Hero
       spacing="max"
       titleWidth="lg:min-w-[600px] lg:max-w-[600px] xl:min-w-[700px] xl:max-w-[700px]"
+      padding=" pb-[80px]! lg:pb-[64px]! xl:pb-[0px]!"
+      textWidth=" max-w-[400px] xl:max-w-[450px]"
       {...CAREERS_PAGE_DATA.HERO}
       button={
         <a
@@ -31,7 +33,7 @@ export default function CareersHero() {
         <HeroImgBackground
           onLoad={onImageLoad}
           onError={onImageLoad}
-          blur=" blur-[max(0.4vw,4px)] "
+          blur=" blur-[max(0.5vw,5px)] "
           alt="A team working and talking together"
           src="/images/careers-hero.webp"
           className="object-center"
