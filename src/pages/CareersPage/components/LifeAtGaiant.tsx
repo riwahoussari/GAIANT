@@ -17,7 +17,7 @@ export default function LifeAtGaiant() {
       <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {CAREERS_PAGE_DATA.LIFE_AT_GAIANT.cards.map((card, i) => (
           <SlideUpSelf key={i}>
-            <GlassCard textClassName="max-w-[300px]" className="w-full max-w-none!" {...card} />
+            <GlassCard titleClassName="max-w-[300px]!" className="w-full max-w-none!" {...card} />
           </SlideUpSelf>
         ))}
       </div>

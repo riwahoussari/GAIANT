@@ -5,31 +5,33 @@ type GlassCardProps = {
   subtitle: string;
   text: string;
   className?: string;
+  titleClassName?: string;
   textClassName?: string;
   animation?: string;
 };
 
 const GlassCard = forwardRef<HTMLVideoElement | null, GlassCardProps>(
   (
-    { title, subtitle, text, className, textClassName, animation },
+    { title, subtitle, text, className, textClassName, animation, titleClassName },
     videoRef
   ) => {
     return (
       <div
         className={
-          "relative h-full overflow-hidden bg-white p-3 xs:p-6 " +
+          "relative h-full overflow-hidden bg-white p-3 xs:p-6 xl:p-5 2xl:p-6 " +
           (className || "")
         }
       >
         {/* title & animation */}
-        <div className="relative flex items-end justify-end gap-2">
-          <p className="text-25 absolute bottom-0 left-0 z-[1] max-w-[300px]">
+        <div className="relative flex items-start justify-end gap-2">
+          <p className={"text-25 absolute bottom-0 left-0 z-[1] max-w-[250px] self-end " + titleClassName}>
             {title}
           </p>
+          <div className="aspect-square min-w-[130px] w-[40%] max-w-[150px]  "></div>
 
           <div
             className={
-              "aspect-square w-[33%] min-w-[80px] " +
+              "aspect-square w-[33%] min-w-[80px]  " +
               (!animation && "rounded-full border-2 border-red")
             }
           >
@@ -54,7 +56,7 @@ const GlassCard = forwardRef<HTMLVideoElement | null, GlassCardProps>(
           </p>
           <p
             className={
-              "text-[15px] leading-[21px] xs:text-[16px] " + textClassName
+              "text-[15px] leading-[21px] " + textClassName
             }
           >
             {text.split("<br>").map((line, i) => (

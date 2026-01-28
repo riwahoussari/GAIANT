@@ -19,7 +19,7 @@ export default function TheArcheModel() {
       <div className="side-padding my-container">
         {/* text */}
         <div className="mb-10 grid items-end sm:gap-y-5 lg:grid-cols-7">
-          <div className="col-span-5">
+          <div className="col-span-5 max-lg:max-w-[600px]">
             <TitleBlock
               title={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.title}
               subtitle={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.subtitle}

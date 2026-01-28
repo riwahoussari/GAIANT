@@ -51,7 +51,7 @@ export default function UseCases({
       </div>
 
       {/* title */}
-      <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+      <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
         <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
           <p className="text-16 max-w-[292px]">{content.text}</p>
@@ -68,7 +68,7 @@ export default function UseCases({
       </div>
 
       {/* cards */}
-      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8 ">
         {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard
