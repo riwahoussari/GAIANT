@@ -9,15 +9,15 @@ import useCaseAnimation3 from "../assets/animations/use-cases/3.mp4";
 import useCaseAnimation4 from "../assets/animations/use-cases/4.mp4";
 import useCaseAnimation5 from "../assets/animations/use-cases/5.mp4";
 import useCaseAnimation6 from "../assets/animations/use-cases/6.mp4";
-import careersAnimation1 from "../assets/animations/careers/1.mp4";
-import careersAnimation2 from "../assets/animations/careers/2.mp4";
-import careersAnimation3 from "../assets/animations/careers/3.mp4";
-import ourMissionAnimation1 from "../assets/animations/about-page/1.mp4";
-import ourMissionAnimation2 from "../assets/animations/about-page/2.mp4";
-import ourMissionAnimation3 from "../assets/animations/about-page/3.mp4";
-import discoverAnimation from "../assets/animations/arche/Discover.json"
-import createAnimation from "../assets/animations/arche/Create.json"
-import executeAnimation from "../assets/animations/arche/Execute.json"
+import careersAnimation1 from "../assets/animations/use-cases/2.mp4";
+import careersAnimation2 from "../assets/animations/use-cases/4.mp4";
+import careersAnimation3 from "../assets/animations/use-cases/6.mp4";
+import ourMissionAnimation1 from "../assets/animations/use-cases/1.mp4";
+import ourMissionAnimation2 from "../assets/animations/use-cases/5.mp4";
+import ourMissionAnimation3 from "../assets/animations/use-cases/3.mp4";
+import discoverAnimation from "../assets/animations/arche/Discover.json";
+import createAnimation from "../assets/animations/arche/Create.json";
+import executeAnimation from "../assets/animations/arche/Execute.json";
 
 export const GENERAL_DATA = {
   PARTNERS: [
@@ -147,6 +147,7 @@ export type TIndustry = {
   name: string;
   img: string;
   description: string;
+  textClassName?: string;
   hero: {
     title: string;
     subtitle: string;
@@ -190,11 +191,15 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/banking/banking.webp",
     description:
       "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
+    textClassName: " max-w-[320px] ",
     hero: {
       title: "AI for faster decisions <sm:br> and lower risk",
       subtitle: "BANKING & FINANCIAL SERVICES",
       text: "Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights.",
-      img: { src: "/industries/banking/banking.webp", position: "object-[50%_25%]" },
+      img: {
+        src: "/industries/banking/banking.webp",
+        position: "object-[50%_25%]",
+      },
     },
     features: {
       title: "Smarter moves with fewer resources",
@@ -204,7 +209,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/banking/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/banking/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/banking/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Improve knowledge management",
@@ -294,11 +302,15 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/insurance/insurance.webp",
     description:
       "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
+    textClassName: " max-w-[350px] lg:mb-[25px] ",
     hero: {
       title: "Smarter underwriting and faster claims",
       subtitle: "INSURANCE",
       text: "Accelerate claims processing, refine risk assessment, and automate compliance with AI built for the complexity of modern insurance.",
-      img: { src: "/industries/insurance/insurance.webp", position: "object-[50%_30%]" },
+      img: {
+        src: "/industries/insurance/insurance.webp",
+        position: "object-[50%_30%]",
+      },
     },
     features: {
       title: "Precision at the point of risk",
@@ -308,7 +320,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/insurance/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/insurance/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/insurance/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Improve risk assessment",
@@ -397,6 +412,7 @@ export const INDUSTRIES: TIndustry[] = [
     name: "Healthcare & Life Sciences",
     img: "/industries/healthcare/healthcare.webp",
     description: "Advancing patient care and biological research",
+    textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[25px] ",
     hero: {
       title: "Advancing patient care and biological research",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
@@ -414,7 +430,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/healthcare/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/healthcare/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/healthcare/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Improve patient outcomes",
@@ -504,6 +523,7 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/tech/tech.webp",
     description:
       "Reducing churn, optimizing network performance, and monetizing content intelligently",
+    textClassName: " max-w-[330px]  ",
     hero: {
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
       title: "Put your data to work across your business",
@@ -521,7 +541,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/tech/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/tech/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/tech/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Enhance product intelligence",
@@ -611,11 +634,15 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/government/government.webp",
     description:
       "Digitizing citizen services, automating compliance, and enabling data-driven policy",
+    textClassName: " max-w-[200px] xs:max-w-[250px] ",
     hero: {
       title: "Modernize public services with AI",
       subtitle: "PUBLIC SECTOR & GOVERNMENT",
       text: "Harness institutional data to improve citizen outcomes, streamline operations, and deliver services that meet the urgency of public need.",
-      img: { src: "/industries/government/government.webp", position: "object-[50%_80%]" },
+      img: {
+        src: "/industries/government/government.webp",
+        position: "object-[50%_80%]",
+      },
     },
     features: {
       title: "Bringing clarity for smarter public policy",
@@ -625,7 +652,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/government/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/government/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/government/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Speed up policy analysis and drafting",
@@ -715,11 +745,15 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/energy/energy.webp",
     description:
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
+    textClassName: " max-w-[230px] xs:max-w-[260px] ",
     hero: {
       title: "Powering smarter energy operations",
       subtitle: "ENERGY & UTILITIES",
       text: "Securely integrate disconnected data sources to deliver real-time intelligence for smarter decision-making, from grid to meter.",
-      img: { src: "/industries/energy/energy.webp", position: "object-[50%_55%]" },
+      img: {
+        src: "/industries/energy/energy.webp",
+        position: "object-[50%_55%]",
+      },
     },
     features: {
       title: "Powering what powers everything else",
@@ -729,7 +763,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/energy/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/energy/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/energy/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Surface insights from unstructured data",
@@ -819,6 +856,7 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/legal/legal.webp",
     description:
       "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
+    textClassName: " max-w-[220px] xs:max-w-[240px]  ",
     hero: {
       title: "AI that practices <sm:br> at your standard",
       subtitle: "LEGAL SERVICES",
@@ -836,7 +874,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/legal/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/legal/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/legal/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Elevate legal research",
@@ -926,6 +967,7 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/real-estate/real-estate.webp",
     description:
       "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
+    textClassName: " max-w-[320px] ",
     hero: {
       title: "AI for smarter projects and faster decisions",
       subtitle: "REAL ESTATE & CONSTRUCTION",
@@ -943,7 +985,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/real-estate/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/real-estate/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/real-estate/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Accelerate pre-construction intelligence",
@@ -1033,6 +1078,7 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/retail/retail.webp",
     description:
       "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
+    textClassName: " max-w-[290px] ",
     hero: {
       title: "AI that moves at the speed of commerce",
       subtitle: "RETAIL & CONSUMER GOODS",
@@ -1050,7 +1096,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/retail/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/retail/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/retail/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Sharpen demand forecasting",
@@ -1140,6 +1189,7 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/hospitality/hospitality.webp",
     description:
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
+    textClassName: " max-w-[290px]",
     hero: {
       title: "Exceptional experiences & operational excellence",
       subtitle: "HOSPITALITY & LEISURE",
@@ -1157,7 +1207,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/hospitality/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/hospitality/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/hospitality/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Deliver personalized guest journeys",
@@ -1247,11 +1300,15 @@ export const INDUSTRIES: TIndustry[] = [
     img: "/industries/education/education.webp",
     description:
       "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
+    textClassName: " max-w-[290px]  ",
     hero: {
       title: "AI for institutions shaping the future",
       subtitle: "EDUCATION",
       text: "Personalize learning, streamline administration, and support student success with intelligence designed for the complexity of modern education.",
-      img: { src: "/industries/education/education.webp", position: "object-[50%_25%]" },
+      img: {
+        src: "/industries/education/education.webp",
+        position: "object-[50%_25%]",
+      },
     },
     features: {
       title: "Serving students, faculty & institutions",
@@ -1261,7 +1318,10 @@ export const INDUSTRIES: TIndustry[] = [
         src: "/industries/education/features.svg",
         alt: "A man in a suit working on his laptop",
       },
-      imgBack: { src: "/industries/education/features.webp", alt: "Gen AI prompt demo" },
+      imgBack: {
+        src: "/industries/education/features.webp",
+        alt: "Gen AI prompt demo",
+      },
       accordionContent: [
         {
           title: "Enable personalized learning pathways",
@@ -1495,13 +1555,13 @@ export const ARCHE_PAGE_DATA = {
         subtitle: "GENERATIVE AI",
         title: "Create",
         text: "Co-create documents, contracts, and emails. Generate summaries, tables, and charts. All instantly.",
-        animation: createAnimation
+        animation: createAnimation,
       },
       {
         subtitle: "AGENTIC AUTOMATION",
         title: "Execute",
         text: "Put your workflows on autopilot, deploy intelligent agents that handle the routine so your teams can focus on what matters.",
-        animation: executeAnimation
+        animation: executeAnimation,
       },
     ],
   },
@@ -1516,7 +1576,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/vault.svg",
           mobile: "/demos/arche/vault-mobile.svg",
-        }
+        },
       },
       {
         title: "Legal",
@@ -1524,7 +1584,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/legal.svg",
           mobile: "/demos/arche/legal-mobile.svg",
-        }
+        },
       },
       {
         title: "Sales",
@@ -1532,7 +1592,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/sales.svg",
           mobile: "/demos/arche/sales-mobile.svg",
-        }
+        },
       },
       {
         title: "Finance",
@@ -1540,7 +1600,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/finance.svg",
           mobile: "/demos/arche/finance-mobile.svg",
-        }
+        },
       },
       {
         title: "Operations",
@@ -1548,7 +1608,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/operations.svg",
           mobile: "/demos/arche/operations-mobile.svg",
-        }
+        },
       },
       {
         title: "HR",
@@ -1556,7 +1616,7 @@ export const ARCHE_PAGE_DATA = {
         svg: {
           desktop: "/demos/arche/hr.svg",
           mobile: "/demos/arche/hr-mobile.svg",
-        }
+        },
       },
     ],
   },

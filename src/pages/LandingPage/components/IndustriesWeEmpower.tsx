@@ -41,7 +41,7 @@ export default function IndustriesWeEmpower() {
               id={industry.id}
               title={industry.name}
               text={industry.description}
-              // button={!!industry.description ? "arrow" : "none"}
+              textClassName={industry.textClassName}
               button={"arrow"}
               imgSrc={industry.img}
             />

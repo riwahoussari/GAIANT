@@ -8,16 +8,16 @@ export default function IndustryCard({
   id,
   title,
   text,
+  textClassName,
   button = "none",
   className,
   fetchPriority,
-  textWidth,
 }: {
   imgSrc: string;
   id: string;
   title: string;
   text?: string;
-  textWidth?: string;
+  textClassName?: string;
   button?: "none" | "button" | "arrow";
   className?: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
@@ -60,7 +60,7 @@ export default function IndustryCard({
             }
           >
             <div ref={contentRef}>
-              {text && <p className={"text-16 py-2 " + textWidth}>{text}</p>}
+              {text && <p className={"text-16 py-2 " + textClassName}>{text}</p>}
               {button === "button" && (
                 <div className="flex justify-end">
                   <Link
@@ -75,7 +75,7 @@ export default function IndustryCard({
                 </div>
               )}
               {button === "arrow" && (
-                <div className="flex justify-end mt-6">
+                <div className="flex justify-end ">
                   <Link
                     aria-label={`Read more about ${title} industry`}
                     to={`/industries/${id}`}

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useInView } from "motion/react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
@@ -23,6 +23,21 @@ export default function UseCases({
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    // Reset + play all videos at the same time
+    videoRefs.current.forEach((video) => {
+      if (!video) return;
+      video.currentTime = 0;
+    });
+
+    videoRefs.current.forEach((video) => {
+      video?.play().catch(() => {});
+    });
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -37,14 +52,9 @@ export default function UseCases({
 
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
-        <TitleBlock
-          title={content.title}
-          subtitle={content.subtitle}
-        />
+        <TitleBlock title={content.title} subtitle={content.subtitle} />
         <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
-          <p className="text-16 max-w-[292px]">
-            {content.text}
-          </p>
+          <p className="text-16 max-w-[292px]">{content.text}</p>
         </SlideUpAnim>
         <SlideUpAnim
           className="flex md:col-start-2 xl:col-start-3 xl:justify-end"
@@ -62,6 +72,10 @@ export default function UseCases({
         {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard
+              ref={(el) => {
+                videoRefs.current[i] = el;
+              }}
+              key={i}
               className="w-full"
               {...useCase}
             />

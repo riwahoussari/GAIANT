@@ -85,16 +85,25 @@ export function SlideUpAnim({
 export function SlideUpSelf({
   children,
   className,
+  initial,
+  transition,
 }: {
   children: ReactNode;
   className?: string;
+  transition?: Transition<any> | undefined;
+  initial?: TargetAndTransition | undefined;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-5%" });
 
   return (
     <div className={"h-full " + (className || "")} ref={cardRef}>
-      <SlideUpAnim className="flex h-full items-stretch" isInView={isInView}>
+      <SlideUpAnim
+        initial={initial}
+        transition={transition}
+        className="flex h-full items-stretch"
+        isInView={isInView}
+      >
         {children}
       </SlideUpAnim>
     </div>
