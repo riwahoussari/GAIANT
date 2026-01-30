@@ -44,6 +44,7 @@ export default function IndustriesWeEmpower() {
               textClassName={industry.textClassName}
               button={"arrow"}
               imgSrc={industry.img}
+              imgClassName={industry.imgSquarePosition}
             />
           </SlideUpAnim>
         ))}

@@ -34,7 +34,7 @@ export default function LandingHero({
         <ImagesLayout
           animationDelay={0.5}
           img1={
-            <div className="flex items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
+            <div className="flex items-center justify-center pb-0! p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
               <Lottie
                 animationData={landingHeroAnimation}
                 autoPlay

@@ -5,6 +5,7 @@ import ArrowSvg from "../ArrowSvg";
 
 export default function IndustryCard({
   imgSrc,
+  imgClassName,
   id,
   title,
   text,
@@ -14,6 +15,7 @@ export default function IndustryCard({
   fetchPriority,
 }: {
   imgSrc: string;
+  imgClassName?: string;
   id: string;
   title: string;
   text?: string;
@@ -40,7 +42,7 @@ export default function IndustryCard({
       >
         <img
           fetchPriority={fetchPriority}
-          className="h-full w-full object-cover"
+          className={"h-full w-full object-cover " + imgClassName}
           src={imgSrc}
           alt={`Image representing ${title} industry`}
         />
@@ -48,7 +50,9 @@ export default function IndustryCard({
 
       {/* content */}
       <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-tr from-black/0 to-black/15 p-3 py-4 backdrop-blur-md xs:p-6">
-        <p className="text-25">{title}</p>
+        <p className="text-25-new flex group-hover:min-h-0! transition-all duration-400 ease-in-out min-h-[54px] items-center xs:min-h-[62px]">
+          {title}
+        </p>
 
         {(text || button !== "none") && (
           <div
@@ -60,30 +64,20 @@ export default function IndustryCard({
             }
           >
             <div ref={contentRef}>
-              {text && <p className={"text-16 py-2 " + textClassName}>{text}</p>}
-              {button === "button" && (
-                <div className="flex justify-end">
-                  <Link
-                    aria-label={`Read more about ${title} industry`}
-                    to={`/industries/${id}`}
-                  >
-                    <Button>
-                      Read more
-                      <span className="hidden"> about {title} industry</span>
-                    </Button>
-                  </Link>
-                </div>
+              {text && (
+                <p className={"text-16 py-2 " + textClassName}>{text}</p>
               )}
-              {button === "arrow" && (
-                <div className="flex justify-end ">
-                  <Link
-                    aria-label={`Read more about ${title} industry`}
-                    to={`/industries/${id}`}
-                  >
-                    <ArrowSvg className={"w-[18px] stroke-[1.75px] aspect-square"} />
-                  </Link>
-                </div>
-              )}
+
+              <div className="flex justify-end">
+                <Link
+                  aria-label={`Read more about ${title} industry`}
+                  to={`/industries/${id}`}
+                >
+                  <ArrowSvg
+                    className={"aspect-square w-[18px] stroke-[1.75px]"}
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         )}

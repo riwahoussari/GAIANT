@@ -77,7 +77,7 @@ export const GENERAL_DATA = {
     },
     {
       id: "hospitality-and-leisure",
-      name: "Hopitality & Leisure",
+      name: "Hospitality & Leisure",
       img: "/industries/hospitality/hospitality.webp",
       description:
         "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
@@ -146,6 +146,8 @@ export type TIndustry = {
   id: string;
   name: string;
   img: string;
+  imgPosition?: string;
+  imgSquarePosition?: string;
   description: string;
   textClassName?: string;
   hero: {
@@ -191,6 +193,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "banking-and-financial-services",
     name: "Banking & Financial Services",
     img: "/industries/banking/banking.webp",
+    imgPosition: "object-[50%_60%]",
+    imgSquarePosition: "object-[50%_100%] scale-110 origin-bottom",
     description:
       "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
     textClassName: " max-w-[320px] ",
@@ -314,9 +318,11 @@ export const INDUSTRIES: TIndustry[] = [
     id: "insurance",
     name: "Insurance",
     img: "/industries/insurance/insurance.webp",
+    imgPosition: "object-[50%_20%]",
+    imgSquarePosition: "object-[50%_20%]",
     description:
       "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
-    textClassName: " max-w-[350px] lg:mb-[25px] ",
+    textClassName: " max-w-[350px] lg:mb-[20px] ",
     hero: {
       title: "Smarter underwriting and faster claims",
       subtitle: "INSURANCE",
@@ -437,8 +443,10 @@ export const INDUSTRIES: TIndustry[] = [
     id: "healthcare-and-life-sciences",
     name: "Healthcare & Life Sciences",
     img: "/industries/healthcare/healthcare.webp",
+    imgPosition: "object-[50%_75%]",
+    imgSquarePosition: "scale-115 object-center -translate-y-7/100",
     description: "Advancing patient care and biological research",
-    textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[25px] ",
+    textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[10px] ",
     hero: {
       title: "Advancing patient care and biological research",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
@@ -559,6 +567,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "technology-media-and-telecommunications-tmt",
     name: "Technology, Media & Telecommunications (TMT)",
     img: "/industries/tech/tech.webp",
+    imgPosition: "object-[50%_66%]",
+    imgSquarePosition: "object-[50%_75%] scale-120 ",
     description:
       "Reducing churn, optimizing network performance, and monetizing content intelligently",
     textClassName: " max-w-[330px]  ",
@@ -682,6 +692,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "public-sector-and-government",
     name: "Public Sector & Government",
     img: "/industries/government/government.webp",
+    imgPosition: "object-[50%_90%]",
+    imgSquarePosition: "object-[50%_100%] scale-118 origin-bottom",
     description:
       "Digitizing citizen services, automating compliance, and enabling data-driven policy",
     textClassName: " max-w-[200px] xs:max-w-[250px] ",
@@ -805,6 +817,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "energy-and-utilities",
     name: "Energy & Utilities",
     img: "/industries/energy/energy.webp",
+    imgPosition: "object-[100%_50%] scale-168 -translate-x-8/100 -translate-y-22/100",
+    imgSquarePosition: "object-[83%_50%] scale-150 origin-bottom ",
     description:
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     textClassName: " max-w-[230px] xs:max-w-[260px] ",
@@ -928,6 +942,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "legal-services",
     name: "Legal Services",
     img: "/industries/legal/legal.webp",
+    imgPosition: "object-[50%_58%] scale-128 translate-x-3/100",
+    imgSquarePosition: "object-[50%_70%] scale-130 translate-x-4/100",
     description:
       "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     textClassName: " max-w-[220px] xs:max-w-[240px]  ",
@@ -1051,6 +1067,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "real-estate-and-construction",
     name: "Real Estate & Construction",
     img: "/industries/real-estate/real-estate.webp",
+    imgPosition: "object-[50%_56%]",
+    imgSquarePosition: "object-[50%_60%] scale-110",
     description:
       "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
     textClassName: " max-w-[320px] ",
@@ -1174,6 +1192,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "retail-and-consumer-goods",
     name: "Retail & Consumer Goods",
     img: "/industries/retail/retail.webp",
+    imgPosition: "object-[50%_72%]",
+    imgSquarePosition: "object-[50%_75%] scale-110 origin-bottom",
     description:
       "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
     textClassName: " max-w-[290px] ",
@@ -1295,8 +1315,10 @@ export const INDUSTRIES: TIndustry[] = [
   },
   {
     id: "hospitality-and-leisure",
-    name: "Hopitality & Leisure",
+    name: "Hospitality & Leisure",
     img: "/industries/hospitality/hospitality.webp",
+    imgPosition: "object-[50%_50%]",
+    imgSquarePosition: "object-[50%_50%] translate-x-3/100 scale-106 orgin-bottom",
     description:
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     textClassName: " max-w-[290px]",
@@ -1420,6 +1442,8 @@ export const INDUSTRIES: TIndustry[] = [
     id: "education",
     name: "Education",
     img: "/industries/education/education.webp",
+    imgPosition: "object-[55%_85%]",
+    imgSquarePosition: "object-[45%_85%]",
     description:
       "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
     textClassName: " max-w-[290px]  ",
@@ -1540,6 +1564,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
   },
 ];
+
 export const INDUSTRIES_FLYOUTLINK_ORDER = [0, 4, 8, 1, 5, 9, 2, 6, 10, 3, 7];
 export const LANDING_PAGE_DATA = {
   HERO: {

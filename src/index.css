@@ -114,3 +114,7 @@ body {
 .text-25 {
   @apply text-[23px] leading-[27px] xs:text-[25px] xs:leading-[31px];
 }
+
+.text-25-new {
+  @apply text-[20px] leading-[23px] xs:text-[23px] xs:leading-[27px] lg:text-[25px] lg:leading-[31px];
+}

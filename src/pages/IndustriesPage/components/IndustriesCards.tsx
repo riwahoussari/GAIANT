@@ -17,12 +17,14 @@ export default function IndustriesCards({
         <SlideUpSelf key={i}>
           <IndustryCard
             fetchPriority={i < 3 ? "high" : undefined}
-            className="aspect-11/9! w-full"
+            className="aspect-440/342! w-full"
             id={industry.id}
             title={industry.name}
             text={industry.description}
+            textClassName={industry.textClassName}
             button={!!industry.description ? "button" : "none"}
             imgSrc={industry.img}
+            imgClassName={industry.imgPosition}
           />
         </SlideUpSelf>
       ))}
