@@ -1,4 +1,11 @@
-import { useRef, useState, type HTMLAttributes, type ReactNode } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+  type HTMLAttributes,
+  type ReactNode,
+} from "react";
 import ArrowSvg from "../ui/ArrowSvg";
 import GradientCircle from "../ui/GradientCircle";
 import { TitleBlock } from "../ui/Titles";
@@ -28,9 +35,31 @@ export default function AccordionSection({
   className?: string;
   withGradient?: boolean;
 }) {
-  const [selected, setSelected] = useState<number | undefined>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [selected, setSelected] = useState<number | undefined>(0);
+  const [contentHeight, setContentHeight] = useState(240);
+
+  useEffect(() => {
+    const findTallest = () => {
+      const heights = contentRefs.current.map((ref) => ref?.offsetHeight);
+      const tallest = heights.reduce((acc, current) => {
+        if (acc !== undefined && current !== undefined)
+          return current > acc ? current : acc;
+      }, 0);
+
+      if (tallest) {
+        setContentHeight(tallest);
+      }
+    };
+
+    findTallest();
+    window.addEventListener("resize", findTallest);
+    return () => window.removeEventListener("resize", findTallest);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -38,8 +67,8 @@ export default function AccordionSection({
     >
       {/* titles */}
       <div className="flex flex-col gap-14 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
-        <div className="overflow-visible relative">
-            <TitleBlock title={title} subtitle={subtitle} />
+        <div className="relative overflow-visible">
+          <TitleBlock title={title} subtitle={subtitle} />
         </div>
         {text && (
           <SlideUpAnim
@@ -75,6 +104,10 @@ export default function AccordionSection({
               onClick={() => setSelected(i)}
               key={i}
               {...item}
+              ref={(el) => {
+                contentRefs.current[i] = el;
+              }}
+              contentHeight={contentHeight}
             />
           ))}
         </SlideUpAnim>
@@ -83,69 +116,142 @@ export default function AccordionSection({
   );
 }
 
-function AccordionItem({
-  title,
-  subtitle,
-  list,
-  selected = false,
-  onClick,
-  ...props
-}: {
+type AccordionItemProps = {
   title: string;
   subtitle?: string;
   list?: string[];
   selected?: boolean;
   onClick: () => void;
-} & HTMLAttributes<HTMLDivElement>) {
-  const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
-  const CONTENT_HEIGHT = "240px";
+  contentHeight: number;
+} & HTMLAttributes<HTMLDivElement>;
 
-  return (
-    <div className="relative" {...props}>
-      {/* border top */}
-      <div
-        className={
-          "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
-          (selected ? " bg-dark-green-700-blue-gradient" : " bg-black/25")
-        }
-      />
-
-      {/* content */}
-      <p className="text-25 cursor-pointer py-4" onClick={onClick}>
-        {title}
-      </p>
-
-      {(subtitle || list) && (
+const AccordionItem = forwardRef<HTMLDivElement | null, AccordionItemProps>(
+  (
+    {
+      title,
+      subtitle,
+      list,
+      selected = false,
+      onClick,
+      contentHeight,
+      ...props
+    },
+    contentRef
+  ) => {
+    return (
+      <div className="relative" {...props}>
+        {/* border top */}
         <div
-          style={{
-            height: selected ? CONTENT_HEIGHT || 0 : 0,
-          }}
           className={
-            "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
+            "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
+            (selected ? " bg-dark-green-700-blue-gradient" : " bg-black/25")
           }
-        >
-          <div ref={contentRef} style={{ height: CONTENT_HEIGHT + "px" }}>
-            {subtitle && (
-              <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
-                {subtitle}
-              </p>
-            )}
-            {list && (
-              <div className="space-y-[21px] pb-8">
-                {list.map((string, i) => (
-                  <div key={i} className="flex items-center gap-5 xs:gap-7">
-                    <ArrowSvg
-                      className="w-3.5 -rotate-45 xs:w-4.5"
-                      color="black"
-                    />
-                    <p className="text-16">{string}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+        />
+
+        {/* content */}
+        <p className="text-25 cursor-pointer py-4" onClick={onClick}>
+          {title}
+        </p>
+
+        {(subtitle || list) && (
+          <div
+            style={{
+              height: selected ? contentHeight || 0 : 0,
+            }}
+            className={
+              "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
+            }
+          >
+            <div ref={contentRef}>
+              {subtitle && (
+                <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
+                  {subtitle}
+                </p>
+              )}
+              {list && (
+                <div className="space-y-[21px] pb-8">
+                  {list.map((string, i) => (
+                    <div key={i} className="flex items-center gap-5 xs:gap-7">
+                      <ArrowSvg
+                        className="w-3.5 -rotate-45 xs:w-4.5 flex-none"
+                        color="black"
+                      />
+                      <p className="text-16">{string}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
-}
+        )}
+      </div>
+    );
+  }
+);
+
+// function AccordionItem({
+//   title,
+//   subtitle,
+//   list,
+//   selected = false,
+//   onClick,
+//   ...props
+// }: {
+//   title: string;
+//   subtitle?: string;
+//   list?: string[];
+//   selected?: boolean;
+//   onClick: () => void;
+// } & HTMLAttributes<HTMLDivElement>) {
+//   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
+//   const CONTENT_HEIGHT = "240px";
+
+//   return (
+//     <div className="relative" {...props}>
+//       {/* border top */}
+//       <div
+//         className={
+//           "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
+//           (selected ? " bg-dark-green-700-blue-gradient" : " bg-black/25")
+//         }
+//       />
+
+//       {/* content */}
+//       <p className="text-25 cursor-pointer py-4" onClick={onClick}>
+//         {title}
+//       </p>
+
+//       {(subtitle || list) && (
+//         <div
+//           style={{
+//             height: selected ? CONTENT_HEIGHT || 0 : 0,
+//           }}
+//           className={
+//             "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
+//           }
+//         >
+//           <div ref={contentRef} style={{ height: CONTENT_HEIGHT + "px" }}>
+//             {subtitle && (
+//               <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
+//                 {subtitle}
+//               </p>
+//             )}
+//             {list && (
+//               <div className="space-y-[21px] pb-8">
+//                 {list.map((string, i) => (
+//                   <div key={i} className="flex items-center gap-5 xs:gap-7">
+//                     <ArrowSvg
+//                       className="w-3.5 -rotate-45 xs:w-4.5"
+//                       color="black"
+//                     />
+//                     <p className="text-16">{string}</p>
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
