@@ -53,7 +53,6 @@ export default function ArcheSection() {
               <Button
                 className="mt-[30px] hover:translate-x-1 xs:mt-[40px] xl:mt-[50px]"
                 arrow={"spaced"}
-                size={"md"}
               >
                 Learn more<span className="hidden"> about Arche platform</span>
               </Button>

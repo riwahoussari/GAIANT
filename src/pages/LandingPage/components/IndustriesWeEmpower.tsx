@@ -22,7 +22,7 @@ export default function IndustriesWeEmpower() {
         {...LANDING_PAGE_DATA.INDUSTRIES_WE_EMPOWER}
         button={
           <Link to="/industries">
-            <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
+            <Button arrow={"normal"} variant={"secondary"}>
               See all
             </Button>
           </Link>

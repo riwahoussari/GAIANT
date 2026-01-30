@@ -12,7 +12,7 @@ export default function OurLatestThinking() {
           subtitle="INSIGHTS AND IDEAS"
           button={
             <Link to="/news">
-              <Button size={"sm"} arrow={"normal"} variant={"secondary"}>
+              <Button arrow={"normal"} variant={"secondary"}>
                 See all
               </Button>
             </Link>

@@ -13,7 +13,7 @@ const buttonVariants = cva(
         ghost: "bg-transparent ",
       },
       size: {
-        sm: "px-3.5 py-1.5 text-[13px] xs:px-5 xs:py-3 xs:text-sm",
+        sm: "px-5 py-2.5 text-sm",
         md: "px-5 py-2.5 text-sm",
       },
       arrow: {
