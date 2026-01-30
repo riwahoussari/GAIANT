@@ -211,7 +211,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "Smarter moves with fewer resources",
+      title: "Smarter moves, fewer resources",
       subtitle: "TRUSTED BY FINANCIAL LEADERS",
       text: "AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead.",
       imgFront: {
@@ -462,7 +462,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "The infrastructure behind modern care",
+      title: "The backbone of modern care ",
       subtitle: "TRUSTED BY HEALTHCARE LEADERS",
       text: "The bottleneck in healthcare is rarely clinical, it's operational. AI removes the friction between what clinicians know and what systems allow them to do.",
       imgFront: {
@@ -714,7 +714,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "Bringing clarity for smarter public policy",
+      title: "Clearer, smarter public policy",
       subtitle: "TRUSTED BY PUBLIC INSTITUTIONS",
       text: "Public mandates can’t wait. AI helps governments move at the speed citizens expect without compromising accuracy, security, or accountability.",
       imgFront: {
@@ -832,8 +832,10 @@ export const INDUSTRIES: TIndustry[] = [
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     textClassName: " max-w-[230px] xs:max-w-[260px] ",
     hero: {
-      titleWidth: "lg:min-w-[484px] lg:max-w-[484px] xl:min-w-[580px] xl:max-w-[580px]",
-      textWidth: "max-w-[440px] xl:max-w-[510px] min-[1024px]:text-[19.5px] min-[1034px]:text-[20px]",
+      titleWidth:
+        "lg:min-w-[484px] lg:max-w-[484px] xl:min-w-[580px] xl:max-w-[580px]",
+      textWidth:
+        "max-w-[440px] xl:max-w-[510px] min-[1024px]:text-[19.5px] min-[1034px]:text-[20px]",
       title: "Powering smarter energy operations",
       subtitle: "ENERGY & UTILITIES",
       text: "Securely integrate disconnected data sources to deliver real-time intelligence for smarter decision-making, from grid to meter.",
@@ -843,7 +845,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "Powering what powers everything else",
+      title: "Powering what powers ",
       subtitle: "TRUSTED BY ENERGY LEADERS",
       text: "Energy companies have data. What they lack is timely access. Ai turns scattered signals into operational clarity – from field, to plant & across the grid.",
       imgFront: {
@@ -969,7 +971,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "Built for the demands of legal practice",
+      title: "Built for modern legal work",
       subtitle: "TRUSTED BY LEGAL LEADERS",
       text: "Associates spend countless hours on complex but routine tasks. AI doesn't replace their judgment, it multiplies their capacity. The firms that win will be the ones that redeploy talent from process to strategy.",
       imgFront: {
@@ -1339,9 +1341,11 @@ export const INDUSTRIES: TIndustry[] = [
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     textClassName: " max-w-[290px]",
     hero: {
-      titleWidth: "lg:min-w-[620px] lg:max-w-[620px] min-[1112px]:min-w-[660px]! min-[1112px]:max-w-[660px]! xl:min-w-[776px]! xl:max-w-[776px]!",
-      textWidth: " max-w-[440px] xl:max-w-[510px] min-[1280px]:text-[21.8px]! min-[1300px]:text-[23px]! text-[min(4vw,18px)] ",
-      title: "Exceptional experiences & operational excellence",
+      titleWidth:
+        "lg:min-w-[568px] lg:max-w-[568px] xl:min-w-[676px] xl:max-w-[676px]",
+      textWidth:
+        " max-w-[440px] xl:max-w-[510px] min-[1280px]:text-[21.4px]! min-[1312px]:text-[23px]! text-[min(4vw,18px)] ",
+      title: "Experiences and operations, perfected",
       subtitle: "HOSPITALITY & LEISURE",
       text: "Personalize guest journeys, optimize revenue, and streamline operations with intelligence that works behind the scenes so hospitality stays human.",
       img: {
@@ -1469,7 +1473,8 @@ export const INDUSTRIES: TIndustry[] = [
     hero: {
       titleWidth:
         "lg:min-w-[486px] lg:max-w-[486px] xl:min-w-[600px] xl:max-w-[600px]",
-      textWidth: "max-w-[450px] xl:max-w-[519px] min-[1024px]:text-[19.2px] min-[1030px]:text-[19.4px] min-[1035px]:text-[19.7px] min-[1042px]:text-[20px] ",
+      textWidth:
+        "max-w-[450px] xl:max-w-[519px] min-[1024px]:text-[19.2px] min-[1030px]:text-[19.4px] min-[1035px]:text-[19.7px] min-[1042px]:text-[20px] ",
       title: "AI for institutions shaping the future",
       subtitle: "EDUCATION",
       text: "Personalize learning, streamline administration, and support student success with intelligence designed for the complexity of modern education.",
@@ -1479,7 +1484,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "Serving students, faculty & institutions",
+      title: "Built to support educators",
       subtitle: "TRUSTED BY EDUCATION LEADERS",
       text: "Education carries a mandate like no other, to prepare people for a future that doesn't yet exist. AI doesn't replace educators. It removes the friction between what they know and what institutions allow them to do.",
       imgFront: {
@@ -1826,7 +1831,7 @@ export const INDUSTRIES_PAGE_DATA = {
         title: "Chief Economic Advisor, Allianz",
       },
       {
-        text: "“We tried multiple tools before, but none were as seamless and insightful as Gaiant. It adapts to our workflow and delivers exactly what we need — effortlessly.”",
+        text: "“Whoever is going to lead in the Artificial Intelligence race will lead the future.”",
         name: "Omar Sultan Al Olama",
         title: "UAE Minister of State for Artificial Intelligence",
       },

@@ -173,7 +173,7 @@ const AccordionItem = forwardRef<HTMLDivElement | null, AccordionItemProps>(
                   {list.map((string, i) => (
                     <div key={i} className="flex items-center gap-5 xs:gap-7">
                       <ArrowSvg
-                        className="w-3.5 -rotate-45 xs:w-4.5 flex-none"
+                        className="w-3.5 flex-none -rotate-45 xs:w-4.5"
                         color="black"
                       />
                       <p className="text-16">{string}</p>
@@ -188,70 +188,3 @@ const AccordionItem = forwardRef<HTMLDivElement | null, AccordionItemProps>(
     );
   }
 );
-
-// function AccordionItem({
-//   title,
-//   subtitle,
-//   list,
-//   selected = false,
-//   onClick,
-//   ...props
-// }: {
-//   title: string;
-//   subtitle?: string;
-//   list?: string[];
-//   selected?: boolean;
-//   onClick: () => void;
-// } & HTMLAttributes<HTMLDivElement>) {
-//   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
-//   const CONTENT_HEIGHT = "240px";
-
-//   return (
-//     <div className="relative" {...props}>
-//       {/* border top */}
-//       <div
-//         className={
-//           "absolute top-0 right-0 left-0 h-[2px] rounded-full" +
-//           (selected ? " bg-dark-green-700-blue-gradient" : " bg-black/25")
-//         }
-//       />
-
-//       {/* content */}
-//       <p className="text-25 cursor-pointer py-4" onClick={onClick}>
-//         {title}
-//       </p>
-
-//       {(subtitle || list) && (
-//         <div
-//           style={{
-//             height: selected ? CONTENT_HEIGHT || 0 : 0,
-//           }}
-//           className={
-//             "overflow-y-hidden text-xl transition-all duration-400 ease-in-out"
-//           }
-//         >
-//           <div ref={contentRef} style={{ height: CONTENT_HEIGHT + "px" }}>
-//             {subtitle && (
-//               <p className="py-5 font-ibm! text-[11px] font-semibold text-teal xs:text-[12px]">
-//                 {subtitle}
-//               </p>
-//             )}
-//             {list && (
-//               <div className="space-y-[21px] pb-8">
-//                 {list.map((string, i) => (
-//                   <div key={i} className="flex items-center gap-5 xs:gap-7">
-//                     <ArrowSvg
-//                       className="w-3.5 -rotate-45 xs:w-4.5"
-//                       color="black"
-//                     />
-//                     <p className="text-16">{string}</p>
-//                   </div>
-//                 ))}
-//               </div>
-//             )}
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
