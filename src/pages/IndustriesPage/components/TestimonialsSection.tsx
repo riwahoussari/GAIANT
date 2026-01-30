@@ -40,7 +40,7 @@ export default function TestimonialSection() {
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding relative mt-[130px]"
+      className="my-container side-padding relative z-2 mt-[130px]"
     >
       {/* background gradient */}
       <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-40">
@@ -72,19 +72,23 @@ export default function TestimonialSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="relative flex flex-col justify-between gap-8 sm:p-8"
+              className="relative flex flex-col justify-between gap-8 sm:p-14"
             >
               {/* placeholder to maintain same height for all testimonials */}
               <p
                 aria-hidden
                 style={{ visibility: "hidden" }}
-                className="text-[19px] leading-[25px] opacity-0 xs:text-[21px] xs:leading-[27px]"
+                className={
+                  "text-[19px] leading-[25px] opacity-0 mx-auto xs:text-[21px] xs:leading-[27px] " +
+                  testimonials.find((t) => t.text === longest_text)
+                    ?.textMaxWidth
+                }
               >
                 {longest_text}
               </p>
 
               {/* actual text */}
-              <p className="absolute right-0 left-0 bg-red/0 text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px] sm:px-8">
+              <p className={"absolute right-0 left-0 bg-red/0 text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px] mx-auto " + testimonials[index].textMaxWidth}>
                 {testimonials[index].text}
               </p>
 
@@ -98,11 +102,11 @@ export default function TestimonialSection() {
                   <p
                     aria-hidden
                     style={{ visibility: "hidden" }}
-                    className="text-[13px] leading-[15px] xs:text-[14px] opacity-0"
+                    className="text-[13px] leading-[15px] opacity-0 xs:text-[14px]"
                   >
                     {longest_title}
                   </p>
-                  <p className="absolute top-0  text-[13px] leading-[15px] text-[#838383] xs:text-[14px]">
+                  <p className="absolute top-0 text-[13px] leading-[15px] text-[#838383] xs:text-[14px]">
                     {testimonials[index].title}
                   </p>
                 </div>

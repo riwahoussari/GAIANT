@@ -10,7 +10,10 @@ export default function ArcheCallToAction() {
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
+    <section
+      ref={sectionRef}
+      className="relative z-2 mt-[120px] overflow-x-clip"
+    >
       {/* titles */}
       <div className="my-container side-padding relative z-1 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
         <CenteredTitleBlock

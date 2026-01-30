@@ -15,7 +15,7 @@ export default function StickeVideo() {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
-    <div>
+    <div className="relative z-2">
       <div ref={containerRef} className="absolute w-full max-lg:hidden">
         <div ref={videoRef} className="top-80 -translate-y-56 lg:sticky">
           <SlideUpAnim

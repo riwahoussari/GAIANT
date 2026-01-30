@@ -11,7 +11,7 @@ export default function IndustriesCards({
   return (
     <section
       ref={navbarTriggerRef}
-      className="side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
+      className="relative z-2 side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
     >
       {INDUSTRIES.map((industry, i) => (
         <SlideUpSelf key={i}>

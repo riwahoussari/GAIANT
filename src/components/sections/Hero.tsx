@@ -133,7 +133,7 @@ export default function Hero({
   gap,
   titleWidth,
   textWidth,
-  padding
+  padding,
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true });
@@ -155,12 +155,20 @@ export default function Hero({
       : "max-w-[440px] xl:max-w-[500px]";
 
   return (
-    <section ref={heroRef} className={`relative text-white ${className || ""}`}>
+    <section
+      ref={heroRef}
+      className={`relative z-2 text-white ${className || ""}`}
+    >
       {/* background */}
       <div className="absolute inset-0 z-0 overflow-x-clip">{background}</div>
 
       {/* content */}
-      <div className={"side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px] " + (padding || "")}>
+      <div
+        className={
+          "side-padding my-container relative pt-[200px] pb-[140px] xl:pt-[280px] " +
+          (padding || "")
+        }
+      >
         {subtitle && (
           <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">
             <AnimatedText transition={{ delay: 0.8 }} isInView={isInView}>
@@ -202,7 +210,9 @@ export default function Hero({
                     return <br key={i} className="max-sm:hidden" />;
                   else {
                     if (word.split("<bold>").length > 1) {
-                      return <strong key={i}>{word.split("<bold>")[1] + " "}</strong>;
+                      return (
+                        <strong key={i}>{word.split("<bold>")[1] + " "}</strong>
+                      );
                     }
                     return word + " ";
                   }

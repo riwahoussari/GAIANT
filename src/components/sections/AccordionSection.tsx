@@ -63,7 +63,7 @@ export default function AccordionSection({
   return (
     <section
       ref={sectionRef}
-      className={"side-padding my-container mt-[100px] " + (className || "")}
+      className={"side-padding my-container mt-[100px] relative z-2 " + (className || "")}
     >
       {/* titles */}
       <div className="flex flex-col gap-14 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">

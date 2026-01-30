@@ -16,7 +16,7 @@ export default function OurApproach({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section ref={sectionRef} className="side-padding my-container mt-[120px]">
+    <section ref={sectionRef} className="relative z-2 side-padding my-container mt-[120px]">
       <div className="grid grid-cols-1 items-end gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
         <SlideUpAnim

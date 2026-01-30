@@ -27,7 +27,7 @@ export default function ArticlesSection({
     <section
       ref={navbarTriggerRef}
       className={
-        "side-padding my-container relative mt-[120px] overflow-x-clip " +
+        "side-padding my-container relative z-2 mt-[120px] overflow-x-clip " +
         (className || "")
       }
     >

@@ -11,7 +11,7 @@ export default function TheArcheModel() {
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
+    <section ref={sectionRef} className="relative z-2 mt-[120px] overflow-x-clip">
       <div className="absolute top-0 right-0 z-0 translate-x-1/2 opacity-80">
         <GradientCircle colorr={"beige"} blur={"lg"} />
       </div>

@@ -15,7 +15,7 @@ export default function TextSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section ref={sectionRef} className="my-container side-padding mt-[120px] relative z-1">
+    <section ref={sectionRef} className="my-container side-padding mt-[120px] relative z-2">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <div>
           <SectionSubTitle>

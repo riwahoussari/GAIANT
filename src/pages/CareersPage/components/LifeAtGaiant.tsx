@@ -21,7 +21,7 @@ export default function LifeAtGaiant() {
   }, []);
   
   return (
-    <section className="side-padding my-container relative mt-[40px]">
+    <section className="side-padding my-container relative z-2 mt-[40px]">
       <BigEllipseGradient />
 
       <TitleBlock

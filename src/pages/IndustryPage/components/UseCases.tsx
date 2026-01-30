@@ -42,7 +42,7 @@ export default function UseCases({
   return (
     <section
       ref={sectionRef}
-      className="side-padding my-container relative mt-[120px]"
+      className="side-padding my-container relative z-2 mt-[120px]"
     >
       <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <GradientCircle

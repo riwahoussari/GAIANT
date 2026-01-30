@@ -1821,17 +1821,20 @@ export const INDUSTRIES_PAGE_DATA = {
     testimonials: [
       {
         text: "“...AI is here to augment, to support, to empower how humans perform in their daily tasks ... it’s not here to replace ... Agentic AI is a really big thing. So basically, agent AI acting, rather than just waiting for you to ask ... it’s a lot more seamless.”",
+        textMaxWidth: "max-w-[613px]",
         name: "Yousef Barkawie",
         title:
-          "Partner in Artificial Intelligence and Data at Deloitte Middle East",
+        "Partner in Artificial Intelligence and Data at Deloitte Middle East",
       },
       {
         text: "“AI has an enormous labor-enhancing capability. It allows … everybody to have with them an intellectual companion that can significantly increase your productivity … for those who get left behind, catching up will be harder and harder.”",
+        textMaxWidth: "max-w-[588px]",
         name: "Mohamed El-Erian",
         title: "Chief Economic Advisor, Allianz",
       },
       {
         text: "“Whoever is going to lead in the Artificial Intelligence race will lead the future.”",
+        textMaxWidth: "max-w-[506px]",
         name: "Omar Sultan Al Olama",
         title: "UAE Minister of State for Artificial Intelligence",
       },

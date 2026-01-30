@@ -6,10 +6,8 @@ import { LINKS } from "../../lib/data";
 export default function Footer() {
   return (
     <>
-      <div className="relative z-1">
-        <Outlet />
-      </div>
-      <footer className="relative z-0 pt-[220px] pb-9 text-white">
+      <Outlet />
+      <footer className="relative z-1 pt-[220px] pb-9 text-white">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip">
@@ -23,7 +21,7 @@ export default function Footer() {
         </div>
 
         {/* content */}
-        <div className="my-container side-padding relative flex gap-[78px] xl:gap-[130px] max-md:flex-col">
+        <div className="my-container side-padding relative flex gap-[78px] max-md:flex-col xl:gap-[130px]">
           {/* newsletter */}
           <div className="max-w-[380px]">
             <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
@@ -138,14 +136,14 @@ export default function Footer() {
         </div>
 
         {/* copyright */}
-        <div className="side-padding my-container relative flex items-end gap-5 pt-12 md:pt-[7px] max-md:flex-col md:justify-between">
+        <div className="side-padding my-container relative flex items-end gap-5 pt-12 max-md:flex-col md:justify-between md:pt-[7px]">
           {/* logo */}
           <img
             className="w-full max-w-[428px]"
             src="/logos/gaiant-logo-gradient.svg"
             alt="Gaiant Logo"
           />
-          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:text-end md:-translate-y-[22px]">
+          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:-translate-y-[22px] md:text-end">
             {"Gaiant © 2025       |       Powered by "}
             <a
               href="https://weareelites.com/"

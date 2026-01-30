@@ -21,7 +21,7 @@ const ICONS = [
 
 export default function Tools() {
   return (
-    <section className="relative mt-[120px] flex flex-col items-center overflow-x-clip">
+    <section className="relative z-2 mt-[120px] flex flex-col items-center overflow-x-clip">
       {/* background blur */}
       <div className="absolute top-1/2 left-0 -z-1 w-[40vw] -translate-1/2 opacity-70">
         <GradientCircle blur="lg" />

@@ -25,7 +25,7 @@ export default function WhatMakesUsDifferent() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mt-[110px] overflow-x-clip">
+    <section ref={sectionRef} className="relative z-2 mt-[110px] overflow-x-clip">
       {/* Titles */}
       <div className="my-container side-padding flex grid-cols-3 flex-col gap-5 lg:mb-[110px] lg:grid lg:items-end lg:gap-8">
         <SectionSubTitle className="pt-3">

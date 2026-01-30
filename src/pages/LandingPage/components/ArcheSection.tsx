@@ -12,7 +12,7 @@ export default function ArcheSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-20%" });
   return (
-    <section ref={sectionRef} className="relative mt-[200px] overflow-x-clip">
+    <section ref={sectionRef} className="relative z-2 mt-[200px] overflow-x-clip">
       {/* bg */}
       <BlurredLandscapeBg />
 
