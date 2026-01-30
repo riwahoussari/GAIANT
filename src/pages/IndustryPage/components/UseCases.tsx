@@ -13,6 +13,7 @@ export default function UseCases({
     title: "Use Cases";
     subtitle: string;
     text: string;
+    textClassName?: string;
     useCaseCards: {
       title: string;
       subtitle: string;
@@ -53,8 +54,8 @@ export default function UseCases({
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
-          <p className="text-16 max-w-[292px]">{content.text}</p>
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }} >
+          <p className={"text-16 xl:w-max  " + content.textClassName}>{content.text}</p>
         </SlideUpAnim>
         <SlideUpAnim
           className="flex md:col-start-2 xl:col-start-3 xl:justify-end"

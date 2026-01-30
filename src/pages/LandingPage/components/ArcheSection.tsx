@@ -17,9 +17,9 @@ export default function ArcheSection() {
       <BlurredLandscapeBg />
 
       {/* content */}
-      <div className="my-container side-padding relative items-stretch justify-between gap-5 pt-16 pb-10 sm:pt-24 sm:pb-16 lg:py-10 text-white lg:flex lg:gap-10 xl:gap-16">
+      <div className="my-container side-padding relative items-stretch justify-between gap-5 pt-16 pb-10 text-white sm:pt-24 sm:pb-16 lg:flex lg:gap-10 lg:py-10 xl:gap-16">
         {/* text */}
-        <div className="flex flex-col md:flex-row lg:flex-col items-start justify-between lg:justify-around gap-10 xs:gap-20 2xl:justify-between 2xl:py-20 flex-none w-full lg:w-[440px] xl:w-[558px]">
+        <div className="flex w-full flex-none flex-col items-start justify-between gap-10 xs:gap-20 md:flex-row lg:w-[440px] lg:flex-col lg:py-[2.1vw] xl:w-[558px] 2xl:py-[min(300px,1.8vw)]">
           {/* arche */}
           <SlideUpAnim isInView={isInView}>
             <img
@@ -33,7 +33,7 @@ export default function ArcheSection() {
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.35 }}
-            className=" max-lg:max-w-[460px] "
+            className="max-lg:max-w-[460px]"
           >
             <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] lg:text-[36px] lg:leading-[38px] xl:text-[46px] xl:leading-[47px]">
               {LANDING_PAGE_DATA.ARCHE_SECTION.title}
@@ -63,7 +63,7 @@ export default function ArcheSection() {
 
         {/* dashboard */}
         <SlideUpAnim
-          className="relative w-full max-w-[884px] mt-12 sm:mt-14 lg:mt-0 scale-113 "
+          className="relative mt-12 w-full max-w-[884px] scale-113 sm:mt-14 lg:mt-0"
           isInView={isInView}
           transition={{ delay: 0.2 }}
         >
@@ -71,9 +71,14 @@ export default function ArcheSection() {
             animationData={archeSectionLottie}
             loop
             autoplay
-            className="h-full w-full "
+            className="h-full w-full"
           />
-          <img className="absolute inset-0 w-full h-full object-contain" src="/demos/arche-circle.png" aria-hidden alt="decorative gradient circle" />
+          <img
+            className="absolute inset-0 h-full w-full object-contain"
+            src="/demos/arche-circle.png"
+            aria-hidden
+            alt="decorative gradient circle"
+          />
         </SlideUpAnim>
       </div>
     </section>

@@ -14,7 +14,7 @@ const buttonVariants = cva(
       },
       size: {
         sm: "px-3.5 py-1.5 text-[13px] xs:px-5 xs:py-3 xs:text-sm",
-        md: "px-5 py-3 text-sm",
+        md: "px-5 py-2.5 text-sm",
       },
       arrow: {
         none: "",

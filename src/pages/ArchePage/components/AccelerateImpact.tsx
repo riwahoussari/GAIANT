@@ -55,7 +55,6 @@ export default function AccelerateImpact() {
               isInView={isInView}
             />
           ))}
-          <div className="h-[500px] w-2 bg-purple-600" />
         </div>
       </div>
     </section>
@@ -90,11 +89,11 @@ function Card({
       <m.div
         style={{ scale, top: `${index * 50}px` }}
         className={
-          "bg-linear-white-transparent-70 relative flex origin-top items-center justify-between gap-x-5 rounded-xl px-4 backdrop-blur-[100px] max-lg:flex-col gap-y-0 sm:px-10 sm:py-16 sm:pb-20 xl:p-20 pt-10 xl:pb-24 pb-0! lg:pt-0!"
+          "bg-linear-white-transparent-70 relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 rounded-xl px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16"
         }
       >
         {/* text */}
-        <div className="max-w-[380px] text-white max-lg:text-center">
+        <div className="max-w-[380px] text-white max-lg:text-center xl:scale-115 2xl:scale-130 origin-left">
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.3 }}>
             <p className="font-ibm! text-[11px] xs:text-[12px]">
               {content.subtitle}

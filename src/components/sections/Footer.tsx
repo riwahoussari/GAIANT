@@ -9,11 +9,11 @@ export default function Footer() {
       <div className="relative z-1">
         <Outlet />
       </div>
-      <footer className="relative z-0 pt-[220px] pb-[20px] text-white">
+      <footer className="relative z-0 pt-[220px] pb-9 text-white">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip">
-            <div className="h-full w-[140vw]! -translate-x-[20vw] bg-black blur-[max(4vw,40px)]"></div>
+            <div className="h-full w-[140vw]! -translate-x-[20vw] bg-black blur-[30px] xl:blur-[40px]"></div>
           </div>
         </div>
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         {/* content */}
-        <div className="my-container side-padding relative flex gap-22 max-md:flex-col">
+        <div className="my-container side-padding relative flex gap-[78px] xl:gap-[130px] max-md:flex-col">
           {/* newsletter */}
           <div className="max-w-[380px]">
             <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
@@ -60,10 +60,10 @@ export default function Footer() {
           </div>
 
           {/* links */}
-          <div className="flex gap-20 max-md:flex-wrap lg:mx-auto xl:gap-32">
+          <div className="flex gap-20 max-md:flex-wrap lg:mx-auto xl:gap-[118px]">
             {/* col 1 */}
             <div className="w-[72px]">
-              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
+              <p className="mb-9 font-ibm! text-[13px] text-light-blue">
                 PRODUCTS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
@@ -98,7 +98,7 @@ export default function Footer() {
             </div>
             {/* col 2 */}
             <div className="w-[182px]">
-              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
+              <p className="mb-9 font-ibm! text-[13px] text-light-blue">
                 SOLUTIONS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
@@ -113,17 +113,11 @@ export default function Footer() {
                     </Link>
                   )
                 )}
-                <Link
-                  className="inline-block cursor-pointer duration-200 ease-in-out hover:opacity-60"
-                  to="/industries"
-                >
-                  <p>View All</p>
-                </Link>
               </div>
             </div>
             {/* col 3 */}
             <div className="w-[72px] max-lg:hidden">
-              <p className="mb-6 font-ibm! text-[13px] text-light-blue">
+              <p className="mb-9 font-ibm! text-[13px] text-light-blue">
                 COMPANY
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
@@ -144,21 +138,21 @@ export default function Footer() {
         </div>
 
         {/* copyright */}
-        <div className="side-padding my-container relative flex items-center gap-5 pt-12 max-md:flex-col md:justify-between">
+        <div className="side-padding my-container relative flex items-end gap-5 pt-12 md:pt-[7px] max-md:flex-col md:justify-between">
           {/* logo */}
           <img
-            className="w-full max-w-[450px]"
+            className="w-full max-w-[428px]"
             src="/logos/gaiant-logo-gradient.svg"
             alt="Gaiant Logo"
           />
-          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:text-end">
-            {"Gaiant © 2025       |       Powered by ®"}
+          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:text-end md:-translate-y-[22px]">
+            {"Gaiant © 2025       |       Powered by "}
             <a
               href="https://weareelites.com/"
               className="not-hover:underline"
               target="_blank"
             >
-              Elites
+              Elites®
             </a>
           </p>
         </div>

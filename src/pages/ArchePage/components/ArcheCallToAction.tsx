@@ -11,11 +11,6 @@ export default function ArcheCallToAction() {
 
   return (
     <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
-      {/* gradient circle */}
-      <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-80">
-        <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
-      </div>
-
       {/* titles */}
       <div className="my-container side-padding relative z-1 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
         <CenteredTitleBlock
@@ -27,10 +22,15 @@ export default function ArcheCallToAction() {
 
       {/* arche logo */}
       <div className="relative max-sm:mt-5">
+        {/* gradient circle */}
+        <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-80">
+          <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
+        </div>
+
         <SlideUpAnim
           isInView={isInView}
           transition={{ delay: 0.2 }}
-          className="absolute top-0 right-1/2 w-[100vw] min-w-[350px] translate-x-1/2 xl:max-w-[1280px] 2xl:max-w-[1536px]"
+          className="absolute top-1/2 left-1/2 z-1 w-[103vw] max-w-[1950px] min-w-[350px] -translate-1/2"
         >
           <img
             src="/logos/arche-logo-teal.svg"

@@ -15,7 +15,7 @@ export default function TextSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
   return (
-    <section ref={sectionRef} className="my-container side-padding mt-[120px]">
+    <section ref={sectionRef} className="my-container side-padding mt-[120px] relative z-1">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         <div>
           <SectionSubTitle>
@@ -26,9 +26,9 @@ export default function TextSection({
         </div>
         <SlideUpAnim
           isInView={isInView}
-          className="col-span-2 max-w-[892px] space-y-5 md:space-y-8"
+          className="col-span-2 max-w-[836px] space-y-5 md:space-y-8"
         >
-          <p className="text-[26px] leading-[34px] xs:text-[30px] xs:leading-[38px]">
+          <p className={"text-[26px] leading-[34px] xs:text-[30px] xs:leading-[38px] max-w-[600px] "}>
             {title}
           </p>
           <p className="text-[15px] leading-[19px] xs:text-[16px] xs:leading-[21px]">

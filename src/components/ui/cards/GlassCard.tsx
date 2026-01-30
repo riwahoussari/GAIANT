@@ -39,7 +39,6 @@ const GlassCard = forwardRef<HTMLVideoElement | null, GlassCardProps>(
               <video
                 ref={videoRef}
                 src={animation}
-                autoPlay
                 loop
                 muted
                 playsInline

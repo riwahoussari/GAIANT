@@ -18,7 +18,6 @@ export default function AccordionSection({
   img,
   accordionContent,
   className,
-  button,
   withGradient = true,
 }: {
   title: string;
@@ -27,7 +26,6 @@ export default function AccordionSection({
   img: ReactNode;
   accordionContent: TAccordionContent[];
   className?: string;
-  button?: ReactNode;
   withGradient?: boolean;
 }) {
   const [selected, setSelected] = useState<number | undefined>(0);
@@ -39,32 +37,23 @@ export default function AccordionSection({
       className={"side-padding my-container mt-[100px] " + (className || "")}
     >
       {/* titles */}
-      <div className="flex flex-col gap-14 lg:flex-row lg:items-center xl:gap-34 2xl:gap-44 lg:[&>div]:w-1/2">
-        <div>
-          <TitleBlock title={title} subtitle={subtitle} />
+      <div className="flex flex-col gap-14 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
+        <div className="overflow-visible relative">
+            <TitleBlock title={title} subtitle={subtitle} />
         </div>
         {text && (
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.1 }}
-            className="max-w-[555px] pb-2"
+            className="max-w-[560px] pb-2 lg:pb-0.5"
           >
             <p className="text-16">{text}</p>
-          </SlideUpAnim>
-        )}
-        {button && (
-          <SlideUpAnim
-            isInView={isInView}
-            transition={{ delay: 0.1 }}
-            className="flex max-w-[555px] pb-2 lg:justify-end"
-          >
-            {button}
           </SlideUpAnim>
         )}
       </div>
 
       {/* content */}
-      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-34 2xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />
@@ -145,7 +134,10 @@ function AccordionItem({
               <div className="space-y-[21px] pb-8">
                 {list.map((string, i) => (
                   <div key={i} className="flex items-center gap-5 xs:gap-7">
-                    <ArrowSvg className="w-3.5 xs:w-4.5 -rotate-45" color="black" />
+                    <ArrowSvg
+                      className="w-3.5 -rotate-45 xs:w-4.5"
+                      color="black"
+                    />
                     <p className="text-16">{string}</p>
                   </div>
                 ))}

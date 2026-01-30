@@ -152,8 +152,10 @@ export type TIndustry = {
   textClassName?: string;
   hero: {
     title: string;
+    titleWidth?: string;
     subtitle: string;
     text: string;
+    textWidth?: string;
     img: {
       src: string;
       position?: string;
@@ -171,6 +173,7 @@ export type TIndustry = {
     title: "Use Cases";
     subtitle: string;
     text: string;
+    textClassName?: string;
     useCaseCards: {
       title: string;
       subtitle: string;
@@ -256,6 +259,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "BANKING & FINANCIAL SERVICES",
       text: "See how leading firms are streamlining operations and scaling insight.",
+      textClassName: "max-w-[292px]",
       useCaseCards: [
         {
           title: "Customer service bots",
@@ -263,7 +267,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Perform KYC checks with minimal human involvement.",
           animation: useCaseAnimation1,
           titleClassName: " max-w-[150px]! ",
-          textClassName: " max-w-[300px]! ",
+          textClassName: " max-w-[220px]! ",
         },
         {
           title: "Regulatory monitoring",
@@ -271,7 +275,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Summarize new regulatory changes and assesses their operational impacts automatically.",
           animation: useCaseAnimation2,
           titleClassName: " max-w-[150px]! ",
-          textClassName: " max-w-[350px]! ",
+          textClassName: " max-w-[330px]! ",
         },
         {
           title: "Anomaly detection",
@@ -303,7 +307,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Provides transparent, auditable logic paths for AI-driven decisions to satisfy regulatory scrutiny.",
           animation: useCaseAnimation6,
           titleClassName: " max-w-[200px]! ",
-          textClassName: " max-w-[350px]! ",
+          textClassName: " max-w-[325px]! ",
         },
       ],
     },
@@ -381,6 +385,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "INSURANCE",
       text: "See how leading carriers are transforming underwriting, claims, and customer experience.",
+      textClassName: "max-w-[342px]",
       useCaseCards: [
         {
           title: "Multimodal severity estimation",
@@ -388,7 +393,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "GenAI uses images and text to triage claims and predict payouts.",
           animation: useCaseAnimation1,
           titleClassName: " max-w-[210px]! ",
-          textClassName: " max-w-[290px]! ",
+          textClassName: " max-w-[230px]! ",
         },
         {
           title: "Climate risk analytics",
@@ -396,7 +401,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Map environmental exposure to pricing and reinsurance strategy.",
           animation: useCaseAnimation2,
           titleClassName: " max-w-[210px]! ",
-          textClassName: " max-w-[290px]! ",
+          textClassName: " max-w-[230px]! ",
         },
         {
           title: "Underwriting copilots",
@@ -404,7 +409,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Summarize applications, flag anomalies, and suggest decisions in real time.",
           animation: useCaseAnimation3,
           titleClassName: " max-w-[210px]! ",
-          textClassName: " max-w-[300px]! ",
+          textClassName: " max-w-[280px]! ",
         },
         {
           title: "Dynamic pricing models",
@@ -420,7 +425,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Predict and intervene with at-risk policyholders.",
           animation: useCaseAnimation5,
           titleClassName: " max-w-[170px]! ",
-          textClassName: " max-w-[350px]! ",
+          textClassName: " max-w-[180px]! ",
         },
         {
           title: "Regulatory summarization",
@@ -505,6 +510,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
       text: "See how leading institutions are transforming care delivery and accelerating discovery.",
+      textClassName: "max-w-[332px]",
       useCaseCards: [
         {
           title: "Clinical documentation AI",
@@ -630,6 +636,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS",
       text: "See how leading TMT companies are embedding intelligence across products, networks, and customer experience.",
+      textClassName: "max-w-[465px]",
       useCaseCards: [
         {
           title: "Intelligent content recommendations",
@@ -660,7 +667,7 @@ export const INDUSTRIES: TIndustry[] = [
           subtitle: "DEVELOPER VELOCITY",
           text: "Automate code analysis for bugs, improvements, and best practices.",
           animation: useCaseAnimation4,
-          titleClassName: " max-w-[200px]! ",
+          titleClassName: " max-w-[180px]! ",
           textClassName: " max-w-[250px]! ",
         },
         {
@@ -755,6 +762,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "PUBLIC SECTOR & GOVERNMENT",
       text: "See how leading institutions are modernizing citizen services and accelerating public outcomes.",
+      textClassName: "max-w-[382px]",
       useCaseCards: [
         {
           title: "Chatbots for citizen services",
@@ -817,18 +825,21 @@ export const INDUSTRIES: TIndustry[] = [
     id: "energy-and-utilities",
     name: "Energy & Utilities",
     img: "/industries/energy/energy.webp",
-    imgPosition: "object-[100%_50%] scale-168 -translate-x-8/100 -translate-y-22/100",
+    imgPosition:
+      "object-[100%_50%] scale-168 -translate-x-8/100 -translate-y-22/100",
     imgSquarePosition: "object-[83%_50%] scale-150 origin-bottom ",
     description:
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     textClassName: " max-w-[230px] xs:max-w-[260px] ",
     hero: {
+      titleWidth: "lg:min-w-[484px] lg:max-w-[484px] xl:min-w-[580px] xl:max-w-[580px]",
+      textWidth: "max-w-[440px] xl:max-w-[510px] min-[1024px]:text-[19.5px] min-[1034px]:text-[20px]",
       title: "Powering smarter energy operations",
       subtitle: "ENERGY & UTILITIES",
       text: "Securely integrate disconnected data sources to deliver real-time intelligence for smarter decision-making, from grid to meter.",
       img: {
         src: "/industries/energy/energy.webp",
-        position: "object-[50%_55%]",
+        position: "object-[50%_45%] scale-x-120 scale-y-150 origin-bottom",
       },
     },
     features: {
@@ -880,6 +891,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "ENERGY & UTILITIES",
       text: "See how leading energy companies are optimizing operations and powering the transition forward.",
+      textClassName: "max-w-[360px]",
       useCaseCards: [
         {
           title: "Predictive asset maintenance",
@@ -1005,6 +1017,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "LEGAL SERVICES",
       text: "See how leading firms are transforming research, transactions, and litigation with AI.",
+      textClassName: "max-w-[322px]",
       useCaseCards: [
         {
           title: "Case law research",
@@ -1044,7 +1057,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Classify, prioritize, and analyze discovery materials with AI-assisted review.",
           animation: useCaseAnimation5,
           titleClassName: " max-w-[200px]! ",
-          textClassName: " max-w-[360px]! ",
+          textClassName: " max-w-[300px]! ",
         },
         {
           title: "Regulatory and compliance monitoring",
@@ -1052,7 +1065,7 @@ export const INDUSTRIES: TIndustry[] = [
           text: "Track legislative and regulatory changes and assess their impact on client matters.",
           animation: useCaseAnimation6,
           titleClassName: " max-w-[260px]! ",
-          textClassName: " max-w-[360px]! ",
+          textClassName: " max-w-[280px]! ",
         },
       ],
     },
@@ -1130,6 +1143,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "REAL ESTATE & CONSTRUCTION",
       text: "See how leading developers and contractors are building with intelligence.",
+      textClassName: "max-w-[290px]",
       useCaseCards: [
         {
           title: "Market and site analysis",
@@ -1255,6 +1269,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "RETAIL & CONSUMER GOODS",
       text: "See how leading retailers are streamlining operations and scaling insight.",
+      textClassName: "max-w-[322px]",
       useCaseCards: [
         {
           title: "ML demand forecasting",
@@ -1318,11 +1333,14 @@ export const INDUSTRIES: TIndustry[] = [
     name: "Hospitality & Leisure",
     img: "/industries/hospitality/hospitality.webp",
     imgPosition: "object-[50%_50%]",
-    imgSquarePosition: "object-[50%_50%] translate-x-3/100 scale-106 orgin-bottom",
+    imgSquarePosition:
+      "object-[50%_50%] translate-x-3/100 scale-106 orgin-bottom",
     description:
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     textClassName: " max-w-[290px]",
     hero: {
+      titleWidth: "lg:min-w-[620px] lg:max-w-[620px] min-[1112px]:min-w-[660px]! min-[1112px]:max-w-[660px]! xl:min-w-[776px]! xl:max-w-[776px]!",
+      textWidth: " max-w-[440px] xl:max-w-[510px] min-[1280px]:text-[21.8px]! min-[1300px]:text-[23px]! text-[min(4vw,18px)] ",
       title: "Exceptional experiences & operational excellence",
       subtitle: "HOSPITALITY & LEISURE",
       text: "Personalize guest journeys, optimize revenue, and streamline operations with intelligence that works behind the scenes so hospitality stays human.",
@@ -1380,6 +1398,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "HOSPITALITY & LEISURE",
       text: "See how leading hospitality brands are elevating service and scaling efficiency.",
+      textClassName: "max-w-[312px]",
       useCaseCards: [
         {
           title: "Dynamic pricing and revenue management",
@@ -1448,6 +1467,9 @@ export const INDUSTRIES: TIndustry[] = [
       "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
     textClassName: " max-w-[290px]  ",
     hero: {
+      titleWidth:
+        "lg:min-w-[486px] lg:max-w-[486px] xl:min-w-[600px] xl:max-w-[600px]",
+      textWidth: "max-w-[450px] xl:max-w-[519px] min-[1024px]:text-[19.2px] min-[1030px]:text-[19.4px] min-[1035px]:text-[19.7px] min-[1042px]:text-[20px] ",
       title: "AI for institutions shaping the future",
       subtitle: "EDUCATION",
       text: "Personalize learning, streamline administration, and support student success with intelligence designed for the complexity of modern education.",
@@ -1505,6 +1527,7 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Use Cases",
       subtitle: "EDUCATION",
       text: "See how leading institutions are transforming learning and administration.",
+      textClassName: "max-w-[342px]",
       useCaseCards: [
         {
           title: "Adaptive learning platforms",
@@ -1789,26 +1812,23 @@ export const INDUSTRIES_PAGE_DATA = {
   },
 
   TESTIMONIALS_SECTION: {
-    title: "Hear from our customers",
-    text: "Industry leaders trust Gaiant to deliver better customer experiences",
+    title: "Voices shaping AI in the region",
     testimonials: [
       {
-        text: "“Gaiant transformed how we work — reports that used to take days now take minutes. Accuracy is solid, integrations were painless, and our team actually trusts the insights. ROI within two months.”",
-        name: "Maya Hage",
-        title: "Head of Operations, NovaHealth",
-        image: "/images/woman-profile.webp",
+        text: "“...AI is here to augment, to support, to empower how humans perform in their daily tasks ... it’s not here to replace ... Agentic AI is a really big thing. So basically, agent AI acting, rather than just waiting for you to ask ... it’s a lot more seamless.”",
+        name: "Yousef Barkawie",
+        title:
+          "Partner in Artificial Intelligence and Data at Deloitte Middle East",
       },
       {
-        text: "“Since implementing Gaiant, our support response time dropped by 50%. The automation and AI suggestions are game-changers. Our customers notice the difference.”",
-        name: "Jordan Lee",
-        title: "Customer Experience Manager, BrightCom",
-        image: "/images/woman-profile.webp",
+        text: "“AI has an enormous labor-enhancing capability. It allows … everybody to have with them an intellectual companion that can significantly increase your productivity … for those who get left behind, catching up will be harder and harder.”",
+        name: "Mohamed El-Erian",
+        title: "Chief Economic Advisor, Allianz",
       },
       {
         text: "“We tried multiple tools before, but none were as seamless and insightful as Gaiant. It adapts to our workflow and delivers exactly what we need — effortlessly.”",
-        name: "Ava Patel",
-        title: "Operations Director, FinSight",
-        image: "/images/woman-profile.webp",
+        name: "Omar Sultan Al Olama",
+        title: "UAE Minister of State for Artificial Intelligence",
       },
     ],
   },
@@ -1935,20 +1955,21 @@ export const ABOUT_PAGE_DATA = {
         title: "We’re driven by cutting edge research",
         subtitle: "SHAPING THE FUTURE",
         text: "Unifying research and product to pioneer human-level intelligent technology.",
-        textClassName: "max-w-[300px]!",
+        textClassName: "max-w-[300px]",
         animation: ourMissionAnimation1,
       },
       {
         title: "We’re a collaborative team of experts",
         subtitle: "DRIVEN BY HUMAN INGENUITY",
         text: "Engineers, researchers, and builders united by one goal, engineering intelligence that matters.",
-        textClassName: "max-w-[340px]!",
+        textClassName: "max-w-[320px]",
         animation: ourMissionAnimation2,
       },
       {
         title: "We're engineering intelligence for MENA",
         subtitle: "BY THE REGION, FOR THE REGION",
         text: "AI built with local context, local expertise, and a deep understanding of how business moves here.",
+        textClassName: "max-w-[340px]",
         animation: ourMissionAnimation3,
       },
     ],
@@ -1970,21 +1991,21 @@ export const CAREERS_PAGE_DATA = {
         title: "A mission with meaning",
         subtitle: "SHAPE THE FUTURE OF LANGUAGE INTELLIGENCE",
         text: "Every project contributes to redefining how businesses understand people.",
-        textClassName: " max-w-[300px]! ",
+        textClassName: " max-w-[280px]! ",
         animation: careersAnimation1,
       },
       {
         title: "A team that listens",
         subtitle: "COLLABORATION ROOTED IN TRUST AND RESPECT",
         text: "Your ideas guide decisions in a culture of open dialogue.",
-        textClassName: " max-w-[270px]! ",
+        textClassName: " max-w-[250px]! ",
         animation: careersAnimation2,
       },
       {
         title: "A place to grow",
         subtitle: "CONTINUOUS LEARNING, MENTORSHIP & CAREER EVOLUTION",
         text: "We invest in your growth with guidance, opportunities, and freedom.",
-        textClassName: " max-w-[270px]! ",
+        textClassName: " max-w-[260px]! ",
         animation: careersAnimation3,
       },
     ],

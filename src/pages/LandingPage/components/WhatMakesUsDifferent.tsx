@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { SectionSubTitle, SectionTitle } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
@@ -10,11 +10,25 @@ export default function WhatMakesUsDifferent() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    // Reset + play all videos at the same time
+    videoRefs.current.forEach((video) => {
+      if (!video) return;
+      video.currentTime = 0;
+    });
+
+    videoRefs.current.forEach((video) => {
+      video?.play().catch(() => {});
+    });
+  }, []);
+
   return (
     <section ref={sectionRef} className="mt-[110px] overflow-x-clip">
       {/* Titles */}
-      <div className="my-container side-padding flex lg:items-end grid-cols-3 flex-col gap-5 lg:grid lg:gap-8 lg:mb-[110px]">
-        <SectionSubTitle className="pt-3 ">
+      <div className="my-container side-padding flex grid-cols-3 flex-col gap-5 lg:mb-[110px] lg:grid lg:items-end lg:gap-8">
+        <SectionSubTitle className="pt-3">
           <AnimatedText isInView={isInView}>
             {LANDING_PAGE_DATA.WHAT_MAKES_US_DIFFERENT.subtitle}
           </AnimatedText>
@@ -80,7 +94,13 @@ export default function WhatMakesUsDifferent() {
               isInView={isInView}
               transition={{ delay: 0.3 + 0.1 * i }}
             >
-              <GlassCard textClassName={card.textMaxWidth} {...card} />
+              <GlassCard
+                ref={(el) => {
+                  videoRefs.current[i] = el;
+                }}
+                textClassName={card.textMaxWidth}
+                {...card}
+              />
             </SlideUpAnim>
           ))}
         </div>

@@ -16,7 +16,7 @@ export default function LandingHero({
   const { onImageLoad } = useHeroImageLoad();
   return (
     <Hero
-      titleWidth="max-w-full flex-none"
+      titleWidth="max-w-full flex-none "
       spacing="max"
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
@@ -34,7 +34,7 @@ export default function LandingHero({
         <ImagesLayout
           animationDelay={0.5}
           img1={
-            <div className="flex items-center justify-center pb-0! p-2 py-4 xs:p-6 lg:px-0 lg:py-12">
+            <div className="flex items-center justify-center pb-0! p-2 py-4 xs:p-6 lg:px-0 lg:py-12 ">
               <Lottie
                 animationData={landingHeroAnimation}
                 autoPlay

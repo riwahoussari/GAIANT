@@ -27,7 +27,7 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
           onError={onImageLoad}
         />
       }
-      padding=" pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
+      padding="pt-[200px] xl:pt-[240px]! pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
     />
   );
 }

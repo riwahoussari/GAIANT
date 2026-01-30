@@ -36,7 +36,7 @@ export default function CareersHero() {
           blur=" blur-[max(0.5vw,5px)] "
           alt="A team working and talking together"
           src="/images/careers-hero.webp"
-          className="object-center"
+          className="object-[50%_45%] -translate-x-4/100 scale-x-105 scale-y-120 origin-bottom"
           fetchPriority="high"
         />
       }

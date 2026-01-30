@@ -50,7 +50,7 @@ export default function AboutHero({
               src="/images/about-2.webp"
               alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
               fetchPriority="high"
-              className="h-full w-full object-cover object-left"
+              className="h-full w-full object-cover object-[0%_40%] origin-left scale-125"
             />
           }
         />
