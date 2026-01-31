@@ -8,13 +8,11 @@ import {
 } from "react";
 import ArrowSvg from "../../components/ui/ArrowSvg";
 import {
-  SectionSubTitle,
-  SectionTitle,
   TitleBlock,
 } from "../../components/ui/Titles";
 import { INDUSTRIES } from "../../lib/data";
 import { useHeroNoImage } from "../../lib/PreloaderContext";
-import { AnimatedText, SlideUpAnim } from "../../components/ui/Anims";
+import { SlideUpAnim } from "../../components/ui/Anims";
 import GradientCircle from "../../components/ui/GradientCircle";
 import { useInView } from "motion/react";
 import type { TAccordionContent } from "../../components/sections/AccordionSection";
