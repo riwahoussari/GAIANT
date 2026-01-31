@@ -27,7 +27,7 @@ export default function AccelerateImpact() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 mt-[200px] overflow-x-clip pb-24"
+      className="relative z-2 mt-[128px] overflow-x-clip pb-24"
     >
       {/* bg */}
       <BlurredLandscapeBg blur={"lg"} />
