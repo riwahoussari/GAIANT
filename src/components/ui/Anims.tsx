@@ -11,7 +11,7 @@ export function AnimatedText({
   children: string;
   transition?: Transition<any> | undefined;
 }) {
-  const words = children.split(" ");
+  const words = children.trim().split(" ");
 
   return (
     <>

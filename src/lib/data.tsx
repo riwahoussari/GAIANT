@@ -462,7 +462,7 @@ export const INDUSTRIES: TIndustry[] = [
       },
     },
     features: {
-      title: "The backbone of modern care ",
+      title: "The backbone of modern care",
       subtitle: "TRUSTED BY HEALTHCARE LEADERS",
       text: "The bottleneck in healthcare is rarely clinical, it's operational. AI removes the friction between what clinicians know and what systems allow them to do.",
       imgFront: {
