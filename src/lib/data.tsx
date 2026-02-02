@@ -265,7 +265,7 @@ export const INDUSTRIES: TIndustry[] = [
           title: "Customer service bots",
           subtitle: "OPERATIONAL EFFICIENCY",
           text: "Perform KYC checks with minimal human involvement.",
-          animation: useCaseAnimation1,
+          animation: useCaseAnimation1 ,
           titleClassName: " max-w-[150px]! ",
           textClassName: " max-w-[220px]! ",
         },

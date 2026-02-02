@@ -28,15 +28,46 @@ export default function UseCases({
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
-    // Reset + play all videos at the same time
-    videoRefs.current.forEach((video) => {
-      if (!video) return;
-      video.currentTime = 0;
+    const videos = videoRefs.current.filter(
+      (v): v is HTMLVideoElement => v !== null
+    );
+
+    if (!videos.length) return;
+
+    let cancelled = false;
+
+    const waitUntilReady = (video: HTMLVideoElement) =>
+      video.readyState >= 2
+        ? Promise.resolve()
+        : new Promise<void>((resolve) => {
+            const onReady = () => {
+              video.removeEventListener("loadeddata", onReady);
+              resolve();
+            };
+            video.addEventListener("loadeddata", onReady);
+          });
+
+    // 1️⃣ Let them autoplay immediately (best effort)
+    videos.forEach((video) => {
+      video.play().catch(() => {});
     });
 
-    videoRefs.current.forEach((video) => {
-      video?.play().catch(() => {});
+    // 2️⃣ Once ALL are ready, restart together
+    Promise.all(videos.map(waitUntilReady)).then(() => {
+      if (cancelled) return;
+
+      videos.forEach((video) => {
+        video.currentTime = 0;
+      });
+
+      videos.forEach((video) => {
+        video.play().catch(() => {});
+      });
     });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
@@ -54,8 +85,10 @@ export default function UseCases({
       {/* title */}
       <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }} >
-          <p className={"text-16 xl:w-max  " + content.textClassName}>{content.text}</p>
+        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
+          <p className={"text-16 xl:w-max " + content.textClassName}>
+            {content.text}
+          </p>
         </SlideUpAnim>
         <SlideUpAnim
           className="flex md:col-start-2 xl:col-start-3 xl:justify-end"
@@ -69,7 +102,7 @@ export default function UseCases({
       </div>
 
       {/* cards */}
-      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8 ">
+      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard

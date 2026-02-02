@@ -9,17 +9,48 @@ export default function LifeAtGaiant() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
-    // Reset + play all videos at the same time
-    videoRefs.current.forEach((video) => {
-      if (!video) return;
-      video.currentTime = 0;
+    const videos = videoRefs.current.filter(
+      (v): v is HTMLVideoElement => v !== null
+    );
+
+    if (!videos.length) return;
+
+    let cancelled = false;
+
+    const waitUntilReady = (video: HTMLVideoElement) =>
+      video.readyState >= 2
+        ? Promise.resolve()
+        : new Promise<void>((resolve) => {
+            const onReady = () => {
+              video.removeEventListener("loadeddata", onReady);
+              resolve();
+            };
+            video.addEventListener("loadeddata", onReady);
+          });
+
+    // 1️⃣ Let them autoplay immediately (best effort)
+    videos.forEach((video) => {
+      video.play().catch(() => {});
     });
 
-    videoRefs.current.forEach((video) => {
-      video?.play().catch(() => {});
+    // 2️⃣ Once ALL are ready, restart together
+    Promise.all(videos.map(waitUntilReady)).then(() => {
+      if (cancelled) return;
+
+      videos.forEach((video) => {
+        video.currentTime = 0;
+      });
+
+      videos.forEach((video) => {
+        video.play().catch(() => {});
+      });
     });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
-  
+
   return (
     <section className="side-padding my-container relative z-2 mt-[40px]">
       <BigEllipseGradient />
