@@ -41,7 +41,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [hasPlayed, setHasPlayed] = useState(true);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   return (
     <>
