@@ -16,7 +16,7 @@ export default function AboutHero({
       className="text-black!"
       spacing="max"
       padding="pt-[200px] xl:pt-[240px]!  "
-      titleWidth="lg:min-w-[498px] lg:max-w-[498px] xl:min-w-[660px] xl:max-w-[660px]"
+      titleWidth="lg:min-w-[498px] lg:max-w-[498px] xl:min-w-[590px] xl:max-w-[590px]"
       textWidth="max-w-[410px] xl:max-w-[480px]"
       {...ABOUT_PAGE_DATA.HERO}
       button={

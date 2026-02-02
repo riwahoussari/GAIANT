@@ -43,7 +43,9 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const adjustCentering =
-    typeof props.children === "string" && /[qygjp]/.test(props.children);
+    arrow !== "none" &&
+    typeof props.children === "string" &&
+    /[qygjp]/.test(props.children);
 
   return (
     <button
@@ -59,7 +61,11 @@ export default function Button({
           className={"w-[14px] rotate-180 stroke-[2px]"}
         />
       )}
-      <span className={adjustCentering ? "-translate-y-[0.5px]" : ""}>
+      <span
+        className={
+          adjustCentering ? "-translate-y-[1.5px]" : "-translate-y-[1px]"
+        }
+      >
         {props.children}
       </span>
       {arrow && arrow !== "none" && arrow !== "back" && (

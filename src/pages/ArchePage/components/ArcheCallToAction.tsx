@@ -60,10 +60,10 @@ export default function ArcheCallToAction() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="relative mt-12 flex justify-center sm:mt-16"
+        className="relative flex justify-center  mt-12 sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
       >
         <Button variant={"black"}>Request a demo</Button>
       </SlideUpAnim>
     </section>
-  );
+  )
 }

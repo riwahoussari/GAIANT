@@ -329,6 +329,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[350px] lg:mb-[20px] ",
     hero: {
       title: "Smarter underwriting and faster claims",
+      titleWidth:
+        "lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[670px] xl:max-w-[670px]",
       subtitle: "INSURANCE",
       text: "Accelerate claims processing, refine risk assessment, and automate compliance with AI built for the complexity of modern insurance.",
       img: {
@@ -454,6 +456,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[10px] ",
     hero: {
       title: "Advancing patient care and biological research",
+      titleWidth:
+        "lg:min-w-[620px] lg:max-w-[620px] xl:min-w-[735px] xl:max-w-[735px]",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
       text: "Turn fragmented records into unified insight, powering faster diagnoses, smarter research, and better care.",
       img: {
@@ -581,6 +585,8 @@ export const INDUSTRIES: TIndustry[] = [
     hero: {
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
       title: "Put your data to work across your business",
+      titleWidth:
+        "lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[680px] xl:max-w-[680px]",
       text: "Build smarter products, streamline operations, and deliver personalized experiences with AI grounded in your enterprise data.",
       img: {
         src: "/industries/tech/tech.webp",
@@ -706,6 +712,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[200px] xs:max-w-[250px] ",
     hero: {
       title: "Modernize public services with AI",
+      titleWidth:
+        "lg:min-w-[470px] lg:max-w-[470px] xl:min-w-[550px] xl:max-w-[550px]",
       subtitle: "PUBLIC SECTOR & GOVERNMENT",
       text: "Harness institutional data to improve citizen outcomes, streamline operations, and deliver services that meet the urgency of public need.",
       img: {
@@ -963,6 +971,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[220px] xs:max-w-[240px]  ",
     hero: {
       title: "AI that practices <sm:br> at your standard",
+      titleWidth:
+        "lg:min-w-[440px] lg:max-w-[440px] xl:min-w-[520px] xl:max-w-[520px]",
       subtitle: "LEGAL SERVICES",
       text: "Accelerate research, streamline due diligence, and draft with precision with AI built for the complexity and rigor of legal work.",
       img: {
@@ -1089,6 +1099,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[320px] ",
     hero: {
       title: "AI for smarter projects and faster decisions",
+      titleWidth:
+        "lg:min-w-[590px] lg:max-w-[590px] xl:min-w-[710px] xl:max-w-[710px]",
       subtitle: "REAL ESTATE & CONSTRUCTION",
       text: "Streamline planning, reduce cost overruns, and gain real-time visibility across every phase, from acquisition to handover.",
       img: {
@@ -1215,6 +1227,8 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[290px] ",
     hero: {
       title: "AI that moves at the speed of commerce",
+      titleWidth:
+        "lg:min-w-[550px] lg:max-w-[550px] xl:min-w-[650px] xl:max-w-[650px]",
       subtitle: "RETAIL & CONSUMER GOODS",
       text: "Forecast demand, optimize inventory, and personalize at scale with intelligence that turns data into decisions before the moment passes.",
       img: {
@@ -1635,7 +1649,7 @@ export const LANDING_PAGE_DATA = {
         animation: AdaptabilityAnimation,
       },
       {
-        title: "Cutomization",
+        title: "Customization",
         subtitle: "WE BUILD AI AROUND YOUR REALITY.",
         text: "Tailored solutions shaped by how your enterprise actually works.",
         textMaxWidth: "max-w-[250px]",
@@ -1653,7 +1667,7 @@ export const LANDING_PAGE_DATA = {
 
   INDUSTRIES_WE_EMPOWER: {
     subtitle: "TAILORED TO EVERY SECTOR",
-    title: "Industries We Empower",
+    title: "Industries we empower",
   },
 
   TOOLS: {
@@ -1824,7 +1838,7 @@ export const INDUSTRIES_PAGE_DATA = {
         textMaxWidth: "max-w-[613px]",
         name: "Yousef Barkawie",
         title:
-        "Partner in Artificial Intelligence and Data at Deloitte Middle East",
+          "Partner in Artificial Intelligence and Data at Deloitte Middle East",
       },
       {
         text: "“AI has an enormous labor-enhancing capability. It allows … everybody to have with them an intellectual companion that can significantly increase your productivity … for those who get left behind, catching up will be harder and harder.”",

@@ -139,10 +139,7 @@ export default function Hero({
   const isInView = useInView(heroRef, { once: true });
 
   // Default values (preserving old behavior)
-  const defaultGaps =
-    spacing === "min"
-      ? "lg:gap-[40px] xl:gap-[56px]"
-      : "lg:gap-[30px] xl:gap-[50px] justify-between";
+  const defaultGaps = "lg:gap-[32px] xl:gap-[32px] justify-between";
 
   const defaultTitleWidth =
     spacing === "min"
@@ -194,7 +191,7 @@ export default function Hero({
           </h1>
 
           {/* Text */}
-          <div>
+          <div className="lg:w-[460px] xl:w-[530px]">
             <SlideUpAnim
               transition={{ duration: 0.5, delay: 0.7 }}
               isInView={isInView}
@@ -219,11 +216,19 @@ export default function Hero({
                 })}
               </p>
             </SlideUpAnim>
-
-            <SlideUpAnim isInView={isInView} transition={{ delay: 1 }}>
-              <div className="mt-[80px] xl:mt-[110px]">{button}</div>
-            </SlideUpAnim>
           </div>
+        </div>
+
+        {/* button */}
+        <div className={`flex ${gap || defaultGaps}`}>
+          <div className={"max-lg:hidden "  + titleWidth}></div>
+          <SlideUpAnim
+            className="lg:w-[460px] xl:w-[530px]"
+            isInView={isInView}
+            transition={{ delay: 1 }}
+          >
+            <div className="mt-[40px] xl:mt-[60px]">{button}</div>
+          </SlideUpAnim>
         </div>
       </div>
 

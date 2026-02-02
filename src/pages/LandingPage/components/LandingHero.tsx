@@ -14,8 +14,9 @@ export default function LandingHero({
 }) {
   return (
     <Hero
-      titleWidth="max-w-full flex-none "
+      titleWidth="lg:min-w-[585px] lg:max-w-[585px] xl:min-w-[696px] xl:max-w-[696px] "
       spacing="max"
+      padding="pt-[245px] xl:pt-[290px]!"
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
       button={<Button arrow={"spaced"}>Request a demo</Button>}
