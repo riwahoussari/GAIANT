@@ -2,7 +2,7 @@ import { useInView } from "motion/react";
 import { SlideUpAnim } from "../ui/Anims";
 import Button from "../ui/Button";
 import { CenteredTitleBlock } from "../ui/Titles";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gradientCircleAnimation from "../../assets/animations/gradient-circle-squared.mp4";
 import GradientCircle from "../ui/GradientCircle";
 
