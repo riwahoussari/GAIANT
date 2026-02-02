@@ -5,13 +5,9 @@ import GradientCircle from "./GradientCircle";
 export function LandscapeBg({
   ref,
   fetchPriority,
-  onLoad = () => {},
-  onError = () => {},
 }: {
   fetchPriority?: "high" | "low" | "auto" | undefined;
   ref?: React.RefObject<HTMLDivElement | null>;
-  onLoad?: () => void;
-  onError?: () => void;
 }) {
   return (
     <div
@@ -23,8 +19,6 @@ export function LandscapeBg({
         alt="Landscape filled with mountains and a girl standing on a rock"
         src="/images/mountains-landscape.webp"
         className="h-full w-full object-cover"
-        onLoad={onLoad}
-        onError={onError}
       />
     </div>
   );
@@ -64,13 +58,9 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
 export function BlurredTealGradientBg({
   withBall = true,
   fetchPriority,
-  onLoad = () => {},
-  onError = () => {},
 }: {
   withBall?: boolean;
   fetchPriority?: "high" | "low" | "auto" | undefined;
-  onLoad?: () => void;
-  onError?: () => void;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -87,8 +77,8 @@ export function BlurredTealGradientBg({
       >
         <img
           fetchPriority={fetchPriority}
-          onLoad={() => {setIsLoaded(true); onLoad();}}
-          onError={() => {setHasError(true); onError();}}
+          onLoad={() => {setIsLoaded(true)}}
+          onError={() => {setHasError(true)}}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
           alt="Gradient background"
@@ -143,16 +133,12 @@ export function HeroImgBackground({
   alt,
   className,
   fetchPriority,
-  onLoad = () => {},
-  onError = () => {},
 }: {
   className?: string;
   blur?: string;
   src: string;
   alt: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
-  onLoad?: () => void;
-  onError?: () => void;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -172,11 +158,9 @@ export function HeroImgBackground({
           fetchPriority={fetchPriority}
           onLoad={() => {
             setIsLoaded(true);
-            onLoad();
           }}
           onError={() => {
             setHasError(true);
-            onError();
           }}
           src={src}
           className={"h-full w-full object-cover " + (className || "")}

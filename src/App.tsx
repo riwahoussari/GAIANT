@@ -14,8 +14,8 @@ import ArticlePage from "./pages/ArticlePage";
 import CareersPage from "./pages/CareersPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import IndustryPage from "./pages/IndustryPage";
-import { PreloaderProvider } from "./lib/PreloaderContext";
 import Preloader from "./components/ui/Preloader";
+import { useState } from "react";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,11 +41,13 @@ const router = createBrowserRouter(
 );
 
 function App() {
+  const [hasPlayed, setHasPlayed] = useState(false);
+
   return (
-    <PreloaderProvider>
-      <Preloader />
+    <>
+      {!hasPlayed && <Preloader onFinish={() => setHasPlayed(true)} />}
       <RouterProvider router={router} />
-    </PreloaderProvider>
+    </>
   );
 }
 

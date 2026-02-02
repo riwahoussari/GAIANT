@@ -3,7 +3,6 @@ import Hero from "../../../components/sections/Hero";
 import Button from "../../../components/ui/Button";
 import { LandscapeBg } from "../../../components/ui/Backgrounds";
 import { ARCHE_PAGE_DATA } from "../../../lib/data";
-import { useHeroImageLoad } from "../../../lib/PreloaderContext";
 
 export default function ArcheHero({
   navbarTriggerRef,
@@ -11,7 +10,6 @@ export default function ArcheHero({
   navbarTriggerRef: RefObject<HTMLDivElement | null>;
 }) {
   const heroRef = useRef<HTMLDivElement>(null);
-  const { onImageLoad } = useHeroImageLoad();
 
   return (
     <Hero
@@ -21,8 +19,6 @@ export default function ArcheHero({
       button={<Button arrow={"spaced"}>Request a demo</Button>}
       background={
         <LandscapeBg
-          onLoad={onImageLoad}
-          onError={onImageLoad}
           fetchPriority="high"
           ref={navbarTriggerRef}
         />

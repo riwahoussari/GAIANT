@@ -3,12 +3,8 @@ import CallToAction from "../../components/sections/CallToAction";
 import NextRead from "./components/NextRead";
 import ArticleSection from "./components/ArticleSection";
 import { PageMeta } from "../../components/ui/PageMeta";
-import { useHeroNoImage } from "../../lib/PreloaderContext";
 
 export default function ArticlePage() {
-  // Hide preloader immediately since this page has no hero image
-  useHeroNoImage();
-
   return (
     <>
       <PageMeta

@@ -5,7 +5,6 @@ import ArticlesSection from "./components/ArticlesSection";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
 import { PageMeta } from "../../components/ui/PageMeta";
-import { useHeroNoImage } from "../../lib/PreloaderContext";
 
 export default function NewsPage() {
   // change navbar transparency on scroll
@@ -18,9 +17,6 @@ export default function NewsPage() {
   useMotionValueEvent(scrollYProgress, "change", (val) =>
     setTransparentNavbar(val >= 1 ? true : false)
   );
-
-  // Hide preloader immediately since this page has no hero image
-  useHeroNoImage();
 
   return (
     <>
