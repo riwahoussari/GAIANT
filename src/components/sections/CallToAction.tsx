@@ -13,7 +13,6 @@ export default function CallToAction({
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <section
@@ -52,17 +51,13 @@ export default function CallToAction({
         isInView={isInView}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <div className="relative mx-auto my-12 aspect-square w-[90%] max-w-[310px]">
-          {!loaded && (
-            <GradientCircle className="absolute inset-0 z-0 h-full w-full scale-200" />
-          )}
+        <div className="relative mx-auto my-12 aspect-square w-[90%] max-w-[310px] ">
           <video
             src={gradientCircleAnimation}
             autoPlay
             loop
             muted
             playsInline
-            onCanPlay={() => setLoaded(true)}
             className="absolute inset-0 z-0 h-full w-full scale-110 object-contain"
           />
         </div>
