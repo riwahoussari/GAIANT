@@ -19,7 +19,7 @@ export default function CareersPage() {
         <LifeAtGaiant />
         <DoYouFit />
         <OpenRoles />
-        <CallToAction withGradientCircle={true} />
+        <CallToAction withGradientCircle />
       </main>
     </>
   );

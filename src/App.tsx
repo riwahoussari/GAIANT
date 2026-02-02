@@ -16,7 +16,6 @@ import IndustriesPage from "./pages/IndustriesPage";
 import IndustryPage from "./pages/IndustryPage";
 import { PreloaderProvider } from "./lib/PreloaderContext";
 import Preloader from "./components/ui/Preloader";
-import TemporaryPage from "./pages/TemporaryPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,9 +34,6 @@ const router = createBrowserRouter(
       <Route path="/news" element={<NewsPage />} />
       <Route path="/news/:id" element={<ArticlePage />} />
       <Route path="/careers" element={<CareersPage />} />
-
-      {/* temporary testing route */}
-      <Route path="/temp" element={<TemporaryPage /> } />
 
       <Route path="*" element={<NotFoundPage />} />
     </Route>

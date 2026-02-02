@@ -12,7 +12,7 @@ export default function CareersHero() {
     <Hero
       spacing="max"
       titleWidth="lg:min-w-[600px] lg:max-w-[600px] xl:min-w-[700px] xl:max-w-[700px]"
-      padding=" pb-[80px]! lg:pb-[64px]! xl:pb-[0px]!"
+      padding="pt-[200px] xl:pt-[240px]! pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
       textWidth=" max-w-[400px] xl:max-w-[450px]"
       {...CAREERS_PAGE_DATA.HERO}
       button={

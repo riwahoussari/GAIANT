@@ -111,7 +111,7 @@ export function CardsSlider({
             <ArrowSvg
               color="var(--color-teal)"
               className={
-                "w-5 rotate-y-180 cursor-pointer 2xl:-translate-y-[1px] stroke-[1.5px] " +
+                "w-5 rotate-y-180 cursor-pointer stroke-[1.5px] " +
                 (slidePercent - slideDifference < 0
                   ? " cursor-not-allowed! opacity-50!"
                   : "")
@@ -136,7 +136,7 @@ export function CardsSlider({
             <ArrowSvg
               color="var(--color-teal)"
               className={
-                "w-5 stroke-[1.5px] cursor-pointer 2xl:-translate-y-[1px]" +
+                "w-5 stroke-[1.5px] cursor-pointer " +
                 (slidePercent >= 1 ? " cursor-not-allowed! opacity-50!" : "")
               }
             />

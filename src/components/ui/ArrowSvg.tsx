@@ -8,7 +8,7 @@ export default function ArrowSvg({
   return (
     <svg
       className={className}
-      viewBox="0 0 12 12"
+      viewBox="0 0 12 11.2"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

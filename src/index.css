@@ -34,10 +34,9 @@
 
 body {
   font-family: "Aeonik", sans-serif;
-}
-
-body {
   background-color: var(--color-background);
+  
+  @apply max-w-dvw overflow-x-clip
 }
 
 /* spacing */

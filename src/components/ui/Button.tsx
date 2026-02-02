@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 import ArrowSvg from "./ArrowSvg";
 
 const buttonVariants = cva(
-  "group inline-flex items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip",
+  "group inline-flex relative items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip",
   {
     variants: {
       variant: {
@@ -13,7 +13,7 @@ const buttonVariants = cva(
         ghost: "bg-transparent ",
       },
       size: {
-        sm: "px-5 py-2.5 text-sm",
+        sm: "px-5 py-2.5 text-sm ",
         md: "px-5 py-2.5 text-sm",
       },
       arrow: {
@@ -42,11 +42,15 @@ export default function Button({
   className,
   ...props
 }: ButtonProps) {
+  const adjustCentering =
+    typeof props.children === "string" && /[qygjp]/.test(props.children);
+
   return (
     <button
       className={cn(buttonVariants({ variant, size, arrow }), className)}
       {...props}
     >
+      <div className="absolute top-1/2 right-0 left-0 z-0 h-0.5 -translate-y-1/2 bg-purple-500/0" />
       {arrow && arrow == "back" && (
         <ArrowSvg
           color={
@@ -55,14 +59,17 @@ export default function Button({
           className={"w-[14px] rotate-180 stroke-[2px]"}
         />
       )}
-      <span>{props.children}</span>
+      <span className={adjustCentering ? "-translate-y-[0.5px]" : ""}>
+        {props.children}
+      </span>
       {arrow && arrow !== "none" && arrow !== "back" && (
         <ArrowSvg
           color={
             variant == "secondary" ? "var(--color-dark-green-700)" : "white"
           }
           className={
-            "w-[14px] stroke-[2px] duration-200 ease-in-out group-hover:translate-x-1"
+            "relative w-[14px] bg-red/0 stroke-[2px] duration-200 ease-in-out group-hover:translate-x-1 " +
+            (adjustCentering && " translate-y-[0.5px]")
           }
         />
       )}

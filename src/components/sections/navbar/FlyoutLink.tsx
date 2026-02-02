@@ -125,7 +125,7 @@ export function SolutionsFlyoutContent() {
 
           <ArrowSvg
             color="black"
-            className="w-[18px] stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4"
+            className="w-[18px] stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4 translate-y-0.5"
           />
         </Link>
       </div>

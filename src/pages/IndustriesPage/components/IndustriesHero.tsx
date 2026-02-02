@@ -8,6 +8,7 @@ export default function IndustriesHero() {
     <Hero
       className="text-black!"
       spacing="max"
+      padding="pt-[200px] xl:pt-[240px]! "
       titleWidth="lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[670px] xl:max-w-[670px]"
       textWidth="max-w-[460px] xl:max-w-[530px]"
       {...INDUSTRIES_PAGE_DATA.HERO}

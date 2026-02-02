@@ -17,8 +17,9 @@ export default function AboutHero({
     <Hero
       className="text-black!"
       spacing="max"
-      titleWidth="lg:min-w-[560px] lg:max-w-[560px] xl:min-w-[660px] xl:max-w-[660px]"
-      textWidth="max-w-[440px] xl:max-w-[550px]"
+      padding="pt-[200px] xl:pt-[240px]!  "
+      titleWidth="lg:min-w-[498px] lg:max-w-[498px] xl:min-w-[660px] xl:max-w-[660px]"
+      textWidth="max-w-[410px] xl:max-w-[480px]"
       {...ABOUT_PAGE_DATA.HERO}
       button={
         <Button variant={"black"} arrow={"spaced"}>
