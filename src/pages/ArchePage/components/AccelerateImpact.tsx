@@ -30,7 +30,7 @@ export default function AccelerateImpact() {
       className="relative z-2 mt-[128px] overflow-x-clip pb-24"
     >
       {/* bg */}
-      <BlurredLandscapeBg blur={"lg"} />
+      <BlurredLandscapeBg />
 
       <div
         className="side-padding my-container py-[10px]"

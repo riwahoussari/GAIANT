@@ -11,7 +11,7 @@ export default function ArcheIndustries() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 side-padding my-container flex flex-col items-center gap-y-8 overflow-x-clip sm:gap-y-14"
+      className="relative z-2 side-padding my-container flex flex-col items-center gap-y-8 overflow-x-clip sm:gap-y-14 mt-5"
     >
       {/* title */}
       <CenteredTitleBlock
