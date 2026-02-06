@@ -28,17 +28,14 @@ export default function StickeVideo() {
               className="mx-auto aspect-video w-9/10 rounded-xl object-contain"
               style={{ position: "relative", scale }}
             >
-              <iframe
-                width="100%"
-                height="100%"
-                className="h-full w-full object-contain"
-                src="https://www.youtube.com/embed/xu1BLHxuTlA?si=a75YYlRXNSJnINf-"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+               <iframe
+              src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="h-full w-full object-contain"
+              title="Archē Demo Video"
+            ></iframe>
             </m.div>
           </SlideUpAnim>
         </div>
@@ -51,15 +48,12 @@ export default function StickeVideo() {
         <SlideUpSelf>
           <div className="mx-auto aspect-video w-full rounded-md md:rounded-xl lg:w-9/10">
             <iframe
-              width="100%"
-              height="100%"
-              className="h-full w-full object-contain"
-              src="https://www.youtube.com/embed/xu1BLHxuTlA?si=a75YYlRXNSJnINf-"
-              title="YouTube video player"
+              src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+              className="h-full w-full object-contain"
+              title="Archē Demo Video"
             ></iframe>
           </div>
         </SlideUpSelf>
