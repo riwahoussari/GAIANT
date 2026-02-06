@@ -10,7 +10,6 @@ export default function AboutHero({
 }: {
   navbarTriggerRef?: RefObject<HTMLDivElement | null>;
 }) {
-
   return (
     <Hero
       className="text-black!"
@@ -48,7 +47,7 @@ export default function AboutHero({
               src="/images/about-2.webp"
               alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
               fetchPriority="high"
-              className="h-full w-full object-cover object-[0%_40%] origin-left scale-125"
+              className="h-full w-full origin-left object-cover object-[0%_50%]"
             />
           }
         />

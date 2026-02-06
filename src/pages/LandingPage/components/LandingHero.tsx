@@ -1,11 +1,10 @@
-import type { RefObject } from "react";
+import { type RefObject } from "react";
 import Hero from "../../../components/sections/Hero";
 import { BlurredTealGradientBg } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
 import ImagesLayout from "../../../components/ui/ImagesLayout";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
-import landingHeroAnimation from "../../../assets/animations/landing-page/hero.json";
-import Lottie from "lottie-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LandingHero({
   navbarTriggerRef,
@@ -20,24 +19,21 @@ export default function LandingHero({
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
       button={<Button arrow={"spaced"}>Request a demo</Button>}
-      background={
-        <BlurredTealGradientBg
-          fetchPriority="high"
-          withBall
-        />
-      }
+      background={<BlurredTealGradientBg fetchPriority="high" withBall />}
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">
         <ImagesLayout
           animationDelay={0.5}
           img1={
-            <div className="flex items-center justify-center pb-0! p-2 py-4 xs:p-6 lg:px-0 lg:py-12 ">
-              <Lottie
-                animationData={landingHeroAnimation}
-                autoPlay
+            <div className="flex h-full w-full items-center justify-center p-2 py-4 pb-0! xs:p-6 lg:px-0 lg:py-12">
+              <DotLottieReact
+                renderConfig={{
+                  autoResize: true,
+                }}
+                src="/videos/landing-hero.lottie"
                 loop
-                muted
-                className="h-full object-contain"
+                autoplay
+                className="h-full w-full object-contain"
               />
             </div>
           }
