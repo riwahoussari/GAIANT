@@ -31,13 +31,14 @@ export default function StickeVideo() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/xu1BLHxuTlA?autoplay=1&mute=1&loop=1&playlist=xu1BLHxuTlA"
-                title="Archē Demo Video"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
                 className="h-full w-full object-contain"
-              />
+                src="https://www.youtube.com/embed/xu1BLHxuTlA?si=a75YYlRXNSJnINf-"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </m.div>
           </SlideUpAnim>
         </div>
@@ -52,13 +53,14 @@ export default function StickeVideo() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/xu1BLHxuTlA?autoplay=1&mute=1&loop=1&playlist=xu1BLHxuTlA"
-              title="Archē Demo Video"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
               className="h-full w-full object-contain"
-            />
+              src="https://www.youtube.com/embed/xu1BLHxuTlA?si=a75YYlRXNSJnINf-"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
         </SlideUpSelf>
       </div>
