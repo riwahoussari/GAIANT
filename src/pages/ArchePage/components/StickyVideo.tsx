@@ -32,7 +32,7 @@ export default function StickeVideo() {
                 src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
                 frameBorder={0}
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
+                // referrerPolicy="strict-origin-when-cross-origin"
                 className="h-full w-full object-contain"
                 title="Copy of Archē Video V2.mp4"
               ></iframe>
@@ -51,7 +51,7 @@ export default function StickeVideo() {
               src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
               frameBorder={0}
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
+              // referrerPolicy="strict-origin-when-cross-origin"
               className="h-full w-full object-contain"
               title="Copy of Archē Video V2.mp4"
             ></iframe>
