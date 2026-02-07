@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-      {!hasPlayed && <Preloader onFinish={() => setHasPlayed(true)} />}
+      {!true && <Preloader onFinish={() => setHasPlayed(true)} />}
       <RouterProvider router={router} />
     </>
   );
