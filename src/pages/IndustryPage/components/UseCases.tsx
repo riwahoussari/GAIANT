@@ -83,9 +83,9 @@ export default function UseCases({
       </div>
 
       {/* title */}
-      <div className="relative grid grid-cols-1 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
+      <div className="relative grid grid-cols-1 gap-2 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
-        <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
+        <SlideUpAnim className="max-sm:-mt-6" isInView={isInView} transition={{ delay: 0.2 }}>
           <p className={"text-16 xl:w-max " + content.textClassName}>
             {content.text}
           </p>
@@ -95,14 +95,14 @@ export default function UseCases({
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <Button className="max-sm:mt-3" variant={"black"}>
+          <Button className="max-sm:mt-4" variant={"black"}>
             Request a demo
           </Button>
         </SlideUpAnim>
       </div>
 
       {/* cards */}
-      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
+      <div className="relative mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard

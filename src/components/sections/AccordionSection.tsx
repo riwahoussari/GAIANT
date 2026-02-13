@@ -14,12 +14,14 @@ import { SlideUpAnim } from "../ui/Anims";
 
 export type TAccordionContent = {
   title: string;
+  titleClassName?: string;
   subtitle?: string;
   list?: string[];
 };
 
 export default function AccordionSection({
   title,
+  titleClassName,
   subtitle,
   text,
   img,
@@ -28,6 +30,7 @@ export default function AccordionSection({
   withGradient = true,
 }: {
   title: string;
+  titleClassName?: string;
   subtitle: string;
   text?: string;
   img: ReactNode;
@@ -63,18 +66,24 @@ export default function AccordionSection({
   return (
     <section
       ref={sectionRef}
-      className={"side-padding my-container mt-[100px] relative z-2 " + (className || "")}
+      className={
+        "side-padding my-container relative z-2 mt-[100px] " + (className || "")
+      }
     >
       {/* titles */}
-      <div className="flex flex-col gap-14 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="flex flex-col gap-x-14 gap-y-2 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
         <div className="relative overflow-visible">
-          <TitleBlock title={title} subtitle={subtitle} />
+          <TitleBlock
+            titleClassName={titleClassName}
+            title={title}
+            subtitle={subtitle}
+          />
         </div>
         {text && (
           <SlideUpAnim
             isInView={isInView}
             transition={{ delay: 0.1 }}
-            className="max-w-[560px] pb-2 lg:pb-0.5"
+            className="max-w-[560px] max-sm:-mt-6"
           >
             <p className="text-16">{text}</p>
           </SlideUpAnim>
@@ -82,7 +91,7 @@ export default function AccordionSection({
       </div>
 
       {/* content */}
-      <div className="relative mt-[40px] flex flex-col gap-14 lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="relative mt-8 flex flex-col gap-10 sm:mt-12 sm:gap-14 md:mt-[40px] lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />

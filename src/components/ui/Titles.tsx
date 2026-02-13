@@ -41,10 +41,12 @@ export function SectionSubTitle({
 
 export function TitleBlock({
   title,
+  titleClassName,
   subtitle,
   button,
 }: {
   title: string;
+  titleClassName?: string;
   subtitle?: string;
   button?: ReactNode;
 }) {
@@ -58,7 +60,7 @@ export function TitleBlock({
             <AnimatedText isInView={isInView}>{subtitle}</AnimatedText>
           </SectionSubTitle>
         )}
-        <SectionTitle>
+        <SectionTitle className={titleClassName}>
           <AnimatedText isInView={isInView}>{title}</AnimatedText>
         </SectionTitle>
       </div>
@@ -71,12 +73,14 @@ export function TitleBlock({
 
 export function CenteredTitleBlock({
   title,
+  titleWidth,
   text,
   big = false,
   subtitle,
   className,
 }: {
   title: string;
+  titleWidth?: string;
   subtitle?: string;
   text?: string;
   big?: boolean;
@@ -91,7 +95,7 @@ export function CenteredTitleBlock({
           <SectionSubTitle className="mb-5">{subtitle}</SectionSubTitle>
         </SlideUpAnim>
       )}
-      <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+      <SlideUpAnim className={titleWidth + " mx-auto"} isInView={isInView} transition={{ duration: 0.6 }}>
         <SectionTitle big={big}>{title}</SectionTitle>
       </SlideUpAnim>
       {text && (

@@ -58,7 +58,7 @@ export default function Button({
           color={
             variant == "secondary" ? "var(--color-dark-green-700)" : "white"
           }
-          className={"w-[14px] rotate-180 stroke-[2px]"}
+          className={"w-[14px] rotate-180 stroke-[2px]  "}
         />
       )}
       <span
@@ -74,7 +74,7 @@ export default function Button({
             variant == "secondary" ? "var(--color-dark-green-700)" : "white"
           }
           className={
-            "relative w-[14px] bg-red/0 stroke-[2px] duration-200 ease-in-out group-hover:translate-x-1 " +
+            "relative w-[14px] bg-red/0 stroke-[2px] duration-200 ease-in-out group-hover:translate-x-1 max-sm:hidden " +
             (adjustCentering && " translate-y-[0.5px]")
           }
         />

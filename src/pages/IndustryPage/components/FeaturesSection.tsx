@@ -1,10 +1,13 @@
-import AccordionSection, { type TAccordionContent } from "../../../components/sections/AccordionSection";
+import AccordionSection, {
+  type TAccordionContent,
+} from "../../../components/sections/AccordionSection";
 
- export default function FeaturesSection({
+export default function FeaturesSection({
   content,
 }: {
   content: {
     title: string;
+    titleClassName?: string;
     subtitle: string;
     text?: string;
     imgFront: { src: string; alt: string };
@@ -14,15 +17,14 @@ import AccordionSection, { type TAccordionContent } from "../../../components/se
 }) {
   return (
     <AccordionSection
+      className="mt-[80px]!"
       title={content.title}
+      titleClassName={content.titleClassName}
       subtitle={content.subtitle}
       text={content.text}
       img={
         <div>
-          <img
-            src={content.imgBack.src}
-            alt={content.imgBack.alt}
-          />
+          <img src={content.imgBack.src} alt={content.imgBack.alt} />
           <img
             src={content.imgFront.src}
             alt={content.imgFront.alt}

@@ -59,73 +59,98 @@ export default function FlyoutLink({
   );
 }
 
-export function ProductsFlyoutContent() {
+export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
   return (
     <div className="flex gap-14">
       <p
         style={{ letterSpacing: "2.5px" }}
-        className="font-ibm! text-[12px] font-medium text-dark-green-900"
+        className="font-ibm! text-[12px] font-medium text-dark-green-900 max-lg:hidden"
       >
         PRODUCTS
       </p>
-      <Link to="/arche" className="cursor-pointer">
-        <div className="group/img relative flex aspect-square w-[300px] flex-col justify-end overflow-hidden rounded-lg bg-teal text-white">
-          <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
-            <img
-              src="/images/mountains-landscape.jpg"
-              className="absolute h-full w-full origin-bottom scale-190 object-cover object-[73%_100%]"
-              alt="Landscape filled with mountains and a girl standing on a rock"
-            />
+      <Link to="/arche" className="cursor-pointer max-lg:w-full group">
+        {!light && (
+          <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
+            <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
+              <img
+                src="/images/mountains-landscape.jpg"
+                className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
+                alt="Landscape filled with mountains and a girl standing on a rock"
+              />
+            </div>
+            <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
+              <img
+                src="/logos/arche-logo.svg"
+                className="relative w-[110px] lg:w-[100px]"
+                alt="Arche Logo"
+              />
+              <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-lg:hidden">
+                The intelligent operating system for enterprise
+              </p>
+            </div>
           </div>
-          <div className="space-y-3 p-4">
-            <img
-              src="/logos/arche-logo.svg"
-              className="relative w-[100px]"
-              alt="Arche Logo"
-            />
-            <p className="relative max-w-[200px] text-[15px] leading-[1.2]">
-              The intelligent operating system for enterprise
-            </p>
-          </div>
-        </div>
+        )}
+        <p
+          className="relative my-3 text-[15px] leading-[1.2] lg:hidden group-hover:opacity-60"
+          style={{ color: light ? "#86F8FF" : "#000" }}
+        >
+          <span className="block scale-115 origin-bottom-left mb-2">Arche</span>
+          The intelligent operating system for enterprise
+        </p>
       </Link>
     </div>
   );
 }
 
-export function SolutionsFlyoutContent() {
+export function SolutionsFlyoutContent({
+  defaultSorting = false,
+  light = false,
+}: {
+  defaultSorting?: boolean;
+  light?: boolean;
+}) {
+  const industries = defaultSorting
+    ? INDUSTRIES
+    : INDUSTRIES_FLYOUTLINK_ORDER.slice(0, 11).map(
+        (index) => INDUSTRIES[index]
+      );
   return (
-    <div className="flex flex-col gap-5 text-black">
-      <p
-        style={{ letterSpacing: "2.5px" }}
-        className="ps-4 font-ibm! text-[12px] font-medium text-dark-green-900"
-      >
-        INDUSTRIES
-      </p>
-      <div className="grid grid-cols-3 gap-x-4 gap-y-6 text-[18px] leading-[20px]">
-        {INDUSTRIES_FLYOUTLINK_ORDER.slice(0, 11).map((index) => INDUSTRIES[index]).map((industry, i) => (
+    <div className="flex flex-col gap-1 text-black lg:gap-5">
+      {!light && (
+        <p
+          style={{ letterSpacing: "2.5px" }}
+          className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
+        >
+          INDUSTRIES
+        </p>
+      )}
+      <div className="grid gap-x-4 text-[18px] leading-[20px] lg:grid-cols-3 lg:gap-y-6">
+        {industries.map((industry, i) => (
           <Link
             key={i}
             className="cursor-point group/link"
             to={`/industries/${industry.id}`}
           >
-            <p className="max-w-[280px] rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+            <p
+              className="max-w-[280px] rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+              style={{ color: light ? "#86F8FF" : "#000" }}
+            >
               {industry.name}
             </p>
           </Link>
         ))}
         <Link
           to="/industries"
-          className="group/link flex items-center gap-5 px-4"
+          className="group/link flex items-center gap-5 px-4 max-lg:hidden"
         >
           <div className="relative">
-            <p className="text-[18px] ">View All</p>
-            <div className="absolute right-0 -bottom-1 left-0 h-px origin-bottom bg-black duration-200 ease-in-out group-hover/link:scale-y-0 scale-y-150" />
+            <p className="text-[18px]">View All</p>
+            <div className="absolute right-0 -bottom-1 left-0 h-px origin-bottom scale-y-150 bg-black duration-200 ease-in-out group-hover/link:scale-y-0" />
           </div>
 
           <ArrowSvg
             color="black"
-            className="w-[18px] stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4 translate-y-0.5"
+            className="w-[18px] translate-y-0.5 stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4"
           />
         </Link>
       </div>
@@ -133,28 +158,39 @@ export function SolutionsFlyoutContent() {
   );
 }
 
-export function CompanyFlyoutContent() {
+export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
   return (
-    <div className="flex min-w-[320px] flex-col gap-5 text-black">
-      <p
-        style={{ letterSpacing: "2.5px" }}
-        className="ps-4 font-ibm! text-[12px] font-medium text-dark-green-900"
-      >
-        COMPANY
-      </p>
-      <div className="flex flex-col gap-y-6 text-[18px] leading-[20px]">
+    <div className="flex min-w-[320px] flex-col gap-1 text-black lg:gap-5">
+      {!light && (
+        <p
+          style={{ letterSpacing: "2.5px" }}
+          className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
+        >
+          COMPANY
+        </p>
+      )}
+      <div className="flex flex-col text-[18px] leading-[20px] lg:gap-y-6">
         <Link className="cursor-point group/link" to="/about">
-          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            style={{ color: light ? "#86F8FF" : "#000" }}
+          >
             About
           </p>
         </Link>
         <Link className="cursor-point group/link" to="/news">
-          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            style={{ color: light ? "#86F8FF" : "#000" }}
+          >
             News
           </p>
         </Link>
         <Link className="cursor-point group/link" to="/careers">
-          <p className="w-full rounded-md bg-white/0 px-4 py-3 duration-150 ease-in-out group-hover/link:bg-white/50">
+          <p
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            style={{ color: light ? "#86F8FF" : "#000" }}
+          >
             Careers
           </p>
         </Link>

@@ -66,10 +66,10 @@ export default function ArticlesSection({
             {withBall && (
               <SlideUpAnim
                 isInView={isInView}
-                className="absolute w-1/3 -translate-x-1/4 translate-y-1/2 max-lg:bottom-0 max-lg:left-0 max-lg:opacity-90 lg:top-0 lg:right-0 lg:translate-x-1/2 lg:-translate-y-1/3"
+                className="absolute w-1/4 lg:w-1/3 top-0 right-0 translate-x-1/2 -translate-y-1/3"
               >
                 <GradientCircle
-                  className="blur-[max(2.5vw,25px)]!"
+                  className="blur-[clamp(10px,2.5vw,25px)]!"
                   colorr={"teal"}
                 />
               </SlideUpAnim>

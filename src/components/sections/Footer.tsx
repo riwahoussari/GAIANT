@@ -2,37 +2,44 @@ import { Link, Outlet } from "react-router-dom";
 import ArrowSvg from "../ui/ArrowSvg";
 import GradientCircle from "../ui/GradientCircle";
 import { LINKS } from "../../lib/data";
+import { NavAccordionItem } from "./navbar/MobileNav";
+import {
+  CompanyFlyoutContent,
+  ProductsFlyoutContent,
+  SolutionsFlyoutContent,
+} from "./navbar/FlyoutLink";
+import { useState } from "react";
 
 export default function Footer() {
+  const [selectedAccordion, setSelectedAccordion] = useState<number>(0);
+
   return (
     <>
       <Outlet />
-      <footer className="relative z-1 pt-[220px] pb-9 text-white">
+      <footer className="relative z-1 pt-[220px] pb-9 text-white ">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
-          <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip">
+          <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip max-sm:overflow-clip">
             <div className="h-full w-[140vw]! -translate-x-[20vw] bg-black blur-[30px] xl:blur-[40px]"></div>
           </div>
         </div>
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
-          <div className="absolute top-[1200px] right-0 w-[635px] translate-x-1/4 lg:w-[50vw] lg:min-w-[690px]">
-            <GradientCircle className="blur-[max(12vw,120px)]!" />
+          <div className="absolute max-sm:pb-[max(12vw,120px)] max-sm:overflow-y-clip top-[1100px]  sm:top-[1200px] right-0 w-[635px] translate-x-1/4 lg:w-[50vw] lg:min-w-[690px]">
+            <GradientCircle className="blur-[max(12vw,120px)]! max-sm:-translate-y-1/4" />
           </div>
         </div>
 
         {/* content */}
-        <div className="my-container side-padding relative flex gap-[78px] max-md:flex-col xl:gap-[130px]">
+        <div className="my-container side-padding relative flex gap-[78px] max-lg:flex-col xl:gap-[130px]">
           {/* newsletter */}
           <div className="max-w-[380px]">
             <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
             <p className="text-[20px] leading-[31px]">
               We’ll keep you up to date with the latest.
             </p>
-            <p className="mt-[20px] text-[14px] leading-[22px] text-light-gray">
+            <p className="mt-[20px] max-w-[320px] text-[14px] leading-[22px] text-light-gray">
               Enter your business email below to receive updates from Gaiant.
-              Please refer to our{" "}
-              <span className="underline">privacy policy</span> for details or
-              to contact us. You can unsubscribe at any time.
+              You can unsubscribe at any time.
             </p>
             <form
               onSubmit={(e) => {
@@ -58,7 +65,7 @@ export default function Footer() {
           </div>
 
           {/* links */}
-          <div className="flex gap-20 max-md:flex-wrap lg:mx-auto xl:gap-[118px]">
+          <div className="flex gap-20 max-lg:hidden max-md:flex-wrap lg:mx-auto xl:gap-[118px]">
             {/* col 1 */}
             <div className="w-[72px]">
               <p className="mb-9 font-ibm! text-[13px] text-light-blue">
@@ -133,17 +140,45 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Accordion Links */}
+          <nav className="divide-light-black max-w-[380px] divide-y-1 mb-[70px] lg:hidden">
+            <NavAccordionItem
+              onOpen={() => setSelectedAccordion(1)}
+              onClose={() => setSelectedAccordion(0)}
+              open={selectedAccordion === 1}
+              title="Products"
+              content={<ProductsFlyoutContent light />}
+              light
+            />
+            <NavAccordionItem
+              onOpen={() => setSelectedAccordion(2)}
+              onClose={() => setSelectedAccordion(0)}
+              open={selectedAccordion === 2}
+              title="Solutions"
+              content={<SolutionsFlyoutContent light defaultSorting />}
+              light
+            />
+            <NavAccordionItem
+              onOpen={() => setSelectedAccordion(3)}
+              onClose={() => setSelectedAccordion(0)}
+              open={selectedAccordion === 3}
+              title="Company"
+              content={<CompanyFlyoutContent light />}
+              light
+            />
+          </nav>
         </div>
 
         {/* copyright */}
-        <div className="side-padding my-container relative flex items-end gap-5 pt-12 max-md:flex-col md:justify-between md:pt-[7px]">
+        <div className="side-padding my-container relative flex items-end gap-0 pt-12 max-md:flex-col md:justify-between md:pt-[7px]">
           {/* logo */}
           <img
             className="w-full max-w-[428px]"
             src="/logos/gaiant-logo-gradient.svg"
             alt="Gaiant Logo"
           />
-          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:-translate-y-[22px] md:text-end">
+          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:-translate-y-[22px] md:text-end -mt-5" style={{color: "#93939E"}}>
             {"Gaiant © 2025       |       Powered by "}
             <a
               href="https://weareelites.com/"

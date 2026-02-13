@@ -35,8 +35,8 @@
 body {
   font-family: "Aeonik", sans-serif;
   background-color: var(--color-background);
-  
-  @apply max-w-dvw overflow-x-clip
+
+  @apply max-w-dvw overflow-x-clip;
 }
 
 /* spacing */
@@ -116,4 +116,43 @@ body {
 
 .text-25-new {
   @apply text-[20px] leading-[23px] xs:text-[23px] xs:leading-[27px] lg:text-[25px] lg:leading-[31px];
+}
+
+.healthcare-hero-title-width {
+}
+@media (max-width: 560px) {
+  .healthcare-hero-title-width {
+    max-width: 400px;
+  }
+}
+
+.tmt-hero-subtitle-width {
+}
+.tmt-hero-title-width {
+}
+@media (max-width: 530px) {
+  .tmt-hero-subtitle-width {
+    max-width: 260px;
+  }
+}
+@media (max-width: 513px) {
+  .tmt-hero-title-width {
+    max-width: 400px;
+  }
+}
+
+.retail-hero-title-width {
+}
+@media (max-width: 590px) {
+  .retail-hero-title-width {
+    max-width: 400px;
+  }
+}
+
+.cta-title-width {
+}
+@media (max-width: 920px) {
+  .cta-title-width {
+    max-width: 500px;
+  }
 }

@@ -77,15 +77,19 @@ export function BlurredTealGradientBg({
       >
         <img
           fetchPriority={fetchPriority}
-          onLoad={() => {setIsLoaded(true)}}
-          onError={() => {setHasError(true)}}
+          onLoad={() => {
+            setIsLoaded(true);
+          }}
+          onError={() => {
+            setHasError(true);
+          }}
           src={GreenBlueGradient}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover max-md:rotate-x-180 max-md:rotate-z-180"
           alt="Gradient background"
         />
       </div>
       {withBall && (
-        <div className="absolute top-[140px] left-1/2 w-[500px] max-w-[670px] -translate-x-1/2 lg:w-[40vw] lg:min-w-[550px]">
+        <div className="absolute top-[175px] left-1/2 w-[min(500px,110vw)] max-w-[670px] -translate-x-1/2 sm:top-[200px] lg:top-[140px] lg:w-[40vw] lg:min-w-[550px]">
           <GradientCircle />
         </div>
       )}

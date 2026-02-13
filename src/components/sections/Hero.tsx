@@ -116,6 +116,8 @@ interface HeroProps {
   titleWidth?: string; // e.g. "max-w-[580px] lg:w-6/10 xl:max-w-[680px]"
   textWidth?: string; // e.g. "max-w-[324px] xl:max-w-[370px]"
   padding?: string;
+  subtitleClassName?: string;
+  centered?: boolean;
 
   // Default spacing options (for backward compatibility)
   spacing?: "min" | "max";
@@ -124,6 +126,7 @@ interface HeroProps {
 export default function Hero({
   title,
   subtitle,
+  subtitleClassName,
   text,
   button,
   background,
@@ -134,6 +137,7 @@ export default function Hero({
   titleWidth,
   textWidth,
   padding,
+  centered = false,
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, { once: true });
@@ -167,7 +171,11 @@ export default function Hero({
         }
       >
         {subtitle && (
-          <p className="mb-5 font-ibm! text-[16px] xs:text-[18px]">
+          <p
+            className={
+              "mb-5 font-ibm! text-[16px] xs:text-[18px] " + subtitleClassName
+            }
+          >
             <AnimatedText transition={{ delay: 0.8 }} isInView={isInView}>
               {subtitle}
             </AnimatedText>
@@ -177,7 +185,7 @@ export default function Hero({
         <div
           className={`flex flex-col max-lg:max-w-[660px] lg:flex-row ${
             gap || defaultGaps
-          }`}
+          } ${centered ? "max-lg:mx-auto max-lg:items-center max-lg:justify-center max-lg:text-center" : ""}`}
         >
           {/* Title */}
           <h1
@@ -220,8 +228,8 @@ export default function Hero({
         </div>
 
         {/* button */}
-        <div className={`flex ${gap || defaultGaps}`}>
-          <div className={"max-lg:hidden "  + titleWidth}></div>
+        <div className={`flex ${gap || defaultGaps} ${centered ? "max-lg:justify-center" : ""}`}>
+          <div className={"max-lg:hidden " + titleWidth}></div>
           <SlideUpAnim
             className="lg:w-[460px] xl:w-[530px]"
             isInView={isInView}

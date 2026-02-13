@@ -44,7 +44,7 @@ export default function ArcheIndustries() {
       <div className="relative">
         <SlideUpAnim
           isInView={isInView}
-          className="absolute top-0 right-0 w-[85%] md:w-[52%]"
+          className="absolute top-0 right-0 w-full md:w-[52%]"
           initial={{ y: "60px" }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >

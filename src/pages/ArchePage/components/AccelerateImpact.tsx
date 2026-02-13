@@ -93,7 +93,7 @@ function Card({
         }
       >
         {/* text */}
-        <div className="max-w-[380px] text-white max-lg:text-center xl:scale-115 2xl:scale-130 origin-left">
+        <div className="max-w-[310px] origin-left text-white max-lg:text-center xs:max-w-[380px] xl:scale-115 2xl:scale-130">
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.3 }}>
             <p className="font-ibm! text-[11px] xs:text-[12px]">
               {content.subtitle}
@@ -103,7 +103,21 @@ function Card({
             <p className="text-[50px] xs:text-[60px]"> {content.title}</p>
           </SlideUpAnim>
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.5 }}>
-            <p className="text-16">{content.text}</p>
+            <p className="text-16">
+              {content.text.includes("All instantly.") ? (
+                <>
+                  <span>{content.text.replace("All instantly.", "")}</span>
+                  <span className="max-xs:whitespace-nowrap">All instantly.</span>
+                </>
+              ) : content.text.includes("your data.") ? 
+              <>
+                  <span>{content.text.replace("your data.", "")}</span>
+                  <span className="max-xs:whitespace-nowrap">your data.</span>
+                </>
+              : (
+                content.text
+              )}
+            </p>
           </SlideUpAnim>
         </div>
         {/* animation */}

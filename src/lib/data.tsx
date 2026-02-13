@@ -154,6 +154,7 @@ export type TIndustry = {
     title: string;
     titleWidth?: string;
     subtitle: string;
+    subtitleClassName?: string;
     text: string;
     textWidth?: string;
     img: {
@@ -163,6 +164,7 @@ export type TIndustry = {
   };
   features: {
     title: string;
+    titleClassName?: string;
     subtitle: string;
     text?: string;
     imgFront: { src: string; alt: string };
@@ -212,6 +214,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "Smarter moves, fewer resources",
+      titleClassName: "max-sm:max-w-[300px]",
       subtitle: "TRUSTED BY FINANCIAL LEADERS",
       text: "AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead.",
       imgFront: {
@@ -265,7 +268,7 @@ export const INDUSTRIES: TIndustry[] = [
           title: "Customer service bots",
           subtitle: "OPERATIONAL EFFICIENCY",
           text: "Perform KYC checks with minimal human involvement.",
-          animation: useCaseAnimation1 ,
+          animation: useCaseAnimation1,
           titleClassName: " max-w-[150px]! ",
           textClassName: " max-w-[220px]! ",
         },
@@ -340,6 +343,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "Precision at the point of risk",
+      titleClassName: "max-sm:max-w-[300px]",
       subtitle: "TRUSTED BY INSURANCE LEADERS",
       text: "The insurance industry has always been about managing the unknown. AI makes the unknown smaller, surfacing risk earlier, resolving claims faster, and turning data into decisions that hold.",
       imgFront: {
@@ -457,7 +461,7 @@ export const INDUSTRIES: TIndustry[] = [
     hero: {
       title: "Advancing patient care and biological research",
       titleWidth:
-        "lg:min-w-[620px] lg:max-w-[620px] xl:min-w-[735px] xl:max-w-[735px]",
+        "max-xs:max-w-[360px]! healthcare-hero-title-width lg:min-w-[620px] lg:max-w-[620px] xl:min-w-[735px] xl:max-w-[735px]",
       subtitle: "HEALTHCARE & LIFE SCIENCES",
       text: "Turn fragmented records into unified insight, powering faster diagnoses, smarter research, and better care.",
       img: {
@@ -467,6 +471,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "The backbone of modern care",
+      titleClassName: "max-xs:max-w-[250px]! max-sm:max-w-[290px]",
       subtitle: "TRUSTED BY HEALTHCARE LEADERS",
       text: "The bottleneck in healthcare is rarely clinical, it's operational. AI removes the friction between what clinicians know and what systems allow them to do.",
       imgFront: {
@@ -581,12 +586,13 @@ export const INDUSTRIES: TIndustry[] = [
     imgSquarePosition: "object-[50%_75%] scale-120 ",
     description:
       "Reducing churn, optimizing network performance, and monetizing content intelligently",
-    textClassName: " max-w-[330px]  ",
+    textClassName: "",
     hero: {
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
+      subtitleClassName: " tmt-hero-subtitle-width " ,
       title: "Put your data to work across your business",
       titleWidth:
-        "lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[680px] xl:max-w-[680px]",
+        "max-xs:max-w-[min(85vw,350px)]! tmt-hero-title-width lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[680px] xl:max-w-[680px]",
       text: "Build smarter products, streamline operations, and deliver personalized experiences with AI grounded in your enterprise data.",
       img: {
         src: "/industries/tech/tech.webp",
@@ -723,6 +729,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "Clearer, smarter public policy",
+      titleClassName: "max-sm:max-w-[300px]",
       subtitle: "TRUSTED BY PUBLIC INSTITUTIONS",
       text: "Public mandates can’t wait. AI helps governments move at the speed citizens expect without compromising accuracy, security, or accountability.",
       imgFront: {
@@ -982,6 +989,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "Built for modern legal work",
+      titleClassName: "max-sm:max-w-[300px]",
       subtitle: "TRUSTED BY LEGAL LEADERS",
       text: "Associates spend countless hours on complex but routine tasks. AI doesn't replace their judgment, it multiplies their capacity. The firms that win will be the ones that redeploy talent from process to strategy.",
       imgFront: {
@@ -1110,6 +1118,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "Build smarter. Deliver faster. Risk less.",
+      titleClassName: "max-md:max-w-[260px]",
       subtitle: "TRUSTED BY INDUSTRY LEADERS",
       text: "Real estate and construction run on timelines, budgets, and coordination across dozens of stakeholders. AI doesn't replace the expertise, it surfaces the right information at the right moment, so decisions happen before delays do.",
       imgFront: {
@@ -1228,7 +1237,7 @@ export const INDUSTRIES: TIndustry[] = [
     hero: {
       title: "AI that moves at the speed of commerce",
       titleWidth:
-        "lg:min-w-[550px] lg:max-w-[550px] xl:min-w-[650px] xl:max-w-[650px]",
+        "max-xs:max-w-[min(82vw,330px)]! retail-hero-title-width lg:min-w-[550px] lg:max-w-[550px] xl:min-w-[650px] xl:max-w-[650px]",
       subtitle: "RETAIL & CONSUMER GOODS",
       text: "Forecast demand, optimize inventory, and personalize at scale with intelligence that turns data into decisions before the moment passes.",
       img: {
@@ -1238,6 +1247,7 @@ export const INDUSTRIES: TIndustry[] = [
     },
     features: {
       title: "From gut instinct to ground truth",
+      titleClassName: "max-xs:max-w-[250px]! max-sm:max-w-[310px]",
       subtitle: "TRUSTED BY RETAIL LEADERS",
       text: "Consumer businesses sit on gold and act broke. Data everywhere, insight nowhere. Most decisions are still made by instinct and spreadsheets. AI sees what sells, where, and why, turning noise into signal and signal into action.",
       imgFront: {
@@ -1356,7 +1366,7 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: " max-w-[290px]",
     hero: {
       titleWidth:
-        "lg:min-w-[568px] lg:max-w-[568px] xl:min-w-[676px] xl:max-w-[676px]",
+        "max-xs:max-w-[360px]! max-sm:max-w-[430px] lg:min-w-[568px] lg:max-w-[568px] xl:min-w-[676px] xl:max-w-[676px]",
       textWidth:
         " max-w-[440px] xl:max-w-[510px] min-[1280px]:text-[21.4px]! min-[1312px]:text-[23px]! text-[min(4vw,18px)] ",
       title: "Experiences and operations, perfected",
@@ -1610,7 +1620,7 @@ export const INDUSTRIES: TIndustry[] = [
 export const INDUSTRIES_FLYOUTLINK_ORDER = [0, 4, 8, 1, 5, 9, 2, 6, 10, 3, 7];
 export const LANDING_PAGE_DATA = {
   HERO: {
-    title: "Accelerating <br> Enterprise Intelligence ",
+    title: "Accelerating <br> Enterprise Intelligence",
     // <bold> tag should not have any spaces between it and the text it encloses, and should not have a <br> inside it.
     text: "Gaiant is where AI becomes infrastructure, built around how <bold>your<bold> enterprise actually operates.",
     img1: {
@@ -2006,7 +2016,7 @@ export const CAREERS_PAGE_DATA = {
   },
 
   LIFE_AT_GAIANT: {
-    title: "Life At Gaiant",
+    title: "Life at Gaiant",
     subtitle: "WHAT SHOULD YOU EXPECT?",
     cards: [
       {

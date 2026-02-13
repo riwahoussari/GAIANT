@@ -13,6 +13,7 @@ export default function NewsCtaSection() {
       text="Request a demo and see how Gaiant's secure and private AI platform can unlock productivity for your business."
       button={<Button arrow={"spaced"}>REQUEST A DEMO</Button>}
       background={<BlurredTealGradientBg2 withBall />}
+      centered
     />
   );
 }

@@ -43,6 +43,7 @@ export default function CallToAction({
         className="relative z-4"
         big={true}
         title="Let’s make Ai work for you"
+        titleWidth="cta-title-width max-xs:max-w-[300px]!"
         subtitle="ARE YOU READY?"
       />
 

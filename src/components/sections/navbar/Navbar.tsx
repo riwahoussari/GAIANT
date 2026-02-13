@@ -15,6 +15,7 @@ import FlyoutLink, {
 } from "./FlyoutLink";
 import BurgerMenuSvg from "./BurgerMenuSvg";
 import MobileNavMenu from "./MobileNav";
+import ArrowSvg from "../../ui/ArrowSvg";
 
 export default function Navbar({
   transparentBg = false,
@@ -81,12 +82,15 @@ export default function Navbar({
       className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
       {/* Announcement Bar */}
-      <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[14px] whitespace-pre text-white xs:text-[15px]">
+      <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px]">
         Introducing <span className="font-bold">archē</span>: The New Operating
         Layer for Enterprise {"   "}
-        <Link to="/arche" className="group relative">
+        <Link to="/arche" className="group relative max-sm:hidden">
           Learn More
           <span className="absolute right-0 -bottom-px left-0 block h-px origin-bottom translate-y-px scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
+        </Link>
+        <Link to="/arche" className="sm:hidden">
+          <ArrowSvg className="inline w-[min(16px,4vw)] -translate-y-px stroke-[1.5] duration-200 ease-in-out hover:translate-x-1" />
         </Link>
       </div>
       {/* Navbar Content */}
@@ -181,6 +185,7 @@ export default function Navbar({
         {/* CTA - Mobile Menu Trigger Btn */}
         <div className="relative z-1 flex items-center justify-end gap-5 lg:min-w-[160px]">
           <Button
+            className="max-sm:hidden"
             variant={
               textColor === "black" || mobileMenuOpen
                 ? "black"
@@ -213,13 +218,24 @@ export default function Navbar({
 
       {/* blurred overlay */}
       <AnimatePresence>
-        {(hovering || mobileMenuOpen) && (
+        {hovering && (
           <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.3 }}
-            className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-xl"
+            className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-xl max-lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
+            className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-xl lg:hidden"
           />
         )}
       </AnimatePresence>
