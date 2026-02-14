@@ -14,7 +14,7 @@ import ArticlePage from "./pages/ArticlePage";
 import CareersPage from "./pages/CareersPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import IndustryPage from "./pages/IndustryPage";
-import Preloader from "./components/ui/Preloader";
+// import Preloader from "./components/ui/Preloader";
 // import Preloader from "./components/ui/Preloader";
 // import { useState } from "react";
 
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <Preloader />
+      {/* <Preloader /> */}
       <RouterProvider router={router} />
     </>
   );
