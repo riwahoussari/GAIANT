@@ -10,7 +10,7 @@ export default function Preloader() {
 
   return (
     <AnimatePresence mode="wait">
-      {!hasPlayed && (
+      {hasPlayed && (
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -25,7 +25,7 @@ export default function Preloader() {
             autoPlay
             muted
             preload="auto"
-            className="h-full max-h-dvh w-full bg-black object-contain"
+            className="h-full max-h-dvh w-full bg-black object-contain scale-200 md:scale-150 xl:scale-100"
             src={preloaderVideo}
             onEnded={() => setHasPlayed(true)}
           />
