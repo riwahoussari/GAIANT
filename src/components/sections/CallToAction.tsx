@@ -24,14 +24,14 @@ export default function CallToAction({
         <div className="w-full relative">
           <div className="absolute top-0 -translate-y-1/4 lg:-translate-y-1/2 left-0 z-1 -translate-x-1/3 -rotate-30 opacity-50">
             <GradientCircle
-              className="origin-top blur-[max(6vw,60px)]! lg:scale-120"
+              className="origin-top blur-[max(6vw,60px)]! lg:scale-120 will-change-[filter] translate-z-0"
               colorr={"teal"}
             />
           </div>
 
           <div className="absolute right-0 top-0 z-1 translate-x-8/10 translate-y-full xs:translate-y-3/4 sm:translate-y-1/2 md:translate-y-1/4 opacity-50 ">
             <GradientCircle
-              className="origin-bottom blur-[max(6vw,60px)]!"
+              className="origin-bottom blur-[max(6vw,60px)]! will-change-[filter] translate-z-0"
               colorr={"teal"}
             />
           </div>

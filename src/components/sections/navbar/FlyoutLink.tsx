@@ -91,7 +91,7 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
           </div>
         )}
         <p
-          className="relative my-3 text-[15px] leading-[1.2] lg:hidden group-hover:opacity-60"
+          className="relative my-3 text-[15px] leading-[1.2] lg:hidden max-lg:group-hover:opacity-60"
           style={{ color: light ? "#86F8FF" : "#000" }}
         >
           <span className="block scale-115 origin-bottom-left mb-2">Arche</span>
@@ -132,7 +132,7 @@ export function SolutionsFlyoutContent({
             to={`/industries/${industry.id}`}
           >
             <p
-              className="max-w-[280px] rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+              className="max-w-[280px] rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
               style={{ color: light ? "#86F8FF" : "#000" }}
             >
               {industry.name}
@@ -172,7 +172,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
       <div className="flex flex-col text-[18px] leading-[20px] lg:gap-y-6">
         <Link className="cursor-point group/link" to="/about">
           <p
-            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
             style={{ color: light ? "#86F8FF" : "#000" }}
           >
             About
@@ -180,7 +180,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
         </Link>
         <Link className="cursor-point group/link" to="/news">
           <p
-            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
             style={{ color: light ? "#86F8FF" : "#000" }}
           >
             News
@@ -188,7 +188,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
         </Link>
         <Link className="cursor-point group/link" to="/careers">
           <p
-            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
             style={{ color: light ? "#86F8FF" : "#000" }}
           >
             Careers

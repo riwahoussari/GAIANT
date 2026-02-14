@@ -5,8 +5,8 @@ import { useState } from "react";
 
 export default function Preloader() {
   // lock scroll while preloader is visible
-  useLockBodyScroll(true);
   const [hasPlayed, setHasPlayed] = useState(false);
+  useLockBodyScroll(!hasPlayed);
 
   return (
     <AnimatePresence mode="wait">
