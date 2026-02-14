@@ -1,13 +1,16 @@
 import { AnimatePresence, motion } from "motion/react";
 import preloaderVideo from "../../assets/animations/preloader.mp4";
 import { useLockBodyScroll } from "../../lib/useLockBodyScroll";
+import { useState } from "react";
 
-export default function Preloader({onFinish}: {onFinish: () => void}) {
+export default function Preloader() {
   // lock scroll while preloader is visible
   useLockBodyScroll(true);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
+      {!hasPlayed && (
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -18,13 +21,16 @@ export default function Preloader({onFinish}: {onFinish: () => void}) {
           className="fixed inset-0 z-9999 flex items-center justify-center bg-black"
         >
           <video
+            playsInline
             autoPlay
             muted
-            className="h-full max-h-dvh w-full object-contain"
+            preload="auto"
+            className="h-full max-h-dvh w-full bg-black object-contain"
             src={preloaderVideo}
-            onEnded={onFinish}
+            onEnded={() => setHasPlayed(true)}
           />
         </motion.div>
+      )}
     </AnimatePresence>
   );
 }
