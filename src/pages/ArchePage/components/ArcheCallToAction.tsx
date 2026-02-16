@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import GradientCircle from "../../../components/ui/GradientCircle";
 import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
 
@@ -26,8 +25,11 @@ export default function ArcheCallToAction() {
       {/* arche logo */}
       <div className="relative max-sm:mt-5">
         {/* gradient circle */}
-        <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-80">
-          <GradientCircle className="blur-[max(6vw,60px)]!" colorr={"beige"} />
+        <div className="absolute top-1/2 left-1/2 z-0 w-full max-w-[1328px] -translate-1/2 opacity-50 max-xs:scale-130 xs:opacity-60 sm:opacity-70 md:opacity-80 2xl:scale-110">
+          <img
+            src="/gradients/circle-beige.png"
+            className="h-full w-full object-contain"
+          />
         </div>
 
         <SlideUpAnim
@@ -60,10 +62,10 @@ export default function ArcheCallToAction() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="relative flex justify-center  mt-12 sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
+        className="relative mt-12 flex justify-center sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
       >
         <Button variant={"black"}>Request a demo</Button>
       </SlideUpAnim>
     </section>
-  )
+  );
 }

@@ -37,7 +37,7 @@ export default function GradientCircle({
     <div className={cn(gradientCircleVariants({ blur }), className)} {...props}>
       <img
         src={colorr == "beige" ? BeigeDiamondGradient : TealDiamondGradient}
-        className="h-full w-full object-contain"
+        className="h-full w-full object-contain "
         alt="Faded gradient ball"
       />
     </div>

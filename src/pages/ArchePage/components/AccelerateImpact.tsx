@@ -27,7 +27,7 @@ export default function AccelerateImpact() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 mt-[128px] overflow-x-clip pb-24"
+      className="relative z-2 mt-[128px] overflow-x-clip mb-20"
     >
       {/* bg */}
       <BlurredLandscapeBg />
@@ -84,7 +84,7 @@ function Card({
 
   return (
     <div
-      className="sticky top-20 bg-red/0"
+      className="sticky top-20"
       style={{ marginTop: `-${index == 0 ? 0 : 66}px` }}
     >
       <m.div

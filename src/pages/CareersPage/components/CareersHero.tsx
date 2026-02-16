@@ -9,7 +9,7 @@ export default function CareersHero() {
     <Hero
       centered
       spacing="max"
-      titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[700px]"
+      titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[700px] max-xs:text-[min(11.6vw,50px)]! max-xs:leading-[calc(min(11.6vw,50px)+7px)]! xs:text-[56px]!"
       padding="pt-[200px] xl:pt-[240px]! pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "
       textWidth=" max-w-[400px] xl:max-w-[450px]"
       {...CAREERS_PAGE_DATA.HERO}

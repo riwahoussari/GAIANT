@@ -15,12 +15,12 @@ export default function CallToAction({
 
   return (
     <section ref={sectionRef} className="my-container side-padding mt-[120px]">
-      {/* gradient circles */}
+      {/* gradient circles - Careers page */}
       {withGradientCircle && (
         <div className="relative w-full">
           <div
             className={
-              "absolute top-0 left-0 z-1 -translate-x-1/2 -translate-y-1/2 opacity-50 lg:-translate-y-2/3"
+              "absolute top-0 left-0 z-1 -translate-x-1/2 -translate-y-[2200px] xs:-translate-y-[2950px] md:-translate-y-1/2 opacity-50 lg:-translate-y-2/3"
             }
           >
             <div className="aspect-square origin-top translate-z-0 scale-185 md:scale-165 lg:scale-170 xl:scale-150">
@@ -32,7 +32,7 @@ export default function CallToAction({
           </div>
 
           <div className={"absolute top-0 right-0 z-1 opacity-50"}>
-            <div className="aspect-square origin-bottom translate-x-2/3 translate-y-[600px] translate-z-0 scale-200 md:translate-y-1/3 md:scale-150 lg:translate-y-[min(16%,_100px)]">
+            <div className="aspect-square origin-bottom translate-x-2/3 -translate-y-[150px] xs:-translate-y-[300px] translate-z-0 scale-200 md:translate-y-1/3 md:scale-150 lg:translate-y-[min(16%,_100px)]">
               <img
                 src="/gradients/circle-6.webp"
                 className="h-full w-full object-contain"

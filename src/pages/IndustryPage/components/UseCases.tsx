@@ -72,7 +72,7 @@ export default function UseCases({
   return (
     <section
       ref={sectionRef}
-      className="side-padding my-container relative z-2 my-[100dvh]! mt-[80px] md:mt-[120px] overflow-x-clip max-w-dvw"
+      className="side-padding my-container relative z-2 mt-[80px] md:mt-[120px] overflow-x-clip max-w-dvw"
     >
       <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <img
