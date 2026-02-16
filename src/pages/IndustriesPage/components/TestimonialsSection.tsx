@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ArrowSvg from "../../../components/ui/ArrowSvg";
 import { motion as m, AnimatePresence, useInView } from "motion/react";
-import GradientCircle from "../../../components/ui/GradientCircle";
 import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import { INDUSTRIES_PAGE_DATA } from "../../../lib/data";
@@ -40,14 +39,16 @@ export default function TestimonialSection() {
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding relative z-2 mt-[130px]"
+      className="my-container side-padding relative z-2 mt-[130px] overflow-x-clip"
     >
       {/* background gradient */}
-      <div className="absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-40">
-        <GradientCircle
-          className="scale-y-200 -rotate-90 blur-[max(3vw,30px)]! max-sm:scale-x-200"
-          colorr="teal"
-        />
+      <div className="opacity40 absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-50">
+        <div className="scale-x-350 scale-y-450 -rotate-90 sm:scale-x-200 sm:scale-y-400 lg:scale-x-180 lg:scale-y-400 2xl:scale-x-120 2xl:scale-y-300">
+          <img
+            src="/gradients/circle-6.webp"
+            className="h-full w-full object-contain"
+          />
+        </div>
       </div>
 
       {/* section title */}

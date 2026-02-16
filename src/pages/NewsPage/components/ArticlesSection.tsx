@@ -5,7 +5,6 @@ import {
   SlideUpAnim,
   SlideUpSelf,
 } from "../../../components/ui/Anims";
-import GradientCircle from "../../../components/ui/GradientCircle";
 import Button from "../../../components/ui/Button";
 import { GENERAL_DATA } from "../../../lib/data";
 import ArticleCard from "../../../components/ui/cards/ArticleCard";
@@ -66,11 +65,11 @@ export default function ArticlesSection({
             {withBall && (
               <SlideUpAnim
                 isInView={isInView}
-                className="absolute w-1/4 lg:w-1/3 top-0 right-0 translate-x-1/2 -translate-y-1/3"
+                className="absolute top-0 right-0 w-1/4 translate-x-1/2 -translate-y-1/2 lg:w-1/3"
               >
-                <GradientCircle
-                  className="blur-[clamp(10px,2.5vw,25px)]!"
-                  colorr={"teal"}
+                <img
+                  src="/gradients/news-page-circle.webp"
+                  className="h-full w-full scale-150 opacity-99"
                 />
               </SlideUpAnim>
             )}

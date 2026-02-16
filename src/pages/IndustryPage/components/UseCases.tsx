@@ -73,19 +73,23 @@ export default function UseCases({
   return (
     <section
       ref={sectionRef}
-      className="side-padding my-container relative z-2 md:mt-[120px] mt-[80px]"
+      className="side-padding my-container relative z-2 my-[100dvh]! mt-[80px] md:mt-[120px] overflow-x-clip max-w-dvw"
     >
       <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
-        <GradientCircle
-          className="blur-[max(6vw,60px)]! max-md:scale-200 max-sm:scale-y-400"
-          colorr={"teal"}
+        <img
+          src="/gradients/circle-6.webp"
+          className="scale-185 max-md:scale-370 max-sm:scale-x-400 max-sm:scale-y-800 max-sm:opacity-80 2xl:opacity-90"
         />
       </div>
 
       {/* title */}
-      <div className="relative grid grid-cols-1 gap-2 items-end sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
+      <div className="relative grid grid-cols-1 items-end gap-2 sm:gap-5 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         <TitleBlock title={content.title} subtitle={content.subtitle} />
-        <SlideUpAnim className="max-sm:-mt-6" isInView={isInView} transition={{ delay: 0.2 }}>
+        <SlideUpAnim
+          className="max-sm:-mt-6"
+          isInView={isInView}
+          transition={{ delay: 0.2 }}
+        >
           <p className={"text-16 xl:w-max " + content.textClassName}>
             {content.text}
           </p>
@@ -102,7 +106,7 @@ export default function UseCases({
       </div>
 
       {/* cards */}
-      <div className="relative mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
+      <div className="relative mt-8 grid grid-cols-1 gap-5 max-md:max-w-[520px] sm:mt-12 md:mt-16 md:grid-cols-2 md:gap-8 xl:grid-cols-3 xl:gap-5 2xl:gap-8">
         {content.useCaseCards.map((useCase, i) => (
           <SlideUpSelf key={i}>
             <GlassCard

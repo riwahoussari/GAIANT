@@ -8,6 +8,9 @@ const gradientCircleVariants = cva("aspect-square rounded-full overflow-clip", {
     blur: {
       md: " blur-[max(1vw,10px)]",
       lg: "blur-[max(12vw,120px)]",
+      // blur-[max(3vw,30px)]!
+      // blur-[max(6vw,60px)]!
+      // blur-[clamp(10px,2.5vw,25px)]!
     },
     colorr: {
       beige: "",

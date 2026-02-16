@@ -14,7 +14,7 @@ export default function CareersPage() {
         description="Join Gaiant and help shape the next generation of enterprise AI. We’re looking for curious minds and ambitious builders to create secure, scalable systems that empower people and transform industries."
       />
       <Navbar transparentBg={false} />
-      <main>
+      <main className="overflow-x-clip ">
         <CareersHero />
         <LifeAtGaiant />
         <DoYouFit />
