@@ -12,14 +12,14 @@ export default function ArcheSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-20%" });
   return (
-    <section ref={sectionRef} className="relative z-2 mt-[200px] overflow-x-clip">
+    <section ref={sectionRef} className="relative z-2 mt-[130px] overflow-x-clip">
       {/* bg */}
       <BlurredLandscapeBg />
 
       {/* content */}
       <div className="my-container side-padding relative items-stretch justify-between gap-5 pt-16 pb-10 text-white sm:pt-24 sm:pb-16 lg:flex lg:gap-10 lg:py-10 xl:gap-16">
         {/* text */}
-        <div className="flex w-full flex-none flex-col items-start justify-between gap-10 xs:gap-20 md:flex-row lg:w-[440px] lg:flex-col lg:py-[2.1vw] xl:w-[558px] 2xl:py-[min(300px,1.8vw)]">
+        <div className="flex w-full flex-none flex-col items-start justify-between gap-10 xs:gap-14 lg:gap-20 lg:w-[440px]  lg:py-[2.1vw] xl:w-[558px] 2xl:py-[min(300px,1.8vw)] max-lg:items-center max-lg:text-center ">
           {/* arche */}
           <SlideUpAnim isInView={isInView}>
             <img
@@ -36,10 +36,10 @@ export default function ArcheSection() {
             className="max-lg:max-w-[460px]"
           >
             <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] lg:text-[36px] lg:leading-[38px] xl:text-[46px] xl:leading-[47px]">
-              {LANDING_PAGE_DATA.ARCHE_SECTION.title}
+              Your enterprise brain. One place to ask, act, <span className="max-[500px]:whitespace-nowrap">and build.</span>
             </p>
 
-            <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 xs:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px]">
+            <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 lg:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px] max-lg:mx-auto">
               {LANDING_PAGE_DATA.ARCHE_SECTION.text
                 .split("<br>")
                 .map((line, i) => (
@@ -51,7 +51,7 @@ export default function ArcheSection() {
             </p>
             <Link to="/arche" aria-label="Lean more about Arche platform">
               <Button
-                className="mt-[30px] hover:translate-x-1 xs:mt-[40px] xl:mt-[50px]"
+                className="mt-[30px] hover:translate-x-1 lg:mt-[40px] xl:mt-[50px]"
                 arrow={"spaced"}
               >
                 Learn more<span className="hidden"> about Arche platform</span>
@@ -62,7 +62,7 @@ export default function ArcheSection() {
 
         {/* dashboard */}
         <SlideUpAnim
-          className="relative mt-12 w-full max-w-[884px] scale-113 sm:mt-14 lg:mt-0"
+          className="relative mt-10 w-full max-w-[884px] scale-113 xs:mt-14 lg:mt-0"
           isInView={isInView}
           transition={{ delay: 0.2 }}
         >

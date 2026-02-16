@@ -6,6 +6,7 @@ import { INDUSTRIES_PAGE_DATA } from "../../../lib/data";
 export default function IndustriesHero() {
   return (
     <Hero
+      centered
       className="text-black!"
       spacing="max"
       padding="pt-[200px] xl:pt-[240px]! "

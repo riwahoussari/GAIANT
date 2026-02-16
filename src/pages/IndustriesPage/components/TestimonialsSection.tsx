@@ -51,7 +51,7 @@ export default function TestimonialSection() {
       </div>
 
       {/* section title */}
-      <div className="relative mb-8">
+      <div className="relative mx-auto mb-8 max-sm:max-w-[280px]">
         <CenteredTitleBlock
           title={INDUSTRIES_PAGE_DATA.TESTIMONIALS_SECTION.title}
         />
@@ -61,10 +61,10 @@ export default function TestimonialSection() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-sm:bg-none! sm:p-12"
+        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-md:bg-none! md:p-12"
       >
         {/* animated testimonial */}
-        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8 text-center sm:pb-0">
+        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8 pb-5 text-center">
           <AnimatePresence mode="wait">
             <m.div
               key={index}
@@ -72,25 +72,36 @@ export default function TestimonialSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="relative flex flex-col justify-between gap-8 sm:p-14"
+              className="relative flex flex-col justify-between"
             >
-              {/* placeholder to maintain same height for all testimonials */}
-              <p
-                aria-hidden
-                style={{ visibility: "hidden" }}
+              <div
                 className={
-                  "text-[19px] leading-[25px] opacity-0 mx-auto xs:text-[21px] xs:leading-[27px] " +
+                  "relative mx-auto pb-10 text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px] " +
                   testimonials.find((t) => t.text === longest_text)
                     ?.textMaxWidth
                 }
               >
-                {longest_text}
-              </p>
+                {/* visible text */}
+                <p
+                  className={
+                    "absolute top-1/2 right-0 left-0 mx-auto -translate-y-1/2 bg-red/0 pb-6 text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px] " +
+                    testimonials[index].textMaxWidth
+                  }
+                >
+                  {testimonials[index].text}
+                </p>
+
+                {/* placeholder to maintain same height for all testimonials */}
+                <span
+                  aria-hidden
+                  style={{ visibility: "hidden" }}
+                  className="opacity-0"
+                >
+                  {longest_text}
+                </span>
+              </div>
 
               {/* actual text */}
-              <p className={"absolute right-0 left-0 bg-red/0 text-[19px] leading-[25px] xs:text-[21px] xs:leading-[27px] mx-auto " + testimonials[index].textMaxWidth}>
-                {testimonials[index].text}
-              </p>
 
               <div className="space-y-1.5">
                 <p className="text-16 leading-[19px]">

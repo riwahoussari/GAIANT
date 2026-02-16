@@ -173,7 +173,7 @@ export default function Hero({
         {subtitle && (
           <p
             className={
-              "mb-5 font-ibm! text-[16px] xs:text-[18px] " + subtitleClassName
+              "mb-5 font-ibm! text-[16px] xs:text-[18px] " + (centered ? " max-lg:text-center " : "") + subtitleClassName
             }
           >
             <AnimatedText transition={{ delay: 0.8 }} isInView={isInView}>

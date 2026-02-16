@@ -13,17 +13,13 @@ export default function ArcheHero({
 
   return (
     <Hero
+      centered
       spacing="max"
       padding="pt-[200px] xl:pt-[240px]! pb-[100px]! "
       {...ARCHE_PAGE_DATA.HERO}
       titleWidth="lg:min-w-[480px] lg:max-w-[480px] xl:min-w-[780px] xl:max-w-[780px]"
       button={<Button arrow={"spaced"}>Request a demo</Button>}
-      background={
-        <LandscapeBg
-          fetchPriority="high"
-          ref={navbarTriggerRef}
-        />
-      }
+      background={<LandscapeBg fetchPriority="high" ref={navbarTriggerRef} />}
     >
       <div ref={heroRef} className="mt-10 h-1 opacity-0 lg:mt-48"></div>
     </Hero>

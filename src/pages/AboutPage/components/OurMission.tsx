@@ -52,7 +52,7 @@ export default function OurMission() {
   }, []);
 
   return (
-    <section className="side-padding my-container relative z-2 mt-[120px]">
+    <section className="side-padding my-container relative z-2 mt-[100px] md:mt-[120px]">
       <BigEllipseGradient />
 
       <TitleBlock
@@ -60,7 +60,7 @@ export default function OurMission() {
         subtitle={ABOUT_PAGE_DATA.OUR_MISSION.subtitle}
       />
 
-      <div className="relative mt-16 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+      <div className="relative mt-5 xs:mt-8 grid grid-cols-1 gap-5 max-md:max-w-[520px] md:grid-cols-2 md:gap-8 xl:grid-cols-3">
         {ABOUT_PAGE_DATA.OUR_MISSION.cards.map((card, i) => (
           <SlideUpSelf key={i}>
             <GlassCard

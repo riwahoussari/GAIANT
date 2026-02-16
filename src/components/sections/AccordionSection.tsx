@@ -91,7 +91,7 @@ export default function AccordionSection({
       </div>
 
       {/* content */}
-      <div className="relative mt-8 flex flex-col gap-10 sm:mt-12 sm:gap-14 md:mt-[40px] lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
+      <div className={"relative flex flex-col gap-10 sm:gap-14 lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2 " + (text ? " mt-8 sm:mt-12 md:mt-[40px] " : " mt-2 sm:mt-8 md:mt-[30px]")}>
         {withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />

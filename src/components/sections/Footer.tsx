@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <>
       <Outlet />
-      <footer className="relative z-1 pt-[220px] pb-9 text-white ">
+      <footer className="relative z-1 pt-[130px] pb-9 text-white xs:pt-[140px] sm:pt-[220px]">
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip max-sm:overflow-clip">
@@ -24,15 +24,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
-          <div className="absolute max-sm:pb-[max(12vw,120px)] max-sm:overflow-y-clip top-[1100px]  sm:top-[1200px] right-0 w-[635px] translate-x-1/4 lg:w-[50vw] lg:min-w-[690px]">
+          <div className="absolute top-[1100px] right-0 w-[635px] translate-x-1/4 max-sm:overflow-y-clip max-sm:pb-[max(12vw,120px)] sm:top-[1200px] lg:w-[50vw] lg:min-w-[690px]">
             <GradientCircle className="blur-[max(12vw,120px)]! max-sm:-translate-y-1/4" />
           </div>
         </div>
 
         {/* content */}
-        <div className="my-container side-padding relative flex gap-[78px] max-lg:flex-col xl:gap-[130px]">
+        <div className="my-container side-padding relative flex gap-[78px] max-lg:flex-col max-lg:items-center xl:gap-[130px]">
           {/* newsletter */}
-          <div className="max-w-[380px]">
+          <div className="w-full max-w-[380px]">
             <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
             <p className="text-[20px] leading-[31px]">
               We’ll keep you up to date with the latest.
@@ -142,7 +142,7 @@ export default function Footer() {
           </div>
 
           {/* Accordion Links */}
-          <nav className="divide-light-black max-w-[380px] divide-y-1 mb-[70px] lg:hidden">
+          <nav className="divide-light-black mb-[70px] w-full max-w-[380px] divide-y-1 lg:hidden">
             <NavAccordionItem
               onOpen={() => setSelectedAccordion(1)}
               onClose={() => setSelectedAccordion(0)}
@@ -171,23 +171,28 @@ export default function Footer() {
         </div>
 
         {/* copyright */}
-        <div className="side-padding my-container relative flex items-end gap-0 pt-12 max-md:flex-col md:justify-between md:pt-[7px]">
-          {/* logo */}
-          <img
-            className="w-full max-w-[428px]"
-            src="/logos/gaiant-logo-gradient.svg"
-            alt="Gaiant Logo"
-          />
-          <p className="text-center text-[11px] leading-[31px] whitespace-pre md:-translate-y-[22px] md:text-end -mt-5" style={{color: "#93939E"}}>
-            {"Gaiant © 2025       |       Powered by "}
-            <a
-              href="https://weareelites.com/"
-              className="not-hover:underline"
-              target="_blank"
+        <div className="side-padding my-container relative pt-12 lg:pt-[7px]">
+          <div className="mx-auto flex w-full items-end max-lg:max-w-[428px] max-lg:flex-col lg:justify-between">
+            {/* logo */}
+            <img
+              className="w-full max-w-[428px]"
+              src="/logos/gaiant-logo-gradient-new.svg"
+              alt="Gaiant Logo"
+            />
+            <p
+              className="-mt-5 text-center text-[11px] leading-[31px] whitespace-pre lg:-translate-y-[22px] lg:text-end"
+              style={{ color: "#93939E" }}
             >
-              Elites®
-            </a>
-          </p>
+              {"Gaiant © 2025       |       Powered by "}
+              <a
+                href="https://weareelites.com/"
+                className="not-hover:underline"
+                target="_blank"
+              >
+                Elites®
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
     </>

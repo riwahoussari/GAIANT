@@ -7,6 +7,7 @@ import { CAREERS_PAGE_DATA } from "../../../lib/data";
 export default function CareersHero() {
   return (
     <Hero
+      centered
       spacing="max"
       titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[700px]"
       padding="pt-[200px] xl:pt-[240px]! pb-[80px]! lg:pb-[64px]! xl:pb-[0px]! "

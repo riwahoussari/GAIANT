@@ -15,7 +15,7 @@ export default function IndustriesWeEmpower() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 side-padding my-container mt-[100px] overflow-x-hidden"
+      className="relative z-2 side-padding my-container mt-[120px] overflow-x-hidden"
     >
       {/* title */}
       <TitleBlock

@@ -68,7 +68,7 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
       >
         PRODUCTS
       </p>
-      <Link to="/arche" className="cursor-pointer max-lg:w-full group">
+      <Link to="/arche" className="group cursor-pointer max-lg:w-full">
         {!light && (
           <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
             <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
@@ -91,10 +91,10 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
           </div>
         )}
         <p
-          className="relative my-3 text-[15px] leading-[1.2] lg:hidden max-lg:group-hover:opacity-60"
+          className="relative my-3 text-[15px] leading-[1.2] max-lg:group-hover:opacity-60 lg:hidden"
           style={{ color: light ? "#86F8FF" : "#000" }}
         >
-          <span className="block scale-115 origin-bottom-left mb-2">Arche</span>
+          <span className="mb-2 block origin-bottom-left scale-115">Arche</span>
           The intelligent operating system for enterprise
         </p>
       </Link>
@@ -128,7 +128,7 @@ export function SolutionsFlyoutContent({
         {industries.map((industry, i) => (
           <Link
             key={i}
-            className="cursor-point group/link"
+            className="group/link"
             to={`/industries/${industry.id}`}
           >
             <p
@@ -141,16 +141,24 @@ export function SolutionsFlyoutContent({
         ))}
         <Link
           to="/industries"
-          className="group/link flex items-center gap-5 px-4 max-lg:hidden"
+          className="group/link flex items-center gap-5 py-3 lg:items-start lg:px-4"
         >
           <div className="relative">
-            <p className="text-[18px]">View All</p>
-            <div className="absolute right-0 -bottom-1 left-0 h-px origin-bottom scale-y-150 bg-black duration-200 ease-in-out group-hover/link:scale-y-0" />
+            <p
+              style={{ color: light ? "#86F8FF" : "#000" }}
+              className="text-[18px] duration-150 ease-in-out max-lg:group-hover/link:opacity-60"
+            >
+              View All
+            </p>
+            <div
+              className="absolute right-0 -bottom-1 left-0 h-px origin-bottom scale-y-150 duration-200 ease-in-out group-hover/link:scale-y-0"
+              style={{ backgroundColor: light ? "#86F8FF" : "#000" }}
+            />
           </div>
 
           <ArrowSvg
-            color="black"
-            className="w-[18px] translate-y-0.5 stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4"
+            color={light ? "#86F8FF" : "#000"}
+            className="w-[18px] translate-y-0.5 stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4 max-lg:hidden"
           />
         </Link>
       </div>

@@ -9,7 +9,6 @@ export default function ImagesLayout({
   bg2 = true,
   animationDelay,
   reverse = false,
-  mobileImg = 1
 }: {
   img1: ReactNode;
   img2: ReactNode;
@@ -17,15 +16,20 @@ export default function ImagesLayout({
   bg2?: boolean;
   animationDelay?: number;
   reverse?: boolean;
-  mobileImg?: 1 | 2;
 }) {
   const divRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(divRef, { once: true });
   return (
-    <div ref={divRef} className="relative grid lg:grid-cols-7">
+    <div
+      ref={divRef}
+      className="relative grid grid-cols-3 gap-2 md:gap-5 lg:gap-0 lg:grid-cols-7 min-h-[256px]"
+    >
       {/* img 1 */}
       <SlideUpAnim
-        className={(reverse ? "absolute right-0 bottom-full col-span-2 max-lg:w-[min(25vw,160px)] max-lg:-translate-y-6 max-sm:hidden lg:static lg:me-2 lg:aspect-2/3!" : "col-span-5 lg:me-5 lg:aspect-5/3!") + (mobileImg === 2 ? " max-lg:hidden " : "")}
+        className={
+          "h-full w-full " +
+          (reverse ? " col-span-1 lg:col-span-2 lg:pe-2 " : " col-span-2 lg:col-span-5 lg:pe-5 ")
+        }
         initial={{ y: "100px" }}
         transition={{ delay: animationDelay || 0, duration: 0.6 }}
         isInView={isInView}
@@ -39,28 +43,16 @@ export default function ImagesLayout({
           {img1}
         </div>
       </SlideUpAnim>
-      <SlideUpAnim
-        className={(reverse ? "absolute right-0 bottom-full col-span-2 max-lg:w-[min(25vw,160px)] max-lg:-translate-y-6 max-sm:hidden lg:static lg:me-2 lg:aspect-2/3!" : "col-span-5 lg:me-5 lg:aspect-5/3!") + (mobileImg === 2 ? " lg:hidden " : "")}
-        initial={{ y: "100px" }}
-        transition={{ delay: animationDelay || 0, duration: 0.6 }}
-        isInView={isInView}
-      >
-        <div
-          className={
-            "flex h-full w-full items-center justify-center overflow-clip rounded-md lg:rounded-xl " +
-            (bg1 ? "bg-white/50" : "")
-          }
-        >
-          {img2}
-        </div>
-      </SlideUpAnim>
 
       {/* img 2 */}
       <SlideUpAnim
         initial={{ y: "100px" }}
         transition={{ delay: (animationDelay || 0) + 0.2, duration: 0.6 }}
         isInView={isInView}
-        className={(reverse ? "col-span-5 lg:ms-5 lg:aspect-5/3!" : "absolute right-0 bottom-full col-span-2 max-lg:w-[min(25vw,160px)] max-lg:-translate-y-6 max-sm:hidden lg:static lg:ms-2 lg:aspect-2/3!") + (mobileImg === 2 ? " max-lg:hidden " : "")}
+        className={
+          "h-full w-full " +
+          (reverse ? " col-span-2 lg:col-span-5 lg:ps-5 " : " col-span-1 lg:col-span-2 lg:ps-2 ")
+        }
       >
         <div
           className={

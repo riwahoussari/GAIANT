@@ -3,27 +3,38 @@ import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim } from "../../../components/ui/Anims";
 import { useInView } from "motion/react";
 import { ARCHE_PAGE_DATA } from "../../../lib/data";
+import { useIsMobile } from "../../../lib/useIsMobile";
 
 export default function ArcheIndustries() {
   const [selectedTab, setSelectedTab] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+  const isMobile = useIsMobile(640);
+
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 side-padding my-container flex flex-col items-center gap-y-8 overflow-x-clip sm:gap-y-14 mt-5"
+      className="side-padding my-container relative z-2 mt-5 flex flex-col items-center gap-y-6 overflow-x-clip md:gap-y-14"
     >
       {/* title */}
       <CenteredTitleBlock
+        key={`${isMobile}`}
         title={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.title}
-        text={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.text}
+        text={
+          isMobile
+            ? ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.text.replace(
+                "your people",
+                "you"
+              )
+            : ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.text
+        }
       />
 
       {/* tabs */}
       <SlideUpAnim
         isInView={isInView}
         transition={{ delay: 0.3 }}
-        className="grid grid-cols-2 items-center justify-items-stretch gap-2 rounded-full px-3 py-2.5 text-center max-sm:flex-wrap xs:grid-cols-3 sm:flex sm:justify-between sm:border-1 lg:gap-8"
+        className="grid grid-cols-3 items-center justify-items-stretch gap-2 rounded-full text-center max-xs:my-3! max-md:my-4 max-sm:flex-wrap sm:flex sm:justify-between sm:border-1 sm:px-3 sm:py-2.5 lg:gap-8"
       >
         {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs.map((tab, i) => (
           <Tab
@@ -36,7 +47,7 @@ export default function ArcheIndustries() {
         ))}
       </SlideUpAnim>
 
-      <p className="text-16 mb-4 max-w-[375px] md:hidden text-center ">
+      <p className="text-16 max-w-[375px] text-center md:mb-4 md:hidden">
         {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
       </p>
 
@@ -60,12 +71,12 @@ export default function ArcheIndustries() {
           initial={{ y: "60px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-16 mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10 absolute">
+          <p className="text-16 absolute mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10">
             {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
           </p>
           <img
             src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].svg.desktop}
-            className="h-full w-full object-contain max-md:hidden max-lg:translate-y-[30px]"
+            className="h-full w-full object-contain max-lg:translate-y-[30px] max-md:hidden"
             alt="Demo of the ai workflow"
           />
           <img
@@ -92,7 +103,7 @@ function Tab({
     <p
       onClick={onClick}
       className={
-        "cursor-pointer rounded-full px-5 py-2 text-[16px] duration-200 ease-in-out hover:bg-black hover:text-white max-sm:border-1 xs:text-[17px] " +
+        "cursor-pointer rounded-full px-3 py-2 text-[16px] duration-200 ease-in-out hover:bg-black hover:text-white max-sm:border-1 xs:px-5 xs:text-[17px] " +
         (active ? " bg-black text-white" : " bg-transparent text-black")
       }
     >

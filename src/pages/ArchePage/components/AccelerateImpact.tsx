@@ -74,6 +74,7 @@ function Card({
     subtitle: string;
     title: string;
     text: string;
+    textWidth?: string;
     animation: unknown;
   };
 }) {
@@ -103,7 +104,7 @@ function Card({
             <p className="text-[50px] xs:text-[60px]"> {content.title}</p>
           </SlideUpAnim>
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.5 }}>
-            <p className="text-16">
+            <p className={"text-16 " + content.textWidth}>
               {content.text.includes("All instantly.") ? (
                 <>
                   <span>{content.text.replace("All instantly.", "")}</span>

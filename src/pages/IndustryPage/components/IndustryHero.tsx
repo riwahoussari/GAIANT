@@ -6,6 +6,7 @@ import { type TIndustry } from "../../../lib/data";
 export default function IndustryHero({ industry }: { industry: TIndustry }) {
   return (
     <Hero
+      centered
       spacing="max"
       titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[780px]"
       {...industry.hero}

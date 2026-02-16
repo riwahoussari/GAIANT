@@ -1760,6 +1760,7 @@ export const ARCHE_PAGE_DATA = {
         subtitle: "ADVANCED SEARCH & RETRIEVAL",
         title: "Discover",
         text: "From basic Q&A to complex decision making, Archē surfaces verifiable insights grounded in your data.",
+        textWidth: "max-sm:max-w-[280px]",
         animation: discoverAnimation,
       },
       {

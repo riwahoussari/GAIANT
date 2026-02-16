@@ -7,6 +7,7 @@ import {
   SolutionsFlyoutContent,
 } from "./FlyoutLink";
 import Button from "../../ui/Button";
+import { useIsMobile } from "../../../lib/useIsMobile";
 
 // MOBILE NAVBAR
 export default function MobileNavMenu({
@@ -17,18 +18,7 @@ export default function MobileNavMenu({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   ref: React.RefObject<HTMLDivElement | null>;
 }) {
-  const [isSm, setIsSm] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSm(window.innerWidth < 640);
-    };
-
-    checkScreenSize();
-
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  const isSm = useIsMobile(640)
 
   const [selectedAccordion, setSelectedAccordion] = useState<number>(1);
 
