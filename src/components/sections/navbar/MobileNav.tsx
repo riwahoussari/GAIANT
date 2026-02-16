@@ -18,7 +18,7 @@ export default function MobileNavMenu({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   ref: React.RefObject<HTMLDivElement | null>;
 }) {
-  const isSm = useIsMobile(640)
+  const isSm = useIsMobile(640);
 
   const [selectedAccordion, setSelectedAccordion] = useState<number>(1);
 
@@ -53,7 +53,7 @@ export default function MobileNavMenu({
           initial="initial"
           animate="enter"
           exit="exit"
-          className="absolute top-0 right-0 z-99 max-h-[95dvh] overflow-x-clip overflow-y-auto rounded-[20px] bg-white/50 px-6 py-2 text-black max-sm:left-0 max-sm:pt-[140px] sm:top-[140px] sm:right-[20px] sm:w-[400px] md:right-[40px] lg:hidden"
+          className="absolute top-0 right-0 z-99 max-h-[95dvh] overflow-x-clip overflow-y-auto rounded-[20px] bg-white/50 px-6 py-2 text-white max-sm:left-0 max-sm:pt-[140px] sm:top-[140px] sm:right-[20px] sm:w-[400px] md:right-[40px] lg:hidden"
         >
           <nav className="divide-light-black divide-y-1">
             <NavAccordionItem
@@ -61,21 +61,21 @@ export default function MobileNavMenu({
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 1}
               title="Products"
-              content={<ProductsFlyoutContent />}
+              content={<ProductsFlyoutContent color="white" />}
             />
             <NavAccordionItem
               onOpen={() => setSelectedAccordion(2)}
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 2}
               title="Solutions"
-              content={<SolutionsFlyoutContent defaultSorting />}
+              content={<SolutionsFlyoutContent color="white" defaultSorting />}
             />
             <NavAccordionItem
               onOpen={() => setSelectedAccordion(3)}
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 3}
               title="Company"
-              content={<CompanyFlyoutContent />}
+              content={<CompanyFlyoutContent color="white" />}
             />
             {isSm && (
               <div className="mt-10 mb-8 flex scale-110 justify-center sm:hidden">
@@ -95,7 +95,6 @@ export function NavAccordionItem({
   onOpen,
   onClose,
   open,
-  light = false,
 }: {
   title: string;
   content: ReactNode;
@@ -121,8 +120,11 @@ export function NavAccordionItem({
         </div>
         <div className="h-5 w-5">
           <ArrowSvg
-            color={light ? "white" : "black"}
-            className={"duration-150 ease-in-out rotate-90 " + (open ? " -rotate-90! " : "")}
+            color="white"
+            className={
+              "rotate-90 duration-150 ease-in-out " +
+              (open ? " -rotate-90!" : "")
+            }
           />
         </div>
       </div>

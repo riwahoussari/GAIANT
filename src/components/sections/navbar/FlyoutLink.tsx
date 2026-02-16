@@ -59,7 +59,11 @@ export default function FlyoutLink({
   );
 }
 
-export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
+export function ProductsFlyoutContent({
+  color = "black",
+}: {
+  color?: "black" | "white" | "teal";
+}) {
   return (
     <div className="flex gap-14">
       <p
@@ -69,7 +73,7 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
         PRODUCTS
       </p>
       <Link to="/arche" className="group cursor-pointer max-lg:w-full">
-        {!light && (
+        {color !== "teal" && (
           <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
             <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
               <img
@@ -92,9 +96,13 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
         )}
         <p
           className="relative my-3 text-[15px] leading-[1.2] max-lg:group-hover:opacity-60 lg:hidden"
-          style={{ color: light ? "#86F8FF" : "#000" }}
+          style={{ color: color === "teal" ? "#86F8FF" : color }}
         >
-          <span className="mb-2 block origin-bottom-left scale-115">Arche</span>
+          {color === "teal" && (
+            <span className="mb-2 block origin-bottom-left scale-115">
+              Archē
+            </span>
+          )}
           The intelligent operating system for enterprise
         </p>
       </Link>
@@ -104,10 +112,10 @@ export function ProductsFlyoutContent({ light = false }: { light?: boolean }) {
 
 export function SolutionsFlyoutContent({
   defaultSorting = false,
-  light = false,
+  color = "black",
 }: {
   defaultSorting?: boolean;
-  light?: boolean;
+  color?: "black" | "white" | "teal";
 }) {
   const industries = defaultSorting
     ? INDUSTRIES
@@ -116,7 +124,7 @@ export function SolutionsFlyoutContent({
       );
   return (
     <div className="flex flex-col gap-1 text-black lg:gap-5">
-      {!light && (
+      {color !== "teal" && (
         <p
           style={{ letterSpacing: "2.5px" }}
           className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
@@ -133,7 +141,7 @@ export function SolutionsFlyoutContent({
           >
             <p
               className="max-w-[280px] rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-              style={{ color: light ? "#86F8FF" : "#000" }}
+              style={{ color: color === "teal" ? "#86F8FF" : color }}
             >
               {industry.name}
             </p>
@@ -145,19 +153,19 @@ export function SolutionsFlyoutContent({
         >
           <div className="relative">
             <p
-              style={{ color: light ? "#86F8FF" : "#000" }}
+              style={{ color: color === "teal" ? "#86F8FF" : color }}
               className="text-[18px] duration-150 ease-in-out max-lg:group-hover/link:opacity-60"
             >
               View All
             </p>
             <div
               className="absolute right-0 -bottom-1 left-0 h-px origin-bottom scale-y-150 duration-200 ease-in-out group-hover/link:scale-y-0"
-              style={{ backgroundColor: light ? "#86F8FF" : "#000" }}
+              style={{ backgroundColor: color === "teal" ? "#86F8FF" : color }}
             />
           </div>
 
           <ArrowSvg
-            color={light ? "#86F8FF" : "#000"}
+            color={color === "teal" ? "#86F8FF" : color}
             className="w-[18px] translate-y-0.5 stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4 max-lg:hidden"
           />
         </Link>
@@ -166,10 +174,14 @@ export function SolutionsFlyoutContent({
   );
 }
 
-export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
+export function CompanyFlyoutContent({
+  color = "black",
+}: {
+  color?: "black" | "white" | "teal";
+}) {
   return (
     <div className="flex min-w-[320px] flex-col gap-1 text-black lg:gap-5">
-      {!light && (
+      {color !== "teal" && (
         <p
           style={{ letterSpacing: "2.5px" }}
           className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
@@ -181,7 +193,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
         <Link className="cursor-point group/link" to="/about">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: light ? "#86F8FF" : "#000" }}
+            style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             About
           </p>
@@ -189,7 +201,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
         <Link className="cursor-point group/link" to="/news">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: light ? "#86F8FF" : "#000" }}
+            style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             News
           </p>
@@ -197,7 +209,7 @@ export function CompanyFlyoutContent({ light = false }: { light?: boolean }) {
         <Link className="cursor-point group/link" to="/careers">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: light ? "#86F8FF" : "#000" }}
+            style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             Careers
           </p>

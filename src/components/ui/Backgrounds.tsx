@@ -1,6 +1,5 @@
 import { useState } from "react";
 import GreenBlueGradient from "../../assets/green-blue-gradient.webp";
-import GradientCircle from "./GradientCircle";
 
 export function LandscapeBg({
   ref,
@@ -89,10 +88,47 @@ export function BlurredTealGradientBg({
         />
       </div>
       {withBall && (
-        <div className="absolute top-[175px] left-1/2 w-[min(500px,110vw)] max-w-[670px] -translate-x-1/2 sm:top-[200px] lg:top-[140px] lg:w-[40vw] lg:min-w-[550px]">
-          <GradientCircle />
-        </div>
+        <>
+          <div className="absolute top-[175px] left-1/2 w-[min(500px,110vw)] max-w-[670px] -translate-x-1/2 sm:top-[200px] lg:top-[140px] lg:w-[40vw] lg:min-w-[550px]">
+            <div className="aspect-square">
+              <img
+                className="h-full w-full scale-145 object-contain lg:scale-135"
+                src="/gradients/circle-hero.webp"
+              />
+            </div>
+          </div>
+        </>
       )}
+    </div>
+  );
+}
+
+export function BlurredTealGradientOverlay() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative h-[120%]">
+      <div
+        className={
+          "absolute h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[min(6vw,120px)] " +
+          (isLoaded && !hasError
+            ? ""
+            : " bg-dark-green-700-blue-gradient-oblique")
+        }
+      >
+        <img
+          onLoad={() => {
+            setIsLoaded(true);
+          }}
+          onError={() => {
+            setHasError(true);
+          }}
+          src={GreenBlueGradient}
+          className="h-full w-full object-cover max-md:rotate-x-180 max-md:rotate-z-180"
+          alt="Gradient background"
+        />
+      </div>
     </div>
   );
 }
@@ -108,7 +144,7 @@ export function BlurredTealGradientBg2({
     <div className="relative h-full">
       <div
         className={
-          "h-full w-[120vw]! -translate-x-[10vw] blur-[min(6vw,120px)]" +
+          "h-full w-[120vw]! -translate-x-[10vw] blur-[min(6vw,100px)]" +
           (isLoaded && !hasError
             ? ""
             : " bg-dark-green-700-blue-gradient-oblique")
@@ -124,7 +160,12 @@ export function BlurredTealGradientBg2({
       </div>
       {withBall && (
         <div className="absolute top-1/2 left-1/2 w-[450px] max-w-[600px] -translate-1/2 lg:w-[30vw] lg:min-w-[500px]">
-          <GradientCircle />
+          <div className="aspect-square">
+            <img
+              className="h-full w-full scale-145 object-contain lg:scale-135"
+              src="/gradients/circle-hero.webp"
+            />
+          </div>
         </div>
       )}
     </div>

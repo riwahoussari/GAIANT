@@ -16,6 +16,9 @@ import FlyoutLink, {
 import BurgerMenuSvg from "./BurgerMenuSvg";
 import MobileNavMenu from "./MobileNav";
 import ArrowSvg from "../../ui/ArrowSvg";
+import {
+  BlurredTealGradientOverlay,
+} from "../../ui/Backgrounds";
 
 export default function Navbar({
   transparentBg = false,
@@ -84,13 +87,15 @@ export default function Navbar({
       {/* Announcement Bar */}
       <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px]">
         Introducing <span className="font-bold">archē</span>: The New Operating
-        Layer for Enterprise {"   "}
+        Layer for Enterprise
+        <span className="max-sm:hidden">{"    "}</span>
         <Link to="/arche" className="group relative max-sm:hidden">
           Learn More
           <span className="absolute right-0 -bottom-px left-0 block h-px origin-bottom translate-y-px scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
         </Link>
         <Link to="/arche" className="sm:hidden">
-          <ArrowSvg className="inline w-[min(16px,4vw)] -translate-y-px stroke-[1.5] duration-200 ease-in-out hover:translate-x-1" />
+          {"  "}
+          <ArrowSvg className="inline w-[min(16px,3.7vw)] -translate-y-px stroke-[1.5] duration-200 ease-in-out hover:translate-x-1" />
         </Link>
       </div>
       {/* Navbar Content */}
@@ -230,13 +235,18 @@ export default function Navbar({
       </AnimatePresence>
       <AnimatePresence>
         {mobileMenuOpen && (
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.3 }}
-            className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-xl lg:hidden"
-          />
+          <>
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ ease: "easeInOut", duration: 0.3 }}
+              className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-md lg:hidden"
+            ></m.div>
+            <div className="fixed top-0 right-0 bottom-0 left-0 z-99 lg:hidden opacity-70">
+              <BlurredTealGradientOverlay />
+            </div>
+          </>
         )}
       </AnimatePresence>
 

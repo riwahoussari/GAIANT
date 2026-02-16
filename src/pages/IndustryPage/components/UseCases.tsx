@@ -4,7 +4,6 @@ import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
 import GlassCard from "../../../components/ui/cards/GlassCard";
-import GradientCircle from "../../../components/ui/GradientCircle";
 
 export default function UseCases({
   content,

@@ -148,7 +148,7 @@ export default function Footer() {
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 1}
               title="Products"
-              content={<ProductsFlyoutContent light />}
+              content={<ProductsFlyoutContent color="teal" />}
               light
             />
             <NavAccordionItem
@@ -156,7 +156,7 @@ export default function Footer() {
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 2}
               title="Solutions"
-              content={<SolutionsFlyoutContent light defaultSorting />}
+              content={<SolutionsFlyoutContent color="teal" defaultSorting />}
               light
             />
             <NavAccordionItem
@@ -164,7 +164,7 @@ export default function Footer() {
               onClose={() => setSelectedAccordion(0)}
               open={selectedAccordion === 3}
               title="Company"
-              content={<CompanyFlyoutContent light />}
+              content={<CompanyFlyoutContent color="teal" />}
               light
             />
           </nav>
