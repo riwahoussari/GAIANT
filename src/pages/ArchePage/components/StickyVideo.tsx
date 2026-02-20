@@ -29,12 +29,12 @@ export default function StickeVideo() {
               style={{ position: "relative", scale }}
             >
               <iframe
-                src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+                src="https://player.vimeo.com/video/1166656426?background=1"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 className="h-full w-full object-contain"
-                title="Archē Demo Video"
+                title="Archē"
               ></iframe>
             </m.div>
           </SlideUpAnim>
@@ -48,12 +48,12 @@ export default function StickeVideo() {
         <SlideUpSelf>
           <div className="mx-auto aspect-video w-full rounded-md md:rounded-xl lg:w-9/10">
             <iframe
-              src="https://player.vimeo.com/video/1162463911?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+              src="https://player.vimeo.com/video/1166656426?background=1"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               className="h-full w-full object-contain"
-              title="Archē Demo Video"
+              title="Archē"
             ></iframe>
           </div>
         </SlideUpSelf>
