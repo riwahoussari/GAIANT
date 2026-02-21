@@ -54,38 +54,22 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
   );
 }
 
-export function BlurredTealGradientBg({
+export function BlurredBlueTealGradientBg({
   withBall = true,
-  fetchPriority,
 }: {
   withBall?: boolean;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+
 
   return (
     <div className="relative h-full">
       <div
         className={
-          "h-full w-[120vw]! -translate-x-[10vw] -translate-y-[10%] blur-[min(6vw,120px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px] " +
-          (isLoaded && !hasError
-            ? ""
-            : " bg-dark-green-700-blue-gradient-oblique")
+          "h-full w-[108vw]! -translate-x-[4vw] -translate-y-[5%] blur-[min(3vw,60px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px]  bg-dark-green-700-blue-gradient-oblique"
         }
       >
-        <img
-          fetchPriority={fetchPriority}
-          onLoad={() => {
-            setIsLoaded(true);
-          }}
-          onError={() => {
-            setHasError(true);
-          }}
-          src={GreenBlueGradient}
-          className="h-full w-full object-cover max-md:rotate-x-180 max-md:rotate-z-180"
-          alt="Gradient background"
-        />
+       
       </div>
       {withBall && (
         <>
@@ -93,7 +77,7 @@ export function BlurredTealGradientBg({
             <div className="aspect-square">
               <img
                 className="h-full w-full scale-145 object-contain lg:scale-135"
-                src="/gradients/circle-hero.webp"
+                src="/gradients/circle-hero-light.png"
               />
             </div>
           </div>

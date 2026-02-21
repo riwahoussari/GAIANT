@@ -68,44 +68,90 @@ export function ProductsFlyoutContent({
     <div className="flex gap-14">
       <p
         style={{ letterSpacing: "2.5px" }}
-        className="font-ibm! text-[12px] font-medium text-dark-green-900 max-lg:hidden"
+        className="font-ibm! text-[12px] font-medium text-dark-blue max-lg:hidden"
       >
         PRODUCTS
       </p>
-      <Link to="/arche" className="group cursor-pointer max-lg:w-full">
-        {color !== "teal" && (
-          <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
-            <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
-              <img
-                src="/images/mountains-landscape.jpg"
-                className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
-                alt="Landscape filled with mountains and a girl standing on a rock"
-              />
+      <div
+        className={
+          "flex max-lg:flex-col lg:gap-5 " +
+          (color === "teal" ? " gap-2" : " gap-4 pt-3")
+        }
+      >
+        <Link to="/arche" className="group cursor-pointer max-lg:w-full">
+          {color !== "teal" && (
+            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
+              <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
+                <img
+                  src="/images/mountains-landscape.jpg"
+                  className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
+                  alt="Landscape filled with mountains and a girl standing on a rock"
+                />
+              </div>
+              <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
+                <img
+                  src="/logos/arche-logo.svg"
+                  className="relative w-[110px] lg:w-[100px]"
+                  alt="Arche Logo"
+                />
+                <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-lg:hidden">
+                  The intelligent operating system for enterprise
+                </p>
+              </div>
             </div>
-            <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
-              <img
-                src="/logos/arche-logo.svg"
-                className="relative w-[110px] lg:w-[100px]"
-                alt="Arche Logo"
-              />
-              <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-lg:hidden">
-                The intelligent operating system for enterprise
-              </p>
-            </div>
-          </div>
-        )}
-        <p
-          className="relative my-3 text-[15px] leading-[1.2] max-lg:group-hover:opacity-60 lg:hidden"
-          style={{ color: color === "teal" ? "#86F8FF" : color }}
-        >
-          {color === "teal" && (
-            <span className="mb-2 block origin-bottom-left scale-115">
-              Archē
-            </span>
           )}
-          The intelligent operating system for enterprise
-        </p>
-      </Link>
+          <p
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            style={{ color: color === "teal" ? "#86F8FF" : color }}
+          >
+            {color === "teal" && (
+              <span className="mb-1 block origin-bottom-left scale-115">
+                archē
+              </span>
+            )}
+            <span className="max-[400px]:text-[13px]">
+              The intelligent operating system for enterprise
+            </span>
+          </p>
+        </Link>
+
+        <div className="max-lg:w-full ">
+          {color !== "teal" && (
+            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
+              <div className="absolute inset-0">
+                <img
+                  src="/images/horion-bg.webp"
+                  className="absolute h-full w-full origin-bottom scale-175 object-cover object-[50%_56%] max-[370px]:scale-200 max-[370px]:object-[50%_54%] max-lg:translate-x-1/10 lg:scale-180 lg:object-[50%_70%]"
+                  alt="Landscape filled with mountains and a girl standing on a rock"
+                />
+              </div>
+              <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
+                <img
+                  src="/logos/horion-logo.svg"
+                  className="relative w-[110px] lg:w-[100px]"
+                  alt="Horion Logo"
+                />
+                <p className="relative mt-3 max-w-[210px] text-[15px] leading-[1.2] max-lg:hidden">
+                  The intelligent meeting co-pilot for modern sales teams
+                </p>
+              </div>
+            </div>
+          )}
+          <p
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            style={{ color: color === "teal" ? "#86F8FF" : color }}
+          >
+            {color === "teal" && (
+              <span className="mb-1 block origin-bottom-left scale-115">
+                horion
+              </span>
+            )}
+            <span className="max-[400px]:text-[13px]">
+              The intelligent meeting co-pilot for modern sales teams
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -127,7 +173,7 @@ export function SolutionsFlyoutContent({
       {color !== "teal" && (
         <p
           style={{ letterSpacing: "2.5px" }}
-          className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
+          className="font-ibm! text-[14px] font-medium text-dark-blue lg:ps-4 lg:text-[12px]"
         >
           INDUSTRIES
         </p>
@@ -184,7 +230,7 @@ export function CompanyFlyoutContent({
       {color !== "teal" && (
         <p
           style={{ letterSpacing: "2.5px" }}
-          className="font-ibm! text-[14px] font-medium text-dark-green-900 lg:ps-4 lg:text-[12px]"
+          className="font-ibm! text-[14px] font-medium text-dark-blue lg:ps-4 lg:text-[12px] max-lg:hidden"
         >
           COMPANY
         </p>

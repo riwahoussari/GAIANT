@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import ArrowSvg from "../ui/ArrowSvg";
-import GradientCircle from "../ui/GradientCircle";
 import { LINKS } from "../../lib/data";
 import { NavAccordionItem } from "./navbar/MobileNav";
 import {
@@ -9,6 +8,7 @@ import {
   SolutionsFlyoutContent,
 } from "./navbar/FlyoutLink";
 import { useState } from "react";
+import BlueTealDiamondGradient from "../../assets/blue-teal-diamond-gradient.svg";
 
 export default function Footer() {
   const [selectedAccordion, setSelectedAccordion] = useState<number>(0);
@@ -25,7 +25,13 @@ export default function Footer() {
         </div>
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 w-[635px] translate-x-1/4 max-sm:overflow-y-clip max-sm:pb-[max(12vw,120px)] sm:top-[1200px] lg:w-[50vw] lg:min-w-[690px]">
-            <GradientCircle className="blur-[max(12vw,120px)]! max-sm:-translate-y-1/4" />
+            <div className={"blur-[max(12vw,120px)]! max-sm:-translate-y-1/2"}>
+              <img
+                src={BlueTealDiamondGradient}
+                className="aspect-square h-full w-full overflow-clip rounded-full object-contain blur-[max(1vw,10px)]"
+                alt="Faded gradient ball"
+              />
+            </div>
           </div>
         </div>
 
@@ -65,23 +71,38 @@ export default function Footer() {
           </div>
 
           {/* links */}
-          <div className="flex gap-20 max-lg:hidden max-md:flex-wrap lg:mx-auto xl:gap-[118px]">
+          <div className="flex gap-16 max-lg:hidden max-md:flex-wrap lg:mx-auto xl:gap-24">
             {/* col 1 */}
-            <div className="w-[72px]">
+            <div className="w-[198px]">
               <p className="mb-9 font-ibm! text-[13px] text-light-blue">
                 PRODUCTS
               </p>
               <div className="space-y-[20px] text-[14px] leading-[21px]">
                 {LINKS.find((l) => l.name == "Products")?.sublinks?.map(
-                  (link, i) => (
-                    <Link
-                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
-                      key={i}
-                      to={link.link}
-                    >
-                      <p>{link.name}</p>
-                    </Link>
-                  )
+                  (link, i) =>
+                    link.link ? (
+                      <Link
+                        className="block cursor-pointer duration-150 ease-in-out hover:opacity-60"
+                        key={i}
+                        to={link.link}
+                      >
+                        <p>
+                          <span className="mb-px block font-bold">
+                            {link.name}
+                          </span>
+                          <span>{link.text}</span>
+                        </p>
+                      </Link>
+                    ) : (
+                      <div className="block" key={i}>
+                        <p>
+                          <span className="mb-px block font-bold">
+                            {link.name}
+                          </span>
+                          <span>{link.text}</span>
+                        </p>
+                      </div>
+                    )
                 )}
               </div>
               <p className="mt-20 mb-6 font-ibm! text-[13px] text-light-blue lg:hidden">
@@ -91,9 +112,9 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-150 ease-in-out hover:opacity-60"
                       key={i}
-                      to={link.link}
+                      to={link.link || ""}
                     >
                       <p>{link.name}</p>
                     </Link>
@@ -110,14 +131,25 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Solutions")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-150 ease-in-out hover:opacity-60"
                       key={i}
-                      to={link.link}
+                      to={link.link || ""}
                     >
                       <p>{link.name}</p>
                     </Link>
                   )
                 )}
+                <Link
+                  className="block cursor-pointer duration-150 ease-in-out hover:opacity-60"
+                  to={"/industries"}
+                >
+                  <p>
+                    <span className="relative">
+                      View All
+                      <span className="absolute -right-px -bottom-px left-0 block h-px bg-white" />
+                    </span>
+                  </p>
+                </Link>
               </div>
             </div>
             {/* col 3 */}
@@ -129,9 +161,9 @@ export default function Footer() {
                 {LINKS.find((l) => l.name == "Company")?.sublinks?.map(
                   (link, i) => (
                     <Link
-                      className="block cursor-pointer duration-200 ease-in-out hover:opacity-60"
+                      className="block cursor-pointer duration-150 ease-in-out hover:opacity-60"
                       key={i}
-                      to={link.link}
+                      to={link.link || ""}
                     >
                       <p>{link.name}</p>
                     </Link>
@@ -142,7 +174,7 @@ export default function Footer() {
           </div>
 
           {/* Accordion Links */}
-          <nav className="divide-light-black mb-[70px] w-full max-w-[380px] divide-y-1 lg:hidden">
+          <nav className="mb-[70px] w-full max-w-[380px] divide-y-1 border-b lg:hidden">
             <NavAccordionItem
               onOpen={() => setSelectedAccordion(1)}
               onClose={() => setSelectedAccordion(0)}
@@ -176,7 +208,7 @@ export default function Footer() {
             {/* logo */}
             <img
               className="w-full max-w-[428px]"
-              src="/logos/gaiant-logo-gradient-new.svg"
+              src="/logos/gaiant-logo-colored.svg"
               alt="Gaiant Logo"
             />
             <p

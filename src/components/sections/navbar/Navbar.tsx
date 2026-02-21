@@ -16,9 +16,7 @@ import FlyoutLink, {
 import BurgerMenuSvg from "./BurgerMenuSvg";
 import MobileNavMenu from "./MobileNav";
 import ArrowSvg from "../../ui/ArrowSvg";
-import {
-  BlurredTealGradientOverlay,
-} from "../../ui/Backgrounds";
+import { BlurredTealGradientOverlay } from "../../ui/Backgrounds";
 
 export default function Navbar({
   transparentBg = false,
@@ -106,11 +104,13 @@ export default function Navbar({
           <div className="w-24 translate-y-1 xs:w-32 lg:min-w-[160px]">
             <GaiantLogoSvg
               color={
-                textColor === "black" || mobileMenuOpen
-                  ? "black"
-                  : transparentBg
-                    ? "white"
-                    : "black"
+                mobileMenuOpen
+                  ? "white"
+                  : textColor === "black"
+                    ? "black"
+                    : transparentBg
+                      ? "white"
+                      : "black"
               }
               className="duration-500 ease-in-out"
             />
@@ -209,11 +209,13 @@ export default function Navbar({
           >
             <BurgerMenuSvg
               color={
-                textColor === "black" || mobileMenuOpen
-                  ? "black"
-                  : transparentBg
-                    ? "white"
-                    : "black"
+                mobileMenuOpen
+                  ? "white"
+                  : textColor === "black"
+                    ? "black"
+                    : transparentBg
+                      ? "white"
+                      : "black"
               }
               isOpen={mobileMenuOpen}
             />
@@ -243,7 +245,7 @@ export default function Navbar({
               transition={{ ease: "easeInOut", duration: 0.3 }}
               className="fixed top-0 right-0 bottom-0 left-0 z-98 backdrop-blur-md lg:hidden"
             ></m.div>
-            <div className="fixed top-0 right-0 bottom-0 left-0 z-99 lg:hidden opacity-70">
+            <div className="fixed top-0 right-0 bottom-0 left-0 z-99 opacity-60 lg:hidden">
               <BlurredTealGradientOverlay />
             </div>
           </>

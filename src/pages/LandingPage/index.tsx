@@ -38,7 +38,7 @@ export default function LandingPage() {
         <ArcheSection />
         <WhatThisMeans />
         <OurLatestThinking />
-        <CallToAction />
+        <CallToAction /> 
       </main>
     </>
   );

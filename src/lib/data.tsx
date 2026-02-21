@@ -589,7 +589,7 @@ export const INDUSTRIES: TIndustry[] = [
     textClassName: "",
     hero: {
       subtitle: "TECHNOLOGY, MEDIA & TELECOMMUNICATIONS (TMT)",
-      subtitleClassName: " tmt-hero-subtitle-width " ,
+      subtitleClassName: " tmt-hero-subtitle-width ",
       title: "Put your data to work across your business",
       titleWidth:
         "max-xs:max-w-[min(85vw,350px)]! tmt-hero-title-width lg:min-w-[570px] lg:max-w-[570px] xl:min-w-[680px] xl:max-w-[680px]",
@@ -1629,7 +1629,7 @@ export const LANDING_PAGE_DATA = {
     },
     img2: {
       src: "/images/landing-hero.webp",
-      alt: "A team smiling and working together",
+      alt: "A woman working on a tablet.",
     },
   },
 
@@ -2096,14 +2096,26 @@ export const CAREERS_PAGE_DATA = {
 
 export type TLinkRecord = {
   name: string;
-  link: string;
+  text?: string;
+  link?: string;
   sublinks?: TLinkRecord[];
 };
 export const LINKS: TLinkRecord[] = [
   {
     name: "Products",
     link: "/arche",
-    sublinks: [{ name: "Archē", link: "/arche" }],
+    sublinks: [
+      {
+        name: "archē",
+        text: "The intelligent operating system for enterprise",
+        link: "/arche",
+      },
+      {
+        name: "horion",
+        text: "The intelligent meeting co-pilot for modern sales teams",
+        
+      },
+    ],
   },
   {
     name: "Solutions",
