@@ -1,7 +1,8 @@
 import { useInView } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim } from "../../../components/ui/Anims";
+import Player from "@vimeo/player";
 
 export default function OurApproach({
   content,
@@ -15,6 +16,21 @@ export default function OurApproach({
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
+  // autoplay video
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const playerRef = useRef<Player | null>(null);
+  useEffect(() => {
+    if (!iframeRef.current) return;
+
+    playerRef.current = new Player(iframeRef.current);
+  }, []);
+  useEffect(() => {
+    if (isInView) {
+      playerRef.current?.play();
+    }
+  }, [isInView]);
+
   return (
     <section
       ref={sectionRef}
@@ -42,7 +58,8 @@ export default function OurApproach({
         >
           <div className="relative aspect-video w-full">
             <iframe
-              src="https://player.vimeo.com/video/1166656815?background=1"
+              ref={iframeRef}
+              src="https://player.vimeo.com/video/1166656815?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0&muted=1"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

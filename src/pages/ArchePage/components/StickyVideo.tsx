@@ -55,7 +55,7 @@ function VideoDesktop() {
             >
               <iframe
                 ref={iframeRef}
-                src="https://player.vimeo.com/video/1166656426?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0?muted=1"
+                src="https://player.vimeo.com/video/1166656426?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0&muted=1"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

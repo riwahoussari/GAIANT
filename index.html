@@ -127,16 +127,16 @@
 
         setTimeout(() => {
           cover.remove();
-        }, 400);
+        }, 450);
       }
       player.on("play", hideCover);
 
       function hidePreloader() {
         const preloader = document.getElementById("preloader");
         preloader.style.opacity = 0;
+        document.body.classList.remove("locked");
         setTimeout(() => {
           preloader.remove();
-          document.body.classList.remove("locked");
         }, 400);
       }
 
