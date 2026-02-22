@@ -40,11 +40,6 @@ body {
   @apply max-w-dvw overflow-x-clip;
 }
 
-/* preloader */
-body.locked {
-  overflow-y: hidden;
-  touch-action: none;
-}
 
 
 /* spacing */

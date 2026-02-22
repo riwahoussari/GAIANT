@@ -1,9 +1,17 @@
-import { useInView, useTransform, motion as m } from "motion/react";
+import { useInView, useTransform, motion as m, useMotionValueEvent } from "motion/react";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useScroll } from "motion/react";
+import { useIsMobile } from "../../../lib/useIsMobile";
+import Player from "@vimeo/player";
 
 export default function StickeVideo() {
+  const isMobile = useIsMobile(1024);
+
+  return isMobile ? <VideoMobile /> : <VideoDesktop />;
+}
+
+function VideoDesktop() {
   const videoRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(videoRef, { once: true });
 
@@ -11,8 +19,25 @@ export default function StickeVideo() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["-384px start", "start start"],
-  });
+  }); 
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+
+  // autoplay
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const playerRef = useRef<Player | null>(null);
+  let started = false
+  useEffect(() => {
+    if (!iframeRef.current) return;
+
+    playerRef.current = new Player(iframeRef.current);
+  }, []);
+
+  useMotionValueEvent(scrollYProgress, 'change', (val) => {
+    if (val > 0 && !started) {
+      started = true;
+      playerRef.current?.play();
+    }
+  })
 
   return (
     <div className="relative z-2">
@@ -25,11 +50,12 @@ export default function StickeVideo() {
             className="side-padding my-container"
           >
             <m.div
-              className="mx-auto aspect-video w-9/10 rounded-xl object-contain"
+              className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-9/10 rounded-xl object-contain"
               style={{ position: "relative", scale }}
             >
               <iframe
-                src="https://player.vimeo.com/video/1166656426?background=1"
+                ref={iframeRef}
+                src="https://player.vimeo.com/video/1166656426?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0?muted=1"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -45,10 +71,43 @@ export default function StickeVideo() {
 
       {/* placeholder to maintain section height */}
       <div className="side-padding my-container max-lg:-mb-10 max-lg:-translate-y-20 max-sm:-mb-32 lg:invisible lg:pb-56">
+        <div className="mx-auto aspect-video w-full rounded-md md:rounded-xl lg:w-9/10"></div>
+      </div>
+    </div>
+  );
+}
+
+function VideoMobile() {
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const playerRef = useRef<Player | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+  });
+
+  useEffect(() => {
+    if (!iframeRef.current) return;
+
+    playerRef.current = new Player(iframeRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (isInView) {
+      playerRef.current?.play();
+    }
+  }, [isInView]);
+
+  return (
+    <div className="relative z-2">
+      <div className="side-padding my-container -mb-10 -translate-y-20 max-sm:-mb-32">
         <SlideUpSelf>
-          <div className="mx-auto aspect-video w-full rounded-md md:rounded-xl lg:w-9/10">
+          <div
+            ref={containerRef}
+            className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-full rounded-md md:rounded-xl"
+          >
             <iframe
-              src="https://player.vimeo.com/video/1166656426?background=1"
+              ref={iframeRef}
+              src="https://player.vimeo.com/video/1166656426?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0&muted=1"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerPolicy="strict-origin-when-cross-origin"

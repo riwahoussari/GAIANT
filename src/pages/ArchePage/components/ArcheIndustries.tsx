@@ -9,7 +9,8 @@ export default function ArcheIndustries() {
   const [selectedTab, setSelectedTab] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
-  const isMobile = useIsMobile(640);
+  const isSm = useIsMobile(640);
+  const isMobile = useIsMobile(768);
 
   return (
     <section
@@ -18,10 +19,10 @@ export default function ArcheIndustries() {
     >
       {/* title */}
       <CenteredTitleBlock
-        key={`${isMobile}`}
+        key={`${isSm}`}
         title={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.title}
         text={
-          isMobile
+          isSm
             ? ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.text.replace(
                 "your people",
                 "you"
@@ -74,16 +75,11 @@ export default function ArcheIndustries() {
           <p className="text-16 absolute mb-6 w-45/100 max-w-[375px] max-md:hidden lg:mb-10">
             {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].text}
           </p>
-          <img
-            src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].svg.desktop}
-            className="h-full w-full object-contain max-lg:translate-y-[30px] max-md:hidden"
-            alt="Demo of the ai workflow"
-          />
-          <img
-            src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[selectedTab].svg.mobile}
-            className="h-full w-full object-contain md:hidden"
-            alt="Demo of the ai workflow"
-          />
+          {isMobile ? (
+            <MobileImg selectedTab={selectedTab} />
+          ) : (
+            <DesktopImg selectedTab={selectedTab} />
+          )}
         </SlideUpAnim>
       </div>
     </section>
@@ -109,5 +105,46 @@ function Tab({
     >
       {children}
     </p>
+  );
+}
+
+function MobileImg({ selectedTab }: { selectedTab: number }) {
+  return (
+    <div className="relative">
+      <img
+        src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[0].svg.mobile}
+        className="invisible h-full w-full object-contain opacity-0"
+        alt="Demo of the ai workflow"
+        aria-hidden
+      />
+      {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs.map((ind, i) => (
+        <img
+          src={ind.svg.mobile}
+          className="absolute inset-0 h-full w-full object-contain"
+          style={selectedTab === i ? {} : { display: "none" }}
+          alt="Demo of the ai workflow"
+        />
+      ))}
+    </div>
+  );
+}
+function DesktopImg({ selectedTab }: { selectedTab: number }) {
+  return (
+    <div className="relative">
+      <img
+        src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[0].svg.desktop}
+        className="invisible h-full w-full object-contain opacity-0 max-lg:translate-y-[30px]"
+        alt="Demo of the ai workflow"
+        aria-hidden
+      />
+      {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs.map((ind, i) => (
+        <img
+          src={ind.svg.desktop}
+          className="absolute inset-0 h-full w-full object-contain max-lg:translate-y-[30px]"
+          alt="Demo of the ai workflow"
+          style={selectedTab === i ? {} : { display: "none" }}
+        />
+      ))}
+    </div>
   );
 }

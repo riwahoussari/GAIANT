@@ -15,6 +15,7 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.14",
     "@tailwindcss/vite": "^4.1.14",
+    "@vimeo/player": "^2.30.2",
     "class-variance-authority": "^0.7.1",
     "gh-pages": "^6.3.0",
     "lottie-react": "^2.4.1",
