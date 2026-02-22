@@ -11,10 +11,10 @@ export default function ArcheCallToAction() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-2 mt-[120px] overflow-x-clip"
+      className="relative mt-[120px] overflow-x-clip"
     >
       {/* titles */}
-      <div className="my-container side-padding relative z-1 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
+      <div className="my-container side-padding relative z-2 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
         <CenteredTitleBlock
           big
           title="Ready to put AI to work?"
@@ -23,7 +23,7 @@ export default function ArcheCallToAction() {
       </div>
 
       {/* arche logo */}
-      <div className="relative max-sm:mt-5">
+      <div className="relative z-0 max-sm:mt-5">
         {/* gradient circle */}
         <div className="absolute top-1/2 left-1/2 z-0 w-full max-w-[1328px] -translate-1/2 opacity-50 max-xs:scale-130 xs:opacity-60 sm:opacity-70 md:opacity-80 2xl:scale-110">
           <img
@@ -62,7 +62,7 @@ export default function ArcheCallToAction() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="relative mt-12 flex justify-center sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
+        className="relative z-2 mt-12 flex justify-center sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
       >
         <Button variant={"black"}>Request a demo</Button>
       </SlideUpAnim>
