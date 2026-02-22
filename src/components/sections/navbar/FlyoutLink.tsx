@@ -75,9 +75,10 @@ export function ProductsFlyoutContent({
       <div
         className={
           "flex max-lg:flex-col lg:gap-5 " +
-          (color === "teal" ? " gap-2" : " gap-4 pt-3")
+          (color === "teal" ? " gap-2 pt-0.5" : " gap-4 pt-3")
         }
       >
+        {/* Arche Link */}
         <Link to="/arche" className="group cursor-pointer max-lg:w-full">
           {color !== "teal" && (
             <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
@@ -94,28 +95,29 @@ export function ProductsFlyoutContent({
                   className="relative w-[110px] lg:w-[100px]"
                   alt="Arche Logo"
                 />
-                <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-lg:hidden">
+                <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
                   The intelligent operating system for enterprise
                 </p>
               </div>
             </div>
           )}
           <p
-            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            className="relative my-3 duration-150 max-lg:group-hover:opacity-60 lg:hidden"
             style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             {color === "teal" && (
-              <span className="mb-1 block origin-bottom-left scale-115">
+              <span className="mb-1 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
                 archē
               </span>
             )}
-            <span className="max-[400px]:text-[13px]">
+            <span className="text-[15px] leading-[1.2] max-xs:text-[13px]">
               The intelligent operating system for enterprise
             </span>
           </p>
         </Link>
 
-        <div className="max-lg:w-full ">
+        {/* Horion Link */}
+        <div className="max-lg:w-full">
           {color !== "teal" && (
             <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
               <div className="absolute inset-0">
@@ -131,22 +133,22 @@ export function ProductsFlyoutContent({
                   className="relative w-[110px] lg:w-[100px]"
                   alt="Horion Logo"
                 />
-                <p className="relative mt-3 max-w-[210px] text-[15px] leading-[1.2] max-lg:hidden">
+                <p className="relative mt-3 max-w-[210px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
                   The intelligent meeting co-pilot for modern sales teams
                 </p>
               </div>
             </div>
           )}
           <p
-            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            className="relative my-3 duration-150 max-lg:group-hover:opacity-60 lg:hidden"
             style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             {color === "teal" && (
-              <span className="mb-1 block origin-bottom-left scale-115">
+              <span className="mb-1 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
                 horion
               </span>
             )}
-            <span className="max-[400px]:text-[13px]">
+            <span className="text-[15px] leading-[1.2] max-xs:text-[13px]">
               The intelligent meeting co-pilot for modern sales teams
             </span>
           </p>
@@ -193,6 +195,8 @@ export function SolutionsFlyoutContent({
             </p>
           </Link>
         ))}
+
+        {/* view all */}
         <Link
           to="/industries"
           className="group/link flex items-center gap-5 py-3 lg:items-start lg:px-4"
@@ -230,7 +234,7 @@ export function CompanyFlyoutContent({
       {color !== "teal" && (
         <p
           style={{ letterSpacing: "2.5px" }}
-          className="font-ibm! text-[14px] font-medium text-dark-blue lg:ps-4 lg:text-[12px] max-lg:hidden"
+          className="font-ibm! text-[14px] font-medium text-dark-blue max-lg:hidden lg:ps-4 lg:text-[12px]"
         >
           COMPANY
         </p>

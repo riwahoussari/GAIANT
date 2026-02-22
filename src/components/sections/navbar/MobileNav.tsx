@@ -20,7 +20,7 @@ export default function MobileNavMenu({
 }) {
   const isSm = useIsMobile(640);
 
-  const [selectedAccordion, setSelectedAccordion] = useState<number>(1);
+  const [selectedAccordion, setSelectedAccordion] = useState<number>(0);
 
   // stop scrolling when mobile menu is opened
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function MobileNavMenu({
           initial="initial"
           animate="enter"
           exit="exit"
-          className="absolute top-0 right-0 z-99 max-h-[95dvh] overflow-x-clip overflow-y-auto rounded-[20px] bg-white/50 px-6 py-2 text-white max-sm:left-0 max-sm:pt-[140px] sm:top-[140px] sm:right-[20px] sm:w-[400px] md:right-[40px] lg:hidden"
+          className="absolute top-0 right-0 z-99 max-h-[95dvh] overflow-x-clip overflow-y-auto rounded-[20px] bg-white/50 px-6 py-2 text-white max-sm:left-0 max-sm:pt-[140px] sm:top-[140px] sm:right-[20px] sm:w-[428px] md:right-[40px] lg:hidden"
         >
           <nav className="divide-light-black divide-y-1">
             <NavAccordionItem
@@ -104,7 +104,7 @@ export function NavAccordionItem({
   light?: boolean;
 }) {
   return (
-    <div className={"space-y-4 py-5"}>
+    <div className={"space-y- py-5"}>
       <div
         className="flex cursor-pointer items-center justify-between"
         onClick={() => {
@@ -129,7 +129,12 @@ export function NavAccordionItem({
         </div>
       </div>
 
-      {open && content}
+      <div
+        className="overflow-hidden"
+        style={open ? { marginTop: "14px" } : { height: 0 }}
+      >
+        {content}
+      </div>
     </div>
   );
 }

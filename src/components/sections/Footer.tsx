@@ -20,7 +20,7 @@ export default function Footer() {
         {/* bg */}
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">
           <div className="absolute top-[1100px] right-0 -bottom-1/2 left-0 z-0 overflow-x-clip max-sm:overflow-clip">
-            <div className="h-full w-[140vw]! -translate-x-[20vw] bg-black blur-[30px] xl:blur-[40px]"></div>
+            <div className="h-full w-[140vw]! -translate-x-[20vw] bg-black xs:blur-[30px] xl:blur-[40px]"></div>
           </div>
         </div>
         <div className="absolute -top-[1000px] right-0 bottom-0 left-0 overflow-clip">

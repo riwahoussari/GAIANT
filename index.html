@@ -30,6 +30,63 @@
       type="font/woff2"
       crossorigin
     />
+
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        transition-property: opacity;
+        transition-duration: 0.4s; /* duration-400 */
+        transition-timing-function: ease-in-out;
+      }
+
+      #video-cover {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: black;
+        transition-property: opacity;
+        transition-duration: 0.4s; /* duration-400 */
+        transition-timing-function: ease-in-out;
+      }
+
+      iframe.preloader {
+        height: 100%;
+        max-height: 100dvh; /* max-h-dvh */
+        width: 100%;
+        transform: scale(2); /* scale-200 */
+        background-color: black;
+        object-fit: contain;
+      }
+
+      /* Responsive scaling */
+      @media (min-width: 640px) {
+        /* md: */
+        iframe.preloader {
+          transform: scale(1.5); /* scale-150 */
+        }
+      }
+
+      @media (min-width: 1024px) {
+        /* xl: */
+        iframe.preloader {
+          transform: scale(1); /* scale-100 */
+        }
+      }
+    </style>
   </head>
   <body class="locked">
     <div id="preloader">
@@ -40,7 +97,7 @@
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         title="preloader"
-        class="prelaoder"
+        class="preloader"
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
       ></iframe>
     </div>

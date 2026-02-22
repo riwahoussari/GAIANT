@@ -36,7 +36,7 @@ export default function ArcheSection() {
             className="max-lg:max-w-[460px]"
           >
             <p className="text-[31px] leading-[34px] xs:text-[38px] xs:leading-[42px] lg:text-[36px] lg:leading-[38px] xl:text-[46px] xl:leading-[47px]">
-              Your enterprise brain. <br className="sm:hidden"/> One place to ask, act, <span className="max-sm:whitespace-nowrap">build.</span>
+              Your enterprise brain. <br className="sm:hidden"/> One place to ask, act, <span className="max-sm:whitespace-nowrap">and build.</span>
             </p>
 
             <p className="mt-4 text-[15px] leading-[20px] max-lg:w-9/10 lg:mt-5 xs:text-[17px] xs:leading-[24px] xl:text-[22px] xl:leading-[28px] max-lg:mx-auto">
