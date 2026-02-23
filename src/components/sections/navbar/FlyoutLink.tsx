@@ -75,7 +75,7 @@ export function ProductsFlyoutContent({
       <div
         className={
           "flex max-lg:flex-col lg:gap-5 " +
-          (color === "teal" ? " gap-2 pt-0.5" : " gap-4 pt-3")
+          (color === "teal" ? " gap-2 pt-0.5" : " w-full gap-4 pt-3")
         }
       >
         {/* Arche Link */}
@@ -102,7 +102,7 @@ export function ProductsFlyoutContent({
             </div>
           )}
           <p
-            className="relative my-3 duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-sm:text-[clamp(13px,3.5vw,16px)] max-lg:group-hover:opacity-60 lg:hidden"
             style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             {color === "teal" && (
@@ -110,9 +110,7 @@ export function ProductsFlyoutContent({
                 archē
               </span>
             )}
-            <span className="text-[15px] leading-[1.2] max-xs:text-[13px]">
-              The intelligent operating system for enterprise
-            </span>
+            <span>The intelligent operating system for enterprise</span>
           </p>
         </Link>
 
@@ -140,7 +138,7 @@ export function ProductsFlyoutContent({
             </div>
           )}
           <p
-            className="relative my-3 duration-150 max-lg:group-hover:opacity-60 lg:hidden"
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-sm:text-[clamp(13px,3.5vw,16px)] max-lg:group-hover:opacity-60 lg:hidden"
             style={{ color: color === "teal" ? "#86F8FF" : color }}
           >
             {color === "teal" && (
@@ -148,9 +146,7 @@ export function ProductsFlyoutContent({
                 horion
               </span>
             )}
-            <span className="text-[15px] leading-[1.2] max-xs:text-[13px]">
-              The intelligent meeting co-pilot for modern sales teams
-            </span>
+            <span>The intelligent meeting co-pilot for modern sales teams</span>
           </p>
         </div>
       </div>
