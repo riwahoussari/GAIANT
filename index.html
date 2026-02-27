@@ -139,7 +139,7 @@
           preloader.remove();
         }, 400);
       }
-
+      hidePreloader();
       let triggered = false;
       player.on("timeupdate", function (data) {
         // data.seconds is current playback time

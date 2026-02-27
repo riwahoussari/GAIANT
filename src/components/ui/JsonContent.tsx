@@ -15,16 +15,17 @@ export default function JsonContent({
   return (
     <div ref={divRef}>
       <SlideUpAnim
-        initial={{ y: "50px" }}
+        // initial={{ y: "50px" }}
         isInView={isInView}
-        className={"leading-normal! text-18 max-w-[760px] " + className}
+        transition={{ delay: 0.4 }}
+        className={"text-19 max-w-[680px] leading-[28px]! " + className}
       >
         {content.map((obj, i) => {
           if (obj.type === "heading") {
             return (
               <React.Fragment key={i}>
                 <br />
-                <h3 className="font-bold text-24">{obj.content}</h3>
+                <h3 className="text-24 font-bold">{obj.content}</h3>
                 <br />
               </React.Fragment>
             );
@@ -33,7 +34,18 @@ export default function JsonContent({
               <React.Fragment key={i}>
                 {obj.content.map((text, j) => (
                   <React.Fragment key={j}>
-                    <p>{text}</p>
+                    {text.split("<br>").map((line, k) => (
+                      <>
+                        <p>
+                          {line.split("<b>").map((part, l) => (
+                            <span className={l % 2 !== 0 ? "font-bold" : ""}>
+                              {part}
+                            </span>
+                          ))}
+                        </p>
+                        {k !== text.split("<br").length - 1 && <br />}
+                      </>
+                    ))}
                     <br />
                   </React.Fragment>
                 ))}
@@ -70,7 +82,8 @@ function ShimmeringImage({ img }: { img: TImg }) {
   return (
     <img
       className={
-        "w-full object-contain lg-rounded " + (imgLoaded ? "" : " shimmer aspect-video w-full ")
+        "lg-rounded w-full object-contain " +
+        (imgLoaded ? "" : " shimmer aspect-video w-full")
       }
       {...img}
       onLoad={() => setImgLoaded(true)}
