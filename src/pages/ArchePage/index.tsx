@@ -27,7 +27,7 @@ export default function ArchePage() {
         title="Archē by Gaiant | AI Intelligent Operating System for EnterpriseS"
         description="Archē unifies every tool, workflow, and data source into one conversational interface, turning fragmented operations into seamless action."
       />
-      <Navbar transparentBg={transparentNavbar} />
+      <Navbar transparentBanner transparentBg={transparentNavbar} />
       <main>
         <ArcheHero navbarTriggerRef={navbarBgTrigger} />
         <StickeVideo />

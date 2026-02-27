@@ -29,7 +29,7 @@ export default function LandingPage() {
         title="Gaiant | One AI Work Platform for Any Kind of Work"
         description="Gaiant combines powerful AI with practical business solutions — helping teams work smarter, automate faster, and make better decisions through secure, scalable AI systems."
       />
-      <Navbar transparentBg={transparentNavbar} />
+      <Navbar transparentBanner transparentBg={transparentNavbar} />
       <main>
         <LandingHero navbarTriggerRef={navbarBgTrigger} />
         <WhatMakesUsDifferent />

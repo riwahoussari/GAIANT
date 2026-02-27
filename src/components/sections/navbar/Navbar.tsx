@@ -21,9 +21,11 @@ import { BlurredTealGradientOverlay } from "../../ui/Backgrounds";
 export default function Navbar({
   transparentBg = false,
   textColor = "white",
+  transparentBanner = false,
 }: {
   transparentBg?: boolean;
   textColor?: "white" | "black";
+  transparentBanner?: boolean;
 }) {
   const [hasMounted, setHasMounted] = useState(false);
   const [hideNavOnScroll, setHideNavOnScroll] = useState(false);
@@ -82,8 +84,8 @@ export default function Navbar({
       }}
       className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
     >
-      {/* Announcement Bar */}
-      <div className="bg-green-gradient relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px]">
+      {/* Announcement Banner */}
+      <div className={"relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px] " + (transparentBanner ? " bg-black/70 backdrop-blur-[30px] " : " bg-black ")}>
         Introducing <span className="font-bold">archē</span>: The New Operating
         Layer for Enterprise
         <span className="max-sm:hidden">{"    "}</span>
