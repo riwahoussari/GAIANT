@@ -36,38 +36,49 @@ export default function Footer() {
         </div>
 
         {/* content */}
-        <div className="my-container side-padding relative flex gap-[78px] max-lg:flex-col max-lg:items-center xl:gap-[130px]">
+        <div className="my-container side-padding relative flex gap-[58px] lg:gap-[78px] max-lg:flex-col max-lg:items-center xl:gap-[130px]">
           {/* newsletter */}
           <div className="w-full max-w-[380px]">
-            <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
-            <p className="text-[20px] leading-[31px]">
-              We’ll keep you up to date with the latest.
-            </p>
-            <p className="mt-[20px] max-w-[320px] text-[14px] leading-[22px] text-light-gray">
-              Enter your business email below to receive updates from Gaiant.
-              You can unsubscribe at any time.
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Email Received!");
-              }}
-              className="relative mt-[25px] flex items-center justify-between pb-3"
-            >
-              <input
-                placeholder="Email Address"
-                className="w-full text-[18px] outline-none"
-              />
-              <button
-                aria-label="Submit"
-                className="cursor-pointer hover:opacity-60"
-                type="submit"
+            <div className="w-full">
+              <p className="text-[28px] leading-[31px]">AI waits for no one.</p>
+              <p className="text-[20px] leading-[31px]">
+                We’ll keep you up to date with the latest.
+              </p>
+              <p className="mt-[20px] max-w-[320px] text-[14px] leading-[22px] text-light-gray">
+                Enter your business email below to receive updates from Gaiant.
+                You can unsubscribe at any time.
+              </p>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Email Received!");
+                }}
+                className="relative mt-[25px] flex items-center justify-between pb-3"
               >
-                <span className="hidden">Submit</span>
-                <ArrowSvg color="white" className="w-[18px]" />
-              </button>
-              <div className="bg-dark-green-700-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
-            </form>
+                <input
+                  placeholder="Email Address"
+                  className="w-full text-[18px] outline-none"
+                />
+                <button
+                  aria-label="Submit"
+                  className="cursor-pointer hover:opacity-60"
+                  type="submit"
+                >
+                  <span className="hidden">Submit</span>
+                  <ArrowSvg color="white" className="w-[18px]" />
+                </button>
+                <div className="bg-dark-green-700-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
+              </form>
+            </div>
+
+            <div className=" mt-[40px] lg:mt-[60px]">
+              <p className="mb-2 lg:mb-3 font-ibm! text-[13px] text-light-blue">
+                LET'S TALK
+              </p>
+              <a href="mailto:info@gaiant.com" className="text-[20px] leading-[20px] duration-150 ease-in-out hover:opacity-60">
+                info@gaiant.com
+              </a>
+            </div>
           </div>
 
           {/* links */}
@@ -96,8 +107,21 @@ export default function Footer() {
                     ) : (
                       <div className="block" key={i}>
                         <p>
-                          <span className="mb-px block font-bold">
-                            {link.name}
+                          <span
+                            className={
+                              "mb-px block " +
+                              (link.soon
+                                ? "flex items-start gap-2 whitespace-pre"
+                                : "")
+                            }
+                          >
+                            <span className="font-bold">{link.name}</span>
+                            {""}
+                            {link.soon && (
+                              <span className="flex translate-y-0 items-center rounded-full bg-light-blue px-[6px] py-[3px] text-[10px] leading-[10px] text-black">
+                                SOON
+                              </span>
+                            )}
                           </span>
                           <span>{link.text}</span>
                         </p>
@@ -203,7 +227,7 @@ export default function Footer() {
         </div>
 
         {/* copyright */}
-        <div className="side-padding my-container relative pt-12 lg:pt-[7px]">
+        <div className="side-padding my-container relative pt-20 lg:pt-[7px]">
           <div className="mx-auto flex w-full items-end max-lg:max-w-[428px] max-lg:flex-col lg:justify-between">
             {/* logo */}
             <img

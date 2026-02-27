@@ -102,11 +102,13 @@ export function ProductsFlyoutContent({
             </div>
           )}
           <p
-            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-sm:text-[clamp(13px,3.5vw,16px)] max-lg:group-hover:opacity-60 lg:hidden"
-            style={{ color: color === "teal" ? "#86F8FF" : color }}
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 max-sm:text-[clamp(13px,3.5vw,16px)] lg:hidden"
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
           >
             {color === "teal" && (
-              <span className="mb-1 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
+              <span className="mb-2.5 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
                 archē
               </span>
             )}
@@ -138,12 +140,17 @@ export function ProductsFlyoutContent({
             </div>
           )}
           <p
-            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-sm:text-[clamp(13px,3.5vw,16px)] max-lg:group-hover:opacity-60 lg:hidden"
-            style={{ color: color === "teal" ? "#86F8FF" : color }}
+            className="relative my-3 text-[15px] leading-[1.2] duration-150 max-lg:group-hover:opacity-60 max-sm:text-[clamp(13px,3.5vw,16px)] lg:hidden"
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
           >
             {color === "teal" && (
-              <span className="mb-1 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
-                horion
+              <span className="mb-2.5 flex origin-bottom-left scale-115 items-center text-[18px] leading-[18px] whitespace-pre">
+                horion{" "}
+                <span className="flex -translate-x-0 translate-y-px items-center rounded-full bg-white/20 px-[8px] py-[4px] text-[12px] leading-[12px] text-white">
+                  SOON
+                </span>
               </span>
             )}
             <span>The intelligent meeting co-pilot for modern sales teams</span>
@@ -185,7 +192,9 @@ export function SolutionsFlyoutContent({
           >
             <p
               className="max-w-[280px] rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-              style={{ color: color === "teal" ? "#86F8FF" : color }}
+              style={{
+                color: color === "teal" ? "var(--color-light-blue)" : color,
+              }}
             >
               {industry.name}
             </p>
@@ -199,19 +208,24 @@ export function SolutionsFlyoutContent({
         >
           <div className="relative">
             <p
-              style={{ color: color === "teal" ? "#86F8FF" : color }}
+              style={{
+                color: color === "teal" ? "var(--color-light-blue)" : color,
+              }}
               className="text-[18px] duration-150 ease-in-out max-lg:group-hover/link:opacity-60"
             >
               View All
             </p>
             <div
               className="absolute right-0 -bottom-1 left-0 h-px origin-bottom scale-y-150 duration-200 ease-in-out group-hover/link:scale-y-0"
-              style={{ backgroundColor: color === "teal" ? "#86F8FF" : color }}
+              style={{
+                backgroundColor:
+                  color === "teal" ? "var(--color-light-blue)" : color,
+              }}
             />
           </div>
 
           <ArrowSvg
-            color={color === "teal" ? "#86F8FF" : color}
+            color={color === "teal" ? "var(--color-light-blue)" : color}
             className="w-[18px] translate-y-0.5 stroke-[1px] duration-200 ease-in-out group-hover/link:translate-x-1/4 max-lg:hidden"
           />
         </Link>
@@ -239,7 +253,9 @@ export function CompanyFlyoutContent({
         <Link className="cursor-point group/link" to="/about">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: color === "teal" ? "#86F8FF" : color }}
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
           >
             About
           </p>
@@ -247,7 +263,9 @@ export function CompanyFlyoutContent({
         <Link className="cursor-point group/link" to="/news">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: color === "teal" ? "#86F8FF" : color }}
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
           >
             News
           </p>
@@ -255,7 +273,9 @@ export function CompanyFlyoutContent({
         <Link className="cursor-point group/link" to="/careers">
           <p
             className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
-            style={{ color: color === "teal" ? "#86F8FF" : color }}
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
           >
             Careers
           </p>
