@@ -1,13 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowSvg from "../ArrowSvg";
-import {
-  motion as m,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "motion/react";
-import { interpolate } from "flubber";
 
 export default function IndustryCard({
   imgSrc,
