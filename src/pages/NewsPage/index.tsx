@@ -1,6 +1,5 @@
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
-import NewsCtaSection from "./components/NewsCtaSection";
 import ArticlesSection from "./components/ArticlesSection";
 import CallToAction from "../../components/sections/CallToAction";
 import Navbar from "../../components/sections/navbar/Navbar";
@@ -29,11 +28,9 @@ export default function NewsPage() {
         <ArticlesSection
           navbarTriggerRef={navbarBgTrigger}
           className="mt-[200px]!"
-          withBall
           fetchPriority="high"
         />
-        <NewsCtaSection />
-        <ArticlesSection className="mt-[140px]" />
+        
         <CallToAction />
       </main>
     </>

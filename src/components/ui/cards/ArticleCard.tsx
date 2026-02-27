@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import Button from "../Button";
 import ArrowSvg from "../ArrowSvg";
+import GaiantLogoSvg from "../GaiantLogoSvg";
+import type { TArticle } from "../../../lib/types";
 
 export default function ArticleCard({
-  imgSrc,
+  mainImg: { src, sizes, srcset },
   title,
-  subtitle,
   className,
   fetchPriority,
-}: {
-  imgSrc: string;
-  title: string;
-  subtitle: string;
+  withLogo = false,
+}: TArticle & {
   className?: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
@@ -21,34 +19,44 @@ export default function ArticleCard({
       className="group w-full cursor-pointer"
       aria-label={`Read more about ${title}`}
     >
-      <div className={"relative overflow-clip text-white " + (className || "")}>
+      <div
+        className={
+          "lg-rounded relative aspect-440/342 overflow-clip text-black " +
+          (className || "")
+        }
+      >
         <div
-          className="h-full bg-black/25"
+          className="relative z-1 h-full bg-black/25"
           style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%)",
+            clipPath: `url(#bottomRightClip)`,
           }}
         >
           <img
             fetchPriority={fetchPriority}
-            className="w-full object-cover duration-200 ease-in-out group-hover:scale-110"
-            src={imgSrc}
+            className="h-full w-full object-cover duration-200 ease-in-out group-hover:scale-110"
+            src={src}
+            sizes={sizes}
+            srcSet={srcset}
             alt={`Image representing ${title}`}
           />
+          {withLogo && (
+            <div className="max-w-[200px absolute top-2/3 left-1/2 z-1 w-1/2 -translate-1/2">
+              <GaiantLogoSvg
+                color="white"
+                className="h-full w-full object-contain"
+              />
+            </div>
+          )}
         </div>
 
         {/* content */}
-        <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 p-6 py-4 backdrop-blur-[1000px]">
-          <p className="font-ibm! text-[12px] leading-[31px]">{subtitle}</p>
+        <div className="bg-linear-white-transparent-70 absolute top-0 right-0 left-0 z-2 p-5 backdrop-blur-[20px] sm:p-7 lg:p-8">
           <p className="text-25">{title}</p>
         </div>
 
-        {/* button */}
-        <Button className="absolute bottom-1 left-2" variant={"ghost"}>
-          Read more
-        </Button>
         {/* arrow */}
         <ArrowSvg
-          className="absolute right-0 bottom-1 z-1 w-6 -translate-x-1 stroke-[1px] duration-200 ease-in-out group-hover:translate-x-0 xs:w-8"
+          className="absolute right-0 bottom-1 z-0 w-6 -translate-x-[150%] scale-0 stroke-[1px] opacity-0 duration-200 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 xs:w-8"
           color="black"
         />
       </div>

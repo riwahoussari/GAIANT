@@ -8,14 +8,13 @@ import {
 import Button from "../../../components/ui/Button";
 import { GENERAL_DATA } from "../../../lib/data";
 import ArticleCard from "../../../components/ui/cards/ArticleCard";
+import { ARTICLES } from "../../../lib/articles";
 
 export default function ArticlesSection({
-  withBall = false,
   className,
   navbarTriggerRef,
   fetchPriority,
 }: {
-  withBall?: boolean;
   className?: string;
   navbarTriggerRef?: React.RefObject<HTMLDivElement | null>;
   fetchPriority?: "high" | "low" | "auto" | undefined;
@@ -30,11 +29,35 @@ export default function ArticlesSection({
         (className || "")
       }
     >
+      <svg className="absolute" width="0" height="0">
+        <defs>
+          <clipPath id={"bottomRightClip"} clipPathUnits="objectBoundingBox">
+            <path
+              d={
+                "M 0,0 L 1,0 L 1,0.76 A 0.05,0.08 0 0 1 0.98,0.82 L 0.86,0.98 A 0.06,0.05 0 0 1 0.82,1 L 0,1 Z"
+              }
+            />
+          </clipPath>
+        </defs>
+      </svg>
+      <svg className="absolute" width="0" height="0">
+        <defs>
+          <clipPath id={"bottomRightClipBig"} clipPathUnits="objectBoundingBox">
+            <path
+              d={
+                "M 0,0 L 1,0 L 1,0.77 A 0.05,0.1 0 0 1 0.98,0.85 L 0.91,0.98 A 0.03,0.05 0 0 1 0.89,1 L 0,1 Z"
+              }
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
       {/* main article */}
       <div className="relative" ref={sectionRef}>
         <p className="mb-10 font-ibm! text-[16px] xs:text-[18px]">
           <AnimatedText isInView={isInView}>THE GAIANT BLOG</AnimatedText>
         </p>
+
         <div
           className={
             "flex flex-col gap-[40px] lg:flex-row lg:gap-[30px] xl:gap-[50px] 2xl:gap-[70px]"
@@ -52,27 +75,16 @@ export default function ArticlesSection({
               transition={{ delay: 0.2 }}
             >
               <img
+                {...GENERAL_DATA.ARTICLES[0]}
                 fetchPriority={fetchPriority}
                 src="/images/people-walking.webp"
                 alt="two people walking together in a hallway"
-                className="h-full w-full object-cover"
+                className="lg-rounded h-full w-full object-cover"
                 style={{
-                  clipPath: "polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%)",
+                  clipPath: "url(#bottomRightClipBig)",
                 }}
               />
             </SlideUpAnim>
-
-            {withBall && (
-              <SlideUpAnim
-                isInView={isInView}
-                className="absolute top-0 right-0 w-1/4 translate-x-1/2 -translate-y-1/2 lg:w-1/3"
-              >
-                <img
-                  src="/gradients/news-page-circle.webp"
-                  className="h-full w-full scale-150 opacity-99"
-                />
-              </SlideUpAnim>
-            )}
           </div>
 
           {/* text */}
@@ -82,16 +94,16 @@ export default function ArticlesSection({
             transition={{ delay: 0.4 }}
           >
             <p className="font-ibm! text-[14px] leading-[30px] xs:text-[15px] xs:leading-[34px]">
-              GAIANT TEAM - SEP 19, 2025
+              GAIANT TEAM - {GENERAL_DATA.ARTICLES[0].date}
             </p>
             <p
               className={
                 "text-[28px] leading-[33px] xs:text-[34px] xs:leading-[39px]"
               }
             >
-              Why Language is the Next Frontier of Business Intelligence
+              {GENERAL_DATA.ARTICLES[0].title}
             </p>
-            <div className="mt-5 xs:mt-[30px] xl:mt-[44px]">
+            <div className="mt-5 xs:mt-[30px]">
               <Button
                 arrow={"normal"}
                 className="gap-4! bg-transparent! pl-0! backdrop-blur-[0px]!"
@@ -106,7 +118,7 @@ export default function ArticlesSection({
 
       {/* other articles */}
       <div className="mt-11 grid grid-cols-1 gap-5 gap-y-10! xs:gap-8 sm:gap-5 lg:grid-cols-2 xl:grid-cols-3">
-        {GENERAL_DATA.ARTICLES.slice(0, 3).map((article, i) => (
+        {ARTICLES.slice(1, 4).map((article, i) => (
           <div key={i}>
             <SlideUpSelf className="w-full max-w-[550px] lg:max-w-none">
               <ArticleCard

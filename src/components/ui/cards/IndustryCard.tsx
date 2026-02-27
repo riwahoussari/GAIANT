@@ -37,7 +37,7 @@ export default function IndustryCard({
       <div
         className="h-full bg-black/25 transition-all duration-300 ease-in-out"
         style={{
-          clipPath: `url(#angledClip)`,
+          clipPath: `url(#topRightClip)`,
         }}
       >
         <img

@@ -1,9 +1,8 @@
 import { useRef, type ReactNode } from "react";
 import { useInView } from "motion/react";
 import { SlideUpAnim } from "../ui/Anims";
-import { GENERAL_DATA } from "../../lib/data";
-import { CardsSlider } from "../ui/cards/CardsSlider";
 import ArticleCard from "../ui/cards/ArticleCard";
+import { ARTICLES } from "../../lib/articles";
 
 export default function NewsArticlesCarousel({
   titleBlock,
@@ -15,27 +14,40 @@ export default function NewsArticlesCarousel({
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding mt-[120px] overflow-x-hidden relative z-2"
+      className="my-container side-padding relative z-2 mt-[120px] overflow-x-hidden"
     >
+      <svg className="absolute" width="0" height="0">
+        <defs>
+          <clipPath id={"bottomRightClip"} clipPathUnits="objectBoundingBox">
+            <path
+              d={
+                "M 0,0 L 1,0 L 1,0.76 A 0.05,0.08 0 0 1 0.98,0.82 L 0.86,0.98 A 0.06,0.05 0 0 1 0.82,1 L 0,1 Z"
+              }
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
       {/* title */}
       {titleBlock}
 
       {/* cards */}
-      <CardsSlider displaySlider={false}>
-        {GENERAL_DATA.ARTICLES.map((article, i) => (
+      <div className="grid grid-cols-1 gap-5 gap-y-10! xs:gap-8 sm:gap-5 lg:grid-cols-2 xl:grid-cols-3 mt-10">
+        {ARTICLES.slice(1, 4).map((article, i) => (
           <SlideUpAnim
-          key={i}
+            key={i}
             isInView={isInView}
             transition={{ delay: 0.2 + 0.1 * i }}
+            className="w-full max-w-[550px] lg:max-w-none"
           >
             <ArticleCard
               key={i}
-              className="aspcet-415/390! w-[300px] xs:w-[360px] lg:w-[410px]"
+              className="w-full"
               {...article}
             />
           </SlideUpAnim>
         ))}
-      </CardsSlider>
+      </div>
     </section>
   );
 }

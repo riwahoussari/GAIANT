@@ -15,7 +15,7 @@ export default function IndustriesCards({
     >
       <svg className="absolute" width="0" height="0">
         <defs>
-          <clipPath id={"angledClip"} clipPathUnits="objectBoundingBox">
+          <clipPath id={"topRightClip"} clipPathUnits="objectBoundingBox">
             <path
               d={
                 "M 0,0 L 0.82,0 A 0.06,0.05 0 0 1 0.86,0.02 L 0.98,0.18 A 0.05,0.08 0 0 1 1,0.24 L 1,1 L 0,1 Z"
