@@ -18,7 +18,7 @@ const GlassCard = forwardRef<HTMLVideoElement | null, GlassCardProps>(
     return (
       <div
         className={
-          "relative h-full overflow-hidden bg-white p-3 xs:p-6 xl:p-5 2xl:p-6 " +
+          "relative h-full overflow-hidden bg-white p-3 xs:p-6 xl:p-5 2xl:p-6 lg-rounded " +
           (className || "")
         }
       >

@@ -54,6 +54,10 @@ body {
   @apply mx-3 xs:mx-5 md:mx-10;
 }
 
+.lg-rounded {
+  @apply rounded-[14px] lg:rounded-[20px];
+} 
+
 /* backgrounds and gradients */
 .bg-dark-green-700-blue-gradient {
   @apply bg-[linear-gradient(90deg,#024045_0%,#6C9ABD_50%,#001959_100%)];

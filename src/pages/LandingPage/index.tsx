@@ -31,6 +31,7 @@ export default function LandingPage() {
       />
       <Navbar transparentBanner transparentBg={transparentNavbar} />
       <main>
+        
         <LandingHero navbarTriggerRef={navbarBgTrigger} />
         <WhatMakesUsDifferent />
         <IndustriesWeEmpower />

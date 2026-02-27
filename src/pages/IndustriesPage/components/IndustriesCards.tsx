@@ -11,8 +11,20 @@ export default function IndustriesCards({
   return (
     <section
       ref={navbarTriggerRef}
-      className="relative z-2 side-padding my-container grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
+      className="side-padding my-container relative z-2 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
     >
+      <svg className="absolute" width="0" height="0">
+        <defs>
+          <clipPath id={"angledClip"} clipPathUnits="objectBoundingBox">
+            <path
+              d={
+                "M 0,0 L 0.82,0 A 0.06,0.05 0 0 1 0.86,0.02 L 0.98,0.18 A 0.05,0.08 0 0 1 1,0.24 L 1,1 L 0,1 Z"
+              }
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
       {INDUSTRIES.map((industry, i) => (
         <SlideUpSelf key={i}>
           <IndustryCard

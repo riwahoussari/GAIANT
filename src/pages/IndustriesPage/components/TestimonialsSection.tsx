@@ -62,10 +62,10 @@ export default function TestimonialSection() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 rounded-[20px] max-md:bg-none! md:p-12"
+        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 lg-rounded max-md:bg-none! md:p-12"
       >
         {/* animated testimonial */}
-        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden rounded-[20px] p-8 pb-5 text-center">
+        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden lg-rounded p-8 pb-5 text-center">
           <AnimatePresence mode="wait">
             <m.div
               key={index}

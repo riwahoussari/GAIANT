@@ -90,7 +90,7 @@ function Card({
       <m.div
         style={{ scale, top: `${index * 50}px` }}
         className={
-          "bg-linear-white-transparent-70 relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 rounded-xl px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16"
+          "bg-linear-white-transparent-70 relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16 lg-rounded"
         }
       >
         {/* text */}

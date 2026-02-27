@@ -10,7 +10,7 @@ export default function SimpleCard({
   return (
     <div
       className={
-        "flex w-full flex-col justify-between gap-8 bg-white px-3 py-5 text-black xs:px-5 xs:py-8 " +
+        "flex w-full flex-col justify-between gap-8 bg-white px-3 py-5 text-black xs:px-5 xs:py-8 lg-rounded " +
         (className || "")
       }
     >

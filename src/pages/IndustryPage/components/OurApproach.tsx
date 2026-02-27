@@ -56,7 +56,7 @@ export default function OurApproach({
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <div className="relative aspect-video w-full">
+          <div className="relative aspect-video w-full lg-rounded overflow-clip">
             <iframe
               ref={iframeRef}
               src="https://player.vimeo.com/video/1166656815?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0&muted=1"

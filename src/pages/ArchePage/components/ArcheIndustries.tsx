@@ -62,7 +62,7 @@ export default function ArcheIndustries() {
         >
           <img
             src="/images/mountains-landscape-2.webp"
-            className="h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0"
+            className="h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0 lg-rounded"
             alt="A doctor working on his ipad"
           />
         </SlideUpAnim>

@@ -24,7 +24,7 @@ export default function FeaturesSection({
       text={content.text}
       img={
         <div>
-          <img src={content.imgBack.src} alt={content.imgBack.alt} />
+          <img  className="lg-rounded" src={content.imgBack.src} alt={content.imgBack.alt} />
           <img
             src={content.imgFront.src}
             alt={content.imgFront.alt}

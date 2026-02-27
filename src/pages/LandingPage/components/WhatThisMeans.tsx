@@ -7,7 +7,7 @@ export default function WhatThisMeans() {
       className="mt-[130px]!"
       title={LANDING_PAGE_DATA.WHAT_THIS_MEANS.title}
       subtitle={LANDING_PAGE_DATA.WHAT_THIS_MEANS.subtitle}
-      img={<img {...LANDING_PAGE_DATA.WHAT_THIS_MEANS.img} />}
+      img={<img className="lg-rounded" {...LANDING_PAGE_DATA.WHAT_THIS_MEANS.img} />}
       accordionContent={LANDING_PAGE_DATA.WHAT_THIS_MEANS.accordionContent}
     />
   );

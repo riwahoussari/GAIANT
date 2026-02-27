@@ -1,6 +1,13 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowSvg from "../ArrowSvg";
+import {
+  motion as m,
+  useMotionValue,
+  useTransform,
+  animate,
+} from "motion/react";
+import { interpolate } from "flubber";
 
 export default function IndustryCard({
   imgSrc,
@@ -25,18 +32,19 @@ export default function IndustryCard({
 }) {
   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
   const [hovering, setHovering] = useState(false);
+
   return (
     <div
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      className={"group relative overflow-clip text-white " + (className || "")}
+      className={
+        "group lg-rounded relative overflow-clip text-white " + (className || "")
+      }
     >
       <div
         className="h-full bg-black/25 transition-all duration-300 ease-in-out"
         style={{
-          clipPath: hovering
-            ? "polygon(0 0, 82% 0, 100% 20%, 100% 100%, 0 100%)"
-            : "polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%)",
+          clipPath: `url(#angledClip)`,
         }}
       >
         <img
@@ -49,7 +57,7 @@ export default function IndustryCard({
 
       {/* content */}
       <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-tr from-black/0 to-black/15 p-3 py-4 backdrop-blur-md xs:p-6">
-        <p className="text-25-new flex group-hover:min-h-0! transition-all duration-400 ease-in-out min-h-[54px] items-center xs:min-h-[62px]">
+        <p className="text-25-new flex min-h-[54px] items-center transition-all duration-400 ease-in-out group-hover:min-h-0! xs:min-h-[62px]">
           {title}
         </p>
 

@@ -50,7 +50,7 @@ function VideoDesktop() {
             className="side-padding my-container"
           >
             <m.div
-              className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-9/10 rounded-xl object-contain"
+              className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-9/10 rounded-xl object-contain lg-rounded overflow-clip"
               style={{ position: "relative", scale }}
             >
               <iframe
@@ -103,7 +103,7 @@ function VideoMobile() {
         <SlideUpSelf>
           <div
             ref={containerRef}
-            className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-full rounded-md md:rounded-xl"
+            className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-full lg-rounded overflow-clip"
           >
             <iframe
               ref={iframeRef}

@@ -29,7 +29,7 @@ export default function LandingHero({
         <ImagesLayout
           animationDelay={0.5}
           img1={
-            <div className="flex h-full w-full items-center justify-center p-2 py-4  xs:p-6 lg:px-0 lg:py-12 xl:py-16">
+            <div className="flex h-full w-full items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12 xl:py-16">
               <DotLottieReact
                 renderConfig={{
                   autoResize: true,
@@ -37,7 +37,7 @@ export default function LandingHero({
                 src="/videos/landing-hero.json"
                 loop
                 autoplay
-                className="h-full w-full object-contain scale-130 2xl:scale-120"
+                className="h-full w-full scale-130 object-contain 2xl:scale-120"
               />
             </div>
           }
@@ -68,18 +68,20 @@ function ImagesLayout({
   return (
     <div
       ref={divRef}
-      className="relative grid grid-cols-5 md:grid-cols-2 gap-3 md:gap-5 lg:gap-8"
+      className="relative grid grid-cols-5 gap-3 md:grid-cols-2 md:gap-5 lg:gap-8"
     >
       {/* img 1 */}
       <SlideUpAnim
-        className={"w-full h-full min-h-[250px] aspect-662/540! max-md:col-span-3"}
+        className={
+          "aspect-662/540! h-full min-h-[250px] w-full max-md:col-span-3"
+        }
         initial={{ y: "100px" }}
         transition={{ delay: animationDelay || 0, duration: 0.6 }}
         isInView={isInView}
       >
         <div
           className={
-            "flex h-full w-full items-center justify-center overflow-clip rounded-md bg-white/50 lg:rounded-xl"
+            "lg-rounded flex h-full w-full items-center justify-center overflow-clip bg-white/50"
           }
         >
           {img1}
@@ -87,14 +89,16 @@ function ImagesLayout({
       </SlideUpAnim>
 
       <SlideUpAnim
-        className={"w-full h-full min-h-[250px] aspect-662/540! max-md:col-span-2"}
+        className={
+          "aspect-662/540! h-full min-h-[250px] w-full max-md:col-span-2"
+        }
         initial={{ y: "100px" }}
         transition={{ delay: animationDelay || 0, duration: 0.6 }}
         isInView={isInView}
       >
         <div
           className={
-            "flex h-full w-full items-center justify-center overflow-clip rounded-md bg-white/50 lg:rounded-xl"
+            "lg-rounded flex h-full w-full items-center justify-center overflow-clip bg-white/50"
           }
         >
           {img2}
