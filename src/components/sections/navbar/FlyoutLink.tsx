@@ -128,11 +128,14 @@ export function ProductsFlyoutContent({
                 />
               </div>
               <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
-                <img
-                  src="/logos/horion-logo.svg"
-                  className="relative w-[110px] lg:w-[100px]"
-                  alt="Horion Logo"
-                />
+                <div className="relative">
+                  <p className="text-[12px] leading-[12px] mb-2 lg:mb-3.5">SOON</p>
+                  <img
+                    src="/logos/horion-logo.svg"
+                    className="relative block w-[110px] lg:w-[100px]"
+                    alt="Horion Logo"
+                  />
+                </div>
                 <p className="relative mt-3 max-w-[210px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
                   The intelligent meeting co-pilot for modern sales teams
                 </p>
