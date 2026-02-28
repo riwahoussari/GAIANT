@@ -14,15 +14,13 @@ import { useRef } from "react";
 import ArrowSvg from "../../components/ui/ArrowSvg";
 
 export default function ArticlePage() {
-  const { title } = useParams();
-
-  console.log("title", title);
+  const { id } = useParams();
   const ARTICLE = ARTICLES.find(
-    (a) => a.title.toLowerCase() === title?.toLowerCase()
+    (a) => a.id.toLowerCase() === id?.toLowerCase()
   );
 
-  if (!ARTICLE || !title) return <NotFoundPage />;
-  return <Page key={ARTICLE.title} ARTICLE={ARTICLE} />;
+  if (!ARTICLE || !id) return <NotFoundPage />;
+  return <Page key={ARTICLE.id} ARTICLE={ARTICLE} />;
 }
 
 function Page({ ARTICLE }: { ARTICLE: TArticle }) {
@@ -82,7 +80,7 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
                 </p>
               </SlideUpAnim>
               <div className="flex justify-between max-lg:flex-col-reverse">
-                <div className="relative lg:w-[55%] xl:w-1/2">
+                <div className="relative z-1 lg:w-[55%] xl:w-1/2">
                   <JsonContent className="max-w-[680px]!" {...ARTICLE} />
                   <br />
                   <p className="text-16 max-w-[680px] text-[#7B7B7B] italic">

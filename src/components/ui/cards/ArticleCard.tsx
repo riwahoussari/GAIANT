@@ -5,6 +5,7 @@ import type { TArticle } from "../../../lib/types";
 
 export default function ArticleCard({
   mainImg: { src, sizes, srcset },
+  id,
   title,
   className,
   fetchPriority,
@@ -15,7 +16,7 @@ export default function ArticleCard({
 }) {
   return (
     <Link
-      to={`/news/${title}`}
+      to={`/news/${id}`}
       className="group w-full cursor-pointer"
       aria-label={`Read more about ${title}`}
     >

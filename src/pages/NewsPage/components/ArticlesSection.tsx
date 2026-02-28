@@ -6,9 +6,9 @@ import {
   SlideUpSelf,
 } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
-import { GENERAL_DATA } from "../../../lib/data";
 import ArticleCard from "../../../components/ui/cards/ArticleCard";
 import { ARTICLES } from "../../../lib/articles";
+import { Link } from "react-router-dom";
 
 export default function ArticlesSection({
   className,
@@ -75,7 +75,7 @@ export default function ArticlesSection({
               transition={{ delay: 0.2 }}
             >
               <img
-                {...GENERAL_DATA.ARTICLES[0]}
+                {...ARTICLES[0].mainImg}
                 fetchPriority={fetchPriority}
                 src="/images/people-walking.webp"
                 alt="two people walking together in a hallway"
@@ -94,16 +94,16 @@ export default function ArticlesSection({
             transition={{ delay: 0.4 }}
           >
             <p className="font-ibm! text-[14px] leading-[30px] xs:text-[15px] xs:leading-[34px]">
-              GAIANT TEAM - {GENERAL_DATA.ARTICLES[0].date}
+              GAIANT TEAM - {ARTICLES[0].date.string}
             </p>
             <p
               className={
                 "text-[28px] leading-[33px] xs:text-[34px] xs:leading-[39px]"
               }
             >
-              {GENERAL_DATA.ARTICLES[0].title}
+              {ARTICLES[0].title}
             </p>
-            <div className="mt-5 xs:mt-[30px]">
+            <Link to={`/news/${ARTICLES[0].id}`} className="mt-5 xs:mt-[30px]">
               <Button
                 arrow={"normal"}
                 className="gap-4! bg-transparent! pl-0! backdrop-blur-[0px]!"
@@ -111,7 +111,7 @@ export default function ArticlesSection({
               >
                 READ FULL ARTICLE
               </Button>
-            </div>
+            </Link>
           </SlideUpAnim>
         </div>
       </div>

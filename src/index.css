@@ -117,6 +117,14 @@ body {
   @apply text-[15px] leading-[18px] xs:text-[16px] xs:leading-[21px];
 }
 
+.text-19 {
+  @apply text-[17px] leading-[25px] xs:text-[19px] xs:leading-[28px];
+}
+
+.text-17 {
+  @apply text-[15px] leading-[25px] xs:text-[17px] xs:leading-[28px];
+}
+
 .text-25 {
   @apply text-[23px] leading-[27px] xs:text-[25px] xs:leading-[31px];
 }
