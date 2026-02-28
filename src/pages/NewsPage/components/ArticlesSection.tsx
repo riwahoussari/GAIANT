@@ -60,7 +60,7 @@ export default function ArticlesSection({
 
         <div
           className={
-            "flex flex-col gap-[40px] lg:flex-row lg:gap-[30px] xl:gap-[50px] 2xl:gap-[70px]"
+            "flex flex-col gap-[20px] lg:flex-row lg:gap-[30px] xl:gap-[50px] 2xl:gap-[70px]"
           }
         >
           {/* img */}

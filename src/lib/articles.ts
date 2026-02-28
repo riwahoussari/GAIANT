@@ -18,6 +18,7 @@ export const ARTICLES: TArticle[] = [
 		/blogs/blog1/blog1-810-540.webp 810w,
 		/blogs/blog1/blog1-480-320.webp 480w`,
     },
+    author: "By Gaiant®",
     date: {
       month: 2,
       day: 25,
@@ -358,6 +359,7 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
 		/blogs/blog2/blog2-810-540.webp 810w,
 		/blogs/blog2/blog2-480-320.webp 480w`,
     },
+    author: "By Gaiant®",
     date: {
       month: 2,
       day: 25,
@@ -589,6 +591,7 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
 		/blogs/blog3/blog3-810-540.webp 810w,
 		/blogs/blog3/blog3-480-320.webp 480w`,
     },
+    author: "By Gaiant®",
     date: {
       month: 2,
       day: 25,
@@ -796,6 +799,7 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
 		/blogs/blog4/blog4-810-540.webp 810w,
 		/blogs/blog4/blog4-480-320.webp 480w`,
     },
+    author: "By Gaiant®",
     date: {
       month: 2,
       day: 25,

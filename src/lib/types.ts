@@ -36,6 +36,7 @@ export type TArticle = {
   id: string;
   title: string;
   overview: string;
+  author: string;
   mainImg: TImg;
   date: TDate;
   readTime?: string;

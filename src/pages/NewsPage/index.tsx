@@ -27,7 +27,7 @@ export default function NewsPage() {
       <main>
         <ArticlesSection
           navbarTriggerRef={navbarBgTrigger}
-          className="mt-[180px]!"
+          className="mt-[140px]! sm:mt-[180px]!"
           fetchPriority="high"
         />
         

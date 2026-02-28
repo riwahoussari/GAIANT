@@ -77,7 +77,10 @@ export default function JsonContent({
             );
           } else if (obj.type === "table") {
             return (
-              <div className="max-sm:overflow-x-scroll max-sm:overflow-y-hidden">
+              <div
+                key={i}
+                className="pb-px max-sm:overflow-x-scroll max-sm:overflow-y-hidden"
+              >
                 <table className="text-[15px] max-sm:w-max xs:text-[16px] xs:leading-[26px] min-[1400px]:w-max min-[1400px]:text-[17px] min-[1400px]:leading-[28px] sm:max-w-[min(870px,100vw)]">
                   <thead>
                     <tr className="relative">
