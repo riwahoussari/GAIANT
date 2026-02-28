@@ -23,8 +23,25 @@ export default function OurApproach({
   useEffect(() => {
     if (!iframeRef.current) return;
 
-    playerRef.current = new Player(iframeRef.current);
+    const player = new Player(iframeRef.current);
+    playerRef.current = player;
+
+    const handleEnded = async () => {
+      try {
+        await player.setCurrentTime(0);
+        await player.play();
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    player.on("ended", handleEnded);
+
+    return () => {
+      player.off("ended", handleEnded);
+    };
   }, []);
+
   useEffect(() => {
     if (isInView) {
       playerRef.current?.play();
@@ -56,7 +73,7 @@ export default function OurApproach({
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <div className="relative aspect-video w-full lg-rounded overflow-clip">
+          <div className="lg-rounded relative aspect-video w-full overflow-clip">
             <iframe
               ref={iframeRef}
               src="https://player.vimeo.com/video/1166656815?controls=1&title=0&byline=0&portrait=0&loop=0&autoplay=0&muted=1"

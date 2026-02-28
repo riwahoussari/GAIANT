@@ -1,4 +1,9 @@
-import { useInView, useTransform, motion as m, useMotionValueEvent } from "motion/react";
+import {
+  useInView,
+  useTransform,
+  motion as m,
+  useMotionValueEvent,
+} from "motion/react";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import { useEffect, useRef } from "react";
 import { useScroll } from "motion/react";
@@ -19,25 +24,41 @@ function VideoDesktop() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["-384px start", "start start"],
-  }); 
+  });
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   // autoplay
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<Player | null>(null);
-  let started = false
+  let started = false;
   useEffect(() => {
     if (!iframeRef.current) return;
 
-    playerRef.current = new Player(iframeRef.current);
+    const player = new Player(iframeRef.current);
+    playerRef.current = player;
+
+    const handleEnded = async () => {
+      try {
+        await player.setCurrentTime(0);
+        await player.play();
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    player.on("ended", handleEnded);
+
+    return () => {
+      player.off("ended", handleEnded);
+    };
   }, []);
 
-  useMotionValueEvent(scrollYProgress, 'change', (val) => {
+  useMotionValueEvent(scrollYProgress, "change", (val) => {
     if (val > 0 && !started) {
       started = true;
       playerRef.current?.play();
     }
-  })
+  });
 
   return (
     <div className="relative z-2">
@@ -50,7 +71,7 @@ function VideoDesktop() {
             className="side-padding my-container"
           >
             <m.div
-              className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-9/10 rounded-xl object-contain lg-rounded overflow-clip"
+              className="bg-dark-green-700-blue-gradient-oblique lg-rounded mx-auto aspect-video w-9/10 overflow-clip rounded-xl object-contain"
               style={{ position: "relative", scale }}
             >
               <iframe
@@ -88,7 +109,22 @@ function VideoMobile() {
   useEffect(() => {
     if (!iframeRef.current) return;
 
-    playerRef.current = new Player(iframeRef.current);
+    const player = new Player(iframeRef.current);
+    playerRef.current = player;
+
+    const handleEnded = async () => {
+      try {
+        await player.setCurrentTime(0);
+        await player.play();
+      } catch (err) {
+      }
+    };
+
+    player.on("ended", handleEnded);
+
+    return () => {
+      player.off("ended", handleEnded);
+    };
   }, []);
 
   useEffect(() => {
@@ -103,7 +139,7 @@ function VideoMobile() {
         <SlideUpSelf>
           <div
             ref={containerRef}
-            className="bg-dark-green-700-blue-gradient-oblique mx-auto aspect-video w-full lg-rounded overflow-clip"
+            className="bg-dark-green-700-blue-gradient-oblique lg-rounded mx-auto aspect-video w-full overflow-clip"
           >
             <iframe
               ref={iframeRef}
