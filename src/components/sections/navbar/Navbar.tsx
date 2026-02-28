@@ -82,7 +82,7 @@ export default function Navbar({
         duration: hasMounted ? 0.3 : 0.7,
         delay: hasMounted ? 0 : 0.3,
       }}
-      className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out"
+      className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out max-w-dvw"
     >
       {/* Announcement Banner */}
       <div className={"relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px] " + (transparentBanner ? " bg-black/70 backdrop-blur-[30px] " : " bg-black ")}>

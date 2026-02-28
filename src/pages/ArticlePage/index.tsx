@@ -30,12 +30,12 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
     <>
       <PageMeta title={ARTICLE.title} description={ARTICLE.overview} />
       <Navbar transparentBg={false} />
-      <main key={ARTICLE.title}>
+      <main key={ARTICLE.title} className="max-w-dvw overflow-x-clip">
         <div className="h-[530px] w-dvw">
           <img {...ARTICLE.mainImg} className="h-full w-full object-cover" />
         </div>
 
-        <section ref={divRef} className="my-container max-w-[min(100vw,1470px)]! overflow-x-clip">
+        <section ref={divRef} className="my-container max-w-[min(1470px]! ">
           <article className="relative z-1">
             <div className="relative z-1 grid lg:grid-cols-2">
               {/* back button + Title */}
