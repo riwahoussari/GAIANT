@@ -94,6 +94,21 @@
       }
     </style>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-NZHNT4XPEC"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-NZHNT4XPEC");
+  </script>
+
   <body class="locked">
     <script>
       if ("scrollRestoration" in history) {
@@ -139,6 +154,9 @@
           preloader.remove();
         }, 400);
       }
+      // hideCover();
+      // hidePreloader();
+
       let triggered = false;
       player.on("timeupdate", function (data) {
         // data.seconds is current playback time
