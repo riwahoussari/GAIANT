@@ -83,7 +83,7 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
                       {ARTICLE.date.string}
                     </p>
                   </div>
-                  <ShareButton className="lg:hidden" />
+                  <ShareButton className="lg:hidden translate-y-1.5" />
                 </div>
               </SlideUpAnim>
 

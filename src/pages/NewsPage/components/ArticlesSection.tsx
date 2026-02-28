@@ -74,16 +74,18 @@ export default function ArticlesSection({
               isInView={isInView}
               transition={{ delay: 0.2 }}
             >
-              <img
-                {...ARTICLES[0].mainImg}
-                fetchPriority={fetchPriority}
-                src="/images/people-walking.webp"
-                alt="two people walking together in a hallway"
-                className="lg-rounded h-full w-full object-cover"
-                style={{
-                  clipPath: "url(#bottomRightClipBig)",
-                }}
-              />
+              <Link to={`/news/${ARTICLES[0].id}`}>
+                <img
+                  {...ARTICLES[0].mainImg}
+                  fetchPriority={fetchPriority}
+                  src="/images/people-walking.webp"
+                  alt="two people walking together in a hallway"
+                  className="lg-rounded h-full w-full object-cover"
+                  style={{
+                    clipPath: "url(#bottomRightClipBig)",
+                  }}
+                />
+              </Link>
             </SlideUpAnim>
           </div>
 
@@ -96,13 +98,14 @@ export default function ArticlesSection({
             <p className="font-ibm! text-[14px] leading-[30px] xs:text-[15px] xs:leading-[34px]">
               GAIANT TEAM - {ARTICLES[0].date.string}
             </p>
-            <p
+            <Link
+              to={`/news/${ARTICLES[0].id}`}
               className={
-                "text-[28px] leading-[33px] xs:text-[34px] xs:leading-[39px]"
+                "text-[28px] leading-[33px] xs:text-[34px] xs:leading-[39px] block"
               }
             >
               {ARTICLES[0].title}
-            </p>
+            </Link>
             <Link to={`/news/${ARTICLES[0].id}`} className="mt-5 xs:mt-[30px]">
               <Button
                 arrow={"normal"}

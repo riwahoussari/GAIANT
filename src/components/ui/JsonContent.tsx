@@ -101,7 +101,7 @@ export default function JsonContent({
                         </th>
                       ))}
 
-                      <div className="bg-dark-green-700-blue-gradient absolute right-0 -bottom-px left-0 h-0.5" />
+                      <span className="bg-dark-green-700-blue-gradient absolute right-0 -bottom-px left-0 block h-0.5" />
                     </tr>
                   </thead>
                   <tbody>
@@ -119,7 +119,7 @@ export default function JsonContent({
                           </td>
                         ))}
 
-                        <div className="bg-dark-green-700-blue-gradient absolute right-0 -bottom-px left-0 h-0.5" />
+                        <span className="bg-dark-green-700-blue-gradient absolute right-0 -bottom-px left-0 block h-0.5" />
                       </tr>
                     ))}
                   </tbody>
