@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaiant</title>
 
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta http-equiv="Permissions-Policy" content="" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://player.vimeo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.vercel.app https://i.vimeocdn.com https://player.vimeo.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel.app https://player.vimeo.com https://*.vimeocdn.com; frame-src https://player.vimeo.com; media-src https://*.vimeocdn.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+    />
+
     <!--  IBM Plex Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
