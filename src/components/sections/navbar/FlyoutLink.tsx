@@ -84,7 +84,8 @@ export function ProductsFlyoutContent({
             <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
               <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
                 <img
-                  src="/images/mountains-landscape.webp"
+                  src="/images/mountains-landscape/3506.webp"
+                  srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
                   className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
                   alt="Landscape filled with mountains and a girl standing on a rock"
                 />
@@ -129,7 +130,9 @@ export function ProductsFlyoutContent({
               </div>
               <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
                 <div className="relative">
-                  <p className="text-[12px] leading-[12px] mb-2 lg:mb-3.5">SOON</p>
+                  <p className="mb-2 text-[12px] leading-[12px] lg:mb-3.5">
+                    SOON
+                  </p>
                   <img
                     src="/logos/horion-logo.svg"
                     className="relative block w-[110px] lg:w-[100px]"

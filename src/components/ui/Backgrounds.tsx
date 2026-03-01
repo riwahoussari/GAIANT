@@ -16,7 +16,8 @@ export function LandscapeBg({
       <img
         fetchPriority={fetchPriority}
         alt="Landscape filled with mountains and a girl standing on a rock"
-        src="/images/mountains-landscape.webp"
+        src="/images/mountains-landscape/3506.webp"
+        srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
         className="h-full w-full object-cover"
       />
     </div>
@@ -63,6 +64,7 @@ export function BlurredLandscapeBg({
 
 export function BlurredBlueTealGradientBg({
   withBall = true,
+  fetchPriority,
 }: {
   withBall?: boolean;
   fetchPriority?: "high" | "low" | "auto" | undefined;
@@ -79,6 +81,7 @@ export function BlurredBlueTealGradientBg({
           <div className="absolute top-[175px] left-1/2 w-[min(500px,110vw)] max-w-[670px] -translate-x-1/2 sm:top-[200px] lg:top-[140px] lg:w-[40vw] lg:min-w-[550px]">
             <div className="aspect-square">
               <img
+                fetchPriority={fetchPriority}
                 className="h-full w-full scale-145 object-contain lg:scale-135"
                 sizes="(max-width: 455px) 160vw, (max-width: 1024px) 725px, (max-width: 1375px) 743px, (max-width: 1676px) 54vw, 905px"
                 src="/gradients/landing-hero-circle/905.avif"
