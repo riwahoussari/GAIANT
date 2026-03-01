@@ -9,7 +9,6 @@ export const ARTICLES: TArticle[] = [
       "This guide is for VPs of Supply Chain, Operations, Merchandising, and Finance who need to decide if, where, and how to deploy AI demand forecasting to improve accuracy, reduce inventory waste, and protect profitability.",
     mainImg: {
       src: "/blogs/blog1/blog1-3840-2560.webp",
-      sizes: "(max-width: 3500px) 3840px, 3840px",
       srcset: `/blogs/blog1/blog1-2560-1707.webp 2560w,
 		/blogs/blog1/blog1-1920-1280.webp 1920w,
 		/blogs/blog1/blog1-1440-960.webp 1440w,
@@ -350,7 +349,6 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
       "The shift to multimodal AI is less about exotic models and more about changing what you optimize for. This guide breaks down how real multimodal systems are designed, built, and evaluated in production enterprise environments.",
     mainImg: {
       src: "/blogs/blog2/blog2-3840-2560.webp",
-      sizes: "(max-width: 3500px) 3840px, 3840px",
       srcset: `/blogs/blog2/blog2-2560-1707.webp 2560w,
 		/blogs/blog2/blog2-1920-1280.webp 1920w,
 		/blogs/blog2/blog2-1440-960.webp 1440w,
@@ -582,7 +580,6 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
       "A guide for CEOs, COOs, CFOs, and CIOs who have spent the past year funding AI pilots and now need a clear path from generative AI curiosity to measurable business impact.",
     mainImg: {
       src: "/blogs/blog3/blog3-3840-2560.webp",
-      sizes: "(max-width: 3500px) 3840px, 3840px",
       srcset: `/blogs/blog3/blog3-2560-1707.webp 2560w,
 		/blogs/blog3/blog3-1920-1280.webp 1920w,
 		/blogs/blog3/blog3-1440-960.webp 1440w,
@@ -790,7 +787,6 @@ Embed AI forecasts into planning dashboards, ERP systems, and replenishment work
       "A practical guide for CTOs, heads of AI, and operations leaders on the data, orchestration, and governance required to run autonomous AI agents as reliable enterprise infrastructure.",
     mainImg: {
       src: "/blogs/blog4/blog4-3840-2560.webp",
-      sizes: "(max-width: 3500px) 3840px, 3840px",
       srcset: `/blogs/blog4/blog4-2560-1707.webp 2560w,
 		/blogs/blog4/blog4-1920-1280.webp 1920w,
 		/blogs/blog4/blog4-1440-960.webp 1440w,

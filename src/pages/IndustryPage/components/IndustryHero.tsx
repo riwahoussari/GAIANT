@@ -19,6 +19,7 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
         <HeroImgBackground
           alt={`${industry.name} industry illustration`}
           src={industry.hero.img.src}
+          srcSet={industry.hero.img.srcSet}
           fetchPriority="high"
           className={" " + industry.hero.img.position + " "}
         />

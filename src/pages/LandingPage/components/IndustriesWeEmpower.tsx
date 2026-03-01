@@ -56,7 +56,12 @@ export default function IndustriesWeEmpower() {
               textClassName={industry.textClassName}
               button={"arrow"}
               imgSrc={industry.img}
+              imgSrcSet={industry.imgSrcSet}
+              imgSizes={
+                "(max-width: 360px) 300px, (max-width: 1024px) 360px, 410px"
+              }
               imgClassName={industry.imgSquarePosition}
+              loading="lazy"
             />
           </SlideUpAnim>
         ))}

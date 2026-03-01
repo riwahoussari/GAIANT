@@ -28,7 +28,6 @@ export type TJsonContentObj =
 export type TImg = {
   src: string;
   alt?: string;
-  sizes?: string;
   srcset?: string;
 };
 

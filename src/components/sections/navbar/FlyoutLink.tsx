@@ -84,7 +84,7 @@ export function ProductsFlyoutContent({
             <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
               <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
                 <img
-                  src="/images/mountains-landscape.jpg"
+                  src="/images/mountains-landscape.webp"
                   className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
                   alt="Landscape filled with mountains and a girl standing on a rock"
                 />

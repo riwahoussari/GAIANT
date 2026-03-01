@@ -1,9 +1,11 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowSvg from "../ArrowSvg";
 
 export default function IndustryCard({
   imgSrc,
+  imgSrcSet,
+  imgSizes,
   imgClassName,
   id,
   title,
@@ -12,8 +14,11 @@ export default function IndustryCard({
   button = "none",
   className,
   fetchPriority,
+  loading
 }: {
   imgSrc: string;
+  imgSrcSet?: string;
+  imgSizes?: string;
   imgClassName?: string;
   id: string;
   title: string;
@@ -22,6 +27,7 @@ export default function IndustryCard({
   button?: "none" | "button" | "arrow";
   className?: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
+  loading?: "eager" | "lazy" | undefined;
 }) {
   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
   const [hovering, setHovering] = useState(false);
@@ -31,7 +37,8 @@ export default function IndustryCard({
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       className={
-        "group lg-rounded relative overflow-clip text-white " + (className || "")
+        "group lg-rounded relative overflow-clip text-white " +
+        (className || "")
       }
     >
       <div
@@ -41,9 +48,12 @@ export default function IndustryCard({
         }}
       >
         <img
+          loading={loading}
           fetchPriority={fetchPriority}
           className={"h-full w-full object-cover " + imgClassName}
           src={imgSrc}
+          srcSet={imgSrcSet}
+          sizes={imgSizes}
           alt={`Image representing ${title} industry`}
         />
       </div>

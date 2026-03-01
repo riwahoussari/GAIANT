@@ -35,25 +35,6 @@ export default function Tools() {
         subtitle={LANDING_PAGE_DATA.TOOLS.subtitle}
       />
 
-      {/* ICONS */}
-      {/* <div className="my-container relative mt-16 w-full overflow-x-clip">
-        <div className="absolute right-1/2 flex w-max translate-x-1/2 items-center justify-between gap-[min(18px,2.5vw)]">
-
-          {ICONS.map((src, i) => {
-            return (
-              <SlideUpAnim
-                key={i}
-                isInView={isInView}
-                transition={{
-                  delay: 0.3 + 0.1 * Math.abs(ICONS.length / 2 - i),
-                }}
-              >
-                <Icon className={OPACITIES[i]} src={src} />
-              </SlideUpAnim>
-            );
-          })}
-        </div>
-      </div> */}
       <MarqueeIcons />
     </section>
   );
@@ -186,6 +167,7 @@ function Icon({
 }) {
   return (
     <img
+      loading="lazy"
       src={src}
       style={{ opacity }}
       className={

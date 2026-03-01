@@ -23,7 +23,13 @@ export function LandscapeBg({
   );
 }
 
-export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
+export function BlurredLandscapeBg({
+  blur = "md",
+  loading,
+}: {
+  blur?: "lg" | "md";
+  loading?: "eager" | "lazy" | undefined;
+}) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -43,6 +49,7 @@ export function BlurredLandscapeBg({ blur = "md" }: { blur?: "lg" | "md" }) {
         }
       >
         <img
+          loading={loading}
           alt="Landscape filled with mountains and a girl standing on a rock"
           src="/images/mountains-landscape.webp"
           className="h-full w-full object-cover"
@@ -60,24 +67,25 @@ export function BlurredBlueTealGradientBg({
   withBall?: boolean;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
-
-
   return (
     <div className="relative h-full">
       <div
         className={
-          "h-full w-[108vw]! -translate-x-[4vw] -translate-y-[5%] blur-[min(3vw,60px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px]  bg-dark-green-700-blue-gradient-oblique"
+          "bg-dark-green-700-blue-gradient-oblique h-full w-[108vw]! -translate-x-[4vw] -translate-y-[5%] blur-[min(3vw,60px)] lg:h-[950px] xl:h-[1000px] 2xl:h-[1100px]"
         }
-      >
-       
-      </div>
+      ></div>
       {withBall && (
         <>
           <div className="absolute top-[175px] left-1/2 w-[min(500px,110vw)] max-w-[670px] -translate-x-1/2 sm:top-[200px] lg:top-[140px] lg:w-[40vw] lg:min-w-[550px]">
             <div className="aspect-square">
               <img
                 className="h-full w-full scale-145 object-contain lg:scale-135"
-                src="/gradients/circle-hero-light.png"
+                sizes="(max-width: 455px) 160vw, (max-width: 1024px) 725px, (max-width: 1375px) 743px, (max-width: 1676px) 54vw, 905px"
+                src="/gradients/landing-hero-circle/905.avif"
+                srcSet="/gradients/landing-hero-circle/905.avif 905w,
+                 /gradients/landing-hero-circle/640.avif 640w,
+                  /gradients/landing-hero-circle/480.avif 480w,
+                   /gradients/landing-hero-circle/320.avif 320w"
               />
             </div>
           </div>
@@ -159,6 +167,7 @@ export function BlurredTealGradientBg2({
 export function HeroImgBackground({
   blur,
   src,
+  srcSet,
   alt,
   className,
   fetchPriority,
@@ -166,6 +175,7 @@ export function HeroImgBackground({
   className?: string;
   blur?: string;
   src: string;
+  srcSet?: string;
   alt: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
@@ -192,6 +202,8 @@ export function HeroImgBackground({
             setHasError(true);
           }}
           src={src}
+          srcSet={srcSet}
+          sizes="100vw"
           className={"h-full w-full object-cover " + (className || "")}
           alt={alt}
         />

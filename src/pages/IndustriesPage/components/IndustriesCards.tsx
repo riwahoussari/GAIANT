@@ -36,6 +36,8 @@ export default function IndustriesCards({
             textClassName={industry.textClassName}
             button={!!industry.description ? "button" : "none"}
             imgSrc={industry.img}
+            imgSrcSet={industry.imgSrcSet}
+            imgSizes={"(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"}
             imgClassName={industry.imgPosition}
           />
         </SlideUpSelf>

@@ -32,7 +32,7 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
       <Navbar transparentBg={false} />
       <main key={ARTICLE.title} className="max-w-dvw overflow-x-clip">
         <div className="h-[530px] w-dvw">
-          <img {...ARTICLE.mainImg} className="h-full w-full object-cover" />
+          <img sizes="100vw" {...ARTICLE.mainImg} className="h-full w-full object-cover" />
         </div>
 
         <section ref={divRef} className="my-container max-w-[min(1470px]! ">

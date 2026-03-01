@@ -44,6 +44,7 @@ export default function LandingHero({
             <img
               fetchPriority="high"
               {...LANDING_PAGE_DATA.HERO.img2}
+              sizes="(max-width: 768px) 40vw, (max-width: 1965px) 50vw, 919px"
               className="h-full w-full object-cover object-center"
             />
           }

@@ -4,7 +4,7 @@ import GaiantLogoSvg from "../GaiantLogoSvg";
 import type { TArticle } from "../../../lib/types";
 
 export default function ArticleCard({
-  mainImg: { src, sizes, srcset },
+  mainImg: { src, srcset },
   id,
   title,
   className,
@@ -33,10 +33,11 @@ export default function ArticleCard({
           }}
         >
           <img
+            loading="lazy"
             fetchPriority={fetchPriority}
             className="h-full w-full object-cover duration-200 ease-in-out group-hover:scale-110"
             src={src}
-            sizes={sizes}
+            sizes="(max-width: 606px) 100vw, (max-width: 1024px) 550px, (max-width: 1280px) 50vw, (max-width: 1830px) 33vw, 610px"
             srcSet={srcset}
             alt={`Image representing ${title}`}
           />
