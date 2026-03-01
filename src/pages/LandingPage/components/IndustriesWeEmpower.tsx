@@ -33,7 +33,7 @@ export default function IndustriesWeEmpower() {
       <TitleBlock
         {...LANDING_PAGE_DATA.INDUSTRIES_WE_EMPOWER}
         button={
-          <Link to="/industries">
+          <Link aria-label="See all industries" to="/industries">
             <Button arrow={"normal"} variant={"secondary"}>
               See all
             </Button>

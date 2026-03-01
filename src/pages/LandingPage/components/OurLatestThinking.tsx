@@ -11,7 +11,7 @@ export default function OurLatestThinking() {
           title="Our latest thinking"
           subtitle="INSIGHTS AND IDEAS"
           button={
-            <Link to="/news">
+            <Link aria-label="See all news" to="/news">
               <Button arrow={"normal"} variant={"secondary"}>
                 See all
               </Button>

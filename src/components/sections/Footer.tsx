@@ -61,11 +61,11 @@ export default function Footer() {
                 />
                 <button
                   aria-label="Submit"
-                  className="cursor-pointer hover:opacity-60"
+                  className="cursor-pointer hover:opacity-60 scale-y-200 scale-x-300 "
                   type="submit"
                 >
                   <span className="hidden">Submit</span>
-                  <ArrowSvg color="white" className="w-[18px]" />
+                  <ArrowSvg color="white" className="w-[18px] scale-y-50 scale-x-33" />
                 </button>
                 <div className="bg-dark-green-700-blue-gradient absolute right-0 bottom-0 left-0 h-[2px] rounded-full" />
               </form>

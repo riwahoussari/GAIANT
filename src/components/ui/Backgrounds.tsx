@@ -19,6 +19,7 @@ export function LandscapeBg({
         src="/images/mountains-landscape/3506.webp"
         srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
         className="h-full w-full object-cover"
+        aria-hidden
       />
     </div>
   );
@@ -57,6 +58,7 @@ export function BlurredLandscapeBg({
           className="h-full w-full object-cover"
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
+          aria-hidden
         />
       </div>
     </div>
@@ -90,6 +92,8 @@ export function BlurredBlueTealGradientBg({
                  /gradients/landing-hero-circle/640.avif 640w,
                   /gradients/landing-hero-circle/480.avif 480w,
                    /gradients/landing-hero-circle/320.avif 320w"
+                alt="Decorative gradient circle"
+                aria-hidden
               />
             </div>
           </div>
@@ -122,7 +126,8 @@ export function BlurredTealGradientOverlay() {
           }}
           src={GreenBlueGradient}
           className="h-full w-full object-cover max-md:rotate-x-180 max-md:rotate-z-180"
-          alt="Gradient background"
+          alt="Decorative gradient background"
+          aria-hidden
         />
       </div>
     </div>
@@ -151,7 +156,8 @@ export function BlurredTealGradientBg2({
           onError={() => setHasError(true)}
           src={GreenBlueGradient}
           className="h-full w-full object-cover"
-          alt="Gradient Background"
+          alt="Decorative gradient background"
+          aria-hidden
         />
       </div>
       {withBall && (
@@ -160,6 +166,8 @@ export function BlurredTealGradientBg2({
             <img
               className="h-full w-full scale-145 object-contain lg:scale-135"
               src="/gradients/circle-hero.webp"
+              alt="Decorative gradient circle"
+              aria-hidden
             />
           </div>
         </div>
