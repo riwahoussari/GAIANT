@@ -52,7 +52,8 @@ export function BlurredLandscapeBg({
         <img
           loading={loading}
           alt="Landscape filled with mountains and a girl standing on a rock"
-          src="/images/mountains-landscape.webp"
+          src="/images/mountains-landscape/3506.webp"
+          srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
           className="h-full w-full object-cover"
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}

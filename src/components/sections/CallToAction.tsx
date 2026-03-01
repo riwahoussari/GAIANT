@@ -3,7 +3,7 @@ import { SlideUpAnim } from "../ui/Anims";
 import Button from "../ui/Button";
 import { CenteredTitleBlock } from "../ui/Titles";
 import { useRef } from "react";
-import gradientCircleAnimation from "../../assets/animations/gradient-circle-squared.mp4";
+import gradientCircleAnimation from "../../assets/animations/gradient-circle.mp4";
 
 export default function CallToAction({
   withGradientCircle = false,
