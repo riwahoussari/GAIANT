@@ -38,7 +38,7 @@ export default function AboutHero({
           img1={
             <img
               src="/images/about/sm/640.webp"
-              srcSet="/images/about/sm/640.webp 640w, /images/about/sm/480.webp 480w, /images/about/sm/320.webp 320w"
+              srcSet="/images/about/sm/640.webp 640w, /images/about/sm/480.webp 480w"
               sizes="(max-width: 1024px) 35vw, (max-width: 1965px) 29vw, 527px"
               className="h-full w-full object-cover"
               alt="A team of developers working together on their laptops"
@@ -48,7 +48,7 @@ export default function AboutHero({
           img2={
             <img
               src="/images/about/lg/1440.webp"
-              srcSet="/images/about/lg/1440.webp 1440w, /images/about/lg/1280.webp 1280w, /images/about/lg/1024.webp 1024w, /images/about/lg/810.webp 810w, /images/about/lg/640.webp 640w, /images/about/lg/480.webp 480w, /images/about/lg/320.webp 320w"
+              srcSet="/images/about/lg/1440.webp 1440w, /images/about/lg/1280.webp 1280w, /images/about/lg/1024.webp 1024w, /images/about/lg/810.webp 810w, /images/about/lg/640.webp 640w"
               alt="Strengthening Businesses. Revolutionizing Operations. Maximizing Potential."
               fetchPriority="high"
               className="h-full w-full origin-left object-cover object-[0%_50%]"

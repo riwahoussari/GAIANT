@@ -17,7 +17,8 @@ export function LandscapeBg({
         fetchPriority={fetchPriority}
         alt="Landscape filled with mountains and a girl standing on a rock"
         src="/images/mountains-landscape/3506.webp"
-        srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
+        srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/640.webp 640w"
+        sizes="(max-width: 640px) 200vw, 110vw"
         className="h-full w-full object-cover"
         aria-hidden
       />
@@ -54,7 +55,7 @@ export function BlurredLandscapeBg({
           loading={loading}
           alt="Landscape filled with mountains and a girl standing on a rock"
           src="/images/mountains-landscape/3506.webp"
-          srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/480.webp 480w, /images/mountains-landscape/320.webp 320w"
+          srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/640.webp 640w"
           className="h-full w-full object-cover"
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
@@ -90,8 +91,7 @@ export function BlurredBlueTealGradientBg({
                 src="/gradients/landing-hero-circle/905.avif"
                 srcSet="/gradients/landing-hero-circle/905.avif 905w,
                  /gradients/landing-hero-circle/640.avif 640w,
-                  /gradients/landing-hero-circle/480.avif 480w,
-                   /gradients/landing-hero-circle/320.avif 320w"
+                  /gradients/landing-hero-circle/480.avif 480w"
                 alt="Decorative gradient circle"
                 aria-hidden
               />

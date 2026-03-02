@@ -45,7 +45,7 @@ export default function TheArcheModel() {
               src={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.src}
               srcSet={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.srcSet}
               alt={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.alt}
-              sizes="(max-width: 1024px) 65vw, (max-width: 1965px) 71vw, 1316px"
+              sizes="(max-width: 768px) 120vw, (max-width: 1024px) 65vw, (max-width: 1965px) 71vw, 1316px"
               className="h-full w-full object-cover max-md:scale-150 max-md:-translate-y-1/10"
               />
             }
