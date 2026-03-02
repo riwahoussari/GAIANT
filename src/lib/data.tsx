@@ -239,7 +239,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/banking/810.webp 810w`,
     imgPosition: "object-[50%_60%]",
     imgSquarePosition: "object-[50%_100%] scale-110 origin-bottom",
-    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 451px",
+    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
     description:
       "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
     textClassName: " max-w-[320px] ",
@@ -508,7 +508,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/healthcare/810.webp 810w`,
     imgPosition: "object-[50%_75%]",
     imgSquarePosition: "scale-115 object-center -translate-y-7/100",
-    imgSizes: "(max-width: 480px) 345px, (max-width: 1024px) 414px, 472px",
+    imgSizes: "(max-width: 480px) 345px, (max-width: 1024px) 414px, 640px",
     description: "Advancing patient care and biological research",
     textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[10px] ",
     hero: {
@@ -653,7 +653,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/tech/810.webp 810w`,
     imgPosition: "object-[50%_66%]",
     imgSquarePosition: "object-[50%_75%] scale-120 ",
-    imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 492px",
+    imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 1024px",
     description:
       "Reducing churn, optimizing network performance, and monetizing content intelligently",
     textClassName: "",
@@ -794,7 +794,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/government/810.webp 810w`,
     imgPosition: "object-[50%_90%]",
     imgSquarePosition: "object-[50%_100%] scale-118 origin-bottom",
-    imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 492px",
+    imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 640px",
     description:
       "Digitizing citizen services, automating compliance, and enabling data-driven policy",
     textClassName: " max-w-[200px] xs:max-w-[250px] ",
@@ -935,7 +935,7 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition:
       "object-[100%_50%] scale-168 -translate-x-8/100 -translate-y-22/100",
     imgSquarePosition: "object-[83%_50%] scale-150 origin-bottom ",
-    imgSizes: "(max-width: 480px) 1024px, (max-width: 1024px) 540px, 615px",
+    imgSizes: "1024px",
     description:
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     textClassName: " max-w-[230px] xs:max-w-[260px] ",
@@ -1082,7 +1082,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/legal/810.webp 810w`,
     imgPosition: "object-[50%_58%] scale-128 translate-x-3/100",
     imgSquarePosition: "object-[50%_70%] scale-130 translate-x-4/100",
-    imgSizes: "(max-width: 480px) 390px, (max-width: 1024px) 468px, 533px",
+    imgSizes: "(max-width: 480px) 390px, (max-width: 1024px) 468px, 640px",
     description:
       "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     textClassName: " max-w-[220px] xs:max-w-[240px]  ",
@@ -1223,7 +1223,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/real-estate/810.webp 810w`,
     imgPosition: "object-[50%_56%]",
     imgSquarePosition: "object-[50%_60%] scale-110",
-    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 451px",
+    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
     description:
       "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
     textClassName: " max-w-[320px] ",
@@ -1364,7 +1364,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/retail/810.webp 810w`,
     imgPosition: "object-[50%_72%]",
     imgSquarePosition: "object-[50%_75%] scale-110 origin-bottom",
-    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 451px",
+    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
     description:
       "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
     textClassName: " max-w-[290px] ",
@@ -1506,7 +1506,7 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_50%]",
     imgSquarePosition:
       "object-[50%_50%] translate-x-3/100 scale-106 orgin-bottom",
-    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 451px",
+    imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
     description:
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     textClassName: " max-w-[290px]",

@@ -61,6 +61,7 @@ export default function ArcheIndustries() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <img
+            loading="lazy"
             src="/images/mountains-landscape-2/810.webp"
             srcSet="/images/mountains-landscape-2/810.webp 810w, /images/mountains-landscape-2/640.webp 640w, /images/mountains-landscape-2/480.webp 480w"
             className="lg-rounded h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0"
@@ -114,6 +115,7 @@ function MobileImg({ selectedTab }: { selectedTab: number }) {
   return (
     <div className="relative">
       <img
+        loading="lazy"
         src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[0].svg.mobile}
         className="invisible h-full w-full object-contain opacity-0"
         alt="Demo of the ai workflow"
@@ -121,6 +123,7 @@ function MobileImg({ selectedTab }: { selectedTab: number }) {
       />
       {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs.map((ind, i) => (
         <img
+          loading="lazy"
           src={ind.svg.mobile}
           className="absolute inset-0 h-full w-full object-contain"
           style={selectedTab === i ? {} : { display: "none" }}
@@ -134,6 +137,7 @@ function DesktopImg({ selectedTab }: { selectedTab: number }) {
   return (
     <div className="relative">
       <img
+        loading="lazy"
         src={ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs[0].svg.desktop}
         className="invisible h-full w-full object-contain opacity-0 max-lg:translate-y-[30px]"
         alt="Demo of the ai workflow"
@@ -141,6 +145,7 @@ function DesktopImg({ selectedTab }: { selectedTab: number }) {
       />
       {ARCHE_PAGE_DATA.ARCHE_INDUSTRIES.tabs.map((ind, i) => (
         <img
+          loading="lazy"
           src={ind.svg.desktop}
           className="absolute inset-0 h-full w-full object-contain max-lg:translate-y-[30px]"
           alt="Demo of the ai workflow"

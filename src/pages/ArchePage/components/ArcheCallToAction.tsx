@@ -9,10 +9,7 @@ export default function ArcheCallToAction() {
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative mt-[120px] overflow-x-clip"
-    >
+    <section ref={sectionRef} className="relative mt-[120px] overflow-x-clip">
       {/* titles */}
       <div className="my-container side-padding relative z-2 mx-auto space-y-5 text-center sm:top-5 xl:top-10">
         <CenteredTitleBlock
@@ -27,7 +24,10 @@ export default function ArcheCallToAction() {
         {/* gradient circle */}
         <div className="absolute top-1/2 left-1/2 z-0 w-full max-w-[1328px] -translate-1/2 opacity-50 max-xs:scale-130 xs:opacity-60 sm:opacity-70 md:opacity-80 2xl:scale-110">
           <img
-            src="/gradients/circle-beige.png"
+            loading="lazy"
+            src="/gradients/circle-beige/1328.avif"
+            srcSet="/gradients/circle-beige/1328.avif 1328w, /gradients/circle-beige/1024.avif 1024w, /gradients/circle-beige/810.avif 810w, /gradients/circle-beige/640.avif 640w"
+            sizes="(max-width: 480px) 130vw, (max-width: 1280px) 100vw, (max-width: 1344px) 110vw, 1328px"
             className="h-full w-full object-contain"
           />
         </div>

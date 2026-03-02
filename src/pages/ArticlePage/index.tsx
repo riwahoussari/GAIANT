@@ -204,7 +204,9 @@ function GradientCircle() {
   return (
     <div className="absolute top-0 right-0 z-0 w-dvw max-w-[1328px] translate-x-1/4 translate-y-[200px] opacity-50 max-sm:scale-150 xs:translate-y-[120px] xs:opacity-60 sm:translate-y-[30px] sm:opacity-70 md:translate-x-1/3 md:-translate-y-[100px] md:opacity-80 lg:-translate-y-1/2 2xl:scale-110">
       <img
-        src="/gradients/circle-news.png"
+        src="/gradients/circle-news/1328.avif"
+        srcSet="/gradients/circle-news/1328.avif 1328vw, /gradients/circle-news/1024.avif 1024vw, /gradients/circle-news/810.avif 810vw, /gradients/circle-news/640.avif 640vw"
+        sizes="(max-width: 640px) 150vw, (max-width: 1328px) 100vw, (max-width: 1536px) 1328px, 1460px"
         className="h-full w-full object-contain"
       />
     </div>

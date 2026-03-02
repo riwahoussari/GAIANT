@@ -26,7 +26,7 @@ export default function IndustriesPage() {
         description="From finance and healthcare to government and education, Gaiant delivers industry-specific AI solutions that adapt, scale, and transform the way organizations work and make decisions."
       />
       <Navbar textColor={"black"} transparentBg={transparentNavbar} />
-      <main>
+      <main className="max-w-dvw overflow-x-clip">
         <IndustriesHero />
         <IndustriesCards navbarTriggerRef={navbarBgTrigger} />
         <TestimonialSection />

@@ -72,11 +72,13 @@ export default function UseCases({
   return (
     <section
       ref={sectionRef}
-      className="side-padding my-container relative z-2 mt-[80px] md:mt-[120px] overflow-x-clip max-w-dvw"
+      className="side-padding my-container relative z-2 mt-[80px] max-w-dvw overflow-x-clip md:mt-[120px]"
     >
       <div className="absolute top-[calc(50%+100px)] left-1/2 z-0 -translate-1/2 opacity-70">
         <img
-          src="/gradients/circle-6.webp"
+          src="/gradients/circle-green/1328.avif"
+          srcSet="/gradients/circle-green/1328.avif 1328w, /gradients/circle-green/1024.avif 1024w, /gradients/circle-green/810.avif 810w, /gradients/circle-green/640.avif 640w"
+          sizes="(max-width: 640px) 800vw, (max-width: 768px) 370vw, 185vw"
           className="scale-185 max-md:scale-370 max-sm:scale-x-400 max-sm:scale-y-800 max-sm:opacity-80 2xl:opacity-90"
         />
       </div>

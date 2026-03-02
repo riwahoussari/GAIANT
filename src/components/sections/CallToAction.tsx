@@ -25,8 +25,10 @@ export default function CallToAction({
           >
             <div className="aspect-square origin-top translate-z-0 scale-185 md:scale-165 lg:scale-170 xl:scale-150">
               <img
-                src="/gradients/circle-6.webp"
+                src="/gradients/circle-green/1328.avif"
+                srcSet="/gradients/circle-green/1328.avif 1328w, /gradients/circle-green/1024.avif 1024w, /gradients/circle-green/810.avif 810w, /gradients/circle-green/640.avif 640w"
                 className="h-full w-full object-contain"
+                sizes="(max-width: 768px) 185vw, (max-width: 1024px) 165vw, (max-width: 1280px) 170vw, 150vw"
               />
             </div>
           </div>
@@ -34,7 +36,9 @@ export default function CallToAction({
           <div className={"absolute top-0 right-0 z-1 opacity-50"}>
             <div className="aspect-square origin-bottom translate-x-2/3 -translate-y-[150px] translate-z-0 scale-200 xs:-translate-y-[300px] md:translate-y-1/3 md:scale-150 lg:translate-y-[min(16%,_100px)]">
               <img
-                src="/gradients/circle-6.webp"
+                src="/gradients/circle-green/1328.avif"
+                srcSet="/gradients/circle-green/1328.avif 1328w, /gradients/circle-green/1024.avif 1024w, /gradients/circle-green/810.avif 810w, /gradients/circle-green/640.avif 640w"
+                sizes="(max-width: 768px) 200vw, 150vw"
                 className="h-full w-full object-contain"
               />
             </div>

@@ -39,13 +39,15 @@ export default function TestimonialSection() {
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding relative z-2 mt-[130px] overflow-x-clip"
+      className="my-container side-padding relative z-2 mt-[130px] "
     >
       {/* background gradient */}
       <div className="opacity40 absolute top-1/2 left-1/2 z-0 -translate-1/2 opacity-50">
         <div className="scale-x-350 scale-y-450 -rotate-90 sm:scale-x-200 sm:scale-y-400 lg:scale-x-180 lg:scale-y-400 2xl:scale-x-120 2xl:scale-y-300">
           <img
-            src="/gradients/circle-6.webp"
+            src="/gradients/circle-green/1328.avif"
+            srcSet="/gradients/circle-green/1328.avif 1328w, /gradients/circle-green/1024.avif 1024w, /gradients/circle-green/810.avif 810w, /gradients/circle-green/640.avif 640w"
+            sizes="(max-width: 640px) 450vw, (max-width: 1280px) 400vw, 300vw"
             className="h-full w-full object-contain"
           />
         </div>
@@ -62,10 +64,10 @@ export default function TestimonialSection() {
       <SlideUpAnim
         transition={{ delay: 0.3 }}
         isInView={isInView}
-        className="bg-linear-white-transparent-70 relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 lg-rounded max-md:bg-none! md:p-12"
+        className="bg-linear-white-transparent-70 lg-rounded relative mx-auto flex max-w-[1100px] flex-col items-center justify-center gap-8 max-md:bg-none! md:p-12"
       >
         {/* animated testimonial */}
-        <div className="bg-linear-white-transparent-70 relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden lg-rounded p-8 pb-5 text-center">
+        <div className="bg-linear-white-transparent-70 lg-rounded relative flex w-full max-w-[800px] flex-col justify-between gap-8 overflow-hidden p-8 pb-5 text-center">
           <AnimatePresence mode="wait">
             <m.div
               key={index}
