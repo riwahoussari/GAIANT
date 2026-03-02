@@ -5,12 +5,12 @@ import { PageMeta } from "../../components/ui/PageMeta";
 import { Link, useParams } from "react-router-dom";
 import { ARTICLES } from "../../lib/articles";
 import NotFoundPage from "../NotFoundPage";
-import type { TArticle } from "../../lib/types";
+import type { TArticle, TImg } from "../../lib/types";
 import JsonContent from "../../components/ui/JsonContent";
 import { SlideUpAnim } from "../../components/ui/Anims";
 import Button from "../../components/ui/Button";
 import { useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ArrowSvg from "../../components/ui/ArrowSvg";
 
 export default function ArticlePage() {
@@ -31,11 +31,9 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
       <PageMeta title={ARTICLE.title} description={ARTICLE.overview} />
       <Navbar transparentBg={false} />
       <main key={ARTICLE.title} className="max-w-dvw overflow-x-clip">
-        <div className="h-[530px] w-dvw">
-          <img sizes="100vw" {...ARTICLE.mainImg} className="h-full w-full object-cover" />
-        </div>
+        <HeroImg img={ARTICLE.mainImg} />
 
-        <section ref={divRef} className="my-container max-w-[min(1470px]! ">
+        <section ref={divRef} className="my-container max-w-[min(1470px]!">
           <article className="relative z-1">
             <div className="relative z-1 grid lg:grid-cols-2">
               {/* back button + Title */}
@@ -76,14 +74,14 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
                 transition={{ delay: 0.3 }}
                 isInView={isInView}
               >
-                <div className="flex items-end justify-between flex-wrap gap-y-4 pt-8 relative z-1">
+                <div className="relative z-1 flex flex-wrap items-end justify-between gap-y-4 pt-8">
                   <div>
                     <p className="text-25">{ARTICLE.author}</p>
                     <p className="font-ibm! text-[17px] leading-[31px] text-[#186167]">
                       {ARTICLE.date.string}
                     </p>
                   </div>
-                  <ShareButton className="lg:hidden translate-y-1.5" />
+                  <ShareButton className="translate-y-1.5 lg:hidden" />
                 </div>
               </SlideUpAnim>
 
@@ -120,6 +118,33 @@ function Page({ ARTICLE }: { ARTICLE: TArticle }) {
   );
 }
 
+function HeroImg({ img }: { img: TImg }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div
+      className={
+        "h-[530px] w-dvw " +
+        (isLoaded && !hasError
+          ? ""
+          : " bg-dark-green-700-blue-gradient-oblique")
+      }
+    >
+      <img
+        sizes="100vw"
+        {...img}
+        onLoad={() => {
+          setIsLoaded(true);
+        }}
+        onError={() => {
+          setHasError(true);
+        }}
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
 function NewsLetter() {
   return (
     <div className="lg-rounded relative w-full max-w-[380px] bg-white/50 p-5 max-lg:hidden xl:max-w-[410px]">
@@ -177,7 +202,7 @@ function ShareButton({ className }: { className?: string }) {
 
 function GradientCircle() {
   return (
-    <div className="absolute top-0 right-0 z-0 w-dvw max-w-[1328px] translate-x-1/4 translate-y-[200px] xs:translate-y-[120px] sm:translate-y-[30px] md:-translate-y-[100px] opacity-50 max-sm:scale-150 xs:opacity-60 sm:opacity-70 md:translate-x-1/3 lg:-translate-y-1/2 md:opacity-80 2xl:scale-110">
+    <div className="absolute top-0 right-0 z-0 w-dvw max-w-[1328px] translate-x-1/4 translate-y-[200px] opacity-50 max-sm:scale-150 xs:translate-y-[120px] xs:opacity-60 sm:translate-y-[30px] sm:opacity-70 md:translate-x-1/3 md:-translate-y-[100px] md:opacity-80 lg:-translate-y-1/2 2xl:scale-110">
       <img
         src="/gradients/circle-news.png"
         className="h-full w-full object-contain"
