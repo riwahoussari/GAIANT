@@ -31,8 +31,10 @@ export default function CareersHero() {
         <HeroImgBackground
           blur=" blur-[max(0.5vw,5px)] "
           alt="A team working and talking together"
-          src="/images/careers-hero.webp"
-          className="object-[50%_45%] -translate-x-4/100 scale-x-105 scale-y-120 origin-bottom"
+          src="/images/careers-hero/1280.webp"
+          srcSet="/images/careers-hero/1280.webp 1280w, /images/careers-hero/1024.webp 1024w, /images/careers-hero/810.webp 810w, /images/careers-hero/640.webp 640w, /images/careers-hero/480.webp 480w, /images/careers-hero/320.webp 320w"
+          sizes="100vw"
+          className="origin-bottom -translate-x-4/100 scale-x-105 scale-y-120 object-[50%_45%]"
           fetchPriority="high"
         />
       }

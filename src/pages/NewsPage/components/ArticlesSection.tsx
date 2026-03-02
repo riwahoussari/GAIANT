@@ -78,8 +78,6 @@ export default function ArticlesSection({
                 <img
                   {...ARTICLES[0].mainImg}
                   fetchPriority={fetchPriority}
-                  src="/images/people-walking.webp"
-                  alt="two people walking together in a hallway"
                   className="lg-rounded h-full w-full object-cover"
                   style={{
                     clipPath: "url(#bottomRightClipBig)",

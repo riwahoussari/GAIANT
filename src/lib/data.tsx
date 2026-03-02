@@ -205,7 +205,7 @@ export type TIndustry = {
     subtitle: string;
     text?: string;
     imgFront: { src: string; alt: string };
-    imgBack: { src: string; alt: string };
+    imgBack: { src: string; srcSet: string; alt: string };
     accordionContent: TAccordionContent[];
   };
   useCases: {
@@ -226,7 +226,6 @@ export type TIndustry = {
     title: "Our Approach";
     subtitle: string;
     text: string;
-    video: string;
   };
 };
 
@@ -269,8 +268,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/banking/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/banking/features/1024.webp",
+        srcSet: `/industries/banking/features/1024.webp 1024w,
+    /industries/banking/features/810.webp 810w,
+    /industries/banking/features/640.webp 640w,
+    /industries/banking/features/480.webp 480w,
+    /industries/banking/features/320.webp 320w`,
+        alt: "Two colleagues talking while going down the stairs",
       },
       accordionContent: [
         {
@@ -365,7 +369,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -408,8 +411,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/insurance/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/insurance/features/1024.webp",
+        srcSet: `/industries/insurance/features/1024.webp 1024w,
+    /industries/insurance/features/810.webp 810w,
+    /industries/insurance/features/640.webp 640w,
+    /industries/insurance/features/480.webp 480w,
+    /industries/insurance/features/320.webp 320w`,
+        alt: "Two people shaking hands",
       },
       accordionContent: [
         {
@@ -504,7 +512,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -551,8 +558,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/healthcare/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/healthcare/features/1024.webp",
+        srcSet: `/industries/healthcare/features/1024.webp 1024w,
+    /industries/healthcare/features/810.webp 810w,
+    /industries/healthcare/features/640.webp 640w,
+    /industries/healthcare/features/480.webp 480w,
+    /industries/healthcare/features/320.webp 320w`,
+        alt: "A doctor talking to a patient while looking at a tablet together",
       },
       accordionContent: [
         {
@@ -647,7 +659,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -700,8 +711,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/tech/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/tech/features/1024.webp",
+        srcSet: `/industries/tech/features/1024.webp 1024w,
+    /industries/tech/features/810.webp 810w,
+    /industries/tech/features/640.webp 640w,
+    /industries/tech/features/480.webp 480w,
+    /industries/tech/features/320.webp 320w`,
+        alt: "An employee walking in an office",
       },
       accordionContent: [
         {
@@ -796,7 +812,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -839,8 +854,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/government/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/government/features/1024.webp",
+        srcSet: `/industries/government/features/1024.webp 1024w,
+    /industries/government/features/810.webp 810w,
+    /industries/government/features/640.webp 640w,
+    /industries/government/features/480.webp 480w,
+    /industries/government/features/320.webp 320w`,
+        alt: "Staircase of a government building",
       },
       accordionContent: [
         {
@@ -935,7 +955,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -990,8 +1009,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/energy/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/energy/features/1024.webp",
+        srcSet: `/industries/energy/features/1024.webp 1024w,
+    /industries/energy/features/810.webp 810w,
+    /industries/energy/features/640.webp 640w,
+    /industries/energy/features/480.webp 480w,
+    /industries/energy/features/320.webp 320w`,
+        alt: "Solar panels",
       },
       accordionContent: [
         {
@@ -1086,7 +1110,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -1139,8 +1162,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/legal/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/legal/features/1024.webp",
+        srcSet: `/industries/legal/features/1024.webp 1024w,
+    /industries/legal/features/810.webp 810w,
+    /industries/legal/features/640.webp 640w,
+    /industries/legal/features/480.webp 480w,
+    /industries/legal/features/320.webp 320w`,
+        alt: "A man walking up the stairs of a courthouse building",
       },
       accordionContent: [
         {
@@ -1235,7 +1263,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -1278,8 +1305,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/real-estate/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/real-estate/features/1024.webp",
+        srcSet: `/industries/real-estate/features/1024.webp 1024w,
+    /industries/real-estate/features/810.webp 810w,
+    /industries/real-estate/features/640.webp 640w,
+    /industries/real-estate/features/480.webp 480w,
+    /industries/real-estate/features/320.webp 320w`,
+        alt: "Modern luxurious high-rise buildings",
       },
       accordionContent: [
         {
@@ -1374,7 +1406,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -1427,8 +1458,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/retail/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/retail/features/1024.webp",
+        srcSet: `/industries/retail/features/1024.webp 1024w,
+    /industries/retail/features/810.webp 810w,
+    /industries/retail/features/640.webp 640w,
+    /industries/retail/features/480.webp 480w,
+    /industries/retail/features/320.webp 320w`,
+        alt: "High end clothing store",
       },
       accordionContent: [
         {
@@ -1523,7 +1559,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -1568,8 +1603,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/hospitality/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/hospitality/features/1024.webp",
+        srcSet: `/industries/hospitality/features/1024.webp 1024w,
+    /industries/hospitality/features/810.webp 810w,
+    /industries/hospitality/features/640.webp 640w,
+    /industries/hospitality/features/480.webp 480w,
+    /industries/hospitality/features/320.webp 320w`,
+        alt: "A breakfast tray on a hotel room bed",
       },
       accordionContent: [
         {
@@ -1664,7 +1704,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
   {
@@ -1718,8 +1757,13 @@ export const INDUSTRIES: TIndustry[] = [
         alt: "A man in a suit working on his laptop",
       },
       imgBack: {
-        src: "/industries/education/features.webp",
-        alt: "Gen AI prompt demo",
+        src: "/industries/education/features/1024.webp",
+        srcSet: `/industries/education/features/1024.webp 1024w,
+    /industries/education/features/810.webp 810w,
+    /industries/education/features/640.webp 640w,
+    /industries/education/features/480.webp 480w,
+    /industries/education/features/320.webp 320w`,
+        alt: "An classroom with 2 man talking",
       },
       accordionContent: [
         {
@@ -1814,7 +1858,6 @@ export const INDUSTRIES: TIndustry[] = [
       title: "Our Approach",
       subtitle: "SYSTEMS THAT FIT, NOT FORCE",
       text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-      video: "/images/video-screenshot.webp",
     },
   },
 ];
@@ -1825,10 +1868,6 @@ export const LANDING_PAGE_DATA = {
     title: "Accelerating <br> Enterprise Intelligence",
     // <bold> tag should not have any spaces between it and the text it encloses, and should not have a <br> inside it.
     text: "Gaiant is where AI becomes infrastructure, built around how <bold>your<bold> enterprise actually operates.",
-    img1: {
-      src: "/demos/patient-history-dashboard.svg",
-      alt: "Image of Pateint History Dashboard",
-    },
     img2: {
       src: "/images/landing-hero/1024.webp",
       srcSet: `/images/landing-hero/1024.webp 1024w, 
@@ -1894,13 +1933,12 @@ export const LANDING_PAGE_DATA = {
   ARCHE_SECTION: {
     title: "Your enterprise brain. One place to ask, act, and build.",
     text: "From scattered systems to unified intelligence, <br>Archē unifies it all so progress feels effortless.",
-    img: { src: "/demos/ai-chat-demo.svg", alt: "AI chatbot dashboard" },
   },
 
   WHAT_THIS_MEANS: {
     title: "What this means for you",
     subtitle: "REDEFINING YOUR WORK DAY",
-    img: { src: "/demos/what-this-means-for-you.svg", alt: "Ai workflow Demo" },
+    img: { src: "/svgs/what-this-means-for-you.svg", alt: "Ai workflow Demo" },
     accordionContent: [
       {
         title: "For your work",
@@ -1948,11 +1986,22 @@ export const ARCHE_PAGE_DATA = {
     subtitle: "THE ARCHĒ MODEL",
     text: "No matter the industry, Archē handles the operational weight so your people can focus on the work that actually moves the business.",
     img1: {
-      src: "/images/arche-1.webp",
+      src: "/images/arche-model/1440.webp",
+      srcSet: `/images/arche-model/1440.webp 1440w,
+      /images/arche-model/1280.webp 1280w,
+      /images/arche-model/1024.webp 1024w,
+      /images/arche-model/810.webp 810w,
+      /images/arche-model/640.webp 640w,
+      /images/arche-model/480.webp 480w,
+      /images/arche-model/320.webp 320w`,
       alt: "A woman working on her laptop",
     },
     img2: {
-      src: "/images/watered-leaf.webp",
+      src: "/images/watered-leaf/640.webp",
+      srcSet: `
+      /images/watered-leaf/640.webp 640w,
+      /images/watered-leaf/480.webp 480w,
+      /images/watered-leaf/320.webp 320w`,
       alt: "A green true leaf with drops of water",
     },
   },
@@ -1992,48 +2041,48 @@ export const ARCHE_PAGE_DATA = {
         title: "Vault",
         text: "Your company's institutional brain. Your vault is where documents, data, and knowledge live, the foundation Archē learns from and builds on.",
         svg: {
-          desktop: "/demos/arche/vault.svg",
-          mobile: "/demos/arche/vault-mobile.svg",
+          desktop: "/svgs/arche/vault.svg",
+          mobile: "/svgs/arche/vault-mobile.svg",
         },
       },
       {
         title: "Legal",
         text: "Draft contracts, review agreements, and surface regulatory insights, all grounded in your company's legal precedents and templates.",
         svg: {
-          desktop: "/demos/arche/legal.svg",
-          mobile: "/demos/arche/legal-mobile.svg",
+          desktop: "/svgs/arche/legal.svg",
+          mobile: "/svgs/arche/legal-mobile.svg",
         },
       },
       {
         title: "Sales",
         text: "Track pipelines, generate proposals, and access deal insights, with an AI that understands your customers, products, and history.",
         svg: {
-          desktop: "/demos/arche/sales.svg",
-          mobile: "/demos/arche/sales-mobile.svg",
+          desktop: "/svgs/arche/sales.svg",
+          mobile: "/svgs/arche/sales-mobile.svg",
         },
       },
       {
         title: "Finance",
         text: "Analyze cash flow, generate reports, and track compliance, with instant access to your financial data, formatted to regional standards.",
         svg: {
-          desktop: "/demos/arche/finance.svg",
-          mobile: "/demos/arche/finance-mobile.svg",
+          desktop: "/svgs/arche/finance.svg",
+          mobile: "/svgs/arche/finance-mobile.svg",
         },
       },
       {
         title: "Operations",
         text: "Coordinate projects, track resources, and automate workflows, with an operating layer that sees across every team and timeline.",
         svg: {
-          desktop: "/demos/arche/operations.svg",
-          mobile: "/demos/arche/operations-mobile.svg",
+          desktop: "/svgs/arche/operations.svg",
+          mobile: "/svgs/arche/operations-mobile.svg",
         },
       },
       {
         title: "HR",
         text: "Streamline onboarding, answer policy questions, and manage requests, with an AI trained on your employee handbook and HR systems.",
         svg: {
-          desktop: "/demos/arche/hr.svg",
-          mobile: "/demos/arche/hr-mobile.svg",
+          desktop: "/svgs/arche/hr.svg",
+          mobile: "/svgs/arche/hr-mobile.svg",
         },
       },
     ],
@@ -2070,105 +2119,6 @@ export const INDUSTRIES_PAGE_DATA = {
         title: "UAE Minister of State for Artificial Intelligence",
       },
     ],
-  },
-};
-
-export const INDUSTRY_PAGE_DATA = {
-  HERO: {
-    title: "AI for faster decisions <sm:br> and lower risk",
-    subtitle: "BANKING & FINANCIAL SERVICES",
-    text: "Speed decision-making, detect fraud, and automate reporting with secure, scalable AI — cutting costs while surfacing high-value insights.",
-  },
-
-  FEATURES_SECTION: {
-    title: "Smarter moves with fewer resources",
-    subtitle: "TRUSTED BY FINANCIAL LEADERS",
-    text: "AI often adds people and process. Done right, it finds fraud, streamlines ops, and makes services human — real impact without the extra overhead.",
-    img1: {
-      src: "features.svg",
-      alt: "A man in a suit working on his laptop",
-    },
-    img2: { src: "/demos/ai-prompt.svg", alt: "" },
-    accordionContent: [
-      {
-        title: "Improve knowledge management",
-        subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
-        list: [
-          "Detect fraud and protect sensitive data",
-          "Automate reporting with precision and speed",
-          "Ensure compliance across every transaction",
-          "Deliver clear insights for smarter decisions",
-        ],
-      },
-      {
-        title: "Reduce busywork",
-        subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
-        list: [
-          "Detect fraud and protect sensitive data",
-          "Automate reporting with precision and speed",
-          "Ensure compliance across every transaction",
-          "Deliver clear insights for smarter decisions",
-        ],
-      },
-      {
-        title: "Automate common support tickets",
-        subtitle: "STRENGTHEM TRUST AND EFFICIENCY",
-        list: [
-          "Detect fraud and protect sensitive data",
-          "Automate reporting with precision and speed",
-          "Ensure compliance across every transaction",
-          "Deliver clear insights for smarter decisions",
-        ],
-      },
-    ],
-  },
-
-  USE_CASES: {
-    title: "Use Cases",
-    subtitle: "BANKING & FINANCIAL SERVICES",
-    text: "See how leading firms are streamlining operations and scaling insight.",
-    cards: [
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-      {
-        title: "Transparency",
-        subtitle: "WE BUILD AI YOU CAN TRUST.",
-        text: "Clear processes, explainable outcomes, and full visibility at every stage",
-      },
-    ],
-  },
-
-  OUR_APPROACH: {
-    title: "Our Approach",
-    subtitle: "SYSTEMS THAT FIT, NOT FORCE",
-    text: "We embed with your team, observe how work flows, and build systems that align with what’s already in motion.",
-    img: {
-      src: "/images/video-screenshot.webp",
-      alt: "screenshot of a videoplayer",
-    },
   },
 };
 

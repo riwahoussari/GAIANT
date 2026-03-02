@@ -61,9 +61,11 @@ export default function ArcheIndustries() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <img
-            src="/images/mountains-landscape-2.webp"
-            className="h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0 lg-rounded"
+            src="/images/mountains-landscape-2/810.webp"
+            srcSet="/images/mountains-landscape-2/810.webp 810w, /images/mountains-landscape-2/640.webp 640w, /images/mountains-landscape-2/480.webp 480w, /images/mountains-landscape-2/320.webp 320w"
+            className="lg-rounded h-full w-full object-contain md:translate-y-[30px] lg:translate-y-0"
             alt="A doctor working on his ipad"
+            sizes="(max-width: 768px) 100vw, (max-width: 1454px) 51vw, 707px"
           />
         </SlideUpAnim>
         <SlideUpAnim

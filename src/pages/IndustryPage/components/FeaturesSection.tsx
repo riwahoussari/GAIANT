@@ -11,7 +11,7 @@ export default function FeaturesSection({
     subtitle: string;
     text?: string;
     imgFront: { src: string; alt: string };
-    imgBack: { src: string; alt: string };
+    imgBack: { src: string; srcSet: string; alt: string };
     accordionContent: TAccordionContent[];
   };
 }) {
@@ -24,8 +24,16 @@ export default function FeaturesSection({
       text={content.text}
       img={
         <div>
-          <img  className="lg-rounded" src={content.imgBack.src} alt={content.imgBack.alt} />
           <img
+            aria-hidden
+            className="lg-rounded"
+            src={content.imgBack.src}
+            srcSet={content.imgBack.srcSet}
+            sizes="(max-width: 1024px) 100vw, (max-width: 1965px) 50vw, 935px"
+            alt={content.imgBack.alt}
+          />
+          <img
+            aria-hidden
             src={content.imgFront.src}
             alt={content.imgFront.alt}
             className="absolute top-0 left-0 z-1"

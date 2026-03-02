@@ -14,7 +14,7 @@ export default function NewsArticlesCarousel({
   return (
     <section
       ref={sectionRef}
-      className="my-container side-padding relative z-2 mt-[120px] overflow-x-hidden"
+      className="my-container side-padding relative z-2 mt-[120px] overflow-x-clip"
     >
       <svg className="absolute" width="0" height="0">
         <defs>

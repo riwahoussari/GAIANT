@@ -80,7 +80,7 @@ export default function ArcheSection() {
           <img
             loading="lazy"
             className="absolute inset-0 h-full w-full object-contain"
-            src="/demos/arche-circle.webp"
+            src="/svgs/arche-circle.webp"
             aria-hidden
             alt="decorative gradient circle"
           />

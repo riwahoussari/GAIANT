@@ -43,14 +43,18 @@ export default function TheArcheModel() {
           img1={
             <img
               src={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.src}
+              srcSet={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.srcSet}
               alt={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img1.alt}
+              sizes="(max-width: 1024px) 65vw, (max-width: 1965px) 71vw, 1316px"
               className="h-full w-full object-cover max-md:scale-150 max-md:-translate-y-1/10"
-            />
-          }
-          img2={
-            <img
+              />
+            }
+            img2={
+              <img
               src={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img2.src}
+              srcSet={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img2.srcSet}
               alt={ARCHE_PAGE_DATA.THE_ARCHE_MODEL.img2.alt}
+              sizes="(max-width: 1024px) 35vw, (max-width: 1965px) 29vw, 527px"
               className="h-full w-full object-cover"
             />
           }

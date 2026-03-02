@@ -180,6 +180,7 @@ export function HeroImgBackground({
   blur,
   src,
   srcSet,
+  sizes,
   alt,
   className,
   fetchPriority,
@@ -188,6 +189,7 @@ export function HeroImgBackground({
   blur?: string;
   src: string;
   srcSet?: string;
+  sizes?: string;
   alt: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
 }) {
@@ -215,7 +217,7 @@ export function HeroImgBackground({
           }}
           src={src}
           srcSet={srcSet}
-          sizes="100vw"
+          sizes={sizes || "100vw"}
           className={"h-full w-full object-cover " + (className || "")}
           alt={alt}
         />

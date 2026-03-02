@@ -11,7 +11,6 @@ export default function OurApproach({
     title: string;
     subtitle: string;
     text: string;
-    video: string;
   };
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
