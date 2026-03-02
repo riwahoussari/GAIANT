@@ -1648,6 +1648,7 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/education/810.webp 810w`,
     imgPosition: "object-[55%_85%]",
     imgSquarePosition: "object-[45%_85%]",
+    imgSizes: "(max-width: 480px) 300px, (max-width: 1024px) 360px, 810px",
     description:
       "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
     textClassName: " max-w-[290px]  ",
