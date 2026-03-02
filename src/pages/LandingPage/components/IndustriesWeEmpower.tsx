@@ -58,7 +58,7 @@ export default function IndustriesWeEmpower() {
               imgSrc={industry.img}
               imgSrcSet={industry.imgSrcSet}
               imgSizes={
-                "(max-width: 360px) 300px, (max-width: 1024px) 360px, 410px"
+                "(max-width: 480px) 300px, (max-width: 1024px) 360px, 410px"
               }
               imgClassName={industry.imgSquarePosition}
               loading="lazy"

@@ -90,7 +90,7 @@ export default function Navbar({
         Layer for Enterprise
         <span className="max-sm:hidden">{"    "}</span>
         <Link to="/arche" className="group relative max-sm:hidden" aria-label="Learn more about Arche">
-          Learn More
+          Learn More<span className="sr-only"> About Arche</span>
           <span className="absolute right-0 -bottom-px left-0 block h-px origin-bottom translate-y-px scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
         </Link>
         <Link to="/arche" className="sm:hidden">

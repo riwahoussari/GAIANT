@@ -31,7 +31,6 @@ export default function OurApproach({
         await player.setCurrentTime(0);
         await player.play();
       } catch (err) {
-        console.error(err);
       }
     };
 
