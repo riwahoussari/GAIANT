@@ -40,8 +40,6 @@ body {
   @apply max-w-dvw overflow-x-clip;
 }
 
-
-
 /* spacing */
 .my-container {
   @apply mx-auto w-full max-w-[1950px];
@@ -56,7 +54,7 @@ body {
 
 .lg-rounded {
   @apply rounded-[14px] lg:rounded-[20px];
-} 
+}
 
 /* backgrounds and gradients */
 .bg-dark-green-700-blue-gradient {
@@ -117,12 +115,16 @@ body {
   @apply text-[15px] leading-[18px] xs:text-[16px] xs:leading-[21px];
 }
 
-.text-19 {
-  @apply text-[17px] leading-[25px] xs:text-[19px] xs:leading-[28px];
+.text-16-5 {
+  @apply text-[15px] leading-[18px] xs:text-[16.5px] xs:leading-[21px];
 }
 
 .text-17 {
   @apply text-[15px] leading-[25px] xs:text-[17px] xs:leading-[28px];
+}
+
+.text-19 {
+  @apply text-[17px] leading-[25px] xs:text-[19px] xs:leading-[28px];
 }
 
 .text-25 {
@@ -169,5 +171,26 @@ body {
 @media (max-width: 920px) {
   .cta-title-width {
     max-width: 500px;
+  }
+}
+
+/* Contact Page */
+/* form */
+form#contact {
+  input,
+  textarea,
+  select {
+    resize: none;
+    @apply w-full rounded-[5px] border border-[1px] border-white bg-white px-[15px] py-[13px] text-[15px] leading-[18px] focus:outline-none xs:px-[17px] xs:py-[15px] xs:text-[16.5px] xs:leading-[21px] focus:border-black;
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    color: black;
+  }
+
+  .row {
+    @apply flex gap-5 max-sm:flex-col sm:gap-6;
   }
 }
