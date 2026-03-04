@@ -1,5 +1,10 @@
 import { ChevronDown } from "lucide-react";
-import { useState, type InputHTMLAttributes, type SelectHTMLAttributes, type TextareaHTMLAttributes } from "react";
+import {
+  useState,
+  type InputHTMLAttributes,
+  type SelectHTMLAttributes,
+  type TextareaHTMLAttributes,
+} from "react";
 
 export type TOption = { value: string; text: string };
 
@@ -49,8 +54,8 @@ export function Select({
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute top-1/2 right-[15px] z-1 aspect-square w-4 origin-center -translate-y-1/2 text-black duration-200 ease-in-out peer-focus:rotate-180 xs:right-[17px]">
-        <ChevronDown />
+      <div className="pointer-events-none absolute top-1/2 right-[15px] z-1 aspect-square w-5.5 origin-center -translate-y-1/2 text-black duration-200 ease-in-out peer-focus:rotate-180 xs:right-[17px]">
+        <ChevronDown className="h-full w-full" />
       </div>
 
       <label

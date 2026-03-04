@@ -2208,6 +2208,7 @@ export const LINKS: TLinkRecord[] = [
       { name: "About", link: "/about" },
       { name: "News", link: "/news" },
       { name: "Careers", link: "/careers" },
+      { name: "Contact", link: "/contact" },
     ],
   },
   {

@@ -24,7 +24,7 @@ export default function ContactPage() {
         description="Request a demo to explore how Gaiant’s secure, enterprise-ready AI will help your team move faster."
       />
       <Navbar textColor="black" transparentBg={transparentNavbar} />
-      <main className="relative z-2">
+      <main>
         <Page navbarTriggerRef={navbarBgTrigger} />
       </main>
     </>

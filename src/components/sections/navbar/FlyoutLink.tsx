@@ -293,6 +293,16 @@ export function CompanyFlyoutContent({
             Careers
           </p>
         </Link>
+        <Link className="cursor-point group/link" to="/contact">
+          <p
+            className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+            style={{
+              color: color === "teal" ? "var(--color-light-blue)" : color,
+            }}
+          >
+            Contact
+          </p>
+        </Link>
       </div>
     </div>
   );
