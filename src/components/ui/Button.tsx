@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 import ArrowSvg from "./ArrowSvg";
 
 const buttonVariants = cva(
-  "group inline-flex relative items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip",
+  "group inline-flex relative items-center justify-between rounded-full font-bold  hover:opacity-70 duration-200 cursor-pointer ease-in-out overflow-clip  disabled:opacity-50 disabled:cursor-not-allowed ",
   {
     variants: {
       variant: {

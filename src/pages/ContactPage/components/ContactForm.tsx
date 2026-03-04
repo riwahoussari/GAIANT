@@ -1,121 +1,55 @@
-import { useState } from "react";
-import { Input, Select, Textarea, type TOption } from "./Input";
+import { Input, Select, Textarea } from "./Input";
 import Button from "../../../components/ui/Button";
-import { COUNTRIES } from "../../../lib/data";
-
-const COMPANY_SIZE_OPTIONS: TOption[] = [
-  {
-    value: "1-5",
-    text: "1-5",
-  },
-  {
-    value: "25-50",
-    text: "25-50",
-  },
-  {
-    value: "50-100",
-    text: "50-100",
-  },
-  {
-    value: "100-250",
-    text: "100-250",
-  },
-  {
-    value: "250-500",
-    text: "250-500",
-  },
-  {
-    value: "500-1,000",
-    text: "500-1,000",
-  },
-  {
-    value: "1,000-5,000",
-    text: "1,000-5,000",
-  },
-  {
-    value: "5,000-10,000",
-    text: "5,000-10,000",
-  },
-  {
-    value: "10,000+",
-    text: "10,000+",
-  },
-];
-const PRODUCTS_OPTIONS: TOption[] = [
-  {
-    text: "archē",
-    value: "arche",
-  },
-  {
-    text: "horion (coming soon)",
-    value: "",
-  },
-];
-const COUNTRIES_OPTIONS: TOption[] = COUNTRIES.map((c) => ({
-  value: c,
-  text: c,
-}));
+import { useFormSubmit } from "../useFormSubmit";
+import {
+  COMPANY_SIZE_OPTIONS,
+  COUNTRIES_OPTIONS,
+  FormSchema,
+  PRODUCTS_OPTIONS,
+  type FormKeys,
+  type TFormData,
+} from "../schema";
+import { useForm } from "../useForm";
+import { useState } from "react";
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
-  const [key, setKey] = useState(0);
+  const {
+    formData,
+    errors,
+    errorsCount,
+    setErrors,
+    setFieldValue,
+    setFieldError,
+  } = useForm();
+  const { submitting, error, success, formKey, submit } = useFormSubmit();
+  const [triedSubmitting, setTriedSubmitting] = useState(false);
 
-  // captcha
-  //   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  //   const captchaRef = useRef<ReCAPTCHA>(null);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(false);
+    setTriedSubmitting(true);
 
-    // if (!captchaToken) {
-    //   setError("Please verify you're not a robot.");
-    //   setLoading(false);
-    //   return;
-    // }
+    const validationResult = FormSchema.safeParse(formData);
+    if (validationResult.success) {
+      submit(validationResult.data as TFormData);
+    } else {
+      const errs = validationResult.error.flatten().fieldErrors;
 
-    setLoading(true);
+      Object.keys(errs).forEach((key) => {
+        const messages = errs[key as FormKeys];
 
-    const formData = new FormData(e.currentTarget);
-    const payload = {
-      ...Object.fromEntries(formData.entries()),
-      // captchaToken
-    };
-
-    try {
-      const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_API!}/api/request-demo`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
+        if (messages?.length) {
+          setErrors((prev) => ({ ...prev, [key]: messages[0] }));
         }
-      );
-
-      if (!res.ok) throw new Error();
-
-      setSuccess(true);
-      setKey(key + 1);
-      //   captchaRef.current?.reset();
-      //   setCaptchaToken(null);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
+      });
     }
-  }
+  };
 
   return (
     <div className="w-full">
-      <div className="relative bg-red ">
+      <div className="relative">
         <div
           className={
-            "absolute top-0 left-1/2 z-0 translate-y-full sm:translate-y-8/10 -translate-x-1/2 scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:scale-y-500 sm:-rotate-45"
+            "absolute top-0 left-1/2 z-0 -translate-x-1/2 translate-y-full scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:translate-y-8/10 sm:scale-y-500 sm:-rotate-45"
           }
         >
           <div className="aspect-square origin-top">
@@ -130,12 +64,19 @@ export default function ContactForm() {
       </div>
 
       <form
-        key={key}
+        key={formKey}
         onSubmit={handleSubmit}
         id="contact"
         className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white/50 p-6 backdrop-blur-md sm:px-12 sm:py-10"
       >
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
+          {success && (
+            <p className="self-start rounded-sm bg-green-300 px-3 py-1 text-base text-black">
+              Sent successfully!
+            </p>
+          )}
+          {error && <p className="text-sm bg-red-300 px-3 py-1 rounded-sm self-start">{error}</p>}
+
           {/* full name */}
           <div className="row">
             <Input
@@ -144,6 +85,13 @@ export default function ContactForm() {
               name="first_name"
               placeholder="First name"
               required
+              maxLength={FormSchema.shape.first_name.maxLength || undefined}
+              minLength={FormSchema.shape.first_name.minLength || undefined}
+              value={formData["first_name"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["first_name"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
 
             <Input
@@ -152,6 +100,13 @@ export default function ContactForm() {
               id="last_name"
               placeholder="Last name"
               required
+              maxLength={FormSchema.shape.last_name.maxLength || undefined}
+              minLength={FormSchema.shape.last_name.minLength || undefined}
+              value={formData["last_name"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["last_name"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -163,6 +118,12 @@ export default function ContactForm() {
               id="business_email"
               placeholder="Business email"
               required
+              minLength={FormSchema.shape.business_email.minLength || undefined}
+              value={formData["business_email"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["business_email"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -174,6 +135,13 @@ export default function ContactForm() {
               id="job_title"
               placeholder="Job title"
               required
+              maxLength={FormSchema.shape.job_title.maxLength || undefined}
+              minLength={FormSchema.shape.job_title.minLength || undefined}
+              value={formData["job_title"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["job_title"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -185,12 +153,22 @@ export default function ContactForm() {
               label="Country/Region"
               options={COUNTRIES_OPTIONS}
               required
+              value={formData["country"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["country"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
             <Input
               type="tel"
               name="phone_number"
               id="phone_number"
               placeholder="Phone number (optional)"
+              value={formData["phone_number"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["phone_number"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -202,6 +180,11 @@ export default function ContactForm() {
               required
               options={COMPANY_SIZE_OPTIONS}
               label="Company size (no. of employees)"
+              value={formData["company_size"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["company_size"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -213,6 +196,11 @@ export default function ContactForm() {
               required
               options={PRODUCTS_OPTIONS}
               label="Product of interest"
+              value={formData["product"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["product"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
@@ -224,13 +212,32 @@ export default function ContactForm() {
               required
               rows={3}
               placeholder="How do you plan to use AI?"
+              minLength={FormSchema.shape.plan_of_use.minLength || undefined}
+              maxLength={FormSchema.shape.plan_of_use.maxLength || undefined}
+              value={formData["plan_of_use"]}
+              setValue={setFieldValue}
+              error={triedSubmitting ? errors["plan_of_use"] : undefined}
+              setError={triedSubmitting ? setFieldError : undefined}
+              disabled={success}
             />
           </div>
 
           <div className="row">
             <label className="flex items-start gap-3">
-              <input type="checkbox" className="peer sr-only" />
-              <span className="h-4 w-4 flex-none translate-y-1 rounded-[1px] border border-[#001959] stroke-transparent peer-checked:bg-[#001959] peer-checked:stroke-white">
+              <input
+                id="consent_marketing"
+                name="consent_marketing"
+                onChange={(e) =>
+                  setFieldValue(
+                    "consent_marketing",
+                    e.target.checked ? "on" : undefined
+                  )
+                }
+                type="checkbox"
+                className="peer sr-only"
+                disabled={success}
+              />
+              <span className="h-4 w-4 flex-none translate-y-1 rounded-[1px] border border-[#001959] stroke-transparent peer-checked:bg-[#001959] peer-checked:stroke-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 <svg
                   className="h-full w-full"
                   viewBox="0 0 16 16"
@@ -244,7 +251,7 @@ export default function ContactForm() {
                   />
                 </svg>
               </span>
-              <span>
+              <span className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                 Receive product updates, news, and event invitations from
                 Gaiant®.{" "}
                 <span className="whitespace-nowrap">Unsubscribe anytime.</span>
@@ -252,7 +259,7 @@ export default function ContactForm() {
             </label>
           </div>
 
-          <div className="flex hidden justify-start">
+          <div className="flexx hidden justify-start">
             {/* <ReCAPTCHA
             ref={captchaRef}
             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
@@ -263,22 +270,19 @@ export default function ContactForm() {
 
           {/* submit */}
           <div className="flex flex-col items-start gap-4">
-            <Button
-              variant={"black"}
-              className="flex-none"
-              type="submit"
-              size="md"
-              disabled={loading}
-            >
-              {loading ? "Sending..." : "Submit"}
-            </Button>
-
-            {error && <p className="w-full text-sm text-red-600">{error}</p>}
-            {success && (
-              <p className="w-full text-sm text-green-600">
-                Sent successfully!
-              </p>
+            {!success && (
+              <Button
+                disabled={submitting || errorsCount > 0}
+                variant={"black"}
+                className="flex-none"
+                type="submit"
+                size="md"
+              >
+                {submitting ? "Sending..." : "Submit"}
+              </Button>
             )}
+
+            
           </div>
         </div>
       </form>
