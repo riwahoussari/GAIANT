@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion as m } from "motion/react";
 import ArrowSvg from "../../ui/ArrowSvg";
-import { INDUSTRIES, INDUSTRIES_FLYOUTLINK_ORDER } from "../../../lib/data";
+import {
+  INDUSTRIES,
+  INDUSTRIES_FLYOUTLINK_ORDER,
+  LINKS,
+} from "../../../lib/data";
 
 export default function FlyoutLink({
   children,
@@ -289,6 +293,40 @@ export function CompanyFlyoutContent({
             Careers
           </p>
         </Link>
+      </div>
+    </div>
+  );
+}
+
+export function FindUsFlyoutContent({
+  color = "black",
+}: {
+  color?: "black" | "white" | "teal";
+}) {
+  return (
+    <div className="flex min-w-[320px] flex-col gap-1 text-black lg:gap-5">
+      {color !== "teal" && (
+        <p
+          style={{ letterSpacing: "2.5px" }}
+          className="font-ibm! text-[14px] font-medium text-dark-blue max-lg:hidden lg:ps-4 lg:text-[12px]"
+        >
+          FIND US
+        </p>
+      )}
+      <div className="flex flex-col text-[18px] leading-[20px] lg:gap-y-6">
+        {LINKS.find((l) => l.name === "Find Us")?.sublinks?.map((link, i) => (
+          <Link key={i} className="cursor-point group/link" to={link.link || ""} target="_blank">
+            <p
+              className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
+              style={{
+                color: color === "teal" ? "var(--color-light-blue)" : color,
+              }}
+            >
+              {link.name}
+            </p>
+          </Link>
+        ))}
+        
       </div>
     </div>
   );

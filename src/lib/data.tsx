@@ -2210,4 +2210,17 @@ export const LINKS: TLinkRecord[] = [
       { name: "Careers", link: "/careers" },
     ],
   },
+  {
+    name: "Find Us",
+    sublinks: [
+      {
+        name: "Instagram",
+        // link: "https://www.instagram.com/gaiant.ai/",
+      },
+      {
+        name: "LinkedIn",
+        // link: "https://www.linkedin.com/company/gaiant-ai/",
+      },
+    ],
+  },
 ];
