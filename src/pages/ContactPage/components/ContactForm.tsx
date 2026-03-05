@@ -67,7 +67,7 @@ export default function ContactForm() {
         key={formKey}
         onSubmit={handleSubmit}
         id="contact"
-        className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white/50 p-6 backdrop-blur-md sm:px-12 sm:py-10"
+        className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white md:bg-white/50 p-6 backdrop-blur-md sm:px-12 sm:py-10"
       >
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
           {success && (
@@ -246,7 +246,7 @@ export default function ContactForm() {
                 >
                   <path
                     d="M4.08521 8.57872L6.88156 10.8936L11.915 5.10638"
-                    stroke-width="1.3"
+                    strokeWidth="1.3"
                     className="origin-center scale-120"
                   />
                 </svg>

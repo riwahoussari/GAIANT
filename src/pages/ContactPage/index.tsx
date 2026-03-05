@@ -104,14 +104,14 @@ function CheckList() {
               <path
                 d="M4.08521 8.57872L6.88156 10.8936L11.915 5.10638"
                 stroke="#5C86AE"
-                stroke-width="1.3"
+                strokeWidth="1.3"
               />
               <circle
                 cx="8"
                 cy="8"
                 r="7.35"
                 stroke="#5C86AE"
-                stroke-width="1.3"
+                strokeWidth="1.3"
               />
             </svg>
           </div>

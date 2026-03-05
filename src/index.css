@@ -181,7 +181,7 @@ form#contact {
   textarea,
   select {
     resize: none;
-    @apply w-full rounded-[5px] border border-[1px] border-white bg-white px-[15px] py-[13px] text-[15px] leading-[18px] focus:outline-none xs:px-[17px] xs:py-[15px] xs:text-[16.5px] xs:leading-[21px] focus:border-black disabled:opacity-80 disabled:cursor-not-allowed ;
+    @apply w-full rounded-[5px] border border-[1px] border-black/40 md:border-white bg-white px-[15px] py-[13px] text-[15px] leading-[18px] focus:outline-none xs:px-[17px] xs:py-[15px] xs:text-[16.5px] xs:leading-[21px] focus:border-black disabled:opacity-80 disabled:cursor-not-allowed ;
   }
 
   input::placeholder,

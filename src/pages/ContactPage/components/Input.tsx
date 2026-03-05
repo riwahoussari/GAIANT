@@ -108,14 +108,12 @@ export function Select({
         value={value}
         onChange={handleChange}
         className={
-          `peer relative appearance-none ${
-            value === "" ? "text-light-black/50" : "text-black"
-          }` + (error && " border-red-800!")
+          `peer relative appearance-none ` + (error && " border-red-800!")
         }
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       >
-        <option value="">{focus || value !== "" ? "Select..." : ""}</option>
+        <option value="">{focus || value ? "Select..." : ""}</option>
         {options.map((option, i) => (
           <option value={option.value} key={i} disabled={option.value === ""}>
             {option.text}
@@ -130,7 +128,7 @@ export function Select({
         htmlFor={id}
         className={
           "text-16-5 pointer-events-none absolute left-[11px] origin-left -translate-y-1/2 cursor-text px-1 duration-200 ease-in-out peer-focus:top-0 peer-focus:scale-80 xs:left-[13px] " +
-          (value !== "" ? " top-0 scale-80" : " top-1/2")
+          (value ? " top-0 scale-80" : " top-1/2")
         }
       >
         <span className="relative z-1">{label}</span>
