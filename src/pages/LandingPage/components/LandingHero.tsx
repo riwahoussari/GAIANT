@@ -6,7 +6,7 @@ import { LANDING_PAGE_DATA } from "../../../lib/data";
 import { useInView } from "motion/react";
 import { useRef, type ReactNode } from "react";
 import { SlideUpAnim } from "../../../components/ui/Anims";
-import animation from "../../../assets/animations/landing-page/landing-hero.json"
+import animation from "../../../assets/animations/landing-page/landing-hero.json";
 import Lottie from "lottie-react";
 
 export default function LandingHero({
@@ -32,7 +32,7 @@ export default function LandingHero({
           img1={
             <div className="flex h-full w-full items-center justify-center p-2 py-4 xs:p-6 lg:px-0 lg:py-12 xl:py-16">
               <Lottie
-              animationData={animation}
+                animationData={animation}
                 loop
                 autoplay
                 className="h-full w-full scale-130 object-contain 2xl:scale-120"
