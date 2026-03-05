@@ -233,6 +233,7 @@ export default function ContactForm() {
                     e.target.checked ? "on" : undefined
                   )
                 }
+                checked={formData["consent_marketing"] === "on"}
                 type="checkbox"
                 className="peer sr-only"
                 disabled={success}
