@@ -82,6 +82,14 @@
         transition-duration: 0.4s; /* duration-400 */
         transition-timing-function: ease-in-out;
       }
+      #preloader div {
+        transform: scale(2);
+      }
+      @media (max-width: 768px) {
+        #preloader div {
+          transform: scale(3);
+        }
+      }
     </style>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -106,7 +114,7 @@
       }
     </script>
 
-    <div id="preloader"></div>
+    <div id="preloader"><div></div></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
@@ -122,7 +130,7 @@
       }
 
       const anim = lottie.loadAnimation({
-        container: document.getElementById("preloader"),
+        container: document.querySelector("#preloader div"),
         path: "/preloader.json",
         renderer: "svg",
         loop: false,
