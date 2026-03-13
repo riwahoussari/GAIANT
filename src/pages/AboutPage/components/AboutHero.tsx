@@ -4,6 +4,7 @@ import Button from "../../../components/ui/Button";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import ImagesLayout from "../../../components/ui/ImagesLayout";
 import { ABOUT_PAGE_DATA } from "../../../lib/data";
+import { Link } from "react-router-dom";
 
 export default function AboutHero({
   navbarTriggerRef,
@@ -20,9 +21,11 @@ export default function AboutHero({
       textWidth="max-w-[410px] xl:max-w-[480px]"
       {...ABOUT_PAGE_DATA.HERO}
       button={
-        <Button variant={"black"} arrow={"spaced"}>
-          Request a demo
-        </Button>
+        <Link to="/contact">
+          <Button variant={"black"} arrow={"spaced"}>
+            Request a demo
+          </Button>
+        </Link>
       }
       background={
         <div className="absolute top-[240px] left-1/2 w-[500px] lg:w-[40vw] lg:min-w-[550px]">

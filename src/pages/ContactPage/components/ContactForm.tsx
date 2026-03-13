@@ -46,28 +46,28 @@ export default function ContactForm() {
 
   return (
     <div className="w-full">
-      <div className="relative">
-        <div
-          className={
-            "absolute top-0 left-1/2 z-0 -translate-x-1/2 translate-y-full scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:translate-y-8/10 sm:scale-y-500 sm:-rotate-45"
-          }
-        >
-          <div className="aspect-square origin-top">
-            <img
-              src="/gradients/circle-news/1328.avif"
-              srcSet="/gradients/circle-news/1328.avif 1328w, /gradients/circle-news/1024.avif 1024w, /gradients/circle-news/810.avif 810w, /gradients/circle-news/640.avif 640w"
-              className="h-full w-full object-contain"
-              sizes="(max-width: 768px) 185vw, (max-width: 1024px) 165vw, (max-width: 1280px) 170vw, 150vw"
-            />
+      <div className="relative ">
+          <div
+            className={
+              "absolute top-0 left-1/2 z-0 -translate-x-1/2 translate-y-full scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:translate-y-8/10 sm:scale-y-500 sm:-rotate-45"
+            }
+          >
+            <div className="aspect-square origin-top">
+              <img
+                src="/gradients/circle-news/1328.avif"
+                srcSet="/gradients/circle-news/1328.avif 1328w, /gradients/circle-news/1024.avif 1024w, /gradients/circle-news/810.avif 810w, /gradients/circle-news/640.avif 640w"
+                className="h-full w-full object-contain"
+                sizes="(max-width: 768px) 185vw, (max-width: 1024px) 165vw, (max-width: 1280px) 170vw, 150vw"
+              />
+            </div>
           </div>
-        </div>
       </div>
 
       <form
         key={formKey}
         onSubmit={handleSubmit}
         id="contact"
-        className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white md:bg-white/50 p-6 backdrop-blur-md sm:px-12 sm:py-10"
+        className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white p-6 backdrop-blur-md sm:px-12 sm:py-10 md:bg-white/50"
       >
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
           {success && (
@@ -75,7 +75,11 @@ export default function ContactForm() {
               Sent successfully!
             </p>
           )}
-          {error && <p className="text-sm bg-red-300 px-3 py-1 rounded-sm self-start">{error}</p>}
+          {error && (
+            <p className="self-start rounded-sm bg-red-300 px-3 py-1 text-sm">
+              {error}
+            </p>
+          )}
 
           {/* full name */}
           <div className="row">
@@ -193,7 +197,6 @@ export default function ContactForm() {
             <Select
               id="product"
               name="product"
-              required
               options={PRODUCTS_OPTIONS}
               label="Product of interest"
               value={formData["product"]}
@@ -282,8 +285,6 @@ export default function ContactForm() {
                 {submitting ? "Sending..." : "Submit"}
               </Button>
             )}
-
-            
           </div>
         </div>
       </form>

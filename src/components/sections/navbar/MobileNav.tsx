@@ -8,6 +8,7 @@ import {
 } from "./FlyoutLink";
 import Button from "../../ui/Button";
 import { useIsMobile } from "../../../lib/useIsMobile";
+import { Link } from "react-router-dom";
 
 // MOBILE NAVBAR
 export default function MobileNavMenu({
@@ -79,7 +80,9 @@ export default function MobileNavMenu({
             />
             {isSm && (
               <div className="mt-10 mb-8 flex scale-110 justify-center sm:hidden">
-                <Button variant={"black"}>Request a demo</Button>
+                <Link to="/contact">
+                  <Button variant={"black"}>Request a demo</Button>
+                </Link>
               </div>
             )}
           </nav>

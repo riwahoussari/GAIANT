@@ -1,4 +1,5 @@
 import { type RefObject } from "react";
+import { Link } from "react-router-dom";
 import Hero from "../../../components/sections/Hero";
 import { BlurredBlueTealGradientBg } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
@@ -23,7 +24,11 @@ export default function LandingHero({
       title={LANDING_PAGE_DATA.HERO.title}
       text={LANDING_PAGE_DATA.HERO.text}
       textWidth="max-xs:max-w-[300px]! max-md:max-w-[350px]"
-      button={<Button arrow={"spaced"}>Request a demo</Button>}
+      button={
+        <Link to="/contact">
+          <Button arrow={"spaced"}>Request a demo</Button>
+        </Link>
+      }
       background={<BlurredBlueTealGradientBg fetchPriority="high" withBall />}
     >
       <div ref={navbarTriggerRef} className="side-padding my-container">

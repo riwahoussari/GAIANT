@@ -4,6 +4,7 @@ import { TitleBlock } from "../../../components/ui/Titles";
 import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
 import GlassCard from "../../../components/ui/cards/GlassCard";
+import { Link } from "react-router-dom";
 
 export default function UseCases({
   content,
@@ -100,9 +101,11 @@ export default function UseCases({
           isInView={isInView}
           transition={{ delay: 0.3 }}
         >
-          <Button className="max-sm:mt-4" variant={"black"}>
-            Request a demo
-          </Button>
+          <Link to="/contact">
+            <Button className="max-sm:mt-4" variant={"black"}>
+              Request a demo
+            </Button>
+          </Link>
         </SlideUpAnim>
       </div>
 

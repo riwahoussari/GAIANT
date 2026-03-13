@@ -82,14 +82,25 @@ export default function Navbar({
         duration: hasMounted ? 0.3 : 0.7,
         delay: hasMounted ? 0 : 0.3,
       }}
-      className="fixed top-0 right-0 left-0 z-100 duration-500 ease-in-out max-w-dvw"
+      className="fixed top-0 right-0 left-0 z-100 max-w-dvw duration-500 ease-in-out"
     >
       {/* Announcement Banner */}
-      <div className={"relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px] " + (transparentBanner ? " bg-black/70 backdrop-blur-[30px] " : " bg-black ")}>
+      <div
+        className={
+          "relative z-100 w-full p-3 text-center text-[min(14px,3.4vw)] whitespace-pre text-white xs:text-[15px] " +
+          (transparentBanner
+            ? " bg-black/70 backdrop-blur-[30px]"
+            : " bg-black")
+        }
+      >
         Introducing <span className="font-bold">archē</span>: The New Operating
         Layer for Enterprise
         <span className="max-sm:hidden">{"    "}</span>
-        <Link to="/arche" className="group relative max-sm:hidden" aria-label="Learn more about Arche">
+        <Link
+          to="/arche"
+          className="group relative max-sm:hidden"
+          aria-label="Learn more about Arche"
+        >
           Learn More<span className="sr-only"> About Arche</span>
           <span className="absolute right-0 -bottom-px left-0 block h-px origin-bottom translate-y-px scale-y-100 bg-white duration-300 ease-in-out group-hover:scale-y-0" />
         </Link>
@@ -191,18 +202,19 @@ export default function Navbar({
 
         {/* CTA - Mobile Menu Trigger Btn */}
         <div className="relative z-1 flex items-center justify-end gap-5 lg:min-w-[160px]">
-          <Button
-            className="max-sm:hidden"
-            variant={
-              textColor === "black" || mobileMenuOpen
-                ? "black"
-                : transparentBg
-                  ? "primary"
-                  : "black"
-            }
-          >
-            Request a demo
-          </Button>
+          <Link to="/contact" className="max-sm:hidden">
+            <Button
+              variant={
+                textColor === "black" || mobileMenuOpen
+                  ? "black"
+                  : transparentBg
+                    ? "primary"
+                    : "black"
+              }
+            >
+              Request a demo
+            </Button>
+          </Link>
 
           <div
             ref={burgerBtnRef}

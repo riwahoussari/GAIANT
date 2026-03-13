@@ -2,6 +2,7 @@ import Hero from "../../../components/sections/Hero";
 import { HeroImgBackground } from "../../../components/ui/Backgrounds";
 import Button from "../../../components/ui/Button";
 import { type TIndustry } from "../../../lib/data";
+import { Link } from "react-router-dom";
 
 export default function IndustryHero({ industry }: { industry: TIndustry }) {
   return (
@@ -11,9 +12,11 @@ export default function IndustryHero({ industry }: { industry: TIndustry }) {
       titleWidth="lg:min-w-[580px] lg:max-w-[580px] xl:min-w-[700px] xl:max-w-[780px]"
       {...industry.hero}
       button={
-        <Button className="xl:mb-20" arrow={"spaced"}>
-          Request a demo
-        </Button>
+        <Link to="/contact">
+          <Button className="xl:mb-20" arrow={"spaced"}>
+            Request a demo
+          </Button>
+        </Link>
       }
       background={
         <HeroImgBackground

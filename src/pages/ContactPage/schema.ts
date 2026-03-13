@@ -286,18 +286,15 @@ export const FormSchema = z.object({
       message: "Invalid company size",
     }),
   product: z
-    .string("Product of interest is required")
+    .string()
     .trim()
-    .min(1, "Product of interest is required")
     .refine(
-      (val) =>
-        PRODUCTS_OPTIONS.map((prod) => prod.value)
-          .filter((p) => p !== "")
-          .includes(val as any),
+      (val) => PRODUCTS_OPTIONS.map((prod) => prod.value).includes(val as any),
       {
         message: "Invalid product",
       }
-    ),
+    )
+    .optional(),
   plan_of_use: z
     .string("Message is required")
     .trim()
@@ -314,4 +311,4 @@ export const FormSchema = z.object({
 });
 
 export type FormKeys = keyof typeof FormSchema.shape;
-export type TFormData = Record<FormKeys, unknown>
+export type TFormData = Record<FormKeys, unknown>;

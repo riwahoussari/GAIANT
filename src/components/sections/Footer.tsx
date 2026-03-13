@@ -18,7 +18,7 @@ export default function Footer() {
       <footer className="relative z-1 pt-[130px] pb-9 text-white xs:pt-[140px] sm:pt-[220px]">
         <Background />
 
-        <div className="my-container side-padding relative flex gap-[58px] max-lg:flex-col max-lg:items-center lg:gap-[78px] xl:gap-[130px]">
+        <div className="my-container side-padding relative z-1 flex gap-[58px] max-lg:flex-col max-lg:items-center lg:gap-[78px] xl:gap-[130px]">
           <NewsLetter />
           <DesktopLinks />
           <MobileLinks />
@@ -296,7 +296,7 @@ function MobileLinks() {
 
 function Copyright() {
   return (
-    <div className="side-padding my-container relative pt-20 lg:-mt-10 lg:pt-[7px]">
+    <div className="side-padding my-container relative z-0 pt-20 lg:-mt-10 lg:pt-[7px]">
       <div className="mx-auto flex w-full items-end max-lg:max-w-[428px] max-lg:flex-col lg:justify-between">
         {/* logo */}
         <img

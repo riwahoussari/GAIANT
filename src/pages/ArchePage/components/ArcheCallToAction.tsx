@@ -3,6 +3,7 @@ import { SlideUpAnim } from "../../../components/ui/Anims";
 import Button from "../../../components/ui/Button";
 import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { useInView } from "motion/react";
+import { Link } from "react-router-dom";
 
 export default function ArcheCallToAction() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,9 @@ export default function ArcheCallToAction() {
         isInView={isInView}
         className="relative z-2 mt-12 flex justify-center sm:mt-16 md:mt-20 xl:mt-24 2xl:mt-28"
       >
-        <Button variant={"black"}>Request a demo</Button>
+        <Link to="/contact">
+          <Button variant={"black"}>Request a demo</Button>
+        </Link>
       </SlideUpAnim>
     </section>
   );

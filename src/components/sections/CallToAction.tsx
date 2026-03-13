@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import { CenteredTitleBlock } from "../ui/Titles";
 import { useRef } from "react";
 import gradientCircleAnimation from "../../assets/animations/gradient-circle.mp4";
+import { Link } from "react-router-dom";
 
 export default function CallToAction({
   withGradientCircle = false,
@@ -14,7 +15,15 @@ export default function CallToAction({
   const isInView = useInView(sectionRef, { once: true, margin: "-10%" });
 
   return (
-    <section ref={sectionRef} className="my-container side-padding mt-[120px]">
+    <section
+      ref={sectionRef}
+      className={
+        "my-container side-padding bg-red-500/0 " +
+        (withGradientCircle
+          ? " -mt-[3000px] -mb-60 overflow-y-clip pt-[calc(120px+3000px)] pb-[240px] md:-mt-[100vh] md:pt-[calc(120px+100vh)]"
+          : " mt-[120px]")
+      }
+    >
       {/* gradient circles - Careers page */}
       {withGradientCircle && (
         <div className="relative w-full">
@@ -78,7 +87,9 @@ export default function CallToAction({
           isInView={isInView}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <Button variant={"black"}>Request a demo</Button>
+          <Link to="/contact">
+            <Button variant={"black"}>Request a demo</Button>
+          </Link>
         </SlideUpAnim>
       </div>
     </section>

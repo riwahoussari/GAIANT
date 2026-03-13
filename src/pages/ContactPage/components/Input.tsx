@@ -43,22 +43,26 @@ export function Input({
 
   return (
     <div className="relative w-full">
+      <label htmlFor={id} className="sr-only">
+        {props.placeholder}
+      </label>
       <input
         {...props}
         id={id}
         value={value}
         onChange={handleChange}
         placeholder=""
-        className={`peer ` + props.className + (error && " border-red-800!")}
+        className={
+          `peer cursor-pointer ` +
+          props.className +
+          (error && " border-red-800!")
+        }
       />
 
-      <label
-        htmlFor={id}
-        className="text-16-5 pointer-events-none absolute top-1/2 left-[11px] origin-left -translate-y-1/2 cursor-text px-1 duration-200 ease-in-out peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:scale-80 peer-focus:top-0 peer-focus:scale-80 xs:left-[13px]"
-      >
+      <p className="text-16-5 absolute top-1/2 left-[11px] origin-left -translate-y-1/2 cursor-default px-1 duration-200 ease-in-out peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:scale-80 peer-placeholder-shown:pointer-events-none peer-focus:pointer-events-auto! peer-focus:top-0 peer-focus:scale-80 xs:left-[13px]">
         <span className="relative z-1">{props.placeholder}</span>
         <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
-      </label>
+      </p>
       {error && (
         <span className="absolute -bottom-0 left-[11px] z-3 hidden translate-y-1/2 rounded-sm bg-red-200 px-2 py-1 text-xs text-black peer-focus:block xs:left-[13px]">
           {error}
@@ -103,12 +107,16 @@ export function Select({
 
   return (
     <div className="relative w-full">
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
       <select
         {...props}
         value={value}
         onChange={handleChange}
         className={
-          `peer relative appearance-none ` + (error && " border-red-800!")
+          `peer relative cursor-pointer appearance-none ` +
+          (error && " border-red-800!")
         }
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
@@ -124,16 +132,15 @@ export function Select({
         <ChevronDown className="h-full w-full" />
       </div>
 
-      <label
-        htmlFor={id}
+      <p
         className={
-          "text-16-5 pointer-events-none absolute left-[11px] origin-left -translate-y-1/2 cursor-text px-1 duration-200 ease-in-out peer-focus:top-0 peer-focus:scale-80 xs:left-[13px] " +
-          (value ? " top-0 scale-80" : " top-1/2")
+          "text-16-5 pointer-events-none absolute left-[11px] origin-left -translate-y-1/2 cursor-default px-1 duration-200 ease-in-out peer-focus:pointer-events-auto! peer-focus:top-0 peer-focus:scale-80 xs:left-[13px] " +
+          (value ? " pointer-events-auto! top-0 scale-80" : " top-1/2")
         }
       >
         <span className="relative z-1">{label}</span>
         <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
-      </label>
+      </p>
 
       {error && (
         <span className="absolute -bottom-0 left-[11px] z-3 hidden translate-y-1/2 rounded-sm bg-red-200 px-2 py-1 text-xs text-black peer-focus:block xs:left-[13px]">
@@ -171,22 +178,26 @@ export function Textarea({
 
   return (
     <div className="relative w-full">
+      <label htmlFor={id} className="sr-only">
+        {props.placeholder}
+      </label>
       <textarea
         {...props}
         id={id}
         value={value}
         onChange={handleChange}
         placeholder=""
-        className={`peer ` + props.className + (error && " border-red-800!")}
+        className={
+          `peer cursor-pointer ` +
+          props.className +
+          (error && " border-red-800!")
+        }
       />
 
-      <label
-        htmlFor={id}
-        className="text-16-5 pointer-events-none absolute top-0 left-[11px] origin-left translate-y-[13px] cursor-text px-1 duration-200 ease-in-out peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:scale-80 peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:scale-80 xs:left-[13px] xs:translate-y-[15px]"
-      >
+      <p className="text-16-5 pointer-events-none absolute top-0 left-[11px] origin-left translate-y-[13px] cursor-default px-1 duration-200 ease-in-out peer-not-placeholder-shown:pointer-events-auto! peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:scale-80 peer-focus:pointer-events-auto! peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:scale-80 xs:left-[13px] xs:translate-y-[15px]">
         <span className="relative z-1">{props.placeholder}</span>
         <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
-      </label>
+      </p>
 
       {error && (
         <span className="absolute -bottom-0 left-[11px] z-3 hidden translate-y-1/2 rounded-sm bg-red-200 px-2 py-1 text-xs text-black peer-focus:block xs:left-[13px]">

@@ -39,7 +39,7 @@ function Page({
   const isInView = useInView(navbarTriggerRef, { once: true, margin: "-10%" });
 
   return (
-    <section ref={navbarTriggerRef} className="bg-primary relative mt-36 mb-20">
+    <section ref={navbarTriggerRef} className="bg-primary relative pt-36 pb-[calc(80px+240px)] -mb-60 overflow-clip">
       <div className="my-container side-padding relative flex justify-between gap-6 pt-10 max-xl:flex-col max-xl:items-center">
         {/* text */}
         <SlideUpAnim

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Hero from "../../../components/sections/Hero";
 import Button from "../../../components/ui/Button";
 import GradientCircle from "../../../components/ui/GradientCircle";
@@ -14,9 +15,11 @@ export default function IndustriesHero() {
       textWidth="max-w-[460px] xl:max-w-[530px]"
       {...INDUSTRIES_PAGE_DATA.HERO}
       button={
-        <Button variant={"black"} arrow={"spaced"}>
-          Request a demo
-        </Button>
+        <Link to="/contact">
+          <Button variant={"black"} arrow={"spaced"}>
+            Request a demo
+          </Button>
+        </Link>
       }
       background={
         <div className="absolute top-[240px] left-0 w-[500px] -translate-x-1/4 opacity-70 lg:w-[40vw] lg:min-w-[550px]">
