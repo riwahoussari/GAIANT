@@ -2185,6 +2185,36 @@ export const HORION_PAGE_DATA = {
       },
     ],
   },
+
+  FAQs: {
+    title: "FAQs",
+    faqs: [
+      {
+        q: "Can Horion integrate with my CRM or other sales tools?",
+        a: "Yes! Horion seamlessly syncs with Salesforce, HubSpot, Notion, and more to gather relevant data for smarter pre-meeting insights.",
+      },
+      {
+        q: "Is Horion secure for confidential client meetings?",
+        a: "Absolutely. All recordings are encrypted, and confidential mode prevents any data from being used to train the AI.",
+      },
+      {
+        q: "Can Horion coach teams, not just individuals?",
+        a: "Yes. Managers can monitor team performance, engagement, and sentiment to optimize outcomes across the sales organization.",
+      },
+      {
+        q: "Do I need to train the AI before using it?",
+        a: "No training needed. Horion learns from your data, CRM, and past meetings to provide instant actionable insights.",
+      },
+      {
+        q: "Does Horion work for remote video calls?",
+        a: "Yes! It analyzes video, audio, and text interactions, interpreting tone, pauses, and body language to guide you in real time.",
+      },
+      {
+        q: "What technical security measures are in place?",
+        a: "Data is encrypted both at rest and in transit, ensuring information remains protected whether stored or transferred. Each organization operates within a dedicated workspace, keeping team data isolated and secure.",
+      },
+    ]
+  }
 };
 
 export const INDUSTRIES_PAGE_DATA = {
