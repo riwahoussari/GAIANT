@@ -5,6 +5,7 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import HorionHero from "./components/HorionHero";
 import StickyAnimation from "./components/StickyAnimation";
 import WhyHorionWins from "./components/WhyHorionWins";
+import TurnConversations from "./components/TurnConversations";
 
 export default function HorionPage() {
   // change navbar transparency on scroll
@@ -29,6 +30,7 @@ export default function HorionPage() {
         <HorionHero navbarTriggerRef={navbarBgTrigger} />
         <StickyAnimation />
         <WhyHorionWins />
+        <TurnConversations />
         {/* <TheArcheModel />
         <AccelerateImpact />
         <ArcheIndustries />
