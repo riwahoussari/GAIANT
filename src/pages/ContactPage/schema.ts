@@ -237,8 +237,8 @@ export const PRODUCTS_OPTIONS: TOption[] = [
     value: "arche",
   },
   {
-    text: "horion (coming soon)",
-    value: "",
+    text: "horion",
+    value: "horion",
   },
 ] as const;
 

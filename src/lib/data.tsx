@@ -2383,7 +2383,6 @@ export type TLinkRecord = {
   text?: string;
   link?: string;
   sublinks?: TLinkRecord[];
-  soon?: boolean;
 };
 export const LINKS: TLinkRecord[] = [
   {
@@ -2397,8 +2396,8 @@ export const LINKS: TLinkRecord[] = [
       },
       {
         name: "horion",
+        link: "/horion",
         text: "The intelligent meeting co-pilot for modern sales teams",
-        soon: true,
       },
     ],
   },
@@ -2424,11 +2423,11 @@ export const LINKS: TLinkRecord[] = [
     sublinks: [
       {
         name: "Instagram",
-        // link: "https://www.instagram.com/gaiant.ai/",
+        link: "https://www.instagram.com/gaiant.ai/",
       },
       {
         name: "LinkedIn",
-        // link: "https://www.linkedin.com/company/gaiant-ai/",
+        link: "https://www.linkedin.com/company/gaiant/",
       },
     ],
   },

@@ -128,19 +128,8 @@ function DesktopLinks() {
             ) : (
               <div className="block" key={i}>
                 <p>
-                  <span
-                    className={
-                      "mb-px block " +
-                      (link.soon ? "flex items-start gap-2 whitespace-pre" : "")
-                    }
-                  >
+                  <span className="mb-px block">
                     <span className="font-bold">{link.name}</span>
-                    {""}
-                    {link.soon && (
-                      <span className="flex translate-y-0 items-center rounded-full bg-light-blue px-[6px] py-[3px] text-[10px] leading-[10px] text-black">
-                        SOON
-                      </span>
-                    )}
                   </span>
                   <span>{link.text}</span>
                 </p>

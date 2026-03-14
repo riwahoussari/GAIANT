@@ -155,10 +155,10 @@ export function ProductsFlyoutContent({
           >
             {color === "teal" && (
               <span className="mb-2.5 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
-                archē
+                horion
               </span>
             )}
-            <span>The intelligent operating system for enterprise</span>
+            <span>The intelligent meeting co-pilot for modern sales teams</span>
           </p>
         </Link>
       </div>
