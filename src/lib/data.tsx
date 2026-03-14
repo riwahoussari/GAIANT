@@ -2107,18 +2107,17 @@ export const HORION_PAGE_DATA = {
       {
         title: "Prepare",
         text: "Upload documents, sync your CRM, and let Horion research your prospect and predict conversation paths.",
-        imgBack: "/svgs/horion/steps/prepare.svg",
+        imgBack: "/svgs/horion/steps/prepare.webp",
       },
       {
         title: "Perform",
         text: "Receive live, private coaching during your meeting to improve persuasion and emotional connection.",
-        imgFront: "/svgs/horion/steps/perform.webp",
-        imgBack: "/svgs/horion/steps/perform.svg",
+        imgBack: "/svgs/horion/steps/perform.webp",
       },
       {
         title: "Improve",
         text: "Review performance analytics, track progress, and optimize future sales conversations.",
-        imgBack: "/svgs/horion/steps/improve.svg",
+        imgBack: "/svgs/horion/steps/improve.webp",
       },
     ],
   },
@@ -2130,26 +2129,26 @@ export const HORION_PAGE_DATA = {
       {
         title: "Pre-meeting brief",
         text: "Overview of client, agenda, key insights, and predicted objections.",
-        img: "/svgs/horion/dashboards/premeeting.svg"
+        img: "/svgs/horion/dashboards/premeeting.svg",
       },
       {
         title: "Real-time meeting interface",
         text: "Live coaching nudges and conversation tracking.",
         img: "/svgs/horion/dashboards/meeting.svg",
-        imgBack: "/svgs/horion/dashboards/meeting.webp"
+        imgBack: "/svgs/horion/dashboards/meeting.webp",
       },
       {
         title: "Post-meeting analytics",
         text: "Emotion evolution, confidence scores, and key takeaways.",
-        img: "/svgs/horion/dashboards/postmeeting.svg"
+        img: "/svgs/horion/dashboards/postmeeting.svg",
       },
       {
         title: "Team dashboard",
         text: "Engagement metrics, top performers, and meeting trends.",
-        img: "/svgs/horion/dashboards/team.svg"
+        img: "/svgs/horion/dashboards/team.svg",
       },
-    ]
-  }
+    ],
+  },
 };
 
 export const INDUSTRIES_PAGE_DATA = {
