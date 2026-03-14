@@ -36,7 +36,7 @@ export default function ArcheCallToAction() {
         <SlideUpAnim
           isInView={isInView}
           transition={{ delay: 0.2 }}
-          className="absolute top-1/2 left-1/2 z-1 w-[103vw] max-w-[1950px] min-w-[350px] -translate-1/2"
+          className="absolute top-1/2 left-1/2 z-1 w-[103vw] max-w-[1870px] min-w-[350px] -translate-1/2"
         >
           <img
             src="/logos/arche-logo-teal.svg"

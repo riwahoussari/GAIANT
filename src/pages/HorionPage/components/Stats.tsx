@@ -3,6 +3,7 @@ import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import { useInView } from "motion/react";
 import { HORION_PAGE_DATA } from "../../../lib/data";
 import { TitleBlock } from "../../../components/ui/Titles";
+import GradientCircle from "../../../components/ui/GradientCircle";
 
 export default function Stats() {
   const stats = HORION_PAGE_DATA.STATS.stats;
@@ -12,14 +13,22 @@ export default function Stats() {
 
   return (
     <section className="my-container side-padding relative z-2 mt-[120px]">
-      <div className="mb-2 justify-center max-lg:flex max-lg:text-center sm:mb-10 lg:mb-12">
+      <div className="absolute right-0 bottom-1/10 z-0 translate-x-1/3 translate-y-1/4 opacity-80 lg:bottom-1/2">
+        <GradientCircle
+          colorr={"blue"}
+          blur={"lg"}
+          className="rotate-135 blur-[max(10vw,100px)]! lg:scale-90 xl:scale-100"
+        />
+      </div>
+
+      <div className="relative z-1 mb-2 justify-center max-lg:flex max-lg:text-center sm:mb-10 lg:mb-12">
         <TitleBlock {...HORION_PAGE_DATA.STATS} />
       </div>
 
-      <div className="flex items-center gap-8 max-lg:flex-col lg:items-start lg:justify-between lg:gap-12">
+      <div className="relative z-1 flex items-center gap-8 max-lg:flex-col lg:items-start lg:justify-between lg:gap-12">
         <SlideUpSelf
           initial={{ y: "50px" }}
-          className="max-w-[563px] lg:min-w-[400px] lg:w-full"
+          className="max-w-[563px] lg:w-full lg:min-w-[400px]"
         >
           <img
             aria-hidden
@@ -32,7 +41,10 @@ export default function Stats() {
             alt="dashboard showcasing stats"
           />
         </SlideUpSelf>
-        <div ref={divRef} className="max-w-[563px] w-full lg:max-w-[650px] lg:py-5 lg:w-6/10">
+        <div
+          ref={divRef}
+          className="w-full max-w-[563px] lg:w-6/10 lg:max-w-[650px] lg:py-5"
+        >
           {stats.map((s, i) => (
             <Fragment key={i}>
               <SlideUpAnim
@@ -63,7 +75,7 @@ function Row({
   text: string;
 }) {
   return (
-    <div className="flex w-full gap-2 max-xs:flex-col xs:items-end xs:justify-between xs:gap-8 max-w-[500px] lg:min-w-[420px]">
+    <div className="flex w-full max-w-[500px] gap-2 max-xs:flex-col xs:items-end xs:justify-between xs:gap-8 lg:min-w-[420px]">
       <h3 className="text-[36px] leading-[1] sm:text-[40px] xl:text-[50px]">
         {stat} <span className="sr-only">{title}</span>
       </h3>

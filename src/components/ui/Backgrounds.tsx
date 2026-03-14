@@ -41,8 +41,8 @@ export function HorionBg({
       <img
         fetchPriority={fetchPriority}
         alt="Landscape filled with mountains"
-        src="/images/horion/horion-bg/3506.webp"
-        srcSet="/images/horion/horion-bg/3506.webp 3506w, /images/horion/horion-bg/2560.webp 2560w, /images/horion/horion-bg/1920.webp 1920w, /images/horion/horion-bg/1440.webp 1440w, /images/horion/horion-bg/1280.webp 1280w, /images/horion/horion-bg/1024.webp 1024w, /images/horion/horion-bg/810.webp 810w, /images/horion/horion-bg/640.webp 640w"
+        src="/images/horion/horion-bg/3840.webp"
+        srcSet="/images/horion/horion-bg/3840.webp 3840w, /images/horion/horion-bg/2560.webp 2560w, /images/horion/horion-bg/1920.webp 1920w, /images/horion/horion-bg/1440.webp 1440w, /images/horion/horion-bg/1280.webp 1280w, /images/horion/horion-bg/1024.webp 1024w, /images/horion/horion-bg/810.webp 810w, /images/horion/horion-bg/640.webp 640w"
         sizes="(max-width: 640px) 200vw, 110vw"
         className="h-full w-full object-cover"
         aria-hidden

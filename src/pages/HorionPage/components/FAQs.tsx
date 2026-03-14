@@ -13,7 +13,6 @@ const longestFaqIndex = faqs.reduce(
 );
 
 export default function FAQs() {
-  const [qHeight, setQHeight] = useState(0);
   const [aHeight, setAHeight] = useState(0);
 
   const [selected, setSelected] = useState(faqs.length);
@@ -37,9 +36,7 @@ export default function FAQs() {
                   setAHeight={
                     index === longestFaqIndex ? setAHeight : undefined
                   }
-                  setQHeight={
-                    index === longestFaqIndex ? setQHeight : undefined
-                  }
+                  
                   key={index}
                   fullAHeight={aHeight}
                   selected={index === selected}
@@ -63,7 +60,6 @@ function FAQ({
   q,
   a,
   setAHeight,
-  setQHeight,
   fullAHeight,
   selected,
   onClick,
@@ -72,22 +68,19 @@ function FAQ({
   q: string;
   a: string;
   setAHeight?: React.Dispatch<React.SetStateAction<number>>;
-  setQHeight?: React.Dispatch<React.SetStateAction<number>>;
   fullAHeight: number;
   selected: boolean;
   onClick: () => void;
   isMobile: boolean;
 }) {
   const aRef = useRef<HTMLDivElement>(null);
-  const qRef = useRef<HTMLDivElement>(null);
   const [localHeight, setLocalHeight] = useState(0);
 
   useEffect(() => {
-    if (!setAHeight || !setQHeight) return;
+    if (!setAHeight) return;
 
     const handleResize = () => {
       setAHeight(aRef.current?.clientHeight || 0);
-      setQHeight(qRef.current?.clientHeight || 0);
     };
 
     handleResize();
@@ -111,7 +104,7 @@ function FAQ({
 
   return (
     <div className="lg-rounded cursor-pointer md:hover:bg-[#5490b4]/10 duration-300 bg-white" onClick={onClick}>
-      <div ref={qRef} className="lg-rounded py-6  px-6 xl:ps-10 xl:pe-8 text-[20px]">
+      <div className="lg-rounded py-6  px-6 xl:ps-10 xl:pe-8 text-[20px]">
         <div className="flex gap-4 items-center justify-between">
           <p className="leading-[1.2]">{q}</p>
           <div className="aspect-square w-4 text-[#5490B4]">

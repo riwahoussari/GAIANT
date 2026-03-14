@@ -11,6 +11,7 @@ import OneDashboard from "./components/OneDashboard";
 import Comparison from "./components/Comparison";
 import Stats from "./components/Stats";
 import FAQs from "./components/FAQs";
+import HorionCTA from "./components/HorionCTA";
 
 export default function HorionPage() {
   // change navbar transparency on scroll
@@ -41,6 +42,7 @@ export default function HorionPage() {
         <Comparison />
         <Stats />
         <FAQs />
+        <HorionCTA />
       </main>
     </>
   );
