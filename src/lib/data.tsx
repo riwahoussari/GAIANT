@@ -2069,14 +2069,16 @@ export const HORION_PAGE_DATA = {
         titleSize: " max-w-[260px] xs:max-w-[330px] ",
         text: "Horion analyzes your documents, CRM data, and prior interactions to create a personalized intelligence brief. You’ll know what to say, and how to say it.",
         animation: horionEnterAnimation,
-        animClass: " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
+        animClass:
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
       },
       {
         title: "Perform while you meet",
         titleSize: " max-w-[220px] xs:max-w-[310px] ",
         text: "Get live, private nudges on tone, pace, and messaging. You’ll be able to communicate clearly, resonate with others, and keep negotiations on track.",
         animation: horionPerformAnimation,
-        animClass: " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
+        animClass:
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
       },
       {
         title: "Learn and improve continuously",
@@ -2084,14 +2086,39 @@ export const HORION_PAGE_DATA = {
         text: "Automatic summaries, behavioral analytics, and follow-up suggestions turn every meeting into a learning opportunity.",
         textWidth: "max-w-[380px]",
         animation: horionLearnAnimation,
-        animClass: " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto scale-115 origin-[80%_50%] aspect-605/582 ",
+        animClass:
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto scale-115 origin-[80%_50%] aspect-605/582 ",
       },
       {
         title: "Empower your sales organization",
         titleSize: " max-w-[330px] ",
         text: "Manager dashboards highlight team performance, engagement, and sentiment - helping you optimize collaboration and close rates.",
         animation: horionEmpowerAnimation,
-        animClass: " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110",
+        animClass:
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110",
+      },
+    ],
+  },
+
+  STEPS: {
+    subtitle: "FROM PREPARATION TO PERFORMANCE",
+    title: "3 simple steps",
+    steps: [
+      {
+        title: "Prepare",
+        text: "Upload documents, sync your CRM, and let Horion research your prospect and predict conversation paths.",
+        imgBack: "/svgs/horion/steps/prepare.svg",
+      },
+      {
+        title: "Perform",
+        text: "Receive live, private coaching during your meeting to improve persuasion and emotional connection.",
+        imgFront: "/svgs/horion/steps/perform.png",
+        imgBack: "/svgs/horion/steps/perform.svg",
+      },
+      {
+        title: "Improve",
+        text: "Review performance analytics, track progress, and optimize future sales conversations.",
+        imgBack: "/svgs/horion/steps/improve.svg",
       },
     ],
   },
