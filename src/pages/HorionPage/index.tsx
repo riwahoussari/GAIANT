@@ -7,6 +7,7 @@ import StickyAnimation from "./components/StickyAnimation";
 import WhyHorionWins from "./components/WhyHorionWins";
 import TurnConversations from "./components/TurnConversations";
 import Steps from "./components/Steps";
+import OneDashboard from "./components/OneDashboard";
 
 export default function HorionPage() {
   // change navbar transparency on scroll
@@ -33,10 +34,7 @@ export default function HorionPage() {
         <WhyHorionWins />
         <TurnConversations />
         <Steps />
-        {/* <TheArcheModel />
-        <AccelerateImpact />
-        <ArcheIndustries />
-        <ArcheCallToAction /> */}
+        <OneDashboard />
       </main>
     </>
   );

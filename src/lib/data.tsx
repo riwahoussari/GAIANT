@@ -2112,7 +2112,7 @@ export const HORION_PAGE_DATA = {
       {
         title: "Perform",
         text: "Receive live, private coaching during your meeting to improve persuasion and emotional connection.",
-        imgFront: "/svgs/horion/steps/perform.png",
+        imgFront: "/svgs/horion/steps/perform.webp",
         imgBack: "/svgs/horion/steps/perform.svg",
       },
       {
@@ -2122,6 +2122,34 @@ export const HORION_PAGE_DATA = {
       },
     ],
   },
+
+  ONE_DASHBOARD: {
+    subtitle: "ALL YOUR SALES INSIGHTS",
+    title: "One dashboard",
+    features: [
+      {
+        title: "Pre-meeting brief",
+        text: "Overview of client, agenda, key insights, and predicted objections.",
+        img: "/svgs/horion/dashboards/premeeting.svg"
+      },
+      {
+        title: "Real-time meeting interface",
+        text: "Live coaching nudges and conversation tracking.",
+        img: "/svgs/horion/dashboards/meeting.svg",
+        imgBack: "/svgs/horion/dashboards/meeting.webp"
+      },
+      {
+        title: "Post-meeting analytics",
+        text: "Emotion evolution, confidence scores, and key takeaways.",
+        img: "/svgs/horion/dashboards/postmeeting.svg"
+      },
+      {
+        title: "Team dashboard",
+        text: "Engagement metrics, top performers, and meeting trends.",
+        img: "/svgs/horion/dashboards/team.svg"
+      },
+    ]
+  }
 };
 
 export const INDUSTRIES_PAGE_DATA = {
