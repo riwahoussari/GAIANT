@@ -6,7 +6,7 @@ export default function Steps() {
   const steps = HORION_PAGE_DATA.STEPS.steps;
   return (
     <section className="my-container side-padding relative z-2">
-      <div className="mb-12 max-lg:text-center max-lg:flex justify-center">
+      <div className="mb-6 sm:mb-10 lg:mb-12 max-lg:text-center max-lg:flex justify-center">
         <TitleBlock  {...HORION_PAGE_DATA.STEPS} />
       </div>
 
@@ -39,7 +39,7 @@ function StepCard({
   number: number;
 }) {
   return (
-    <div className="w-full space-y-4 sm:space-y-5">
+    <div className="w-full space-y-0 sm:space-y-3 lg:space-y-5">
       <div className="lg-rounded relative aspect-square w-full overflow-clip">
         <img
           src={imgBack}

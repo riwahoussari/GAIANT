@@ -43,7 +43,7 @@ export default function OneDashboard() {
     <section ref={sectionRef} className="my-container side-padding mt-[160px]">
       <div className="grid-cols-12 justify-between gap-[31px] lg:grid">
         <div className="col-span-4">
-          <div className="mb-12">
+          <div className="mb-6 sm:mb-10 lg:mb-12">
             <TitleBlock {...content} />
           </div>
 
@@ -53,6 +53,7 @@ export default function OneDashboard() {
               height: maxTextHeight ? `${maxTextHeight}px` : "auto",
               position: "relative",
             }}
+            className="flex items-center"
           >
             {content.features.map((f, i) => (
               <m.div

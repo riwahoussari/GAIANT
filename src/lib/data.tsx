@@ -2149,6 +2149,19 @@ export const HORION_PAGE_DATA = {
       },
     ],
   },
+
+  COMPARISON: {
+    title: "Why Horion outperforms other tools",
+    subtitle: "RECORDING MEETINGS ISN’T ENOUGH ANYMORE",
+    others: {
+      src: "/svgs/horion/comparison/others.webp",
+      alt: "demo of how other notetakers are detectible"
+    },
+    horion: {
+      src: "/svgs/horion/comparison/horion.webp",
+      alt: "demo of how Horion is undetectible"
+    },
+  }
 };
 
 export const INDUSTRIES_PAGE_DATA = {
