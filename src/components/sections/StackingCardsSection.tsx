@@ -50,7 +50,7 @@ export default function StackingCardsSection({
 
       <div
         className="side-padding my-container py-[10px]"
-        style={{ paddingBottom: `${(cards.length + 1) * (light ? 25 : 50)}px` }}
+        style={{ paddingBottom: `${(cards.length + 1) * (light ? 20 : 50)}px` }}
       >
         {/* title */}
         <div className="relative mb-12 max-w-[520px] space-y-3 sm:space-y-5">
@@ -112,14 +112,13 @@ function Card({
 
   return (
     <div
-      className="sticky top-20"
+      className={"sticky " + (cardsLength > 3 ? " top-15" : " top-20")}
       style={{ marginTop: `-${index == 0 ? 0 : 66}px` }}
     >
       <m.div
         style={{
           scale,
-
-          top: `${index * 50}px`,
+          top: `${index * (cardsLength > 3 ? 25 : 50)}px`,
         }}
         className={
           "bg-linear-white-transparent-70 lg-rounded relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16 " + cardStyle

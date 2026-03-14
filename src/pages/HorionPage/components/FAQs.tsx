@@ -1,8 +1,9 @@
 import { TitleBlock } from "../../../components/ui/Titles";
 import { HORION_PAGE_DATA } from "../../../lib/data";
 import { useEffect, useRef, useState } from "react";
-import { motion as m } from "motion/react";
+import { motion as m, useInView } from "motion/react";
 import { useIsMobile } from "../../../lib/useIsMobile";
+import { SlideUpAnim } from "../../../components/ui/Anims";
 
 const faqs = HORION_PAGE_DATA.FAQs.faqs;
 const faqs1 = faqs.slice(0, Math.ceil(faqs.length / 2));
@@ -14,13 +15,17 @@ const longestFaqIndex = faqs.reduce(
 
 export default function FAQs() {
   const [aHeight, setAHeight] = useState(0);
-
   const [selected, setSelected] = useState(faqs.length);
-
   const isMobile = useIsMobile(1024);
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
   return (
-    <section className="my-container side-padding relative z-2 mt-[120px]">
+    <section
+      ref={sectionRef}
+      className="my-container side-padding relative z-2 mt-[120px]"
+    >
       <div className="mb-6 justify-center max-lg:flex max-lg:text-center sm:mb-10 lg:mb-12">
         <TitleBlock {...HORION_PAGE_DATA.FAQs} />
       </div>
@@ -31,22 +36,26 @@ export default function FAQs() {
             {list.map((f, j) => {
               const index = i * faqs1.length + j;
               return (
-                <FAQ
-                  {...f}
-                  setAHeight={
-                    index === longestFaqIndex ? setAHeight : undefined
-                  }
-                  
+                <SlideUpAnim
+                  isInView={isInView}
                   key={index}
-                  fullAHeight={aHeight}
-                  selected={index === selected}
-                  onClick={() => {
-                    if (selected === index) {
-                      setSelected(faqs.length);
-                    } else setSelected(index);
-                  }}
-                  isMobile={isMobile}
-                />
+                  transition={{ delay: 0.05 * index }}
+                >
+                  <FAQ
+                    {...f}
+                    setAHeight={
+                      index === longestFaqIndex ? setAHeight : undefined
+                    }
+                    fullAHeight={aHeight}
+                    selected={index === selected}
+                    onClick={() => {
+                      if (selected === index) {
+                        setSelected(faqs.length);
+                      } else setSelected(index);
+                    }}
+                    isMobile={isMobile}
+                  />
+                </SlideUpAnim>
               );
             })}
           </div>
@@ -103,9 +112,12 @@ function FAQ({
   }, [isMobile]);
 
   return (
-    <div className="lg-rounded cursor-pointer md:hover:bg-[#5490b4]/10 duration-300 bg-white" onClick={onClick}>
-      <div className="lg-rounded py-6  px-6 xl:ps-10 xl:pe-8 text-[20px]">
-        <div className="flex gap-4 items-center justify-between">
+    <div
+      className="lg-rounded cursor-pointer bg-white duration-300 md:hover:bg-[#5490b4]/10"
+      onClick={onClick}
+    >
+      <div className="lg-rounded px-6 py-6 text-[20px] xl:ps-10 xl:pe-8">
+        <div className="flex items-center justify-between gap-4">
           <p className="leading-[1.2]">{q}</p>
           <div className="aspect-square w-4 text-[#5490B4]">
             <Icon open={selected} />
@@ -122,8 +134,10 @@ function FAQ({
         }}
         className="h-0 overflow-clip"
       >
-        <div ref={aRef} className="lg-rounded px-6 xl:px-10 pb-6 text-[20px]">
-          <p className="max-w-[620px] lg:max-w-[510px] text-[17px] leading-[24px]">{a}</p>
+        <div ref={aRef} className="lg-rounded px-6 pb-6 text-[20px] xl:px-10">
+          <p className="max-w-[620px] text-[17px] leading-[24px] lg:max-w-[510px]">
+            {a}
+          </p>
         </div>
       </m.div>
     </div>

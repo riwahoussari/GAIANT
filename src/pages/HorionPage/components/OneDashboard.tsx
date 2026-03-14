@@ -48,32 +48,34 @@ export default function OneDashboard() {
           </div>
 
           {/* text */}
-          <div
-            style={{
-              height: maxTextHeight ? `${maxTextHeight}px` : "auto",
-              position: "relative",
-            }}
-            className="flex items-center"
-          >
-            {content.features.map((f, i) => (
-              <m.div
-                key={i}
-                ref={(el) => {
-                  textRefs.current[i] = el;
-                }}
-                initial={false}
-                animate={{ opacity: i === showing ? 1 : 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className={
-                  "absolute " +
-                  (showing === 1 ? "max-w-[278px]" : "max-w-[283px]")
-                }
-              >
-                <p className="mb-3 text-[25px] leading-[25px]">{f.title}</p>
-                <p className="text-base leading-[21px]">{f.text}</p>
-              </m.div>
-            ))}
-          </div>
+          <SlideUpAnim isInView={isInView}>
+            <div
+              style={{
+                height: maxTextHeight ? `${maxTextHeight}px` : "auto",
+                position: "relative",
+              }}
+              className="flex items-center"
+            >
+              {content.features.map((f, i) => (
+                <m.div
+                  key={i}
+                  ref={(el) => {
+                    textRefs.current[i] = el;
+                  }}
+                  initial={false}
+                  animate={{ opacity: i === showing ? 1 : 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className={
+                    "absolute " +
+                    (showing === 1 ? "max-w-[278px]" : "max-w-[283px]")
+                  }
+                >
+                  <p className="mb-3 text-[25px] leading-[25px]">{f.title}</p>
+                  <p className="text-base leading-[21px]">{f.text}</p>
+                </m.div>
+              ))}
+            </div>
+          </SlideUpAnim>
         </div>
         <div className="relative col-span-8 max-lg:mt-6">
           <div className="space-y-6 xs:space-y-8 lg:ms-auto lg:max-w-[900px] xl:space-y-12">
@@ -166,9 +168,7 @@ function Dash({
           duration: showing ? INTERVAL_TIME / 1000 : 0.5,
         }}
         style={{ transformOrigin: showing ? "left" : "right" }}
-        className={
-          "relative z-1 h-[3px] w-full rounded-full bg-blue-gradient"
-        }
+        className={"bg-blue-gradient relative z-1 h-[3px] w-full rounded-full"}
       ></m.div>
 
       <div
