@@ -67,6 +67,10 @@ body {
   @apply bg-[linear-gradient(to_bottom_right,#011955_0%,#5C86AE_50%,#08444C_100%)];
 }
 
+.bg-white-blue-oblique {
+  @apply bg-[linear-gradient(to_bottom_left,#ffffff1e_0%,#5490B41e_100%)]
+}
+
 .bg-linear-white-transparent-50 {
   background-image: linear-gradient(
     120deg,

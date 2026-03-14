@@ -28,6 +28,7 @@ export default function AccordionSection({
   accordionContent,
   className,
   withGradient = true,
+  customGradient
 }: {
   title: string;
   titleClassName?: string;
@@ -37,6 +38,7 @@ export default function AccordionSection({
   accordionContent: TAccordionContent[];
   className?: string;
   withGradient?: boolean;
+  customGradient?: ReactNode;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
@@ -71,7 +73,7 @@ export default function AccordionSection({
       }
     >
       {/* titles */}
-      <div className="flex flex-col gap-x-14 gap-y-2 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
+      <div className="relative z-1 flex flex-col gap-x-14 gap-y-2 lg:flex-row lg:items-end xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2">
         <div className="relative overflow-visible">
           <TitleBlock
             titleClassName={titleClassName}
@@ -92,20 +94,20 @@ export default function AccordionSection({
 
       {/* content */}
       <div className={"relative flex flex-col gap-10 sm:gap-14 lg:flex-row xl:gap-16 2xl:gap-44 lg:[&>div]:w-1/2 " + (text ? " mt-8 sm:mt-12 md:mt-[40px] " : " mt-2 sm:mt-8 md:mt-[30px]")}>
-        {withGradient && (
+        {customGradient ? customGradient : (withGradient && (
           <div className="absolute right-1/2 bottom-1/2 z-0 translate-1/2 opacity-60">
             <GradientCircle blur={"lg"} />
-          </div>
+          </div>)
         )}
         {/* image */}
-        <SlideUpAnim isInView={isInView} className="relative">
+        <SlideUpAnim isInView={isInView} className="relative z-1">
           {img}
         </SlideUpAnim>
         {/* Accordion */}
         <SlideUpAnim
           isInView={isInView}
           transition={{ delay: 0.2 }}
-          className="relative flex flex-col md:max-w-[555px]"
+          className="relative z-1 flex flex-col md:max-w-[555px]"
         >
           {accordionContent.map((item, i) => (
             <AccordionItem

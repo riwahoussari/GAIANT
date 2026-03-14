@@ -85,11 +85,11 @@ export function ProductsFlyoutContent({
         {/* Arche Link */}
         <Link to="/arche" className="group cursor-pointer max-lg:w-full">
           {color !== "teal" && (
-            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
+            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-30/29 lg:w-[300px]">
               <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
                 <img
                   src="/images/mountains-landscape/3506.webp"
-                  srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w, /images/mountains-landscape/1280.webp 1280w, /images/mountains-landscape/1024.webp 1024w, /images/mountains-landscape/810.webp 810w, /images/mountains-landscape/640.webp 640w"
+                  srcSet="/images/mountains-landscape/3506.webp 3506w, /images/mountains-landscape/2560.webp 2560w, /images/mountains-landscape/1920.webp 1920w, /images/mountains-landscape/1440.webp 1440w"
                   sizes="(max-width: 640px) 150vw,(max-width: 1024px) 608px, 570px"
                   className="absolute h-full w-full origin-bottom scale-160 object-cover object-[50%_75%] max-lg:-translate-x-22/100 lg:scale-190 lg:object-[73%_100%]"
                   alt="Landscape filled with mountains and a girl standing on a rock"
@@ -98,10 +98,10 @@ export function ProductsFlyoutContent({
               <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
                 <img
                   src="/logos/arche-logo.svg"
-                  className="relative w-[110px] lg:w-[100px]"
+                  className="relative h-[30px] lg:h-[28px]"
                   alt="Arche Logo"
                 />
-                <p className="relative mt-3 max-w-[200px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
+                <p className="relative mt-3.5 max-w-[200px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
                   The intelligent operating system for enterprise
                 </p>
               </div>
@@ -123,30 +123,25 @@ export function ProductsFlyoutContent({
         </Link>
 
         {/* Horion Link */}
-        <div className="max-lg:w-full">
+        <Link to="/horion" className="group cursor-pointer max-lg:w-full">
           {color !== "teal" && (
-            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-square lg:w-[300px]">
-              <div className="absolute inset-0">
+            <div className="group/img relative flex w-full flex-col justify-end overflow-hidden rounded-lg bg-teal text-white lg:aspect-30/29 lg:w-[300px]">
+              <div className="absolute inset-0 duration-300 ease-in-out group-hover/img:scale-110">
                 <img
-                  src="/images/horion-bg/3840.webp"
-                  srcSet="/images/horion-bg/3840.webp 3840w, /images/horion-bg/2560.webp 2560w, /images/horion-bg/1920.webp 1920w, /images/horion-bg/1440.webp 1440w, /images/horion-bg/1280.webp 1280w, /images/horion-bg/1024.webp 1024w, /images/horion-bg/810.webp 810w, /images/horion-bg/640.webp "
-                  sizes="(max-width: 370px) 180vw, (max-width: 640px) 160vw, (max-width: 1024px) 665px, 540px"
-                  className="absolute h-full w-full origin-bottom scale-175 object-cover object-[50%_56%] max-[370px]:scale-200 max-[370px]:object-[50%_54%] max-lg:translate-x-1/10 lg:scale-180 lg:object-[50%_70%]"
-                  alt="Landscape filled with mountains and a girl standing on a rock"
+                  src="/images/horion/horion-bg/3840.webp"
+                  srcSet="/images/horion/horion-bg/3840.webp 3840w, /images/horion/horion-bg/2560.webp 2560w, /images/horion/horion-bg/1920.webp 1920w, /images/horion/horion-bg/1440.webp 1440w, /images/horion/horion-bg/1280.webp 1280w, /images/horion/horion-bg/1024.webp 1024w, /images/horion/horion-bg/810.webp 810w "
+                  sizes="(max-width: 640px) 150vw, (max-width: 1024px) 570px, 450px"
+                  className="absolute h-full w-full origin-bottom-right scale-153 object-cover object-top-right lg:origin-top-right lg:translate-x-3/100 lg:scale-143"
+                  alt="Landscape filled with mountains"
                 />
               </div>
               <div className="items-end p-4 max-lg:flex max-lg:h-[110px]">
-                <div className="relative">
-                  <p className="mb-2 text-[12px] leading-[12px] lg:mb-3.5">
-                    SOON
-                  </p>
-                  <img
-                    src="/logos/horion-logo.svg"
-                    className="relative block w-[110px] lg:w-[100px]"
-                    alt="Horion Logo"
-                  />
-                </div>
-                <p className="relative mt-3 max-w-[210px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
+                <img
+                  src="/logos/horion-logo.svg"
+                  className="relative block h-[30px] lg:h-[28px]"
+                  alt="Horion Logo"
+                />
+                <p className="relative mt-3.5 max-w-[210px] text-[15px] leading-[1.2] max-xs:text-[13px] max-lg:hidden">
                   The intelligent meeting co-pilot for modern sales teams
                 </p>
               </div>
@@ -159,16 +154,13 @@ export function ProductsFlyoutContent({
             }}
           >
             {color === "teal" && (
-              <span className="mb-2.5 flex origin-bottom-left scale-115 items-center text-[18px] leading-[18px] whitespace-pre">
-                horion{" "}
-                <span className="flex -translate-x-0 translate-y-px items-center rounded-full bg-white/20 px-[8px] py-[4px] text-[12px] leading-[12px] text-white">
-                  SOON
-                </span>
+              <span className="mb-2.5 block origin-bottom-left scale-115 text-[18px] leading-[18px]">
+                archē
               </span>
             )}
-            <span>The intelligent meeting co-pilot for modern sales teams</span>
+            <span>The intelligent operating system for enterprise</span>
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );
@@ -325,7 +317,12 @@ export function FindUsFlyoutContent({
       )}
       <div className="flex flex-col text-[18px] leading-[20px] lg:gap-y-6">
         {LINKS.find((l) => l.name === "Find Us")?.sublinks?.map((link, i) => (
-          <Link key={i} className="cursor-point group/link" to={link.link || ""} target="_blank">
+          <Link
+            key={i}
+            className="cursor-point group/link"
+            to={link.link || ""}
+            target="_blank"
+          >
             <p
               className="w-full rounded-md bg-white/0 py-3 duration-150 ease-in-out max-lg:group-hover/link:opacity-60 lg:px-4 lg:group-hover/link:bg-white/50"
               style={{
@@ -336,7 +333,6 @@ export function FindUsFlyoutContent({
             </p>
           </Link>
         ))}
-        
       </div>
     </div>
   );

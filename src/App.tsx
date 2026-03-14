@@ -15,6 +15,7 @@ import CareersPage from "./pages/CareersPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import IndustryPage from "./pages/IndustryPage";
 import ContactPage from "./pages/ContactPage";
+import HorionPage from "./pages/HorionPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
     >
       <Route path="/" element={<LandingPage />} />
       <Route path="/arche" element={<ArchePage />} />
+      <Route path="/horion" element={<HorionPage />} />
       <Route path="/industries" element={<IndustriesPage />} />
       <Route path="/industries/:id" element={<IndustryPage />} />
       <Route path="/about" element={<AboutPage />} />

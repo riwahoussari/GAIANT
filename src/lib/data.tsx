@@ -2009,6 +2009,53 @@ export const ARCHE_PAGE_DATA = {
   },
 };
 
+export const HORION_PAGE_DATA = {
+  HERO: {
+    title: "AI For Modern Sales Meetings",
+    subtitle: "HORION",
+    text: "Horion is your AI-powered meeting co-pilot, guiding sales teams from prep to follow-up, turning meetings into momentum and deals into faster wins.",
+  },
+
+  WHY_HORION_WINS: {
+    title: "Why Horion wins deals",
+    subtitle: "AI THAT GUIDES, COACHES, AND BOOSTS EVERY DEAL",
+    img: {
+      src: "/images/horion/why-horion-wins/1920.webp",
+      srcSet: `
+  /images/horion/why-horion-wins/1920.webp 1920w, 
+  /images/horion/why-horion-wins/1440.webp 1440w, 
+  /images/horion/why-horion-wins/1280.webp 1280w`,
+      alt: "Team meeting in an office room",
+    },
+    accordionContent: [
+      {
+        title: "Smarter decisions",
+        list: [
+          "Predict outcomes, simulate conversations, and reduce deal risks with AI-powered insights.",
+        ],
+      },
+      {
+        title: "Faster closures",
+        list: [
+          "Guidance on objections, pacing, and emotional cues helps sales reps accelerate deal cycles.",
+        ],
+      },
+      {
+        title: "Personal growth",
+        list: [
+          "Track confidence, influence, and communication effectiveness over time with AI-driven analytics.",
+        ],
+      },
+      {
+        title: "Continuous learning",
+        list: [
+          "Every interaction feeds the system’s memory, so your team never starts a conversation from scratch again.",
+        ],
+      },
+    ],
+  },
+};
+
 export const INDUSTRIES_PAGE_DATA = {
   HERO: {
     subtitle: "INDUSTRIES",

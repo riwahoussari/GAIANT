@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import TealDiamondGradient from "../../assets/teal-diamond-gradient.svg";
 import BeigeDiamondGradient from "../../assets/beige-diamond-gradient.svg";
+import WhiteBlueDiamondGradient from "../../assets/white-blue-diamond-gradient.svg";
 import { cn } from "../../lib/utils";
 
 const gradientCircleVariants = cva("aspect-square rounded-full overflow-clip", {
@@ -15,6 +16,7 @@ const gradientCircleVariants = cva("aspect-square rounded-full overflow-clip", {
     colorr: {
       beige: "",
       teal: "",
+      blue: "",
     },
   },
   defaultVariants: {
@@ -36,8 +38,14 @@ export default function GradientCircle({
   return (
     <div className={cn(gradientCircleVariants({ blur }), className)} {...props}>
       <img
-        src={colorr == "beige" ? BeigeDiamondGradient : TealDiamondGradient}
-        className="h-full w-full object-contain "
+        src={
+          colorr == "beige"
+            ? BeigeDiamondGradient
+            : colorr === "teal"
+              ? TealDiamondGradient
+              : WhiteBlueDiamondGradient
+        }
+        className="h-full w-full object-contain"
         alt="Faded gradient ball"
       />
     </div>
