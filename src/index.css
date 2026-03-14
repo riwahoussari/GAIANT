@@ -71,6 +71,10 @@ body {
   @apply bg-[linear-gradient(to_bottom_left,#ffffff1e_0%,#5490B41e_100%)]
 }
 
+.bg-blue-gradient {
+  @apply bg-[linear-gradient(to_right,#A6C6DD_0%,#175679_100%)]
+}
+
 .bg-linear-white-transparent-50 {
   background-image: linear-gradient(
     120deg,

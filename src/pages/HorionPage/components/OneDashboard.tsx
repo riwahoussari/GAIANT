@@ -167,7 +167,7 @@ function Dash({
         }}
         style={{ transformOrigin: showing ? "left" : "right" }}
         className={
-          "relative z-1 h-[3px] w-full rounded-full bg-[linear-gradient(to_right,#A6C6DD_0%,#175679_100%)]"
+          "relative z-1 h-[3px] w-full rounded-full bg-blue-gradient"
         }
       ></m.div>
 

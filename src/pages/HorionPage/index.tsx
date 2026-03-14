@@ -9,6 +9,7 @@ import TurnConversations from "./components/TurnConversations";
 import Steps from "./components/Steps";
 import OneDashboard from "./components/OneDashboard";
 import Comparison from "./components/Comparison";
+import Stats from "./components/Stats";
 
 export default function HorionPage() {
   // change navbar transparency on scroll
@@ -37,6 +38,7 @@ export default function HorionPage() {
         <Steps />
         <OneDashboard />
         <Comparison />
+        <Stats />
       </main>
     </>
   );

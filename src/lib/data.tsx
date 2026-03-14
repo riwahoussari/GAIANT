@@ -2107,17 +2107,17 @@ export const HORION_PAGE_DATA = {
       {
         title: "Prepare",
         text: "Upload documents, sync your CRM, and let Horion research your prospect and predict conversation paths.",
-        imgBack: "/svgs/horion/steps/prepare.webp",
+        imgBack: "/images/horion/steps/prepare.webp",
       },
       {
         title: "Perform",
         text: "Receive live, private coaching during your meeting to improve persuasion and emotional connection.",
-        imgBack: "/svgs/horion/steps/perform.webp",
+        imgBack: "/images/horion/steps/perform.webp",
       },
       {
         title: "Improve",
         text: "Review performance analytics, track progress, and optimize future sales conversations.",
-        imgBack: "/svgs/horion/steps/improve.webp",
+        imgBack: "/images/horion/steps/improve.webp",
       },
     ],
   },
@@ -2154,14 +2154,37 @@ export const HORION_PAGE_DATA = {
     title: "Why Horion outperforms other tools",
     subtitle: "RECORDING MEETINGS ISN’T ENOUGH ANYMORE",
     others: {
-      src: "/svgs/horion/comparison/others.webp",
-      alt: "demo of how other notetakers are detectible"
+      src: "/images/horion/comparison/others.webp",
+      alt: "demo of how other notetakers are detectible",
     },
     horion: {
-      src: "/svgs/horion/comparison/horion.webp",
-      alt: "demo of how Horion is undetectible"
+      src: "/images/horion/comparison/horion.webp",
+      alt: "demo of how Horion is undetectible",
     },
-  }
+  },
+
+  STATS: {
+    title: "Sales performance, upgraded",
+    subtitle: "SHARPER MEETINGS, BETTER OUTCOMES",
+    img: "/images/horion/stats/stats.webp",
+    stats: [
+      {
+        stat: "42%",
+        title: "Close rate",
+        text: "Sales teams improve their deal closure rate within the first 60 days of use.",
+      },
+      {
+        stat: "3x",
+        title: "Prep speed",
+        text: "Reduce meeting preparation time by up to three times with AI research.",
+      },
+      {
+        stat: "90%",
+        title: "Recall",
+        text: "Never forget deal context with full conversation memory across meetings.",
+      },
+    ],
+  },
 };
 
 export const INDUSTRIES_PAGE_DATA = {
