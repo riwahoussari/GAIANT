@@ -24,7 +24,7 @@
     <meta http-equiv="Permissions-Policy" content="" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://player.vimeo.com https://www.googletagmanager.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.vercel.app https://i.vimeocdn.com https://player.vimeo.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel.app https://player.vimeo.com https://*.vimeocdn.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://cdnjs.cloudflare.com; frame-src https://player.vimeo.com; media-src 'self' https://*.vimeocdn.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://player.vimeo.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://assets.apollo.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.vercel.app https://i.vimeocdn.com https://player.vimeo.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel.app https://player.vimeo.com https://*.vimeocdn.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://assets.apollo.io; frame-src https://player.vimeo.com; media-src 'self' https://*.vimeocdn.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
     />
 
     <!-- Preconnect Google Fonts -->
@@ -94,6 +94,24 @@
         }
       }
     </style>
+    <script>
+      function initApollo() {
+        var n = Math.random().toString(36).substring(7),
+          o = document.createElement("script");
+        ((o.src =
+          "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" +
+          n),
+          (o.async = !0),
+          (o.defer = !0),
+          (o.onload = function () {
+            window.trackingFunctions.onLoad({
+              appId: "69b5513d5d5110001dddd53f",
+            });
+          }),
+          document.head.appendChild(o));
+      }
+      initApollo();
+    </script>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
