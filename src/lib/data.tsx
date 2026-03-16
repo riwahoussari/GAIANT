@@ -2065,7 +2065,7 @@ export const HORION_PAGE_DATA = {
         title: "Enter every meeting prepared",
         titleSize: " max-w-[260px] xs:max-w-[330px] ",
         text: "Horion analyzes your documents, CRM data, and prior interactions to create a personalized intelligence brief. You’ll know what to say, and how to say it.",
-        textWidth: "  max-lg:mx-auto max-xs:max-w-[270px]  ",
+        textWidth: "  max-lg:mx-auto max-xs:max-w-[294px]  ",
         animation: "/animations/horion/enter.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100 ",
@@ -2095,7 +2095,7 @@ export const HORION_PAGE_DATA = {
         title: "Empower your sales organization",
         titleSize: " max-w-[330px] ",
         text: "Manager dashboards highlight team performance, engagement, and sentiment - helping you optimize collaboration and close rates.",
-        textWidth: " max-lg:mx-auto max-xs:max-w-[270px] ",
+        textWidth: " max-lg:mx-auto max-xs:max-w-[282px] ",
         animation: "/animations/horion/empower.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100",
