@@ -18,10 +18,6 @@ import ourMissionAnimation3 from "../assets/animations/use-cases/3.mp4";
 import discoverAnimation from "../assets/animations/arche/Discover.json";
 import createAnimation from "../assets/animations/arche/Create.json";
 import executeAnimation from "../assets/animations/arche/Execute.json";
-import horionEnterAnimation from "../assets/animations/horion/enter.json";
-import horionPerformAnimation from "../assets/animations/horion/perform.json";
-import horionLearnAnimation from "../assets/animations/horion/learn.json";
-import horionEmpowerAnimation from "../assets/animations/horion/empower.json";
 
 export const GENERAL_DATA = {
   PARTNERS: [
@@ -2063,39 +2059,44 @@ export const HORION_PAGE_DATA = {
     title: "Turn conversations <br> into wins",
     subtitle: "",
     text: "Prepare smarter, read the room in real time, and follow up with clarity after every meeting.",
+    textWidth: "max-w-[310px] xs:max-w-[330px]",
     cards: [
       {
         title: "Enter every meeting prepared",
         titleSize: " max-w-[260px] xs:max-w-[330px] ",
         text: "Horion analyzes your documents, CRM data, and prior interactions to create a personalized intelligence brief. You’ll know what to say, and how to say it.",
-        animation: horionEnterAnimation,
+        animation: "/animations/horion/enter.lottie",
         animClass:
-          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100 ",
+        animationPlayer: "dotlottie",
       },
       {
         title: "Perform while you meet",
         titleSize: " max-w-[220px] xs:max-w-[310px] ",
         text: "Get live, private nudges on tone, pace, and messaging. You’ll be able to communicate clearly, resonate with others, and keep negotiations on track.",
-        animation: horionPerformAnimation,
+        animation: "/animations/horion/perform.lottie",
         animClass:
-          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 ",
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100 ",
+        animationPlayer: "dotlottie",
       },
       {
         title: "Learn and improve continuously",
         titleSize: " max-w-[330px] ",
         text: "Automatic summaries, behavioral analytics, and follow-up suggestions turn every meeting into a learning opportunity.",
         textWidth: "max-w-[380px]",
-        animation: horionLearnAnimation,
+        animation: "/animations/horion/learn.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto scale-115 origin-[80%_50%] aspect-605/582 ",
+        animationPlayer: "dotlottie",
       },
       {
         title: "Empower your sales organization",
         titleSize: " max-w-[330px] ",
         text: "Manager dashboards highlight team performance, engagement, and sentiment - helping you optimize collaboration and close rates.",
-        animation: horionEmpowerAnimation,
+        animation: "/animations/horion/empower.lottie",
         animClass:
-          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110",
+          " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100",
+        animationPlayer: "dotlottie",
       },
     ],
   },
@@ -2213,8 +2214,8 @@ export const HORION_PAGE_DATA = {
         q: "What technical security measures are in place?",
         a: "Data is encrypted both at rest and in transit, ensuring information remains protected whether stored or transferred. Each organization operates within a dedicated workspace, keeping team data isolated and secure.",
       },
-    ]
-  }
+    ],
+  },
 };
 
 export const INDUSTRIES_PAGE_DATA = {

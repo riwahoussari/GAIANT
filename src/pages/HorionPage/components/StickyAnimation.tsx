@@ -3,8 +3,7 @@ import { SlideUpAnim, SlideUpSelf } from "../../../components/ui/Anims";
 import { useRef } from "react";
 import { useScroll } from "motion/react";
 import { useIsMobile } from "../../../lib/useIsMobile";
-import horionHeroAnimation from "../../../assets/animations/horion/hero.json";
-import Lottie from "lottie-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function StickyAnimation() {
   const isMobile = useIsMobile(1024);
@@ -34,15 +33,24 @@ function VideoDesktop() {
             className="side-padding my-container"
           >
             <m.div
-              className="lg-rounded bg-white-blue-oblique mx-auto w-9/10 overflow-clip rounded-xl object-contain py-5 backdrop-blur-[200px]"
+              className="lg-rounded bg-white-blue-oblique mx-auto w-9/10 overflow-clip rounded-xl object-contain py-10 backdrop-blur-[200px]"
               style={{ position: "relative", scale }}
             >
-              <Lottie
-                className="scale-105"
-                animationData={horionHeroAnimation}
-                loop
-                autoplay
-              />
+              <div className="aspect-582/330 w-full">
+                <DotLottieReact
+                  src={"/animations/horion/hero.lottie"}
+                  autoplay
+                  loop
+                  className="h-full w-full scale-110"
+                  layout={{
+                    fit: "contain",
+                    align: [0.5, 0.5],
+                  }}
+                  renderConfig={{
+                    autoResize: true,
+                  }}
+                />
+              </div>
             </m.div>
           </SlideUpAnim>
         </div>
@@ -63,13 +71,22 @@ function VideoMobile() {
     <div className="relative z-3">
       <div className="side-padding my-container -mb-10 -translate-y-20 max-sm:-mb-32">
         <SlideUpSelf>
-          <div className="bg-white-blue-oblique lg-rounded mx-auto w-full overflow-clip py-2 backdrop-blur-[200px]">
-            <Lottie
-              className="scale-105"
-              animationData={horionHeroAnimation}
-              loop
-              autoplay
-            />
+          <div className="bg-white-blue-oblique lg-rounded mx-auto w-full overflow-clip py-4 backdrop-blur-[200px]">
+            <div className="aspect-582/330 w-full">
+              <DotLottieReact
+                src={"/animations/horion/hero.lottie"}
+                autoplay
+                loop
+                className="h-full w-full scale-110"
+                layout={{
+                  fit: "contain",
+                  align: [0.5, 0.5],
+                }}
+                renderConfig={{
+                  autoResize: true,
+                }}
+              />
+            </div>
           </div>
         </SlideUpSelf>
       </div>

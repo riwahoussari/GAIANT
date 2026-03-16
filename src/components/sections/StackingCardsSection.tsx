@@ -9,18 +9,21 @@ import {
 import Lottie from "lottie-react";
 import { TitleBlock } from "../ui/Titles";
 import { SlideUpAnim } from "../ui/Anims";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function StackingCardsSection({
   background,
   title,
   text,
+  textWidth,
   cards,
   light = false,
-  cardStyle
+  cardStyle,
 }: {
   background: ReactNode;
   title: string;
   text: string;
+  textWidth?: string;
   cards: {
     subtitle?: string;
     title: string;
@@ -56,7 +59,7 @@ export default function StackingCardsSection({
         <div className="relative mb-12 max-w-[520px] space-y-3 sm:space-y-5">
           <TitleBlock title={title} />
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
-            <p className="text-16">{text}</p>
+            <p className={"text-16 " + textWidth}>{text}</p>
           </SlideUpAnim>
         </div>
 
@@ -88,7 +91,7 @@ function Card({
   progress,
   content,
   cardsLength,
-  cardStyle
+  cardStyle,
 }: {
   isInView: boolean;
   progress: MotionValue<number>;
@@ -100,6 +103,7 @@ function Card({
     text: string;
     textWidth?: string;
     animation: unknown;
+    animationPlayer?: "dotlottie" | "lottie";
     animClass?: string;
     contentWidth?: number;
   };
@@ -121,7 +125,11 @@ function Card({
           top: `${index * (cardsLength > 3 ? 25 : 50)}px`,
         }}
         className={
-          "bg-linear-white-transparent-70 lg-rounded relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16 " + cardStyle
+          "lg-rounded relative mb-4 flex origin-top items-center justify-between gap-x-5 gap-y-0 px-4 pt-10 backdrop-blur-[100px] max-lg:flex-col sm:px-12 sm:pt-16 xl:px-20 xl:py-16 " +
+          (cardsLength > 3 && index > 0
+            ? " bg-[#A3BDCE]/30 "
+            : " bg-linear-white-transparent-70 ") +
+          cardStyle
         }
       >
         {/* text */}
@@ -141,7 +149,7 @@ function Card({
           <SlideUpAnim isInView={isInView} transition={{ delay: 0.4 }}>
             <p
               className={
-                "max-lg:mx-auto text-[50px] xs:text-[60px] " + content.titleSize
+                "text-[50px] max-lg:mx-auto xs:text-[60px] " + content.titleSize
               }
             >
               {" "}
@@ -170,17 +178,37 @@ function Card({
         </div>
         {/* animation */}
         <SlideUpAnim
-          className="bg- w-full max-w-[700px] min-w-[320px] lg:w-6/10"
+          className="w-full max-w-[700px] min-w-[320px] lg:w-6/10"
           isInView={isInView}
           transition={{ delay: 0.4 }}
         >
-          <Lottie
-            animationData={content.animation}
-            className={"h-full w-full object-contain " + content.animClass } 
-            autoplay
-            muted
-            loop
-          />
+          {content.animationPlayer === "dotlottie" ? (
+            <div
+              className={"aspect-700/673 w-full " + (content.animClass ?? "")}
+            >
+              <DotLottieReact
+                src={content.animation as string}
+                autoplay
+                loop
+                className="h-full w-full"
+                layout={{
+                  fit: "contain",
+                  align: [0.5, 0.5],
+                }}
+                renderConfig={{
+                  autoResize: true,
+                }}
+              />
+            </div>
+          ) : (
+            <Lottie
+              animationData={content.animation}
+              className={"h-full w-full object-contain " + content.animClass}
+              autoplay
+              muted
+              loop
+            />
+          )}
         </SlideUpAnim>
       </m.div>
     </div>
