@@ -19,7 +19,7 @@ export default function HorionHero({
       padding="pt-[200px] xl:pt-[240px]! pb-[100px]! "
       {...HORION_PAGE_DATA.HERO}
       titleWidth="max-lg:max-w-[410px] lg:min-w-[410px] lg:max-w-[410px] xl:min-w-[487px] xl:max-w-[487px]"
-      textWidth="max-lg:max-w-[480px] lg:min-w-[480px] lg:max-w-[480px] xl:min-w-[550px] xl:max-w-[550px]"
+      textWidth="max-xs:max-w-[350px]! max-lg:max-w-[480px] lg:min-w-[480px] lg:max-w-[480px] xl:min-w-[550px] xl:max-w-[550px]"
       button={
         <Link to="/contact">
           <Button arrow={"spaced"}>Request a demo</Button>

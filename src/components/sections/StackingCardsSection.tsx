@@ -17,7 +17,6 @@ export default function StackingCardsSection({
   text,
   textWidth,
   cards,
-  light = false,
   cardStyle,
 }: {
   background: ReactNode;
@@ -31,7 +30,6 @@ export default function StackingCardsSection({
     textWidth?: string;
     animation: unknown;
   }[];
-  light?: boolean;
   cardStyle?: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -53,7 +51,9 @@ export default function StackingCardsSection({
 
       <div
         className="side-padding my-container py-[10px]"
-        style={{ paddingBottom: `${(cards.length + 1) * (light ? 20 : 50)}px` }}
+        style={{
+          paddingBottom: `${(cards.length + 1) * (cards.length > 3 ? 20 : 50)}px`,
+        }}
       >
         {/* title */}
         <div className="relative mb-12 max-w-[520px] space-y-3 sm:space-y-5">
@@ -64,10 +64,7 @@ export default function StackingCardsSection({
         </div>
 
         {/* card */}
-        <div
-          ref={cardsContainerRef}
-          className={light ? "text-black" : "text-white"}
-        >
+        <div ref={cardsContainerRef} className={"text-white"}>
           {cards.map((card, i) => (
             <Card
               key={i}
@@ -117,7 +114,9 @@ function Card({
   return (
     <div
       className={"sticky " + (cardsLength > 3 ? " top-15" : " top-20")}
-      style={{ marginTop: `-${index == 0 ? 0 : 66}px` }}
+      style={{
+        marginTop: `-${index == 0 ? 0 : cardsLength > 3 ? 41 : 66}px`,
+      }}
     >
       <m.div
         style={{

@@ -2013,7 +2013,7 @@ export const HORION_PAGE_DATA = {
   HERO: {
     title: "AI For Modern Sales Meetings",
     subtitle: "HORION",
-    text: "Horion is your AI-powered meeting co-pilot, guiding sales teams from prep to follow-up, turning meetings into momentum and deals into faster wins.",
+    text: "Horion is your AI-powered meeting co-pilot, guiding sales teams from prep to follow-up, turning meetings into momentum and <max-xs:br> deals into faster wins.",
   },
 
   WHY_HORION_WINS: {
@@ -2065,6 +2065,7 @@ export const HORION_PAGE_DATA = {
         title: "Enter every meeting prepared",
         titleSize: " max-w-[260px] xs:max-w-[330px] ",
         text: "Horion analyzes your documents, CRM data, and prior interactions to create a personalized intelligence brief. You’ll know what to say, and how to say it.",
+        textWidth: "  max-lg:mx-auto max-xs:max-w-[270px]  ",
         animation: "/animations/horion/enter.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100 ",
@@ -2074,6 +2075,7 @@ export const HORION_PAGE_DATA = {
         title: "Perform while you meet",
         titleSize: " max-w-[220px] xs:max-w-[310px] ",
         text: "Get live, private nudges on tone, pace, and messaging. You’ll be able to communicate clearly, resonate with others, and keep negotiations on track.",
+        textWidth: "  max-lg:mx-auto max-xs:max-w-[290px] ",
         animation: "/animations/horion/perform.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100 ",
@@ -2083,7 +2085,7 @@ export const HORION_PAGE_DATA = {
         title: "Learn and improve continuously",
         titleSize: " max-w-[330px] ",
         text: "Automatic summaries, behavioral analytics, and follow-up suggestions turn every meeting into a learning opportunity.",
-        textWidth: "max-w-[380px]",
+        textWidth: "  max-lg:mx-auto max-xs:max-w-[290px] max-w-[380px]",
         animation: "/animations/horion/learn.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto scale-115 origin-[80%_50%] aspect-605/582 ",
@@ -2093,6 +2095,7 @@ export const HORION_PAGE_DATA = {
         title: "Empower your sales organization",
         titleSize: " max-w-[330px] ",
         text: "Manager dashboards highlight team performance, engagement, and sentiment - helping you optimize collaboration and close rates.",
+        textWidth: " max-lg:mx-auto max-xs:max-w-[270px] ",
         animation: "/animations/horion/empower.lottie",
         animClass:
           " max-xs:w-full max-sm:w-[85%] max-lg:w-[70%] max-lg:mx-auto max-lg:scale-110 lg:translate-x-12/100",

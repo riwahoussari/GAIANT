@@ -40,7 +40,7 @@ export default function OneDashboard() {
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
 
   return (
-    <section ref={sectionRef} className="my-container side-padding mt-[160px]">
+    <section ref={sectionRef} className="my-container side-padding mt-[120px] sm:mt-[160px]">
       <div className="grid-cols-12 justify-between gap-[31px] lg:grid">
         <div className="col-span-4">
           <div className="mb-6 sm:mb-10 lg:mb-12">

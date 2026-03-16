@@ -5,7 +5,7 @@ import { HORION_PAGE_DATA } from "../../../lib/data";
 export default function WhyHorionWins() {
   return (
     <AccordionSection
-      className="mt-[130px]!"
+      className="mt-[130px]!  max-sm:-mb-[60px] "
       title={HORION_PAGE_DATA.WHY_HORION_WINS.title}
       subtitle={HORION_PAGE_DATA.WHY_HORION_WINS.subtitle}
       img={

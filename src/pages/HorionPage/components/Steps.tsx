@@ -6,11 +6,11 @@ export default function Steps() {
   const steps = HORION_PAGE_DATA.STEPS.steps;
   return (
     <section className="my-container side-padding relative z-2">
-      <div className="mb-6 sm:mb-10 lg:mb-12 max-lg:text-center max-lg:flex justify-center">
-        <TitleBlock  {...HORION_PAGE_DATA.STEPS} />
+      <div className="mb-6 justify-center max-lg:flex max-lg:text-center sm:mb-10 lg:mb-12">
+        <TitleBlock {...HORION_PAGE_DATA.STEPS} />
       </div>
 
-      <div className="lg:grid grid-cols-3 gap-x-9 gap-y-12 flex flex-col max-lg:items-center">
+      <div className="flex grid-cols-3 flex-col gap-x-9 gap-y-12 max-lg:items-center lg:grid">
         {steps.map((s, i) => (
           <SlideUpSelf
             className="max-lg:max-w-[400px]"
@@ -39,7 +39,7 @@ function StepCard({
   number: number;
 }) {
   return (
-    <div className="w-full space-y-0 sm:space-y-3 lg:space-y-5">
+    <div className="w-full space-y-0 max-lg:text-center sm:space-y-3 lg:space-y-5">
       <div className="lg-rounded relative aspect-square w-full overflow-clip">
         <img
           src={imgBack}
@@ -57,11 +57,16 @@ function StepCard({
         )}
       </div>
 
-      <div className="flex gap-5">
-        <p className="text-[25px] leading-[47px]">{number}</p>
+      <div className="flex gap-5 max-lg:justify-center">
+        <p className="text-[25px] leading-[47px] max-lg:hidden">{number}</p>
         <div>
-          <h3 className="text-[25px] leading-[47px] ">{title}</h3>
-          <p className="text-[17px] leading-[21px] mt-1 max-w-[300px]">{text}</p>
+          <h3 className="text-[25px] leading-[47px] whitespace-pre ">
+            <span className="lg:hidden">{number}  </span>
+            {title}{"  "}
+          </h3>
+          <p className="mt-1 max-w-[300px] text-[17px] leading-[21px]">
+            {text}
+          </p>
         </div>
       </div>
     </div>

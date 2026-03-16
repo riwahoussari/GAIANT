@@ -13,7 +13,6 @@ export default function TurnConversations() {
           ></div>
         </div>
       }
-      light
       {...HORION_PAGE_DATA.TURN_CONVERSATIONS_TO_WINS}
       cards={HORION_PAGE_DATA.TURN_CONVERSATIONS_TO_WINS.cards.map((c) => ({
         ...c,

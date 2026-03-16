@@ -213,6 +213,8 @@ export default function Hero({
                   if (word === "<br>") return <br key={i} />;
                   else if (word === "<sm:br>")
                     return <br key={i} className="max-sm:hidden" />;
+                  else if (word === "<max-xs:br>")
+                    return <br key={i} className="xs:hidden" />
                   else {
                     if (word.split("<bold>").length > 1) {
                       return (

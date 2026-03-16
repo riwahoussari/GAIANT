@@ -6,7 +6,6 @@ export default function AccelerateImpact() {
   return (
     <StackingCardsSection
       background={<BlurredLandscapeBg loading="lazy" />}
-      light={false}
       {...ARCHE_PAGE_DATA.ACCELERATE_IMPACT}
       cards={ARCHE_PAGE_DATA.ACCELERATE_IMPACT.cards.map((c) => ({
         ...c,
