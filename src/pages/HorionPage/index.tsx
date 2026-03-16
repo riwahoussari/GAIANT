@@ -32,7 +32,7 @@ export default function HorionPage() {
         description="Horion helps enterprise sales teams increase close rates, reduce prep time, and improve team performance with AI-driven guidance."
       />
       <Navbar transparentBanner transparentBg={transparentNavbar} />
-      <main>
+      <main className="max-w-dvw overflow-x-clip">
         <HorionHero navbarTriggerRef={navbarBgTrigger} />
         <StickyAnimation />
         <WhyHorionWins />
