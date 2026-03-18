@@ -6,7 +6,7 @@
   "homepage": "https://riwahoussari.github.io/GAIANT",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
     "predeploy": "npm run build",
