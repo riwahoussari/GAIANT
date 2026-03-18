@@ -61,6 +61,18 @@
     />
 
     <!-- Apollo Form -->
+  </head>
+
+  <body class="locked">
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
     <script>
       (function initApolloInbound() {
         var TIMEOUT_MS = 15000;
@@ -110,16 +122,5 @@
         document.head.appendChild(script);
       })();
     </script>
-  </head>
-
-  <body class="locked">
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-    </script>
-
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
