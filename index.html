@@ -60,7 +60,36 @@
       crossorigin
     />
 
-    <!-- Apollo Form -->
+    <style>
+      body.locked {
+        overflow-y: hidden;
+        touch-action: none;
+        padding-top: 120dvh;
+      }
+
+      #preloader {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        transition-property: opacity;
+        transition-duration: 0.4s; /* duration-400 */
+        transition-timing-function: ease-in-out;
+      }
+      @media (max-width: 768px) {
+        #preloader div {
+          transform: scale(2);
+        }
+      }
+    </style>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -89,6 +118,33 @@
       <div id="react-root"></div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Preloader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie_light.min.js"></script>
+    <script>
+      function hidePreloader() {
+        const preloader = document.getElementById("preloader");
+        preloader.style.opacity = 0;
+        document.body.classList.remove("locked");
+        setTimeout(() => {
+          preloader.remove();
+        }, 400);
+      }
+
+      const anim = lottie.loadAnimation({
+        container: document.querySelector("#preloader div"),
+        path: "/preloader.json",
+        renderer: "svg",
+        loop: false,
+        autoplay: true,
+      });
+
+      anim.addEventListener("data_ready", function () {
+        setTimeout(() => {
+          hidePreloader();
+        }, 2750);
+      });
+    </script>
 
     <script>
       (function initApolloInbound() {
