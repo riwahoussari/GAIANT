@@ -141,6 +141,7 @@
 
     <div id="preloader"><div></div></div>
     <div id="react-root"></div>
+    <div id="root">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita quos facere itaque incidunt ipsam dolor assumenda amet qui optio voluptate, dolores culpa eveniet quibusdam provident atque obcaecati impedit dolorem, labore, molestias necessitatibus et tenetur! Asperiores laudantium, corrupti sunt blanditiis perspiciatis eos voluptate iure dolores dolorum alias maiores? Sed repudiandae aut fugiat? Vel necessitatibus fugiat reprehenderit tempore facere eligendi, deleniti id unde? Odit sit cupiditate, nesciunt quaerat quas dicta tempora labore exercitationem modi commodi eveniet quam sint, nihil, quos illo quibusdam voluptatibus autem laudantium pariatur aliquam veritatis sed eaque repellat reprehenderit. Veniam sit qui adipisci ipsum temporibus in laudantium! Velit.</div>
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Preloader -->
@@ -178,7 +179,7 @@
         var style = document.createElement("style");
         style.id = "apollo-form-prehide-css";
         style.textContent =
-          'form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:"";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';
+          'form:has(input[type="business_email" i]),form:has(input[name="business_email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="business_email" i])::before,form:has(input[name="business_email" i])::before,.hs-form-iframe::before{content:"";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="business_email" i]) *,form:has(input[name="business_email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';
         (document.head || document.documentElement).appendChild(style);
         function cleanup() {
           var styleEl = document.getElementById("apollo-form-prehide-css");
@@ -203,7 +204,7 @@
         script.onload = function () {
           try {
             window.ApolloInbound.formEnrichment.init({
-              appId: "69b817e3d73ac20019c7be9d",
+              appId: "69ba6a8ab012d6000dae07c1",
               onReady: function () {
                 cleanup();
               },
