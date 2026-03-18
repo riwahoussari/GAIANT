@@ -24,7 +24,7 @@
     <meta http-equiv="Permissions-Policy" content="" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://player.vimeo.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://assets.apollo.io https://unpkg.com https://cdn.jsdelivr.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.apollo.io; img-src 'self' data: https://*.vercel.app https://i.vimeocdn.com https://player.vimeo.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel.app https://player.vimeo.com https://*.vimeocdn.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://aplo-evnt.com https://*.apollo.io http://internal-assets.staging-gcp.apollo.io; frame-src https://player.vimeo.com; media-src 'self' https://*.vimeocdn.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://player.vimeo.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://assets.apollo.io https://unpkg.com https://cdn.jsdelivr.net https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.apollo.io; img-src 'self' data: https://*.vercel.app https://i.vimeocdn.com https://player.vimeo.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.vercel.app https://player.vimeo.com https://*.vimeocdn.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://aplo-evnt.com https://*.apollo.io http://internal-assets.staging-gcp.apollo.io; frame-src https://player.vimeo.com https://vercel.live/; media-src 'self' https://*.vimeocdn.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
     />
 
     <!-- Preconnect Google Fonts -->
@@ -91,6 +91,8 @@
         }
       }
     </style>
+
+    <!-- Apollo Tracking -->
     <!-- <script>
       function initApollo() {
         var n = Math.random().toString(36).substring(7),
@@ -109,6 +111,8 @@
       }
       initApollo();
     </script> -->
+    
+    <!-- Apollo Form -->
     <script>
       (function initApolloInbound() {
         var TIMEOUT_MS = 15000;
