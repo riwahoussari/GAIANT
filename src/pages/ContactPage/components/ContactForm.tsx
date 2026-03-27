@@ -3,7 +3,6 @@ import Button from "../../../components/ui/Button";
 import { useFormSubmit } from "../useFormSubmit";
 import {
   COMPANY_SIZE_OPTIONS,
-  COUNTRIES_OPTIONS,
   FormSchema,
   PRODUCTS_OPTIONS,
   type FormKeys,
@@ -46,21 +45,21 @@ export default function ContactForm() {
 
   return (
     <div className="w-full">
-      <div className="relative ">
-          <div
-            className={
-              "absolute top-0 left-1/2 z-0 -translate-x-1/2 translate-y-full scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:translate-y-8/10 sm:scale-y-500 sm:-rotate-45"
-            }
-          >
-            <div className="aspect-square origin-top">
-              <img
-                src="/gradients/circle-news/1328.avif"
-                srcSet="/gradients/circle-news/1328.avif 1328w, /gradients/circle-news/1024.avif 1024w, /gradients/circle-news/810.avif 810w, /gradients/circle-news/640.avif 640w"
-                className="h-full w-full object-contain"
-                sizes="(max-width: 768px) 185vw, (max-width: 1024px) 165vw, (max-width: 1280px) 170vw, 150vw"
-              />
-            </div>
+      <div className="relative">
+        <div
+          className={
+            "absolute top-0 left-1/2 z-0 -translate-x-1/2 translate-y-full scale-x-400 scale-y-600 opacity-70 max-sm:min-w-[250px] sm:translate-y-8/10 sm:scale-y-500 sm:-rotate-45"
+          }
+        >
+          <div className="aspect-square origin-top">
+            <img
+              src="/gradients/circle-news/1328.avif"
+              srcSet="/gradients/circle-news/1328.avif 1328w, /gradients/circle-news/1024.avif 1024w, /gradients/circle-news/810.avif 810w, /gradients/circle-news/640.avif 640w"
+              className="h-full w-full object-contain"
+              sizes="(max-width: 768px) 185vw, (max-width: 1024px) 165vw, (max-width: 1280px) 170vw, 150vw"
+            />
           </div>
+        </div>
       </div>
 
       <form
@@ -151,12 +150,14 @@ export default function ContactForm() {
 
           {/* country - phone */}
           <div className="row">
-            <Select
-              id="country"
+            <Input
+              type="text"
               name="country"
-              label="Country/Region"
-              options={COUNTRIES_OPTIONS}
+              id="country"
+              placeholder="Country/Region"
               required
+              maxLength={FormSchema.shape.job_title.maxLength || undefined}
+              minLength={FormSchema.shape.job_title.minLength || undefined}
               value={formData["country"]}
               setValue={setFieldValue}
               error={triedSubmitting ? errors["country"] : undefined}
