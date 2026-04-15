@@ -26,7 +26,7 @@ export default function LandingPage() {
   return (
     <>
       <PageMeta
-        title="Gaiant | One AI Work Platform for Any Kind of Work"
+        title="Gaiant | Accelerating Enterprise Intelligence"
         description="Gaiant is the MENA region's AI powerhouse engineering bespoke systems and proprietary products that become the foundation for how businesses think, operate, and scale."
       />
       <Navbar transparentBanner transparentBg={transparentNavbar} />

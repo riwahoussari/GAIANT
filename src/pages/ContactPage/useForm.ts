@@ -10,7 +10,6 @@ export function useForm() {
     country: undefined,
     phone_number: undefined,
     company_size: undefined,
-    product: undefined,
     plan_of_use: undefined,
     consent_marketing: undefined,
   });

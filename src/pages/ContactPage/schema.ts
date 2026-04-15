@@ -19,17 +19,6 @@ export const COMPANY_SIZE_OPTIONS: TOption[] = COMPANY_SIZES.map((size) => ({
   value: size,
 }));
 
-export const PRODUCTS_OPTIONS: TOption[] = [
-  {
-    text: "archē",
-    value: "arche",
-  },
-  {
-    text: "horion",
-    value: "horion",
-  },
-] as const;
-
 export const FormSchema = z.object({
   first_name: z
     .string({ error: "First name is required" })
@@ -70,16 +59,6 @@ export const FormSchema = z.object({
     .refine((val) => COMPANY_SIZES.includes(val as any), {
       message: "Invalid company size",
     }),
-  product: z
-    .string()
-    .trim()
-    .refine(
-      (val) => PRODUCTS_OPTIONS.map((prod) => prod.value).includes(val as any),
-      {
-        message: "Invalid product",
-      }
-    )
-    .optional(),
   plan_of_use: z
     .string("Message is required")
     .trim()

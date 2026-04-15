@@ -4,7 +4,6 @@ import { useFormSubmit } from "../useFormSubmit";
 import {
   COMPANY_SIZE_OPTIONS,
   FormSchema,
-  PRODUCTS_OPTIONS,
   type FormKeys,
   type TFormData,
 } from "../schema";
@@ -188,21 +187,6 @@ export default function ContactForm() {
               value={formData["company_size"]}
               setValue={setFieldValue}
               error={triedSubmitting ? errors["company_size"] : undefined}
-              setError={triedSubmitting ? setFieldError : undefined}
-              disabled={success}
-            />
-          </div>
-
-          {/* product of interest  */}
-          <div className="row">
-            <Select
-              id="product"
-              name="product"
-              options={PRODUCTS_OPTIONS}
-              label="Product of interest"
-              value={formData["product"]}
-              setValue={setFieldValue}
-              error={triedSubmitting ? errors["product"] : undefined}
               setError={triedSubmitting ? setFieldError : undefined}
               disabled={success}
             />
