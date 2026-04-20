@@ -19,7 +19,7 @@ export default function ContactForm() {
     setFieldValue,
     setFieldError,
   } = useForm();
-  const { submitting, error, success, formKey, submit } = useFormSubmit();
+  const { submitting, success, formKey, submit } = useFormSubmit();
   const [triedSubmitting, setTriedSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,12 +73,6 @@ export default function ContactForm() {
               Sent successfully!
             </p>
           )}
-          {error && (
-            <p className="self-start rounded-sm bg-red-300 px-3 py-1 text-sm">
-              {error}
-            </p>
-          )}
-
           {/* full name */}
           <div className="row">
             <Input
