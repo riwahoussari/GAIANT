@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import type { FormKeys, TFormData } from "./schema";
 
 export function useForm() {
-    const [formData, setFormData] = useState<TFormData>({
+  const [formData, setFormData] = useState<TFormData>({
     first_name: undefined,
     last_name: undefined,
     business_email: undefined,
@@ -24,7 +24,12 @@ export function useForm() {
     setErrors((prev) => ({ ...prev, [id]: error }));
   }, []);
 
-  
-
-  return {formData, errors, errorsCount, setErrors, setFieldValue, setFieldError}
+  return {
+    formData,
+    errors,
+    errorsCount,
+    setErrors,
+    setFieldValue,
+    setFieldError,
+  };
 }
