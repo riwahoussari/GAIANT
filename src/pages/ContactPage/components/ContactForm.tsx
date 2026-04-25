@@ -64,7 +64,7 @@ export default function ContactForm() {
       <form
         key={formKey}
         onSubmit={handleSubmit}
-        id="contact"
+        id="contact-form"
         className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white p-6 backdrop-blur-md sm:px-12 sm:py-10 md:bg-white/50"
       >
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
