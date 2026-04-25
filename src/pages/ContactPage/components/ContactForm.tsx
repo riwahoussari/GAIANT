@@ -8,9 +8,10 @@ import {
   type TFormData,
 } from "../schema";
 import { useForm } from "../useForm";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function ContactForm() {
+  const headlineInputRef = useRef<HTMLInputElement>(null);
   const {
     formData,
     errors,
@@ -19,7 +20,9 @@ export default function ContactForm() {
     setFieldValue,
     setFieldError,
   } = useForm();
-  const { submitting, success, formKey, submit } = useFormSubmit();
+  const { submitting, success, formKey, submit } = useFormSubmit({
+    headlineInputRef,
+  });
   const [triedSubmitting, setTriedSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -67,6 +70,7 @@ export default function ContactForm() {
         id="contact-form"
         className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white p-6 backdrop-blur-md sm:px-12 sm:py-10 md:bg-white/50"
       >
+        <input ref={headlineInputRef} type="text" className="hidden" name="headline" />
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
           {success && (
             <p className="self-start rounded-sm bg-green-300 px-3 py-1 text-base text-black">

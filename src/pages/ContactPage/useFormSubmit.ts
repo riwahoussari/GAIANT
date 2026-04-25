@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, type RefObject } from "react";
 import type { TFormData } from "./schema";
 
-export function useFormSubmit() {
+type UseFormSubmitProps = {
+  headlineInputRef: RefObject<HTMLInputElement | null>;
+};
+
+export function useFormSubmit({ headlineInputRef }: UseFormSubmitProps) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formKey, setFormKey] = useState(0);
@@ -25,21 +29,8 @@ export function useFormSubmit() {
   };
 
   const syncHeadlineInput = (headline: string) => {
-    const form = document.getElementById("contact-form");
-    if (!(form instanceof HTMLFormElement)) return;
-
-    let headlineInput = form.querySelector(
-      'input[name="headline"]'
-    ) as HTMLInputElement | null;
-
-    if (!headlineInput) {
-      headlineInput = document.createElement("input");
-      headlineInput.type = "hidden";
-      headlineInput.name = "headline";
-      form.appendChild(headlineInput);
-    }
-
-    headlineInput.value = headline;
+    if (!headlineInputRef.current) return;
+    headlineInputRef.current.value = headline;
   };
 
   async function submit(formData: TFormData) {
@@ -52,10 +43,13 @@ export function useFormSubmit() {
     // }
 
     setLoading(true);
-    syncHeadlineInput(buildHeadline(formData));
+    const headline = buildHeadline(formData);
+    syncHeadlineInput(headline);
 
     // Apollo listens for the form submit event itself. We only mark
     // success/reset state in the UI and do not send data to a backend.
+    console.log("headline", headline);
+    console.log("headlineInputRef.current", headlineInputRef.current);
     setSuccess(true);
     setFormKey((prev) => prev + 1);
     setLoading(false);
