@@ -185,6 +185,10 @@ export type TIndustry = {
   imgSizes?: string;
   imgPosition?: string;
   imgSquarePosition?: string;
+  croppedImg: {
+    src: string;
+    srcSet: string;
+  };
   description: string;
   textClassName?: string;
   hero: {
@@ -240,6 +244,11 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_60%]",
     imgSquarePosition: "object-[50%_100%] scale-110 origin-bottom",
     imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
+    croppedImg: {
+      src: "/industries/banking/cropped/1024.webp",
+      srcSet: `/industries/banking/cropped/1024.webp 1024w, 
+    /industries/banking/cropped/810.webp 810w`,
+    },
     description:
       "Powering credit decisioning, anti-money laundering, and hyper-personalized customer journeys",
     textClassName: " max-w-[320px] ",
@@ -373,6 +382,11 @@ export const INDUSTRIES: TIndustry[] = [
     /industries/insurance/810.webp 810w`,
     imgPosition: "object-[50%_20%]",
     imgSquarePosition: "object-[50%_20%]",
+    croppedImg: {
+      src: "/industries/insurance/cropped/1024.webp",
+      srcSet: `/industries/insurance/cropped/1024.webp 1024w, 
+    /industries/insurance/cropped/810.webp 810w`,
+    },
     description:
       "Automating claims adjudication, detecting fraud in real time, and pricing risk with precision",
     textClassName: " max-w-[350px] lg:mb-[20px] ",
@@ -509,6 +523,11 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_75%]",
     imgSquarePosition: "scale-115 object-center -translate-y-7/100",
     imgSizes: "(max-width: 480px) 345px, (max-width: 1024px) 414px, 640px",
+    croppedImg: {
+      src: "/industries/healthcare/cropped/1024.webp",
+      srcSet: `/industries/healthcare/cropped/1024.webp 1024w, 
+    /industries/healthcare/cropped/810.webp 810w`,
+    },
     description: "Advancing patient care and biological research",
     textClassName: " max-w-[160px] xs:max-w-[190px] lg:mb-[10px] ",
     hero: {
@@ -654,6 +673,14 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_66%]",
     imgSquarePosition: "object-[50%_75%] scale-120 ",
     imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 1024px",
+    croppedImg: {
+      src: "/industries/tech/cropped/1920.webp",
+      srcSet: `/industries/tech/cropped/1920.webp 1920w,
+      /industries/tech/cropped/1440.webp 1440w,
+      /industries/tech/cropped/1280.webp 1280w,
+      /industries/tech/cropped/1024.webp 1024w, 
+    /industries/tech/cropped/810.webp 810w`,
+    },
     description:
       "Reducing churn, optimizing network performance, and monetizing content intelligently",
     textClassName: "",
@@ -795,6 +822,11 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_90%]",
     imgSquarePosition: "object-[50%_100%] scale-118 origin-bottom",
     imgSizes: "(max-width: 480px) 360px, (max-width: 1024px) 432px, 640px",
+    croppedImg: {
+      src: "/industries/government/cropped/1024.webp",
+      srcSet: `/industries/government/cropped/1024.webp 1024w, 
+    /industries/government/cropped/810.webp 810w`,
+    },
     description:
       "Digitizing citizen services, automating compliance, and enabling data-driven policy",
     textClassName: " max-w-[200px] xs:max-w-[250px] ",
@@ -936,6 +968,14 @@ export const INDUSTRIES: TIndustry[] = [
       "object-[100%_50%] scale-168 -translate-x-8/100 -translate-y-22/100",
     imgSquarePosition: "object-[83%_50%] scale-150 origin-bottom ",
     imgSizes: "1024px",
+    croppedImg: {
+      src: "/industries/energy/cropped/1920.webp",
+      srcSet: `/industries/energy/cropped/1920.webp 1920w, 
+      /industries/energy/cropped/1440.webp 1440w, 
+      /industries/energy/cropped/1280.webp 1280w, 
+      /industries/energy/cropped/1024.webp 1024w, 
+    /industries/energy/cropped/810.webp 810w`,
+    },
     description:
       "Predicting grid failures, balancing load in real time, and accelerating the energy transition",
     textClassName: " max-w-[230px] xs:max-w-[260px] ",
@@ -1083,6 +1123,14 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_58%] scale-128 translate-x-3/100",
     imgSquarePosition: "object-[50%_70%] scale-130 translate-x-4/100",
     imgSizes: "(max-width: 480px) 390px, (max-width: 1024px) 468px, 640px",
+    croppedImg: {
+      src: "/industries/legal/cropped/1920.webp",
+      srcSet: `/industries/legal/cropped/1920.webp 1920w, 
+      /industries/legal/cropped/1440.webp 1440w, 
+      /industries/legal/cropped/1280.webp 1280w, 
+      /industries/legal/cropped/1024.webp 1024w, 
+    /industries/legal/cropped/810.webp 810w`,
+    },
     description:
       "Automating contract analysis, accelerating due diligence, and de-risking litigation strategy",
     textClassName: " max-w-[220px] xs:max-w-[240px]  ",
@@ -1224,6 +1272,11 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_56%]",
     imgSquarePosition: "object-[50%_60%] scale-110",
     imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
+    croppedImg: {
+      src: "/industries/real-estate/cropped/1024.webp",
+      srcSet: `/industries/real-estate/cropped/1024.webp 1024w, 
+    /industries/real-estate/cropped/810.webp 810w`,
+    },
     description:
       "Forecasting project timelines, optimizing procurement, and reducing cost overruns before they happen",
     textClassName: " max-w-[320px] ",
@@ -1365,6 +1418,14 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[50%_72%]",
     imgSquarePosition: "object-[50%_75%] scale-110 origin-bottom",
     imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
+    croppedImg: {
+      src: "/industries/retail/cropped/1920.webp",
+      srcSet: `/industries/retail/cropped/1920.webp 1920w, 
+      /industries/retail/cropped/1440.webp 1440w, 
+      /industries/retail/cropped/1280.webp 1280w, 
+      /industries/retail/cropped/1024.webp 1024w, 
+    /industries/retail/cropped/810.webp 810w`,
+    },
     description:
       "Predicting inventory demand, personalizing at scale, and optimizing supply chain end-to-end",
     textClassName: " max-w-[290px] ",
@@ -1507,6 +1568,11 @@ export const INDUSTRIES: TIndustry[] = [
     imgSquarePosition:
       "object-[50%_50%] translate-x-3/100 scale-106 orgin-bottom",
     imgSizes: "(max-width: 480px) 330px, (max-width: 1024px) 396px, 640px",
+    croppedImg: {
+      src: "/industries/hospitality/cropped/1024.webp",
+      srcSet: `/industries/hospitality/cropped/1024.webp 1024w, 
+    /industries/hospitality/cropped/810.webp 810w`,
+    },
     description:
       "Dynamic pricing, intelligent guest personalization, and operational efficiency across properties",
     textClassName: " max-w-[290px]",
@@ -1649,6 +1715,14 @@ export const INDUSTRIES: TIndustry[] = [
     imgPosition: "object-[55%_85%]",
     imgSquarePosition: "object-[45%_85%]",
     imgSizes: "(max-width: 480px) 300px, (max-width: 1024px) 360px, 1024px",
+    croppedImg: {
+      src: "/industries/education/cropped/1920.webp",
+      srcSet: `/industries/education/cropped/1920.webp 1920w, 
+      /industries/education/cropped/1440.webp 1440w, 
+      /industries/education/cropped/1280.webp 1280w, 
+      /industries/education/cropped/1024.webp 1024w, 
+    /industries/education/cropped/810.webp 810w`,
+    },
     description:
       "Personalizing learning pathways, predicting student outcomes, and automating administrative burden",
     textClassName: " max-w-[290px]  ",

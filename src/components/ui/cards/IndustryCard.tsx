@@ -14,7 +14,8 @@ export default function IndustryCard({
   button = "none",
   className,
   fetchPriority,
-  loading
+  loading,
+  clipPath = true,
 }: {
   imgSrc: string;
   imgSrcSet?: string;
@@ -28,6 +29,7 @@ export default function IndustryCard({
   className?: string;
   fetchPriority?: "high" | "low" | "auto" | undefined;
   loading?: "eager" | "lazy" | undefined;
+  clipPath?: boolean;
 }) {
   const contentRef = useRef<HTMLDivElement>(null); // to calculate height for animation to work
   const [hovering, setHovering] = useState(false);
@@ -42,10 +44,14 @@ export default function IndustryCard({
       }
     >
       <div
-        className="h-full bg-black/25 transition-all duration-300 ease-in-out"
-        style={{
-          clipPath: `url(#topRightClip)`,
-        }}
+        className="h-full transition-all duration-300 ease-in-out"
+        style={
+          clipPath
+            ? {
+                clipPath: `url(#topRightClip)`,
+              }
+            : {}
+        }
       >
         <img
           loading={loading}

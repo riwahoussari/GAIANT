@@ -55,12 +55,13 @@ export default function IndustriesWeEmpower() {
               text={industry.description}
               textClassName={industry.textClassName}
               button={"arrow"}
-              imgSrc={industry.img}
-              imgSrcSet={industry.imgSrcSet}
+              imgSrc={industry.croppedImg.src}
+              imgSrcSet={industry.croppedImg.srcSet}
               imgSizes={
                 industry.imgSizes || "(max-width: 480px) 300px, (max-width: 1024px) 360px, 640px"
               }
-              imgClassName={industry.imgSquarePosition}
+              // imgClassName={industry.imgSquarePosition}
+              clipPath={false}
               loading="lazy"
             />
           </SlideUpAnim>

@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { useSwipe } from "../../../lib/useSwipe";
 import ArrowSvg from "../ArrowSvg";
 import { motion as m } from "motion/react";
@@ -20,16 +28,22 @@ export function CardsSlider({
   const cardsRef = useRef<HTMLDivElement>(null); // has width of all cards combined
   const cardsContainerRef = useRef<HTMLDivElement>(null); // has width of visible container
   const [slidePercent, setSlidePercent] = useState(0);
-  const [values, setValues] = useState<TSliderValues>();
+  const [values, setValues] = useState<TSliderValues>({
+    visibleCards: 0,
+    totalCards: 0,
+    slideDifference: 0,
+    slidableDistance: 0,
+    cardsToSlide: 0,
+  });
   const {
-    visibleCards = 0,
-    totalCards = 0,
-    slideDifference = 0,
-    slidableDistance = 0,
-    cardsToSlide = 0,
-  } = values || {};
+    visibleCards,
+    totalCards,
+    slideDifference,
+    slidableDistance,
+    cardsToSlide,
+  } = values;
 
-  const calculateValues = (): TSliderValues => {
+  const calculateValues = useCallback((): TSliderValues => {
     if (!cardsContainerRef.current || !cardsRef.current)
       return {
         visibleCards: 0,
@@ -42,9 +56,36 @@ export function CardsSlider({
     const container = cardsContainerRef.current;
 
     const totalCards = cards.childElementCount;
+    if (!totalCards) {
+      return {
+        visibleCards: 0,
+        totalCards: 0,
+        slideDifference: 0,
+        slidableDistance: 0,
+        cardsToSlide: 0,
+      };
+    }
     const cardWidth = cards.clientWidth / totalCards;
+    if (!cardWidth) {
+      return {
+        visibleCards: 0,
+        totalCards,
+        slideDifference: 0,
+        slidableDistance: 0,
+        cardsToSlide: 0,
+      };
+    }
     const visibleCards = Math.floor(container.clientWidth / cardWidth);
     const hiddenCards = totalCards - visibleCards;
+    if (hiddenCards <= 0) {
+      return {
+        visibleCards: Math.max(visibleCards, totalCards),
+        totalCards,
+        slideDifference: 1,
+        slidableDistance: 0,
+        cardsToSlide: Math.max(visibleCards, 1),
+      };
+    }
     const cardsToSlide = visibleCards;
     const slideDifference =
       Math.round((cardsToSlide * 1000) / hiddenCards) / 1000;
@@ -58,46 +99,81 @@ export function CardsSlider({
       slidableDistance,
       cardsToSlide,
     };
-  };
+  }, []);
 
-  let slideValue = Math.max(0, Math.min(slidePercent, 1)) * slidableDistance;
-  slideValue = Math.floor(slideValue * 1000) / 1000;
-  const slidedCards =
-    (Math.max(0, Math.min(slidePercent, 1)) / slideDifference) * cardsToSlide;
-  const progressBarWidth = ((visibleCards + slidedCards) / totalCards) * 100;
+  const normalizedSlidePercent = Math.max(0, Math.min(slidePercent, 1));
+  const slideValue = useMemo(
+    () => Math.floor(normalizedSlidePercent * slidableDistance * 1000) / 1000,
+    [normalizedSlidePercent, slidableDistance]
+  );
+  const progressBarWidth = useMemo(() => {
+    if (!totalCards || !slideDifference) return 0;
+    const slidedCards = (normalizedSlidePercent / slideDifference) * cardsToSlide;
+    return ((visibleCards + slidedCards) / totalCards) * 100;
+  }, [
+    cardsToSlide,
+    normalizedSlidePercent,
+    slideDifference,
+    totalCards,
+    visibleCards,
+  ]);
 
-  const handleLeft = () => {
+  const handleLeft = useCallback((steps = 1) => {
+    if (!slideDifference) return;
     setSlidePercent((prev) =>
-      prev - slideDifference < 0 ? 0 : prev - slideDifference
+      prev - slideDifference * steps < 0 ? 0 : prev - slideDifference * steps
     );
-  };
+  }, [slideDifference]);
 
-  const handleRight = () => {
-    setSlidePercent((prev) => (prev < 1 ? prev + slideDifference : prev));
-  };
+  const handleRight = useCallback((steps = 1) => {
+    if (!slideDifference) return;
+    setSlidePercent((prev) => {
+      if (prev >= 1) return prev;
+      const next = prev + slideDifference * steps;
+      return next > 1 ? 1 : next;
+    });
+  }, [slideDifference]);
+
+  const recalculate = useCallback(() => {
+    setValues(calculateValues());
+  }, [calculateValues]);
+
+  useLayoutEffect(() => {
+    recalculate();
+  }, [children, recalculate]);
 
   useEffect(() => {
-    const handleResize = () => setValues(calculateValues);
-    window.addEventListener("resize", handleResize);
+    const container = cardsContainerRef.current;
+    const cards = cardsRef.current;
+    if (!container || !cards) return;
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  useEffect(
-    () => setValues(calculateValues()),
-    [cardsRef, cardsContainerRef, cardsRef.current, cardsContainerRef.current]
-  );
+    const observer = new ResizeObserver(() => {
+      recalculate();
+    });
+    observer.observe(container);
+    observer.observe(cards);
+    return () => observer.disconnect();
+  }, [recalculate]);
+
+  useEffect(() => {
+    setSlidePercent((prev) => Math.max(0, Math.min(prev, 1)));
+  }, [values]);
 
   const swipeHandlers = useSwipe(handleRight, handleLeft);
   return (
     <>
       {/* cards */}
-      <div {...swipeHandlers} ref={cardsContainerRef} className="mt-[40px]">
+      <div
+        {...swipeHandlers}
+        ref={cardsContainerRef}
+        className="mt-[40px] touch-pan-y"
+      >
         <m.div
           animate={{
             x: `-${slideValue}px`,
           }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className="flex w-max items-start gap-5 overflow-y-clip"
+          className="flex w-max items-start gap-5 overflow-y-clip will-change-transform"
           ref={cardsRef}
         >
           {children}
@@ -107,7 +183,7 @@ export function CardsSlider({
       {displaySlider && (
         <div className="mx-auto mt-10 flex w-9/10 max-w-[580px] items-center justify-center gap-3 sm:gap-5 lg:w-1/2 lg:min-w-[580px]">
           {/* left arrow */}
-          <div onClick={handleLeft}>
+          <div onClick={() => handleLeft()}>
             <ArrowSvg
               color="var(--color-teal)"
               className={
@@ -132,7 +208,7 @@ export function CardsSlider({
           </div>
 
           {/* right arrow */}
-          <div onClick={handleRight}>
+          <div onClick={() => handleRight()}>
             <ArrowSvg
               color="var(--color-teal)"
               className={

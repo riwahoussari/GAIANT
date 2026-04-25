@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useAnimationFrame } from "motion/react";
 import GradientCircle from "../../../components/ui/GradientCircle";
 import { CenteredTitleBlock } from "../../../components/ui/Titles";
 import { LANDING_PAGE_DATA } from "../../../lib/data";
+import { useIsMobile } from "../../../lib/useIsMobile";
 
 const ICONS = [
   "/tools/Rectangle%20100.webp",
@@ -20,6 +21,7 @@ const ICONS = [
 ];
 
 export default function Tools() {
+  const isMobile = useIsMobile(1024);
   return (
     <section className="relative z-2 mt-[120px] flex flex-col items-center overflow-x-clip">
       {/* background blur */}
@@ -34,8 +36,7 @@ export default function Tools() {
         title={LANDING_PAGE_DATA.TOOLS.title}
         subtitle={LANDING_PAGE_DATA.TOOLS.subtitle}
       />
-
-      <MarqueeIcons />
+      {isMobile ? <SimpleMarqueeIcons /> : <MarqueeIcons />}
     </section>
   );
 }
@@ -156,13 +157,72 @@ function MarqueeIcons() {
   );
 }
 
+function SimpleMarqueeIcons() {
+  const marqueeTrackRef = useRef<HTMLDivElement>(null);
+  const firstSetRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const singleSetWidthRef = useRef(0);
+
+  const measureWidths = useCallback(() => {
+    if (!firstSetRef.current) return;
+    singleSetWidthRef.current = firstSetRef.current.getBoundingClientRect().width;
+  }, []);
+
+  useEffect(() => {
+    measureWidths();
+
+    const resizeObserver = new ResizeObserver(measureWidths);
+    if (firstSetRef.current) resizeObserver.observe(firstSetRef.current);
+    window.addEventListener("resize", measureWidths);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", measureWidths);
+    };
+  }, [measureWidths]);
+
+  useAnimationFrame((_, delta) => {
+    const track = marqueeTrackRef.current;
+    const width = singleSetWidthRef.current;
+    if (!track || !width) return;
+
+    // Move right at ~55px/s and loop seamlessly after one set width.
+    offsetRef.current = (offsetRef.current + (delta / 1000) * 55) % width;
+    track.style.transform = `translate3d(${offsetRef.current - width}px, 0, 0)`;
+  });
+
+  return (
+    <div className="relative mt-16 w-full overflow-hidden">
+      <div
+        ref={marqueeTrackRef}
+        className="flex w-max will-change-transform"
+        aria-hidden
+      >
+        <div
+          ref={firstSetRef}
+          className="flex items-center gap-[min(18px,2.5vw)] pr-[min(18px,2.5vw)]"
+        >
+          {ICONS.map((src, i) => (
+            <Icon key={`simple-1-${i}`} src={src} />
+          ))}
+        </div>
+        <div className="flex items-center gap-[min(18px,2.5vw)] pr-[min(18px,2.5vw)]">
+          {ICONS.map((src, i) => (
+            <Icon key={`simple-2-${i}`} src={src} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Icon({
   src,
-  opacity,
+  opacity = 1,
   className = "",
 }: {
   src: string;
-  opacity: number;
+  opacity?: number;
   className?: string;
 }) {
   return (

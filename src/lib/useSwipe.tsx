@@ -1,6 +1,9 @@
 import { useRef } from "react";
 
-export function useSwipe(onSwipeLeft: () => void, onSwipeRight: () => void) {
+export function useSwipe(
+  onSwipeLeft: (steps?: number) => void,
+  onSwipeRight: (steps?: number) => void
+) {
   const startX = useRef<number | null>(null);
 
   const minDistance = 50; // px threshold
@@ -15,14 +18,12 @@ export function useSwipe(onSwipeLeft: () => void, onSwipeRight: () => void) {
     const diff = startX.current - endX;
     if (Math.abs(diff) > minDistance * 3) {
       if (diff > 0) {
-        onSwipeLeft();
-        onSwipeLeft();
+        onSwipeLeft(2);
       } else {
-        onSwipeRight();
-        onSwipeRight();
+        onSwipeRight(2);
       }
     } else if (Math.abs(diff) > minDistance) {
-      diff > 0 ? onSwipeLeft() : onSwipeRight();
+      diff > 0 ? onSwipeLeft(1) : onSwipeRight(1);
     }
 
     startX.current = null;

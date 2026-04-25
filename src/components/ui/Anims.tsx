@@ -1,6 +1,7 @@
 import type { TargetAndTransition, Transition } from "motion";
 import { motion as m, useInView } from "motion/react";
 import { useRef, type ReactNode } from "react";
+import { useIsMobile } from "../../lib/useIsMobile";
 
 export function AnimatedText({
   isInView,
@@ -12,7 +13,40 @@ export function AnimatedText({
   transition?: Transition<any> | undefined;
 }) {
   const words = children.trim().split(" ");
+  const isMobile = useIsMobile();
 
+  if (isMobile) {
+    return (
+      <m.span
+        initial={{ y: "30px", opacity: 0 }}
+        animate={
+          isInView ? { y: "-0%", opacity: 1 } : { y: "30px", opacity: 0 }
+        }
+        transition={{ duration: 0.5, ease: "easeInOut", ...transition }}
+        className="inline-block"
+      >
+        {children.trim().split("<br>").join("").split("<sm:br>").join("")}
+      </m.span>
+    );
+  }
+  return (
+    <AnimatedTextWordByWord
+      words={words}
+      isInView={isInView}
+      transition={transition}
+    />
+  );
+}
+
+function AnimatedTextWordByWord({
+  words,
+  isInView,
+  transition,
+}: {
+  words: string[];
+  isInView: boolean;
+  transition: Transition<any> | undefined;
+}) {
   return (
     <>
       {words.map((word, i) => {
