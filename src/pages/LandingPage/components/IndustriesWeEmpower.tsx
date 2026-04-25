@@ -7,10 +7,13 @@ import { useInView } from "motion/react";
 import { INDUSTRIES, LANDING_PAGE_DATA } from "../../../lib/data";
 import { CardsSlider } from "../../../components/ui/cards/CardsSlider";
 import IndustryCard from "../../../components/ui/cards/IndustryCard";
+import { useIsMobile } from "../../../lib/useIsMobile";
 
 export default function IndustriesWeEmpower() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-5%" });
+
+  const isMobile = useIsMobile();
 
   return (
     <section
@@ -41,32 +44,72 @@ export default function IndustriesWeEmpower() {
         }
       />
 
+      {isMobile ? (
+        <MobileCardsSlider isInView={isInView} />
+      ) : (
+        <DesktopCardsSlider isInView={isInView} />
+      )}
+    </section>
+  );
+}
+
+function DesktopCardsSlider({ isInView }: { isInView: boolean }) {
+  return (
+    <CardsSlider>
+      {INDUSTRIES.map((industry, i) => (
+        <SlideUpAnim
+          isInView={isInView}
+          transition={{ delay: 0.2 + 0.1 * i }}
+          key={i}
+        >
+          <IndustryCard
+            className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
+            id={industry.id}
+            title={industry.name}
+            text={industry.description}
+            textClassName={industry.textClassName}
+            button={"arrow"}
+            imgSrc={industry.croppedImg.src}
+            imgSrcSet={industry.croppedImg.srcSet}
+            imgSizes={
+              industry.imgSizes ||
+              "(max-width: 480px) 300px, (max-width: 1024px) 360px, 640px"
+            }
+            // imgClassName={industry.imgSquarePosition}
+            clipPath={false}
+            loading="lazy"
+          />
+        </SlideUpAnim>
+      ))}
+    </CardsSlider>
+  );
+}
+
+function MobileCardsSlider({ isInView }: { isInView: boolean }) {
+  return (
+    <SlideUpAnim isInView={isInView} transition={{ delay: 0.2 }}>
       <CardsSlider>
         {INDUSTRIES.map((industry, i) => (
-          <SlideUpAnim
-            isInView={isInView}
-            transition={{ delay: 0.2 + 0.1 * i }}
+          <IndustryCard
             key={i}
-          >
-            <IndustryCard
-              className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
-              id={industry.id}
-              title={industry.name}
-              text={industry.description}
-              textClassName={industry.textClassName}
-              button={"arrow"}
-              imgSrc={industry.croppedImg.src}
-              imgSrcSet={industry.croppedImg.srcSet}
-              imgSizes={
-                industry.imgSizes || "(max-width: 480px) 300px, (max-width: 1024px) 360px, 640px"
-              }
-              // imgClassName={industry.imgSquarePosition}
-              clipPath={false}
-              loading="lazy"
-            />
-          </SlideUpAnim>
+            className="aspect-41/39! w-[300px] xs:w-[360px] lg:w-[410px]"
+            id={industry.id}
+            title={industry.name}
+            text={industry.description}
+            textClassName={industry.textClassName}
+            button={"arrow"}
+            imgSrc={industry.croppedImg.src}
+            imgSrcSet={industry.croppedImg.srcSet}
+            imgSizes={
+              industry.imgSizes ||
+              "(max-width: 480px) 300px, (max-width: 1024px) 360px, 640px"
+            }
+            // imgClassName={industry.imgSquarePosition}
+            clipPath={false}
+            loading="lazy"
+          />
         ))}
       </CardsSlider>
-    </section>
+    </SlideUpAnim>
   );
 }
