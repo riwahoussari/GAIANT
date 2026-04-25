@@ -1,6 +1,7 @@
 import { useRef, type ReactNode } from "react";
 import { useInView } from "motion/react";
 import { AnimatedText, SlideUpAnim } from "./Anims";
+import { useIsMobile } from "../../lib/useIsMobile";
 
 export function SectionTitle({
   children,
@@ -50,6 +51,35 @@ export function TitleBlock({
   subtitle?: string;
   button?: ReactNode;
 }) {
+  const isMobile = useIsMobile();
+  return isMobile ? (
+    <MobileTitleBlock
+      title={title}
+      titleClassName={titleClassName}
+      subtitle={subtitle}
+      button={button}
+    />
+  ) : (
+    <DesktopTitleBlock
+      title={title}
+      titleClassName={titleClassName}
+      subtitle={subtitle}
+      button={button}
+    />
+  );
+}
+
+function DesktopTitleBlock({
+  title,
+  titleClassName,
+  subtitle,
+  button,
+}: {
+  title: string;
+  titleClassName?: string;
+  subtitle?: string;
+  button?: ReactNode;
+}) {
   const titleBlockRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(titleBlockRef, { once: true, margin: "-5%" });
   return (
@@ -66,6 +96,32 @@ export function TitleBlock({
       </div>
       <SlideUpAnim transition={{ delay: 0.4 }} isInView={isInView}>
         {button}
+      </SlideUpAnim>
+    </div>
+  );
+}
+
+function MobileTitleBlock({
+  title,
+  titleClassName,
+  subtitle,
+  button,
+}: {
+  title: string;
+  titleClassName?: string;
+  subtitle?: string;
+  button?: ReactNode;
+}) {
+  const titleBlockRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(titleBlockRef, { once: true, margin: "-5%" });
+  return (
+    <div ref={titleBlockRef} className="items-start justify-between sm:flex">
+      <SlideUpAnim transition={{ duration: 0.6 }} isInView={isInView}>
+        <div className="space-y-2 max-sm:mb-6">
+          {subtitle && <SectionSubTitle>{subtitle}</SectionSubTitle>}
+          <SectionTitle className={titleClassName}>{title}</SectionTitle>
+        </div>
+        <div>{button}</div>
       </SlideUpAnim>
     </div>
   );
@@ -90,19 +146,15 @@ export function CenteredTitleBlock({
   const isInView = useInView(titleBlockRef, { once: true, margin: "-10%" });
   return (
     <div ref={titleBlockRef} className={"text-center " + (className || "")}>
-      {subtitle && (
-        <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+      <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
+        {subtitle && (
           <SectionSubTitle className="mb-5">{subtitle}</SectionSubTitle>
-        </SlideUpAnim>
-      )}
-      <SlideUpAnim className={titleWidth + " mx-auto"} isInView={isInView} transition={{ duration: 0.6 }}>
-        <SectionTitle big={big}>{title}</SectionTitle>
+        )}
+        <div className={titleWidth + " mx-auto"}>
+          <SectionTitle big={big}>{title}</SectionTitle>
+        </div>
+        {text && <p className="text-16 mt-3">{text}</p>}
       </SlideUpAnim>
-      {text && (
-        <SlideUpAnim isInView={isInView} transition={{ duration: 0.6 }}>
-          <p className="text-16 mt-3">{text}</p>
-        </SlideUpAnim>
-      )}
     </div>
   );
 }
