@@ -61,7 +61,7 @@ export function Input({
 
       <p className="text-16-5 absolute top-1/2 left-[11px] origin-left -translate-y-1/2 cursor-default px-1 duration-200 ease-in-out peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:scale-80 peer-placeholder-shown:pointer-events-none peer-focus:pointer-events-auto! peer-focus:top-0 peer-focus:scale-80 xs:left-[13px]">
         <span className="relative z-1">{props.placeholder}</span>
-        <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
+        <span className="absolute block top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></span>
       </p>
       {error && (
         <span className="absolute -bottom-0 left-[11px] z-3 hidden translate-y-1/2 rounded-sm bg-red-200 px-2 py-1 text-xs text-black peer-focus:block xs:left-[13px]">
@@ -139,7 +139,7 @@ export function Select({
         }
       >
         <span className="relative z-1">{label}</span>
-        <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
+        <span className="absolute block top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></span>
       </p>
 
       {error && (
@@ -196,7 +196,7 @@ export function Textarea({
 
       <p className="text-16-5 pointer-events-none absolute top-0 left-[11px] origin-left translate-y-[13px] cursor-default px-1 duration-200 ease-in-out peer-not-placeholder-shown:pointer-events-auto! peer-not-placeholder-shown:top-0 peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:scale-80 peer-focus:pointer-events-auto! peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:scale-80 xs:left-[13px] xs:translate-y-[15px]">
         <span className="relative z-1">{props.placeholder}</span>
-        <div className="absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></div>
+        <span className="block absolute top-1/2 left-0 z-0 h-[2px] w-full -translate-y-[0.5px] bg-white"></span>
       </p>
 
       {error && (

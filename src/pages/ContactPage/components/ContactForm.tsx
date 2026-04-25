@@ -5,10 +5,9 @@ import {
   COMPANY_SIZE_OPTIONS,
   FormSchema,
   type FormKeys,
-  type TFormData,
 } from "../schema";
 import { useForm } from "../useForm";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ContactForm() {
   const headlineInputRef = useRef<HTMLInputElement>(null);
@@ -20,10 +19,29 @@ export default function ContactForm() {
     setFieldValue,
     setFieldError,
   } = useForm();
-  const { submitting, success, formKey, submit } = useFormSubmit({
-    headlineInputRef,
-  });
+  const { submitting, success, formKey, submit } = useFormSubmit();
   const [triedSubmitting, setTriedSubmitting] = useState(false);
+
+  useEffect(() => {
+    const getFieldValue = (value: unknown): string =>
+      typeof value === "string" ? value.trim() : "";
+
+    const country = getFieldValue(formData.country);
+    const planOfUse = getFieldValue(formData.plan_of_use);
+    const marketingConsent =
+      getFieldValue(formData.consent_marketing) === "on" ? "yes" : "no";
+
+    const headline = [
+      `Country: ${country || "-"}`,
+      `Plan of use: ${planOfUse || "-"}`,
+      `Marketing consent: ${marketingConsent}`,
+    ].join(" | ");
+
+    if (headlineInputRef.current) {
+      headlineInputRef.current.value = headline;
+    }
+    
+  }, [formData.country, formData.plan_of_use, formData.consent_marketing]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,7 +49,7 @@ export default function ContactForm() {
 
     const validationResult = FormSchema.safeParse(formData);
     if (validationResult.success) {
-      submit(validationResult.data as TFormData);
+      submit();
     } else {
       const errs = validationResult.error.flatten().fieldErrors;
 
@@ -70,7 +88,7 @@ export default function ContactForm() {
         id="contact-form"
         className="lg-rounded relative z-2 ms-auto flex w-full max-w-[674px] flex-col items-center justify-center gap-14 bg-white p-6 backdrop-blur-md sm:px-12 sm:py-10 md:bg-white/50"
       >
-        <input ref={headlineInputRef} type="text" className="hidden" name="headline" />
+        <input ref={headlineInputRef} type="hidden" name="headline" />
         <div className="text-18 flex w-full max-w-[600px] flex-col gap-5 sm:gap-6">
           {success && (
             <p className="self-start rounded-sm bg-green-300 px-3 py-1 text-base text-black">

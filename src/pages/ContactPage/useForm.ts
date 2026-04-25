@@ -3,14 +3,14 @@ import type { FormKeys, TFormData } from "./schema";
 
 export function useForm() {
   const [formData, setFormData] = useState<TFormData>({
-    first_name: undefined,
-    last_name: undefined,
-    business_email: undefined,
-    job_title: undefined,
-    country: undefined,
-    phone_number: undefined,
-    company_size: undefined,
-    plan_of_use: undefined,
+    first_name: "",
+    last_name: "",
+    business_email: "",
+    job_title: "",
+    country: "",
+    phone_number: "",
+    company_size: "",
+    plan_of_use: "",
     consent_marketing: undefined,
   });
   const [errors, setErrors] = useState<Record<string, string | null>>({});
